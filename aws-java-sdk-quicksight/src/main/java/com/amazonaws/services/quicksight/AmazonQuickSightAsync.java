@@ -2278,7 +2278,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * parameter.
      * </p>
      * <p>
-     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
+     * is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -2332,7 +2333,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * parameter.
      * </p>
      * <p>
-     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
+     * is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -2391,7 +2393,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * parameter.
      * </p>
      * <p>
-     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
+     * is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -2445,7 +2448,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * parameter.
      * </p>
      * <p>
-     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
+     * is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -4246,6 +4250,59 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateIpRestrictionResult> updateIpRestrictionAsync(UpdateIpRestrictionRequest updateIpRestrictionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIpRestrictionRequest, UpdateIpRestrictionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon
+     * QuickSight dashboard.
+     * </p>
+     * <p>
+     * To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+     * </p>
+     * <p>
+     * Before you can enable public sharing on your account, you need to allow public sharing permissions to an
+     * administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon
+     * QuickSight with IAM</a>.
+     * </p>
+     * 
+     * @param updatePublicSharingSettingsRequest
+     * @return A Java Future containing the result of the UpdatePublicSharingSettings operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdatePublicSharingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(
+            UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest);
+
+    /**
+     * <p>
+     * Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon
+     * QuickSight dashboard.
+     * </p>
+     * <p>
+     * To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+     * </p>
+     * <p>
+     * Before you can enable public sharing on your account, you need to allow public sharing permissions to an
+     * administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon
+     * QuickSight with IAM</a>.
+     * </p>
+     * 
+     * @param updatePublicSharingSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePublicSharingSettings operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdatePublicSharingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(
+            UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler);
 
     /**
      * <p>

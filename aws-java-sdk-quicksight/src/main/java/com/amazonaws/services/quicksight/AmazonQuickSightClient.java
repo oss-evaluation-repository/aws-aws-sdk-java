@@ -4705,7 +4705,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * parameter.
      * </p>
      * <p>
-     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
+     * is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -4831,7 +4832,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * parameter.
      * </p>
      * <p>
-     * The resulting user session is valid for 15 minutes (default) to 10 hours (maximum).
+     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
+     * is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -8528,6 +8530,95 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIpRestrictionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIpRestrictionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon
+     * QuickSight dashboard.
+     * </p>
+     * <p>
+     * To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+     * </p>
+     * <p>
+     * Before you can enable public sharing on your account, you need to allow public sharing permissions to an
+     * administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon
+     * QuickSight with IAM</a>.
+     * </p>
+     * 
+     * @param updatePublicSharingSettingsRequest
+     * @return Result of the UpdatePublicSharingSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedPricingPlanException
+     *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
+     *         required pricing plan on your Amazon Web Services account. Before you can use embedding for anonymous
+     *         users, a QuickSight administrator needs to add capacity pricing to Amazon QuickSight. You can do this on
+     *         the <b>Manage Amazon QuickSight</b> page. </p>
+     *         <p>
+     *         After capacity pricing is added, you can use the
+     *         <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a> </code>
+     *         API operation with the <code>--identity-type ANONYMOUS</code> option.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdatePublicSharingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePublicSharingSettingsResult updatePublicSharingSettings(UpdatePublicSharingSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePublicSharingSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePublicSharingSettingsResult executeUpdatePublicSharingSettings(UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePublicSharingSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePublicSharingSettingsRequest> request = null;
+        Response<UpdatePublicSharingSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePublicSharingSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updatePublicSharingSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePublicSharingSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePublicSharingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdatePublicSharingSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

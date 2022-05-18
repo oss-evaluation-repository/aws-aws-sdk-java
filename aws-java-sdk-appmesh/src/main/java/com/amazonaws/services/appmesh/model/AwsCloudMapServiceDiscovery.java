@@ -43,6 +43,12 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
     private java.util.List<AwsCloudMapInstanceAttribute> attributes;
     /**
      * <p>
+     * The IP version to use to control traffic within the mesh.
+     * </p>
+     */
+    private String ipPreference;
+    /**
+     * <p>
      * The name of the Cloud Map namespace to use.
      * </p>
      */
@@ -142,6 +148,65 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * The IP version to use to control traffic within the mesh.
+     * </p>
+     * 
+     * @param ipPreference
+     *        The IP version to use to control traffic within the mesh.
+     * @see IpPreference
+     */
+
+    public void setIpPreference(String ipPreference) {
+        this.ipPreference = ipPreference;
+    }
+
+    /**
+     * <p>
+     * The IP version to use to control traffic within the mesh.
+     * </p>
+     * 
+     * @return The IP version to use to control traffic within the mesh.
+     * @see IpPreference
+     */
+
+    public String getIpPreference() {
+        return this.ipPreference;
+    }
+
+    /**
+     * <p>
+     * The IP version to use to control traffic within the mesh.
+     * </p>
+     * 
+     * @param ipPreference
+     *        The IP version to use to control traffic within the mesh.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpPreference
+     */
+
+    public AwsCloudMapServiceDiscovery withIpPreference(String ipPreference) {
+        setIpPreference(ipPreference);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP version to use to control traffic within the mesh.
+     * </p>
+     * 
+     * @param ipPreference
+     *        The IP version to use to control traffic within the mesh.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpPreference
+     */
+
+    public AwsCloudMapServiceDiscovery withIpPreference(IpPreference ipPreference) {
+        this.ipPreference = ipPreference.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the Cloud Map namespace to use.
      * </p>
      * 
@@ -234,6 +299,8 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
         sb.append("{");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getIpPreference() != null)
+            sb.append("IpPreference: ").append(getIpPreference()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
         if (getServiceName() != null)
@@ -256,6 +323,10 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getIpPreference() == null ^ this.getIpPreference() == null)
+            return false;
+        if (other.getIpPreference() != null && other.getIpPreference().equals(this.getIpPreference()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
@@ -273,6 +344,7 @@ public class AwsCloudMapServiceDiscovery implements Serializable, Cloneable, Str
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getIpPreference() == null) ? 0 : getIpPreference().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         return hashCode;

@@ -1468,6 +1468,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request) {
+
+        return updatePublicSharingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest request) {
 
         return updateTemplateAsync(request, null);

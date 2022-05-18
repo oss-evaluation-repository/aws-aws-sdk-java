@@ -578,6 +578,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public UpdatePublicSharingSettingsResult updatePublicSharingSettings(UpdatePublicSharingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateTemplateResult updateTemplate(UpdateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -3720,6 +3720,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request) {
+
+        return updatePublicSharingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(final UpdatePublicSharingSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler) {
+        final UpdatePublicSharingSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePublicSharingSettingsResult>() {
+            @Override
+            public UpdatePublicSharingSettingsResult call() throws Exception {
+                UpdatePublicSharingSettingsResult result = null;
+
+                try {
+                    result = executeUpdatePublicSharingSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateTemplateResult> updateTemplateAsync(UpdateTemplateRequest request) {
 
         return updateTemplateAsync(request, null);

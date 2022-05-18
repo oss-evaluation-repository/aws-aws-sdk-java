@@ -44,7 +44,8 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String jobQueue;
     /**
      * <p>
-     * The share identifier for the job.
+     * The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must
+     * not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      * </p>
      */
     private String shareIdentifier;
@@ -249,11 +250,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The share identifier for the job.
+     * The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must
+     * not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      * </p>
      * 
      * @param shareIdentifier
-     *        The share identifier for the job.
+     *        The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter
+     *        must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      */
 
     public void setShareIdentifier(String shareIdentifier) {
@@ -262,10 +265,12 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The share identifier for the job.
+     * The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must
+     * not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      * </p>
      * 
-     * @return The share identifier for the job.
+     * @return The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter
+     *         must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      */
 
     public String getShareIdentifier() {
@@ -274,11 +279,13 @@ public class SubmitJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The share identifier for the job.
+     * The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter must
+     * not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      * </p>
      * 
      * @param shareIdentifier
-     *        The share identifier for the job.
+     *        The share identifier for the job. If the job queue does not have a scheduling policy, then this parameter
+     *        must not be specified. If the job queue has a scheduling policy, then this parameter must be specified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

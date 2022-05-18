@@ -61,7 +61,8 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
      * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view.
+     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
+     * each API call.
      * </p>
      */
     private java.util.List<String> authorizedResourceArns;
@@ -324,12 +325,14 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
      * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view.
+     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
+     * each API call.
      * </p>
      * 
      * @return The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access
      *         during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
-     *         list of dashboard ARNs in the account that you want the user to be able to view.
+     *         list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
+     *         up to 25 dashboard ARNs in each API call.
      */
 
     public java.util.List<String> getAuthorizedResourceArns() {
@@ -340,13 +343,15 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
      * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view.
+     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
+     * each API call.
      * </p>
      * 
      * @param authorizedResourceArns
      *        The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during
      *        the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     *        dashboard ARNs in the account that you want the user to be able to view.
+     *        dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     *        dashboard ARNs in each API call.
      */
 
     public void setAuthorizedResourceArns(java.util.Collection<String> authorizedResourceArns) {
@@ -362,7 +367,8 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
      * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view.
+     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
+     * each API call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -373,7 +379,8 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * @param authorizedResourceArns
      *        The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during
      *        the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     *        dashboard ARNs in the account that you want the user to be able to view.
+     *        dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     *        dashboard ARNs in each API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,13 +398,15 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
      * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view.
+     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
+     * each API call.
      * </p>
      * 
      * @param authorizedResourceArns
      *        The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during
      *        the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     *        dashboard ARNs in the account that you want the user to be able to view.
+     *        dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     *        dashboard ARNs in each API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

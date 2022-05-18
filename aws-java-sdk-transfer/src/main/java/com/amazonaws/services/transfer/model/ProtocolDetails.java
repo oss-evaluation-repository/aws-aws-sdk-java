@@ -87,6 +87,31 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      */
     private String tlsSessionResumptionMode;
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
+     * on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
+     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
+     * result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
+     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
+     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
+     * can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     */
+    private String setStatOption;
 
     /**
      * <p>
@@ -531,6 +556,213 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
+     * on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
+     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
+     * result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
+     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
+     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
+     * can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @param setStatOption
+     *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *        SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *        <p>
+     *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *        and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
+     *        compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     *        these clients can result in errors even when the file is otherwise successfully uploaded.
+     *        </p>
+     *        <p>
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
+     *        and upload files without needing to make any changes to your SFTP client. While the
+     *        <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
+     *        entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *        SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *        </p>
+     * @see SetStatOption
+     */
+
+    public void setSetStatOption(String setStatOption) {
+        this.setStatOption = setStatOption;
+    }
+
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
+     * on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
+     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
+     * result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
+     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
+     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
+     * can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @return Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *         SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *         <p>
+     *         Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *         and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
+     *         compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     *         these clients can result in errors even when the file is otherwise successfully uploaded.
+     *         </p>
+     *         <p>
+     *         Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
+     *         and upload files without needing to make any changes to your SFTP client. While the
+     *         <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
+     *         entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *         SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *         </p>
+     * @see SetStatOption
+     */
+
+    public String getSetStatOption() {
+        return this.setStatOption;
+    }
+
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
+     * on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
+     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
+     * result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
+     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
+     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
+     * can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @param setStatOption
+     *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *        SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *        <p>
+     *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *        and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
+     *        compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     *        these clients can result in errors even when the file is otherwise successfully uploaded.
+     *        </p>
+     *        <p>
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
+     *        and upload files without needing to make any changes to your SFTP client. While the
+     *        <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
+     *        entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *        SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SetStatOption
+     */
+
+    public ProtocolDetails withSetStatOption(String setStatOption) {
+        setSetStatOption(setStatOption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
+     * on a file you are uploading to an S3 bucket.
+     * </p>
+     * <p>
+     * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
+     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
+     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
+     * result in errors even when the file is otherwise successfully uploaded.
+     * </p>
+     * <p>
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
+     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
+     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
+     * determine when the client is making a SETSTAT call.
+     * </p>
+     * <note>
+     * <p>
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
+     * can use Amazon EFS as backend storage with Transfer Family.
+     * </p>
+     * </note>
+     * 
+     * @param setStatOption
+     *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     *        SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *        <p>
+     *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
+     *        and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
+     *        compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     *        these clients can result in errors even when the file is otherwise successfully uploaded.
+     *        </p>
+     *        <p>
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
+     *        and upload files without needing to make any changes to your SFTP client. While the
+     *        <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
+     *        entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you want to preserve the original timestamp for your file, and modify other file attributes using
+     *        SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SetStatOption
+     */
+
+    public ProtocolDetails withSetStatOption(SetStatOption setStatOption) {
+        this.setStatOption = setStatOption.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -545,7 +777,9 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
         if (getPassiveIp() != null)
             sb.append("PassiveIp: ").append(getPassiveIp()).append(",");
         if (getTlsSessionResumptionMode() != null)
-            sb.append("TlsSessionResumptionMode: ").append(getTlsSessionResumptionMode());
+            sb.append("TlsSessionResumptionMode: ").append(getTlsSessionResumptionMode()).append(",");
+        if (getSetStatOption() != null)
+            sb.append("SetStatOption: ").append(getSetStatOption());
         sb.append("}");
         return sb.toString();
     }
@@ -568,6 +802,10 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTlsSessionResumptionMode() != null && other.getTlsSessionResumptionMode().equals(this.getTlsSessionResumptionMode()) == false)
             return false;
+        if (other.getSetStatOption() == null ^ this.getSetStatOption() == null)
+            return false;
+        if (other.getSetStatOption() != null && other.getSetStatOption().equals(this.getSetStatOption()) == false)
+            return false;
         return true;
     }
 
@@ -578,6 +816,7 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getPassiveIp() == null) ? 0 : getPassiveIp().hashCode());
         hashCode = prime * hashCode + ((getTlsSessionResumptionMode() == null) ? 0 : getTlsSessionResumptionMode().hashCode());
+        hashCode = prime * hashCode + ((getSetStatOption() == null) ? 0 : getSetStatOption().hashCode());
         return hashCode;
     }
 
