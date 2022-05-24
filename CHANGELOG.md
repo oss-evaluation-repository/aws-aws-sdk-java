@@ -1,3 +1,24 @@
+# __1.12.227__ __2022-05-24__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for rules that constrain Automatic-ABR rendition selection when generating ABR package ladders.
+
+## __AWS Network Manager__
+  - ### Features
+    - This release adds Multi Account API support for a TGW Global Network, to enable and disable AWSServiceAccess with AwsOrganizations for Network Manager service and dependency CloudFormation StackSets service.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Amazon Cognito now supports requiring attribute verification (ex. email and phone number) before update.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Stop Protection feature enables customers to protect their instances from accidental stop actions.
+
+## __Amazon Interactive Video Service Chat__
+  - ### Features
+    - Doc-only update. For MessageReviewHandler structure, added timeout period in the description of the fallbackResult field
+
 # __1.12.226__ __2022-05-23__
 ## __Amazon ElastiCache__
   - ### Features

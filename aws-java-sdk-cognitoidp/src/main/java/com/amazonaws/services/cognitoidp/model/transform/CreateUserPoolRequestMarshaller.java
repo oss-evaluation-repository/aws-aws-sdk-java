@@ -53,6 +53,8 @@ public class CreateUserPoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SmsAuthenticationMessage").build();
     private static final MarshallingInfo<String> MFACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MfaConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> USERATTRIBUTEUPDATESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UserAttributeUpdateSettings").build();
     private static final MarshallingInfo<StructuredPojo> DEVICECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeviceConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> EMAILCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -100,6 +102,7 @@ public class CreateUserPoolRequestMarshaller {
             protocolMarshaller.marshall(createUserPoolRequest.getVerificationMessageTemplate(), VERIFICATIONMESSAGETEMPLATE_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getSmsAuthenticationMessage(), SMSAUTHENTICATIONMESSAGE_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getMfaConfiguration(), MFACONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createUserPoolRequest.getUserAttributeUpdateSettings(), USERATTRIBUTEUPDATESETTINGS_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getDeviceConfiguration(), DEVICECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getEmailConfiguration(), EMAILCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createUserPoolRequest.getSmsConfiguration(), SMSCONFIGURATION_BINDING);

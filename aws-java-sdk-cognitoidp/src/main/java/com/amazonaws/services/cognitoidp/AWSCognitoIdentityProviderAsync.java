@@ -339,12 +339,11 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Prevents the user from signing in with the specified external (SAML or social) identity provider. If the user
-     * that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use their
-     * password to sign in. If the user to deactivate is a linked external identity provider (IdP) user, any link
-     * between that user and an existing user is removed. When the external user signs in again, and the user is no
-     * longer attached to the previously linked <code>DestinationUser</code>, the user must create a new user account.
-     * See <a href=
+     * Prevents the user from signing in with the specified external (SAML or social) identity provider (IdP). If the
+     * user that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use
+     * their password to sign in. If the user to deactivate is a linked external IdP user, any link between that user
+     * and an existing user is removed. When the external user signs in again, and the user is no longer attached to the
+     * previously linked <code>DestinationUser</code>, the user must create a new user account. See <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
      * >AdminLinkProviderForUser</a>.
      * </p>
@@ -360,9 +359,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <code>ProviderAttributeValue</code> must be the name that is used in the user pool for the user.
      * </p>
      * <p>
-     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social identity providers.
-     * The <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was
-     * originally linked as a source user.
+     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social IdPs. The
+     * <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was originally
+     * linked as a source user.
      * </p>
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign in,
@@ -385,12 +384,11 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Prevents the user from signing in with the specified external (SAML or social) identity provider. If the user
-     * that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use their
-     * password to sign in. If the user to deactivate is a linked external identity provider (IdP) user, any link
-     * between that user and an existing user is removed. When the external user signs in again, and the user is no
-     * longer attached to the previously linked <code>DestinationUser</code>, the user must create a new user account.
-     * See <a href=
+     * Prevents the user from signing in with the specified external (SAML or social) identity provider (IdP). If the
+     * user that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use
+     * their password to sign in. If the user to deactivate is a linked external IdP user, any link between that user
+     * and an existing user is removed. When the external user signs in again, and the user is no longer attached to the
+     * previously linked <code>DestinationUser</code>, the user must create a new user account. See <a href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
      * >AdminLinkProviderForUser</a>.
      * </p>
@@ -406,9 +404,9 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <code>ProviderAttributeValue</code> must be the name that is used in the user pool for the user.
      * </p>
      * <p>
-     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social identity providers.
-     * The <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was
-     * originally linked as a source user.
+     * The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code> for social IdPs. The
+     * <code>ProviderAttributeValue</code> must always be the exact subject that was used when the user was originally
+     * linked as a source user.
      * </p>
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign in,
@@ -708,11 +706,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external
-     * identity provider (<code>SourceUser</code>) based on a specified attribute name and value from the external
-     * identity provider. This allows you to create a link from the existing user account to an external federated user
-     * identity that has not yet been used to sign in. You can then use the federated user identity to sign in as the
-     * existing user account.
+     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external IdP
+     * (<code>SourceUser</code>) based on a specified attribute name and value from the external IdP. This allows you to
+     * create a link from the existing user account to an external federated user identity that has not yet been used to
+     * sign in. You can then use the federated user identity to sign in as the existing user account.
      * </p>
      * <p>
      * For example, if there is an existing user with a username and password, this API links that user to a federated
@@ -720,13 +717,13 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * </p>
      * <note>
      * <p>
-     * The maximum number of federated identities linked to a user is 5.
+     * The maximum number of federated identities linked to a user is five.
      * </p>
      * </note> <important>
      * <p>
      * Because this API allows a user with an external federated identity to sign in as an existing user in the user
-     * pool, it is critical that it only be used with external identity providers and provider attributes that have been
-     * trusted by the application owner.
+     * pool, it is critical that it only be used with external IdPs and provider attributes that have been trusted by
+     * the application owner.
      * </p>
      * </important>
      * <p>
@@ -743,11 +740,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external
-     * identity provider (<code>SourceUser</code>) based on a specified attribute name and value from the external
-     * identity provider. This allows you to create a link from the existing user account to an external federated user
-     * identity that has not yet been used to sign in. You can then use the federated user identity to sign in as the
-     * existing user account.
+     * Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external IdP
+     * (<code>SourceUser</code>) based on a specified attribute name and value from the external IdP. This allows you to
+     * create a link from the existing user account to an external federated user identity that has not yet been used to
+     * sign in. You can then use the federated user identity to sign in as the existing user account.
      * </p>
      * <p>
      * For example, if there is an existing user with a username and password, this API links that user to a federated
@@ -755,13 +751,13 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * </p>
      * <note>
      * <p>
-     * The maximum number of federated identities linked to a user is 5.
+     * The maximum number of federated identities linked to a user is five.
      * </p>
      * </note> <important>
      * <p>
      * Because this API allows a user with an external federated identity to sign in as an existing user in the user
-     * pool, it is critical that it only be used with external identity providers and provider attributes that have been
-     * trusted by the application owner.
+     * pool, it is critical that it only be used with external IdPs and provider attributes that have been trusted by
+     * the application owner.
      * </p>
      * </important>
      * <p>
@@ -1395,9 +1391,11 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Signs out users from all devices, as an administrator. It also invalidates all refresh tokens issued to a user.
-     * The user's current access and Id tokens remain valid until their expiry. Access and Id tokens expire one hour
-     * after they're issued.
+     * Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code> requests with Amazon Web
+     * Services credentials. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. The user's
+     * current access and ID tokens remain valid until they expire. By default, access and ID tokens expire one hour
+     * after they're issued. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the
+     * cookie validity period of 1 hour.
      * </p>
      * <p>
      * Calling this action requires developer credentials.
@@ -1414,9 +1412,11 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Signs out users from all devices, as an administrator. It also invalidates all refresh tokens issued to a user.
-     * The user's current access and Id tokens remain valid until their expiry. Access and Id tokens expire one hour
-     * after they're issued.
+     * Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code> requests with Amazon Web
+     * Services credentials. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. The user's
+     * current access and ID tokens remain valid until they expire. By default, access and ID tokens expire one hour
+     * after they're issued. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the
+     * cookie validity period of 1 hour.
      * </p>
      * <p>
      * Calling this action requires developer credentials.
@@ -1586,7 +1586,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Confirms registration of a user and handles the existing alias from a previous user.
+     * Confirms registration of a new user.
      * </p>
      * 
      * @param confirmSignUpRequest
@@ -1600,7 +1600,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Confirms registration of a user and handles the existing alias from a previous user.
+     * Confirms registration of a new user.
      * </p>
      * 
      * @param confirmSignUpRequest
@@ -1656,7 +1656,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Creates an identity provider for a user pool.
+     * Creates an IdP for a user pool.
      * </p>
      * 
      * @param createIdentityProviderRequest
@@ -1669,7 +1669,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Creates an identity provider for a user pool.
+     * Creates an IdP for a user pool.
      * </p>
      * 
      * @param createIdentityProviderRequest
@@ -1935,7 +1935,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Deletes an identity provider for a user pool.
+     * Deletes an IdP for a user pool.
      * </p>
      * 
      * @param deleteIdentityProviderRequest
@@ -1948,7 +1948,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Deletes an identity provider for a user pool.
+     * Deletes an IdP for a user pool.
      * </p>
      * 
      * @param deleteIdentityProviderRequest
@@ -2160,7 +2160,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Gets information about a specific identity provider.
+     * Gets information about a specific IdP.
      * </p>
      * 
      * @param describeIdentityProviderRequest
@@ -2173,7 +2173,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Gets information about a specific identity provider.
+     * Gets information about a specific IdP.
      * </p>
      * 
      * @param describeIdentityProviderRequest
@@ -2610,7 +2610,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Gets the specified identity provider.
+     * Gets the specified IdP.
      * </p>
      * 
      * @param getIdentityProviderByIdentifierRequest
@@ -2625,7 +2625,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Gets the specified identity provider.
+     * Gets the specified IdP.
      * </p>
      * 
      * @param getIdentityProviderByIdentifierRequest
@@ -2748,7 +2748,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Gets the user attribute verification code for the specified attribute name.
+     * Generates a user attribute verification code for the specified attribute name. Sends a message to a user with a
+     * code that they must return in a VerifyUserAttribute request.
      * </p>
      * <note>
      * <p>
@@ -2783,7 +2784,8 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Gets the user attribute verification code for the specified attribute name.
+     * Generates a user attribute verification code for the specified attribute name. Sends a message to a user with a
+     * code that they must return in a VerifyUserAttribute request.
      * </p>
      * <note>
      * <p>
@@ -2854,8 +2856,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Signs out users from all devices. It also invalidates all refresh tokens issued to a user. The user's current
-     * access and ID tokens remain valid until their expiry. Access and Id tokens expire one hour after they're issued.
+     * Signs out users from all devices. It also invalidates all refresh tokens that Amazon Cognito has issued to a
+     * user. The user's current access and ID tokens remain valid until their expiry. By default, access and ID tokens
+     * expire one hour after Amazon Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens
+     * for the duration of the cookie validity period of 1 hour.
      * </p>
      * 
      * @param globalSignOutRequest
@@ -2869,8 +2873,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Signs out users from all devices. It also invalidates all refresh tokens issued to a user. The user's current
-     * access and ID tokens remain valid until their expiry. Access and Id tokens expire one hour after they're issued.
+     * Signs out users from all devices. It also invalidates all refresh tokens that Amazon Cognito has issued to a
+     * user. The user's current access and ID tokens remain valid until their expiry. By default, access and ID tokens
+     * expire one hour after Amazon Cognito issues them. A user can still use a hosted UI cookie to retrieve new tokens
+     * for the duration of the cookie validity period of 1 hour.
      * </p>
      * 
      * @param globalSignOutRequest
@@ -2889,7 +2895,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Initiates the authentication flow.
+     * Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign in a user with a federated IdP
+     * with <code>InitiateAuth</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+     * Adding user pool sign-in through a third party</a>.
      * </p>
      * <note>
      * <p>
@@ -2922,7 +2931,10 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Initiates the authentication flow.
+     * Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign in a user with a federated IdP
+     * with <code>InitiateAuth</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+     * Adding user pool sign-in through a third party</a>.
      * </p>
      * <note>
      * <p>
@@ -2960,7 +2972,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Lists the devices.
+     * Lists the sign-in devices that Amazon Cognito has registered to the current user.
      * </p>
      * 
      * @param listDevicesRequest
@@ -2974,7 +2986,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Lists the devices.
+     * Lists the sign-in devices that Amazon Cognito has registered to the current user.
      * </p>
      * 
      * @param listDevicesRequest
@@ -3030,7 +3042,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Lists information about all identity providers for a user pool.
+     * Lists information about all IdPs for a user pool.
      * </p>
      * 
      * @param listIdentityProvidersRequest
@@ -3043,7 +3055,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Lists information about all identity providers for a user pool.
+     * Lists information about all IdPs for a user pool.
      * </p>
      * 
      * @param listIdentityProvidersRequest
@@ -4064,7 +4076,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Updates identity provider information for a user pool.
+     * Updates IdP information for a user pool.
      * </p>
      * 
      * @param updateIdentityProviderRequest
@@ -4077,7 +4089,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Updates identity provider information for a user pool.
+     * Updates IdP information for a user pool.
      * </p>
      * 
      * @param updateIdentityProviderRequest
@@ -4479,6 +4491,12 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
      * <p>
      * Verifies the specified user attributes in the user pool.
      * </p>
+     * <p>
+     * If your user pool requires verification before Amazon Cognito updates the attribute value, VerifyUserAttribute
+     * updates the affected attribute to its pending value. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html"
+     * > UserAttributeUpdateSettingsType</a>.
+     * </p>
      * 
      * @param verifyUserAttributeRequest
      *        Represents the request to verify user attributes.
@@ -4492,6 +4510,12 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
     /**
      * <p>
      * Verifies the specified user attributes in the user pool.
+     * </p>
+     * <p>
+     * If your user pool requires verification before Amazon Cognito updates the attribute value, VerifyUserAttribute
+     * updates the affected attribute to its pending value. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserAttributeUpdateSettingsType.html"
+     * > UserAttributeUpdateSettingsType</a>.
      * </p>
      * 
      * @param verifyUserAttributeRequest

@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contextual data, such as the user's device fingerprint, IP address, or location, used for evaluating the risk of an
- * unexpected event by Amazon Cognito advanced security.
+ * Information that your app generates about a user's <code>AdminInitiateAuth</code> or
+ * <code>AdminRespondToAuthChallenge</code> session. Amazon Cognito advanced security features calculate risk levels for
+ * user sessions based on this context data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UserContextDataType" target="_top">AWS

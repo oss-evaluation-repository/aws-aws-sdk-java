@@ -120,6 +120,10 @@ public class UserPoolTypeJsonUnmarshaller implements Unmarshaller<UserPoolType, 
                     context.nextToken();
                     userPoolType.setSmsAuthenticationMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UserAttributeUpdateSettings", targetDepth)) {
+                    context.nextToken();
+                    userPoolType.setUserAttributeUpdateSettings(UserAttributeUpdateSettingsTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("MfaConfiguration", targetDepth)) {
                     context.nextToken();
                     userPoolType.setMfaConfiguration(context.getUnmarshaller(String.class).unmarshall(context));

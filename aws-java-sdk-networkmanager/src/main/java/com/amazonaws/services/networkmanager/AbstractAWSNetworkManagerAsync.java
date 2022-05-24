@@ -803,6 +803,21 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            ListOrganizationServiceAccessStatusRequest request) {
+
+        return listOrganizationServiceAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            ListOrganizationServiceAccessStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOrganizationServiceAccessStatusRequest, ListOrganizationServiceAccessStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -878,6 +893,21 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     public java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
             RestoreCoreNetworkPolicyVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreCoreNetworkPolicyVersionRequest, RestoreCoreNetworkPolicyVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            StartOrganizationServiceAccessUpdateRequest request) {
+
+        return startOrganizationServiceAccessUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            StartOrganizationServiceAccessUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartOrganizationServiceAccessUpdateRequest, StartOrganizationServiceAccessUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

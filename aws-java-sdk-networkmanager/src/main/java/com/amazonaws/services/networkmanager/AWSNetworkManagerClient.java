@@ -51,8 +51,8 @@ import com.amazonaws.services.networkmanager.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
- * your Amazon Web Services and on-premises networks that are built around transit gateways.
+ * Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit
+ * Gateway network across Amazon Web Services accounts, Regions, and on-premises locations.
  * </p>
  */
 @ThreadSafe
@@ -302,10 +302,10 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
      * associated with the specified device.
      * </p>
      * <p>
-     * You can only associate customer gateways that are connected to a VPN attachment on a transit gateway. The transit
-     * gateway must be registered in your global network. When you register a transit gateway, customer gateways that
-     * are connected to the transit gateway are automatically included in the global network. To list customer gateways
-     * that are connected to a transit gateway, use the <a
+     * You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core
+     * network registered in your global network. When you register a transit gateway or core network, customer gateways
+     * that are connected to the transit gateway are automatically included in the global network. To list customer
+     * gateways that are connected to a transit gateway, use the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html"
      * >DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.
      * </p>
@@ -610,7 +610,7 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * Creates a core network Connect peer for a specified core network connect attachment between a core network and an
      * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
      * </p>
      * 
@@ -1098,7 +1098,7 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network.
      * </p>
      * 
      * @param createSiteToSiteVpnAttachmentRequest
@@ -1647,8 +1647,8 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites)
-     * and deregister all transit gateways.
+     * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites),
+     * deregister all transit gateways, and delete any core networks.
      * </p>
      * 
      * @param deleteGlobalNetworkRequest
@@ -2674,7 +2674,7 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns information about a core network. By default it returns the LIVE policy.
+     * Returns information about the LIVE policy for a core network.
      * </p>
      * 
      * @param getCoreNetworkRequest
@@ -4193,6 +4193,61 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * @param listOrganizationServiceAccessStatusRequest
+     * @return Result of the ListOrganizationServiceAccessStatus operation returned by the service.
+     * @sample AWSNetworkManager.ListOrganizationServiceAccessStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListOrganizationServiceAccessStatusResult listOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOrganizationServiceAccessStatus(request);
+    }
+
+    @SdkInternalApi
+    final ListOrganizationServiceAccessStatusResult executeListOrganizationServiceAccessStatus(
+            ListOrganizationServiceAccessStatusRequest listOrganizationServiceAccessStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOrganizationServiceAccessStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOrganizationServiceAccessStatusRequest> request = null;
+        Response<ListOrganizationServiceAccessStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOrganizationServiceAccessStatusRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listOrganizationServiceAccessStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationServiceAccessStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOrganizationServiceAccessStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListOrganizationServiceAccessStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Lists the tags for a specified resource.
      * </p>
@@ -4597,6 +4652,74 @@ public class AWSNetworkManagerClient extends AmazonWebServiceClient implements A
             HttpResponseHandler<AmazonWebServiceResponse<RestoreCoreNetworkPolicyVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RestoreCoreNetworkPolicyVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param startOrganizationServiceAccessUpdateRequest
+     * @return Result of the StartOrganizationServiceAccessUpdate operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints.
+     * @throws ServiceQuotaExceededException
+     *         A service limit was exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Updating or deleting the resource can cause an inconsistent
+     *         state.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request has failed due to an internal error.
+     * @sample AWSNetworkManager.StartOrganizationServiceAccessUpdate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartOrganizationServiceAccessUpdateResult startOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartOrganizationServiceAccessUpdate(request);
+    }
+
+    @SdkInternalApi
+    final StartOrganizationServiceAccessUpdateResult executeStartOrganizationServiceAccessUpdate(
+            StartOrganizationServiceAccessUpdateRequest startOrganizationServiceAccessUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startOrganizationServiceAccessUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartOrganizationServiceAccessUpdateRequest> request = null;
+        Response<StartOrganizationServiceAccessUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartOrganizationServiceAccessUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startOrganizationServiceAccessUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "NetworkManager");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartOrganizationServiceAccessUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartOrganizationServiceAccessUpdateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartOrganizationServiceAccessUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

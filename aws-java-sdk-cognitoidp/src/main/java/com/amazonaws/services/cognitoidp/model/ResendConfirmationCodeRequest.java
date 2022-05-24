@@ -56,7 +56,8 @@ public class ResendConfirmationCodeRequest extends com.amazonaws.AmazonWebServic
     private String username;
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code>
+     * calls.
      * </p>
      */
     private AnalyticsMetadataType analyticsMetadata;
@@ -278,12 +279,13 @@ public class ResendConfirmationCodeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code>
+     * calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code>
-     *        calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for
+     *        <code>ResendConfirmationCode</code> calls.
      */
 
     public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
@@ -292,11 +294,12 @@ public class ResendConfirmationCodeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code>
+     * calls.
      * </p>
      * 
-     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code>
-     *         calls.
+     * @return The Amazon Pinpoint analytics metadata that contributes to your metrics for
+     *         <code>ResendConfirmationCode</code> calls.
      */
 
     public AnalyticsMetadataType getAnalyticsMetadata() {
@@ -305,12 +308,13 @@ public class ResendConfirmationCodeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ResendConfirmationCode</code>
+     * calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ResendConfirmationCode</code>
-     *        calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for
+     *        <code>ResendConfirmationCode</code> calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

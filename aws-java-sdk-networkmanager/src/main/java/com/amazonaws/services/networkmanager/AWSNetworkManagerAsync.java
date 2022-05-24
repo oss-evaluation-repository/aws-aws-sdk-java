@@ -26,8 +26,8 @@ import com.amazonaws.services.networkmanager.model.*;
  * </p>
  * <p>
  * <p>
- * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
- * your Amazon Web Services and on-premises networks that are built around transit gateways.
+ * Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit
+ * Gateway network across Amazon Web Services accounts, Regions, and on-premises locations.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -117,10 +117,10 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      * associated with the specified device.
      * </p>
      * <p>
-     * You can only associate customer gateways that are connected to a VPN attachment on a transit gateway. The transit
-     * gateway must be registered in your global network. When you register a transit gateway, customer gateways that
-     * are connected to the transit gateway are automatically included in the global network. To list customer gateways
-     * that are connected to a transit gateway, use the <a
+     * You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core
+     * network registered in your global network. When you register a transit gateway or core network, customer gateways
+     * that are connected to the transit gateway are automatically included in the global network. To list customer
+     * gateways that are connected to a transit gateway, use the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html"
      * >DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.
      * </p>
@@ -142,10 +142,10 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
      * associated with the specified device.
      * </p>
      * <p>
-     * You can only associate customer gateways that are connected to a VPN attachment on a transit gateway. The transit
-     * gateway must be registered in your global network. When you register a transit gateway, customer gateways that
-     * are connected to the transit gateway are automatically included in the global network. To list customer gateways
-     * that are connected to a transit gateway, use the <a
+     * You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core
+     * network registered in your global network. When you register a transit gateway or core network, customer gateways
+     * that are connected to the transit gateway are automatically included in the global network. To list customer
+     * gateways that are connected to a transit gateway, use the <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html"
      * >DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.
      * </p>
@@ -295,7 +295,7 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * Creates a core network Connect peer for a specified core network connect attachment between a core network and an
      * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
      * </p>
      * 
@@ -309,7 +309,7 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Creates a core network connect peer for a specified core network connect attachment between a core network and an
+     * Creates a core network Connect peer for a specified core network connect attachment between a core network and an
      * appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
      * </p>
      * 
@@ -520,7 +520,7 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network.
      * </p>
      * 
      * @param createSiteToSiteVpnAttachmentRequest
@@ -535,7 +535,7 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Creates a site-to-site VPN attachment on an edge location of a core network.
+     * Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network.
      * </p>
      * 
      * @param createSiteToSiteVpnAttachmentRequest
@@ -778,8 +778,8 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites)
-     * and deregister all transit gateways.
+     * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites),
+     * deregister all transit gateways, and delete any core networks.
      * </p>
      * 
      * @param deleteGlobalNetworkRequest
@@ -792,8 +792,8 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites)
-     * and deregister all transit gateways.
+     * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites),
+     * deregister all transit gateways, and delete any core networks.
      * </p>
      * 
      * @param deleteGlobalNetworkRequest
@@ -1267,7 +1267,7 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Returns information about a core network. By default it returns the LIVE policy.
+     * Returns information about the LIVE policy for a core network.
      * </p>
      * 
      * @param getCoreNetworkRequest
@@ -1280,7 +1280,7 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
 
     /**
      * <p>
-     * Returns information about a core network. By default it returns the LIVE policy.
+     * Returns information about the LIVE policy for a core network.
      * </p>
      * 
      * @param getCoreNetworkRequest
@@ -2023,6 +2023,35 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
             com.amazonaws.handlers.AsyncHandler<ListCoreNetworksRequest, ListCoreNetworksResult> asyncHandler);
 
     /**
+     * @param listOrganizationServiceAccessStatusRequest
+     * @return A Java Future containing the result of the ListOrganizationServiceAccessStatus operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.ListOrganizationServiceAccessStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            ListOrganizationServiceAccessStatusRequest listOrganizationServiceAccessStatusRequest);
+
+    /**
+     * @param listOrganizationServiceAccessStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOrganizationServiceAccessStatus operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.ListOrganizationServiceAccessStatus
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/ListOrganizationServiceAccessStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            ListOrganizationServiceAccessStatusRequest listOrganizationServiceAccessStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOrganizationServiceAccessStatusRequest, ListOrganizationServiceAccessStatusResult> asyncHandler);
+
+    /**
      * <p>
      * Lists the tags for a specified resource.
      * </p>
@@ -2219,6 +2248,35 @@ public interface AWSNetworkManagerAsync extends AWSNetworkManager {
     java.util.concurrent.Future<RestoreCoreNetworkPolicyVersionResult> restoreCoreNetworkPolicyVersionAsync(
             RestoreCoreNetworkPolicyVersionRequest restoreCoreNetworkPolicyVersionRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreCoreNetworkPolicyVersionRequest, RestoreCoreNetworkPolicyVersionResult> asyncHandler);
+
+    /**
+     * @param startOrganizationServiceAccessUpdateRequest
+     * @return A Java Future containing the result of the StartOrganizationServiceAccessUpdate operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsync.StartOrganizationServiceAccessUpdate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            StartOrganizationServiceAccessUpdateRequest startOrganizationServiceAccessUpdateRequest);
+
+    /**
+     * @param startOrganizationServiceAccessUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartOrganizationServiceAccessUpdate operation returned by the
+     *         service.
+     * @sample AWSNetworkManagerAsyncHandler.StartOrganizationServiceAccessUpdate
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/networkmanager-2019-07-05/StartOrganizationServiceAccessUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            StartOrganizationServiceAccessUpdateRequest startOrganizationServiceAccessUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartOrganizationServiceAccessUpdateRequest, StartOrganizationServiceAccessUpdateResult> asyncHandler);
 
     /**
      * <p>

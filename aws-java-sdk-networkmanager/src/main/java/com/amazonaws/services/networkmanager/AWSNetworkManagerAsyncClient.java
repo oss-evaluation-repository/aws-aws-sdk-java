@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
- * your Amazon Web Services and on-premises networks that are built around transit gateways.
+ * Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit
+ * Gateway network across Amazon Web Services accounts, Regions, and on-premises locations.
  * </p>
  */
 @ThreadSafe
@@ -2035,6 +2035,41 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            ListOrganizationServiceAccessStatusRequest request) {
+
+        return listOrganizationServiceAccessStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOrganizationServiceAccessStatusResult> listOrganizationServiceAccessStatusAsync(
+            final ListOrganizationServiceAccessStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListOrganizationServiceAccessStatusRequest, ListOrganizationServiceAccessStatusResult> asyncHandler) {
+        final ListOrganizationServiceAccessStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListOrganizationServiceAccessStatusResult>() {
+            @Override
+            public ListOrganizationServiceAccessStatusResult call() throws Exception {
+                ListOrganizationServiceAccessStatusResult result = null;
+
+                try {
+                    result = executeListOrganizationServiceAccessStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -2219,6 +2254,41 @@ public class AWSNetworkManagerAsyncClient extends AWSNetworkManagerClient implem
 
                 try {
                     result = executeRestoreCoreNetworkPolicyVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            StartOrganizationServiceAccessUpdateRequest request) {
+
+        return startOrganizationServiceAccessUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartOrganizationServiceAccessUpdateResult> startOrganizationServiceAccessUpdateAsync(
+            final StartOrganizationServiceAccessUpdateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartOrganizationServiceAccessUpdateRequest, StartOrganizationServiceAccessUpdateResult> asyncHandler) {
+        final StartOrganizationServiceAccessUpdateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartOrganizationServiceAccessUpdateResult>() {
+            @Override
+            public StartOrganizationServiceAccessUpdateResult call() throws Exception {
+                StartOrganizationServiceAccessUpdateResult result = null;
+
+                try {
+                    result = executeStartOrganizationServiceAccessUpdate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

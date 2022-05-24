@@ -48,28 +48,58 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean generateSecret;
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     * The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the
+     * time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>
+     * , or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access
+     * and ID tokens for 10 days.
+     * </p>
+     * <p>
+     * The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     * <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of
+     * 30 days. <i>Valid range</i> is displayed below in seconds.
      * </p>
      */
     private Integer refreshTokenValidity;
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The access token time limit. After this limit expires, your user can't use their access token. To specify the
+     * time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>,
+     * or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code>
+     * to <code>hours</code>, your user can authorize access with their access token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      */
     private Integer accessTokenValidity;
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit
+     * for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as
+     * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      */
     private Integer idTokenValidity;
     /**
      * <p>
-     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
-     * access tokens are hours.
+     * The units in which the validity times are represented. The default unit for RefreshToken is days, and default for
+     * ID and access tokens are hours.
      * </p>
      */
     private TokenValidityUnitsType tokenValidityUnits;
@@ -84,13 +114,12 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * The user pool attributes that the app client can write to.
      * </p>
      * <p>
-     * If your app client allows users to sign in through an identity provider, this array must include all attributes
-     * that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in
-     * to your application through an identity provider. If your app client does not have write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a
-     * href=
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     * >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      */
     private java.util.List<String> writeAttributes;
@@ -138,18 +167,23 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
+     * </p>
      */
     private java.util.List<String> explicitAuthFlows;
     /**
      * <p>
-     * A list of provider names for the identity providers that are supported on this client. The following are
-     * supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.
+     * A list of provider names for the IdPs that this client supports. The following are supported:
+     * <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of
+     * your own SAML and OIDC providers.
      * </p>
      */
     private java.util.List<String> supportedIdentityProviders;
     /**
      * <p>
-     * A list of allowed redirect (callback) URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the IdPs.
      * </p>
      * <p>
      * A redirect URI must:
@@ -184,7 +218,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> callbackURLs;
     /**
      * <p>
-     * A list of allowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the IdPs.
      * </p>
      */
     private java.util.List<String> logoutURLs;
@@ -227,24 +261,34 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The allowed OAuth flows.
      * </p>
+     * <dl>
+     * <dt>code</dt>
+     * <dd>
      * <p>
-     * Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response.
-     * This code can be exchanged for access tokens with the token endpoint.
+     * Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for
+     * access tokens with the <code>/oauth2/token</code> endpoint.
      * </p>
+     * </dd>
+     * <dt>implicit</dt>
+     * <dd>
      * <p>
-     * Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token,
-     * based on scopes) directly.
+     * Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      * </p>
+     * </dd>
+     * <dt>client_credentials</dt>
+     * <dd>
      * <p>
-     * Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally,
-     * ID token, based on scopes) from the token endpoint using a combination of client and client_secret.
+     * Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.
      * </p>
+     * </dd>
+     * </dl>
      */
     private java.util.List<String> allowedOAuthFlows;
     /**
      * <p>
-     * The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * </p>
      */
@@ -442,11 +486,35 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     * The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the
+     * time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>
+     * , or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access
+     * and ID tokens for 10 days.
+     * </p>
+     * <p>
+     * The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     * <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of
+     * 30 days. <i>Valid range</i> is displayed below in seconds.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     *        The refresh token time limit. After this limit expires, your user can't use their refresh token. To
+     *        specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     *        <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *        request.</p>
+     *        <p>
+     *        For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     *        <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new
+     *        access and ID tokens for 10 days.
+     *        </p>
+     *        <p>
+     *        The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     *        <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default
+     *        value of 30 days. <i>Valid range</i> is displayed below in seconds.
      */
 
     public void setRefreshTokenValidity(Integer refreshTokenValidity) {
@@ -455,10 +523,34 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     * The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the
+     * time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>
+     * , or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access
+     * and ID tokens for 10 days.
+     * </p>
+     * <p>
+     * The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     * <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of
+     * 30 days. <i>Valid range</i> is displayed below in seconds.
      * </p>
      * 
-     * @return The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     * @return The refresh token time limit. After this limit expires, your user can't use their refresh token. To
+     *         specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>
+     *         , <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *         request.</p>
+     *         <p>
+     *         For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     *         <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve
+     *         new access and ID tokens for 10 days.
+     *         </p>
+     *         <p>
+     *         The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     *         <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default
+     *         value of 30 days. <i>Valid range</i> is displayed below in seconds.
      */
 
     public Integer getRefreshTokenValidity() {
@@ -467,11 +559,35 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     * The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the
+     * time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>
+     * , or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     * <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new access
+     * and ID tokens for 10 days.
+     * </p>
+     * <p>
+     * The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     * <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default value of
+     * 30 days. <i>Valid range</i> is displayed below in seconds.
      * </p>
      * 
      * @param refreshTokenValidity
-     *        The time limit, in days, after which the refresh token is no longer valid and can't be used.
+     *        The refresh token time limit. After this limit expires, your user can't use their refresh token. To
+     *        specify the time unit for <code>RefreshTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     *        <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *        request.</p>
+     *        <p>
+     *        For example, when you set <code>RefreshTokenValidity</code> as <code>10</code> and
+     *        <code>TokenValidityUnits</code> as <code>days</code>, your user can refresh their session and retrieve new
+     *        access and ID tokens for 10 days.
+     *        </p>
+     *        <p>
+     *        The default time unit for <code>RefreshTokenValidity</code> in an API request is days. You can't set
+     *        <code>RefreshTokenValidity</code> to 0. If you do, Amazon Cognito overrides the value with the default
+     *        value of 30 days. <i>Valid range</i> is displayed below in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,13 +598,32 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The access token time limit. After this limit expires, your user can't use their access token. To specify the
+     * time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>,
+     * or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code>
+     * to <code>hours</code>, your user can authorize access with their access token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      * 
      * @param accessTokenValidity
-     *        The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be
-     *        used. If you supply a TokenValidityUnits value, you will override the default time unit.
+     *        The access token time limit. After this limit expires, your user can't use their access token. To specify
+     *        the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     *        <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *        request.</p>
+     *        <p>
+     *        For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and
+     *        <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access
+     *        token for 10 hours.
+     *        </p>
+     *        <p>
+     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     *        is displayed below in seconds.
      */
 
     public void setAccessTokenValidity(Integer accessTokenValidity) {
@@ -497,12 +632,31 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The access token time limit. After this limit expires, your user can't use their access token. To specify the
+     * time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>,
+     * or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code>
+     * to <code>hours</code>, your user can authorize access with their access token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      * 
-     * @return The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be
-     *         used. If you supply a TokenValidityUnits value, you will override the default time unit.
+     * @return The access token time limit. After this limit expires, your user can't use their access token. To specify
+     *         the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     *         <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *         request.</p>
+     *         <p>
+     *         For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and
+     *         <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access
+     *         token for 10 hours.
+     *         </p>
+     *         <p>
+     *         The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     *         is displayed below in seconds.
      */
 
     public Integer getAccessTokenValidity() {
@@ -511,13 +665,32 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The access token time limit. After this limit expires, your user can't use their access token. To specify the
+     * time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>,
+     * or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and <code>TokenValidityUnits</code>
+     * to <code>hours</code>, your user can authorize access with their access token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      * 
      * @param accessTokenValidity
-     *        The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be
-     *        used. If you supply a TokenValidityUnits value, you will override the default time unit.
+     *        The access token time limit. After this limit expires, your user can't use their access token. To specify
+     *        the time unit for <code>AccessTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     *        <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *        request.</p>
+     *        <p>
+     *        For example, when you set <code>AccessTokenValidity</code> to <code>10</code> and
+     *        <code>TokenValidityUnits</code> to <code>hours</code>, your user can authorize access with their access
+     *        token for 10 hours.
+     *        </p>
+     *        <p>
+     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     *        is displayed below in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,13 +701,31 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit
+     * for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as
+     * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      * 
      * @param idTokenValidity
-     *        The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be
-     *        used. If you supply a TokenValidityUnits value, you will override the default time unit.
+     *        The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time
+     *        unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>,
+     *        or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+     *        <p>
+     *        For example, when you set <code>IdTokenValidity</code> as <code>10</code> and
+     *        <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their
+     *        ID token for 10 hours.
+     *        </p>
+     *        <p>
+     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     *        is displayed below in seconds.
      */
 
     public void setIdTokenValidity(Integer idTokenValidity) {
@@ -543,12 +734,31 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit
+     * for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as
+     * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      * 
-     * @return The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be
-     *         used. If you supply a TokenValidityUnits value, you will override the default time unit.
+     * @return The ID token time limit. After this limit expires, your user can't use their ID token. To specify the
+     *         time unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>,
+     *         <code>hours</code>, or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API
+     *         request.</p>
+     *         <p>
+     *         For example, when you set <code>IdTokenValidity</code> as <code>10</code> and
+     *         <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with
+     *         their ID token for 10 hours.
+     *         </p>
+     *         <p>
+     *         The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     *         is displayed below in seconds.
      */
 
     public Integer getIdTokenValidity() {
@@ -557,13 +767,31 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be used.
-     * If you supply a TokenValidityUnits value, you will override the default time unit.
+     * The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit
+     * for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
+     * <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.
+     * </p>
+     * <p>
+     * For example, when you set <code>IdTokenValidity</code> as <code>10</code> and <code>TokenValidityUnits</code> as
+     * <code>hours</code>, your user can authenticate their session with their ID token for 10 hours.
+     * </p>
+     * <p>
+     * The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i> is
+     * displayed below in seconds.
      * </p>
      * 
      * @param idTokenValidity
-     *        The time limit, between 5 minutes and 1 day, after which the access token is no longer valid and can't be
-     *        used. If you supply a TokenValidityUnits value, you will override the default time unit.
+     *        The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time
+     *        unit for <code>IdTokenValidity</code> as <code>seconds</code>, <code>minutes</code>, <code>hours</code>,
+     *        or <code>days</code>, set a <code>TokenValidityUnits</code> value in your API request.</p>
+     *        <p>
+     *        For example, when you set <code>IdTokenValidity</code> as <code>10</code> and
+     *        <code>TokenValidityUnits</code> as <code>hours</code>, your user can authenticate their session with their
+     *        ID token for 10 hours.
+     *        </p>
+     *        <p>
+     *        The default time unit for <code>AccessTokenValidity</code> in an API request is hours. <i>Valid range</i>
+     *        is displayed below in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,13 +802,13 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
-     * access tokens are hours.
+     * The units in which the validity times are represented. The default unit for RefreshToken is days, and default for
+     * ID and access tokens are hours.
      * </p>
      * 
      * @param tokenValidityUnits
-     *        The units in which the validity times are represented. Default for RefreshToken is days, and default for
-     *        ID and access tokens are hours.
+     *        The units in which the validity times are represented. The default unit for RefreshToken is days, and
+     *        default for ID and access tokens are hours.
      */
 
     public void setTokenValidityUnits(TokenValidityUnitsType tokenValidityUnits) {
@@ -589,12 +817,12 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
-     * access tokens are hours.
+     * The units in which the validity times are represented. The default unit for RefreshToken is days, and default for
+     * ID and access tokens are hours.
      * </p>
      * 
-     * @return The units in which the validity times are represented. Default for RefreshToken is days, and default for
-     *         ID and access tokens are hours.
+     * @return The units in which the validity times are represented. The default unit for RefreshToken is days, and
+     *         default for ID and access tokens are hours.
      */
 
     public TokenValidityUnitsType getTokenValidityUnits() {
@@ -603,13 +831,13 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The units in which the validity times are represented. Default for RefreshToken is days, and default for ID and
-     * access tokens are hours.
+     * The units in which the validity times are represented. The default unit for RefreshToken is days, and default for
+     * ID and access tokens are hours.
      * </p>
      * 
      * @param tokenValidityUnits
-     *        The units in which the validity times are represented. Default for RefreshToken is days, and default for
-     *        ID and access tokens are hours.
+     *        The units in which the validity times are represented. The default unit for RefreshToken is days, and
+     *        default for ID and access tokens are hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -693,24 +921,22 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * The user pool attributes that the app client can write to.
      * </p>
      * <p>
-     * If your app client allows users to sign in through an identity provider, this array must include all attributes
-     * that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in
-     * to your application through an identity provider. If your app client does not have write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a
-     * href=
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     * >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
      * @return The user pool attributes that the app client can write to.</p>
      *         <p>
-     *         If your app client allows users to sign in through an identity provider, this array must include all
-     *         attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes
-     *         when users sign in to your application through an identity provider. If your app client does not have
-     *         write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     *         For more information, see <a href=
+     *         If your app client allows users to sign in through an IdP, this array must include all attributes that
+     *         you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *         application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *         Cognito throws an error when it tries to update the attribute. For more information, see <a href=
      *         "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     *         >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     *         >Specifying IdP Attribute Mappings for Your user pool</a>.
      */
 
     public java.util.List<String> getWriteAttributes() {
@@ -722,25 +948,23 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * The user pool attributes that the app client can write to.
      * </p>
      * <p>
-     * If your app client allows users to sign in through an identity provider, this array must include all attributes
-     * that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in
-     * to your application through an identity provider. If your app client does not have write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a
-     * href=
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     * >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
      * @param writeAttributes
      *        The user pool attributes that the app client can write to.</p>
      *        <p>
-     *        If your app client allows users to sign in through an identity provider, this array must include all
-     *        attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes
-     *        when users sign in to your application through an identity provider. If your app client does not have
-     *        write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     *        For more information, see <a href=
+     *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
+     *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *        application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *        Cognito throws an error when it tries to update the attribute. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     *        >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     *        >Specifying IdP Attribute Mappings for Your user pool</a>.
      */
 
     public void setWriteAttributes(java.util.Collection<String> writeAttributes) {
@@ -757,13 +981,12 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * The user pool attributes that the app client can write to.
      * </p>
      * <p>
-     * If your app client allows users to sign in through an identity provider, this array must include all attributes
-     * that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in
-     * to your application through an identity provider. If your app client does not have write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a
-     * href=
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     * >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -774,13 +997,12 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * @param writeAttributes
      *        The user pool attributes that the app client can write to.</p>
      *        <p>
-     *        If your app client allows users to sign in through an identity provider, this array must include all
-     *        attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes
-     *        when users sign in to your application through an identity provider. If your app client does not have
-     *        write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     *        For more information, see <a href=
+     *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
+     *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *        application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *        Cognito throws an error when it tries to update the attribute. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     *        >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     *        >Specifying IdP Attribute Mappings for Your user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -799,25 +1021,23 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * The user pool attributes that the app client can write to.
      * </p>
      * <p>
-     * If your app client allows users to sign in through an identity provider, this array must include all attributes
-     * that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes when users sign in
-     * to your application through an identity provider. If your app client does not have write access to a mapped
-     * attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see <a
-     * href=
+     * If your app client allows users to sign in through an IdP, this array must include all attributes that you have
+     * mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through
+     * an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when
+     * it tries to update the attribute. For more information, see <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     * >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     * >Specifying IdP Attribute Mappings for Your user pool</a>.
      * </p>
      * 
      * @param writeAttributes
      *        The user pool attributes that the app client can write to.</p>
      *        <p>
-     *        If your app client allows users to sign in through an identity provider, this array must include all
-     *        attributes that you have mapped to identity provider attributes. Amazon Cognito updates mapped attributes
-     *        when users sign in to your application through an identity provider. If your app client does not have
-     *        write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute.
-     *        For more information, see <a href=
+     *        If your app client allows users to sign in through an IdP, this array must include all attributes that you
+     *        have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your
+     *        application through an IdP. If your app client does not have write access to a mapped attribute, Amazon
+     *        Cognito throws an error when it tries to update the attribute. For more information, see <a href=
      *        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
-     *        >Specifying Identity Provider Attribute Mappings for Your user pool</a>.
+     *        >Specifying IdP Attribute Mappings for Your user pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -870,6 +1090,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
+     * </p>
      * 
      * @return The authentication flows that are supported by the user pool clients. Flow names without the
      *         <code>ALLOW_</code> prefix are no longer supported, in favor of new names with the <code>ALLOW_</code>
@@ -911,6 +1135,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     *         <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
      * @see ExplicitAuthFlowsType
      */
 
@@ -962,6 +1190,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
+     * </p>
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
@@ -1004,6 +1236,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     *        <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
      * @see ExplicitAuthFlowsType
      */
 
@@ -1061,6 +1297,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * </ul>
      * <p>
+     * If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExplicitAuthFlows(java.util.Collection)} or {@link #withExplicitAuthFlows(java.util.Collection)} if
      * you want to override the existing values.
@@ -1107,6 +1347,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     *        <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
@@ -1165,6 +1409,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
+     * </p>
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
@@ -1207,6 +1455,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     *        <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
@@ -1260,6 +1512,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     * <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
+     * </p>
      * 
      * @param explicitAuthFlows
      *        The authentication flows that are supported by the user pool clients. Flow names without the
@@ -1302,6 +1558,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>ALLOW_REFRESH_TOKEN_AUTH</code>: Enable authflow to refresh tokens.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value for <code>ExplicitAuthFlows</code>, your app client activates the
+     *        <code>ALLOW_USER_SRP_AUTH</code> and <code>ALLOW_CUSTOM_AUTH</code> authentication flows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExplicitAuthFlowsType
      */
@@ -1321,13 +1581,14 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of provider names for the identity providers that are supported on this client. The following are
-     * supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.
+     * A list of provider names for the IdPs that this client supports. The following are supported:
+     * <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of
+     * your own SAML and OIDC providers.
      * </p>
      * 
-     * @return A list of provider names for the identity providers that are supported on this client. The following are
-     *         supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and
-     *         <code>LoginWithAmazon</code>.
+     * @return A list of provider names for the IdPs that this client supports. The following are supported:
+     *         <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the
+     *         names of your own SAML and OIDC providers.
      */
 
     public java.util.List<String> getSupportedIdentityProviders() {
@@ -1336,14 +1597,15 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of provider names for the identity providers that are supported on this client. The following are
-     * supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.
+     * A list of provider names for the IdPs that this client supports. The following are supported:
+     * <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of
+     * your own SAML and OIDC providers.
      * </p>
      * 
      * @param supportedIdentityProviders
-     *        A list of provider names for the identity providers that are supported on this client. The following are
-     *        supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and
-     *        <code>LoginWithAmazon</code>.
+     *        A list of provider names for the IdPs that this client supports. The following are supported:
+     *        <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the
+     *        names of your own SAML and OIDC providers.
      */
 
     public void setSupportedIdentityProviders(java.util.Collection<String> supportedIdentityProviders) {
@@ -1357,8 +1619,9 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of provider names for the identity providers that are supported on this client. The following are
-     * supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.
+     * A list of provider names for the IdPs that this client supports. The following are supported:
+     * <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of
+     * your own SAML and OIDC providers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1367,9 +1630,9 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param supportedIdentityProviders
-     *        A list of provider names for the identity providers that are supported on this client. The following are
-     *        supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and
-     *        <code>LoginWithAmazon</code>.
+     *        A list of provider names for the IdPs that this client supports. The following are supported:
+     *        <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the
+     *        names of your own SAML and OIDC providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1385,14 +1648,15 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of provider names for the identity providers that are supported on this client. The following are
-     * supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and <code>LoginWithAmazon</code>.
+     * A list of provider names for the IdPs that this client supports. The following are supported:
+     * <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the names of
+     * your own SAML and OIDC providers.
      * </p>
      * 
      * @param supportedIdentityProviders
-     *        A list of provider names for the identity providers that are supported on this client. The following are
-     *        supported: <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> and
-     *        <code>LoginWithAmazon</code>.
+     *        A list of provider names for the IdPs that this client supports. The following are supported:
+     *        <code>COGNITO</code>, <code>Facebook</code>, <code>Google</code> <code>LoginWithAmazon</code>, and the
+     *        names of your own SAML and OIDC providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1403,7 +1667,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed redirect (callback) URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the IdPs.
      * </p>
      * <p>
      * A redirect URI must:
@@ -1435,7 +1699,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * App callback URLs such as myapp://example are also supported.
      * </p>
      * 
-     * @return A list of allowed redirect (callback) URLs for the identity providers.</p>
+     * @return A list of allowed redirect (callback) URLs for the IdPs.</p>
      *         <p>
      *         A redirect URI must:
      *         </p>
@@ -1472,7 +1736,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed redirect (callback) URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the IdPs.
      * </p>
      * <p>
      * A redirect URI must:
@@ -1505,7 +1769,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param callbackURLs
-     *        A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *        A list of allowed redirect (callback) URLs for the IdPs.</p>
      *        <p>
      *        A redirect URI must:
      *        </p>
@@ -1547,7 +1811,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed redirect (callback) URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the IdPs.
      * </p>
      * <p>
      * A redirect URI must:
@@ -1585,7 +1849,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param callbackURLs
-     *        A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *        A list of allowed redirect (callback) URLs for the IdPs.</p>
      *        <p>
      *        A redirect URI must:
      *        </p>
@@ -1629,7 +1893,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed redirect (callback) URLs for the identity providers.
+     * A list of allowed redirect (callback) URLs for the IdPs.
      * </p>
      * <p>
      * A redirect URI must:
@@ -1662,7 +1926,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param callbackURLs
-     *        A list of allowed redirect (callback) URLs for the identity providers.</p>
+     *        A list of allowed redirect (callback) URLs for the IdPs.</p>
      *        <p>
      *        A redirect URI must:
      *        </p>
@@ -1701,10 +1965,10 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the IdPs.
      * </p>
      * 
-     * @return A list of allowed logout URLs for the identity providers.
+     * @return A list of allowed logout URLs for the IdPs.
      */
 
     public java.util.List<String> getLogoutURLs() {
@@ -1713,11 +1977,11 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the IdPs.
      * </p>
      * 
      * @param logoutURLs
-     *        A list of allowed logout URLs for the identity providers.
+     *        A list of allowed logout URLs for the IdPs.
      */
 
     public void setLogoutURLs(java.util.Collection<String> logoutURLs) {
@@ -1731,7 +1995,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the IdPs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1740,7 +2004,7 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param logoutURLs
-     *        A list of allowed logout URLs for the identity providers.
+     *        A list of allowed logout URLs for the IdPs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1756,11 +2020,11 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of allowed logout URLs for the identity providers.
+     * A list of allowed logout URLs for the IdPs.
      * </p>
      * 
      * @param logoutURLs
-     *        A list of allowed logout URLs for the identity providers.
+     *        A list of allowed logout URLs for the IdPs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1984,32 +2248,51 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The allowed OAuth flows.
      * </p>
+     * <dl>
+     * <dt>code</dt>
+     * <dd>
      * <p>
-     * Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response.
-     * This code can be exchanged for access tokens with the token endpoint.
+     * Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for
+     * access tokens with the <code>/oauth2/token</code> endpoint.
      * </p>
+     * </dd>
+     * <dt>implicit</dt>
+     * <dd>
      * <p>
-     * Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token,
-     * based on scopes) directly.
+     * Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      * </p>
+     * </dd>
+     * <dt>client_credentials</dt>
+     * <dd>
      * <p>
-     * Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally,
-     * ID token, based on scopes) from the token endpoint using a combination of client and client_secret.
+     * Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @return The allowed OAuth flows.</p>
+     *         <dl>
+     *         <dt>code</dt>
+     *         <dd>
      *         <p>
-     *         Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the
-     *         response. This code can be exchanged for access tokens with the token endpoint.
+     *         Use a code grant flow, which provides an authorization code as the response. This code can be exchanged
+     *         for access tokens with the <code>/oauth2/token</code> endpoint.
      *         </p>
+     *         </dd>
+     *         <dt>implicit</dt>
+     *         <dd>
      *         <p>
-     *         Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID
-     *         token, based on scopes) directly.
+     *         Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      *         </p>
+     *         </dd>
+     *         <dt>client_credentials</dt>
+     *         <dd>
      *         <p>
-     *         Set to <code>client_credentials</code> to specify that the client should get the access token (and,
-     *         optionally, ID token, based on scopes) from the token endpoint using a combination of client and
-     *         client_secret.
+     *         Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     *         combination of the client ID and client secret.
+     *         </p>
+     *         </dd>
      * @see OAuthFlowType
      */
 
@@ -2021,33 +2304,52 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The allowed OAuth flows.
      * </p>
+     * <dl>
+     * <dt>code</dt>
+     * <dd>
      * <p>
-     * Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response.
-     * This code can be exchanged for access tokens with the token endpoint.
+     * Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for
+     * access tokens with the <code>/oauth2/token</code> endpoint.
      * </p>
+     * </dd>
+     * <dt>implicit</dt>
+     * <dd>
      * <p>
-     * Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token,
-     * based on scopes) directly.
+     * Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      * </p>
+     * </dd>
+     * <dt>client_credentials</dt>
+     * <dd>
      * <p>
-     * Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally,
-     * ID token, based on scopes) from the token endpoint using a combination of client and client_secret.
+     * Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param allowedOAuthFlows
      *        The allowed OAuth flows.</p>
+     *        <dl>
+     *        <dt>code</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the
-     *        response. This code can be exchanged for access tokens with the token endpoint.
+     *        Use a code grant flow, which provides an authorization code as the response. This code can be exchanged
+     *        for access tokens with the <code>/oauth2/token</code> endpoint.
      *        </p>
+     *        </dd>
+     *        <dt>implicit</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID
-     *        token, based on scopes) directly.
+     *        Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      *        </p>
+     *        </dd>
+     *        <dt>client_credentials</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>client_credentials</code> to specify that the client should get the access token (and,
-     *        optionally, ID token, based on scopes) from the token endpoint using a combination of client and
-     *        client_secret.
+     *        Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     *        combination of the client ID and client secret.
+     *        </p>
+     *        </dd>
      * @see OAuthFlowType
      */
 
@@ -2064,18 +2366,28 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The allowed OAuth flows.
      * </p>
+     * <dl>
+     * <dt>code</dt>
+     * <dd>
      * <p>
-     * Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response.
-     * This code can be exchanged for access tokens with the token endpoint.
+     * Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for
+     * access tokens with the <code>/oauth2/token</code> endpoint.
      * </p>
+     * </dd>
+     * <dt>implicit</dt>
+     * <dd>
      * <p>
-     * Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token,
-     * based on scopes) directly.
+     * Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      * </p>
+     * </dd>
+     * <dt>client_credentials</dt>
+     * <dd>
      * <p>
-     * Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally,
-     * ID token, based on scopes) from the token endpoint using a combination of client and client_secret.
+     * Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.
      * </p>
+     * </dd>
+     * </dl>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAllowedOAuthFlows(java.util.Collection)} or {@link #withAllowedOAuthFlows(java.util.Collection)} if
@@ -2084,18 +2396,27 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param allowedOAuthFlows
      *        The allowed OAuth flows.</p>
+     *        <dl>
+     *        <dt>code</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the
-     *        response. This code can be exchanged for access tokens with the token endpoint.
+     *        Use a code grant flow, which provides an authorization code as the response. This code can be exchanged
+     *        for access tokens with the <code>/oauth2/token</code> endpoint.
      *        </p>
+     *        </dd>
+     *        <dt>implicit</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID
-     *        token, based on scopes) directly.
+     *        Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      *        </p>
+     *        </dd>
+     *        <dt>client_credentials</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>client_credentials</code> to specify that the client should get the access token (and,
-     *        optionally, ID token, based on scopes) from the token endpoint using a combination of client and
-     *        client_secret.
+     *        Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     *        combination of the client ID and client secret.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthFlowType
      */
@@ -2114,33 +2435,52 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The allowed OAuth flows.
      * </p>
+     * <dl>
+     * <dt>code</dt>
+     * <dd>
      * <p>
-     * Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response.
-     * This code can be exchanged for access tokens with the token endpoint.
+     * Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for
+     * access tokens with the <code>/oauth2/token</code> endpoint.
      * </p>
+     * </dd>
+     * <dt>implicit</dt>
+     * <dd>
      * <p>
-     * Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token,
-     * based on scopes) directly.
+     * Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      * </p>
+     * </dd>
+     * <dt>client_credentials</dt>
+     * <dd>
      * <p>
-     * Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally,
-     * ID token, based on scopes) from the token endpoint using a combination of client and client_secret.
+     * Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param allowedOAuthFlows
      *        The allowed OAuth flows.</p>
+     *        <dl>
+     *        <dt>code</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the
-     *        response. This code can be exchanged for access tokens with the token endpoint.
+     *        Use a code grant flow, which provides an authorization code as the response. This code can be exchanged
+     *        for access tokens with the <code>/oauth2/token</code> endpoint.
      *        </p>
+     *        </dd>
+     *        <dt>implicit</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID
-     *        token, based on scopes) directly.
+     *        Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      *        </p>
+     *        </dd>
+     *        <dt>client_credentials</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>client_credentials</code> to specify that the client should get the access token (and,
-     *        optionally, ID token, based on scopes) from the token endpoint using a combination of client and
-     *        client_secret.
+     *        Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     *        combination of the client ID and client secret.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthFlowType
      */
@@ -2154,33 +2494,52 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The allowed OAuth flows.
      * </p>
+     * <dl>
+     * <dt>code</dt>
+     * <dd>
      * <p>
-     * Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the response.
-     * This code can be exchanged for access tokens with the token endpoint.
+     * Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for
+     * access tokens with the <code>/oauth2/token</code> endpoint.
      * </p>
+     * </dd>
+     * <dt>implicit</dt>
+     * <dd>
      * <p>
-     * Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID token,
-     * based on scopes) directly.
+     * Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      * </p>
+     * </dd>
+     * <dt>client_credentials</dt>
+     * <dd>
      * <p>
-     * Set to <code>client_credentials</code> to specify that the client should get the access token (and, optionally,
-     * ID token, based on scopes) from the token endpoint using a combination of client and client_secret.
+     * Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     * combination of the client ID and client secret.
      * </p>
+     * </dd>
+     * </dl>
      * 
      * @param allowedOAuthFlows
      *        The allowed OAuth flows.</p>
+     *        <dl>
+     *        <dt>code</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>code</code> to initiate a code grant flow, which provides an authorization code as the
-     *        response. This code can be exchanged for access tokens with the token endpoint.
+     *        Use a code grant flow, which provides an authorization code as the response. This code can be exchanged
+     *        for access tokens with the <code>/oauth2/token</code> endpoint.
      *        </p>
+     *        </dd>
+     *        <dt>implicit</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>implicit</code> to specify that the client should get the access token (and, optionally, ID
-     *        token, based on scopes) directly.
+     *        Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
      *        </p>
+     *        </dd>
+     *        <dt>client_credentials</dt>
+     *        <dd>
      *        <p>
-     *        Set to <code>client_credentials</code> to specify that the client should get the access token (and,
-     *        optionally, ID token, based on scopes) from the token endpoint using a combination of client and
-     *        client_secret.
+     *        Issue the access token from the <code>/oauth2/token</code> endpoint directly to a non-person user using a
+     *        combination of the client ID and client secret.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OAuthFlowType
      */
@@ -2200,13 +2559,13 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * </p>
      * 
-     * @return The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     *         <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * @return The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     *         <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      *         <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      */
 
@@ -2216,14 +2575,14 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * </p>
      * 
      * @param allowedOAuthScopes
-     *        The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     *        <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     *        The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     *        <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      *        <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      */
 
@@ -2238,8 +2597,8 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * </p>
      * <p>
@@ -2249,8 +2608,8 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param allowedOAuthScopes
-     *        The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     *        <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     *        The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     *        <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      *        <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2267,14 +2626,14 @@ public class CreateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     * The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     * <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      * <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * </p>
      * 
      * @param allowedOAuthScopes
-     *        The allowed OAuth scopes. Possible values provided by OAuth are: <code>phone</code>, <code>email</code>,
-     *        <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are:
+     *        The allowed OAuth scopes. Possible values provided by OAuth are <code>phone</code>, <code>email</code>,
+     *        <code>openid</code>, and <code>profile</code>. Possible values provided by Amazon Web Services are
      *        <code>aws.cognito.signin.user.admin</code>. Custom scopes created in Resource Servers are also supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

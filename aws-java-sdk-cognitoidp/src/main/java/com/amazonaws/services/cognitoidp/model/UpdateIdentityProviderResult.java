@@ -25,18 +25,18 @@ public class UpdateIdentityProviderResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identity provider object.
+     * The IdP object.
      * </p>
      */
     private IdentityProviderType identityProvider;
 
     /**
      * <p>
-     * The identity provider object.
+     * The IdP object.
      * </p>
      * 
      * @param identityProvider
-     *        The identity provider object.
+     *        The IdP object.
      */
 
     public void setIdentityProvider(IdentityProviderType identityProvider) {
@@ -45,10 +45,10 @@ public class UpdateIdentityProviderResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identity provider object.
+     * The IdP object.
      * </p>
      * 
-     * @return The identity provider object.
+     * @return The IdP object.
      */
 
     public IdentityProviderType getIdentityProvider() {
@@ -57,11 +57,11 @@ public class UpdateIdentityProviderResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identity provider object.
+     * The IdP object.
      * </p>
      * 
      * @param identityProvider
-     *        The identity provider object.
+     *        The IdP object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,7 +56,7 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
     private String username;
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      */
     private AnalyticsMetadataType analyticsMetadata;
@@ -279,11 +279,12 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code>
+     *        calls.
      */
 
     public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
@@ -292,10 +293,11 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      * 
-     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * @return The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code>
+     *         calls.
      */
 
     public AnalyticsMetadataType getAnalyticsMetadata() {
@@ -304,11 +306,12 @@ public class ForgotPasswordRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>ForgotPassword</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>ForgotPassword</code>
+     *        calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

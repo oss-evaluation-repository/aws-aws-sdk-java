@@ -73,9 +73,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the
-     * USERNAME in the user pool.
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user
+     * name in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -222,7 +222,7 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String clientId;
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.
      * </p>
      */
     private AnalyticsMetadataType analyticsMetadata;
@@ -279,9 +279,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the
-     * USERNAME in the user pool.
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user
+     * name in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -332,9 +332,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly.
      *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't
-     *        find the USERNAME in the user pool.
+     *        find the user name in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -392,9 +392,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the
-     * USERNAME in the user pool.
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user
+     * name in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -444,9 +444,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *         <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly.
      *         If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't
-     *         find the USERNAME in the user pool.
+     *         find the user name in the user pool.
      *         </p>
      *         </li>
      *         </ul>
@@ -504,9 +504,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the
-     * USERNAME in the user pool.
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user
+     * name in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -557,9 +557,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly.
      *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't
-     *        find the USERNAME in the user pool.
+     *        find the user name in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -619,9 +619,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the
-     * USERNAME in the user pool.
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user
+     * name in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -672,9 +672,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly.
      *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't
-     *        find the USERNAME in the user pool.
+     *        find the user name in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -732,9 +732,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly. If a
-     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the
-     * USERNAME in the user pool.
+     * <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly. If a
+     * user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't find the user
+     * name in the user pool.
      * </p>
      * </li>
      * </ul>
@@ -785,9 +785,9 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; USERNAME and PASSWORD are passed directly.
+     *        <code>USER_PASSWORD_AUTH</code>: Non-SRP authentication flow; user name and password are passed directly.
      *        If a user migration Lambda trigger is set, this flow will invoke the user migration Lambda if it doesn't
-     *        find the USERNAME in the user pool.
+     *        find the user name in the user pool.
      *        </p>
      *        </li>
      *        </ul>
@@ -1686,11 +1686,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code>
+     *        calls.
      */
 
     public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
@@ -1699,10 +1700,11 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.
      * </p>
      * 
-     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * @return The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code>
+     *         calls.
      */
 
     public AnalyticsMetadataType getAnalyticsMetadata() {
@@ -1711,11 +1713,12 @@ public class InitiateAuthRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>InitiateAuth</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>InitiateAuth</code>
+     *        calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

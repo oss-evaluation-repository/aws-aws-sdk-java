@@ -323,6 +323,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public ListOrganizationServiceAccessStatusResult listOrganizationServiceAccessStatus(ListOrganizationServiceAccessStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -349,6 +354,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public RestoreCoreNetworkPolicyVersionResult restoreCoreNetworkPolicyVersion(RestoreCoreNetworkPolicyVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartOrganizationServiceAccessUpdateResult startOrganizationServiceAccessUpdate(StartOrganizationServiceAccessUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

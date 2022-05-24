@@ -39,7 +39,7 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
     private SoftwareTokenMfaSettingsType softwareTokenMfaSettings;
     /**
      * <p>
-     * The access token for the user.
+     * A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      * </p>
      */
     private String accessToken;
@@ -126,11 +126,11 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token for the user.
+     * A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the user.
+     *        A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      */
 
     public void setAccessToken(String accessToken) {
@@ -139,10 +139,10 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token for the user.
+     * A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      * </p>
      * 
-     * @return The access token for the user.
+     * @return A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      */
 
     public String getAccessToken() {
@@ -151,11 +151,11 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The access token for the user.
+     * A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      * </p>
      * 
      * @param accessToken
-     *        The access token for the user.
+     *        A valid access token that Amazon Cognito issued to the user whose MFA preference you want to set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

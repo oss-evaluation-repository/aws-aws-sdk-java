@@ -70,7 +70,7 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private java.util.List<AttributeType> validationData;
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      * </p>
      */
     private AnalyticsMetadataType analyticsMetadata;
@@ -454,11 +454,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      */
 
     public void setAnalyticsMetadata(AnalyticsMetadataType analyticsMetadata) {
@@ -467,10 +467,10 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      * </p>
      * 
-     * @return The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * @return The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      */
 
     public AnalyticsMetadataType getAnalyticsMetadata() {
@@ -479,11 +479,11 @@ public class SignUpRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     * The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      * </p>
      * 
      * @param analyticsMetadata
-     *        The Amazon Pinpoint analytics metadata for collecting metrics for <code>SignUp</code> calls.
+     *        The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code> calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

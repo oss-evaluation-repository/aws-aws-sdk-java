@@ -82,9 +82,11 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String smsAuthenticationMessage;
+    /** <p/> */
+    private UserAttributeUpdateSettingsType userAttributeUpdateSettings;
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -579,8 +581,40 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
+     * @param userAttributeUpdateSettings
+     */
+
+    public void setUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
+        this.userAttributeUpdateSettings = userAttributeUpdateSettings;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public UserAttributeUpdateSettingsType getUserAttributeUpdateSettings() {
+        return this.userAttributeUpdateSettings;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param userAttributeUpdateSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolRequest withUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
+        setUserAttributeUpdateSettings(userAttributeUpdateSettings);
+        return this;
+    }
+
+    /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -604,7 +638,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -633,7 +667,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -656,7 +690,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return Can be one of the following values:</p>
+     * @return Possible values include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -685,7 +719,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -709,7 +743,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -740,7 +774,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -764,7 +798,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -793,7 +827,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Can be one of the following values:
+     * Possible values include:
      * </p>
      * <ul>
      * <li>
@@ -817,7 +851,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param mfaConfiguration
-     *        Can be one of the following values:</p>
+     *        Possible values include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1247,6 +1281,8 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("VerificationMessageTemplate: ").append(getVerificationMessageTemplate()).append(",");
         if (getSmsAuthenticationMessage() != null)
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
+        if (getUserAttributeUpdateSettings() != null)
+            sb.append("UserAttributeUpdateSettings: ").append(getUserAttributeUpdateSettings()).append(",");
         if (getMfaConfiguration() != null)
             sb.append("MfaConfiguration: ").append(getMfaConfiguration()).append(",");
         if (getDeviceConfiguration() != null)
@@ -1313,6 +1349,10 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getSmsAuthenticationMessage() != null && other.getSmsAuthenticationMessage().equals(this.getSmsAuthenticationMessage()) == false)
             return false;
+        if (other.getUserAttributeUpdateSettings() == null ^ this.getUserAttributeUpdateSettings() == null)
+            return false;
+        if (other.getUserAttributeUpdateSettings() != null && other.getUserAttributeUpdateSettings().equals(this.getUserAttributeUpdateSettings()) == false)
+            return false;
         if (other.getMfaConfiguration() == null ^ this.getMfaConfiguration() == null)
             return false;
         if (other.getMfaConfiguration() != null && other.getMfaConfiguration().equals(this.getMfaConfiguration()) == false)
@@ -1362,6 +1402,7 @@ public class UpdateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEmailVerificationSubject() == null) ? 0 : getEmailVerificationSubject().hashCode());
         hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributeUpdateSettings() == null) ? 0 : getUserAttributeUpdateSettings().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());

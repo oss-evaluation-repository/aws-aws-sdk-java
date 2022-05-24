@@ -121,6 +121,8 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String mfaConfiguration;
+    /** <p/> */
+    private UserAttributeUpdateSettingsType userAttributeUpdateSettings;
     /**
      * <p>
      * The device configuration.
@@ -1006,6 +1008,38 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p/>
+     * 
+     * @param userAttributeUpdateSettings
+     */
+
+    public void setUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
+        this.userAttributeUpdateSettings = userAttributeUpdateSettings;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public UserAttributeUpdateSettingsType getUserAttributeUpdateSettings() {
+        return this.userAttributeUpdateSettings;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param userAttributeUpdateSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserPoolRequest withUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
+        setUserAttributeUpdateSettings(userAttributeUpdateSettings);
+        return this;
+    }
+
+    /**
      * <p>
      * The device configuration.
      * </p>
@@ -1547,6 +1581,8 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("SmsAuthenticationMessage: ").append(getSmsAuthenticationMessage()).append(",");
         if (getMfaConfiguration() != null)
             sb.append("MfaConfiguration: ").append(getMfaConfiguration()).append(",");
+        if (getUserAttributeUpdateSettings() != null)
+            sb.append("UserAttributeUpdateSettings: ").append(getUserAttributeUpdateSettings()).append(",");
         if (getDeviceConfiguration() != null)
             sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
         if (getEmailConfiguration() != null)
@@ -1627,6 +1663,10 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getMfaConfiguration() != null && other.getMfaConfiguration().equals(this.getMfaConfiguration()) == false)
             return false;
+        if (other.getUserAttributeUpdateSettings() == null ^ this.getUserAttributeUpdateSettings() == null)
+            return false;
+        if (other.getUserAttributeUpdateSettings() != null && other.getUserAttributeUpdateSettings().equals(this.getUserAttributeUpdateSettings()) == false)
+            return false;
         if (other.getDeviceConfiguration() == null ^ this.getDeviceConfiguration() == null)
             return false;
         if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
@@ -1683,6 +1723,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getVerificationMessageTemplate() == null) ? 0 : getVerificationMessageTemplate().hashCode());
         hashCode = prime * hashCode + ((getSmsAuthenticationMessage() == null) ? 0 : getSmsAuthenticationMessage().hashCode());
         hashCode = prime * hashCode + ((getMfaConfiguration() == null) ? 0 : getMfaConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getUserAttributeUpdateSettings() == null) ? 0 : getUserAttributeUpdateSettings().hashCode());
         hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEmailConfiguration() == null) ? 0 : getEmailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSmsConfiguration() == null) ? 0 : getSmsConfiguration().hashCode());
