@@ -49,8 +49,8 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
     private String domainId;
     /**
      * <p>
-     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in the
-     * Voice ID system or when a speaker is identified as a fraudster.
+     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in
+     * Voice ID or when a speaker is identified as a fraudster.
      * </p>
      */
     private EnrollmentConfig enrollmentConfig;
@@ -70,7 +70,7 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      */
     private OutputDataConfig outputDataConfig;
@@ -224,13 +224,13 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in the
-     * Voice ID system or when a speaker is identified as a fraudster.
+     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in
+     * Voice ID or when a speaker is identified as a fraudster.
      * </p>
      * 
      * @param enrollmentConfig
      *        The enrollment config that contains details such as the action to take when a speaker is already enrolled
-     *        in the Voice ID system or when a speaker is identified as a fraudster.
+     *        in Voice ID or when a speaker is identified as a fraudster.
      */
 
     public void setEnrollmentConfig(EnrollmentConfig enrollmentConfig) {
@@ -239,12 +239,12 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in the
-     * Voice ID system or when a speaker is identified as a fraudster.
+     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in
+     * Voice ID or when a speaker is identified as a fraudster.
      * </p>
      * 
      * @return The enrollment config that contains details such as the action to take when a speaker is already enrolled
-     *         in the Voice ID system or when a speaker is identified as a fraudster.
+     *         in Voice ID or when a speaker is identified as a fraudster.
      */
 
     public EnrollmentConfig getEnrollmentConfig() {
@@ -253,13 +253,13 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in the
-     * Voice ID system or when a speaker is identified as a fraudster.
+     * The enrollment config that contains details such as the action to take when a speaker is already enrolled in
+     * Voice ID or when a speaker is identified as a fraudster.
      * </p>
      * 
      * @param enrollmentConfig
      *        The enrollment config that contains details such as the action to take when a speaker is already enrolled
-     *        in the Voice ID system or when a speaker is identified as a fraudster.
+     *        in Voice ID or when a speaker is identified as a fraudster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,12 +357,12 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      * 
      * @param outputDataConfig
      *        The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     *        include a KMS Key ID to encrypt the file.
+     *        include a KMS key ID to encrypt the file.
      */
 
     public void setOutputDataConfig(OutputDataConfig outputDataConfig) {
@@ -372,11 +372,11 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      * 
      * @return The output data config containing the S3 location where Voice ID writes the job output file; you must
-     *         also include a KMS Key ID to encrypt the file.
+     *         also include a KMS key ID to encrypt the file.
      */
 
     public OutputDataConfig getOutputDataConfig() {
@@ -386,12 +386,12 @@ public class StartSpeakerEnrollmentJobRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     * include a KMS Key ID to encrypt the file.
+     * include a KMS key ID to encrypt the file.
      * </p>
      * 
      * @param outputDataConfig
      *        The output data config containing the S3 location where Voice ID writes the job output file; you must also
-     *        include a KMS Key ID to encrypt the file.
+     *        include a KMS key ID to encrypt the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

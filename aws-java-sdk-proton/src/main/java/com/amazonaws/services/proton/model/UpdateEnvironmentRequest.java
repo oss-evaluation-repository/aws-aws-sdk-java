@@ -27,6 +27,22 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     */
+    private String componentRoleArn;
+    /**
+     * <p>
      * There are four modes for updating an environment. The <code>deploymentType</code> field defines the mode.
      * </p>
      * <dl>
@@ -129,6 +145,106 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String templateMinorVersion;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in this environment. It determines the scope of infrastructure that a component can
+     *        provision.</p>
+     *        <p>
+     *        The environment must have a <code>componentRoleArn</code> to allow directly defined components to be
+     *        associated with the environment.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in
+     *        the <i>Proton Administrator Guide</i>.
+     */
+
+    public void setComponentRoleArn(String componentRoleArn) {
+        this.componentRoleArn = componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly
+     *         defined components in this environment. It determines the scope of infrastructure that a component can
+     *         provision.</p>
+     *         <p>
+     *         The environment must have a <code>componentRoleArn</code> to allow directly defined components to be
+     *         associated with the environment.
+     *         </p>
+     *         <p>
+     *         For more information about components, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in
+     *         the <i>Proton Administrator Guide</i>.
+     */
+
+    public String getComponentRoleArn() {
+        return this.componentRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     * components in this environment. It determines the scope of infrastructure that a component can provision.
+     * </p>
+     * <p>
+     * The environment must have a <code>componentRoleArn</code> to allow directly defined components to be associated
+     * with the environment.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param componentRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
+     *        components in this environment. It determines the scope of infrastructure that a component can
+     *        provision.</p>
+     *        <p>
+     *        The environment must have a <code>componentRoleArn</code> to allow directly defined components to be
+     *        associated with the environment.
+     *        </p>
+     *        <p>
+     *        For more information about components, see <a
+     *        href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in
+     *        the <i>Proton Administrator Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentRequest withComponentRoleArn(String componentRoleArn) {
+        setComponentRoleArn(componentRoleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -909,6 +1025,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getComponentRoleArn() != null)
+            sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getDeploymentType() != null)
             sb.append("DeploymentType: ").append(getDeploymentType()).append(",");
         if (getDescription() != null)
@@ -941,6 +1059,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof UpdateEnvironmentRequest == false)
             return false;
         UpdateEnvironmentRequest other = (UpdateEnvironmentRequest) obj;
+        if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
+            return false;
+        if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
+            return false;
         if (other.getDeploymentType() == null ^ this.getDeploymentType() == null)
             return false;
         if (other.getDeploymentType() != null && other.getDeploymentType().equals(this.getDeploymentType()) == false)
@@ -986,6 +1108,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountConnectionId() == null) ? 0 : getEnvironmentAccountConnectionId().hashCode());

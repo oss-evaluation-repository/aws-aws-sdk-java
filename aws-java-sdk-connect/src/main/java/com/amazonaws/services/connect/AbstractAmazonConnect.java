@@ -133,6 +133,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateTaskTemplateResult createTaskTemplate(CreateTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUseCaseResult createUseCase(CreateUseCaseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -184,6 +189,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DeleteSecurityProfileResult deleteSecurityProfile(DeleteSecurityProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTaskTemplateResult deleteTaskTemplate(DeleteTaskTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -358,6 +368,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public GetTaskTemplateResult getTaskTemplate(GetTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAgentStatusesResult listAgentStatuses(ListAgentStatusesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -488,6 +503,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListTaskTemplatesResult listTaskTemplates(ListTaskTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUseCasesResult listUseCases(ListUseCasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -579,6 +599,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TransferContactResult transferContact(TransferContactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -709,6 +734,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTaskTemplateResult updateTaskTemplate(UpdateTaskTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -44,25 +44,8 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
     private String defaultDisplayVersion;
     /**
      * <p>
-     * A format of the package. Valid package format values are:
+     * A format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -227,44 +210,11 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A format of the package. Valid package format values are:
+     * A format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format of the package. Valid package format values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format of the package.
      * @see PackageFormat
      */
 
@@ -274,43 +224,10 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A format of the package. Valid package format values are:
+     * A format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A format of the package. Valid package format values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return A format of the package.
      * @see PackageFormat
      */
 
@@ -320,44 +237,11 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A format of the package. Valid package format values are:
+     * A format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format of the package. Valid package format values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -369,44 +253,11 @@ public class ListPackageVersionsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * A format of the package. Valid package format values are:
+     * A format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format of the package. Valid package format values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

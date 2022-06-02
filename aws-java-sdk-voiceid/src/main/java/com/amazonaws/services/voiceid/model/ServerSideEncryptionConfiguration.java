@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration containing information about the customer-managed KMS Key used for encrypting customer data.
+ * The configuration containing information about the customer managed key used for encrypting customer data.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ServerSideEncryptionConfiguration"
@@ -30,18 +30,18 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     *        The identifier of the KMS key you want Voice ID to use to encrypt your data.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -50,10 +50,10 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
      * </p>
      * 
-     * @return The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     * @return The identifier of the KMS key you want Voice ID to use to encrypt your data.
      */
 
     public String getKmsKeyId() {
@@ -62,11 +62,11 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the KMS Key you want Voice ID to use to encrypt your data.
+     *        The identifier of the KMS key you want Voice ID to use to encrypt your data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -303,6 +303,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTaskTemplateResult> createTaskTemplateAsync(CreateTaskTemplateRequest request) {
+
+        return createTaskTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTaskTemplateResult> createTaskTemplateAsync(CreateTaskTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTaskTemplateRequest, CreateTaskTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUseCaseResult> createUseCaseAsync(CreateUseCaseRequest request) {
 
         return createUseCaseAsync(request, null);
@@ -441,6 +454,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<DeleteSecurityProfileResult> deleteSecurityProfileAsync(DeleteSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSecurityProfileRequest, DeleteSecurityProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskTemplateResult> deleteTaskTemplateAsync(DeleteTaskTemplateRequest request) {
+
+        return deleteTaskTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskTemplateResult> deleteTaskTemplateAsync(DeleteTaskTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTaskTemplateRequest, DeleteTaskTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -894,6 +920,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetTaskTemplateResult> getTaskTemplateAsync(GetTaskTemplateRequest request) {
+
+        return getTaskTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTaskTemplateResult> getTaskTemplateAsync(GetTaskTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTaskTemplateRequest, GetTaskTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAgentStatusesResult> listAgentStatusesAsync(ListAgentStatusesRequest request) {
 
         return listAgentStatusesAsync(request, null);
@@ -1232,6 +1271,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListTaskTemplatesResult> listTaskTemplatesAsync(ListTaskTemplatesRequest request) {
+
+        return listTaskTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTaskTemplatesResult> listTaskTemplatesAsync(ListTaskTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTaskTemplatesRequest, ListTaskTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUseCasesResult> listUseCasesAsync(ListUseCasesRequest request) {
 
         return listUseCasesAsync(request, null);
@@ -1474,6 +1526,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferContactResult> transferContactAsync(TransferContactRequest request) {
+
+        return transferContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferContactResult> transferContactAsync(TransferContactRequest request,
+            com.amazonaws.handlers.AsyncHandler<TransferContactRequest, TransferContactResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1820,6 +1885,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     @Override
     public java.util.concurrent.Future<UpdateSecurityProfileResult> updateSecurityProfileAsync(UpdateSecurityProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSecurityProfileRequest, UpdateSecurityProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskTemplateResult> updateTaskTemplateAsync(UpdateTaskTemplateRequest request) {
+
+        return updateTaskTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskTemplateResult> updateTaskTemplateAsync(UpdateTaskTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskTemplateRequest, UpdateTaskTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

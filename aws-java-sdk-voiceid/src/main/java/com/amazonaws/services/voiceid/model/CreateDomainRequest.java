@@ -45,10 +45,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      * </p>
      */
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
@@ -184,17 +184,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+     *        The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
      *        encryption of your data. Refer to <a href=
      *        "https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"
-     *        > Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     *        > Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      */
 
     public void setServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration serverSideEncryptionConfiguration) {
@@ -203,16 +203,16 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      * </p>
      * 
-     * @return The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+     * @return The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
      *         encryption of your data. Refer to <a href=
      *         "https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"
-     *         > Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     *         > Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      */
 
     public ServerSideEncryptionConfiguration getServerSideEncryptionConfiguration() {
@@ -221,17 +221,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Refer to <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+     *        The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
      *        encryption of your data. Refer to <a href=
      *        "https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid"
-     *        > Amazon Connect VoiceID encryption at rest</a> for more details on how the KMS Key is used.
+     *        > Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS key is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

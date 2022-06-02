@@ -26,25 +26,8 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A format that specifies the type of the package that contains the returned dependencies. The valid values are:
+     * A format that specifies the type of the package that contains the returned dependencies.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -107,45 +90,11 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A format that specifies the type of the package that contains the returned dependencies. The valid values are:
+     * A format that specifies the type of the package that contains the returned dependencies.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format that specifies the type of the package that contains the returned dependencies. The valid values
-     *        are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format that specifies the type of the package that contains the returned dependencies.
      * @see PackageFormat
      */
 
@@ -155,44 +104,10 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A format that specifies the type of the package that contains the returned dependencies. The valid values are:
+     * A format that specifies the type of the package that contains the returned dependencies.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A format that specifies the type of the package that contains the returned dependencies. The valid values
-     *         are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return A format that specifies the type of the package that contains the returned dependencies.
      * @see PackageFormat
      */
 
@@ -202,45 +117,11 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A format that specifies the type of the package that contains the returned dependencies. The valid values are:
+     * A format that specifies the type of the package that contains the returned dependencies.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format that specifies the type of the package that contains the returned dependencies. The valid values
-     *        are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format that specifies the type of the package that contains the returned dependencies.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -252,45 +133,11 @@ public class ListPackageVersionDependenciesResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * A format that specifies the type of the package that contains the returned dependencies. The valid values are:
+     * A format that specifies the type of the package that contains the returned dependencies.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format that specifies the type of the package that contains the returned dependencies. The valid values
-     *        are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format that specifies the type of the package that contains the returned dependencies.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

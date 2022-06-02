@@ -108,6 +108,10 @@ public class DataSourceConfigurationJsonUnmarshaller implements Unmarshaller<Dat
                     context.nextToken();
                     dataSourceConfiguration.setJiraConfiguration(JiraConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("GitHubConfiguration", targetDepth)) {
+                    context.nextToken();
+                    dataSourceConfiguration.setGitHubConfiguration(GitHubConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

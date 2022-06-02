@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detail date for a repository that has been registered with Proton.
+ * Detailed data of a repository that has been registered with Proton.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Repository" target="_top">AWS API

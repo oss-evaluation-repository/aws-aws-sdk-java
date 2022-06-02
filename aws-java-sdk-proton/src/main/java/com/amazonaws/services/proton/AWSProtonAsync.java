@@ -300,6 +300,51 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment
+     * status).
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param cancelComponentDeploymentRequest
+     * @return A Java Future containing the result of the CancelComponentDeployment operation returned by the service.
+     * @sample AWSProtonAsync.CancelComponentDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelComponentDeploymentResult> cancelComponentDeploymentAsync(
+            CancelComponentDeploymentRequest cancelComponentDeploymentRequest);
+
+    /**
+     * <p>
+     * Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment
+     * status).
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param cancelComponentDeploymentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelComponentDeployment operation returned by the service.
+     * @sample AWSProtonAsyncHandler.CancelComponentDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelComponentDeploymentResult> cancelComponentDeploymentAsync(
+            CancelComponentDeploymentRequest cancelComponentDeploymentRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelComponentDeploymentRequest, CancelComponentDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
      * Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action, if the deployment is
      * <code>IN_PROGRESS</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the
@@ -548,6 +593,47 @@ public interface AWSProtonAsync extends AWSProton {
     java.util.concurrent.Future<CancelServicePipelineDeploymentResult> cancelServicePipelineDeploymentAsync(
             CancelServicePipelineDeploymentRequest cancelServicePipelineDeploymentRequest,
             com.amazonaws.handlers.AsyncHandler<CancelServicePipelineDeploymentRequest, CancelServicePipelineDeploymentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create an Proton component. A component is an infrastructure extension for a service instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createComponentRequest
+     * @return A Java Future containing the result of the CreateComponent operation returned by the service.
+     * @sample AWSProtonAsync.CreateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest createComponentRequest);
+
+    /**
+     * <p>
+     * Create an Proton component. A component is an infrastructure extension for a service instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateComponent operation returned by the service.
+     * @sample AWSProtonAsyncHandler.CreateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest createComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateComponentRequest, CreateComponentResult> asyncHandler);
 
     /**
      * <p>
@@ -1012,6 +1098,47 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Delete an Proton component resource.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteComponentRequest
+     * @return A Java Future containing the result of the DeleteComponent operation returned by the service.
+     * @sample AWSProtonAsync.DeleteComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest deleteComponentRequest);
+
+    /**
+     * <p>
+     * Delete an Proton component resource.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteComponent operation returned by the service.
+     * @sample AWSProtonAsyncHandler.DeleteComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest deleteComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an environment.
      * </p>
      * 
@@ -1215,8 +1342,18 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Delete a service.
+     * Delete a service, with its instances and pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service if it has any service instances that have components attached to them.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @return A Java Future containing the result of the DeleteService operation returned by the service.
@@ -1228,8 +1365,18 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Delete a service.
+     * Delete a service, with its instances and pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service if it has any service instances that have components attached to them.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @param asyncHandler
@@ -1390,7 +1537,48 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for an environment.
+     * Get detailed data for a component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param getComponentRequest
+     * @return A Java Future containing the result of the GetComponent operation returned by the service.
+     * @sample AWSProtonAsync.GetComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest getComponentRequest);
+
+    /**
+     * <p>
+     * Get detailed data for a component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param getComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetComponent operation returned by the service.
+     * @sample AWSProtonAsyncHandler.GetComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetComponentResult> getComponentAsync(GetComponentRequest getComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<GetComponentRequest, GetComponentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get detailed data for an environment.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -1403,7 +1591,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for an environment.
+     * Get detailed data for an environment.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -1421,7 +1609,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * In an environment account, view the detail data for an environment account connection.
+     * In an environment account, get the detailed data for an environment account connection.
      * </p>
      * <p>
      * For more information, see <a
@@ -1441,7 +1629,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * In an environment account, view the detail data for an environment account connection.
+     * In an environment account, get the detailed data for an environment account connection.
      * </p>
      * <p>
      * For more information, see <a
@@ -1466,7 +1654,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for an environment template.
+     * Get detailed data for an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateRequest
@@ -1479,7 +1667,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for an environment template.
+     * Get detailed data for an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateRequest
@@ -1497,7 +1685,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View detail data for a major or minor version of an environment template.
+     * Get detailed data for a major or minor version of an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateVersionRequest
@@ -1512,7 +1700,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View detail data for a major or minor version of an environment template.
+     * Get detailed data for a major or minor version of an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateVersionRequest
@@ -1620,7 +1808,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service.
+     * Get detailed data for a service.
      * </p>
      * 
      * @param getServiceRequest
@@ -1633,7 +1821,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service.
+     * Get detailed data for a service.
      * </p>
      * 
      * @param getServiceRequest
@@ -1651,8 +1839,8 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service instance. A service instance is an instantiation of service template and it runs in
-     * a specific environment.
+     * Get detailed data for a service instance. A service instance is an instantiation of service template and it runs
+     * in a specific environment.
      * </p>
      * 
      * @param getServiceInstanceRequest
@@ -1665,8 +1853,8 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service instance. A service instance is an instantiation of service template and it runs in
-     * a specific environment.
+     * Get detailed data for a service instance. A service instance is an instantiation of service template and it runs
+     * in a specific environment.
      * </p>
      * 
      * @param getServiceInstanceRequest
@@ -1684,7 +1872,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service template.
+     * Get detailed data for a service template.
      * </p>
      * 
      * @param getServiceTemplateRequest
@@ -1697,7 +1885,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service template.
+     * Get detailed data for a service template.
      * </p>
      * 
      * @param getServiceTemplateRequest
@@ -1715,7 +1903,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View detail data for a major or minor version of a service template.
+     * Get detailed data for a major or minor version of a service template.
      * </p>
      * 
      * @param getServiceTemplateVersionRequest
@@ -1729,7 +1917,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View detail data for a major or minor version of a service template.
+     * Get detailed data for a major or minor version of a service template.
      * </p>
      * 
      * @param getServiceTemplateVersionRequest
@@ -1807,6 +1995,135 @@ public interface AWSProtonAsync extends AWSProton {
      */
     java.util.concurrent.Future<GetTemplateSyncStatusResult> getTemplateSyncStatusAsync(GetTemplateSyncStatusRequest getTemplateSyncStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetTemplateSyncStatusRequest, GetTemplateSyncStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get a list of component Infrastructure as Code (IaC) outputs.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentOutputsRequest
+     * @return A Java Future containing the result of the ListComponentOutputs operation returned by the service.
+     * @sample AWSProtonAsync.ListComponentOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentOutputsResult> listComponentOutputsAsync(ListComponentOutputsRequest listComponentOutputsRequest);
+
+    /**
+     * <p>
+     * Get a list of component Infrastructure as Code (IaC) outputs.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentOutputsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListComponentOutputs operation returned by the service.
+     * @sample AWSProtonAsyncHandler.ListComponentOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentOutputsResult> listComponentOutputsAsync(ListComponentOutputsRequest listComponentOutputsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListComponentOutputsRequest, ListComponentOutputsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List provisioned resources for a component with details.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentProvisionedResourcesRequest
+     * @return A Java Future containing the result of the ListComponentProvisionedResources operation returned by the
+     *         service.
+     * @sample AWSProtonAsync.ListComponentProvisionedResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentProvisionedResourcesResult> listComponentProvisionedResourcesAsync(
+            ListComponentProvisionedResourcesRequest listComponentProvisionedResourcesRequest);
+
+    /**
+     * <p>
+     * List provisioned resources for a component with details.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentProvisionedResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListComponentProvisionedResources operation returned by the
+     *         service.
+     * @sample AWSProtonAsyncHandler.ListComponentProvisionedResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentProvisionedResourcesResult> listComponentProvisionedResourcesAsync(
+            ListComponentProvisionedResourcesRequest listComponentProvisionedResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListComponentProvisionedResourcesRequest, ListComponentProvisionedResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List components with summary data. You can filter the result list by environment, service, or a single service
+     * instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @return A Java Future containing the result of the ListComponents operation returned by the service.
+     * @sample AWSProtonAsync.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest listComponentsRequest);
+
+    /**
+     * <p>
+     * List components with summary data. You can filter the result list by environment, service, or a single service
+     * instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListComponents operation returned by the service.
+     * @sample AWSProtonAsyncHandler.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListComponentsResult> listComponentsAsync(ListComponentsRequest listComponentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListComponentsRequest, ListComponentsResult> asyncHandler);
 
     /**
      * <p>
@@ -2084,7 +2401,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View a list service instance infrastructure as code outputs with detail data.
+     * Get a list service of instance Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServiceInstanceOutputsRequest
@@ -2098,7 +2415,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View a list service instance infrastructure as code outputs with detail data.
+     * Get a list service of instance Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServiceInstanceOutputsRequest
@@ -2152,7 +2469,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * List service instances with summaries of detail data.
+     * List service instances with summary data.
      * </p>
      * 
      * @param listServiceInstancesRequest
@@ -2165,7 +2482,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * List service instances with summaries of detail data.
+     * List service instances with summary data.
      * </p>
      * 
      * @param listServiceInstancesRequest
@@ -2183,7 +2500,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View a list service pipeline infrastructure as code outputs with detail.
+     * Get a list of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServicePipelineOutputsRequest
@@ -2197,7 +2514,7 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
-     * View a list service pipeline infrastructure as code outputs with detail.
+     * Get a list of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServicePipelineOutputsRequest
@@ -2598,6 +2915,65 @@ public interface AWSProtonAsync extends AWSProton {
 
     /**
      * <p>
+     * Update a component.
+     * </p>
+     * <p>
+     * There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.
+     * </p>
+     * <note>
+     * <p>
+     * You can't update a component while its deployment status, or the deployment status of a service instance attached
+     * to it, is <code>IN_PROGRESS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param updateComponentRequest
+     * @return A Java Future containing the result of the UpdateComponent operation returned by the service.
+     * @sample AWSProtonAsync.UpdateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateComponentResult> updateComponentAsync(UpdateComponentRequest updateComponentRequest);
+
+    /**
+     * <p>
+     * Update a component.
+     * </p>
+     * <p>
+     * There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.
+     * </p>
+     * <note>
+     * <p>
+     * You can't update a component while its deployment status, or the deployment status of a service instance attached
+     * to it, is <code>IN_PROGRESS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param updateComponentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateComponent operation returned by the service.
+     * @sample AWSProtonAsyncHandler.UpdateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateComponentResult> updateComponentAsync(UpdateComponentRequest updateComponentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateComponentRequest, UpdateComponentResult> asyncHandler);
+
+    /**
+     * <p>
      * Update an environment.
      * </p>
      * <p>
@@ -2918,6 +3294,16 @@ public interface AWSProtonAsync extends AWSProton {
      * <p>
      * Edit the <code>spec</code> parameter to add or delete instances.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service instance (remove it from the spec) if it has an attached component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateServiceRequest
      * @return A Java Future containing the result of the UpdateService operation returned by the service.
@@ -2943,6 +3329,16 @@ public interface AWSProtonAsync extends AWSProton {
      * <p>
      * Edit the <code>spec</code> parameter to add or delete instances.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service instance (remove it from the spec) if it has an attached component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateServiceRequest
      * @param asyncHandler
@@ -2962,52 +3358,19 @@ public interface AWSProtonAsync extends AWSProton {
      * Update a service instance.
      * </p>
      * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
      * </p>
-     * <dl>
-     * <dt/>
-     * <dd>
+     * <note>
      * <p>
-     * <code>NONE</code>
-     * </p>
-     * <p>
-     * In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>CURRENT_VERSION</code>
+     * You can't update a service instance while its deployment status, or the deployment status of a component attached
+     * to it, is <code>IN_PROGRESS</code>.
      * </p>
      * <p>
-     * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this
-     * <code>deployment-type</code>.
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
      * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MINOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version
-     * of the current major version in use, by default. You can also specify a different minor version of the current
-     * major version in use.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MAJOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) major and
-     * minor version of the current template, by default. You can also specify a different major version that's higher
-     * than the major version in use and a minor version.
-     * </p>
-     * </dd>
-     * </dl>
+     * </note>
      * 
      * @param updateServiceInstanceRequest
      * @return A Java Future containing the result of the UpdateServiceInstance operation returned by the service.
@@ -3022,52 +3385,19 @@ public interface AWSProtonAsync extends AWSProton {
      * Update a service instance.
      * </p>
      * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
      * </p>
-     * <dl>
-     * <dt/>
-     * <dd>
+     * <note>
      * <p>
-     * <code>NONE</code>
-     * </p>
-     * <p>
-     * In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>CURRENT_VERSION</code>
+     * You can't update a service instance while its deployment status, or the deployment status of a component attached
+     * to it, is <code>IN_PROGRESS</code>.
      * </p>
      * <p>
-     * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this
-     * <code>deployment-type</code>.
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
      * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MINOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version
-     * of the current major version in use, by default. You can also specify a different minor version of the current
-     * major version in use.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MAJOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) major and
-     * minor version of the current template, by default. You can also specify a different major version that's higher
-     * than the major version in use and a minor version.
-     * </p>
-     * </dd>
-     * </dl>
+     * </note>
      * 
      * @param updateServiceInstanceRequest
      * @param asyncHandler

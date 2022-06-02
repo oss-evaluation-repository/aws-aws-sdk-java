@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The service detail data.
+ * Detailed data of an Proton service resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/Service" target="_top">AWS API
@@ -48,7 +48,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * A description of a service.
+     * A description of the service.
      * </p>
      */
     private String description;
@@ -233,11 +233,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of a service.
+     * A description of the service.
      * </p>
      * 
      * @param description
-     *        A description of a service.
+     *        A description of the service.
      */
 
     public void setDescription(String description) {
@@ -246,10 +246,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of a service.
+     * A description of the service.
      * </p>
      * 
-     * @return A description of a service.
+     * @return A description of the service.
      */
 
     public String getDescription() {
@@ -258,11 +258,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of a service.
+     * A description of the service.
      * </p>
      * 
      * @param description
-     *        A description of a service.
+     *        A description of the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,7 +45,7 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
      * data added to domain after updating the key is encrypted using the new key.
      * </p>
@@ -174,13 +174,13 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
      * data added to domain after updating the key is encrypted using the new key.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+     *        The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
      *        encryption of your data. Note that all the existing data in the domain are still encrypted using the
      *        existing key, only the data added to domain after updating the key is encrypted using the new key.
      */
@@ -191,12 +191,12 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
      * data added to domain after updating the key is encrypted using the new key.
      * </p>
      * 
-     * @return The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+     * @return The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
      *         encryption of your data. Note that all the existing data in the domain are still encrypted using the
      *         existing key, only the data added to domain after updating the key is encrypted using the new key.
      */
@@ -207,13 +207,13 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side encryption of
+     * The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side encryption of
      * your data. Note that all the existing data in the domain are still encrypted using the existing key, only the
      * data added to domain after updating the key is encrypted using the new key.
      * </p>
      * 
      * @param serverSideEncryptionConfiguration
-     *        The configuration, containing the KMS Key Identifier, to be used by Voice ID for the server-side
+     *        The configuration, containing the KMS key identifier, to be used by Voice ID for the server-side
      *        encryption of your data. Note that all the existing data in the domain are still encrypted using the
      *        existing key, only the data added to domain after updating the key is encrypted using the new key.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -32,25 +32,8 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -86,44 +69,11 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package.
      * @see PackageFormat
      */
 
@@ -133,43 +83,10 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package. Valid values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return The format of the package.
      * @see PackageFormat
      */
 
@@ -179,44 +96,11 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -228,44 +112,11 @@ public class PackageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The format of the package. Valid values are:
+     * The format of the package.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

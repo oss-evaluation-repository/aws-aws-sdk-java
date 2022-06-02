@@ -294,6 +294,37 @@ public interface AWSProton {
 
     /**
      * <p>
+     * Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment
+     * status).
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param cancelComponentDeploymentRequest
+     * @return Result of the CancelComponentDeployment operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.CancelComponentDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelComponentDeploymentResult cancelComponentDeployment(CancelComponentDeploymentRequest cancelComponentDeploymentRequest);
+
+    /**
+     * <p>
      * Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action, if the deployment is
      * <code>IN_PROGRESS</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the
@@ -440,6 +471,40 @@ public interface AWSProton {
      *      target="_top">AWS API Documentation</a>
      */
     CancelServicePipelineDeploymentResult cancelServicePipelineDeployment(CancelServicePipelineDeploymentRequest cancelServicePipelineDeploymentRequest);
+
+    /**
+     * <p>
+     * Create an Proton component. A component is an infrastructure extension for a service instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createComponentRequest
+     * @return Result of the CreateComponent operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         A quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the
+     *         <i>Proton Administrator Guide</i>.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.CreateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateComponentResult createComponent(CreateComponentRequest createComponentRequest);
 
     /**
      * <p>
@@ -779,6 +844,36 @@ public interface AWSProton {
 
     /**
      * <p>
+     * Delete an Proton component resource.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteComponentRequest
+     * @return Result of the DeleteComponent operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.DeleteComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteComponentResult deleteComponent(DeleteComponentRequest deleteComponentRequest);
+
+    /**
+     * <p>
      * Delete an environment.
      * </p>
      * 
@@ -924,8 +1019,18 @@ public interface AWSProton {
 
     /**
      * <p>
-     * Delete a service.
+     * Delete a service, with its instances and pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service if it has any service instances that have components attached to them.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @return Result of the DeleteService operation returned by the service.
@@ -1055,7 +1160,35 @@ public interface AWSProton {
 
     /**
      * <p>
-     * Get detail data for an environment.
+     * Get detailed data for a component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param getComponentRequest
+     * @return Result of the GetComponent operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.GetComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetComponentResult getComponent(GetComponentRequest getComponentRequest);
+
+    /**
+     * <p>
+     * Get detailed data for an environment.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -1078,7 +1211,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * In an environment account, view the detail data for an environment account connection.
+     * In an environment account, get the detailed data for an environment account connection.
      * </p>
      * <p>
      * For more information, see <a
@@ -1106,7 +1239,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * Get detail data for an environment template.
+     * Get detailed data for an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateRequest
@@ -1129,7 +1262,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * View detail data for a major or minor version of an environment template.
+     * Get detailed data for a major or minor version of an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateVersionRequest
@@ -1211,7 +1344,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service.
+     * Get detailed data for a service.
      * </p>
      * 
      * @param getServiceRequest
@@ -1234,8 +1367,8 @@ public interface AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service instance. A service instance is an instantiation of service template and it runs in
-     * a specific environment.
+     * Get detailed data for a service instance. A service instance is an instantiation of service template and it runs
+     * in a specific environment.
      * </p>
      * 
      * @param getServiceInstanceRequest
@@ -1258,7 +1391,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * Get detail data for a service template.
+     * Get detailed data for a service template.
      * </p>
      * 
      * @param getServiceTemplateRequest
@@ -1281,7 +1414,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * View detail data for a major or minor version of a service template.
+     * Get detailed data for a major or minor version of a service template.
      * </p>
      * 
      * @param getServiceTemplateVersionRequest
@@ -1347,6 +1480,89 @@ public interface AWSProton {
      *      API Documentation</a>
      */
     GetTemplateSyncStatusResult getTemplateSyncStatus(GetTemplateSyncStatusRequest getTemplateSyncStatusRequest);
+
+    /**
+     * <p>
+     * Get a list of component Infrastructure as Code (IaC) outputs.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentOutputsRequest
+     * @return Result of the ListComponentOutputs operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListComponentOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListComponentOutputsResult listComponentOutputs(ListComponentOutputsRequest listComponentOutputsRequest);
+
+    /**
+     * <p>
+     * List provisioned resources for a component with details.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentProvisionedResourcesRequest
+     * @return Result of the ListComponentProvisionedResources operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListComponentProvisionedResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListComponentProvisionedResourcesResult listComponentProvisionedResources(ListComponentProvisionedResourcesRequest listComponentProvisionedResourcesRequest);
+
+    /**
+     * <p>
+     * List components with summary data. You can filter the result list by environment, service, or a single service
+     * instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @return Result of the ListComponents operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListComponentsResult listComponents(ListComponentsRequest listComponentsRequest);
 
     /**
      * <p>
@@ -1534,7 +1750,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * View a list service instance infrastructure as code outputs with detail data.
+     * Get a list service of instance Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServiceInstanceOutputsRequest
@@ -1581,7 +1797,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * List service instances with summaries of detail data.
+     * List service instances with summary data.
      * </p>
      * 
      * @param listServiceInstancesRequest
@@ -1604,7 +1820,7 @@ public interface AWSProton {
 
     /**
      * <p>
-     * View a list service pipeline infrastructure as code outputs with detail.
+     * Get a list of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServicePipelineOutputsRequest
@@ -1897,6 +2113,49 @@ public interface AWSProton {
 
     /**
      * <p>
+     * Update a component.
+     * </p>
+     * <p>
+     * There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.
+     * </p>
+     * <note>
+     * <p>
+     * You can't update a component while its deployment status, or the deployment status of a service instance attached
+     * to it, is <code>IN_PROGRESS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param updateComponentRequest
+     * @return Result of the UpdateComponent operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         A quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the
+     *         <i>Proton Administrator Guide</i>.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.UpdateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateComponentResult updateComponent(UpdateComponentRequest updateComponentRequest);
+
+    /**
+     * <p>
      * Update an environment.
      * </p>
      * <p>
@@ -2098,6 +2357,16 @@ public interface AWSProton {
      * <p>
      * Edit the <code>spec</code> parameter to add or delete instances.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service instance (remove it from the spec) if it has an attached component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateServiceRequest
      * @return Result of the UpdateService operation returned by the service.
@@ -2128,52 +2397,19 @@ public interface AWSProton {
      * Update a service instance.
      * </p>
      * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
      * </p>
-     * <dl>
-     * <dt/>
-     * <dd>
+     * <note>
      * <p>
-     * <code>NONE</code>
-     * </p>
-     * <p>
-     * In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>CURRENT_VERSION</code>
+     * You can't update a service instance while its deployment status, or the deployment status of a component attached
+     * to it, is <code>IN_PROGRESS</code>.
      * </p>
      * <p>
-     * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this
-     * <code>deployment-type</code>.
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
      * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MINOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version
-     * of the current major version in use, by default. You can also specify a different minor version of the current
-     * major version in use.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MAJOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) major and
-     * minor version of the current template, by default. You can also specify a different major version that's higher
-     * than the major version in use and a minor version.
-     * </p>
-     * </dd>
-     * </dl>
+     * </note>
      * 
      * @param updateServiceInstanceRequest
      * @return Result of the UpdateServiceInstance operation returned by the service.

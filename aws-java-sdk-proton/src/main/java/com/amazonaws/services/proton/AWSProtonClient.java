@@ -297,26 +297,26 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.proton.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.proton.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.proton.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.proton.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.proton.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.proton.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.proton.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.proton.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.proton.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.proton.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.proton.model.AWSProtonException.class));
 
     public static AWSProtonClientBuilder builder() {
@@ -432,6 +432,81 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
             HttpResponseHandler<AmazonWebServiceResponse<AcceptEnvironmentAccountConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AcceptEnvironmentAccountConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment
+     * status).
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param cancelComponentDeploymentRequest
+     * @return Result of the CancelComponentDeployment operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.CancelComponentDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CancelComponentDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelComponentDeploymentResult cancelComponentDeployment(CancelComponentDeploymentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelComponentDeployment(request);
+    }
+
+    @SdkInternalApi
+    final CancelComponentDeploymentResult executeCancelComponentDeployment(CancelComponentDeploymentRequest cancelComponentDeploymentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelComponentDeploymentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelComponentDeploymentRequest> request = null;
+        Response<CancelComponentDeploymentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelComponentDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelComponentDeploymentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelComponentDeployment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelComponentDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelComponentDeploymentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -715,6 +790,82 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
             HttpResponseHandler<AmazonWebServiceResponse<CancelServicePipelineDeploymentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CancelServicePipelineDeploymentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create an Proton component. A component is an infrastructure extension for a service instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createComponentRequest
+     * @return Result of the CreateComponent operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         A quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the
+     *         <i>Proton Administrator Guide</i>.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.CreateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateComponentResult createComponent(CreateComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateComponent(request);
+    }
+
+    @SdkInternalApi
+    final CreateComponentResult executeCreateComponent(CreateComponentRequest createComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateComponentRequest> request = null;
+        Response<CreateComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateComponentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1453,6 +1604,78 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
+     * Delete an Proton component resource.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteComponentRequest
+     * @return Result of the DeleteComponent operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.DeleteComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteComponent(request);
+    }
+
+    @SdkInternalApi
+    final DeleteComponentResult executeDeleteComponent(DeleteComponentRequest deleteComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteComponentRequest> request = null;
+        Response<DeleteComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Delete an environment.
      * </p>
      * 
@@ -1815,8 +2038,18 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * Delete a service.
+     * Delete a service, with its instances and pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service if it has any service instances that have components attached to them.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param deleteServiceRequest
      * @return Result of the DeleteService operation returned by the service.
@@ -2161,7 +2394,77 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * Get detail data for an environment.
+     * Get detailed data for a component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param getComponentRequest
+     * @return Result of the GetComponent operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.GetComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetComponentResult getComponent(GetComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetComponent(request);
+    }
+
+    @SdkInternalApi
+    final GetComponentResult executeGetComponent(GetComponentRequest getComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetComponentRequest> request = null;
+        Response<GetComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get detailed data for an environment.
      * </p>
      * 
      * @param getEnvironmentRequest
@@ -2226,7 +2529,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * In an environment account, view the detail data for an environment account connection.
+     * In an environment account, get the detailed data for an environment account connection.
      * </p>
      * <p>
      * For more information, see <a
@@ -2299,7 +2602,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * Get detail data for an environment template.
+     * Get detailed data for an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateRequest
@@ -2365,7 +2668,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * View detail data for a major or minor version of an environment template.
+     * Get detailed data for a major or minor version of an environment template.
      * </p>
      * 
      * @param getEnvironmentTemplateVersionRequest
@@ -2577,7 +2880,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * Get detail data for a service.
+     * Get detailed data for a service.
      * </p>
      * 
      * @param getServiceRequest
@@ -2642,8 +2945,8 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * Get detail data for a service instance. A service instance is an instantiation of service template and it runs in
-     * a specific environment.
+     * Get detailed data for a service instance. A service instance is an instantiation of service template and it runs
+     * in a specific environment.
      * </p>
      * 
      * @param getServiceInstanceRequest
@@ -2708,7 +3011,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * Get detail data for a service template.
+     * Get detailed data for a service template.
      * </p>
      * 
      * @param getServiceTemplateRequest
@@ -2773,7 +3076,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * View detail data for a major or minor version of a service template.
+     * Get detailed data for a major or minor version of a service template.
      * </p>
      * 
      * @param getServiceTemplateVersionRequest
@@ -2960,6 +3263,218 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
             HttpResponseHandler<AmazonWebServiceResponse<GetTemplateSyncStatusResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new GetTemplateSyncStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get a list of component Infrastructure as Code (IaC) outputs.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentOutputsRequest
+     * @return Result of the ListComponentOutputs operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListComponentOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentOutputs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListComponentOutputsResult listComponentOutputs(ListComponentOutputsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListComponentOutputs(request);
+    }
+
+    @SdkInternalApi
+    final ListComponentOutputsResult executeListComponentOutputs(ListComponentOutputsRequest listComponentOutputsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listComponentOutputsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListComponentOutputsRequest> request = null;
+        Response<ListComponentOutputsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListComponentOutputsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComponentOutputsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponentOutputs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListComponentOutputsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListComponentOutputsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List provisioned resources for a component with details.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentProvisionedResourcesRequest
+     * @return Result of the ListComponentProvisionedResources operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListComponentProvisionedResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponentProvisionedResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListComponentProvisionedResourcesResult listComponentProvisionedResources(ListComponentProvisionedResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListComponentProvisionedResources(request);
+    }
+
+    @SdkInternalApi
+    final ListComponentProvisionedResourcesResult executeListComponentProvisionedResources(
+            ListComponentProvisionedResourcesRequest listComponentProvisionedResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listComponentProvisionedResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListComponentProvisionedResourcesRequest> request = null;
+        Response<ListComponentProvisionedResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListComponentProvisionedResourcesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listComponentProvisionedResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponentProvisionedResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListComponentProvisionedResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListComponentProvisionedResourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List components with summary data. You can filter the result list by environment, service, or a single service
+     * instance.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param listComponentsRequest
+     * @return Result of the ListComponents operation returned by the service.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.ListComponents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/ListComponents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListComponentsResult listComponents(ListComponentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListComponents(request);
+    }
+
+    @SdkInternalApi
+    final ListComponentsResult executeListComponents(ListComponentsRequest listComponentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listComponentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListComponentsRequest> request = null;
+        Response<ListComponentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListComponentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComponentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListComponentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListComponentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3505,7 +4020,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * View a list service instance infrastructure as code outputs with detail data.
+     * Get a list service of instance Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServiceInstanceOutputsRequest
@@ -3640,7 +4155,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * List service instances with summaries of detail data.
+     * List service instances with summary data.
      * </p>
      * 
      * @param listServiceInstancesRequest
@@ -3705,7 +4220,7 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
-     * View a list service pipeline infrastructure as code outputs with detail.
+     * Get a list of service pipeline Infrastructure as Code (IaC) outputs.
      * </p>
      * 
      * @param listServicePipelineOutputsRequest
@@ -4471,6 +4986,91 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
 
     /**
      * <p>
+     * Update a component.
+     * </p>
+     * <p>
+     * There are a few modes for updating a component. The <code>deploymentType</code> field defines the mode.
+     * </p>
+     * <note>
+     * <p>
+     * You can't update a component while its deployment status, or the deployment status of a service instance attached
+     * to it, is <code>IN_PROGRESS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * 
+     * @param updateComponentRequest
+     * @return Result of the UpdateComponent operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         A quota was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">Proton Quotas</a> in the
+     *         <i>Proton Administrator Guide</i>.
+     * @throws ValidationException
+     *         The input is invalid or an out-of-range value was supplied for the input parameter.
+     * @throws AccessDeniedException
+     *         There <i>isn't</i> sufficient access for performing this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The request <i>couldn't</i> be made due to a conflicting operation or resource.
+     * @throws ResourceNotFoundException
+     *         The requested resource <i>wasn't</i> found.
+     * @throws InternalServerException
+     *         The request failed to register with the service.
+     * @sample AWSProton.UpdateComponent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateComponent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateComponentResult updateComponent(UpdateComponentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateComponent(request);
+    }
+
+    @SdkInternalApi
+    final UpdateComponentResult executeUpdateComponent(UpdateComponentRequest updateComponentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateComponentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateComponentRequest> request = null;
+        Response<UpdateComponentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateComponentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Proton");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComponent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateComponentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateComponentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Update an environment.
      * </p>
      * <p>
@@ -4847,6 +5447,16 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * <p>
      * Edit the <code>spec</code> parameter to add or delete instances.
      * </p>
+     * <note>
+     * <p>
+     * You can't delete a service instance (remove it from the spec) if it has an attached component.
+     * </p>
+     * <p>
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateServiceRequest
      * @return Result of the UpdateService operation returned by the service.
@@ -4919,52 +5529,19 @@ public class AWSProtonClient extends AmazonWebServiceClient implements AWSProton
      * Update a service instance.
      * </p>
      * <p>
-     * There are four modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
+     * There are a few modes for updating a service instance. The <code>deploymentType</code> field defines the mode.
      * </p>
-     * <dl>
-     * <dt/>
-     * <dd>
+     * <note>
      * <p>
-     * <code>NONE</code>
-     * </p>
-     * <p>
-     * In this mode, a deployment <i>doesn't</i> occur. Only the requested metadata parameters are updated.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>CURRENT_VERSION</code>
+     * You can't update a service instance while its deployment status, or the deployment status of a component attached
+     * to it, is <code>IN_PROGRESS</code>.
      * </p>
      * <p>
-     * In this mode, the service instance is deployed and updated with the new spec that you provide. Only requested
-     * parameters are updated. <i>Don’t</i> include minor or major version parameters when you use this
-     * <code>deployment-type</code>.
+     * For more information about components, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-components.html">Proton components</a> in the
+     * <i>Proton Administrator Guide</i>.
      * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MINOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) minor version
-     * of the current major version in use, by default. You can also specify a different minor version of the current
-     * major version in use.
-     * </p>
-     * </dd>
-     * <dt/>
-     * <dd>
-     * <p>
-     * <code>MAJOR_VERSION</code>
-     * </p>
-     * <p>
-     * In this mode, the service instance is deployed and updated with the published, recommended (latest) major and
-     * minor version of the current template, by default. You can also specify a different major version that's higher
-     * than the major version in use and a minor version.
-     * </p>
-     * </dd>
-     * </dl>
+     * </note>
      * 
      * @param updateServiceInstanceRequest
      * @return Result of the UpdateServiceInstance operation returned by the service.

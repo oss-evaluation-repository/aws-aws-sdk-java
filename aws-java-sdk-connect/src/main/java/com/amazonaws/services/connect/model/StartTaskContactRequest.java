@@ -92,6 +92,18 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Date scheduledTime;
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     */
+    private String taskTemplateId;
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     */
+    private String quickConnectId;
 
     /**
      * <p>
@@ -582,6 +594,86 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     * 
+     * @param taskTemplateId
+     *        A unique identifier for the task template.
+     */
+
+    public void setTaskTemplateId(String taskTemplateId) {
+        this.taskTemplateId = taskTemplateId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     * 
+     * @return A unique identifier for the task template.
+     */
+
+    public String getTaskTemplateId() {
+        return this.taskTemplateId;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the task template.
+     * </p>
+     * 
+     * @param taskTemplateId
+     *        A unique identifier for the task template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskContactRequest withTaskTemplateId(String taskTemplateId) {
+        setTaskTemplateId(taskTemplateId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     * 
+     * @param quickConnectId
+     *        The identifier for the quick connect.
+     */
+
+    public void setQuickConnectId(String quickConnectId) {
+        this.quickConnectId = quickConnectId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     * 
+     * @return The identifier for the quick connect.
+     */
+
+    public String getQuickConnectId() {
+        return this.quickConnectId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the quick connect.
+     * </p>
+     * 
+     * @param quickConnectId
+     *        The identifier for the quick connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskContactRequest withQuickConnectId(String quickConnectId) {
+        setQuickConnectId(quickConnectId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -610,7 +702,11 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getScheduledTime() != null)
-            sb.append("ScheduledTime: ").append(getScheduledTime());
+            sb.append("ScheduledTime: ").append(getScheduledTime()).append(",");
+        if (getTaskTemplateId() != null)
+            sb.append("TaskTemplateId: ").append(getTaskTemplateId()).append(",");
+        if (getQuickConnectId() != null)
+            sb.append("QuickConnectId: ").append(getQuickConnectId());
         sb.append("}");
         return sb.toString();
     }
@@ -661,6 +757,14 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getScheduledTime() != null && other.getScheduledTime().equals(this.getScheduledTime()) == false)
             return false;
+        if (other.getTaskTemplateId() == null ^ this.getTaskTemplateId() == null)
+            return false;
+        if (other.getTaskTemplateId() != null && other.getTaskTemplateId().equals(this.getTaskTemplateId()) == false)
+            return false;
+        if (other.getQuickConnectId() == null ^ this.getQuickConnectId() == null)
+            return false;
+        if (other.getQuickConnectId() != null && other.getQuickConnectId().equals(this.getQuickConnectId()) == false)
+            return false;
         return true;
     }
 
@@ -678,6 +782,8 @@ public class StartTaskContactRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getScheduledTime() == null) ? 0 : getScheduledTime().hashCode());
+        hashCode = prime * hashCode + ((getTaskTemplateId() == null) ? 0 : getTaskTemplateId().hashCode());
+        hashCode = prime * hashCode + ((getQuickConnectId() == null) ? 0 : getQuickConnectId().hashCode());
         return hashCode;
     }
 

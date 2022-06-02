@@ -32,6 +32,12 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      */
     private String id;
     /**
@@ -89,9 +95,20 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.
+     *        A unique identifier of the document in the index.</p>
+     *        <p>
+     *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
+     *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     *        vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the
+     *        same documents, or vice versa.
      */
 
     public void setId(String id) {
@@ -102,8 +119,19 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      * 
-     * @return A unique identifier of the document in the index.
+     * @return A unique identifier of the document in the index.</p>
+     *         <p>
+     *         Note, each document ID must be unique per index. You cannot create a data source to index your documents
+     *         with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     *         vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the
+     *         same documents, or vice versa.
      */
 
     public String getId() {
@@ -114,9 +142,20 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A unique identifier of the document in the index.
      * </p>
+     * <p>
+     * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
+     * their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+     * You can delete a data source and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     * vice versa.
+     * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.
+     *        A unique identifier of the document in the index.</p>
+     *        <p>
+     *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
+     *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
+     *        vice versa. You can delete a data source and then use the <code>BatchPutDocument</code> API to index the
+     *        same documents, or vice versa.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

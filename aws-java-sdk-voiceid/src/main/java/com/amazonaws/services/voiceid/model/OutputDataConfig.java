@@ -37,8 +37,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
     private String kmsKeyId;
     /**
      * <p>
-     * The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension.
-     * For example, if the input file name is <code>input-file.json</code> and the output folder path is
+     * The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For
+     * example, if the input file name is <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
      * </p>
@@ -93,14 +93,14 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension.
-     * For example, if the input file name is <code>input-file.json</code> and the output folder path is
+     * The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For
+     * example, if the input file name is <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
      * </p>
      * 
      * @param s3Uri
-     *        The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code>
+     *        The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code>
      *        extension. For example, if the input file name is <code>input-file.json</code> and the output folder path
      *        is <code>s3://output-bucket/output-folder</code>, the full output file path is
      *        <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
@@ -112,13 +112,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension.
-     * For example, if the input file name is <code>input-file.json</code> and the output folder path is
+     * The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For
+     * example, if the input file name is <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
      * </p>
      * 
-     * @return The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code>
+     * @return The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code>
      *         extension. For example, if the input file name is <code>input-file.json</code> and the output folder path
      *         is <code>s3://output-bucket/output-folder</code>, the full output file path is
      *         <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
@@ -130,14 +130,14 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code> extension.
-     * For example, if the input file name is <code>input-file.json</code> and the output folder path is
+     * The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code> extension. For
+     * example, if the input file name is <code>input-file.json</code> and the output folder path is
      * <code>s3://output-bucket/output-folder</code>, the full output file path is
      * <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
      * </p>
      * 
      * @param s3Uri
-     *        The S3 path of the folder to which Voice ID writes the job output file, which has a <code>*.out</code>
+     *        The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code>
      *        extension. For example, if the input file name is <code>input-file.json</code> and the output folder path
      *        is <code>s3://output-bucket/output-folder</code>, the full output file path is
      *        <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.

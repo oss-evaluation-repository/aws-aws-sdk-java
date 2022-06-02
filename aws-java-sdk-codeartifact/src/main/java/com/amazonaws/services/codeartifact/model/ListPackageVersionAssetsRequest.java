@@ -33,7 +33,8 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -45,25 +46,8 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
     private String repository;
     /**
      * <p>
-     * The format of the package that contains the returned package version assets. The valid package types are:
+     * The format of the package that contains the returned package version assets.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -158,11 +142,13 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -171,11 +157,12 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -184,11 +171,13 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,46 +228,11 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The format of the package that contains the returned package version assets. The valid package types are:
+     * The format of the package that contains the returned package version assets.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that contains the returned package version assets. The valid package types are:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package that contains the returned package version assets.
      * @see PackageFormat
      */
 
@@ -288,45 +242,10 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The format of the package that contains the returned package version assets. The valid package types are:
+     * The format of the package that contains the returned package version assets.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package that contains the returned package version assets. The valid package types are:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>: A Node Package Manager (npm) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>: A Python Package Index (PyPI) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *         file.
-     *         </p>
-     *         </li>
+     * @return The format of the package that contains the returned package version assets.
      * @see PackageFormat
      */
 
@@ -336,46 +255,11 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The format of the package that contains the returned package version assets. The valid package types are:
+     * The format of the package that contains the returned package version assets.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that contains the returned package version assets. The valid package types are:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package that contains the returned package version assets.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -387,46 +271,11 @@ public class ListPackageVersionAssetsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The format of the package that contains the returned package version assets. The valid package types are:
+     * The format of the package that contains the returned package version assets.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that contains the returned package version assets. The valid package types are:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package that contains the returned package version assets.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

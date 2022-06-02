@@ -669,6 +669,30 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Creates a new task template in the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param createTaskTemplateRequest
+     * @return Result of the CreateTaskTemplate operation returned by the service.
+     * @throws PropertyValidationException
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.CreateTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTaskTemplateResult createTaskTemplate(CreateTaskTemplateRequest createTaskTemplateRequest);
+
+    /**
+     * <p>
      * Creates a use case for an integration association.
      * </p>
      * 
@@ -956,6 +980,29 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     DeleteSecurityProfileResult deleteSecurityProfile(DeleteSecurityProfileRequest deleteSecurityProfileRequest);
+
+    /**
+     * <p>
+     * Deletes the task template.
+     * </p>
+     * 
+     * @param deleteTaskTemplateRequest
+     * @return Result of the DeleteTaskTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTaskTemplateResult deleteTaskTemplate(DeleteTaskTemplateRequest deleteTaskTemplateRequest);
 
     /**
      * <p>
@@ -1826,6 +1873,29 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Gets details about a specific task template in the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param getTaskTemplateRequest
+     * @return Result of the GetTaskTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.GetTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTaskTemplateResult getTaskTemplate(GetTaskTemplateRequest getTaskTemplateRequest);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -2505,6 +2575,29 @@ public interface AmazonConnect {
 
     /**
      * <p>
+     * Lists task templates for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listTaskTemplatesRequest
+     * @return Result of the ListTaskTemplates operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListTaskTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTaskTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTaskTemplatesResult listTaskTemplates(ListTaskTemplatesRequest listTaskTemplatesRequest);
+
+    /**
+     * <p>
      * Lists the use cases for the integration association.
      * </p>
      * 
@@ -3053,7 +3146,7 @@ public interface AmazonConnect {
      * </p>
      * <p>
      * The supported resource types are users, routing profiles, queues, quick connects, contact flows, agent status,
-     * hours of operation, and phone number.
+     * hours of operation, phone number, security profiles, and task templates.
      * </p>
      * <p>
      * For sample policies that use tags, see <a
@@ -3078,6 +3171,67 @@ public interface AmazonConnect {
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You
+     * can transfer a contact to another queue by providing the contact flow which orchestrates the contact to the
+     * destination queue. This gives you more control over contact handling and helps you adhere to the service level
+     * agreement (SLA) guaranteed to your customers.
+     * </p>
+     * <p>
+     * Note the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Transfer is supported for only <code>TASK</code> contacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The following contact flow types are supported: Inbound contact flow, Transfer to agent flow, and Transfer to
+     * queue flow.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>TransferContact</code> API can be called only on active contacts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A contact cannot be transferred more than 11 times.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param transferContactRequest
+     * @return Result of the TransferContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws IdempotencyException
+     *         An entity with the same name already exists.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.TransferContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/TransferContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TransferContactResult transferContact(TransferContactRequest transferContactRequest);
 
     /**
      * <p>
@@ -3774,6 +3928,31 @@ public interface AmazonConnect {
      *      API Documentation</a>
      */
     UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest updateSecurityProfileRequest);
+
+    /**
+     * <p>
+     * Updates details about a specific task template in the specified Amazon Connect instance. This operation does not
+     * support partial updates. Instead it does a full update of template content.
+     * </p>
+     * 
+     * @param updateTaskTemplateRequest
+     * @return Result of the UpdateTaskTemplate operation returned by the service.
+     * @throws PropertyValidationException
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateTaskTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTaskTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTaskTemplateResult updateTaskTemplate(UpdateTaskTemplateRequest updateTaskTemplateRequest);
 
     /**
      * <p>

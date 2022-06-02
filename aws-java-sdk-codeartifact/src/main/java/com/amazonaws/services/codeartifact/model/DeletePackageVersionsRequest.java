@@ -33,7 +33,8 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -45,25 +46,8 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
     private String repository;
     /**
      * <p>
-     * The format of the package versions to delete. The valid values are:
+     * The format of the package versions to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -104,35 +88,8 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
     private java.util.List<String> versions;
     /**
      * <p>
-     * The expected status of the package version to delete. Valid values are:
+     * The expected status of the package version to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String expectedStatus;
 
@@ -178,11 +135,13 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -191,11 +150,12 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -204,11 +164,13 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,44 +221,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The format of the package versions to delete. The valid values are:
+     * The format of the package versions to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package versions to delete. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package versions to delete.
      * @see PackageFormat
      */
 
@@ -306,43 +235,10 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The format of the package versions to delete. The valid values are:
+     * The format of the package versions to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package versions to delete. The valid values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return The format of the package versions to delete.
      * @see PackageFormat
      */
 
@@ -352,44 +248,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The format of the package versions to delete. The valid values are:
+     * The format of the package versions to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package versions to delete. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package versions to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -401,44 +264,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The format of the package versions to delete. The valid values are:
+     * The format of the package versions to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package versions to delete. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        The format of the package versions to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -705,64 +535,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The expected status of the package version to delete. Valid values are:
+     * The expected status of the package version to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param expectedStatus
-     *        The expected status of the package version to delete. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        The expected status of the package version to delete.
      * @see PackageVersionStatus
      */
 
@@ -772,63 +549,10 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The expected status of the package version to delete. Valid values are:
+     * The expected status of the package version to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The expected status of the package version to delete. Valid values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Published</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unfinished</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unlisted</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Archived</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Disposed</code>
-     *         </p>
-     *         </li>
+     * @return The expected status of the package version to delete.
      * @see PackageVersionStatus
      */
 
@@ -838,64 +562,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The expected status of the package version to delete. Valid values are:
+     * The expected status of the package version to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param expectedStatus
-     *        The expected status of the package version to delete. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        The expected status of the package version to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */
@@ -907,64 +578,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The expected status of the package version to delete. Valid values are:
+     * The expected status of the package version to delete.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param expectedStatus
-     *        The expected status of the package version to delete. Valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        The expected status of the package version to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */

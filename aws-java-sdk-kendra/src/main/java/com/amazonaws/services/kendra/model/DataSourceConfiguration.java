@@ -114,6 +114,12 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private JiraConfiguration jiraConfiguration;
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     */
+    private GitHubConfiguration gitHubConfiguration;
 
     /**
      * <p>
@@ -702,6 +708,46 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     * 
+     * @param gitHubConfiguration
+     *        Provides the configuration information to connect to GitHub as your data source.
+     */
+
+    public void setGitHubConfiguration(GitHubConfiguration gitHubConfiguration) {
+        this.gitHubConfiguration = gitHubConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     * 
+     * @return Provides the configuration information to connect to GitHub as your data source.
+     */
+
+    public GitHubConfiguration getGitHubConfiguration() {
+        return this.gitHubConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides the configuration information to connect to GitHub as your data source.
+     * </p>
+     * 
+     * @param gitHubConfiguration
+     *        Provides the configuration information to connect to GitHub as your data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withGitHubConfiguration(GitHubConfiguration gitHubConfiguration) {
+        setGitHubConfiguration(gitHubConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -742,7 +788,9 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getQuipConfiguration() != null)
             sb.append("QuipConfiguration: ").append(getQuipConfiguration()).append(",");
         if (getJiraConfiguration() != null)
-            sb.append("JiraConfiguration: ").append(getJiraConfiguration());
+            sb.append("JiraConfiguration: ").append(getJiraConfiguration()).append(",");
+        if (getGitHubConfiguration() != null)
+            sb.append("GitHubConfiguration: ").append(getGitHubConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -817,6 +865,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getJiraConfiguration() != null && other.getJiraConfiguration().equals(this.getJiraConfiguration()) == false)
             return false;
+        if (other.getGitHubConfiguration() == null ^ this.getGitHubConfiguration() == null)
+            return false;
+        if (other.getGitHubConfiguration() != null && other.getGitHubConfiguration().equals(this.getGitHubConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -840,6 +892,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getBoxConfiguration() == null) ? 0 : getBoxConfiguration().hashCode());
         hashCode = prime * hashCode + ((getQuipConfiguration() == null) ? 0 : getQuipConfiguration().hashCode());
         hashCode = prime * hashCode + ((getJiraConfiguration() == null) ? 0 : getJiraConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGitHubConfiguration() == null) ? 0 : getGitHubConfiguration().hashCode());
         return hashCode;
     }
 

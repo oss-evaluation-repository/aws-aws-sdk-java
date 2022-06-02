@@ -30,25 +30,8 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The format of the package version. The valid package formats are:
+     * The format of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -134,79 +117,18 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
     private String revision;
     /**
      * <p>
-     * A string that contains the status of the package version. It can be one of the following:
+     * A string that contains the status of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String status;
 
     /**
      * <p>
-     * The format of the package version. The valid package formats are:
+     * The format of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package version. The valid package formats are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package version.
      * @see PackageFormat
      */
 
@@ -216,44 +138,10 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The format of the package version. The valid package formats are:
+     * The format of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package version. The valid package formats are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>: A Node Package Manager (npm) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>: A Python Package Index (PyPI) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *         file.
-     *         </p>
-     *         </li>
+     * @return The format of the package version.
      * @see PackageFormat
      */
 
@@ -263,45 +151,11 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The format of the package version. The valid package formats are:
+     * The format of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package version. The valid package formats are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -313,45 +167,11 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The format of the package version. The valid package formats are:
+     * The format of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package version. The valid package formats are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -919,64 +739,11 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A string that contains the status of the package version. It can be one of the following:
+     * A string that contains the status of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version.
      * @see PackageVersionStatus
      */
 
@@ -986,63 +753,10 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A string that contains the status of the package version. It can be one of the following:
+     * A string that contains the status of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A string that contains the status of the package version. It can be one of the following: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Published</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unfinished</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unlisted</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Archived</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Disposed</code>
-     *         </p>
-     *         </li>
+     * @return A string that contains the status of the package version.
      * @see PackageVersionStatus
      */
 
@@ -1052,64 +766,11 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A string that contains the status of the package version. It can be one of the following:
+     * A string that contains the status of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */
@@ -1121,64 +782,11 @@ public class PackageVersionDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A string that contains the status of the package version. It can be one of the following:
+     * A string that contains the status of the package version.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */

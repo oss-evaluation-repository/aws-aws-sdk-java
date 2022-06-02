@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A summary of detail data for a registered repository.
+ * Summary data of a repository that has been registered with Proton.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/RepositorySummary" target="_top">AWS API

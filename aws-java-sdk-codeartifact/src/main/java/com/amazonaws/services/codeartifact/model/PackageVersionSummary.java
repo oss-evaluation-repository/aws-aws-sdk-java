@@ -46,33 +46,6 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String status;
 
@@ -160,62 +133,9 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version. It can be one of the following:
      * @see PackageVersionStatus
      */
 
@@ -227,61 +147,8 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A string that contains the status of the package version. It can be one of the following: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>Published</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unfinished</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Unlisted</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Archived</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>Disposed</code>
-     *         </p>
-     *         </li>
+     * @return A string that contains the status of the package version. It can be one of the following:
      * @see PackageVersionStatus
      */
 
@@ -293,62 +160,9 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version. It can be one of the following:
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */
@@ -362,62 +176,9 @@ public class PackageVersionSummary implements Serializable, Cloneable, Structure
      * <p>
      * A string that contains the status of the package version. It can be one of the following:
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>Published</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unfinished</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Unlisted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Archived</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Disposed</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param status
-     *        A string that contains the status of the package version. It can be one of the following: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>Published</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unfinished</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Unlisted</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Archived</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>Disposed</code>
-     *        </p>
-     *        </li>
+     *        A string that contains the status of the package version. It can be one of the following:
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageVersionStatus
      */

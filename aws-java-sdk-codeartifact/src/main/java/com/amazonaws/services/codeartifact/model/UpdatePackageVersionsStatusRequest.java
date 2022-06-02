@@ -34,7 +34,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -46,25 +47,8 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
     private String repository;
     /**
      * <p>
-     * A format that specifies the type of the package with the statuses to update. The valid values are:
+     * A format that specifies the type of the package with the statuses to update.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -173,11 +157,13 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -186,11 +172,12 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -199,11 +186,13 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,44 +243,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A format that specifies the type of the package with the statuses to update. The valid values are:
+     * A format that specifies the type of the package with the statuses to update.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format that specifies the type of the package with the statuses to update.
      * @see PackageFormat
      */
 
@@ -301,43 +257,10 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A format that specifies the type of the package with the statuses to update. The valid values are:
+     * A format that specifies the type of the package with the statuses to update.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
+     * @return A format that specifies the type of the package with the statuses to update.
      * @see PackageFormat
      */
 
@@ -347,44 +270,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A format that specifies the type of the package with the statuses to update. The valid values are:
+     * A format that specifies the type of the package with the statuses to update.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format that specifies the type of the package with the statuses to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -396,44 +286,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A format that specifies the type of the package with the statuses to update. The valid values are:
+     * A format that specifies the type of the package with the statuses to update.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        A format that specifies the type of the package with the statuses to update. The valid values are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
+     *        A format that specifies the type of the package with the statuses to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

@@ -34,7 +34,8 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -46,25 +47,14 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
     private String repository;
     /**
      * <p>
-     * A format that specifies the type of the package version with the requested readme file. The valid values are:
+     * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * <code>npm</code>
+     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
+     * Maven packages.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      */
     private String format;
     /**
@@ -152,11 +142,13 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -165,11 +157,12 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -178,11 +171,13 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,45 +228,21 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A format that specifies the type of the package version with the requested readme file. The valid values are:
+     * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * <code>npm</code>
+     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
+     * Maven packages.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested readme file. The valid values
-     *        are: </p>
-     *        <ul>
-     *        <li>
+     *        A format that specifies the type of the package version with the requested readme file. </p> <note>
      *        <p>
-     *        <code>npm</code>
+     *        Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
+     *        files for Maven packages.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
      * @see PackageFormat
      */
 
@@ -281,44 +252,20 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A format that specifies the type of the package version with the requested readme file. The valid values are:
+     * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * <code>npm</code>
+     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
+     * Maven packages.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
-     * @return A format that specifies the type of the package version with the requested readme file. The valid values
-     *         are: </p>
-     *         <ul>
-     *         <li>
+     * @return A format that specifies the type of the package version with the requested readme file. </p> <note>
      *         <p>
-     *         <code>npm</code>
+     *         Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
+     *         files for Maven packages.
      *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>
-     *         </p>
-     *         </li>
      * @see PackageFormat
      */
 
@@ -328,45 +275,21 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A format that specifies the type of the package version with the requested readme file. The valid values are:
+     * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * <code>npm</code>
+     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
+     * Maven packages.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested readme file. The valid values
-     *        are: </p>
-     *        <ul>
-     *        <li>
+     *        A format that specifies the type of the package version with the requested readme file. </p> <note>
      *        <p>
-     *        <code>npm</code>
+     *        Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
+     *        files for Maven packages.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -378,45 +301,21 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A format that specifies the type of the package version with the requested readme file. The valid values are:
+     * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * <code>npm</code>
+     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
+     * Maven packages.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested readme file. The valid values
-     *        are: </p>
-     *        <ul>
-     *        <li>
+     *        A format that specifies the type of the package version with the requested readme file. </p> <note>
      *        <p>
-     *        <code>npm</code>
+     *        Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
+     *        files for Maven packages.
      *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

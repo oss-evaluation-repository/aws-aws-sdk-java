@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Provides the configuration information to connect to Jira as your data source.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/JiraConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -40,8 +43,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>.
+     * jira-id—The ID of the Jira account.
      * </p>
      * </li>
      * <li>
@@ -208,8 +210,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>.
+     * jira-id—The ID of the Jira account.
      * </p>
      * </li>
      * <li>
@@ -225,8 +226,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     *        <i>user@corp.example.com</i>.
+     *        jira-id—The ID of the Jira account.
      *        </p>
      *        </li>
      *        <li>
@@ -248,8 +248,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>.
+     * jira-id—The ID of the Jira account.
      * </p>
      * </li>
      * <li>
@@ -264,8 +263,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     *         <i>user@corp.example.com</i>.
+     *         jira-id—The ID of the Jira account.
      *         </p>
      *         </li>
      *         <li>
@@ -287,8 +285,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     * <i>user@corp.example.com</i>.
+     * jira-id—The ID of the Jira account.
      * </p>
      * </li>
      * <li>
@@ -304,8 +301,7 @@ public class JiraConfiguration implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        jira-id—The Active Directory user name, along with the Domain Name System (DNS) domain name. For example,
-     *        <i>user@corp.example.com</i>.
+     *        jira-id—The ID of the Jira account.
      *        </p>
      *        </li>
      *        <li>

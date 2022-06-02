@@ -33,7 +33,8 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String domain;
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      */
     private String domainOwner;
@@ -51,25 +52,8 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String destinationRepository;
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package that is copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String format;
     /**
@@ -186,11 +170,13 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      */
 
     public void setDomainOwner(String domainOwner) {
@@ -199,11 +185,12 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
-     * @return The 12-digit account number of the AWS account that owns the domain. It does not include dashes or
-     *         spaces.
+     * @return The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *         dashes or spaces.
      */
 
     public String getDomainOwner() {
@@ -212,11 +199,13 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     * The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes
+     * or spaces.
      * </p>
      * 
      * @param domainOwner
-     *        The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+     *        The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include
+     *        dashes or spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,45 +296,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package that is copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that is copied. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package that is copied.
      * @see PackageFormat
      */
 
@@ -355,44 +310,10 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package that is copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The format of the package that is copied. The valid package types are: </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>npm</code>: A Node Package Manager (npm) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>pypi</code>: A Python Package Index (PyPI) package.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *         file.
-     *         </p>
-     *         </li>
+     * @return The format of the package that is copied.
      * @see PackageFormat
      */
 
@@ -402,45 +323,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package that is copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that is copied. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package that is copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -452,45 +339,11 @@ public class CopyPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the package that is copied. The valid package types are:
+     * The format of the package that is copied.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>npm</code>: A Node Package Manager (npm) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>pypi</code>: A Python Package Index (PyPI) package.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR file.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param format
-     *        The format of the package that is copied. The valid package types are: </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>npm</code>: A Node Package Manager (npm) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>pypi</code>: A Python Package Index (PyPI) package.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>maven</code>: A Maven package that contains compiled code in a distributable format, such as a JAR
-     *        file.
-     *        </p>
-     *        </li>
+     *        The format of the package that is copied.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
