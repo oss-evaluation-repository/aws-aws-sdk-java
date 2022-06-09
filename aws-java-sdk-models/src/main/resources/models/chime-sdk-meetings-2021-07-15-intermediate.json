@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -21018,6 +21018,9 @@
       }, {
         "name" : "Auto",
         "value" : "auto"
+      }, {
+        "name" : "UsGovWest1",
+        "value" : "us-gov-west-1"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.chimesdkmeetings.enum.TranscribeRegion",
