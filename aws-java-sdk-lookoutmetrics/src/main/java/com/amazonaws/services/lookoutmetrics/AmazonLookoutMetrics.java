@@ -705,6 +705,30 @@ public interface AmazonLookoutMetrics {
 
     /**
      * <p>
+     * Make changes to an existing alert.
+     * </p>
+     * 
+     * @param updateAlertRequest
+     * @return Result of the UpdateAlert operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service. Check your input values and try
+     *         again.
+     * @throws ResourceNotFoundException
+     *         The specified resource cannot be found. Check the ARN of the resource and try again.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws TooManyRequestsException
+     *         The request was denied due to too many requests being submitted at the same time.
+     * @sample AmazonLookoutMetrics.UpdateAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAlertResult updateAlert(UpdateAlertRequest updateAlertRequest);
+
+    /**
+     * <p>
      * Updates a detector. After activation, you can only change a detector's ingestion delay and description.
      * </p>
      * 

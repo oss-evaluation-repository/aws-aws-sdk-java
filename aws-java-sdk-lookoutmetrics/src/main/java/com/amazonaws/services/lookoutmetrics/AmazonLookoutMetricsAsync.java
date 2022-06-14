@@ -914,6 +914,37 @@ public interface AmazonLookoutMetricsAsync extends AmazonLookoutMetrics {
 
     /**
      * <p>
+     * Make changes to an existing alert.
+     * </p>
+     * 
+     * @param updateAlertRequest
+     * @return A Java Future containing the result of the UpdateAlert operation returned by the service.
+     * @sample AmazonLookoutMetricsAsync.UpdateAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAlertResult> updateAlertAsync(UpdateAlertRequest updateAlertRequest);
+
+    /**
+     * <p>
+     * Make changes to an existing alert.
+     * </p>
+     * 
+     * @param updateAlertRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAlert operation returned by the service.
+     * @sample AmazonLookoutMetricsAsyncHandler.UpdateAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutmetrics-2017-07-25/UpdateAlert" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAlertResult> updateAlertAsync(UpdateAlertRequest updateAlertRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAlertRequest, UpdateAlertResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a detector. After activation, you can only change a detector's ingestion delay and description.
      * </p>
      * 

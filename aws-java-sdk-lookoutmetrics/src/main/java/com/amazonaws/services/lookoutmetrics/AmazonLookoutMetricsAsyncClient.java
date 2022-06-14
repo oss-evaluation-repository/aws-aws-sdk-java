@@ -937,6 +937,39 @@ public class AmazonLookoutMetricsAsyncClient extends AmazonLookoutMetricsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAlertResult> updateAlertAsync(UpdateAlertRequest request) {
+
+        return updateAlertAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlertResult> updateAlertAsync(final UpdateAlertRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAlertRequest, UpdateAlertResult> asyncHandler) {
+        final UpdateAlertRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAlertResult>() {
+            @Override
+            public UpdateAlertResult call() throws Exception {
+                UpdateAlertResult result = null;
+
+                try {
+                    result = executeUpdateAlert(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAnomalyDetectorResult> updateAnomalyDetectorAsync(UpdateAnomalyDetectorRequest request) {
 
         return updateAnomalyDetectorAsync(request, null);

@@ -368,6 +368,19 @@ public class AbstractAmazonLookoutMetricsAsync extends AbstractAmazonLookoutMetr
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAlertResult> updateAlertAsync(UpdateAlertRequest request) {
+
+        return updateAlertAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlertResult> updateAlertAsync(UpdateAlertRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAlertRequest, UpdateAlertResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateAnomalyDetectorResult> updateAnomalyDetectorAsync(UpdateAnomalyDetectorRequest request) {
 
         return updateAnomalyDetectorAsync(request, null);

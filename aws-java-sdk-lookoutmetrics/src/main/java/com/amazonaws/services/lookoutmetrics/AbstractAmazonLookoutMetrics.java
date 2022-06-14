@@ -158,6 +158,11 @@ public class AbstractAmazonLookoutMetrics implements AmazonLookoutMetrics {
     }
 
     @Override
+    public UpdateAlertResult updateAlert(UpdateAlertRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateAnomalyDetectorResult updateAnomalyDetector(UpdateAnomalyDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

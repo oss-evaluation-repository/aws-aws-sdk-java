@@ -45,6 +45,26 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The format of the SNS topic.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     * default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to
+     * the anomaly detail page. We recommend this for email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this
+     * for SMS.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String snsFormat;
 
@@ -132,9 +152,48 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The format of the SNS topic.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     * default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to
+     * the anomaly detail page. We recommend this for email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this
+     * for SMS.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snsFormat
-     *        The format of the SNS topic.
+     *        The format of the SNS topic.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     *        default.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a
+     *        link to the anomaly detail page. We recommend this for email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend
+     *        this for SMS.
+     *        </p>
+     *        </li>
      * @see SnsFormat
      */
 
@@ -146,8 +205,47 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The format of the SNS topic.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     * default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to
+     * the anomaly detail page. We recommend this for email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this
+     * for SMS.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The format of the SNS topic.
+     * @return The format of the SNS topic.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is
+     *         the default.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a
+     *         link to the anomaly detail page. We recommend this for email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend
+     *         this for SMS.
+     *         </p>
+     *         </li>
      * @see SnsFormat
      */
 
@@ -159,9 +257,48 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The format of the SNS topic.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     * default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to
+     * the anomaly detail page. We recommend this for email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this
+     * for SMS.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snsFormat
-     *        The format of the SNS topic.
+     *        The format of the SNS topic.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     *        default.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a
+     *        link to the anomaly detail page. We recommend this for email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend
+     *        this for SMS.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnsFormat
      */
@@ -175,9 +312,48 @@ public class SNSConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The format of the SNS topic.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     * default.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a link to
+     * the anomaly detail page. We recommend this for email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend this
+     * for SMS.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param snsFormat
-     *        The format of the SNS topic.
+     *        The format of the SNS topic.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>JSON</code> – Send JSON alerts with an anomaly ID and a link to the anomaly detail page. This is the
+     *        default.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LONG_TEXT</code> – Send human-readable alerts with information about the impacted timeseries and a
+     *        link to the anomaly detail page. We recommend this for email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SHORT_TEXT</code> – Send human-readable alerts with a link to the anomaly detail page. We recommend
+     *        this for SMS.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnsFormat
      */
