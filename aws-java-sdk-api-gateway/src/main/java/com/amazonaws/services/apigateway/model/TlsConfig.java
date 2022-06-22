@@ -34,6 +34,13 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      */
     private Boolean insecureSkipVerification;
 
@@ -46,6 +53,13 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @param insecureSkipVerification
      *        Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
@@ -53,7 +67,12 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      *        certificates that are signed by private certificate authorities, or certificates that are self-signed. If
      *        enabled, API Gateway still performs basic certificate validation, which includes checking the
      *        certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
-     *        <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.
+     *        <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *        <p>
+     *        Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *        HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *        man-in-the-middle attacks.
+     *        </p>
      */
 
     public void setInsecureSkipVerification(Boolean insecureSkipVerification) {
@@ -69,13 +88,25 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @return Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
      *         is issued by a supported certificate authority. This isn’t recommended, but it enables you to use
      *         certificates that are signed by private certificate authorities, or certificates that are self-signed. If
      *         enabled, API Gateway still performs basic certificate validation, which includes checking the
      *         certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
-     *         <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.
+     *         <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *         <p>
+     *         Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *         HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *         man-in-the-middle attacks.
+     *         </p>
      */
 
     public Boolean getInsecureSkipVerification() {
@@ -91,6 +122,13 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @param insecureSkipVerification
      *        Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
@@ -98,7 +136,12 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      *        certificates that are signed by private certificate authorities, or certificates that are self-signed. If
      *        enabled, API Gateway still performs basic certificate validation, which includes checking the
      *        certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
-     *        <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.
+     *        <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *        <p>
+     *        Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *        HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *        man-in-the-middle attacks.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,13 +159,25 @@ public class TlsConfig implements Serializable, Cloneable, StructuredPojo {
      * and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code>
      * integrations.
      * </p>
+     * <important>
+     * <p>
+     * Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS
+     * endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle
+     * attacks.
+     * </p>
+     * </important>
      * 
      * @return Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint
      *         is issued by a supported certificate authority. This isn’t recommended, but it enables you to use
      *         certificates that are signed by private certificate authorities, or certificates that are self-signed. If
      *         enabled, API Gateway still performs basic certificate validation, which includes checking the
      *         certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for
-     *         <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.
+     *         <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+     *         <p>
+     *         Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public
+     *         HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of
+     *         man-in-the-middle attacks.
+     *         </p>
      */
 
     public Boolean isInsecureSkipVerification() {

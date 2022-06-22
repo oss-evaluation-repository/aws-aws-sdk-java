@@ -30,8 +30,8 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
      * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
@@ -41,22 +41,22 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
      */
     private String passiveIp;
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -89,25 +89,25 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
     private String tlsSessionResumptionMode;
     /**
      * <p>
-     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
-     * on a file you are uploading to an S3 bucket.
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
      * </p>
      * <p>
      * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
-     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
-     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
-     * result in errors even when the file is otherwise successfully uploaded.
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
      * </p>
      * <p>
-     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
-     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
-     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
-     * determine when the client is making a SETSTAT call.
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
      * </p>
      * <note>
      * <p>
-     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
-     * can use Amazon EFS as backend storage with Transfer Family.
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      * </p>
      * </note>
      */
@@ -115,8 +115,8 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
      * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
@@ -126,16 +126,16 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
      * 
      * @param passiveIp
-     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the
-     *        external IP address of a firewall, router, or load balancer. For example: </p>
+     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP
+     *        address of a firewall, router, or load balancer. For example: </p>
      *        <p>
      *        <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
      *        </p>
@@ -144,10 +144,10 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for
-     *        the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server
+     *        for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      *        "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     *        >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     *        >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      *        </p>
      */
 
@@ -157,8 +157,8 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
      * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
@@ -168,15 +168,15 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
      * 
-     * @return Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the
-     *         external IP address of a firewall, router, or load balancer. For example: </p>
+     * @return Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP
+     *         address of a firewall, router, or load balancer. For example: </p>
      *         <p>
      *         <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
      *         </p>
@@ -185,10 +185,11 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <note>
      *         <p>
-     *         If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for
-     *         the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     *         If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family
+     *         server for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see
+     *         <a href=
      *         "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     *         >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     *         >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      *         </p>
      */
 
@@ -198,8 +199,8 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the external
-     * IP address of a firewall, router, or load balancer. For example:
+     * Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP address of
+     * a firewall, router, or load balancer. For example:
      * </p>
      * <p>
      * <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
@@ -209,16 +210,16 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <note>
      * <p>
-     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for the
-     * change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     * If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server for
+     * the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      * "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     * >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     * >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      * </p>
      * </note>
      * 
      * @param passiveIp
-     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single dotted-quad IPv4 address, such as the
-     *        external IP address of a firewall, router, or load balancer. For example: </p>
+     *        Indicates passive mode, for FTP and FTPS protocols. Enter a single IPv4 address, such as the public IP
+     *        address of a firewall, router, or load balancer. For example: </p>
      *        <p>
      *        <code> aws transfer update-server --protocol-details PassiveIp=<i>0.0.0.0</i> </code>
      *        </p>
@@ -227,10 +228,10 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <note>
      *        <p>
-     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer server for
-     *        the change to take effect. For details on using Passive IP (PASV) in a NAT environment, see <a href=
+     *        If you change the <code>PassiveIp</code> value, you must stop and then restart your Transfer Family server
+     *        for the change to take effect. For details on using passive mode (PASV) in a NAT environment, see <a href=
      *        "http://aws.amazon.com/blogs/storage/configuring-your-ftps-server-behind-a-firewall-or-nat-with-aws-transfer-family/"
-     *        >Configuring your FTPS server behind a firewall or NAT with Amazon Web Services Transfer Family</a>.
+     *        >Configuring your FTPS server behind a firewall or NAT with Transfer Family</a>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -242,12 +243,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -278,12 +279,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param tlsSessionResumptionMode
-     *        A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
+     *        A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
      *        mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
      *        session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *        negotiated sessions through a unique session ID. This property is available during
      *        <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *        value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *        value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *        default.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -320,12 +322,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -355,12 +357,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </note></li>
      * </ul>
      * 
-     * @return A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
-     *         mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
-     *         session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
+     * @return A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides
+     *         a mechanism to resume or share a negotiated secret key between the control and data connection for an
+     *         FTPS session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *         negotiated sessions through a unique session ID. This property is available during
      *         <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *         value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *         value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *         default.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -397,12 +400,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -433,12 +436,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param tlsSessionResumptionMode
-     *        A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
+     *        A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
      *        mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
      *        session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *        negotiated sessions through a unique session ID. This property is available during
      *        <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *        value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *        value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *        default.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -477,12 +481,12 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a mechanism to
-     * resume or share a negotiated secret key between the control and data connection for an FTPS session.
+     * A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
+     * mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS session.
      * <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent, negotiated sessions
      * through a unique session ID. This property is available during <code>CreateServer</code> and
      * <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code> value is not specified during
-     * CreateServer, it is set to <code>ENFORCED</code> by default.
+     * <code>CreateServer</code>, it is set to <code>ENFORCED</code> by default.
      * </p>
      * <ul>
      * <li>
@@ -513,12 +517,13 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param tlsSessionResumptionMode
-     *        A property used with Transfer servers that use the FTPS protocol. TLS Session Resumption provides a
+     *        A property used with Transfer Family servers that use the FTPS protocol. TLS Session Resumption provides a
      *        mechanism to resume or share a negotiated secret key between the control and data connection for an FTPS
      *        session. <code>TlsSessionResumptionMode</code> determines whether or not the server resumes recent,
      *        negotiated sessions through a unique session ID. This property is available during
      *        <code>CreateServer</code> and <code>UpdateServer</code> calls. If a <code>TlsSessionResumptionMode</code>
-     *        value is not specified during CreateServer, it is set to <code>ENFORCED</code> by default.</p>
+     *        value is not specified during <code>CreateServer</code>, it is set to <code>ENFORCED</code> by
+     *        default.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -557,47 +562,49 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
-     * on a file you are uploading to an S3 bucket.
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
      * </p>
      * <p>
      * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
-     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
-     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
-     * result in errors even when the file is otherwise successfully uploaded.
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
      * </p>
      * <p>
-     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
-     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
-     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
-     * determine when the client is making a SETSTAT call.
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
      * </p>
      * <note>
      * <p>
-     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
-     * can use Amazon EFS as backend storage with Transfer Family.
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      * </p>
      * </note>
      * 
      * @param setStatOption
      *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
-     *        SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *        <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
      *        <p>
      *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
-     *        and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
-     *        compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
-     *        these clients can result in errors even when the file is otherwise successfully uploaded.
+     *        and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *        commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *        file uploads from these clients can result in errors even when the file is otherwise successfully
+     *        uploaded.
      *        </p>
      *        <p>
-     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
-     *        and upload files without needing to make any changes to your SFTP client. While the
-     *        <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
-     *        entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *        <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *        While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate
+     *        a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *        <code>SETSTAT</code> call.
      *        </p>
      *        <note>
      *        <p>
      *        If you want to preserve the original timestamp for your file, and modify other file attributes using
-     *        SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *        <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      *        </p>
      * @see SetStatOption
      */
@@ -608,46 +615,48 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
-     * on a file you are uploading to an S3 bucket.
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
      * </p>
      * <p>
      * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
-     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
-     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
-     * result in errors even when the file is otherwise successfully uploaded.
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
      * </p>
      * <p>
-     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
-     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
-     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
-     * determine when the client is making a SETSTAT call.
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
      * </p>
      * <note>
      * <p>
-     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
-     * can use Amazon EFS as backend storage with Transfer Family.
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      * </p>
      * </note>
      * 
      * @return Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
-     *         SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *         <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
      *         <p>
      *         Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
-     *         and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
-     *         compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
-     *         these clients can result in errors even when the file is otherwise successfully uploaded.
+     *         and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *         commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *         file uploads from these clients can result in errors even when the file is otherwise successfully
+     *         uploaded.
      *         </p>
      *         <p>
-     *         Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
-     *         and upload files without needing to make any changes to your SFTP client. While the
-     *         <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
-     *         entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *         Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *         <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *         While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does
+     *         generate a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *         <code>SETSTAT</code> call.
      *         </p>
      *         <note>
      *         <p>
      *         If you want to preserve the original timestamp for your file, and modify other file attributes using
-     *         SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *         <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      *         </p>
      * @see SetStatOption
      */
@@ -658,47 +667,49 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
-     * on a file you are uploading to an S3 bucket.
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
      * </p>
      * <p>
      * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
-     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
-     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
-     * result in errors even when the file is otherwise successfully uploaded.
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
      * </p>
      * <p>
-     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
-     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
-     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
-     * determine when the client is making a SETSTAT call.
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
      * </p>
      * <note>
      * <p>
-     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
-     * can use Amazon EFS as backend storage with Transfer Family.
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      * </p>
      * </note>
      * 
      * @param setStatOption
      *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
-     *        SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *        <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
      *        <p>
      *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
-     *        and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
-     *        compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
-     *        these clients can result in errors even when the file is otherwise successfully uploaded.
+     *        and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *        commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *        file uploads from these clients can result in errors even when the file is otherwise successfully
+     *        uploaded.
      *        </p>
      *        <p>
-     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
-     *        and upload files without needing to make any changes to your SFTP client. While the
-     *        <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
-     *        entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *        <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *        While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate
+     *        a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *        <code>SETSTAT</code> call.
      *        </p>
      *        <note>
      *        <p>
      *        If you want to preserve the original timestamp for your file, and modify other file attributes using
-     *        SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *        <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SetStatOption
@@ -711,47 +722,49 @@ public class ProtocolDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use SETSTAT
-     * on a file you are uploading to an S3 bucket.
+     * Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
+     * <code>SETSTAT</code> on a file you are uploading to an S3 bucket.
      * </p>
      * <p>
      * Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp and
-     * permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not compatible
-     * with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from these clients can
-     * result in errors even when the file is otherwise successfully uploaded.
+     * permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these commands are
+     * not compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
+     * these clients can result in errors even when the file is otherwise successfully uploaded.
      * </p>
      * <p>
-     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command, and
-     * upload files without needing to make any changes to your SFTP client. While the <code>SetStatOption</code>
-     * <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in CloudWatch Logs, so you can
-     * determine when the client is making a SETSTAT call.
+     * Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the <code>SETSTAT</code>
+     * command, and upload files without needing to make any changes to your SFTP client. While the
+     * <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log entry in
+     * Amazon CloudWatch Logs, so you can determine when the client is making a <code>SETSTAT</code> call.
      * </p>
      * <note>
      * <p>
-     * If you want to preserve the original timestamp for your file, and modify other file attributes using SETSTAT, you
-     * can use Amazon EFS as backend storage with Transfer Family.
+     * If you want to preserve the original timestamp for your file, and modify other file attributes using
+     * <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      * </p>
      * </note>
      * 
      * @param setStatOption
      *        Use the <code>SetStatOption</code> to ignore the error that is generated when the client attempts to use
-     *        SETSTAT on a file you are uploading to an S3 bucket.</p>
+     *        <code>SETSTAT</code> on a file you are uploading to an S3 bucket.</p>
      *        <p>
      *        Some SFTP file transfer clients can attempt to change the attributes of remote files, including timestamp
-     *        and permissions, using commands, such as SETSTAT when uploading the file. However, these commands are not
-     *        compatible with object storage systems, such as Amazon S3. Due to this incompatibility, file uploads from
-     *        these clients can result in errors even when the file is otherwise successfully uploaded.
+     *        and permissions, using commands, such as <code>SETSTAT</code> when uploading the file. However, these
+     *        commands are not compatible with object storage systems, such as Amazon S3. Due to this incompatibility,
+     *        file uploads from these clients can result in errors even when the file is otherwise successfully
+     *        uploaded.
      *        </p>
      *        <p>
-     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the SETSTAT command,
-     *        and upload files without needing to make any changes to your SFTP client. While the
-     *        <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate a log
-     *        entry in CloudWatch Logs, so you can determine when the client is making a SETSTAT call.
+     *        Set the value to <code>ENABLE_NO_OP</code> to have the Transfer Family server ignore the
+     *        <code>SETSTAT</code> command, and upload files without needing to make any changes to your SFTP client.
+     *        While the <code>SetStatOption</code> <code>ENABLE_NO_OP</code> setting ignores the error, it does generate
+     *        a log entry in Amazon CloudWatch Logs, so you can determine when the client is making a
+     *        <code>SETSTAT</code> call.
      *        </p>
      *        <note>
      *        <p>
      *        If you want to preserve the original timestamp for your file, and modify other file attributes using
-     *        SETSTAT, you can use Amazon EFS as backend storage with Transfer Family.
+     *        <code>SETSTAT</code>, you can use Amazon EFS as backend storage with Transfer Family.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SetStatOption

@@ -98,9 +98,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.CreateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateServer" target="_top">AWS API
      *      Documentation</a>
@@ -156,9 +154,7 @@ public interface AWSTransfer {
      * @throws ResourceExistsException
      *         The requested resource does not exist.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.CreateWorkflow
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateWorkflow" target="_top">AWS API
      *      Documentation</a>
@@ -228,9 +224,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.DeleteSshPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteSshPublicKey" target="_top">AWS
      *      API Documentation</a>
@@ -456,9 +450,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.ImportSshPublicKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ImportSshPublicKey" target="_top">AWS
      *      API Documentation</a>
@@ -643,9 +635,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.SendWorkflowStepState
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SendWorkflowStepState" target="_top">AWS
      *      API Documentation</a>
@@ -677,9 +667,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.StartServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartServer" target="_top">AWS API
      *      Documentation</a>
@@ -717,9 +705,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.StopServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StopServer" target="_top">AWS API
      *      Documentation</a>
@@ -886,9 +872,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateServer
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateServer" target="_top">AWS API
      *      Documentation</a>
@@ -915,9 +899,7 @@ public interface AWSTransfer {
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
      * @throws ThrottlingException
-     *         The request was denied due to request throttling.</p>
-     *         <p>
-     *         HTTP Status Code: 400
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateUser" target="_top">AWS API
      *      Documentation</a>

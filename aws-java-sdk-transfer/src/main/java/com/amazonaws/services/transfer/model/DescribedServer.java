@@ -46,8 +46,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * The protocol settings that are configured for your server.
      * </p>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the
+     * public IP address of a firewall, router, or load balancer.
      * </p>
      */
     private ProtocolDetails protocolDetails;
@@ -301,15 +301,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * The protocol settings that are configured for your server.
      * </p>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the
+     * public IP address of a firewall, router, or load balancer.
      * </p>
      * 
      * @param protocolDetails
      *        The protocol settings that are configured for your server. </p>
      *        <p>
-     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
-     *        address, such as the external IP address of a firewall, router, or load balancer.
+     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as
+     *        the public IP address of a firewall, router, or load balancer.
      */
 
     public void setProtocolDetails(ProtocolDetails protocolDetails) {
@@ -321,14 +321,14 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * The protocol settings that are configured for your server.
      * </p>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the
+     * public IP address of a firewall, router, or load balancer.
      * </p>
      * 
      * @return The protocol settings that are configured for your server. </p>
      *         <p>
-     *         Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
-     *         address, such as the external IP address of a firewall, router, or load balancer.
+     *         Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as
+     *         the public IP address of a firewall, router, or load balancer.
      */
 
     public ProtocolDetails getProtocolDetails() {
@@ -340,15 +340,15 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * The protocol settings that are configured for your server.
      * </p>
      * <p>
-     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4 address, such
-     * as the external IP address of a firewall, router, or load balancer.
+     * Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as the
+     * public IP address of a firewall, router, or load balancer.
      * </p>
      * 
      * @param protocolDetails
      *        The protocol settings that are configured for your server. </p>
      *        <p>
-     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single dotted-quad IPv4
-     *        address, such as the external IP address of a firewall, router, or load balancer.
+     *        Use the <code>PassiveIp</code> parameter to indicate passive mode. Enter a single IPv4 address, such as
+     *        the public IP address of a firewall, router, or load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
