@@ -473,6 +473,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest request) {
+
+        return listInferenceEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(final ListInferenceEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInferenceEventsRequest, ListInferenceEventsResult> asyncHandler) {
+        final ListInferenceEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInferenceEventsResult>() {
+            @Override
+            public ListInferenceEventsResult call() throws Exception {
+                ListInferenceEventsResult result = null;
+
+                try {
+                    result = executeListInferenceEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInferenceExecutionsResult> listInferenceExecutionsAsync(ListInferenceExecutionsRequest request) {
 
         return listInferenceExecutionsAsync(request, null);

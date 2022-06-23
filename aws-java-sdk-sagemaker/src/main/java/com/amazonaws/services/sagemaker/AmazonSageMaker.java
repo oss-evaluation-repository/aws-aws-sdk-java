@@ -924,9 +924,9 @@ public interface AmazonSageMaker {
      * you defined for the model in the hosting environment.
      * </p>
      * <p>
-     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html#ex1-deploy-model-boto">Deploy the
-     * Model to Amazon SageMaker Hosting Services (Amazon Web Services SDK for Python (Boto 3)).</a>
+     * For an example that calls this method when deploying a model to SageMaker hosting services, see <a href=
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model"
+     * >Create a Model (Amazon Web Services SDK for Python (Boto 3)).</a>
      * </p>
      * <p>
      * To run a batch transform using your model, you start a job with the <code>CreateTransformJob</code> API.
@@ -4853,6 +4853,9 @@ public interface AmazonSageMaker {
      * configuration.
      * </p>
      * <p>
+     * The worker portal is now supported in VPC and public internet.
+     * </p>
+     * <p>
      * Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses. You
      * specify allowed IP addresses by creating a list of up to ten <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>. By default, a workforce isn't
@@ -4860,6 +4863,15 @@ public interface AmazonSageMaker {
      * using any IP address outside the specified range are denied and get a <code>Not Found</code> error message on the
      * worker portal.
      * </p>
+     * <p>
+     * To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code> CIDR value as
+     * "0.0.0.0/0".
+     * </p>
+     * <important>
+     * <p>
+     * Amazon SageMaker does not support Source Ip restriction for worker portals in VPC.
+     * </p>
+     * </important>
      * <p>
      * Use <code>OidcConfig</code> to update the configuration of a workforce created using your own OIDC IdP.
      * </p>
@@ -4881,6 +4893,9 @@ public interface AmazonSageMaker {
      * 
      * @param updateWorkforceRequest
      * @return Result of the UpdateWorkforce operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
      * @sample AmazonSageMaker.UpdateWorkforce
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce" target="_top">AWS API
      *      Documentation</a>

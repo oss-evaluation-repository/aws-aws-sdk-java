@@ -78,6 +78,15 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lookoutequipment.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lookoutequipment.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lookoutequipment.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lookoutequipment.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -87,17 +96,8 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lookoutequipment.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lookoutequipment.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lookoutequipment.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lookoutequipment.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lookoutequipment.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.lookoutequipment.model.AmazonLookoutEquipmentException.class));
 
     public static AmazonLookoutEquipmentClientBuilder builder() {
@@ -968,6 +968,72 @@ public class AmazonLookoutEquipmentClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDatasetsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDatasetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @return Result of the ListInferenceEvents operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInferenceEventsResult listInferenceEvents(ListInferenceEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInferenceEvents(request);
+    }
+
+    @SdkInternalApi
+    final ListInferenceEventsResult executeListInferenceEvents(ListInferenceEventsRequest listInferenceEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInferenceEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInferenceEventsRequest> request = null;
+        Response<ListInferenceEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInferenceEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInferenceEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LookoutEquipment");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInferenceEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInferenceEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInferenceEventsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

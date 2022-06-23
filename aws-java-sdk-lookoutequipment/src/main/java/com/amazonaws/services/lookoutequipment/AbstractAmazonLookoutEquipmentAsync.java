@@ -184,6 +184,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest request) {
+
+        return listInferenceEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceEventsRequest, ListInferenceEventsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInferenceExecutionsResult> listInferenceExecutionsAsync(ListInferenceExecutionsRequest request) {
 
         return listInferenceExecutionsAsync(request, null);

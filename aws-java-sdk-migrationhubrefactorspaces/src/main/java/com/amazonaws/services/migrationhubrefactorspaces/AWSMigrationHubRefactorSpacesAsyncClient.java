@@ -838,6 +838,39 @@ public class AWSMigrationHubRefactorSpacesAsyncClient extends AWSMigrationHubRef
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest request) {
+
+        return updateRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(final UpdateRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRouteRequest, UpdateRouteResult> asyncHandler) {
+        final UpdateRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRouteResult>() {
+            @Override
+            public UpdateRouteResult call() throws Exception {
+                UpdateRouteResult result = null;
+
+                try {
+                    result = executeUpdateRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

@@ -363,6 +363,30 @@ public interface AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @return Result of the ListInferenceEvents operation returned by the service.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ResourceNotFoundException
+     *         The resource requested could not be found. Verify the resource ID and retry your request.
+     * @throws AccessDeniedException
+     *         The request could not be completed because you do not have access to the resource.
+     * @throws InternalServerException
+     *         Processing of the request has failed because of an unknown error, exception or failure.
+     * @sample AmazonLookoutEquipment.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInferenceEventsResult listInferenceEvents(ListInferenceEventsRequest listInferenceEventsRequest);
+
+    /**
+     * <p>
      * Lists all inference executions that have been performed by the specified inference scheduler.
      * </p>
      * 

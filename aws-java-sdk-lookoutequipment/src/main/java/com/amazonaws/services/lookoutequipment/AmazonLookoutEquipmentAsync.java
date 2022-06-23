@@ -459,6 +459,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @return A Java Future containing the result of the ListInferenceEvents operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest listInferenceEventsRequest);
+
+    /**
+     * <p>
+     * Lists all inference events that have been found for the specified inference scheduler.
+     * </p>
+     * 
+     * @param listInferenceEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceEvents operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListInferenceEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListInferenceEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceEventsResult> listInferenceEventsAsync(ListInferenceEventsRequest listInferenceEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceEventsRequest, ListInferenceEventsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all inference executions that have been performed by the specified inference scheduler.
      * </p>
      * 

@@ -88,6 +88,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public ListInferenceEventsResult listInferenceEvents(ListInferenceEventsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInferenceExecutionsResult listInferenceExecutions(ListInferenceExecutionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

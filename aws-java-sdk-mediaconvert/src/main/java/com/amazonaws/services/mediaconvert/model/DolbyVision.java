@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * With AWS Elemental MediaConvert, you can create profile 5 or 8.1 Dolby Vision outputs from MXF and IMF sources.
+ * Create Dolby Vision Profile 5 or Profile 8.1 compatible video output.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DolbyVision" target="_top">AWS API
  *      Documentation</a>
@@ -43,9 +43,10 @@ public class DolbyVision implements Serializable, Cloneable, StructuredPojo {
      */
     private String mapping;
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby
-     * Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
-     * metadata and HDR10 metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your
+     * output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision
+     * metadata.
      */
     private String profile;
 
@@ -236,14 +237,16 @@ public class DolbyVision implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby
-     * Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
-     * metadata and HDR10 metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your
+     * output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision
+     * metadata.
      * 
      * @param profile
-     *        Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved
-     *        Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby
-     *        Vision metadata and HDR10 metadata in your output.
+     *        Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in
+     *        your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to
+     *        include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include
+     *        Dolby Vision metadata.
      * @see DolbyVisionProfile
      */
 
@@ -252,13 +255,15 @@ public class DolbyVision implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby
-     * Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
-     * metadata and HDR10 metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your
+     * output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision
+     * metadata.
      * 
-     * @return Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved
-     *         Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby
-     *         Vision metadata and HDR10 metadata in your output.
+     * @return Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata
+     *         in your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile
+     *         8.1 to include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must
+     *         include Dolby Vision metadata.
      * @see DolbyVisionProfile
      */
 
@@ -267,14 +272,16 @@ public class DolbyVision implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby
-     * Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
-     * metadata and HDR10 metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your
+     * output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision
+     * metadata.
      * 
      * @param profile
-     *        Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved
-     *        Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby
-     *        Vision metadata and HDR10 metadata in your output.
+     *        Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in
+     *        your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to
+     *        include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include
+     *        Dolby Vision metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DolbyVisionProfile
      */
@@ -285,14 +292,16 @@ public class DolbyVision implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved Dolby
-     * Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby Vision
-     * metadata and HDR10 metadata in your output.
+     * Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in your
+     * output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to include
+     * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include Dolby Vision
+     * metadata.
      * 
      * @param profile
-     *        Required when you use Dolby Vision processing. Set Profile to Profile 5 to only include frame-interleaved
-     *        Dolby Vision metadata in your output. Set Profile to Profile 8.1 to include both frame-interleaved Dolby
-     *        Vision metadata and HDR10 metadata in your output.
+     *        Required when you enable Dolby Vision. Use Profile 5 to include frame-interleaved Dolby Vision metadata in
+     *        your output. Your input must include Dolby Vision metadata or an HDR10 YUV color space. Use Profile 8.1 to
+     *        include frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your input must include
+     *        Dolby Vision metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DolbyVisionProfile
      */
