@@ -1,3 +1,12 @@
+# __1.12.253__ __2022-07-01__
+## __AWS Database Migration Service__
+  - ### Features
+    - Added new features for AWS DMS version 3.4.7 that includes new endpoint settings for S3, OpenSearch, Postgres, SQLServer and Oracle.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds support for additional retention periods to Performance Insights.
+
 # __1.12.252__ __2022-06-30__
 ## __AWS Glue__
   - ### Features

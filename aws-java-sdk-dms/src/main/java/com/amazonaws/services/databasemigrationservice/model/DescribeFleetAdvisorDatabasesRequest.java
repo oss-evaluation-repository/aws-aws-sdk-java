@@ -33,7 +33,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     * <code>database-id</code> – The ID of the database.
      * </p>
      * </li>
      * <li>
@@ -63,8 +63,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * An example is:
-     * <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     * An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -91,7 +90,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     * <code>database-id</code> – The ID of the database.
      * </p>
      * </li>
      * <li>
@@ -121,8 +120,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * An example is:
-     * <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     * An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * </p>
      * 
      * @return If you specify any of the following filters, the output includes information for only those databases
@@ -130,8 +128,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>database-id</code> – The ID of the database, for example
-     *         <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     *         <code>database-id</code> – The ID of the database.
      *         </p>
      *         </li>
      *         <li>
@@ -161,8 +158,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *         </li>
      *         </ul>
      *         <p>
-     *         An example is:
-     *         <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     *         An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -177,7 +173,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     * <code>database-id</code> – The ID of the database.
      * </p>
      * </li>
      * <li>
@@ -207,8 +203,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * An example is:
-     * <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     * An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * </p>
      * 
      * @param filters
@@ -217,8 +212,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>database-id</code> – The ID of the database, for example
-     *        <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     *        <code>database-id</code> – The ID of the database.
      *        </p>
      *        </li>
      *        <li>
@@ -248,8 +242,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        </ul>
      *        <p>
-     *        An example is:
-     *        <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     *        An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -269,7 +262,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     * <code>database-id</code> – The ID of the database.
      * </p>
      * </li>
      * <li>
@@ -299,8 +292,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * An example is:
-     * <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     * An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -314,8 +306,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>database-id</code> – The ID of the database, for example
-     *        <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     *        <code>database-id</code> – The ID of the database.
      *        </p>
      *        </li>
      *        <li>
@@ -345,8 +336,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        </ul>
      *        <p>
-     *        An example is:
-     *        <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     *        An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,7 +358,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>database-id</code> – The ID of the database, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     * <code>database-id</code> – The ID of the database.
      * </p>
      * </li>
      * <li>
@@ -398,8 +388,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      * </li>
      * </ul>
      * <p>
-     * An example is:
-     * <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     * An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * </p>
      * 
      * @param filters
@@ -408,8 +397,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>database-id</code> – The ID of the database, for example
-     *        <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.
+     *        <code>database-id</code> – The ID of the database.
      *        </p>
      *        </li>
      *        <li>
@@ -439,8 +427,7 @@ public class DescribeFleetAdvisorDatabasesRequest extends com.amazonaws.AmazonWe
      *        </li>
      *        </ul>
      *        <p>
-     *        An example is:
-     *        <code>describe-fleet-advisor-databases --filter Name="database-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code>
+     *        An example is: <code>describe-fleet-advisor-databases --filter Name="database-id",Values="45"</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
