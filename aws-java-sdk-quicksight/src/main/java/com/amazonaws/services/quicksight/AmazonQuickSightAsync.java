@@ -68,10 +68,10 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates Amazon QuickSight customizations the current Amazon Web Services Region. Currently, you can add a custom
-     * default theme by using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API
-     * operation. To further customize Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
-     * new users, see <a
+     * Creates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, you can add a
+     * custom default theme by using the <code>CreateAccountCustomization</code> or
+     * <code>UpdateAccountCustomization</code> API operation. To further customize Amazon QuickSight by removing Amazon
+     * QuickSight sample assets and videos for all new users, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing Amazon
      * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i>
      * </p>
@@ -103,10 +103,10 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates Amazon QuickSight customizations the current Amazon Web Services Region. Currently, you can add a custom
-     * default theme by using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API
-     * operation. To further customize Amazon QuickSight by removing Amazon QuickSight sample assets and videos for all
-     * new users, see <a
+     * Creates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, you can add a
+     * custom default theme by using the <code>CreateAccountCustomization</code> or
+     * <code>UpdateAccountCustomization</code> API operation. To further customize Amazon QuickSight by removing Amazon
+     * QuickSight sample assets and videos for all new users, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing Amazon
      * QuickSight</a> in the <i>Amazon QuickSight User Guide.</i>
      * </p>
@@ -140,6 +140,103 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<CreateAccountCustomizationResult> createAccountCustomizationAsync(
             CreateAccountCustomizationRequest createAccountCustomizationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateAccountCustomizationRequest, CreateAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
+     * </p>
+     * <p>
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
+     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
+     * (Singapore) Region.
+     * </p>
+     * <p>
+     * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
+     * don't have an Amazon Web Services account, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign up for Amazon Web
+     * Services</a> in the <i>Amazon QuickSight User Guide</i>. The person who signs up for Amazon QuickSight needs to
+     * have the correct Identity and Access Management (IAM) permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM Policy Examples for Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code> actions,
+     * make sure that both actions are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the
+     * <code>Deny</code> action prevails and your API call fails.
+     * </p>
+     * <p>
+     * You can't pass an existing IAM role to access other Amazon Web Services services using this API operation. To
+     * pass your existing IAM role to Amazon QuickSight, see <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role"
+     * >Passing IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * You can't set default resource access on the new account from the Amazon QuickSight API. Instead, add default
+     * resource access from the Amazon QuickSight console. For more information about setting default resource access to
+     * Amazon Web Services services, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting default resource
+     * access to Amazon Web Services services</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createAccountSubscriptionRequest
+     * @return A Java Future containing the result of the CreateAccountSubscription operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccountSubscriptionResult> createAccountSubscriptionAsync(
+            CreateAccountSubscriptionRequest createAccountSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.
+     * </p>
+     * <p>
+     * The Amazon Web Services Region for the account is derived from what is configured in the CLI or SDK. This
+     * operation isn't supported in the US East (Ohio) Region, South America (Sao Paulo) Region, or Asia Pacific
+     * (Singapore) Region.
+     * </p>
+     * <p>
+     * Before you use this operation, make sure that you can connect to an existing Amazon Web Services account. If you
+     * don't have an Amazon Web Services account, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/setting-up-aws-sign-up.html">Sign up for Amazon Web
+     * Services</a> in the <i>Amazon QuickSight User Guide</i>. The person who signs up for Amazon QuickSight needs to
+     * have the correct Identity and Access Management (IAM) permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/iam-policy-examples.html">IAM Policy Examples for Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code> actions,
+     * make sure that both actions are set to <code>Allow</code>. If either action is set to <code>Deny</code>, the
+     * <code>Deny</code> action prevails and your API call fails.
+     * </p>
+     * <p>
+     * You can't pass an existing IAM role to access other Amazon Web Services services using this API operation. To
+     * pass your existing IAM role to Amazon QuickSight, see <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html#security-create-iam-role"
+     * >Passing IAM roles to Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * <p>
+     * You can't set default resource access on the new account from the Amazon QuickSight API. Instead, add default
+     * resource access from the Amazon QuickSight console. For more information about setting default resource access to
+     * Amazon Web Services services, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/scoping-policies-defaults.html">Setting default resource
+     * access to Amazon Web Services services</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createAccountSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccountSubscription operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccountSubscriptionResult> createAccountSubscriptionAsync(
+            CreateAccountSubscriptionRequest createAccountSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccountSubscriptionRequest, CreateAccountSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -1479,6 +1576,43 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's
+     * subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name,
+     * subscription status, authentication type, edition, and notification email address.
+     * </p>
+     * 
+     * @param describeAccountSubscriptionRequest
+     * @return A Java Future containing the result of the DescribeAccountSubscription operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountSubscriptionResult> describeAccountSubscriptionAsync(
+            DescribeAccountSubscriptionRequest describeAccountSubscriptionRequest);
+
+    /**
+     * <p>
+     * Use the DescribeAccountSubscription operation to receive a description of a Amazon QuickSight account's
+     * subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name,
+     * subscription status, authentication type, edition, and notification email address.
+     * </p>
+     * 
+     * @param describeAccountSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountSubscription operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAccountSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountSubscriptionResult> describeAccountSubscriptionAsync(
+            DescribeAccountSubscriptionRequest describeAccountSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountSubscriptionRequest, DescribeAccountSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides a summary of the metadata for an analysis.
      * </p>
      * 
@@ -2275,11 +2409,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The URL validity period should not be confused with the actual session lifetime that can be customized using the
      * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code>
-     * parameter.
-     * </p>
-     * <p>
-     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
-     * is 10 hours.
+     * parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default
+     * session duration is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -2330,11 +2461,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The URL validity period should not be confused with the actual session lifetime that can be customized using the
      * <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a> </code>
-     * parameter.
-     * </p>
-     * <p>
-     * The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default session duration
-     * is 10 hours.
+     * parameter. The resulting user session is valid for 15 minutes (minimum) to 10 hours (maximum). The default
+     * session duration is 10 hours.
      * </p>
      * </li>
      * <li>
@@ -2487,13 +2615,13 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a session URL and authorization code that you can use to embed an Amazon Amazon QuickSight read-only
-     * dashboard in your web server code. Before you use this command, make sure that you have configured the dashboards
-     * and permissions.
+     * Generates a temporary session URL and authorization code that you can use to embed an Amazon QuickSight read-only
+     * dashboard in your website or application. Before you use this command, make sure that you have configured the
+     * dashboards and permissions.
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
-     * following rules apply to the combination of URL and authorization code:
+     * following rules apply to the generated URL:
      * </p>
      * <ul>
      * <li>
@@ -2513,7 +2641,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </li>
      * <li>
      * <p>
-     * The resulting user session is valid for 10 hours.
+     * The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional
+     * <code>SessionLifetimeInMinutes</code> parameter to customi session duration.
      * </p>
      * </li>
      * </ul>
@@ -2539,13 +2668,13 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a session URL and authorization code that you can use to embed an Amazon Amazon QuickSight read-only
-     * dashboard in your web server code. Before you use this command, make sure that you have configured the dashboards
-     * and permissions.
+     * Generates a temporary session URL and authorization code that you can use to embed an Amazon QuickSight read-only
+     * dashboard in your website or application. Before you use this command, make sure that you have configured the
+     * dashboards and permissions.
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
-     * following rules apply to the combination of URL and authorization code:
+     * following rules apply to the generated URL:
      * </p>
      * <ul>
      * <li>
@@ -2565,7 +2694,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </li>
      * <li>
      * <p>
-     * The resulting user session is valid for 10 hours.
+     * The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum). You can use the optional
+     * <code>SessionLifetimeInMinutes</code> parameter to customi session duration.
      * </p>
      * </li>
      * </ul>
@@ -3703,8 +3833,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates Amazon QuickSight customizations the current Amazon Web Services Region. Currently, the only
-     * customization you can use is a theme.
+     * Updates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, the only
+     * customization that you can use is a theme.
      * </p>
      * <p>
      * You can use customizations for your Amazon Web Services account or, if you specify a namespace, for a Amazon
@@ -3724,8 +3854,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates Amazon QuickSight customizations the current Amazon Web Services Region. Currently, the only
-     * customization you can use is a theme.
+     * Updates Amazon QuickSight customizations for the current Amazon Web Services Region. Currently, the only
+     * customization that you can use is a theme.
      * </p>
      * <p>
      * You can use customizations for your Amazon Web Services account or, if you specify a namespace, for a Amazon
@@ -4253,17 +4383,18 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon
-     * QuickSight dashboard.
+     * Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of
+     * an Amazon QuickSight dashboard.
      * </p>
      * <p>
-     * To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+     * To use this operation, turn on session capacity pricing for your Amazon QuickSight account.
      * </p>
      * <p>
-     * Before you can enable public sharing on your account, you need to allow public sharing permissions to an
-     * administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a
+     * Before you can turn on public sharing on your account, make sure to give public sharing permissions to an
+     * administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with
+     * Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon
-     * QuickSight with IAM</a>.
+     * QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param updatePublicSharingSettingsRequest
@@ -4277,17 +4408,18 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Use the UpdatePublicSharingSettings operation to enable or disable the public sharing settings of an Amazon
-     * QuickSight dashboard.
+     * Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of
+     * an Amazon QuickSight dashboard.
      * </p>
      * <p>
-     * To use this operation, enable session capacity pricing on your Amazon QuickSight account.
+     * To use this operation, turn on session capacity pricing for your Amazon QuickSight account.
      * </p>
      * <p>
-     * Before you can enable public sharing on your account, you need to allow public sharing permissions to an
-     * administrative user in the IAM console. For more information on using IAM with Amazon QuickSight, see <a
+     * Before you can turn on public sharing on your account, make sure to give public sharing permissions to an
+     * administrative user in the Identity and Access Management (IAM) console. For more information on using IAM with
+     * Amazon QuickSight, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/security_iam_service-with-iam.html">Using Amazon
-     * QuickSight with IAM</a>.
+     * QuickSight with IAM</a> in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param updatePublicSharingSettingsRequest

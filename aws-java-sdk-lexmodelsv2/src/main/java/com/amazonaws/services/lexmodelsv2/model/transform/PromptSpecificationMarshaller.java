@@ -34,6 +34,8 @@ public class PromptSpecificationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxRetries").build();
     private static final MarshallingInfo<Boolean> ALLOWINTERRUPT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowInterrupt").build();
+    private static final MarshallingInfo<String> MESSAGESELECTIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("messageSelectionStrategy").build();
 
     private static final PromptSpecificationMarshaller instance = new PromptSpecificationMarshaller();
 
@@ -54,6 +56,7 @@ public class PromptSpecificationMarshaller {
             protocolMarshaller.marshall(promptSpecification.getMessageGroups(), MESSAGEGROUPS_BINDING);
             protocolMarshaller.marshall(promptSpecification.getMaxRetries(), MAXRETRIES_BINDING);
             protocolMarshaller.marshall(promptSpecification.getAllowInterrupt(), ALLOWINTERRUPT_BINDING);
+            protocolMarshaller.marshall(promptSpecification.getMessageSelectionStrategy(), MESSAGESELECTIONSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -58,13 +58,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer allocatedStorage;
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are
+     * The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are
      * available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     * classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB
-     * instance classes</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -219,7 +217,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <note>
      * <p>
-     * Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary
+     * Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary
      * instance user if the password is lost. This includes restoring privileges that might have been accidentally
      * revoked.
      * </p>
@@ -281,7 +279,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't
-     * be set to 0 for an RDS Custom for Oracle DB instance.
+     * be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      * </p>
      * </li>
      * <li>
@@ -814,7 +812,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -840,52 +838,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -1295,13 +1248,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are
+     * The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are
      * available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     * classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB
-     * instance classes</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -1315,13 +1266,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dBInstanceClass
-     *        The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance
+     *        The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance
      *        classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
      *        of DB instance classes, and availability for your engine, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     *        classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     *        DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.
@@ -1339,13 +1288,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are
+     * The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are
      * available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     * classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB
-     * instance classes</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -1358,13 +1305,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Default: Uses existing setting
      * </p>
      * 
-     * @return The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance
+     * @return The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance
      *         classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
      *         of DB instance classes, and availability for your engine, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     *         classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     *         DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *         Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      *         <p>
      *         If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *         next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.
@@ -1382,13 +1327,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance classes are
+     * The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance classes are
      * available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance
      * classes, and availability for your engine, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     * classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora DB
-     * instance classes</a> in the <i>Amazon Aurora User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance Class</a>
+     * in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * If you modify the DB instance class, an outage occurs during the change. The change is applied during the next
@@ -1402,13 +1345,11 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param dBInstanceClass
-     *        The new compute and memory capacity of the DB instance, for example db.m5.large. Not all DB instance
+     *        The new compute and memory capacity of the DB instance, for example db.m4.large. Not all DB instance
      *        classes are available in all Amazon Web Services Regions, or for all database engines. For the full list
      *        of DB instance classes, and availability for your engine, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB instance
-     *        classes</a> in the <i>Amazon RDS User Guide</i> or <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
-     *        DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB Instance
+     *        Class</a> in the <i>Amazon RDS User Guide</i>.</p>
      *        <p>
      *        If you modify the DB instance class, an outage occurs during the change. The change is applied during the
      *        next maintenance window, unless <code>ApplyImmediately</code> is enabled for this request.
@@ -2168,7 +2109,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <note>
      * <p>
-     * Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary
+     * Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary
      * instance user if the password is lost. This includes restoring privileges that might have been accidentally
      * revoked.
      * </p>
@@ -2228,7 +2169,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <note>
      *        <p>
-     *        Amazon RDS API operations never return the password, so this action provides a way to regain access to a
+     *        Amazon RDS API actions never return the password, so this action provides a way to regain access to a
      *        primary instance user if the password is lost. This includes restoring privileges that might have been
      *        accidentally revoked.
      *        </p>
@@ -2293,7 +2234,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <note>
      * <p>
-     * Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary
+     * Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary
      * instance user if the password is lost. This includes restoring privileges that might have been accidentally
      * revoked.
      * </p>
@@ -2352,7 +2293,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <note>
      *         <p>
-     *         Amazon RDS API operations never return the password, so this action provides a way to regain access to a
+     *         Amazon RDS API actions never return the password, so this action provides a way to regain access to a
      *         primary instance user if the password is lost. This includes restoring privileges that might have been
      *         accidentally revoked.
      *         </p>
@@ -2417,7 +2358,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <note>
      * <p>
-     * Amazon RDS API operations never return the password, so this action provides a way to regain access to a primary
+     * Amazon RDS API actions never return the password, so this action provides a way to regain access to a primary
      * instance user if the password is lost. This includes restoring privileges that might have been accidentally
      * revoked.
      * </p>
@@ -2477,7 +2418,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <note>
      *        <p>
-     *        Amazon RDS API operations never return the password, so this action provides a way to regain access to a
+     *        Amazon RDS API actions never return the password, so this action provides a way to regain access to a
      *        primary instance user if the password is lost. This includes restoring privileges that might have been
      *        accidentally revoked.
      *        </p>
@@ -2655,7 +2596,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't
-     * be set to 0 for an RDS Custom for Oracle DB instance.
+     * be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      * </p>
      * </li>
      * <li>
@@ -2700,7 +2641,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It
-     *        can't be set to 0 for an RDS Custom for Oracle DB instance.
+     *        can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      *        </p>
      *        </li>
      *        <li>
@@ -2752,7 +2693,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't
-     * be set to 0 for an RDS Custom for Oracle DB instance.
+     * be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      * </p>
      * </li>
      * <li>
@@ -2796,7 +2737,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It
-     *         can't be set to 0 for an RDS Custom for Oracle DB instance.
+     *         can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      *         </p>
      *         </li>
      *         <li>
@@ -2848,7 +2789,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It can't
-     * be set to 0 for an RDS Custom for Oracle DB instance.
+     * be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      * </p>
      * </li>
      * <li>
@@ -2893,7 +2834,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        It must be a value from 0 to 35. It can't be set to 0 if the DB instance is a source to read replicas. It
-     *        can't be set to 0 for an RDS Custom for Oracle DB instance.
+     *        can't be set to 0 or 35 for an RDS Custom for Oracle DB instance.
      *        </p>
      *        </li>
      *        <li>
@@ -6257,7 +6198,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -6268,7 +6209,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *        Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *        Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      *        </p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
@@ -6285,7 +6226,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -6295,7 +6236,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *         Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *         Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      *         </p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
@@ -6312,7 +6253,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -6323,7 +6264,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *        Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *        Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      *        </p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
@@ -6342,7 +6283,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
@@ -6352,7 +6293,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *         Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *         Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      *         </p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
@@ -6470,105 +6411,14 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        7
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
-     *        </p>
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
      */
@@ -6579,104 +6429,14 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
-     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *         valid:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         7
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For example, the following values are valid:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         93 (3 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         341 (11 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         589 (19 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
-     *         </p>
+     * @return The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2
+     *         years).</p>
      *         <p>
      *         This setting doesn't apply to RDS Custom.
      */
@@ -6687,105 +6447,14 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom.
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        7
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
-     *        </p>
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom.
      * @return Returns a reference to this object so that method calls can be chained together.

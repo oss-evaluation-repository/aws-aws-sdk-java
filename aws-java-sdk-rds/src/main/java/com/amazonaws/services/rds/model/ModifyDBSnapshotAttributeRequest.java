@@ -42,7 +42,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API operation.
+     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * </note>
      */
@@ -123,7 +123,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API operation.
+     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * </note>
      * 
@@ -136,7 +136,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      *        <note>
      *        <p>
      *        To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API
-     *        operation.
+     *        action.
      *        </p>
      */
 
@@ -154,7 +154,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API operation.
+     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * </note>
      * 
@@ -166,7 +166,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      *         <note>
      *         <p>
      *         To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API
-     *         operation.
+     *         action.
      *         </p>
      */
 
@@ -184,7 +184,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <note>
      * <p>
-     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API operation.
+     * To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API action.
      * </p>
      * </note>
      * 
@@ -197,7 +197,7 @@ public class ModifyDBSnapshotAttributeRequest extends com.amazonaws.AmazonWebSer
      *        <note>
      *        <p>
      *        To view the list of attributes available to modify, use the <a>DescribeDBSnapshotAttributes</a> API
-     *        operation.
+     *        action.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

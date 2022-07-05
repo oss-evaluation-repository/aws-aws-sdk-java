@@ -53,25 +53,39 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security
-     * (RLS) with Tags</a>.
+     * (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      */
     private java.util.List<SessionTag> sessionTags;
     /**
      * <p>
-     * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
-     * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
-     * each API call.
+     * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
+     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
+     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     * dashboard ARNs in each API call.
      * </p>
      */
     private java.util.List<String> authorizedResourceArns;
     /**
      * <p>
-     * The configuration of the experience you are embedding.
+     * The configuration of the experience that you are embedding.
      * </p>
      */
     private AnonymousUserEmbeddingExperienceConfiguration experienceConfiguration;
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list.
+     * For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.
+     * </p>
+     */
+    private java.util.List<String> allowedDomains;
 
     /**
      * <p>
@@ -208,7 +222,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security
-     * (RLS) with Tags</a>.
+     * (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @return The session tags used for row-level security. Before you use this parameter, make sure that you have
@@ -217,7 +231,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      *         <p>
      *         These are not the tags used for the Amazon Web Services resource tagging feature. For more information,
      *         see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     *         Row-Level Security (RLS) with Tags</a>.
+     *         Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      */
 
     public java.util.List<SessionTag> getSessionTags() {
@@ -233,7 +247,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security
-     * (RLS) with Tags</a>.
+     * (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param sessionTags
@@ -243,7 +257,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      *        <p>
      *        These are not the tags used for the Amazon Web Services resource tagging feature. For more information,
      *        see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     *        Row-Level Security (RLS) with Tags</a>.
+     *        Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      */
 
     public void setSessionTags(java.util.Collection<SessionTag> sessionTags) {
@@ -264,7 +278,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security
-     * (RLS) with Tags</a>.
+     * (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -279,7 +293,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      *        <p>
      *        These are not the tags used for the Amazon Web Services resource tagging feature. For more information,
      *        see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     *        Row-Level Security (RLS) with Tags</a>.
+     *        Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,7 +316,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * <p>
      * These are not the tags used for the Amazon Web Services resource tagging feature. For more information, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using Row-Level Security
-     * (RLS) with Tags</a>.
+     * (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param sessionTags
@@ -312,7 +326,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      *        <p>
      *        These are not the tags used for the Amazon Web Services resource tagging feature. For more information,
      *        see <a href="https://docs.aws.amazon.com/quicksight/latest/user/quicksight-dev-rls-tags.html">Using
-     *        Row-Level Security (RLS) with Tags</a>.
+     *        Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,16 +337,16 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
-     * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
-     * each API call.
+     * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
+     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
+     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     * dashboard ARNs in each API call.
      * </p>
      * 
-     * @return The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access
-     *         during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
-     *         list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
-     *         up to 25 dashboard ARNs in each API call.
+     * @return The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to
+     *         access during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience,
+     *         pass the list of dashboard ARNs in the account that you want the user to be able to view. Currently, you
+     *         can pass up to 25 dashboard ARNs in each API call.
      */
 
     public java.util.List<String> getAuthorizedResourceArns() {
@@ -341,17 +355,17 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
-     * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
-     * each API call.
+     * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
+     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
+     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     * dashboard ARNs in each API call.
      * </p>
      * 
      * @param authorizedResourceArns
-     *        The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during
-     *        the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     *        dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     *        dashboard ARNs in each API call.
+     *        The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access
+     *        during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
+     *        list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
+     *        up to 25 dashboard ARNs in each API call.
      */
 
     public void setAuthorizedResourceArns(java.util.Collection<String> authorizedResourceArns) {
@@ -365,10 +379,10 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
-     * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
-     * each API call.
+     * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
+     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
+     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     * dashboard ARNs in each API call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -377,10 +391,10 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
      * </p>
      * 
      * @param authorizedResourceArns
-     *        The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during
-     *        the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     *        dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     *        dashboard ARNs in each API call.
+     *        The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access
+     *        during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
+     *        list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
+     *        up to 25 dashboard ARNs in each API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -396,17 +410,17 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during the
-     * lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of dashboard
-     * ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in
-     * each API call.
+     * The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access during
+     * the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
+     * dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
+     * dashboard ARNs in each API call.
      * </p>
      * 
      * @param authorizedResourceArns
-     *        The Amazon Resource Names for the Amazon QuickSight resources that the user is authorized to access during
-     *        the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the list of
-     *        dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass up to 25
-     *        dashboard ARNs in each API call.
+     *        The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user is authorized to access
+     *        during the lifetime of the session. If you choose <code>Dashboard</code> embedding experience, pass the
+     *        list of dashboard ARNs in the account that you want the user to be able to view. Currently, you can pass
+     *        up to 25 dashboard ARNs in each API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -417,11 +431,11 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The configuration of the experience you are embedding.
+     * The configuration of the experience that you are embedding.
      * </p>
      * 
      * @param experienceConfiguration
-     *        The configuration of the experience you are embedding.
+     *        The configuration of the experience that you are embedding.
      */
 
     public void setExperienceConfiguration(AnonymousUserEmbeddingExperienceConfiguration experienceConfiguration) {
@@ -430,10 +444,10 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The configuration of the experience you are embedding.
+     * The configuration of the experience that you are embedding.
      * </p>
      * 
-     * @return The configuration of the experience you are embedding.
+     * @return The configuration of the experience that you are embedding.
      */
 
     public AnonymousUserEmbeddingExperienceConfiguration getExperienceConfiguration() {
@@ -442,16 +456,146 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The configuration of the experience you are embedding.
+     * The configuration of the experience that you are embedding.
      * </p>
      * 
      * @param experienceConfiguration
-     *        The configuration of the experience you are embedding.
+     *        The configuration of the experience that you are embedding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GenerateEmbedUrlForAnonymousUserRequest withExperienceConfiguration(AnonymousUserEmbeddingExperienceConfiguration experienceConfiguration) {
         setExperienceConfiguration(experienceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list.
+     * For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.
+     * </p>
+     * 
+     * @return The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *         This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *         the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You
+     *         can list up to three domains or subdomains in each API call.</p>
+     *         <p>
+     *         To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow
+     *         list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     *         <code>https://sapp.amazon.com</code>.
+     */
+
+    public java.util.List<String> getAllowedDomains() {
+        return allowedDomains;
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list.
+     * For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.
+     * </p>
+     * 
+     * @param allowedDomains
+     *        The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *        This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *        the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You
+     *        can list up to three domains or subdomains in each API call.</p>
+     *        <p>
+     *        To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow
+     *        list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     *        <code>https://sapp.amazon.com</code>.
+     */
+
+    public void setAllowedDomains(java.util.Collection<String> allowedDomains) {
+        if (allowedDomains == null) {
+            this.allowedDomains = null;
+            return;
+        }
+
+        this.allowedDomains = new java.util.ArrayList<String>(allowedDomains);
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list.
+     * For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedDomains(java.util.Collection)} or {@link #withAllowedDomains(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param allowedDomains
+     *        The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *        This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *        the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You
+     *        can list up to three domains or subdomains in each API call.</p>
+     *        <p>
+     *        To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow
+     *        list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     *        <code>https://sapp.amazon.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateEmbedUrlForAnonymousUserRequest withAllowedDomains(String... allowedDomains) {
+        if (this.allowedDomains == null) {
+            setAllowedDomains(new java.util.ArrayList<String>(allowedDomains.length));
+        }
+        for (String ele : allowedDomains) {
+            this.allowedDomains.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The domains that you want to add to the allow list for access to the generated URL that is then embedded. This
+     * optional parameter overrides the static domains that are configured in the Manage QuickSight menu in the Amazon
+     * QuickSight console and instead allows only the domains that you include in this parameter. You can list up to
+     * three domains or subdomains in each API call.
+     * </p>
+     * <p>
+     * To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow list.
+     * For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     * <code>https://sapp.amazon.com</code>.
+     * </p>
+     * 
+     * @param allowedDomains
+     *        The domains that you want to add to the allow list for access to the generated URL that is then embedded.
+     *        This optional parameter overrides the static domains that are configured in the Manage QuickSight menu in
+     *        the Amazon QuickSight console and instead allows only the domains that you include in this parameter. You
+     *        can list up to three domains or subdomains in each API call.</p>
+     *        <p>
+     *        To include a subdomain, use <code>*</code> to include all subdomains under a specific domain to the allow
+     *        list. For example, <code>https://*.sapp.amazon.com,</code> includes all subdomains under
+     *        <code>https://sapp.amazon.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateEmbedUrlForAnonymousUserRequest withAllowedDomains(java.util.Collection<String> allowedDomains) {
+        setAllowedDomains(allowedDomains);
         return this;
     }
 
@@ -478,7 +622,9 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
         if (getAuthorizedResourceArns() != null)
             sb.append("AuthorizedResourceArns: ").append(getAuthorizedResourceArns()).append(",");
         if (getExperienceConfiguration() != null)
-            sb.append("ExperienceConfiguration: ").append(getExperienceConfiguration());
+            sb.append("ExperienceConfiguration: ").append(getExperienceConfiguration()).append(",");
+        if (getAllowedDomains() != null)
+            sb.append("AllowedDomains: ").append(getAllowedDomains());
         sb.append("}");
         return sb.toString();
     }
@@ -517,6 +663,10 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
             return false;
         if (other.getExperienceConfiguration() != null && other.getExperienceConfiguration().equals(this.getExperienceConfiguration()) == false)
             return false;
+        if (other.getAllowedDomains() == null ^ this.getAllowedDomains() == null)
+            return false;
+        if (other.getAllowedDomains() != null && other.getAllowedDomains().equals(this.getAllowedDomains()) == false)
+            return false;
         return true;
     }
 
@@ -531,6 +681,7 @@ public class GenerateEmbedUrlForAnonymousUserRequest extends com.amazonaws.Amazo
         hashCode = prime * hashCode + ((getSessionTags() == null) ? 0 : getSessionTags().hashCode());
         hashCode = prime * hashCode + ((getAuthorizedResourceArns() == null) ? 0 : getAuthorizedResourceArns().hashCode());
         hashCode = prime * hashCode + ((getExperienceConfiguration() == null) ? 0 : getExperienceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAllowedDomains() == null) ? 0 : getAllowedDomains().hashCode());
         return hashCode;
     }
 

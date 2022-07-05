@@ -56,8 +56,8 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     private String notificationEmail;
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more
-     * information about enabling public sharing, see <a
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      * >UpdatePublicSharingSettings</a>.
      * </p>
@@ -261,15 +261,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more
-     * information about enabling public sharing, see <a
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      * >UpdatePublicSharingSettings</a>.
      * </p>
      * 
      * @param publicSharingEnabled
-     *        A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For
-     *        more information about enabling public sharing, see <a
+     *        A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *        more information about turning on public sharing, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      *        >UpdatePublicSharingSettings</a>.
      */
@@ -280,14 +280,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more
-     * information about enabling public sharing, see <a
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      * >UpdatePublicSharingSettings</a>.
      * </p>
      * 
-     * @return A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For
-     *         more information about enabling public sharing, see <a
+     * @return A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *         more information about turning on public sharing, see <a
      *         href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      *         >UpdatePublicSharingSettings</a>.
      */
@@ -298,15 +298,15 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more
-     * information about enabling public sharing, see <a
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      * >UpdatePublicSharingSettings</a>.
      * </p>
      * 
      * @param publicSharingEnabled
-     *        A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For
-     *        more information about enabling public sharing, see <a
+     *        A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *        more information about turning on public sharing, see <a
      *        href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      *        >UpdatePublicSharingSettings</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -319,14 +319,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For more
-     * information about enabling public sharing, see <a
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For more
+     * information about turning on public sharing, see <a
      * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      * >UpdatePublicSharingSettings</a>.
      * </p>
      * 
-     * @return A boolean that indicates whether or not public sharing is enabled on an Amazon QuickSight account. For
-     *         more information about enabling public sharing, see <a
+     * @return A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account. For
+     *         more information about turning on public sharing, see <a
      *         href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdatePublicSharingSettings.html"
      *         >UpdatePublicSharingSettings</a>.
      */

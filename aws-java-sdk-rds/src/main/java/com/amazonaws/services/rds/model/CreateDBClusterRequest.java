@@ -483,25 +483,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String kmsKeyId;
     /**
      * <p>
-     * When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that
-     * contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the
-     * source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only
-     * when you are performing cross-Region replication from an encrypted DB cluster.
+     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
+     * in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
+     * <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.
      * </p>
      * <p>
-     * The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
+     * in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
-     * The presigned URL request must contain the following parameter values:
+     * The pre-signed URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     * <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the
-     * operation contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+     * the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action
+     * contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -531,8 +530,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in
-     * the source Amazon Web Services Region.
+     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * </note>
      * <p>
@@ -548,7 +547,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
@@ -638,9 +637,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
      * </p>
      * <p>
-     * The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     * </p>
-     * <p>
      * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      * </p>
@@ -653,34 +649,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     * >Limitations of Aurora Serverless v1</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">
-     * Requirements for Aurora Serverless v2</a>
+     * > Limitations of Aurora Serverless v1</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     * >Limitations of Parallel Query</a>
+     * > Limitations of Parallel Query</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * >Limitations of Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     * >Limitations of Multi-Master Clusters</a>
+     * > Limitations of Multi-Master Clusters</a>
      * </p>
      * </li>
      * </ul>
@@ -993,52 +983,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
@@ -3943,25 +3888,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that
-     * contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the
-     * source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only
-     * when you are performing cross-Region replication from an encrypted DB cluster.
+     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
+     * in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
+     * <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.
      * </p>
      * <p>
-     * The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
+     * in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
-     * The presigned URL request must contain the following parameter values:
+     * The pre-signed URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     * <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the
-     * operation contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+     * the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action
+     * contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -3991,8 +3935,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in
-     * the source Amazon Web Services Region.
+     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * </note>
      * <p>
@@ -4000,25 +3944,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param preSignedUrl
-     *        When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL
-     *        that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be
+     *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
      *        called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
      *        <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB
      *        cluster.</p>
      *        <p>
-     *        The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run
-     *        in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     *        The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
+     *        executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      *        </p>
      *        <p>
-     *        The presigned URL request must contain the following parameter values:
+     *        The pre-signed URL request must contain the following parameter values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB
-     *        cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     *        <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and
-     *        the operation contained in the presigned URL.
+     *        <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the
+     *        copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS
+     *        key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services
+     *        Region, and the action contained in the pre-signed URL.
      *        </p>
      *        </li>
      *        <li>
@@ -4048,8 +3991,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
      *        <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     *        Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the
-     *        operation that can run in the source Amazon Web Services Region.
+     *        Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *        operation that can be executed in the source Amazon Web Services Region.
      *        </p>
      *        </note>
      *        <p>
@@ -4062,25 +4005,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that
-     * contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the
-     * source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only
-     * when you are performing cross-Region replication from an encrypted DB cluster.
+     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
+     * in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
+     * <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.
      * </p>
      * <p>
-     * The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
+     * in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
-     * The presigned URL request must contain the following parameter values:
+     * The pre-signed URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     * <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the
-     * operation contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+     * the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action
+     * contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -4110,33 +4052,32 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in
-     * the source Amazon Web Services Region.
+     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * </note>
      * <p>
      * Valid for: Aurora DB clusters only
      * </p>
      * 
-     * @return When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an
-     *         URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to
+     * @return A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to
      *         be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
      *         <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB
      *         cluster.</p>
      *         <p>
-     *         The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run
-     *         in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     *         The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
+     *         executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      *         </p>
      *         <p>
-     *         The presigned URL request must contain the following parameter values:
+     *         The pre-signed URL request must contain the following parameter values:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB
-     *         cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     *         <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and
-     *         the operation contained in the presigned URL.
+     *         <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the
+     *         copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS
+     *         key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web
+     *         Services Region, and the action contained in the pre-signed URL.
      *         </p>
      *         </li>
      *         <li>
@@ -4166,8 +4107,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
      *         (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     *         Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the
-     *         operation that can run in the source Amazon Web Services Region.
+     *         Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *         operation that can be executed in the source Amazon Web Services Region.
      *         </p>
      *         </note>
      *         <p>
@@ -4180,25 +4121,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that
-     * contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be called in the
-     * source Amazon Web Services Region where the DB cluster is replicated from. Specify <code>PreSignedUrl</code> only
-     * when you are performing cross-Region replication from an encrypted DB cluster.
+     * A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be called
+     * in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
+     * <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB cluster.
      * </p>
      * <p>
-     * The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run in the
-     * source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     * The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be executed
+     * in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      * </p>
      * <p>
-     * The presigned URL request must contain the following parameter values:
+     * The pre-signed URL request must contain the following parameter values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in
-     * the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     * <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and the
-     * operation contained in the presigned URL.
+     * <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the copy of
+     * the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
+     * <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services Region, and the action
+     * contained in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -4228,8 +4168,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
      * <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually. Specifying
-     * <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the operation that can run in
-     * the source Amazon Web Services Region.
+     * <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the operation that can be
+     * executed in the source Amazon Web Services Region.
      * </p>
      * </note>
      * <p>
@@ -4237,25 +4177,24 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param preSignedUrl
-     *        When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL
-     *        that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> operation to be
+     *        A URL that contains a Signature Version 4 signed request for the <code>CreateDBCluster</code> action to be
      *        called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify
      *        <code>PreSignedUrl</code> only when you are performing cross-Region replication from an encrypted DB
      *        cluster.</p>
      *        <p>
-     *        The presigned URL must be a valid request for the <code>CreateDBCluster</code> API operation that can run
-     *        in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.
+     *        The pre-signed URL must be a valid request for the <code>CreateDBCluster</code> API action that can be
+     *        executed in the source Amazon Web Services Region that contains the encrypted DB cluster to be copied.
      *        </p>
      *        <p>
-     *        The presigned URL request must contain the following parameter values:
+     *        The pre-signed URL request must contain the following parameter values:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>KmsKeyId</code> - The KMS key identifier for the KMS key to use to encrypt the copy of the DB
-     *        cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the
-     *        <code>CreateDBCluster</code> operation that is called in the destination Amazon Web Services Region, and
-     *        the operation contained in the presigned URL.
+     *        <code>KmsKeyId</code> - The Amazon Web Services KMS key identifier for the KMS key to use to encrypt the
+     *        copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS
+     *        key for both the <code>CreateDBCluster</code> action that is called in the destination Amazon Web Services
+     *        Region, and the action contained in the pre-signed URL.
      *        </p>
      *        </li>
      *        <li>
@@ -4285,8 +4224,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code> (or
      *        <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code> manually.
-     *        Specifying <code>SourceRegion</code> autogenerates a presigned URL that is a valid request for the
-     *        operation that can run in the source Amazon Web Services Region.
+     *        Specifying <code>SourceRegion</code> autogenerates a pre-signed URL that is a valid request for the
+     *        operation that can be executed in the source Amazon Web Services Region.
      *        </p>
      *        </note>
      *        <p>
@@ -4307,7 +4246,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
@@ -4319,7 +4258,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
-     *        Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      *        </p>
      *        <p>
      *        Valid for: Aurora DB clusters only
@@ -4337,7 +4276,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
@@ -4348,7 +4287,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
-     *         Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      *         </p>
      *         <p>
      *         Valid for: Aurora DB clusters only
@@ -4366,7 +4305,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
@@ -4378,7 +4317,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
-     *        Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      *        </p>
      *        <p>
      *        Valid for: Aurora DB clusters only
@@ -4398,7 +4337,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
-     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      * </p>
      * <p>
      * Valid for: Aurora DB clusters only
@@ -4409,7 +4348,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
-     *         Database Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>.
      *         </p>
      *         <p>
      *         Valid for: Aurora DB clusters only
@@ -4946,9 +4885,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
      * </p>
      * <p>
-     * The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     * </p>
-     * <p>
      * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      * </p>
@@ -4961,34 +4897,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     * >Limitations of Aurora Serverless v1</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">
-     * Requirements for Aurora Serverless v2</a>
+     * > Limitations of Aurora Serverless v1</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     * >Limitations of Parallel Query</a>
+     * > Limitations of Parallel Query</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * >Limitations of Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     * >Limitations of Multi-Master Clusters</a>
+     * > Limitations of Multi-Master Clusters</a>
      * </p>
      * </li>
      * </ul>
@@ -5012,9 +4942,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        5.6.10a.
      *        </p>
      *        <p>
-     *        The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     *        </p>
-     *        <p>
      *        For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      *        <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      *        </p>
@@ -5027,35 +4954,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     *        >Limitations of Aurora Serverless v1</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html"
-     *        >Requirements for Aurora Serverless v2</a>
+     *        > Limitations of Aurora Serverless v1</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     *        >Limitations of Parallel Query</a>
+     *        > Limitations of Parallel Query</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     *        >Limitations of Aurora Global Databases</a>
+     *        > Limitations of Aurora Global Databases</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     *        >Limitations of Multi-Master Clusters</a>
+     *        > Limitations of Multi-Master Clusters</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -5084,9 +5004,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
      * </p>
      * <p>
-     * The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     * </p>
-     * <p>
      * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      * </p>
@@ -5099,34 +5016,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     * >Limitations of Aurora Serverless v1</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">
-     * Requirements for Aurora Serverless v2</a>
+     * > Limitations of Aurora Serverless v1</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     * >Limitations of Parallel Query</a>
+     * > Limitations of Parallel Query</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * >Limitations of Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     * >Limitations of Multi-Master Clusters</a>
+     * > Limitations of Multi-Master Clusters</a>
      * </p>
      * </li>
      * </ul>
@@ -5149,9 +5060,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         5.6.10a.
      *         </p>
      *         <p>
-     *         The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     *         </p>
-     *         <p>
      *         For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      *         <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      *         </p>
@@ -5164,35 +5072,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     *         >Limitations of Aurora Serverless v1</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html"
-     *         >Requirements for Aurora Serverless v2</a>
+     *         > Limitations of Aurora Serverless v1</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     *         >Limitations of Parallel Query</a>
+     *         > Limitations of Parallel Query</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     *         >Limitations of Aurora Global Databases</a>
+     *         > Limitations of Aurora Global Databases</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     *         >Limitations of Multi-Master Clusters</a>
+     *         > Limitations of Multi-Master Clusters</a>
      *         </p>
      *         </li>
      *         </ul>
@@ -5221,9 +5122,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
      * </p>
      * <p>
-     * The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     * </p>
-     * <p>
      * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      * </p>
@@ -5236,34 +5134,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     * >Limitations of Aurora Serverless v1</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">
-     * Requirements for Aurora Serverless v2</a>
+     * > Limitations of Aurora Serverless v1</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     * >Limitations of Parallel Query</a>
+     * > Limitations of Parallel Query</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * >Limitations of Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     * >Limitations of Multi-Master Clusters</a>
+     * > Limitations of Multi-Master Clusters</a>
      * </p>
      * </li>
      * </ul>
@@ -5287,9 +5179,6 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        5.6.10a.
      *        </p>
      *        <p>
-     *        The <code>serverless</code> engine mode only applies for Aurora Serverless v1 DB clusters.
-     *        </p>
-     *        <p>
      *        For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
      *        <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
      *        </p>
@@ -5302,35 +5191,28 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations"
-     *        >Limitations of Aurora Serverless v1</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html"
-     *        >Requirements for Aurora Serverless v2</a>
+     *        > Limitations of Aurora Serverless v1</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations"
-     *        >Limitations of Parallel Query</a>
+     *        > Limitations of Parallel Query</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     *        >Limitations of Aurora Global Databases</a>
+     *        > Limitations of Aurora Global Databases</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations"
-     *        >Limitations of Multi-Master Clusters</a>
+     *        > Limitations of Multi-Master Clusters</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -7468,105 +7350,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        7
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
-     *        </p>
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
      *        <p>
      *        Valid for: Multi-AZ DB clusters only
      */
@@ -7577,104 +7368,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
-     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *         valid:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         7
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For example, the following values are valid:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         93 (3 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         341 (11 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         589 (19 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
-     *         </p>
+     * @return The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2
+     *         years).</p>
      *         <p>
      *         Valid for: Multi-AZ DB clusters only
      */
@@ -7685,105 +7386,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * <p>
      * Valid for: Multi-AZ DB clusters only
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        7
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
-     *        </p>
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).</p>
      *        <p>
      *        Valid for: Multi-AZ DB clusters only
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -47,6 +47,12 @@ public class PromptSpecification implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Boolean allowInterrupt;
+    /**
+     * <p>
+     * Indicates how a message is selected from a message group among retries.
+     * </p>
+     */
+    private String messageSelectionStrategy;
 
     /**
      * <p>
@@ -219,6 +225,65 @@ public class PromptSpecification implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Indicates how a message is selected from a message group among retries.
+     * </p>
+     * 
+     * @param messageSelectionStrategy
+     *        Indicates how a message is selected from a message group among retries.
+     * @see MessageSelectionStrategy
+     */
+
+    public void setMessageSelectionStrategy(String messageSelectionStrategy) {
+        this.messageSelectionStrategy = messageSelectionStrategy;
+    }
+
+    /**
+     * <p>
+     * Indicates how a message is selected from a message group among retries.
+     * </p>
+     * 
+     * @return Indicates how a message is selected from a message group among retries.
+     * @see MessageSelectionStrategy
+     */
+
+    public String getMessageSelectionStrategy() {
+        return this.messageSelectionStrategy;
+    }
+
+    /**
+     * <p>
+     * Indicates how a message is selected from a message group among retries.
+     * </p>
+     * 
+     * @param messageSelectionStrategy
+     *        Indicates how a message is selected from a message group among retries.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MessageSelectionStrategy
+     */
+
+    public PromptSpecification withMessageSelectionStrategy(String messageSelectionStrategy) {
+        setMessageSelectionStrategy(messageSelectionStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates how a message is selected from a message group among retries.
+     * </p>
+     * 
+     * @param messageSelectionStrategy
+     *        Indicates how a message is selected from a message group among retries.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MessageSelectionStrategy
+     */
+
+    public PromptSpecification withMessageSelectionStrategy(MessageSelectionStrategy messageSelectionStrategy) {
+        this.messageSelectionStrategy = messageSelectionStrategy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -235,7 +300,9 @@ public class PromptSpecification implements Serializable, Cloneable, StructuredP
         if (getMaxRetries() != null)
             sb.append("MaxRetries: ").append(getMaxRetries()).append(",");
         if (getAllowInterrupt() != null)
-            sb.append("AllowInterrupt: ").append(getAllowInterrupt());
+            sb.append("AllowInterrupt: ").append(getAllowInterrupt()).append(",");
+        if (getMessageSelectionStrategy() != null)
+            sb.append("MessageSelectionStrategy: ").append(getMessageSelectionStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +329,10 @@ public class PromptSpecification implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAllowInterrupt() != null && other.getAllowInterrupt().equals(this.getAllowInterrupt()) == false)
             return false;
+        if (other.getMessageSelectionStrategy() == null ^ this.getMessageSelectionStrategy() == null)
+            return false;
+        if (other.getMessageSelectionStrategy() != null && other.getMessageSelectionStrategy().equals(this.getMessageSelectionStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +344,7 @@ public class PromptSpecification implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getMessageGroups() == null) ? 0 : getMessageGroups().hashCode());
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
         hashCode = prime * hashCode + ((getAllowInterrupt() == null) ? 0 : getAllowInterrupt().hashCode());
+        hashCode = prime * hashCode + ((getMessageSelectionStrategy() == null) ? 0 : getMessageSelectionStrategy().hashCode());
         return hashCode;
     }
 

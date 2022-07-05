@@ -33,7 +33,7 @@ public class UpdatePublicSharingSettingsRequest extends com.amazonaws.AmazonWebS
     private String awsAccountId;
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      * </p>
      */
     private Boolean publicSharingEnabled;
@@ -80,11 +80,11 @@ public class UpdatePublicSharingSettingsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      * </p>
      * 
      * @param publicSharingEnabled
-     *        A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     *        A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      */
 
     public void setPublicSharingEnabled(Boolean publicSharingEnabled) {
@@ -93,10 +93,10 @@ public class UpdatePublicSharingSettingsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      * </p>
      * 
-     * @return A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * @return A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      */
 
     public Boolean getPublicSharingEnabled() {
@@ -105,11 +105,11 @@ public class UpdatePublicSharingSettingsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      * </p>
      * 
      * @param publicSharingEnabled
-     *        A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     *        A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +120,10 @@ public class UpdatePublicSharingSettingsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      * </p>
      * 
-     * @return A boolean that indicates whether or not public sharing is enabled on a Amazon QuickSight account.
+     * @return A Boolean value that indicates whether public sharing is turned on for an Amazon QuickSight account.
      */
 
     public Boolean isPublicSharingEnabled() {

@@ -102,7 +102,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You are using an Config managed rule that is triggered at a periodic frequency.
+     * This is for an Config managed rule that is triggered at a periodic frequency.
      * </p>
      * </li>
      * <li>
@@ -490,7 +490,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You are using an Config managed rule that is triggered at a periodic frequency.
+     * This is for an Config managed rule that is triggered at a periodic frequency.
      * </p>
      * </li>
      * <li>
@@ -513,7 +513,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You are using an Config managed rule that is triggered at a periodic frequency.
+     *        This is for an Config managed rule that is triggered at a periodic frequency.
      *        </p>
      *        </li>
      *        <li>
@@ -543,7 +543,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You are using an Config managed rule that is triggered at a periodic frequency.
+     * This is for an Config managed rule that is triggered at a periodic frequency.
      * </p>
      * </li>
      * <li>
@@ -565,7 +565,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         You are using an Config managed rule that is triggered at a periodic frequency.
+     *         This is for an Config managed rule that is triggered at a periodic frequency.
      *         </p>
      *         </li>
      *         <li>
@@ -595,7 +595,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You are using an Config managed rule that is triggered at a periodic frequency.
+     * This is for an Config managed rule that is triggered at a periodic frequency.
      * </p>
      * </li>
      * <li>
@@ -618,7 +618,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You are using an Config managed rule that is triggered at a periodic frequency.
+     *        This is for an Config managed rule that is triggered at a periodic frequency.
      *        </p>
      *        </li>
      *        <li>
@@ -650,7 +650,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You are using an Config managed rule that is triggered at a periodic frequency.
+     * This is for an Config managed rule that is triggered at a periodic frequency.
      * </p>
      * </li>
      * <li>
@@ -673,7 +673,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You are using an Config managed rule that is triggered at a periodic frequency.
+     *        This is for an Config managed rule that is triggered at a periodic frequency.
      *        </p>
      *        </li>
      *        <li>
@@ -703,7 +703,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * You are using an Config managed rule that is triggered at a periodic frequency.
+     * This is for an Config managed rule that is triggered at a periodic frequency.
      * </p>
      * </li>
      * <li>
@@ -726,7 +726,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        You are using an Config managed rule that is triggered at a periodic frequency.
+     *        This is for an Config managed rule that is triggered at a periodic frequency.
      *        </p>
      *        </li>
      *        <li>

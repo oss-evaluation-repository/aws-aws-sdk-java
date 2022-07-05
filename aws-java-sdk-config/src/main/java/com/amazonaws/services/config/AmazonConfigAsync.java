@@ -1852,9 +1852,24 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
-     * applicable if you specify organization Config rule names. It is only applicable, when you request all the
-     * organization Config rules.
+     * When you specify the limit and the next token, you receive a paginated response.
+     * </p>
+     * <p>
+     * Limit and next token are not applicable if you specify organization Config rule names. It is only applicable,
+     * when you request all the organization Config rules.
+     * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
      * </p>
      * </note>
      * 
@@ -1874,9 +1889,24 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
-     * applicable if you specify organization Config rule names. It is only applicable, when you request all the
-     * organization Config rules.
+     * When you specify the limit and the next token, you receive a paginated response.
+     * </p>
+     * <p>
+     * Limit and next token are not applicable if you specify organization Config rule names. It is only applicable,
+     * when you request all the organization Config rules.
+     * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
      * </p>
      * </note>
      * 
@@ -1966,6 +1996,19 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
      * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
+     * </p>
      * </note>
      * 
      * @param describeOrganizationConformancePacksRequest
@@ -1989,6 +2032,19 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
+     * </p>
+     * <p>
+     * <i>For accounts within an organzation</i>
+     * </p>
+     * <p>
+     * If you deploy an organizational rule or conformance pack in an organization administrator account, and then
+     * establish a delegated administrator and deploy an organizational rule or conformance pack in the delegated
+     * administrator account, you won't be able to see the organizational rule or conformance pack in the organization
+     * administrator account from the delegated administrator account or see the organizational rule or conformance pack
+     * in the delegated administrator account from organization administrator account. The
+     * <code>DescribeOrganizationConfigRules</code> and <code>DescribeOrganizationConformancePacks</code> APIs can only
+     * see and interact with the organization-related resource that were deployed from within the account calling those
+     * APIs.
      * </p>
      * </note>
      * 
@@ -3867,11 +3923,15 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+     * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
+     * many organization conformance packs and how many Config rules you can have per account, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+     * the Config Developer Guide.
      * </p>
      * <p>
      * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
-     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An
+     * organization can have up to 3 delegated administrators.
      * </p>
      * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
@@ -3893,10 +3953,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance
      * pack is created or updated. You cannot update a conformance pack while it is in this state.
-     * </p>
-     * <p>
-     * You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per
-     * organization.
      * </p>
      * </note>
      * 
@@ -3912,11 +3968,15 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
-     * Deploys conformance packs across member accounts in an Amazon Web Services Organization.
+     * Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how
+     * many organization conformance packs and how many Config rules you can have per account, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
+     * the Config Developer Guide.
      * </p>
      * <p>
      * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
-     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An
+     * organization can have up to 3 delegated administrators.
      * </p>
      * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
@@ -3938,10 +3998,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the conformance
      * pack is created or updated. You cannot update a conformance pack while it is in this state.
-     * </p>
-     * <p>
-     * You can create 50 conformance packs with 25 Config rules in each pack and 3 delegated administrator per
-     * organization.
      * </p>
      * </note>
      * 
@@ -3976,6 +4032,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * This API does not support adding remediation configurations for service-linked Config Rules such as Organization
      * Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.
      * </p>
+     * </note> <note>
+     * <p>
+     * For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a
+     * value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either
+     * as long as it maps to a valid parameter.
+     * </p>
+     * <p>
+     * However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is
+     * <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to
+     * remediate your resources.
+     * </p>
      * </note>
      * 
      * @param putRemediationConfigurationsRequest
@@ -4003,6 +4070,17 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * This API does not support adding remediation configurations for service-linked Config Rules such as Organization
      * Config rules, the rules deployed by conformance packs, and rules deployed by Amazon Web Services Security Hub.
+     * </p>
+     * </note> <note>
+     * <p>
+     * For manual remediation configuration, you need to provide a value for <code>automationAssumeRole</code> or use a
+     * value in the <code>assumeRole</code>field to remediate your resources. The SSM automation document can use either
+     * as long as it maps to a valid parameter.
+     * </p>
+     * <p>
+     * However, for automatic remediation configuration, the only valid <code>assumeRole</code> field value is
+     * <code>AutomationAssumeRole</code> and you need to provide a value for <code>AutomationAssumeRole</code> to
+     * remediate your resources.
      * </p>
      * </note>
      * 

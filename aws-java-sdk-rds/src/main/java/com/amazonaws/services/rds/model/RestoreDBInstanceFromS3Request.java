@@ -488,7 +488,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      */
     private Boolean enablePerformanceInsights;
@@ -508,52 +508,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private String performanceInsightsKMSKeyId;
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      */
     private Integer performanceInsightsRetentionPeriod;
@@ -3680,7 +3635,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * 
      * @param enablePerformanceInsights
@@ -3688,7 +3643,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *        Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *        Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      */
 
     public void setEnablePerformanceInsights(Boolean enablePerformanceInsights) {
@@ -3702,14 +3657,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable Performance Insights for the DB instance.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *         Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *         Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      */
 
     public Boolean getEnablePerformanceInsights() {
@@ -3723,7 +3678,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * 
      * @param enablePerformanceInsights
@@ -3731,7 +3686,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *        Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *        Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3747,14 +3702,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon Performance
-     * Insights</a> in the <i>Amazon RDS User Guide</i>.
+     * Insights</a> in the <i>Amazon RDS User Guide.</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable Performance Insights for the DB instance.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon
-     *         Performance Insights</a> in the <i>Amazon RDS User Guide</i>.
+     *         Performance Insights</a> in the <i>Amazon RDS User Guide.</i>.
      */
 
     public Boolean isEnablePerformanceInsights() {
@@ -3851,101 +3806,11 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        7
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      */
 
     public void setPerformanceInsightsRetentionPeriod(Integer performanceInsightsRetentionPeriod) {
@@ -3954,100 +3819,10 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * 
-     * @return The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *         valid:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         7
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For example, the following values are valid:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         93 (3 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         341 (11 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         589 (19 months * 31)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         731
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * @return The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      */
 
     public Integer getPerformanceInsightsRetentionPeriod() {
@@ -4056,101 +3831,11 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The number of days to retain Performance Insights data. The default is 7 days. The following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 7
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For example, the following values are valid:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * 93 (3 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 341 (11 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 589 (19 months * 31)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 731
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     * The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * </p>
      * 
      * @param performanceInsightsRetentionPeriod
-     *        The number of days to retain Performance Insights data. The default is 7 days. The following values are
-     *        valid:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        7
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i>month</i> * 31, where <i>month</i> is a number of months from 1-23
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For example, the following values are valid:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        93 (3 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        341 (11 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        589 (19 months * 31)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        731
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        If you specify a retention period such as 94, which isn't a valid value, RDS issues an error.
+     *        The amount of time, in days, to retain Performance Insights data. Valid values are 7 or 731 (2 years).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

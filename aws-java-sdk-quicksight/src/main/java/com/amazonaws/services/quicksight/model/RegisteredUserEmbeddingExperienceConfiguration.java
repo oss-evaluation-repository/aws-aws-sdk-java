@@ -92,7 +92,8 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      */
     private RegisteredUserQSearchBarEmbeddingConfiguration qSearchBar;
@@ -411,14 +412,16 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param qSearchBar
      *        The configuration details for embedding the Q search bar.</p>
      *        <p>
      *        For more information about embedding the Q search bar, see <a
-     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *        in the <i>Amazon QuickSight User Guide</i>.
      */
 
     public void setQSearchBar(RegisteredUserQSearchBarEmbeddingConfiguration qSearchBar) {
@@ -431,13 +434,15 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @return The configuration details for embedding the Q search bar.</p>
      *         <p>
      *         For more information about embedding the Q search bar, see <a
-     *         href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     *         href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *         in the <i>Amazon QuickSight User Guide</i>.
      */
 
     public RegisteredUserQSearchBarEmbeddingConfiguration getQSearchBar() {
@@ -450,14 +455,16 @@ public class RegisteredUserEmbeddingExperienceConfiguration implements Serializa
      * </p>
      * <p>
      * For more information about embedding the Q search bar, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param qSearchBar
      *        The configuration details for embedding the Q search bar.</p>
      *        <p>
      *        For more information about embedding the Q search bar, see <a
-     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>.
+     *        href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-overview.html">Embedding Overview</a>
+     *        in the <i>Amazon QuickSight User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
