@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule.
  * </p>
+ * <p>
+ * For example specifications, see the examples section of <a>CreateWebACL</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/Statement" target="_top">AWS API
  *      Documentation</a>

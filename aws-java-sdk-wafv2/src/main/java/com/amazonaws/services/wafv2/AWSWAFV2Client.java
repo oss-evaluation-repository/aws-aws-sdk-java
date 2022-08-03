@@ -69,12 +69,12 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * </note>
  * <p>
  * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon
- * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API. WAF also lets
- * you control access to your content. Based on criteria that you specify, such as the IP addresses that requests
- * originate from or the values of query strings, the Amazon API Gateway REST API, CloudFront distribution, the
- * Application Load Balancer, or the AppSync GraphQL API responds to requests either with the requested content or with
- * an HTTP 403 status code (Forbidden). You also can configure CloudFront to return a custom error page when a request
- * is blocked.
+ * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+ * Cognito user pool. WAF also lets you control access to your content. Based on conditions that you specify, such as
+ * the IP addresses that requests originate from or the values of query strings, the Amazon API Gateway REST API,
+ * CloudFront distribution, the Application Load Balancer, the AppSync GraphQL API, or the Amazon Cognito user pool
+ * responds to requests either with the requested content or with an HTTP 403 status code (Forbidden). You also can
+ * configure CloudFront to return a custom error page when a request is blocked.
  * </p>
  * <p>
  * This API guide is for developers who need detailed information about WAF API actions, data types, and errors. For
@@ -89,7 +89,7 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * <li>
  * <p>
  * For regional applications, you can use any of the endpoints in the list. A regional application can be an Application
- * Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+ * Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
  * </p>
  * </li>
  * <li>
@@ -255,7 +255,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     /**
      * <p>
      * Associates a web ACL with a regional application resource, to protect the resource. A regional application can be
-     * an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito
+     * user pool.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate
@@ -423,6 +424,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         The operation failed because the specified version for the managed rule group has expired. You can
      *         retrieve the available versions for the managed rule group by calling
      *         <a>ListAvailableManagedRuleGroupVersions</a>.
+     * @throws WAFInvalidOperationException
+     *         The operation isn't valid.
      * @sample AWSWAFV2.CheckCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity" target="_top">AWS API
      *      Documentation</a>
@@ -802,7 +805,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.
+     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1065,11 +1069,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1349,11 +1349,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1452,11 +1448,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1604,11 +1596,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         retry your operation.
      * @throws WAFAssociatedItemException
      *         WAF couldn’t perform the operation because your resource is being used by another resource or it’s
-     *         associated with another resource. </p>
-     *         <p>
-     *         For <code>DeleteWebACL</code>, you will only get this exception if the web ACL is still associated with a
-     *         regional resource. Deleting a web ACL that is still associated with an Amazon CloudFront distribution
-     *         won't get this exception.
+     *         associated with another resource.
      * @throws WAFTagOperationException
      *         An error occurred during the tagging operation. Retry your request.
      * @throws WAFTagOperationInternalErrorException
@@ -1763,7 +1751,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * <p>
      * Disassociates the specified regional application resource from any existing web ACL association. A resource can
      * have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon
-     * API Gateway REST API, or an AppSync GraphQL API.
+     * API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
@@ -5059,7 +5047,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
-     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.
+     * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
+     * Cognito user pool.
      * </p>
      * 
      * @param updateWebACLRequest

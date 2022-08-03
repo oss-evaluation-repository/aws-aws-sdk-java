@@ -1209,7 +1209,7 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
-     * Begins setup of time-based one-time password multi-factor authentication (TOTP MFA) for a user, with a unique
+     * Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique
      * private key that Amazon Cognito generates and returns in the API response. You can authorize an
      * <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a
      * challenge response that you received from Amazon Cognito.
@@ -1245,6 +1245,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws SoftwareTokenMFANotFoundException
      *         This exception is thrown when the software token time-based one-time password (TOTP) multi-factor
      *         authentication (MFA) isn't activated for the user pool.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.AssociateSoftwareToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AssociateSoftwareToken"
      *      target="_top">AWS API Documentation</a>
@@ -1279,6 +1282,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ChangePassword
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ChangePassword" target="_top">AWS API
      *      Documentation</a>
@@ -1317,6 +1323,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ConfirmDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmDevice" target="_top">AWS API
      *      Documentation</a>
@@ -1363,6 +1372,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ConfirmForgotPassword
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPassword"
      *      target="_top">AWS API Documentation</a>
@@ -1410,6 +1422,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ConfirmSignUp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmSignUp" target="_top">AWS API
      *      Documentation</a>
@@ -1738,6 +1753,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.DeleteUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUser" target="_top">AWS API
      *      Documentation</a>
@@ -1768,6 +1786,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.DeleteUserAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DeleteUserAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -2038,6 +2059,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ForgetDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgetDevice" target="_top">AWS API
      *      Documentation</a>
@@ -2113,6 +2137,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ForgotPassword
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword" target="_top">AWS API
      *      Documentation</a>
@@ -2169,6 +2196,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.GetDevice
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetDevice" target="_top">AWS API
      *      Documentation</a>
@@ -2294,6 +2324,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.GetUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUser" target="_top">AWS API
      *      Documentation</a>
@@ -2365,6 +2398,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.GetUserAttributeVerificationCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetUserAttributeVerificationCode"
      *      target="_top">AWS API Documentation</a>
@@ -2419,6 +2455,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.GlobalSignOut
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut" target="_top">AWS API
      *      Documentation</a>
@@ -2487,6 +2526,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when the trust relationship is not valid for the role provided for SMS
      *         configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code> or the external
      *         ID provided in the role does not match what is provided in the SMS configuration for the user pool.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.InitiateAuth
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/InitiateAuth" target="_top">AWS API
      *      Documentation</a>
@@ -2519,6 +2561,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ListDevices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ListDevices" target="_top">AWS API
      *      Documentation</a>
@@ -2807,6 +2852,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't found.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.ResendConfirmationCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ResendConfirmationCode"
      *      target="_top">AWS API Documentation</a>
@@ -2888,6 +2936,9 @@ public interface AWSCognitoIdentityProvider {
      * @throws SoftwareTokenMFANotFoundException
      *         This exception is thrown when the software token time-based one-time password (TOTP) multi-factor
      *         authentication (MFA) isn't activated for the user pool.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.RespondToAuthChallenge
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RespondToAuthChallenge"
      *      target="_top">AWS API Documentation</a>
@@ -2916,6 +2967,9 @@ public interface AWSCognitoIdentityProvider {
      *         client.
      * @throws UnsupportedTokenTypeException
      *         Exception that is thrown when an unsupported token is passed to an operation.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.RevokeToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/RevokeToken" target="_top">AWS API
      *      Documentation</a>
@@ -3019,6 +3073,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.SetUserMFAPreference
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserMFAPreference"
      *      target="_top">AWS API Documentation</a>
@@ -3099,6 +3156,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.SetUserSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserSettings" target="_top">AWS
      *      API Documentation</a>
@@ -3165,6 +3225,9 @@ public interface AWSCognitoIdentityProvider {
      *         400.
      * @throws CodeDeliveryFailureException
      *         This exception is thrown when a verification code fails to deliver successfully.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.SignUp
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SignUp" target="_top">AWS API
      *      Documentation</a>
@@ -3340,6 +3403,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.UpdateDeviceStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateDeviceStatus" target="_top">AWS
      *      API Documentation</a>
@@ -3496,6 +3562,9 @@ public interface AWSCognitoIdentityProvider {
      *         This exception is thrown when a user isn't confirmed successfully.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.UpdateUserAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -3702,6 +3771,9 @@ public interface AWSCognitoIdentityProvider {
      *         authentication (MFA) isn't activated for the user pool.
      * @throws CodeMismatchException
      *         This exception is thrown if the provided code doesn't match what the server was expecting.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.VerifySoftwareToken
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifySoftwareToken"
      *      target="_top">AWS API Documentation</a>
@@ -3749,6 +3821,9 @@ public interface AWSCognitoIdentityProvider {
      *         that has already been supplied as an alias for a different user profile. This exception indicates that an
      *         account with this email address or phone already exists in a user pool that you've configured to use
      *         email address or phone number as a sign-in alias.
+     * @throws ForbiddenException
+     *         This exception is thrown when WAF doesn't allow your request based on a web ACL that's associated with
+     *         your user pool.
      * @sample AWSCognitoIdentityProvider.VerifyUserAttribute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/VerifyUserAttribute"
      *      target="_top">AWS API Documentation</a>

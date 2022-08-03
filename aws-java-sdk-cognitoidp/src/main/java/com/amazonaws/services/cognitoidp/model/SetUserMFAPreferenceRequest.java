@@ -33,7 +33,7 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
     private SMSMfaSettingsType sMSMfaSettings;
     /**
      * <p>
-     * The time-based one-time password software token MFA settings.
+     * The time-based one-time password (TOTP) software token MFA settings.
      * </p>
      */
     private SoftwareTokenMfaSettingsType softwareTokenMfaSettings;
@@ -86,11 +86,11 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time-based one-time password software token MFA settings.
+     * The time-based one-time password (TOTP) software token MFA settings.
      * </p>
      * 
      * @param softwareTokenMfaSettings
-     *        The time-based one-time password software token MFA settings.
+     *        The time-based one-time password (TOTP) software token MFA settings.
      */
 
     public void setSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType softwareTokenMfaSettings) {
@@ -99,10 +99,10 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time-based one-time password software token MFA settings.
+     * The time-based one-time password (TOTP) software token MFA settings.
      * </p>
      * 
-     * @return The time-based one-time password software token MFA settings.
+     * @return The time-based one-time password (TOTP) software token MFA settings.
      */
 
     public SoftwareTokenMfaSettingsType getSoftwareTokenMfaSettings() {
@@ -111,11 +111,11 @@ public class SetUserMFAPreferenceRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The time-based one-time password software token MFA settings.
+     * The time-based one-time password (TOTP) software token MFA settings.
      * </p>
      * 
      * @param softwareTokenMfaSettings
-     *        The time-based one-time password software token MFA settings.
+     *        The time-based one-time password (TOTP) software token MFA settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,6 +31,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration
  * objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.
  * </p>
+ * <p>
+ * For example specifications, see the examples section of <a>CreateWebACL</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ManagedRuleGroupConfig" target="_top">AWS API
  *      Documentation</a>

@@ -34,7 +34,7 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      */
     private String resourceType;
@@ -82,12 +82,13 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
+     *        pool.
      * @see ResourceType
      */
 
@@ -98,11 +99,12 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      * 
      * @return Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *         Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     *         Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
+     *         pool.
      * @see ResourceType
      */
 
@@ -113,12 +115,13 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
+     *        pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -131,12 +134,13 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
      * </p>
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     *        Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user
+     *        pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

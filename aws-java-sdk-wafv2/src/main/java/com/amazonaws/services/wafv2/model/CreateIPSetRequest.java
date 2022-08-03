@@ -34,7 +34,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -181,7 +182,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -201,8 +203,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -228,7 +230,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -247,8 +250,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *         GraphQL API. </p>
+     *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *         API, or an Amazon Cognito user pool. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -274,7 +277,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -294,8 +298,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -323,7 +327,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.
+     * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, or
+     * an Amazon Cognito user pool.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -343,8 +348,8 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync
-     *        GraphQL API. </p>
+     *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
+     *        API, or an Amazon Cognito user pool. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>

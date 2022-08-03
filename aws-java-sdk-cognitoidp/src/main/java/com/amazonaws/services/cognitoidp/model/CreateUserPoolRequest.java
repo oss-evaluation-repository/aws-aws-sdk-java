@@ -88,7 +88,8 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String smsVerificationMessage;
     /**
      * <p>
-     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
@@ -96,7 +97,8 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String emailVerificationMessage;
     /**
      * <p>
-     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
@@ -128,14 +130,21 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * handle changes to the value of your users' email address and phone number attributes. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     * > Verifying updates to to email addresses and phone numbers</a>.
+     * > Verifying updates to email addresses and phone numbers</a>.
      * </p>
      */
     private UserAttributeUpdateSettingsType userAttributeUpdateSettings;
     /**
      * <p>
-     * The device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      */
     private DeviceConfigurationType deviceConfiguration;
     /**
@@ -753,13 +762,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     *        A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed
+     *        only if <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      *        >EmailSendingAccount</a> is DEVELOPER.
      */
@@ -770,13 +781,14 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return A string representing the email verification message. EmailVerificationMessage is allowed only if <a
-     *         href=
+     * @return A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed
+     *         only if <a href=
      *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      *         >EmailSendingAccount</a> is DEVELOPER.
      */
@@ -787,13 +799,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     *        A string representing the email verification message. <code>EmailVerificationMessage</code> is allowed
+     *        only if <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -806,13 +820,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     *        A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed
+     *        only if <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      *        >EmailSendingAccount</a> is DEVELOPER.
      */
@@ -823,13 +839,14 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return A string representing the email verification subject. EmailVerificationSubject is allowed only if <a
-     *         href=
+     * @return A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed
+     *         only if <a href=
      *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      *         >EmailSendingAccount</a> is DEVELOPER.
      */
@@ -840,13 +857,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed only if <a
+     * href=
      * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     *        A string representing the email verification subject. <code>EmailVerificationSubject</code> is allowed
+     *        only if <a href=
      *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
      *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1023,7 +1042,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * handle changes to the value of your users' email address and phone number attributes. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     * > Verifying updates to to email addresses and phone numbers</a>.
+     * > Verifying updates to email addresses and phone numbers</a>.
      * </p>
      * 
      * @param userAttributeUpdateSettings
@@ -1032,7 +1051,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        to handle changes to the value of your users' email address and phone number attributes. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     *        > Verifying updates to to email addresses and phone numbers</a>.
+     *        > Verifying updates to email addresses and phone numbers</a>.
      */
 
     public void setUserAttributeUpdateSettings(UserAttributeUpdateSettingsType userAttributeUpdateSettings) {
@@ -1046,7 +1065,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * handle changes to the value of your users' email address and phone number attributes. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     * > Verifying updates to to email addresses and phone numbers</a>.
+     * > Verifying updates to email addresses and phone numbers</a>.
      * </p>
      * 
      * @return The settings for updates to user attributes. These settings include the property
@@ -1054,7 +1073,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *         to handle changes to the value of your users' email address and phone number attributes. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     *         > Verifying updates to to email addresses and phone numbers</a>.
+     *         > Verifying updates to email addresses and phone numbers</a>.
      */
 
     public UserAttributeUpdateSettingsType getUserAttributeUpdateSettings() {
@@ -1068,7 +1087,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * handle changes to the value of your users' email address and phone number attributes. For more information, see
      * <a href=
      * "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     * > Verifying updates to to email addresses and phone numbers</a>.
+     * > Verifying updates to email addresses and phone numbers</a>.
      * </p>
      * 
      * @param userAttributeUpdateSettings
@@ -1077,7 +1096,7 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      *        to handle changes to the value of your users' email address and phone number attributes. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates"
-     *        > Verifying updates to to email addresses and phone numbers</a>.
+     *        > Verifying updates to email addresses and phone numbers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1088,11 +1107,23 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      * 
      * @param deviceConfiguration
-     *        The device configuration.
+     *        The device-remembering configuration for a user pool. A null value indicates that you have deactivated
+     *        device remembering in your user pool.</p> <note>
+     *        <p>
+     *        When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     *        device-remembering feature.
+     *        </p>
      */
 
     public void setDeviceConfiguration(DeviceConfigurationType deviceConfiguration) {
@@ -1101,10 +1132,22 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      * 
-     * @return The device configuration.
+     * @return The device-remembering configuration for a user pool. A null value indicates that you have deactivated
+     *         device remembering in your user pool.</p> <note>
+     *         <p>
+     *         When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     *         device-remembering feature.
+     *         </p>
      */
 
     public DeviceConfigurationType getDeviceConfiguration() {
@@ -1113,11 +1156,23 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The device configuration.
+     * The device-remembering configuration for a user pool. A null value indicates that you have deactivated device
+     * remembering in your user pool.
      * </p>
+     * <note>
+     * <p>
+     * When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     * device-remembering feature.
+     * </p>
+     * </note>
      * 
      * @param deviceConfiguration
-     *        The device configuration.
+     *        The device-remembering configuration for a user pool. A null value indicates that you have deactivated
+     *        device remembering in your user pool.</p> <note>
+     *        <p>
+     *        When you provide a value for any <code>DeviceConfiguration</code> field, you activate the Amazon Cognito
+     *        device-remembering feature.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

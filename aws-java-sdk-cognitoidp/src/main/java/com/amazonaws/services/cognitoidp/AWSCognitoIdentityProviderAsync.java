@@ -1438,7 +1438,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Begins setup of time-based one-time password multi-factor authentication (TOTP MFA) for a user, with a unique
+     * Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique
      * private key that Amazon Cognito generates and returns in the API response. You can authorize an
      * <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a
      * challenge response that you received from Amazon Cognito.
@@ -1469,7 +1469,7 @@ public interface AWSCognitoIdentityProviderAsync extends AWSCognitoIdentityProvi
 
     /**
      * <p>
-     * Begins setup of time-based one-time password multi-factor authentication (TOTP MFA) for a user, with a unique
+     * Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique
      * private key that Amazon Cognito generates and returns in the API response. You can authorize an
      * <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a
      * challenge response that you received from Amazon Cognito.
