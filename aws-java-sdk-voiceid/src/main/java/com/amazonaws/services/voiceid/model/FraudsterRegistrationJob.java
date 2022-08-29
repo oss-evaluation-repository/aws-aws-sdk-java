@@ -96,7 +96,7 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The output data config containing the S3 location where you want Voice ID to write your job output file; you must
-     * also include a KMS key iD in order to encrypt the file.
+     * also include a KMS key ID in order to encrypt the file.
      * </p>
      */
     private OutputDataConfig outputDataConfig;
@@ -560,12 +560,12 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The output data config containing the S3 location where you want Voice ID to write your job output file; you must
-     * also include a KMS key iD in order to encrypt the file.
+     * also include a KMS key ID in order to encrypt the file.
      * </p>
      * 
      * @param outputDataConfig
      *        The output data config containing the S3 location where you want Voice ID to write your job output file;
-     *        you must also include a KMS key iD in order to encrypt the file.
+     *        you must also include a KMS key ID in order to encrypt the file.
      */
 
     public void setOutputDataConfig(OutputDataConfig outputDataConfig) {
@@ -575,11 +575,11 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The output data config containing the S3 location where you want Voice ID to write your job output file; you must
-     * also include a KMS key iD in order to encrypt the file.
+     * also include a KMS key ID in order to encrypt the file.
      * </p>
      * 
      * @return The output data config containing the S3 location where you want Voice ID to write your job output file;
-     *         you must also include a KMS key iD in order to encrypt the file.
+     *         you must also include a KMS key ID in order to encrypt the file.
      */
 
     public OutputDataConfig getOutputDataConfig() {
@@ -589,12 +589,12 @@ public class FraudsterRegistrationJob implements Serializable, Cloneable, Struct
     /**
      * <p>
      * The output data config containing the S3 location where you want Voice ID to write your job output file; you must
-     * also include a KMS key iD in order to encrypt the file.
+     * also include a KMS key ID in order to encrypt the file.
      * </p>
      * 
      * @param outputDataConfig
      *        The output data config containing the S3 location where you want Voice ID to write your job output file;
-     *        you must also include a KMS key iD in order to encrypt the file.
+     *        you must also include a KMS key ID in order to encrypt the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -75,7 +75,7 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Details about the most recent server-side encryption configuration update. When the server-side encryption
      * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
-     * update is complete, the domain’s data can only be accessed using the new KMS key.
+     * update is complete, the domain's data can only be accessed using the new KMS key.
      * </p>
      */
     private ServerSideEncryptionUpdateDetails serverSideEncryptionUpdateDetails;
@@ -395,13 +395,13 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Details about the most recent server-side encryption configuration update. When the server-side encryption
      * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
-     * update is complete, the domain’s data can only be accessed using the new KMS key.
+     * update is complete, the domain's data can only be accessed using the new KMS key.
      * </p>
      * 
      * @param serverSideEncryptionUpdateDetails
      *        Details about the most recent server-side encryption configuration update. When the server-side encryption
      *        configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When
-     *        this update is complete, the domain’s data can only be accessed using the new KMS key.
+     *        this update is complete, the domain's data can only be accessed using the new KMS key.
      */
 
     public void setServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails serverSideEncryptionUpdateDetails) {
@@ -412,12 +412,12 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Details about the most recent server-side encryption configuration update. When the server-side encryption
      * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
-     * update is complete, the domain’s data can only be accessed using the new KMS key.
+     * update is complete, the domain's data can only be accessed using the new KMS key.
      * </p>
      * 
      * @return Details about the most recent server-side encryption configuration update. When the server-side
      *         encryption configuration is changed, dependency on the old KMS key is removed through an asynchronous
-     *         process. When this update is complete, the domain’s data can only be accessed using the new KMS key.
+     *         process. When this update is complete, the domain's data can only be accessed using the new KMS key.
      */
 
     public ServerSideEncryptionUpdateDetails getServerSideEncryptionUpdateDetails() {
@@ -428,13 +428,13 @@ public class DomainSummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Details about the most recent server-side encryption configuration update. When the server-side encryption
      * configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When this
-     * update is complete, the domain’s data can only be accessed using the new KMS key.
+     * update is complete, the domain's data can only be accessed using the new KMS key.
      * </p>
      * 
      * @param serverSideEncryptionUpdateDetails
      *        Details about the most recent server-side encryption configuration update. When the server-side encryption
      *        configuration is changed, dependency on the old KMS key is removed through an asynchronous process. When
-     *        this update is complete, the domain’s data can only be accessed using the new KMS key.
+     *        this update is complete, the domain's data can only be accessed using the new KMS key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

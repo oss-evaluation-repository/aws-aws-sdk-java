@@ -30,8 +30,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration
-     * job.
+     * The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     * job/fraudster registration job.
      * </p>
      */
     private String kmsKeyId;
@@ -47,13 +47,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration
-     * job.
+     * The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     * job/fraudster registration job.
      * </p>
      * 
      * @param kmsKeyId
-     *        the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-     *        registration job.
+     *        The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     *        job/fraudster registration job.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -62,12 +62,12 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration
-     * job.
+     * The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     * job/fraudster registration job.
      * </p>
      * 
-     * @return the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-     *         registration job.
+     * @return The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     *         job/fraudster registration job.
      */
 
     public String getKmsKeyId() {
@@ -76,13 +76,13 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster registration
-     * job.
+     * The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     * job/fraudster registration job.
      * </p>
      * 
      * @param kmsKeyId
-     *        the identifier of the KMS key you want Voice ID to use to encrypt the output file of the fraudster
-     *        registration job.
+     *        The identifier of the KMS key you want Voice ID to use to encrypt the output file of a speaker enrollment
+     *        job/fraudster registration job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

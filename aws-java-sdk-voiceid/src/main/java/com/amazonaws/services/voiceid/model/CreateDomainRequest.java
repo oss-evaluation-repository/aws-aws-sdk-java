@@ -33,7 +33,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String clientToken;
     /**
      * <p>
-     * A brief description of this domain.
+     * A brief description of the domain.
      * </p>
      */
     private String description;
@@ -104,11 +104,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of this domain.
+     * A brief description of the domain.
      * </p>
      * 
      * @param description
-     *        A brief description of this domain.
+     *        A brief description of the domain.
      */
 
     public void setDescription(String description) {
@@ -117,10 +117,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of this domain.
+     * A brief description of the domain.
      * </p>
      * 
-     * @return A brief description of this domain.
+     * @return A brief description of the domain.
      */
 
     public String getDescription() {
@@ -129,11 +129,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A brief description of this domain.
+     * A brief description of the domain.
      * </p>
      * 
      * @param description
-     *        A brief description of this domain.
+     *        A brief description of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

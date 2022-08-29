@@ -37,13 +37,14 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
     private String junctionPath;
     /**
      * <p>
-     * The security style for the volume. Specify one of the following values:
+     * The security style for the volume. If a volume's security style is not specified, it is automatically set to the
+     * root volume's security style. Specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients,
-     * and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.
+     * and an application accessing the data uses a UNIX user as the service account.
      * </p>
      * </li>
      * <li>
@@ -130,13 +131,14 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The security style for the volume. Specify one of the following values:
+     * The security style for the volume. If a volume's security style is not specified, it is automatically set to the
+     * root volume's security style. Specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients,
-     * and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.
+     * and an application accessing the data uses a UNIX user as the service account.
      * </p>
      * </li>
      * <li>
@@ -154,13 +156,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
      * </ul>
      * 
      * @param securityStyle
-     *        The security style for the volume. Specify one of the following values:</p>
+     *        The security style for the volume. If a volume's security style is not specified, it is automatically set
+     *        to the root volume's security style. Specify one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS
-     *        clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code>
-     *        is the default.
+     *        clients, and an application accessing the data uses a UNIX user as the service account.
      *        </p>
      *        </li>
      *        <li>
@@ -184,13 +186,14 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The security style for the volume. Specify one of the following values:
+     * The security style for the volume. If a volume's security style is not specified, it is automatically set to the
+     * root volume's security style. Specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients,
-     * and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.
+     * and an application accessing the data uses a UNIX user as the service account.
      * </p>
      * </li>
      * <li>
@@ -207,13 +210,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
      * </li>
      * </ul>
      * 
-     * @return The security style for the volume. Specify one of the following values:</p>
+     * @return The security style for the volume. If a volume's security style is not specified, it is automatically set
+     *         to the root volume's security style. Specify one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
      *         <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS
-     *         clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code>
-     *         is the default.
+     *         clients, and an application accessing the data uses a UNIX user as the service account.
      *         </p>
      *         </li>
      *         <li>
@@ -237,13 +240,14 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The security style for the volume. Specify one of the following values:
+     * The security style for the volume. If a volume's security style is not specified, it is automatically set to the
+     * root volume's security style. Specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients,
-     * and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.
+     * and an application accessing the data uses a UNIX user as the service account.
      * </p>
      * </li>
      * <li>
@@ -261,13 +265,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
      * </ul>
      * 
      * @param securityStyle
-     *        The security style for the volume. Specify one of the following values:</p>
+     *        The security style for the volume. If a volume's security style is not specified, it is automatically set
+     *        to the root volume's security style. Specify one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS
-     *        clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code>
-     *        is the default.
+     *        clients, and an application accessing the data uses a UNIX user as the service account.
      *        </p>
      *        </li>
      *        <li>
@@ -293,13 +297,14 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The security style for the volume. Specify one of the following values:
+     * The security style for the volume. If a volume's security style is not specified, it is automatically set to the
+     * root volume's security style. Specify one of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS clients,
-     * and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code> is the default.
+     * and an application accessing the data uses a UNIX user as the service account.
      * </p>
      * </li>
      * <li>
@@ -317,13 +322,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
      * </ul>
      * 
      * @param securityStyle
-     *        The security style for the volume. Specify one of the following values:</p>
+     *        The security style for the volume. If a volume's security style is not specified, it is automatically set
+     *        to the root volume's security style. Specify one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority of users are NFS
-     *        clients, and an application accessing the data uses a UNIX user as the service account. <code>UNIX</code>
-     *        is the default.
+     *        clients, and an application accessing the data uses a UNIX user as the service account.
      *        </p>
      *        </li>
      *        <li>

@@ -30,18 +30,21 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric
+     * customer managed keys.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric
+     * customer managed keys.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     *        The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support
+     *        asymmetric customer managed keys.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -50,10 +53,12 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric
+     * customer managed keys.
      * </p>
      * 
-     * @return The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     * @return The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support
+     *         asymmetric customer managed keys.
      */
 
     public String getKmsKeyId() {
@@ -62,11 +67,13 @@ public class ServerSideEncryptionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     * The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support asymmetric
+     * customer managed keys.
      * </p>
      * 
      * @param kmsKeyId
-     *        The identifier of the KMS key you want Voice ID to use to encrypt your data.
+     *        The identifier of the KMS key to use to encrypt data stored by Voice ID. Voice ID doesn't support
+     *        asymmetric customer managed keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

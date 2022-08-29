@@ -1204,6 +1204,10 @@ public class AmazonVoiceIDClient extends AmazonWebServiceClient implements Amazo
      * 
      * @param optOutSpeakerRequest
      * @return Result of the OptOutSpeaker operation returned by the service.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeded the service quota. Refer to <a href=
+     *         "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas"
+     *         >Voice ID Service Quotas</a> and try your request again.
      * @throws ResourceNotFoundException
      *         The specified resource cannot be found. Check the <code>ResourceType</code> and error message for more
      *         details.
