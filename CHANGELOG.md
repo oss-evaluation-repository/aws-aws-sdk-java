@@ -1,3 +1,16 @@
+# __1.12.304__ __2022-09-15__
+## __Amazon DynamoDB__
+  - ### Features
+    - Increased DynamoDB transaction limit from 25 to 100.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This feature allows customers to create tags for vpc-endpoint-connections and vpc-endpoint-service-permissions.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker Automatic Model Tuning now supports specifying Hyperband strategy for tuning jobs, which uses a multi-fidelity based tuning strategy to stop underperforming hyperparameter configurations early.
+
 # __1.12.303__ __2022-09-14__
 ## __AWS Amplify UI Builder__
   - ### Features

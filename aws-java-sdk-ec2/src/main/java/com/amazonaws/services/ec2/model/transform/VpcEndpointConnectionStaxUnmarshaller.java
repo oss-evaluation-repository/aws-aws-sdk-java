@@ -104,6 +104,22 @@ public class VpcEndpointConnectionStaxUnmarshaller implements Unmarshaller<VpcEn
                     vpcEndpointConnection.setIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("vpcEndpointConnectionId", targetDepth)) {
+                    vpcEndpointConnection.setVpcEndpointConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    vpcEndpointConnection.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    vpcEndpointConnection.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpcEndpointConnection;

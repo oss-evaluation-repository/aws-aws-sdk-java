@@ -45,8 +45,8 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
      * </p>
      */
     private String executionRoleIdentityConfig;
@@ -172,14 +172,14 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
      * </p>
      * 
      * @param executionRoleIdentityConfig
      *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     *        <code>sts:SourceIdentity</code> key</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>.
      * @see ExecutionRoleIdentityConfig
      */
 
@@ -190,13 +190,13 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
      * </p>
      * 
      * @return The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     *         <code>sts:SourceIdentity</code> key</a>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *         >sts:SourceIdentity key</a>.
      * @see ExecutionRoleIdentityConfig
      */
 
@@ -207,14 +207,14 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
      * </p>
      * 
      * @param executionRoleIdentityConfig
      *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     *        <code>sts:SourceIdentity</code> key</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionRoleIdentityConfig
      */
@@ -227,14 +227,14 @@ public class DomainSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     * <code>sts:SourceIdentity</code> key</a>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     * >sts:SourceIdentity key</a>.
      * </p>
      * 
      * @param executionRoleIdentityConfig
      *        The configuration for attaching a SageMaker user profile name to the execution role as a <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">
-     *        <code>sts:SourceIdentity</code> key</a>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >sts:SourceIdentity key</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExecutionRoleIdentityConfig
      */

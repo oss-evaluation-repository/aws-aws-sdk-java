@@ -39,8 +39,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String userProfileName;
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      */
     private String appType;
@@ -154,13 +153,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
      * @param appType
-     *        The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *        <code>TensorBoard</code> is not supported.
+     *        The type of app.
      * @see AppType
      */
 
@@ -170,12 +167,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
-     * @return The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *         <code>TensorBoard</code> is not supported.
+     * @return The type of app.
      * @see AppType
      */
 
@@ -185,13 +180,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
      * @param appType
-     *        The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *        <code>TensorBoard</code> is not supported.
+     *        The type of app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */
@@ -203,13 +196,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     * <code>TensorBoard</code> is not supported.
+     * The type of app.
      * </p>
      * 
      * @param appType
-     *        The type of app. Supported apps are <code>JupyterServer</code> and <code>KernelGateway</code>.
-     *        <code>TensorBoard</code> is not supported.
+     *        The type of app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppType
      */

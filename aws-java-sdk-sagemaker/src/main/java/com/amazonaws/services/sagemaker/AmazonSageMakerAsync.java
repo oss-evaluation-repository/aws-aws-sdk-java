@@ -308,10 +308,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the
-     * associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps
-     * active simultaneously.
+     * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
+     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
+     * may have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest
@@ -324,10 +323,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates a running app for the specified UserProfile. Supported apps are <code>JupyterServer</code> and
-     * <code>KernelGateway</code>. This operation is automatically invoked by Amazon SageMaker Studio upon access to the
-     * associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps
-     * active simultaneously.
+     * Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker
+     * Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user
+     * may have multiple Apps active simultaneously.
      * </p>
      * 
      * @param createAppRequest

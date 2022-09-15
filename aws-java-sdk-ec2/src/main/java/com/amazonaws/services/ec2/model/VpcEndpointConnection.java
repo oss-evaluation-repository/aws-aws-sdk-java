@@ -80,6 +80,18 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
      * </p>
      */
     private String ipAddressType;
+    /**
+     * <p>
+     * The ID of the VPC endpoint connection.
+     * </p>
+     */
+    private String vpcEndpointConnectionId;
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -579,6 +591,119 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ID of the VPC endpoint connection.
+     * </p>
+     * 
+     * @param vpcEndpointConnectionId
+     *        The ID of the VPC endpoint connection.
+     */
+
+    public void setVpcEndpointConnectionId(String vpcEndpointConnectionId) {
+        this.vpcEndpointConnectionId = vpcEndpointConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint connection.
+     * </p>
+     * 
+     * @return The ID of the VPC endpoint connection.
+     */
+
+    public String getVpcEndpointConnectionId() {
+        return this.vpcEndpointConnectionId;
+    }
+
+    /**
+     * <p>
+     * The ID of the VPC endpoint connection.
+     * </p>
+     * 
+     * @param vpcEndpointConnectionId
+     *        The ID of the VPC endpoint connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withVpcEndpointConnectionId(String vpcEndpointConnectionId) {
+        setVpcEndpointConnectionId(vpcEndpointConnectionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @return The tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcEndpointConnection withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -607,7 +732,11 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
         if (getGatewayLoadBalancerArns() != null)
             sb.append("GatewayLoadBalancerArns: ").append(getGatewayLoadBalancerArns()).append(",");
         if (getIpAddressType() != null)
-            sb.append("IpAddressType: ").append(getIpAddressType());
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getVpcEndpointConnectionId() != null)
+            sb.append("VpcEndpointConnectionId: ").append(getVpcEndpointConnectionId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -658,6 +787,14 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
             return false;
         if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
+        if (other.getVpcEndpointConnectionId() == null ^ this.getVpcEndpointConnectionId() == null)
+            return false;
+        if (other.getVpcEndpointConnectionId() != null && other.getVpcEndpointConnectionId().equals(this.getVpcEndpointConnectionId()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -675,6 +812,8 @@ public class VpcEndpointConnection implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getGatewayLoadBalancerArns() == null) ? 0 : getGatewayLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getVpcEndpointConnectionId() == null) ? 0 : getVpcEndpointConnectionId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -24,7 +24,8 @@ import javax.annotation.Generated;
 public enum HyperParameterTuningJobStrategyType {
 
     Bayesian("Bayesian"),
-    Random("Random");
+    Random("Random"),
+    Hyperband("Hyperband");
 
     private String value;
 
