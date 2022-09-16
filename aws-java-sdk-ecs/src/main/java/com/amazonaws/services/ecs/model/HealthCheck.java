@@ -118,7 +118,7 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string array representing the command that the container runs to determine if it is healthy. The string array
-     * must start with <code>CMD</code> to execute the command arguments directly, or <code>CMD-SHELL</code> to run the
+     * must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the
      * command with the container's default shell.
      * </p>
      * <p>
@@ -181,7 +181,7 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string array representing the command that the container runs to determine if it is healthy. The string array
-     * must start with <code>CMD</code> to execute the command arguments directly, or <code>CMD-SHELL</code> to run the
+     * must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the
      * command with the container's default shell.
      * </p>
      * <p>
@@ -205,8 +205,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A string array representing the command that the container runs to determine if it is healthy. The string
-     *         array must start with <code>CMD</code> to execute the command arguments directly, or
-     *         <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
+     *         array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code>
+     *         to run the command with the container's default shell. </p>
      *         <p>
      *         When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
      *         APIs, enclose the list of commands in brackets.
@@ -237,7 +237,7 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string array representing the command that the container runs to determine if it is healthy. The string array
-     * must start with <code>CMD</code> to execute the command arguments directly, or <code>CMD-SHELL</code> to run the
+     * must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the
      * command with the container's default shell.
      * </p>
      * <p>
@@ -262,8 +262,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param command
      *        A string array representing the command that the container runs to determine if it is healthy. The string
-     *        array must start with <code>CMD</code> to execute the command arguments directly, or
-     *        <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
+     *        array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to
+     *        run the command with the container's default shell. </p>
      *        <p>
      *        When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
      *        APIs, enclose the list of commands in brackets.
@@ -296,7 +296,7 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string array representing the command that the container runs to determine if it is healthy. The string array
-     * must start with <code>CMD</code> to execute the command arguments directly, or <code>CMD-SHELL</code> to run the
+     * must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the
      * command with the container's default shell.
      * </p>
      * <p>
@@ -326,8 +326,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param command
      *        A string array representing the command that the container runs to determine if it is healthy. The string
-     *        array must start with <code>CMD</code> to execute the command arguments directly, or
-     *        <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
+     *        array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to
+     *        run the command with the container's default shell. </p>
      *        <p>
      *        When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
      *        APIs, enclose the list of commands in brackets.
@@ -362,7 +362,7 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A string array representing the command that the container runs to determine if it is healthy. The string array
-     * must start with <code>CMD</code> to execute the command arguments directly, or <code>CMD-SHELL</code> to run the
+     * must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to run the
      * command with the container's default shell.
      * </p>
      * <p>
@@ -387,8 +387,8 @@ public class HealthCheck implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param command
      *        A string array representing the command that the container runs to determine if it is healthy. The string
-     *        array must start with <code>CMD</code> to execute the command arguments directly, or
-     *        <code>CMD-SHELL</code> to run the command with the container's default shell. </p>
+     *        array must start with <code>CMD</code> to run the command arguments directly, or <code>CMD-SHELL</code> to
+     *        run the command with the container's default shell. </p>
      *        <p>
      *        When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the
      *        APIs, enclose the list of commands in brackets.

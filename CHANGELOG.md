@@ -1,3 +1,12 @@
+# __1.12.305__ __2022-09-16__
+## __AWS CodeStar Notifications__
+  - ### Features
+    - This release adds tag based access control for the UntagResource API.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release supports new task definition sizes.
+
 # __1.12.304__ __2022-09-15__
 ## __Amazon DynamoDB__
   - ### Features

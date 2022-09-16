@@ -137,7 +137,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * <p>
      * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs). If you do not specify
+     * a value, the parameter is ignored.
      * </p>
      * <p>
      * If you're using the Fargate launch type, this field is required and you must use one of the following values,
@@ -165,14 +166,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
-     * (1 GB)
+     * 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
-     * (1 GB)
+     * 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
      * </p>
      * </li>
      * </ul>
@@ -227,6 +242,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values: 4096 (4
      * vCPU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
      * </p>
      * </li>
      * </ul>
@@ -1397,7 +1428,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * <p>
      * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs). If you do not specify
+     * a value, the parameter is ignored.
      * </p>
      * <p>
      * If you're using the Fargate launch type, this field is required and you must use one of the following values,
@@ -1425,14 +1457,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
-     * (1 GB)
+     * 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
-     * (1 GB)
+     * 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
      * </p>
      * </li>
      * </ul>
@@ -1449,7 +1495,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </note>
      *        <p>
      *        If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code>
-     *        CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs). If you do
+     *        not specify a value, the parameter is ignored.
      *        </p>
      *        <p>
      *        If you're using the Fargate launch type, this field is required and you must use one of the following
@@ -1477,14 +1524,30 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments
-     *        of 1024 (1 GB)
+     *        2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     *        (1 GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     *        of 1024 (1 GB)
+     *        4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     *        (1 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
      *        </p>
      *        </li>
      */
@@ -1508,7 +1571,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * <p>
      * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs). If you do not specify
+     * a value, the parameter is ignored.
      * </p>
      * <p>
      * If you're using the Fargate launch type, this field is required and you must use one of the following values,
@@ -1536,14 +1600,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
-     * (1 GB)
+     * 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
-     * (1 GB)
+     * 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
      * </p>
      * </li>
      * </ul>
@@ -1560,7 +1638,7 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         If you're using the EC2 launch type, this field is optional. Supported values are between
      *         <code>128</code> CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code>
-     *         vCPUs).
+     *         vCPUs). If you do not specify a value, the parameter is ignored.
      *         </p>
      *         <p>
      *         If you're using the Fargate launch type, this field is required and you must use one of the following
@@ -1588,14 +1666,30 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments
-     *         of 1024 (1 GB)
+     *         2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     *         (1 GB)
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     *         of 1024 (1 GB)
+     *         4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     *         (1 GB)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     *         </p>
+     *         <p>
+     *         This option requires Linux platform <code>1.4.0</code> or later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     *         </p>
+     *         <p>
+     *         This option requires Linux platform <code>1.4.0</code> or later.
      *         </p>
      *         </li>
      */
@@ -1619,7 +1713,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </note>
      * <p>
      * If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code> CPU
-     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     * units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs). If you do not specify
+     * a value, the parameter is ignored.
      * </p>
      * <p>
      * If you're using the Fargate launch type, this field is required and you must use one of the following values,
@@ -1647,14 +1742,28 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * 2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments of 1024
-     * (1 GB)
+     * 2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024 (1 GB)
      * </p>
      * </li>
      * <li>
      * <p>
-     * 4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024
-     * (1 GB)
+     * 4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
      * </p>
      * </li>
      * </ul>
@@ -1671,7 +1780,8 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </note>
      *        <p>
      *        If you're using the EC2 launch type, this field is optional. Supported values are between <code>128</code>
-     *        CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs).
+     *        CPU units (<code>0.125</code> vCPUs) and <code>10240</code> CPU units (<code>10</code> vCPUs). If you do
+     *        not specify a value, the parameter is ignored.
      *        </p>
      *        <p>
      *        If you're using the Fargate launch type, this field is required and you must use one of the following
@@ -1699,14 +1809,30 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        2048 (2 vCPU) - Available <code>memory</code> values: Between 4096 (4 GB) and 16384 (16 GB) in increments
-     *        of 1024 (1 GB)
+     *        2048 (2 vCPU) - Available <code>memory</code> values: 4096 (4 GB) and 16384 (16 GB) in increments of 1024
+     *        (1 GB)
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        4096 (4 vCPU) - Available <code>memory</code> values: Between 8192 (8 GB) and 30720 (30 GB) in increments
-     *        of 1024 (1 GB)
+     *        4096 (4 vCPU) - Available <code>memory</code> values: 8192 (8 GB) and 30720 (30 GB) in increments of 1024
+     *        (1 GB)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        8192 (8 vCPU) - Available <code>memory</code> values: 16 GB and 60 GB in 4 GB increments
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        16384 (16vCPU) - Available <code>memory</code> values: 32GB and 120 GB in 8 GB increments
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1768,6 +1894,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * vCPU)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param memory
@@ -1817,6 +1959,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      *        4096 (4 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
      *        </p>
      *        </li>
      */
@@ -1876,6 +2034,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * vCPU)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The amount of memory (in MiB) used by the task. It can be expressed as an integer using MiB (for example
@@ -1924,6 +2098,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      *         4096 (4 vCPU)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     *         </p>
+     *         <p>
+     *         This option requires Linux platform <code>1.4.0</code> or later.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     *         </p>
+     *         <p>
+     *         This option requires Linux platform <code>1.4.0</code> or later.
      *         </p>
      *         </li>
      */
@@ -1983,6 +2173,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      * vCPU)
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     * </p>
+     * <p>
+     * This option requires Linux platform <code>1.4.0</code> or later.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param memory
@@ -2032,6 +2238,22 @@ public class RegisterTaskDefinitionRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Between 8192 (8 GB) and 30720 (30 GB) in increments of 1024 (1 GB) - Available <code>cpu</code> values:
      *        4096 (4 vCPU)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 16 GB and 60 GB in 4 GB increments - Available <code>cpu</code> values: 8192 (8 vCPU)
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Between 32GB and 120 GB in 8 GB increments - Available <code>cpu</code> values: 16384 (16 vCPU)
+     *        </p>
+     *        <p>
+     *        This option requires Linux platform <code>1.4.0</code> or later.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
