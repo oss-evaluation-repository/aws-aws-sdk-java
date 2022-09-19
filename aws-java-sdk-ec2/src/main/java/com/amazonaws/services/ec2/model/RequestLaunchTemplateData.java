@@ -308,7 +308,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * types with these attributes.
      * </p>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      */
     private InstanceRequirementsRequest instanceRequirements;
@@ -2504,14 +2504,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * types with these attributes.
      * </p>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * 
      * @param instanceRequirements
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with these attributes.</p>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      */
 
     public void setInstanceRequirements(InstanceRequirementsRequest instanceRequirements) {
@@ -2524,13 +2524,13 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * types with these attributes.
      * </p>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * 
      * @return The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *         instance types with these attributes.</p>
      *         <p>
-     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      */
 
     public InstanceRequirementsRequest getInstanceRequirements() {
@@ -2543,14 +2543,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * types with these attributes.
      * </p>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * 
      * @param instanceRequirements
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with these attributes.</p>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

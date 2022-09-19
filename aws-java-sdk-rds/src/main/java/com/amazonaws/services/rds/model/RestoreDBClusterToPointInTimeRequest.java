@@ -429,7 +429,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     private String engineMode;
     /**
      * <p>
-     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3286,7 +3286,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3300,7 +3300,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @param dBClusterInstanceClass
      *        The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example
-     *        db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
+     *        db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
      *        database engines.</p>
      *        <p>
      *        For the full list of DB instance classes, and availability for your engine, see <a
@@ -3317,7 +3317,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3330,7 +3330,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @return The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example
-     *         db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
+     *         db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
      *         database engines.</p>
      *         <p>
      *         For the full list of DB instance classes, and availability for your engine, see <a
@@ -3347,7 +3347,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6g.xlarge.
+     * The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example db.m6gd.xlarge.
      * Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
      * </p>
      * <p>
@@ -3361,7 +3361,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * 
      * @param dBClusterInstanceClass
      *        The compute and memory capacity of the each DB instance in the Multi-AZ DB cluster, for example
-     *        db.m6g.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
+     *        db.m6gd.xlarge. Not all DB instance classes are available in all Amazon Web Services Regions, or for all
      *        database engines.</p>
      *        <p>
      *        For the full list of DB instance classes, and availability for your engine, see <a

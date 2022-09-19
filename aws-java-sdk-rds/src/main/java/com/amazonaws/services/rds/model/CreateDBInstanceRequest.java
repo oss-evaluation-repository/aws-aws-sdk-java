@@ -215,8 +215,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).
+     * It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      * </p>
      * </li>
      * <li>
@@ -741,17 +740,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 letters, numbers, or hyphens.
+     * It must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * It can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -2269,8 +2268,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).
+     * It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      * </p>
      * </li>
      * <li>
@@ -2468,8 +2466,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *        (0 to 9).
+     *        It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      *        </p>
      *        </li>
      *        <li>
@@ -2672,8 +2669,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).
+     * It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      * </p>
      * </li>
      * <li>
@@ -2870,8 +2866,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or
-     *         digits (0 to 9).
+     *         It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      *         </p>
      *         </li>
      *         <li>
@@ -3074,8 +3069,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
-     * 9).
+     * It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      * </p>
      * </li>
      * <li>
@@ -3273,8 +3267,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *        (0 to 9).
+     *        It must begin with a letter. Subsequent characters can be letters, underscores, or digits (0 to 9).
      *        </p>
      *        </li>
      *        <li>
@@ -6414,17 +6407,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 letters, numbers, or hyphens.
+     * It must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * It can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -6441,17 +6434,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 letters, numbers, or hyphens.
+     *        It must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        It can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      */
@@ -6474,17 +6467,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 letters, numbers, or hyphens.
+     * It must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * It can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -6500,17 +6493,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be 1 to 255 letters, numbers, or hyphens.
+     *         It must be 1 to 255 letters, numbers, or hyphens.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         First character must be a letter
+     *         The first character must be a letter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can't end with a hyphen or contain two consecutive hyphens
+     *         It can't end with a hyphen or contain two consecutive hyphens.
      *         </p>
      *         </li>
      */
@@ -6533,17 +6526,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must be 1 to 255 letters, numbers, or hyphens.
+     * It must be 1 to 255 letters, numbers, or hyphens.
      * </p>
      * </li>
      * <li>
      * <p>
-     * First character must be a letter
+     * The first character must be a letter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't end with a hyphen or contain two consecutive hyphens
+     * It can't end with a hyphen or contain two consecutive hyphens.
      * </p>
      * </li>
      * </ul>
@@ -6560,17 +6553,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be 1 to 255 letters, numbers, or hyphens.
+     *        It must be 1 to 255 letters, numbers, or hyphens.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        First character must be a letter
+     *        The first character must be a letter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        It can't end with a hyphen or contain two consecutive hyphens.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

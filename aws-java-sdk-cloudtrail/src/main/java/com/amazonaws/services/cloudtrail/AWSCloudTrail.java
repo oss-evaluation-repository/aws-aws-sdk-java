@@ -437,6 +437,9 @@ public interface AWSCloudTrail {
      *         The specified event data store was not found.
      * @throws EventDataStoreTerminationProtectedException
      *         The event data store cannot be deleted because termination protection is enabled for it.
+     * @throws EventDataStoreHasOngoingImportException
+     *         This exception is thrown when you try to update or delete an event data store that currently has an
+     *         import in progress.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws OperationNotPermittedException
@@ -682,10 +685,24 @@ public interface AWSCloudTrail {
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging Data and Management Events for Trails </a> in the <i>CloudTrail User Guide</i>.
+     * For more information about logging management and data events, see the following topics in the <i>CloudTrail User
+     * Guide</i>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+     * >Logging management events for trails </a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
+     * Logging data events for trails </a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getEventSelectorsRequest
      * @return Result of the GetEventSelectors operation returned by the service.
@@ -730,6 +747,27 @@ public interface AWSCloudTrail {
      *      API Documentation</a>
      */
     GetEventSelectorsResult getEventSelectors(GetEventSelectorsRequest getEventSelectorsRequest);
+
+    /**
+     * <p>
+     * Returns information for the specified import.
+     * </p>
+     * 
+     * @param getImportRequest
+     * @return Result of the GetImport operation returned by the service.
+     * @throws ImportNotFoundException
+     *         The specified import was not found.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @sample AWSCloudTrail.GetImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetImportResult getImport(GetImportRequest getImportRequest);
 
     /**
      * <p>
@@ -967,6 +1005,51 @@ public interface AWSCloudTrail {
      *      API Documentation</a>
      */
     ListEventDataStoresResult listEventDataStores(ListEventDataStoresRequest listEventDataStoresRequest);
+
+    /**
+     * <p>
+     * Returns a list of failures for the specified import.
+     * </p>
+     * 
+     * @param listImportFailuresRequest
+     * @return Result of the ListImportFailures operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         A token that is not valid, or a token that was previously used in a request with different parameters.
+     *         This exception is thrown if the token is not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @sample AWSCloudTrail.ListImportFailures
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImportFailures" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListImportFailuresResult listImportFailures(ListImportFailuresRequest listImportFailuresRequest);
+
+    /**
+     * <p>
+     * Returns information on all imports, or a select set of imports by <code>ImportStatus</code> or
+     * <code>Destination</code>.
+     * </p>
+     * 
+     * @param listImportsRequest
+     * @return Result of the ListImports operation returned by the service.
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws InvalidNextTokenException
+     *         A token that is not valid, or a token that was previously used in a request with different parameters.
+     *         This exception is thrown if the token is not valid.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @sample AWSCloudTrail.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportsResult listImports(ListImportsRequest listImportsRequest);
 
     /**
      * <p>
@@ -1291,8 +1374,10 @@ public interface AWSCloudTrail {
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
-     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging data and management events for trails </a> and <a
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html"
+     * >Logging management events for trails </a>, <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails </a>, and <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in
      * CloudTrail</a> in the <i>CloudTrail User Guide</i>.
      * </p>
@@ -1603,6 +1688,55 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
+     * Starts an import of logged trail events from a source S3 bucket to a destination event data store.
+     * </p>
+     * <p>
+     * When you start a new import, the <code>Destinations</code> and <code>ImportSource</code> parameters are required.
+     * Before starting a new import, disable any access control lists (ACLs) attached to the source S3 bucket. For more
+     * information about disabling ACLs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling ownership of
+     * objects and disabling ACLs for your bucket</a>.
+     * </p>
+     * <p>
+     * When you retry an import, the <code>ImportID</code> parameter is required.
+     * </p>
+     * 
+     * @param startImportRequest
+     * @return Result of the StartImport operation returned by the service.
+     * @throws AccountHasOngoingImportException
+     *         This exception is thrown when you start a new import and a previous import is still in progress.
+     * @throws EventDataStoreARNInvalidException
+     *         The specified event data store ARN is not valid or does not map to an event data store in your account.
+     * @throws EventDataStoreNotFoundException
+     *         The specified event data store was not found.
+     * @throws InvalidEventDataStoreStatusException
+     *         The event data store is not in a status that supports the operation.
+     * @throws InvalidEventDataStoreCategoryException
+     *         This exception is thrown when the event data store category is not valid for the import.
+     * @throws InactiveEventDataStoreException
+     *         The event data store is inactive.
+     * @throws InvalidImportSourceException
+     *         This exception is thrown when the provided source S3 bucket is not valid for import.
+     * @throws ImportNotFoundException
+     *         The specified import was not found.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @sample AWSCloudTrail.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartImportResult startImport(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
      * Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is
      * enabled in all regions, this operation must be called from the region in which the trail was created. This
      * operation cannot be called on the shadow trails (replicated trails in other regions) of a trail that is enabled
@@ -1704,6 +1838,27 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
+     * Stops a specified import.
+     * </p>
+     * 
+     * @param stopImportRequest
+     * @return Result of the StopImport operation returned by the service.
+     * @throws ImportNotFoundException
+     *         The specified import was not found.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @sample AWSCloudTrail.StopImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopImportResult stopImport(StopImportRequest stopImportRequest);
+
+    /**
+     * <p>
      * Suspends the recording of Amazon Web Services API calls and log file delivery for the specified trail. Under most
      * circumstances, there is no need to use this action. You can update a trail without stopping it first. This action
      * is the only way to stop recording. For a trail enabled in all regions, this operation must be called from the
@@ -1786,6 +1941,9 @@ public interface AWSCloudTrail {
      *         The specified event data store ARN is not valid or does not map to an event data store in your account.
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
+     * @throws EventDataStoreHasOngoingImportException
+     *         This exception is thrown when you try to update or delete an event data store that currently has an
+     *         import in progress.
      * @throws InactiveEventDataStoreException
      *         The event data store is inactive.
      * @throws InvalidParameterException

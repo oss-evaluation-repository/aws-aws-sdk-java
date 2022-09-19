@@ -92,7 +92,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      */
@@ -488,7 +488,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -498,7 +498,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        instances from these instance types, in the same way as when you specify a list of instance types.</p>
      *        <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      */
 
@@ -514,7 +514,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -523,7 +523,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *         launch instances from these instance types, in the same way as when you specify a list of instance
      *         types.</p> <note>
      *         <p>
-     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *         </p>
      */
 
@@ -539,7 +539,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -549,7 +549,7 @@ public class LaunchTemplateOverrides implements Serializable, Cloneable {
      *        instances from these instance types, in the same way as when you specify a list of instance types.</p>
      *        <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

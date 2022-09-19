@@ -22,13 +22,6 @@ import javax.annotation.Generated;
  * use <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
  * </p>
- * <note>
- * <p>
- * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
- * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
- * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SpotFleetLaunchSpecification" target="_top">AWS
  *      API Documentation</a>
@@ -183,7 +176,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      */
@@ -1312,7 +1305,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -1320,7 +1313,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with those attributes.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      */
 
@@ -1335,14 +1328,14 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
      * @return The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *         instance types with those attributes.</p> <note>
      *         <p>
-     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *         </p>
      */
 
@@ -1357,7 +1350,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -1365,7 +1358,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with those attributes.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

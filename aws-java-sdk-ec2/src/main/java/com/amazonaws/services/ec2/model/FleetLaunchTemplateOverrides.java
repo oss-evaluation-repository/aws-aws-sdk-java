@@ -32,7 +32,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      */
@@ -102,7 +102,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      */
@@ -114,14 +114,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
      * @see InstanceType
      */
@@ -136,13 +136,13 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @return The instance type.</p> <note>
      *         <p>
-     *         If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *         If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *         </p>
      * @see InstanceType
      */
@@ -157,14 +157,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -181,14 +181,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
      * @param instanceType
      *        The instance type.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirements</code>.
+     *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
@@ -569,7 +569,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -577,7 +577,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with those attributes.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      */
 
@@ -592,14 +592,14 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
      * @return The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *         instance types with those attributes.</p> <note>
      *         <p>
-     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *         If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *         </p>
      */
 
@@ -614,7 +614,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     * If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      * </p>
      * </note>
      * 
@@ -622,7 +622,7 @@ public class FleetLaunchTemplateOverrides implements Serializable, Cloneable {
      *        The attributes for the instance types. When you specify instance attributes, Amazon EC2 will identify
      *        instance types with those attributes.</p> <note>
      *        <p>
-     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+     *        If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -98,6 +98,11 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public GetImportResult getImport(GetImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetInsightSelectorsResult getInsightSelectors(GetInsightSelectorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,16 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
 
     @Override
     public ListEventDataStoresResult listEventDataStores(ListEventDataStoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportFailuresResult listImportFailures(ListImportFailuresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,12 +198,22 @@ public class AbstractAWSCloudTrail implements AWSCloudTrail {
     }
 
     @Override
+    public StartImportResult startImport(StartImportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartLoggingResult startLogging(StartLoggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartQueryResult startQuery(StartQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopImportResult stopImport(StopImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

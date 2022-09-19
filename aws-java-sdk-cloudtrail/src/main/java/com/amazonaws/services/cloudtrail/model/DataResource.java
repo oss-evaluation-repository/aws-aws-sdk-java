@@ -170,7 +170,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.
+     * <code>arn:aws:s3</code>.
      * </p>
      * <note>
      * <p>
@@ -630,7 +630,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.
+     * <code>arn:aws:s3</code>.
      * </p>
      * <note>
      * <p>
@@ -688,7 +688,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-     *         prefix as <code>arn:aws:s3:::</code>.
+     *         prefix as <code>arn:aws:s3</code>.
      *         </p>
      *         <note>
      *         <p>
@@ -757,7 +757,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.
+     * <code>arn:aws:s3</code>.
      * </p>
      * <note>
      * <p>
@@ -816,7 +816,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-     *        prefix as <code>arn:aws:s3:::</code>.
+     *        prefix as <code>arn:aws:s3</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -887,7 +887,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.
+     * <code>arn:aws:s3</code>.
      * </p>
      * <note>
      * <p>
@@ -951,7 +951,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-     *        prefix as <code>arn:aws:s3:::</code>.
+     *        prefix as <code>arn:aws:s3</code>.
      *        </p>
      *        <note>
      *        <p>
@@ -1024,7 +1024,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the prefix as
-     * <code>arn:aws:s3:::</code>.
+     * <code>arn:aws:s3</code>.
      * </p>
      * <note>
      * <p>
@@ -1083,7 +1083,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        To log data events for all objects in all S3 buckets in your Amazon Web Services account, specify the
-     *        prefix as <code>arn:aws:s3:::</code>.
+     *        prefix as <code>arn:aws:s3</code>.
      *        </p>
      *        <note>
      *        <p>

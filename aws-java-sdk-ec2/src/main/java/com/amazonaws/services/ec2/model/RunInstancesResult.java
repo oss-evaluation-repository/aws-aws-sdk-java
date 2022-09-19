@@ -28,13 +28,6 @@ public class RunInstancesResult extends com.amazonaws.AmazonWebServiceResult<com
      * Describes a launch request for one or more instances, and includes owner, requester, and security group
      * information that applies to all instances in the launch request.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
-     * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * </note>
      */
     private Reservation reservation;
 
@@ -43,23 +36,10 @@ public class RunInstancesResult extends com.amazonaws.AmazonWebServiceResult<com
      * Describes a launch request for one or more instances, and includes owner, requester, and security group
      * information that applies to all instances in the launch request.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
-     * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param reservation
      *        Describes a launch request for one or more instances, and includes owner, requester, and security group
-     *        information that applies to all instances in the launch request.</p> <note>
-     *        <p>
-     *        We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     *        VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     *        </p>
+     *        information that applies to all instances in the launch request.
      */
 
     public void setReservation(Reservation reservation) {
@@ -71,22 +51,9 @@ public class RunInstancesResult extends com.amazonaws.AmazonWebServiceResult<com
      * Describes a launch request for one or more instances, and includes owner, requester, and security group
      * information that applies to all instances in the launch request.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
-     * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @return Describes a launch request for one or more instances, and includes owner, requester, and security group
-     *         information that applies to all instances in the launch request.</p> <note>
-     *         <p>
-     *         We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC.
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     *         VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     *         </p>
+     *         information that applies to all instances in the launch request.
      */
 
     public Reservation getReservation() {
@@ -98,23 +65,10 @@ public class RunInstancesResult extends com.amazonaws.AmazonWebServiceResult<com
      * Describes a launch request for one or more instances, and includes owner, requester, and security group
      * information that applies to all instances in the launch request.
      * </p>
-     * <note>
-     * <p>
-     * We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more
-     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from
-     * EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * </note>
      * 
      * @param reservation
      *        Describes a launch request for one or more instances, and includes owner, requester, and security group
-     *        information that applies to all instances in the launch request.</p> <note>
-     *        <p>
-     *        We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC.
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate from EC2-Classic to a
-     *        VPC</a> in the <i>Amazon EC2 User Guide</i>.
-     *        </p>
+     *        information that applies to all instances in the launch request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
