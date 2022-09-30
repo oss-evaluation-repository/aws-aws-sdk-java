@@ -1,3 +1,28 @@
+# __1.12.314__ __2022-09-30__
+## __AWS CodeDeploy__
+  - ### Features
+    - This release allows you to override the alarm configurations when creating a deployment.
+
+## __AWS SSO OIDC__
+  - ### Features
+    - Documentation updates for the IAM Identity Center OIDC CLI Reference.
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - This release adds support for archival of single-volume snapshots created by Amazon Data Lifecycle Manager policies
+
+## __Amazon DevOps Guru__
+  - ### Features
+    - This release adds filter feature on AddNotificationChannel API, enable customer to configure the SNS notification messages by Severity or MessageTypes
+
+## __Amazon SageMaker Runtime__
+  - ### Features
+    - A new parameter called EnableExplanations is added to InvokeEndpoint API to enable on-demand SageMaker Clarify online explainability requests.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - A new parameter called ExplainerConfig is added to CreateEndpointConfig API to enable SageMaker Clarify online explainability feature.
+
 # __1.12.313__ __2022-09-29__
 ## __AWS Certificate Manager__
   - ### Features

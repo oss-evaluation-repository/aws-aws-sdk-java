@@ -21,11 +21,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <b>[Snapshot and AMI policies only]</b> Specifies when the policy should create snapshots or AMIs.
  * </p>
- * <important>
+ * <note>
+ * <ul>
+ * <li>
  * <p>
- * You must specify either a Cron expression or an interval, interval unit, and start time. You cannot specify both.
+ * You must specify either <b>CronExpression</b>, or <b>Interval</b>, <b>IntervalUnit</b>, and <b>Times</b>.
  * </p>
- * </important>
+ * </li>
+ * <li>
+ * <p>
+ * If you need to specify an <a>ArchiveRule</a> for the schedule, then you must specify a creation frequency of at least
+ * 28 days.
+ * </p>
+ * </li>
+ * </ul>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateRule" target="_top">AWS API
  *      Documentation</a>
@@ -65,7 +75,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
-     * DLM selects a time within the next 24 hours.
+     * Data Lifecycle Manager selects a time within the next 24 hours.
      * </p>
      */
     private java.util.List<String> times;
@@ -303,13 +313,13 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
-     * DLM selects a time within the next 24 hours.
+     * Data Lifecycle Manager selects a time within the next 24 hours.
      * </p>
      * 
      * @return The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *         <p>
      *         The operation occurs within a one-hour window following the specified time. If you do not specify a time,
-     *         Amazon DLM selects a time within the next 24 hours.
+     *         Amazon Data Lifecycle Manager selects a time within the next 24 hours.
      */
 
     public java.util.List<String> getTimes() {
@@ -322,14 +332,14 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
-     * DLM selects a time within the next 24 hours.
+     * Data Lifecycle Manager selects a time within the next 24 hours.
      * </p>
      * 
      * @param times
      *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
      *        The operation occurs within a one-hour window following the specified time. If you do not specify a time,
-     *        Amazon DLM selects a time within the next 24 hours.
+     *        Amazon Data Lifecycle Manager selects a time within the next 24 hours.
      */
 
     public void setTimes(java.util.Collection<String> times) {
@@ -347,7 +357,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
-     * DLM selects a time within the next 24 hours.
+     * Data Lifecycle Manager selects a time within the next 24 hours.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -359,7 +369,7 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
      *        The operation occurs within a one-hour window following the specified time. If you do not specify a time,
-     *        Amazon DLM selects a time within the next 24 hours.
+     *        Amazon Data Lifecycle Manager selects a time within the next 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,14 +389,14 @@ public class CreateRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The operation occurs within a one-hour window following the specified time. If you do not specify a time, Amazon
-     * DLM selects a time within the next 24 hours.
+     * Data Lifecycle Manager selects a time within the next 24 hours.
      * </p>
      * 
      * @param times
      *        The time, in UTC, to start the operation. The supported format is hh:mm.</p>
      *        <p>
      *        The operation occurs within a one-hour window following the specified time. If you do not specify a time,
-     *        Amazon DLM selects a time within the next 24 hours.
+     *        Amazon Data Lifecycle Manager selects a time within the next 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
