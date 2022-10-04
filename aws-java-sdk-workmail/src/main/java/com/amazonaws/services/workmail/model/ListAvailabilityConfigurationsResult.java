@@ -26,7 +26,7 @@ public class ListAvailabilityConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.
+     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * </p>
      */
     private java.util.List<AvailabilityConfiguration> availabilityConfigurations;
@@ -40,11 +40,10 @@ public class ListAvailabilityConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.
+     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * </p>
      * 
-     * @return The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail
-     *         organization.
+     * @return The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      */
 
     public java.util.List<AvailabilityConfiguration> getAvailabilityConfigurations() {
@@ -53,12 +52,11 @@ public class ListAvailabilityConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.
+     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * </p>
      * 
      * @param availabilityConfigurations
-     *        The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail
-     *        organization.
+     *        The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      */
 
     public void setAvailabilityConfigurations(java.util.Collection<AvailabilityConfiguration> availabilityConfigurations) {
@@ -72,7 +70,7 @@ public class ListAvailabilityConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.
+     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,8 +79,7 @@ public class ListAvailabilityConfigurationsResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param availabilityConfigurations
-     *        The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail
-     *        organization.
+     *        The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +95,11 @@ public class ListAvailabilityConfigurationsResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail organization.
+     * The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * </p>
      * 
      * @param availabilityConfigurations
-     *        The list of <code>AvailabilityConfiguration</code>'s that exist for the specified Amazon WorkMail
-     *        organization.
+     *        The list of <code>AvailabilityConfiguration</code>'s that exist for the specified WorkMail organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

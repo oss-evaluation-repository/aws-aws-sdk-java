@@ -51,10 +51,10 @@ import com.amazonaws.services.workmail.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and
- * mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or
- * other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory
- * and control both the keys that encrypt your data and the location in which your data is stored.
+ * WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile
+ * email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or other
+ * native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory and
+ * control both the keys that encrypt your data and the location in which your data is stored.
  * </p>
  * <p>
  * The WorkMail API is designed for the following scenarios:
@@ -378,6 +378,73 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token
+     * you can use to make impersonated calls.
+     * </p>
+     * 
+     * @param assumeImpersonationRoleRequest
+     * @return Result of the AssumeImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AmazonWorkMail.AssumeImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssumeImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssumeImpersonationRoleResult assumeImpersonationRole(AssumeImpersonationRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssumeImpersonationRole(request);
+    }
+
+    @SdkInternalApi
+    final AssumeImpersonationRoleResult executeAssumeImpersonationRole(AssumeImpersonationRoleRequest assumeImpersonationRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(assumeImpersonationRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssumeImpersonationRoleRequest> request = null;
+        Response<AssumeImpersonationRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssumeImpersonationRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(assumeImpersonationRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeImpersonationRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssumeImpersonationRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssumeImpersonationRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels a mailbox export job.
      * </p>
      * <note>
@@ -448,7 +515,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
+     * Adds an alias to the set of a given member (user or group) of WorkMail.
      * </p>
      * 
      * @param createAliasRequest
@@ -535,7 +602,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws LimitExceededException
@@ -593,7 +660,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a group that can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates a group that can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createGroupRequest
@@ -605,14 +672,14 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws ReservedNameException
-     *         This user, group, or resource name is not allowed in Amazon WorkMail.
+     *         This user, group, or resource name is not allowed in WorkMail.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.CreateGroup
@@ -665,7 +732,83 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * Creates an impersonation role for the given WorkMail organization.
+     * </p>
+     * <p>
+     * <i>Idempotency</i> ensures that an API request completes no more than one time. With an idempotent request, if
+     * the original request completes successfully, any subsequent retries also complete successfully without performing
+     * any further actions.
+     * </p>
+     * 
+     * @param createImpersonationRoleRequest
+     * @return Result of the CreateImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.CreateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateImpersonationRoleResult createImpersonationRole(CreateImpersonationRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateImpersonationRole(request);
+    }
+
+    @SdkInternalApi
+    final CreateImpersonationRoleResult executeCreateImpersonationRole(CreateImpersonationRoleRequest createImpersonationRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createImpersonationRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateImpersonationRoleRequest> request = null;
+        Response<CreateImpersonationRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateImpersonationRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createImpersonationRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImpersonationRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateImpersonationRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateImpersonationRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param createMobileDeviceAccessRuleRequest
@@ -731,24 +874,23 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
-     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
-     * alias must match the directory alias. If you choose not to associate an existing directory with your
-     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service
+     * directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias
+     * must match the directory alias. If you choose not to associate an existing directory with your organization, then
+     * we create a new WorkMail directory for you. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * You can associate multiple email domains with an organization, then choose your default email domain from the
      * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
      * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
      * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
-     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * default domain</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * <p>
-     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
-     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
-     * master key for you.
+     * Optionally, you can use a customer managed key from AWS Key Management Service (AWS KMS) to encrypt email for
+     * your organization. If you don't associate an AWS KMS key, WorkMail creates a default, AWS managed key for you.
      * </p>
      * 
      * @param createOrganizationRequest
@@ -762,7 +904,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws LimitExceededException
      *         The request exceeds the limit of the resource.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @sample AmazonWorkMail.CreateOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
      *      API Documentation</a>
@@ -813,7 +955,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a new Amazon WorkMail resource.
+     * Creates a new WorkMail resource.
      * </p>
      * 
      * @param createResourceRequest
@@ -825,14 +967,14 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws ReservedNameException
-     *         This user, group, or resource name is not allowed in Amazon WorkMail.
+     *         This user, group, or resource name is not allowed in WorkMail.
      * @sample AmazonWorkMail.CreateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateResource" target="_top">AWS API
      *      Documentation</a>
@@ -883,7 +1025,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Creates a user who can be used in Amazon WorkMail by calling the <a>RegisterToWorkMail</a> operation.
+     * Creates a user who can be used in WorkMail by calling the <a>RegisterToWorkMail</a> operation.
      * </p>
      * 
      * @param createUserRequest
@@ -898,14 +1040,14 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      *         The supplied password doesn't match the minimum security constraints, such as length or use of special
      *         characters.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
      *         The organization must have a valid state to perform certain operations on the organization or its
      *         members.
      * @throws ReservedNameException
-     *         This user, group, or resource name is not allowed in Amazon WorkMail.
+     *         This user, group, or resource name is not allowed in WorkMail.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.CreateUser
@@ -1221,7 +1363,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a group from Amazon WorkMail.
+     * Deletes a group from WorkMail.
      * </p>
      * 
      * @param deleteGroupRequest
@@ -1280,6 +1422,70 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param deleteImpersonationRoleRequest
+     * @return Result of the DeleteImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteImpersonationRoleResult deleteImpersonationRole(DeleteImpersonationRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteImpersonationRole(request);
+    }
+
+    @SdkInternalApi
+    final DeleteImpersonationRoleResult executeDeleteImpersonationRole(DeleteImpersonationRoleRequest deleteImpersonationRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteImpersonationRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteImpersonationRoleRequest> request = null;
+        Response<DeleteImpersonationRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteImpersonationRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteImpersonationRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImpersonationRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteImpersonationRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteImpersonationRoleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1434,7 +1640,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * Deletes a mobile device access rule for the specified WorkMail organization.
      * </p>
      * <note>
      * <p>
@@ -1504,10 +1710,10 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
-     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * Deletes an WorkMail organization and all underlying AWS resources managed by WorkMail as part of the
+     * organization. You can choose whether to delete the associated directory. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
-     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * organization</a> in the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -1697,8 +1903,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Deletes a user from Amazon WorkMail and all subsequent systems. Before you can delete a user, the user state must
-     * be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
+     * Deletes a user from WorkMail and all subsequent systems. Before you can delete a user, the user state must be
+     * <code>DISABLED</code>. Use the <a>DescribeUser</a> action to confirm the user state.
      * </p>
      * <p>
      * Deleting a user is permanent and cannot be undone. WorkMail archives user mailboxes for 30 days before they are
@@ -1773,7 +1979,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Mark a user, group, or resource as no longer used in Amazon WorkMail. This action disassociates the mailbox and
+     * Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and
      * schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The
      * functionality in the console is <i>Disable</i>.
      * </p>
@@ -1843,9 +2049,9 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Removes a domain from Amazon WorkMail, stops email routing to WorkMail, and removes the authorization allowing
-     * WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address
-     * used by WorkMail entities before you remove the domain.
+     * Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail
+     * use. SES keeps the domain because other applications may use it. You must first remove any email address used by
+     * WorkMail entities before you remove the domain.
      * </p>
      * 
      * @param deregisterMailDomainRequest
@@ -1861,8 +2067,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws InvalidCustomSesConfigurationException
-     *         You SES configuration has customizations that Amazon WorkMail cannot save. The error message lists the
-     *         invalid setting. For examples of invalid settings, refer to <a
+     *         You SES configuration has customizations that WorkMail cannot save. The error message lists the invalid
+     *         setting. For examples of invalid settings, refer to <a
      *         href="https://docs.aws.amazon.com/ses/latest/APIReference/API_CreateReceiptRule.html"
      *         >CreateReceiptRule</a>.
      * @sample AmazonWorkMail.DeregisterMailDomain
@@ -2507,13 +2713,16 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access
-     * protocol action, or user ID.
+     * protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role
+     * ID. Impersonation role ID can only be used with Action EWS.
      * </p>
      * 
      * @param getAccessControlEffectRequest
      * @return Result of the GetAccessControlEffect operation returned by the service.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws OrganizationNotFoundException
@@ -2626,6 +2835,141 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<GetDefaultRetentionPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetDefaultRetentionPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the impersonation role details for the given WorkMail organization.
+     * </p>
+     * 
+     * @param getImpersonationRoleRequest
+     * @return Result of the GetImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @sample AmazonWorkMail.GetImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRole" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetImpersonationRoleResult getImpersonationRole(GetImpersonationRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetImpersonationRole(request);
+    }
+
+    @SdkInternalApi
+    final GetImpersonationRoleResult executeGetImpersonationRole(GetImpersonationRoleRequest getImpersonationRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getImpersonationRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetImpersonationRoleRequest> request = null;
+        Response<GetImpersonationRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetImpersonationRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImpersonationRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImpersonationRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetImpersonationRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetImpersonationRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Tests whether the given impersonation role can impersonate a target user.
+     * </p>
+     * 
+     * @param getImpersonationRoleEffectRequest
+     * @return Result of the GetImpersonationRoleEffect operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @sample AmazonWorkMail.GetImpersonationRoleEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetImpersonationRoleEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetImpersonationRoleEffectResult getImpersonationRoleEffect(GetImpersonationRoleEffectRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetImpersonationRoleEffect(request);
+    }
+
+    @SdkInternalApi
+    final GetImpersonationRoleEffectResult executeGetImpersonationRoleEffect(GetImpersonationRoleEffectRequest getImpersonationRoleEffectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getImpersonationRoleEffectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetImpersonationRoleEffectRequest> request = null;
+        Response<GetImpersonationRoleEffectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetImpersonationRoleEffectRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getImpersonationRoleEffectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImpersonationRoleEffect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetImpersonationRoleEffectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetImpersonationRoleEffectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2766,8 +3110,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
-     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
-     * organization for a particular user's attributes.
+     * this method to test the effects of the current set of mobile device access rules for the WorkMail organization
+     * for a particular user's attributes.
      * </p>
      * 
      * @param getMobileDeviceAccessEffectRequest
@@ -3220,7 +3564,70 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists the mail domains in a given Amazon WorkMail organization.
+     * Lists all the impersonation roles for the given WorkMail organization.
+     * </p>
+     * 
+     * @param listImpersonationRolesRequest
+     * @return Result of the ListImpersonationRoles operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.ListImpersonationRoles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListImpersonationRoles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListImpersonationRolesResult listImpersonationRoles(ListImpersonationRolesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListImpersonationRoles(request);
+    }
+
+    @SdkInternalApi
+    final ListImpersonationRolesResult executeListImpersonationRoles(ListImpersonationRolesRequest listImpersonationRolesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listImpersonationRolesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListImpersonationRolesRequest> request = null;
+        Response<ListImpersonationRolesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListImpersonationRolesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImpersonationRolesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImpersonationRoles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListImpersonationRolesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListImpersonationRolesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the mail domains in a given WorkMail organization.
      * </p>
      * 
      * @param listMailDomainsRequest
@@ -3477,7 +3884,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * Lists the mobile device access rules for the specified WorkMail organization.
      * </p>
      * 
      * @param listMobileDeviceAccessRulesRequest
@@ -3729,7 +4136,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Lists the tags applied to an Amazon WorkMail organization resource.
+     * Lists the tags applied to an WorkMail organization resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -3849,8 +4256,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Adds a new access control rule for the specified organization. The rule allows or denies access to the
-     * organization for the specified IPv4 addresses, access protocol actions, and user IDs. Adding a new rule with the
-     * same name as an existing rule replaces the older rule.
+     * organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a
+     * new rule with the same name as an existing rule replaces the older rule.
      * </p>
      * 
      * @param putAccessControlRuleRequest
@@ -3861,6 +4268,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
@@ -4246,9 +4655,9 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Registers a new domain in Amazon WorkMail and SES, and configures it for use by WorkMail. Emails received by SES
-     * for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use
-     * the specified domain for sending your users' emails.
+     * Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for
+     * this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the
+     * specified domain for sending your users' emails.
      * </p>
      * 
      * @param registerMailDomainRequest
@@ -4315,7 +4724,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Registers an existing and disabled user, group, or resource for Amazon WorkMail use by associating a mailbox and
+     * Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and
      * calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user,
      * group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a
      * href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this
@@ -4482,7 +4891,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
      * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
      * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
-     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * the <i>WorkMail Administrator Guide</i>.
      * </p>
      * 
      * @param startMailboxExportJobRequest
@@ -4549,7 +4958,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Applies the specified tags to the specified Amazon WorkMail organization resource.
+     * Applies the specified tags to the specified WorkMailorganization resource.
      * </p>
      * 
      * @param tagResourceRequest
@@ -4687,7 +5096,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Untags the specified tags from the specified Amazon WorkMail organization resource.
+     * Untags the specified tags from the specified WorkMail organization resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -4880,6 +5289,79 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Updates an impersonation role for the given WorkMail organization.
+     * </p>
+     * 
+     * @param updateImpersonationRoleRequest
+     * @return Result of the UpdateImpersonationRole operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws EntityStateException
+     *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
+     *         trying to delete an active user.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.UpdateImpersonationRole
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateImpersonationRole"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateImpersonationRoleResult updateImpersonationRole(UpdateImpersonationRoleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateImpersonationRole(request);
+    }
+
+    @SdkInternalApi
+    final UpdateImpersonationRoleResult executeUpdateImpersonationRole(UpdateImpersonationRoleRequest updateImpersonationRoleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateImpersonationRoleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateImpersonationRoleRequest> request = null;
+        Response<UpdateImpersonationRoleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateImpersonationRoleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateImpersonationRoleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateImpersonationRole");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateImpersonationRoleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateImpersonationRoleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a user's current mailbox quota for a specified organization and user.
      * </p>
      * 
@@ -4947,7 +5429,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * Updates a mobile device access rule for the specified WorkMail organization.
      * </p>
      * 
      * @param updateMobileDeviceAccessRuleRequest
@@ -5124,7 +5606,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws MailDomainStateException
      *         After a domain has been added to the organization, it must be verified. The domain is not yet verified.
      * @throws NameAvailabilityException
-     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     *         The user, group, or resource name isn't unique in WorkMail.
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException

@@ -33,7 +33,7 @@ public class CreateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
     private String clientToken;
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      * </p>
      */
     private String organizationId;
@@ -100,11 +100,11 @@ public class CreateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -113,10 +113,10 @@ public class CreateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     * @return The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      */
 
     public String getOrganizationId() {
@@ -125,11 +125,11 @@ public class CreateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

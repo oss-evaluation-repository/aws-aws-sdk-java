@@ -27,7 +27,7 @@ public class ListAvailabilityConfigurationsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      * </p>
      */
     private String organizationId;
@@ -46,11 +46,11 @@ public class ListAvailabilityConfigurationsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -59,10 +59,10 @@ public class ListAvailabilityConfigurationsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     * @return The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      */
 
     public String getOrganizationId() {
@@ -71,11 +71,11 @@ public class ListAvailabilityConfigurationsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code>'s will be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

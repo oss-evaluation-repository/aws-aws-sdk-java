@@ -43,7 +43,7 @@ public class AvailabilityConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      * </p>
      */
     private RedactedEwsAvailabilityProvider ewsProvider;
@@ -169,12 +169,12 @@ public class AvailabilityConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      * </p>
      * 
      * @param ewsProvider
      *        If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     *        <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     *        <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      */
 
     public void setEwsProvider(RedactedEwsAvailabilityProvider ewsProvider) {
@@ -184,11 +184,11 @@ public class AvailabilityConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      * </p>
      * 
      * @return If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     *         <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     *         <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      */
 
     public RedactedEwsAvailabilityProvider getEwsProvider() {
@@ -198,12 +198,12 @@ public class AvailabilityConfiguration implements Serializable, Cloneable, Struc
     /**
      * <p>
      * If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     * <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      * </p>
      * 
      * @param ewsProvider
      *        If <code>ProviderType</code> is <code>EWS</code>, then this field contains
-     *        <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not requried.
+     *        <code>RedactedEwsAvailabilityProvider</code>. Otherwise, it is not required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public AssumeImpersonationRoleResult assumeImpersonationRole(AssumeImpersonationRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelMailboxExportJobResult cancelMailboxExportJob(CancelMailboxExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public CreateGroupResult createGroup(CreateGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateImpersonationRoleResult createImpersonationRole(CreateImpersonationRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +109,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public DeleteGroupResult deleteGroup(DeleteGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteImpersonationRoleResult deleteImpersonationRole(DeleteImpersonationRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,6 +218,16 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public GetImpersonationRoleResult getImpersonationRole(GetImpersonationRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetImpersonationRoleEffectResult getImpersonationRoleEffect(GetImpersonationRoleEffectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMailDomainResult getMailDomain(GetMailDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +269,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public ListGroupsResult listGroups(ListGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImpersonationRolesResult listImpersonationRoles(ListImpersonationRolesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -369,6 +399,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public UpdateDefaultMailDomainResult updateDefaultMailDomain(UpdateDefaultMailDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateImpersonationRoleResult updateImpersonationRole(UpdateImpersonationRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

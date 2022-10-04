@@ -27,7 +27,7 @@ public class TestAvailabilityConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization where the availability provider will be tested.
+     * The WorkMail organization where the availability provider will be tested.
      * </p>
      */
     private String organizationId;
@@ -45,11 +45,11 @@ public class TestAvailabilityConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization where the availability provider will be tested.
+     * The WorkMail organization where the availability provider will be tested.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization where the availability provider will be tested.
+     *        The WorkMail organization where the availability provider will be tested.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -58,10 +58,10 @@ public class TestAvailabilityConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization where the availability provider will be tested.
+     * The WorkMail organization where the availability provider will be tested.
      * </p>
      * 
-     * @return The Amazon WorkMail organization where the availability provider will be tested.
+     * @return The WorkMail organization where the availability provider will be tested.
      */
 
     public String getOrganizationId() {
@@ -70,11 +70,11 @@ public class TestAvailabilityConfigurationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon WorkMail organization where the availability provider will be tested.
+     * The WorkMail organization where the availability provider will be tested.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization where the availability provider will be tested.
+     *        The WorkMail organization where the availability provider will be tested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,10 +26,10 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and
- * mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or
- * other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory
- * and control both the keys that encrypt your data and the location in which your data is stored.
+ * WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile
+ * email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or other
+ * native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory and
+ * control both the keys that encrypt your data and the location in which your data is stored.
  * </p>
  * <p>
  * The WorkMail API is designed for the following scenarios:
@@ -183,6 +183,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<AssumeImpersonationRoleResult> assumeImpersonationRoleAsync(AssumeImpersonationRoleRequest request) {
+
+        return assumeImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssumeImpersonationRoleResult> assumeImpersonationRoleAsync(final AssumeImpersonationRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssumeImpersonationRoleRequest, AssumeImpersonationRoleResult> asyncHandler) {
+        final AssumeImpersonationRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssumeImpersonationRoleResult>() {
+            @Override
+            public AssumeImpersonationRoleResult call() throws Exception {
+                AssumeImpersonationRoleResult result = null;
+
+                try {
+                    result = executeAssumeImpersonationRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest request) {
 
         return cancelMailboxExportJobAsync(request, null);
@@ -301,6 +334,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeCreateGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImpersonationRoleResult> createImpersonationRoleAsync(CreateImpersonationRoleRequest request) {
+
+        return createImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImpersonationRoleResult> createImpersonationRoleAsync(final CreateImpersonationRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateImpersonationRoleRequest, CreateImpersonationRoleResult> asyncHandler) {
+        final CreateImpersonationRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateImpersonationRoleResult>() {
+            @Override
+            public CreateImpersonationRoleResult call() throws Exception {
+                CreateImpersonationRoleResult result = null;
+
+                try {
+                    result = executeCreateImpersonationRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -602,6 +668,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeDeleteGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImpersonationRoleResult> deleteImpersonationRoleAsync(DeleteImpersonationRoleRequest request) {
+
+        return deleteImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteImpersonationRoleResult> deleteImpersonationRoleAsync(final DeleteImpersonationRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteImpersonationRoleRequest, DeleteImpersonationRoleResult> asyncHandler) {
+        final DeleteImpersonationRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteImpersonationRoleResult>() {
+            @Override
+            public DeleteImpersonationRoleResult call() throws Exception {
+                DeleteImpersonationRoleResult result = null;
+
+                try {
+                    result = executeDeleteImpersonationRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1284,6 +1383,72 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetImpersonationRoleResult> getImpersonationRoleAsync(GetImpersonationRoleRequest request) {
+
+        return getImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImpersonationRoleResult> getImpersonationRoleAsync(final GetImpersonationRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetImpersonationRoleRequest, GetImpersonationRoleResult> asyncHandler) {
+        final GetImpersonationRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetImpersonationRoleResult>() {
+            @Override
+            public GetImpersonationRoleResult call() throws Exception {
+                GetImpersonationRoleResult result = null;
+
+                try {
+                    result = executeGetImpersonationRole(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImpersonationRoleEffectResult> getImpersonationRoleEffectAsync(GetImpersonationRoleEffectRequest request) {
+
+        return getImpersonationRoleEffectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImpersonationRoleEffectResult> getImpersonationRoleEffectAsync(final GetImpersonationRoleEffectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetImpersonationRoleEffectRequest, GetImpersonationRoleEffectResult> asyncHandler) {
+        final GetImpersonationRoleEffectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetImpersonationRoleEffectResult>() {
+            @Override
+            public GetImpersonationRoleEffectResult call() throws Exception {
+                GetImpersonationRoleEffectResult result = null;
+
+                try {
+                    result = executeGetImpersonationRoleEffect(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMailDomainResult> getMailDomainAsync(GetMailDomainRequest request) {
 
         return getMailDomainAsync(request, null);
@@ -1567,6 +1732,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeListGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImpersonationRolesResult> listImpersonationRolesAsync(ListImpersonationRolesRequest request) {
+
+        return listImpersonationRolesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImpersonationRolesResult> listImpersonationRolesAsync(final ListImpersonationRolesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImpersonationRolesRequest, ListImpersonationRolesResult> asyncHandler) {
+        final ListImpersonationRolesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImpersonationRolesResult>() {
+            @Override
+            public ListImpersonationRolesResult call() throws Exception {
+                ListImpersonationRolesResult result = null;
+
+                try {
+                    result = executeListImpersonationRoles(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2400,6 +2598,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeUpdateDefaultMailDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(UpdateImpersonationRoleRequest request) {
+
+        return updateImpersonationRoleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImpersonationRoleResult> updateImpersonationRoleAsync(final UpdateImpersonationRoleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateImpersonationRoleRequest, UpdateImpersonationRoleResult> asyncHandler) {
+        final UpdateImpersonationRoleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateImpersonationRoleResult>() {
+            @Override
+            public UpdateImpersonationRoleResult call() throws Exception {
+                UpdateImpersonationRoleResult result = null;
+
+                try {
+                    result = executeUpdateImpersonationRole(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -27,7 +27,7 @@ public class UpdateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      * </p>
      */
     private String organizationId;
@@ -56,11 +56,11 @@ public class UpdateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -69,10 +69,10 @@ public class UpdateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     * @return The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      */
 
     public String getOrganizationId() {
@@ -81,11 +81,11 @@ public class UpdateAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

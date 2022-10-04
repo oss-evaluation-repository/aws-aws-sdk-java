@@ -1,3 +1,28 @@
+# __1.12.316__ __2022-10-04__
+## __AWS S3 Control__
+  - ### Features
+    - S3 Object Lambda adds support to allow customers to intercept HeadObject and ListObjects requests and introduce their own compute. These requests were previously proxied to S3.
+
+## __Amazon Connect Cases__
+  - ### Features
+    - This release adds APIs for Amazon Connect Cases. Cases allows your agents to quickly track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center.  For more information, see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+
+## __Amazon Connect Service__
+  - ### Features
+    - Updated the CreateIntegrationAssociation API to support the CASES_DOMAIN IntegrationType.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates to address various Amazon ECS tickets.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Added EnableNetworkAddressUsageMetrics flag for ModifyVpcAttribute, DescribeVpcAttribute APIs.
+
+## __Amazon WorkMail__
+  - ### Features
+    - This release adds support for impersonation roles in Amazon WorkMail.
+
 # __1.12.315__ __2022-10-03__
 ## __Access Analyzer__
   - ### Features

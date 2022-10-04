@@ -27,7 +27,7 @@ public class DeleteAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      * </p>
      */
     private String organizationId;
@@ -40,11 +40,11 @@ public class DeleteAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      */
 
     public void setOrganizationId(String organizationId) {
@@ -53,10 +53,10 @@ public class DeleteAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      * </p>
      * 
-     * @return The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     * @return The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      */
 
     public String getOrganizationId() {
@@ -65,11 +65,11 @@ public class DeleteAvailabilityConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     * The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      * </p>
      * 
      * @param organizationId
-     *        The Amazon WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
+     *        The WorkMail organization for which the <code>AvailabilityConfiguration</code> will be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
