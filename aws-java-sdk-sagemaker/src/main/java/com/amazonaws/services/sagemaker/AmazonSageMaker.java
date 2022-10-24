@@ -3638,6 +3638,23 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return Result of the ListInferenceRecommendationsJobSteps operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInferenceRecommendationsJobStepsResult listInferenceRecommendationsJobSteps(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest);
+
+    /**
+     * <p>
      * Lists recommendation jobs that satisfy various filters.
      * </p>
      * 

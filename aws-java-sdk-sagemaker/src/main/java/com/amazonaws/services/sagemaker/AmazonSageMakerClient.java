@@ -11335,6 +11335,67 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return Result of the ListInferenceRecommendationsJobSteps operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInferenceRecommendationsJobStepsResult listInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInferenceRecommendationsJobSteps(request);
+    }
+
+    @SdkInternalApi
+    final ListInferenceRecommendationsJobStepsResult executeListInferenceRecommendationsJobSteps(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInferenceRecommendationsJobStepsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInferenceRecommendationsJobStepsRequest> request = null;
+        Response<ListInferenceRecommendationsJobStepsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInferenceRecommendationsJobStepsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInferenceRecommendationsJobStepsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInferenceRecommendationsJobSteps");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInferenceRecommendationsJobStepsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInferenceRecommendationsJobStepsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists recommendation jobs that satisfy various filters.
      * </p>
      * 

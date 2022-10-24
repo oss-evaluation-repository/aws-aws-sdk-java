@@ -7470,6 +7470,47 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return A Java Future containing the result of the ListInferenceRecommendationsJobSteps operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceRecommendationsJobSteps operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceRecommendationsJobStepsRequest, ListInferenceRecommendationsJobStepsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists recommendation jobs that satisfy various filters.
      * </p>
      * 

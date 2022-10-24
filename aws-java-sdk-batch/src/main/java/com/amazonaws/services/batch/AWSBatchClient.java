@@ -54,16 +54,16 @@ import com.amazonaws.services.batch.model.transform.*;
  * <p>
  * Using Batch, you can run batch computing workloads on the Amazon Web Services Cloud. Batch computing is a common
  * means for developers, scientists, and engineers to access large amounts of compute resources. Batch uses the
- * advantages of this computing workload to remove the undifferentiated heavy lifting of configuring and managing
- * required infrastructure. At the same time, it also adopts a familiar batch computing software approach. Given these
- * advantages, Batch can help you to efficiently provision resources in response to jobs submitted, thus effectively
- * helping you to eliminate capacity constraints, reduce compute costs, and deliver your results more quickly.
+ * advantages of the batch computing to remove the undifferentiated heavy lifting of configuring and managing required
+ * infrastructure. At the same time, it also adopts a familiar batch computing software approach. You can use Batch to
+ * efficiently provision resources d, and work toward eliminating capacity constraints, reducing your overall compute
+ * costs, and delivering results more quickly.
  * </p>
  * <p>
  * As a fully managed service, Batch can run batch computing workloads of any scale. Batch automatically provisions
  * compute resources and optimizes workload distribution based on the quantity and scale of your specific workloads.
- * With Batch, there's no need to install or manage batch computing software. This means that you can focus your time
- * and energy on analyzing results and solving your specific problems.
+ * With Batch, there's no need to install or manage batch computing software. This means that you can focus on analyzing
+ * results and solving your specific problems instead.
  * </p>
  */
 @ThreadSafe
@@ -298,18 +298,18 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
     /**
      * <p>
      * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
-     * <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or
-     * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even if no job is canceled. These
-     * jobs must be terminated with the <a>TerminateJob</a> operation.
+     * <code>RUNNABLE</code> state are canceled. Jobs that progressed to the <code>STARTING</code> or
+     * <code>RUNNING</code> state aren't canceled. However, the API operation still succeeds, even if no job is
+     * canceled. These jobs must be terminated with the <a>TerminateJob</a> operation.
      * </p>
      * 
      * @param cancelJobRequest
      *        Contains the parameters for <code>CancelJob</code>.
      * @return Result of the CancelJob operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CancelJob
@@ -381,9 +381,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </p>
      * </note>
      * <p>
-     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have a lot of flexibility
-     * with how you configure your compute resources. For example, you can use custom AMIs. However, you must verify
-     * that each of your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
+     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have flexibility with how
+     * you configure your compute resources. For example, you can use custom AMIs. However, you must verify that each of
+     * your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
      * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
@@ -431,7 +431,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * <ul>
      * <li>
      * <p>
-     * Either do not set the service role (<code>serviceRole</code>) parameter or set it to the
+     * Either don't set the service role (<code>serviceRole</code>) parameter or set it to the
      * <b>AWSBatchServiceRole</b> service-linked role.
      * </p>
      * </li>
@@ -448,25 +448,25 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * </li>
      * <li>
      * <p>
-     * Do not specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in <a
+     * Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-     * <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>). In that case Batch
-     * will select the latest Amazon ECS optimized AMI supported by Batch at the time the infrastructure update is
-     * initiated. Alternatively you can specify the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code>
+     * <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>). In that case, Batch
+     * selects the latest Amazon ECS optimized AMI that's supported by Batch at the time the infrastructure update is
+     * initiated. Alternatively, you can specify the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code>
      * parameters, or the launch template identified by the <code>LaunchTemplate</code> properties. Changing any of
-     * these properties will trigger an infrastructure update. If the AMI ID is specified in the launch template, it can
-     * not be replaced by specifying an AMI ID in either the <code>imageId</code> or <code>imageIdOverride</code>
-     * parameters. It can only be replaced by specifying a different launch template, or if the launch template version
-     * is set to <code>$Default</code> or <code>$Latest</code>, by setting either a new default version for the launch
-     * template (if <code>$Default</code>)or by adding a new version to the launch template (if <code>$Latest</code>).
+     * these properties starts an infrastructure update. If the AMI ID is specified in the launch template, it can't be
+     * replaced by specifying an AMI ID in either the <code>imageId</code> or <code>imageIdOverride</code> parameters.
+     * It can only be replaced by specifying a different launch template, or if the launch template version is set to
+     * <code>$Default</code> or <code>$Latest</code>, by setting either a new default version for the launch template
+     * (if <code>$Default</code>) or by adding a new version to the launch template (if <code>$Latest</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If these rules are followed, any update that triggers an infrastructure update will cause the AMI ID to be
-     * re-selected. If the <code>version</code> setting in the launch template (<code>launchTemplate</code>) is set to
-     * <code>$Latest</code> or <code>$Default</code>, the latest or default version of the launch template will be
-     * evaluated up at the time of the infrastructure update, even if the <code>launchTemplate</code> was not updated.
+     * If these rules are followed, any update that starts an infrastructure update causes the AMI ID to be re-selected.
+     * If the <code>version</code> setting in the launch template (<code>launchTemplate</code>) is set to
+     * <code>$Latest</code> or <code>$Default</code>, the latest or default version of the launch template is evaluated
+     * up at the time of the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
      * </p>
      * </note>
      * 
@@ -474,9 +474,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>CreateComputeEnvironment</code>.
      * @return Result of the CreateComputeEnvironment operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CreateComputeEnvironment
@@ -544,9 +544,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>CreateJobQueue</code>.
      * @return Result of the CreateJobQueue operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CreateJobQueue
@@ -606,9 +606,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>CreateSchedulingPolicy</code>.
      * @return Result of the CreateSchedulingPolicy operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.CreateSchedulingPolicy
@@ -676,9 +676,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DeleteComputeEnvironment</code>.
      * @return Result of the DeleteComputeEnvironment operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeleteComputeEnvironment
@@ -746,9 +746,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DeleteJobQueue</code>.
      * @return Result of the DeleteJobQueue operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeleteJobQueue
@@ -811,9 +811,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DeleteSchedulingPolicy</code>.
      * @return Result of the DeleteSchedulingPolicy operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeleteSchedulingPolicy
@@ -873,9 +873,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * @param deregisterJobDefinitionRequest
      * @return Result of the DeregisterJobDefinition operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DeregisterJobDefinition
@@ -941,9 +941,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DescribeComputeEnvironments</code>.
      * @return Result of the DescribeComputeEnvironments operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeComputeEnvironments
@@ -1006,9 +1006,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DescribeJobDefinitions</code>.
      * @return Result of the DescribeJobDefinitions operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeJobDefinitions
@@ -1069,9 +1069,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DescribeJobQueues</code>.
      * @return Result of the DescribeJobQueues operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeJobQueues
@@ -1131,9 +1131,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DescribeJobs</code>.
      * @return Result of the DescribeJobs operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeJobs
@@ -1193,9 +1193,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>DescribeSchedulingPolicies</code>.
      * @return Result of the DescribeSchedulingPolicies operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.DescribeSchedulingPolicies
@@ -1281,9 +1281,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>ListJobs</code>.
      * @return Result of the ListJobs operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.ListJobs
@@ -1343,9 +1343,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>ListSchedulingPolicies</code>.
      * @return Result of the ListSchedulingPolicies operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.ListSchedulingPolicies
@@ -1401,16 +1401,16 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * <p>
      * Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs
-     * are not supported.
+     * aren't supported.
      * </p>
      * 
      * @param listTagsForResourceRequest
      *        Contains the parameters for <code>ListTagsForResource</code>.
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.ListTagsForResource
@@ -1470,9 +1470,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>RegisterJobDefinition</code>.
      * @return Result of the RegisterJobDefinition operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.RegisterJobDefinition
@@ -1548,9 +1548,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>SubmitJob</code>.
      * @return Result of the SubmitJob operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.SubmitJob
@@ -1607,16 +1607,16 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
      * that are associated with that resource are deleted as well. Batch resources that support tags are compute
      * environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and
-     * multi-node parallel (MNP) jobs are not supported.
+     * multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param tagResourceRequest
      *        Contains the parameters for <code>TagResource</code>.
      * @return Result of the TagResource operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.TagResource
@@ -1678,9 +1678,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>TerminateJob</code>.
      * @return Result of the TerminateJob operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.TerminateJob
@@ -1740,9 +1740,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>UntagResource</code>.
      * @return Result of the UntagResource operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.UntagResource
@@ -1802,9 +1802,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>UpdateComputeEnvironment</code>.
      * @return Result of the UpdateComputeEnvironment operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.UpdateComputeEnvironment
@@ -1866,9 +1866,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>UpdateJobQueue</code>.
      * @return Result of the UpdateJobQueue operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.UpdateJobQueue
@@ -1928,9 +1928,9 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
      *        Contains the parameters for <code>UpdateSchedulingPolicy</code>.
      * @return Result of the UpdateSchedulingPolicy operation returned by the service.
      * @throws ClientException
-     *         These errors are usually caused by a client action, such as using an action or resource on behalf of a
-     *         user that doesn't have permissions to use the action or resource, or specifying an identifier that's not
-     *         valid.
+     *         These errors are usually caused by a client action. One example cause is using an action or resource on
+     *         behalf of a user that doesn't have permissions to use the action or resource. Another cause is specifying
+     *         an identifier that's not valid.
      * @throws ServerException
      *         These errors are usually caused by a server issue.
      * @sample AWSBatch.UpdateSchedulingPolicy

@@ -919,6 +919,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListInferenceRecommendationsJobStepsResult listInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListInferenceRecommendationsJobsResult listInferenceRecommendationsJobs(ListInferenceRecommendationsJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

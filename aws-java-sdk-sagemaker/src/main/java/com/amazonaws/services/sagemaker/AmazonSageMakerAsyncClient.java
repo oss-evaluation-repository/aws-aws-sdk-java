@@ -6007,6 +6007,41 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest request) {
+
+        return listInferenceRecommendationsJobStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            final ListInferenceRecommendationsJobStepsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInferenceRecommendationsJobStepsRequest, ListInferenceRecommendationsJobStepsResult> asyncHandler) {
+        final ListInferenceRecommendationsJobStepsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInferenceRecommendationsJobStepsResult>() {
+            @Override
+            public ListInferenceRecommendationsJobStepsResult call() throws Exception {
+                ListInferenceRecommendationsJobStepsResult result = null;
+
+                try {
+                    result = executeListInferenceRecommendationsJobSteps(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInferenceRecommendationsJobsResult> listInferenceRecommendationsJobsAsync(
             ListInferenceRecommendationsJobsRequest request) {
 

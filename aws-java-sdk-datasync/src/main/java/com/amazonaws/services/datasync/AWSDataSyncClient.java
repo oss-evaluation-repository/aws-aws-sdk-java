@@ -53,11 +53,13 @@ import com.amazonaws.services.datasync.model.transform.*;
  * <fullname>DataSync</fullname>
  * <p>
  * DataSync is a managed data transfer service that makes it simpler for you to automate moving data between on-premises
- * storage and Amazon Simple Storage Service (Amazon S3) or Amazon Elastic File System (Amazon EFS).
+ * storage and Amazon Web Services storage services. You also can use DataSync to transfer data between other cloud
+ * providers and Amazon Web Services storage services.
  * </p>
  * <p>
- * This API interface reference for DataSync contains documentation for a programming interface that you can use to
- * manage DataSync.
+ * This API interface reference includes documentation for using DataSync programmatically. For complete information,
+ * see the <i> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html">DataSync User
+ * Guide</a> </i>.
  * </p>
  */
 @ThreadSafe
@@ -138,14 +140,13 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Cancels execution of a task.
+     * Stops an DataSync task execution that's in progress. The transfer of some files are abruptly interrupted. File
+     * contents that're transferred to the destination might be incomplete or inconsistent with the source files.
      * </p>
      * <p>
-     * When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that
-     * are transferred to the destination might be incomplete or inconsistent with the source files. However, if you
-     * start a new task execution on the same task and you allow the task execution to complete, file content on the
-     * destination is complete and consistent. This applies to other unexpected failures that interrupt a task
-     * execution. In all of these cases, DataSync successfully complete the transfer when you start the next task
+     * However, if you start a new task execution using the same task and allow it to finish, file content on the
+     * destination will be complete and consistent. This applies to other unexpected failures that interrupt a task
+     * execution. In all of these cases, DataSync successfully completes the transfer when you start the next task
      * execution.
      * </p>
      * 
@@ -206,10 +207,11 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Activates an DataSync agent that you have deployed on your host. The activation process associates your agent
-     * with your account. In the activation process, you specify information such as the Amazon Web Services Region that
-     * you want to activate the agent in. You activate the agent in the Amazon Web Services Region where your target
-     * locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services Region.
+     * Activates an DataSync agent that you have deployed in your storage environment. The activation process associates
+     * your agent with your account. In the activation process, you specify information such as the Amazon Web Services
+     * Region that you want to activate the agent in. You activate the agent in the Amazon Web Services Region where
+     * your target locations (in Amazon S3 or Amazon EFS) reside. Your tasks are created in this Amazon Web Services
+     * Region.
      * </p>
      * <p>
      * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
@@ -224,7 +226,6 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * Agents are automatically updated by Amazon Web Services on a regular basis, using a mechanism that ensures
      * minimal interruption to your tasks.
      * </p>
-     * <p/>
      * 
      * @param createAgentRequest
      *        CreateAgentRequest
@@ -469,8 +470,17 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon FSx for OpenZFS file system.
+     * Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access for a transfer. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating a location for
+     * FSx for OpenZFS</a>.
      * </p>
+     * <note>
+     * <p>
+     * Request parameters related to <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code>
+     * operation.
+     * </p>
+     * </note>
      * 
      * @param createLocationFsxOpenZfsRequest
      * @return Result of the CreateLocationFsxOpenZfs operation returned by the service.
@@ -774,7 +784,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Creates an endpoint for an Amazon S3 bucket.
+     * Creates an endpoint for an Amazon S3 bucket that DataSync can access for a transfer.
      * </p>
      * <p>
      * For more information, see <a
@@ -1288,7 +1298,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns metadata about an Amazon FSx for Lustre location, such as information about its path.
+     * Provides details about how an DataSync location for an Amazon FSx for Lustre file system is configured.
      * </p>
      * 
      * @param describeLocationFsxLustreRequest
@@ -1351,6 +1361,12 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * <p>
      * Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP file system is configured.
      * </p>
+     * <note>
+     * <p>
+     * If your location uses SMB, the <code>DescribeLocationFsxOntap</code> operation doesn't actually return a
+     * <code>Password</code>.
+     * </p>
+     * </note>
      * 
      * @param describeLocationFsxOntapRequest
      * @return Result of the DescribeLocationFsxOntap operation returned by the service.
@@ -1410,8 +1426,14 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns metadata about an Amazon FSx for OpenZFS location, such as information about its path.
+     * Provides details about how an DataSync location for an Amazon FSx for OpenZFS file system is configured.
      * </p>
+     * <note>
+     * <p>
+     * Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code>
+     * operation.
+     * </p>
+     * </note>
      * 
      * @param describeLocationFsxOpenZfsRequest
      * @return Result of the DescribeLocationFsxOpenZfs operation returned by the service.
@@ -2640,8 +2662,8 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Updates some of the parameters of a previously created location for self-managed object storage server access.
-     * For information about creating a self-managed object storage location, see <a
+     * Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For
+     * information about creating a self-managed object storage location, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for
      * object storage</a>.
      * </p>

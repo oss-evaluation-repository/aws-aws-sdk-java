@@ -2378,6 +2378,21 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest request) {
+
+        return listInferenceRecommendationsJobStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceRecommendationsJobStepsRequest, ListInferenceRecommendationsJobStepsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInferenceRecommendationsJobsResult> listInferenceRecommendationsJobsAsync(
             ListInferenceRecommendationsJobsRequest request) {
 
