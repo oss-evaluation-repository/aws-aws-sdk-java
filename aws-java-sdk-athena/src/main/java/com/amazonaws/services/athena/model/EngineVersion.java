@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Athena engine version for running queries.
+ * The Athena engine version for running queries, or the PySpark engine version for running sessions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EngineVersion" target="_top">AWS API

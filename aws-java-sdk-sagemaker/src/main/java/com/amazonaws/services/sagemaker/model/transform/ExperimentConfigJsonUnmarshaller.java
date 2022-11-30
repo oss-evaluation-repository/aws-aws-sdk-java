@@ -60,6 +60,10 @@ public class ExperimentConfigJsonUnmarshaller implements Unmarshaller<Experiment
                     context.nextToken();
                     experimentConfig.setTrialComponentDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RunName", targetDepth)) {
+                    context.nextToken();
+                    experimentConfig.setRunName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

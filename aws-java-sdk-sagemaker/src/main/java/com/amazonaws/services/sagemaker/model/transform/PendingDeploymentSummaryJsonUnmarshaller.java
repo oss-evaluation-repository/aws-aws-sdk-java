@@ -63,6 +63,13 @@ public class PendingDeploymentSummaryJsonUnmarshaller implements Unmarshaller<Pe
                     context.nextToken();
                     pendingDeploymentSummary.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ShadowProductionVariants", targetDepth)) {
+                    context.nextToken();
+                    pendingDeploymentSummary.setShadowProductionVariants(new ListUnmarshaller<PendingProductionVariantSummary>(
+                            PendingProductionVariantSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

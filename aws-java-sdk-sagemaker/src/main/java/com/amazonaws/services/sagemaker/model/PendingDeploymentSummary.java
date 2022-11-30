@@ -46,6 +46,15 @@ public class PendingDeploymentSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.Date startTime;
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     */
+    private java.util.List<PendingProductionVariantSummary> shadowProductionVariants;
 
     /**
      * <p>
@@ -198,6 +207,100 @@ public class PendingDeploymentSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @return Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *         endpoint in shadow mode with production traffic replicated from the model specified on
+     *         <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *         <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     */
+
+    public java.util.List<PendingProductionVariantSummary> getShadowProductionVariants() {
+        return shadowProductionVariants;
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint
+     *        in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     */
+
+    public void setShadowProductionVariants(java.util.Collection<PendingProductionVariantSummary> shadowProductionVariants) {
+        if (shadowProductionVariants == null) {
+            this.shadowProductionVariants = null;
+            return;
+        }
+
+        this.shadowProductionVariants = new java.util.ArrayList<PendingProductionVariantSummary>(shadowProductionVariants);
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShadowProductionVariants(java.util.Collection)} or
+     * {@link #withShadowProductionVariants(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint
+     *        in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingDeploymentSummary withShadowProductionVariants(PendingProductionVariantSummary... shadowProductionVariants) {
+        if (this.shadowProductionVariants == null) {
+            setShadowProductionVariants(new java.util.ArrayList<PendingProductionVariantSummary>(shadowProductionVariants.length));
+        }
+        for (PendingProductionVariantSummary ele : shadowProductionVariants) {
+            this.shadowProductionVariants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint
+     *        in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PendingDeploymentSummary withShadowProductionVariants(java.util.Collection<PendingProductionVariantSummary> shadowProductionVariants) {
+        setShadowProductionVariants(shadowProductionVariants);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -214,7 +317,9 @@ public class PendingDeploymentSummary implements Serializable, Cloneable, Struct
         if (getProductionVariants() != null)
             sb.append("ProductionVariants: ").append(getProductionVariants()).append(",");
         if (getStartTime() != null)
-            sb.append("StartTime: ").append(getStartTime());
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getShadowProductionVariants() != null)
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants());
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +346,10 @@ public class PendingDeploymentSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
             return false;
+        if (other.getShadowProductionVariants() == null ^ this.getShadowProductionVariants() == null)
+            return false;
+        if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
+            return false;
         return true;
     }
 
@@ -252,6 +361,7 @@ public class PendingDeploymentSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getEndpointConfigName() == null) ? 0 : getEndpointConfigName().hashCode());
         hashCode = prime * hashCode + ((getProductionVariants() == null) ? 0 : getProductionVariants().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
         return hashCode;
     }
 

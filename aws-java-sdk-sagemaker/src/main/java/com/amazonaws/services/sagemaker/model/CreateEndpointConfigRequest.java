@@ -120,6 +120,15 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private ExplainerConfig explainerConfig;
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     * endpoint in shadow mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * </p>
+     */
+    private java.util.List<ProductionVariant> shadowProductionVariants;
 
     /**
      * <p>
@@ -802,6 +811,100 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     * endpoint in shadow mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @return Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at
+     *         this endpoint in shadow mode with production traffic replicated from the model specified on
+     *         <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *         <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     */
+
+    public java.util.List<ProductionVariant> getShadowProductionVariants() {
+        return shadowProductionVariants;
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     * endpoint in shadow mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     */
+
+    public void setShadowProductionVariants(java.util.Collection<ProductionVariant> shadowProductionVariants) {
+        if (shadowProductionVariants == null) {
+            this.shadowProductionVariants = null;
+            return;
+        }
+
+        this.shadowProductionVariants = new java.util.ArrayList<ProductionVariant>(shadowProductionVariants);
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     * endpoint in shadow mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShadowProductionVariants(java.util.Collection)} or
+     * {@link #withShadowProductionVariants(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withShadowProductionVariants(ProductionVariant... shadowProductionVariants) {
+        if (this.shadowProductionVariants == null) {
+            setShadowProductionVariants(new java.util.ArrayList<ProductionVariant>(shadowProductionVariants.length));
+        }
+        for (ProductionVariant ele : shadowProductionVariants) {
+            this.shadowProductionVariants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     * endpoint in shadow mode with production traffic replicated from the model specified on
+     * <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     * <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects. There is one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEndpointConfigRequest withShadowProductionVariants(java.util.Collection<ProductionVariant> shadowProductionVariants) {
+        setShadowProductionVariants(shadowProductionVariants);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -826,7 +929,9 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         if (getAsyncInferenceConfig() != null)
             sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
         if (getExplainerConfig() != null)
-            sb.append("ExplainerConfig: ").append(getExplainerConfig());
+            sb.append("ExplainerConfig: ").append(getExplainerConfig()).append(",");
+        if (getShadowProductionVariants() != null)
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants());
         sb.append("}");
         return sb.toString();
     }
@@ -869,6 +974,10 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getExplainerConfig() != null && other.getExplainerConfig().equals(this.getExplainerConfig()) == false)
             return false;
+        if (other.getShadowProductionVariants() == null ^ this.getShadowProductionVariants() == null)
+            return false;
+        if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
+            return false;
         return true;
     }
 
@@ -884,6 +993,7 @@ public class CreateEndpointConfigRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
         hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
+        hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
         return hashCode;
     }
 

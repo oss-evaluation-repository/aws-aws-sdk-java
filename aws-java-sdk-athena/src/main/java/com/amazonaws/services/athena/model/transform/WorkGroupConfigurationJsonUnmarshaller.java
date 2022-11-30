@@ -72,6 +72,19 @@ public class WorkGroupConfigurationJsonUnmarshaller implements Unmarshaller<Work
                     context.nextToken();
                     workGroupConfiguration.setEngineVersion(EngineVersionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AdditionalConfiguration", targetDepth)) {
+                    context.nextToken();
+                    workGroupConfiguration.setAdditionalConfiguration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExecutionRole", targetDepth)) {
+                    context.nextToken();
+                    workGroupConfiguration.setExecutionRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomerContentEncryptionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    workGroupConfiguration.setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfigurationJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

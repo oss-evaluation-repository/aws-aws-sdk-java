@@ -39,6 +39,12 @@ public class WorkGroupConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPaysEnabled").build();
     private static final MarshallingInfo<StructuredPojo> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
+    private static final MarshallingInfo<String> ADDITIONALCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalConfiguration").build();
+    private static final MarshallingInfo<String> EXECUTIONROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRole").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMERCONTENTENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomerContentEncryptionConfiguration").build();
 
     private static final WorkGroupConfigurationMarshaller instance = new WorkGroupConfigurationMarshaller();
 
@@ -62,6 +68,9 @@ public class WorkGroupConfigurationMarshaller {
             protocolMarshaller.marshall(workGroupConfiguration.getBytesScannedCutoffPerQuery(), BYTESSCANNEDCUTOFFPERQUERY_BINDING);
             protocolMarshaller.marshall(workGroupConfiguration.getRequesterPaysEnabled(), REQUESTERPAYSENABLED_BINDING);
             protocolMarshaller.marshall(workGroupConfiguration.getEngineVersion(), ENGINEVERSION_BINDING);
+            protocolMarshaller.marshall(workGroupConfiguration.getAdditionalConfiguration(), ADDITIONALCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(workGroupConfiguration.getExecutionRole(), EXECUTIONROLE_BINDING);
+            protocolMarshaller.marshall(workGroupConfiguration.getCustomerContentEncryptionConfiguration(), CUSTOMERCONTENTENCRYPTIONCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

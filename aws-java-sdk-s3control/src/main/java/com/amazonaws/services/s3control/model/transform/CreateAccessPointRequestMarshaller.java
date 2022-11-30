@@ -102,6 +102,10 @@ public class CreateAccessPointRequestMarshaller implements Marshaller<Request<Cr
                         xmlWriter.endElement();
                     }
                 }
+
+                if (createAccessPointRequest.getBucketAccountId() != null) {
+                    xmlWriter.startElement("BucketAccountId").value(createAccessPointRequest.getBucketAccountId()).endElement();
+                }
             }
             xmlWriter.endElement();
 

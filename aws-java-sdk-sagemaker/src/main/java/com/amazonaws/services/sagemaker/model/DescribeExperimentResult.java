@@ -44,7 +44,7 @@ public class DescribeExperimentResult extends com.amazonaws.AmazonWebServiceResu
     private String displayName;
     /**
      * <p>
-     * The ARN of the source and, optionally, the type.
+     * The Amazon Resource Name (ARN) of the source and, optionally, the type.
      * </p>
      */
     private ExperimentSource source;
@@ -207,11 +207,11 @@ public class DescribeExperimentResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ARN of the source and, optionally, the type.
+     * The Amazon Resource Name (ARN) of the source and, optionally, the type.
      * </p>
      * 
      * @param source
-     *        The ARN of the source and, optionally, the type.
+     *        The Amazon Resource Name (ARN) of the source and, optionally, the type.
      */
 
     public void setSource(ExperimentSource source) {
@@ -220,10 +220,10 @@ public class DescribeExperimentResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ARN of the source and, optionally, the type.
+     * The Amazon Resource Name (ARN) of the source and, optionally, the type.
      * </p>
      * 
-     * @return The ARN of the source and, optionally, the type.
+     * @return The Amazon Resource Name (ARN) of the source and, optionally, the type.
      */
 
     public ExperimentSource getSource() {
@@ -232,11 +232,11 @@ public class DescribeExperimentResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The ARN of the source and, optionally, the type.
+     * The Amazon Resource Name (ARN) of the source and, optionally, the type.
      * </p>
      * 
      * @param source
-     *        The ARN of the source and, optionally, the type.
+     *        The Amazon Resource Name (ARN) of the source and, optionally, the type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

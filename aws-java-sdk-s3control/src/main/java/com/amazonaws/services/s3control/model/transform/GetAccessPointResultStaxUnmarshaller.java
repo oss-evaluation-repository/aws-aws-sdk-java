@@ -133,6 +133,10 @@ public class GetAccessPointResultStaxUnmarshaller implements Unmarshaller<GetAcc
                     continue;
                 }
 
+                if (context.testExpression("BucketAccountId", targetDepth)) {
+                    getAccessPointResult.setBucketAccountId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getAccessPointResult;

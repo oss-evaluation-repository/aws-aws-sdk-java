@@ -39,7 +39,7 @@ public class UpdateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
     private String description;
     /**
      * <p>
-     * The workgroup configuration that will be updated for the given workgroup.
+     * Contains configuration updates for an Athena SQL workgroup.
      * </p>
      */
     private WorkGroupConfigurationUpdates configurationUpdates;
@@ -132,11 +132,11 @@ public class UpdateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workgroup configuration that will be updated for the given workgroup.
+     * Contains configuration updates for an Athena SQL workgroup.
      * </p>
      * 
      * @param configurationUpdates
-     *        The workgroup configuration that will be updated for the given workgroup.
+     *        Contains configuration updates for an Athena SQL workgroup.
      */
 
     public void setConfigurationUpdates(WorkGroupConfigurationUpdates configurationUpdates) {
@@ -145,10 +145,10 @@ public class UpdateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workgroup configuration that will be updated for the given workgroup.
+     * Contains configuration updates for an Athena SQL workgroup.
      * </p>
      * 
-     * @return The workgroup configuration that will be updated for the given workgroup.
+     * @return Contains configuration updates for an Athena SQL workgroup.
      */
 
     public WorkGroupConfigurationUpdates getConfigurationUpdates() {
@@ -157,11 +157,11 @@ public class UpdateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workgroup configuration that will be updated for the given workgroup.
+     * Contains configuration updates for an Athena SQL workgroup.
      * </p>
      * 
      * @param configurationUpdates
-     *        The workgroup configuration that will be updated for the given workgroup.
+     *        Contains configuration updates for an Athena SQL workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

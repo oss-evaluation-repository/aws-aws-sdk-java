@@ -52,6 +52,10 @@ public class FindingSourceDetailJsonUnmarshaller implements Unmarshaller<Finding
                     context.nextToken();
                     findingSourceDetail.setAccessPointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("accessPointAccount", targetDepth)) {
+                    context.nextToken();
+                    findingSourceDetail.setAccessPointAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

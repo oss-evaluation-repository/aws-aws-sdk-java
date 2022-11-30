@@ -49,6 +49,12 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String appName;
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     */
+    private String spaceName;
 
     /**
      * <p>
@@ -230,6 +236,46 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @return The name of the space.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteAppRequest withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -248,7 +294,9 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getAppType() != null)
             sb.append("AppType: ").append(getAppType()).append(",");
         if (getAppName() != null)
-            sb.append("AppName: ").append(getAppName());
+            sb.append("AppName: ").append(getAppName()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName());
         sb.append("}");
         return sb.toString();
     }
@@ -279,6 +327,10 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getAppName() != null && other.getAppName().equals(this.getAppName()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         return true;
     }
 
@@ -291,6 +343,7 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getUserProfileName() == null) ? 0 : getUserProfileName().hashCode());
         hashCode = prime * hashCode + ((getAppType() == null) ? 0 : getAppType().hashCode());
         hashCode = prime * hashCode + ((getAppName() == null) ? 0 : getAppName().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         return hashCode;
     }
 

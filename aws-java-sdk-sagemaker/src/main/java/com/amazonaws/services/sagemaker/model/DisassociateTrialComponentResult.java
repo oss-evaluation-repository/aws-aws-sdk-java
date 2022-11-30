@@ -25,7 +25,7 @@ public class DisassociateTrialComponentResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      */
     private String trialComponentArn;
@@ -38,11 +38,11 @@ public class DisassociateTrialComponentResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
      * @param trialComponentArn
-     *        The ARN of the trial component.
+     *        The Amazon Resource Name (ARN) of the trial component.
      */
 
     public void setTrialComponentArn(String trialComponentArn) {
@@ -51,10 +51,10 @@ public class DisassociateTrialComponentResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
-     * @return The ARN of the trial component.
+     * @return The Amazon Resource Name (ARN) of the trial component.
      */
 
     public String getTrialComponentArn() {
@@ -63,11 +63,11 @@ public class DisassociateTrialComponentResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
      * @param trialComponentArn
-     *        The ARN of the trial component.
+     *        The Amazon Resource Name (ARN) of the trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

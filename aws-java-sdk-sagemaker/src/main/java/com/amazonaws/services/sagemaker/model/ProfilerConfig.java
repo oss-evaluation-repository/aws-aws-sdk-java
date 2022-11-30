@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+ * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage paths.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerConfig" target="_top">AWS API
@@ -55,7 +55,8 @@ public class ProfilerConfig implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> profilingParameters;
     /**
      * <p>
-     * To disable system monitoring and profiling, set to <code>True</code>.
+     * Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it
+     * off, set to <code>True</code>.
      * </p>
      */
     private Boolean disableProfiler;
@@ -252,11 +253,13 @@ public class ProfilerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * To disable system monitoring and profiling, set to <code>True</code>.
+     * Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it
+     * off, set to <code>True</code>.
      * </p>
      * 
      * @param disableProfiler
-     *        To disable system monitoring and profiling, set to <code>True</code>.
+     *        Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To
+     *        turn it off, set to <code>True</code>.
      */
 
     public void setDisableProfiler(Boolean disableProfiler) {
@@ -265,10 +268,12 @@ public class ProfilerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * To disable system monitoring and profiling, set to <code>True</code>.
+     * Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it
+     * off, set to <code>True</code>.
      * </p>
      * 
-     * @return To disable system monitoring and profiling, set to <code>True</code>.
+     * @return Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To
+     *         turn it off, set to <code>True</code>.
      */
 
     public Boolean getDisableProfiler() {
@@ -277,11 +282,13 @@ public class ProfilerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * To disable system monitoring and profiling, set to <code>True</code>.
+     * Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it
+     * off, set to <code>True</code>.
      * </p>
      * 
      * @param disableProfiler
-     *        To disable system monitoring and profiling, set to <code>True</code>.
+     *        Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To
+     *        turn it off, set to <code>True</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,10 +299,12 @@ public class ProfilerConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * To disable system monitoring and profiling, set to <code>True</code>.
+     * Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To turn it
+     * off, set to <code>True</code>.
      * </p>
      * 
-     * @return To disable system monitoring and profiling, set to <code>True</code>.
+     * @return Configuration to turn off Amazon SageMaker Debugger's system monitoring and profiling functionality. To
+     *         turn it off, set to <code>True</code>.
      */
 
     public Boolean isDisableProfiler() {

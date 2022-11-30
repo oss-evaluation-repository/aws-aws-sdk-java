@@ -62,6 +62,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      */
     private String userProfileNameEquals;
+    /**
+     * <p>
+     * A parameter to search by space name.
+     * </p>
+     */
+    private String spaceNameEquals;
 
     /**
      * <p>
@@ -348,6 +354,46 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
+     * <p>
+     * A parameter to search by space name.
+     * </p>
+     * 
+     * @param spaceNameEquals
+     *        A parameter to search by space name.
+     */
+
+    public void setSpaceNameEquals(String spaceNameEquals) {
+        this.spaceNameEquals = spaceNameEquals;
+    }
+
+    /**
+     * <p>
+     * A parameter to search by space name.
+     * </p>
+     * 
+     * @return A parameter to search by space name.
+     */
+
+    public String getSpaceNameEquals() {
+        return this.spaceNameEquals;
+    }
+
+    /**
+     * <p>
+     * A parameter to search by space name.
+     * </p>
+     * 
+     * @param spaceNameEquals
+     *        A parameter to search by space name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAppsRequest withSpaceNameEquals(String spaceNameEquals) {
+        setSpaceNameEquals(spaceNameEquals);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -370,7 +416,9 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getDomainIdEquals() != null)
             sb.append("DomainIdEquals: ").append(getDomainIdEquals()).append(",");
         if (getUserProfileNameEquals() != null)
-            sb.append("UserProfileNameEquals: ").append(getUserProfileNameEquals());
+            sb.append("UserProfileNameEquals: ").append(getUserProfileNameEquals()).append(",");
+        if (getSpaceNameEquals() != null)
+            sb.append("SpaceNameEquals: ").append(getSpaceNameEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -409,6 +457,10 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getUserProfileNameEquals() != null && other.getUserProfileNameEquals().equals(this.getUserProfileNameEquals()) == false)
             return false;
+        if (other.getSpaceNameEquals() == null ^ this.getSpaceNameEquals() == null)
+            return false;
+        if (other.getSpaceNameEquals() != null && other.getSpaceNameEquals().equals(this.getSpaceNameEquals()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +475,7 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         hashCode = prime * hashCode + ((getDomainIdEquals() == null) ? 0 : getDomainIdEquals().hashCode());
         hashCode = prime * hashCode + ((getUserProfileNameEquals() == null) ? 0 : getUserProfileNameEquals().hashCode());
+        hashCode = prime * hashCode + ((getSpaceNameEquals() == null) ? 0 : getSpaceNameEquals().hashCode());
         return hashCode;
     }
 

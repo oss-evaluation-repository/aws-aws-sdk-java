@@ -92,6 +92,10 @@ public class DescribeAppResultJsonUnmarshaller implements Unmarshaller<DescribeA
                     context.nextToken();
                     describeAppResult.setResourceSpec(ResourceSpecJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SpaceName", targetDepth)) {
+                    context.nextToken();
+                    describeAppResult.setSpaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

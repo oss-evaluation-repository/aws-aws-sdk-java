@@ -78,6 +78,16 @@ public class ResponseDetailsJsonUnmarshaller implements Unmarshaller<ResponseDet
                     responseDetails.setImportAssetFromApiGatewayApi(ImportAssetFromApiGatewayApiResponseDetailsJsonUnmarshaller.getInstance().unmarshall(
                             context));
                 }
+                if (context.testExpression("CreateS3DataAccessFromS3Bucket", targetDepth)) {
+                    context.nextToken();
+                    responseDetails.setCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketResponseDetailsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("ImportAssetsFromLakeFormationTagPolicy", targetDepth)) {
+                    context.nextToken();
+                    responseDetails.setImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyResponseDetailsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

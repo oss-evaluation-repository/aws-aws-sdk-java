@@ -22,7 +22,8 @@ public enum FindingSourceType {
 
     POLICY("POLICY"),
     BUCKET_ACL("BUCKET_ACL"),
-    S3_ACCESS_POINT("S3_ACCESS_POINT");
+    S3_ACCESS_POINT("S3_ACCESS_POINT"),
+    S3_ACCESS_POINT_ACCOUNT("S3_ACCESS_POINT_ACCOUNT");
 
     private String value;
 

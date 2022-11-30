@@ -93,6 +93,15 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     */
+    private java.util.List<ProductionVariantSummary> shadowProductionVariants;
 
     /**
      * <p>
@@ -658,6 +667,100 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @return Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *         endpoint in shadow mode with production traffic replicated from the model specified on
+     *         <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *         <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     */
+
+    public java.util.List<ProductionVariantSummary> getShadowProductionVariants() {
+        return shadowProductionVariants;
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint
+     *        in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     */
+
+    public void setShadowProductionVariants(java.util.Collection<ProductionVariantSummary> shadowProductionVariants) {
+        if (shadowProductionVariants == null) {
+            this.shadowProductionVariants = null;
+            return;
+        }
+
+        this.shadowProductionVariants = new java.util.ArrayList<ProductionVariantSummary>(shadowProductionVariants);
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShadowProductionVariants(java.util.Collection)} or
+     * {@link #withShadowProductionVariants(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint
+     *        in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withShadowProductionVariants(ProductionVariantSummary... shadowProductionVariants) {
+        if (this.shadowProductionVariants == null) {
+            setShadowProductionVariants(new java.util.ArrayList<ProductionVariantSummary>(shadowProductionVariants.length));
+        }
+        for (ProductionVariantSummary ele : shadowProductionVariants) {
+            this.shadowProductionVariants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.If you
+     * use this field, you can only specify one variant for <code>ProductionVariants</code> and one variant for
+     * <code>ShadowProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        Array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint
+     *        in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.If you use this field, you can only specify one variant for
+     *        <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withShadowProductionVariants(java.util.Collection<ProductionVariantSummary> shadowProductionVariants) {
+        setShadowProductionVariants(shadowProductionVariants);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -690,7 +793,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getMonitoringSchedules() != null)
             sb.append("MonitoringSchedules: ").append(getMonitoringSchedules()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getShadowProductionVariants() != null)
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants());
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +854,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getShadowProductionVariants() == null ^ this.getShadowProductionVariants() == null)
+            return false;
+        if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
+            return false;
         return true;
     }
 
@@ -768,6 +877,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getMonitoringSchedules() == null) ? 0 : getMonitoringSchedules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
         return hashCode;
     }
 

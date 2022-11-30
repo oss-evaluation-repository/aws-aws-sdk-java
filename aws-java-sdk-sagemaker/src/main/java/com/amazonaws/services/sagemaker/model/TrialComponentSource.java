@@ -30,7 +30,7 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source ARN.
+     * The source Amazon Resource Name (ARN).
      * </p>
      */
     private String sourceArn;
@@ -43,11 +43,11 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source ARN.
+     * The source Amazon Resource Name (ARN).
      * </p>
      * 
      * @param sourceArn
-     *        The source ARN.
+     *        The source Amazon Resource Name (ARN).
      */
 
     public void setSourceArn(String sourceArn) {
@@ -56,10 +56,10 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source ARN.
+     * The source Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The source ARN.
+     * @return The source Amazon Resource Name (ARN).
      */
 
     public String getSourceArn() {
@@ -68,11 +68,11 @@ public class TrialComponentSource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The source ARN.
+     * The source Amazon Resource Name (ARN).
      * </p>
      * 
      * @param sourceArn
-     *        The source ARN.
+     *        The source Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

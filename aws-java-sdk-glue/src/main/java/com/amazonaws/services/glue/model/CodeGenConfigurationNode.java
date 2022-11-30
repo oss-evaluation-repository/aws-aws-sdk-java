@@ -340,6 +340,12 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
      * </p>
      */
     private DynamicTransform dynamicTransform;
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     */
+    private EvaluateDataQuality evaluateDataQuality;
 
     /**
      * <p>
@@ -2438,6 +2444,46 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     * 
+     * @param evaluateDataQuality
+     *        Specifies your data quality evaluation criteria.
+     */
+
+    public void setEvaluateDataQuality(EvaluateDataQuality evaluateDataQuality) {
+        this.evaluateDataQuality = evaluateDataQuality;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     * 
+     * @return Specifies your data quality evaluation criteria.
+     */
+
+    public EvaluateDataQuality getEvaluateDataQuality() {
+        return this.evaluateDataQuality;
+    }
+
+    /**
+     * <p>
+     * Specifies your data quality evaluation criteria.
+     * </p>
+     * 
+     * @param evaluateDataQuality
+     *        Specifies your data quality evaluation criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CodeGenConfigurationNode withEvaluateDataQuality(EvaluateDataQuality evaluateDataQuality) {
+        setEvaluateDataQuality(evaluateDataQuality);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2550,7 +2596,9 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
         if (getPostgreSQLCatalogTarget() != null)
             sb.append("PostgreSQLCatalogTarget: ").append(getPostgreSQLCatalogTarget()).append(",");
         if (getDynamicTransform() != null)
-            sb.append("DynamicTransform: ").append(getDynamicTransform());
+            sb.append("DynamicTransform: ").append(getDynamicTransform()).append(",");
+        if (getEvaluateDataQuality() != null)
+            sb.append("EvaluateDataQuality: ").append(getEvaluateDataQuality());
         sb.append("}");
         return sb.toString();
     }
@@ -2771,6 +2819,10 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
             return false;
         if (other.getDynamicTransform() != null && other.getDynamicTransform().equals(this.getDynamicTransform()) == false)
             return false;
+        if (other.getEvaluateDataQuality() == null ^ this.getEvaluateDataQuality() == null)
+            return false;
+        if (other.getEvaluateDataQuality() != null && other.getEvaluateDataQuality().equals(this.getEvaluateDataQuality()) == false)
+            return false;
         return true;
     }
 
@@ -2830,6 +2882,7 @@ public class CodeGenConfigurationNode implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getOracleSQLCatalogTarget() == null) ? 0 : getOracleSQLCatalogTarget().hashCode());
         hashCode = prime * hashCode + ((getPostgreSQLCatalogTarget() == null) ? 0 : getPostgreSQLCatalogTarget().hashCode());
         hashCode = prime * hashCode + ((getDynamicTransform() == null) ? 0 : getDynamicTransform().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateDataQuality() == null) ? 0 : getEvaluateDataQuality().hashCode());
         return hashCode;
     }
 

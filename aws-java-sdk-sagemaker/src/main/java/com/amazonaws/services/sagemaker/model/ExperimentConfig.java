@@ -65,6 +65,12 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String trialComponentDisplayName;
+    /**
+     * <p>
+     * The name of the experiment run to associate the trial component with.
+     * </p>
+     */
+    private String runName;
 
     /**
      * <p>
@@ -196,6 +202,46 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The name of the experiment run to associate the trial component with.
+     * </p>
+     * 
+     * @param runName
+     *        The name of the experiment run to associate the trial component with.
+     */
+
+    public void setRunName(String runName) {
+        this.runName = runName;
+    }
+
+    /**
+     * <p>
+     * The name of the experiment run to associate the trial component with.
+     * </p>
+     * 
+     * @return The name of the experiment run to associate the trial component with.
+     */
+
+    public String getRunName() {
+        return this.runName;
+    }
+
+    /**
+     * <p>
+     * The name of the experiment run to associate the trial component with.
+     * </p>
+     * 
+     * @param runName
+     *        The name of the experiment run to associate the trial component with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentConfig withRunName(String runName) {
+        setRunName(runName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +258,9 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
         if (getTrialName() != null)
             sb.append("TrialName: ").append(getTrialName()).append(",");
         if (getTrialComponentDisplayName() != null)
-            sb.append("TrialComponentDisplayName: ").append(getTrialComponentDisplayName());
+            sb.append("TrialComponentDisplayName: ").append(getTrialComponentDisplayName()).append(",");
+        if (getRunName() != null)
+            sb.append("RunName: ").append(getRunName());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +287,10 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTrialComponentDisplayName() != null && other.getTrialComponentDisplayName().equals(this.getTrialComponentDisplayName()) == false)
             return false;
+        if (other.getRunName() == null ^ this.getRunName() == null)
+            return false;
+        if (other.getRunName() != null && other.getRunName().equals(this.getRunName()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +302,7 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getExperimentName() == null) ? 0 : getExperimentName().hashCode());
         hashCode = prime * hashCode + ((getTrialName() == null) ? 0 : getTrialName().hashCode());
         hashCode = prime * hashCode + ((getTrialComponentDisplayName() == null) ? 0 : getTrialComponentDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getRunName() == null) ? 0 : getRunName().hashCode());
         return hashCode;
     }
 

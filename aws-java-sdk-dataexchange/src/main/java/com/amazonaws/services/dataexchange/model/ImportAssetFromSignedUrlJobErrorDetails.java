@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the job error.
+ * Details about the job error.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/ImportAssetFromSignedUrlJobErrorDetails"
@@ -30,18 +30,18 @@ public class ImportAssetFromSignedUrlJobErrorDetails implements Serializable, Cl
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      */
     private String assetName;
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * 
      * @param assetName
-     *        Information about the job error.
+     *        Details about the job error.
      */
 
     public void setAssetName(String assetName) {
@@ -50,10 +50,10 @@ public class ImportAssetFromSignedUrlJobErrorDetails implements Serializable, Cl
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * 
-     * @return Information about the job error.
+     * @return Details about the job error.
      */
 
     public String getAssetName() {
@@ -62,11 +62,11 @@ public class ImportAssetFromSignedUrlJobErrorDetails implements Serializable, Cl
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * 
      * @param assetName
-     *        Information about the job error.
+     *        Details about the job error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -29,6 +29,8 @@ public class FindingSourceDetailMarshaller {
 
     private static final MarshallingInfo<String> ACCESSPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessPointArn").build();
+    private static final MarshallingInfo<String> ACCESSPOINTACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessPointAccount").build();
 
     private static final FindingSourceDetailMarshaller instance = new FindingSourceDetailMarshaller();
 
@@ -47,6 +49,7 @@ public class FindingSourceDetailMarshaller {
 
         try {
             protocolMarshaller.marshall(findingSourceDetail.getAccessPointArn(), ACCESSPOINTARN_BINDING);
+            protocolMarshaller.marshall(findingSourceDetail.getAccessPointAccount(), ACCESSPOINTACCOUNT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

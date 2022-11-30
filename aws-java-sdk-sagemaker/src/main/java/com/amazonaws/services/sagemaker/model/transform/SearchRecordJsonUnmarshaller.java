@@ -100,6 +100,14 @@ public class SearchRecordJsonUnmarshaller implements Unmarshaller<SearchRecord, 
                     context.nextToken();
                     searchRecord.setHyperParameterTuningJob(HyperParameterTuningJobSearchEntityJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Model", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setModel(ModelDashboardModelJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelCard", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setModelCard(ModelCardJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

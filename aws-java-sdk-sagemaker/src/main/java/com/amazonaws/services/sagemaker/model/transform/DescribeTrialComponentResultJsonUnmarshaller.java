@@ -122,6 +122,12 @@ public class DescribeTrialComponentResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeTrialComponentResult.setLineageGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Sources", targetDepth)) {
+                    context.nextToken();
+                    describeTrialComponentResult.setSources(new ListUnmarshaller<TrialComponentSource>(TrialComponentSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

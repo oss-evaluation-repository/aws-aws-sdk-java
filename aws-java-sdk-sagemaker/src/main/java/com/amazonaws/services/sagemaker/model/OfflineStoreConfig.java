@@ -55,6 +55,13 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private DataCatalogConfig dataCatalogConfig;
+    /**
+     * <p>
+     * Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups shared
+     * between offline and online stores.
+     * </p>
+     */
+    private String tableFormat;
 
     /**
      * <p>
@@ -197,6 +204,73 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups shared
+     * between offline and online stores.
+     * </p>
+     * 
+     * @param tableFormat
+     *        Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups
+     *        shared between offline and online stores.
+     * @see TableFormat
+     */
+
+    public void setTableFormat(String tableFormat) {
+        this.tableFormat = tableFormat;
+    }
+
+    /**
+     * <p>
+     * Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups shared
+     * between offline and online stores.
+     * </p>
+     * 
+     * @return Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups
+     *         shared between offline and online stores.
+     * @see TableFormat
+     */
+
+    public String getTableFormat() {
+        return this.tableFormat;
+    }
+
+    /**
+     * <p>
+     * Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups shared
+     * between offline and online stores.
+     * </p>
+     * 
+     * @param tableFormat
+     *        Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups
+     *        shared between offline and online stores.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TableFormat
+     */
+
+    public OfflineStoreConfig withTableFormat(String tableFormat) {
+        setTableFormat(tableFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups shared
+     * between offline and online stores.
+     * </p>
+     * 
+     * @param tableFormat
+     *        Format for the offline store feature group. <code>Iceberg</code> is the optimal format for feature groups
+     *        shared between offline and online stores.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TableFormat
+     */
+
+    public OfflineStoreConfig withTableFormat(TableFormat tableFormat) {
+        this.tableFormat = tableFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -213,7 +287,9 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
         if (getDisableGlueTableCreation() != null)
             sb.append("DisableGlueTableCreation: ").append(getDisableGlueTableCreation()).append(",");
         if (getDataCatalogConfig() != null)
-            sb.append("DataCatalogConfig: ").append(getDataCatalogConfig());
+            sb.append("DataCatalogConfig: ").append(getDataCatalogConfig()).append(",");
+        if (getTableFormat() != null)
+            sb.append("TableFormat: ").append(getTableFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -240,6 +316,10 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getDataCatalogConfig() != null && other.getDataCatalogConfig().equals(this.getDataCatalogConfig()) == false)
             return false;
+        if (other.getTableFormat() == null ^ this.getTableFormat() == null)
+            return false;
+        if (other.getTableFormat() != null && other.getTableFormat().equals(this.getTableFormat()) == false)
+            return false;
         return true;
     }
 
@@ -251,6 +331,7 @@ public class OfflineStoreConfig implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getS3StorageConfig() == null) ? 0 : getS3StorageConfig().hashCode());
         hashCode = prime * hashCode + ((getDisableGlueTableCreation() == null) ? 0 : getDisableGlueTableCreation().hashCode());
         hashCode = prime * hashCode + ((getDataCatalogConfig() == null) ? 0 : getDataCatalogConfig().hashCode());
+        hashCode = prime * hashCode + ((getTableFormat() == null) ? 0 : getTableFormat().hashCode());
         return hashCode;
     }
 

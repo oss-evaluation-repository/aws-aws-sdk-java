@@ -42,6 +42,8 @@ public class CreateEndpointConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AsyncInferenceConfig").build();
     private static final MarshallingInfo<StructuredPojo> EXPLAINERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExplainerConfig").build();
+    private static final MarshallingInfo<List> SHADOWPRODUCTIONVARIANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShadowProductionVariants").build();
 
     private static final CreateEndpointConfigRequestMarshaller instance = new CreateEndpointConfigRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateEndpointConfigRequestMarshaller {
             protocolMarshaller.marshall(createEndpointConfigRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getAsyncInferenceConfig(), ASYNCINFERENCECONFIG_BINDING);
             protocolMarshaller.marshall(createEndpointConfigRequest.getExplainerConfig(), EXPLAINERCONFIG_BINDING);
+            protocolMarshaller.marshall(createEndpointConfigRequest.getShadowProductionVariants(), SHADOWPRODUCTIONVARIANTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

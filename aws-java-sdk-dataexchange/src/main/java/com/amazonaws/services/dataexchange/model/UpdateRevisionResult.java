@@ -43,7 +43,7 @@ public class UpdateRevisionResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.Date createdAt;
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      */
     private String dataSetId;
@@ -217,11 +217,11 @@ public class UpdateRevisionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      * 
      * @param dataSetId
-     *        The unique identifier for the data set associated with this revision.
+     *        The unique identifier for the data set associated with the data set revision.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -230,10 +230,10 @@ public class UpdateRevisionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      * 
-     * @return The unique identifier for the data set associated with this revision.
+     * @return The unique identifier for the data set associated with the data set revision.
      */
 
     public String getDataSetId() {
@@ -242,11 +242,11 @@ public class UpdateRevisionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      * 
      * @param dataSetId
-     *        The unique identifier for the data set associated with this revision.
+     *        The unique identifier for the data set associated with the data set revision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

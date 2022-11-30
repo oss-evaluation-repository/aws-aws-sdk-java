@@ -33,6 +33,8 @@ public class OfflineStoreConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableGlueTableCreation").build();
     private static final MarshallingInfo<StructuredPojo> DATACATALOGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCatalogConfig").build();
+    private static final MarshallingInfo<String> TABLEFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableFormat").build();
 
     private static final OfflineStoreConfigMarshaller instance = new OfflineStoreConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class OfflineStoreConfigMarshaller {
             protocolMarshaller.marshall(offlineStoreConfig.getS3StorageConfig(), S3STORAGECONFIG_BINDING);
             protocolMarshaller.marshall(offlineStoreConfig.getDisableGlueTableCreation(), DISABLEGLUETABLECREATION_BINDING);
             protocolMarshaller.marshall(offlineStoreConfig.getDataCatalogConfig(), DATACATALOGCONFIG_BINDING);
+            protocolMarshaller.marshall(offlineStoreConfig.getTableFormat(), TABLEFORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

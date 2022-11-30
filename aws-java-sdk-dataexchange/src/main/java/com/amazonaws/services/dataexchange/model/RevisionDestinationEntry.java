@@ -30,7 +30,7 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      */
     private String bucket;
@@ -52,11 +52,11 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the assets in the revision.
+     *        The Amazon S3 bucket that is the destination for the assets in the revision.
      */
 
     public void setBucket(String bucket) {
@@ -65,10 +65,10 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      * 
-     * @return The S3 bucket that is the destination for the assets in the revision.
+     * @return The Amazon S3 bucket that is the destination for the assets in the revision.
      */
 
     public String getBucket() {
@@ -77,11 +77,11 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the assets in the revision.
+     *        The Amazon S3 bucket that is the destination for the assets in the revision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

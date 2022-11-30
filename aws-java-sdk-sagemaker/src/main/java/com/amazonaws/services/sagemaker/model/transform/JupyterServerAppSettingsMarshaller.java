@@ -32,6 +32,8 @@ public class JupyterServerAppSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultResourceSpec").build();
     private static final MarshallingInfo<List> LIFECYCLECONFIGARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LifecycleConfigArns").build();
+    private static final MarshallingInfo<List> CODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeRepositories").build();
 
     private static final JupyterServerAppSettingsMarshaller instance = new JupyterServerAppSettingsMarshaller();
 
@@ -51,6 +53,7 @@ public class JupyterServerAppSettingsMarshaller {
         try {
             protocolMarshaller.marshall(jupyterServerAppSettings.getDefaultResourceSpec(), DEFAULTRESOURCESPEC_BINDING);
             protocolMarshaller.marshall(jupyterServerAppSettings.getLifecycleConfigArns(), LIFECYCLECONFIGARNS_BINDING);
+            protocolMarshaller.marshall(jupyterServerAppSettings.getCodeRepositories(), CODEREPOSITORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

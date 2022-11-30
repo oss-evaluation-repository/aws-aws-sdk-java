@@ -82,6 +82,13 @@ public class DescribeEndpointConfigResultJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     describeEndpointConfigResult.setExplainerConfig(ExplainerConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ShadowProductionVariants", targetDepth)) {
+                    context.nextToken();
+                    describeEndpointConfigResult.setShadowProductionVariants(new ListUnmarshaller<ProductionVariant>(ProductionVariantJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

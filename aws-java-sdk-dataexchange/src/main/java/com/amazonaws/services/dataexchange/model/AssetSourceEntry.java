@@ -30,7 +30,7 @@ public class AssetSourceEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 bucket that's part of the source of the asset.
+     * The Amazon S3 bucket that's part of the source of the asset.
      * </p>
      */
     private String bucket;
@@ -43,11 +43,11 @@ public class AssetSourceEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 bucket that's part of the source of the asset.
+     * The Amazon S3 bucket that's part of the source of the asset.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that's part of the source of the asset.
+     *        The Amazon S3 bucket that's part of the source of the asset.
      */
 
     public void setBucket(String bucket) {
@@ -56,10 +56,10 @@ public class AssetSourceEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 bucket that's part of the source of the asset.
+     * The Amazon S3 bucket that's part of the source of the asset.
      * </p>
      * 
-     * @return The S3 bucket that's part of the source of the asset.
+     * @return The Amazon S3 bucket that's part of the source of the asset.
      */
 
     public String getBucket() {
@@ -68,11 +68,11 @@ public class AssetSourceEntry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The S3 bucket that's part of the source of the asset.
+     * The Amazon S3 bucket that's part of the source of the asset.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that's part of the source of the asset.
+     *        The Amazon S3 bucket that's part of the source of the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

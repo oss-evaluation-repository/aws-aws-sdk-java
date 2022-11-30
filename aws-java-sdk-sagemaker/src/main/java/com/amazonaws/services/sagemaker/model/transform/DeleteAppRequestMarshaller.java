@@ -35,6 +35,8 @@ public class DeleteAppRequestMarshaller {
             .marshallLocationName("AppType").build();
     private static final MarshallingInfo<String> APPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppName").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
 
     private static final DeleteAppRequestMarshaller instance = new DeleteAppRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DeleteAppRequestMarshaller {
             protocolMarshaller.marshall(deleteAppRequest.getUserProfileName(), USERPROFILENAME_BINDING);
             protocolMarshaller.marshall(deleteAppRequest.getAppType(), APPTYPE_BINDING);
             protocolMarshaller.marshall(deleteAppRequest.getAppName(), APPNAME_BINDING);
+            protocolMarshaller.marshall(deleteAppRequest.getSpaceName(), SPACENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

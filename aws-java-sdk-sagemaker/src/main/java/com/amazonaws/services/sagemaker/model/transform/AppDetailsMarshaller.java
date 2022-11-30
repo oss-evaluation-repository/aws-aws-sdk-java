@@ -39,6 +39,8 @@ public class AppDetailsMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
 
     private static final AppDetailsMarshaller instance = new AppDetailsMarshaller();
 
@@ -62,6 +64,7 @@ public class AppDetailsMarshaller {
             protocolMarshaller.marshall(appDetails.getAppName(), APPNAME_BINDING);
             protocolMarshaller.marshall(appDetails.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(appDetails.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(appDetails.getSpaceName(), SPACENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

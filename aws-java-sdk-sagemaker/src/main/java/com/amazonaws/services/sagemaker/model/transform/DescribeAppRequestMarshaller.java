@@ -35,6 +35,8 @@ public class DescribeAppRequestMarshaller {
             .marshallLocationName("AppType").build();
     private static final MarshallingInfo<String> APPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AppName").build();
+    private static final MarshallingInfo<String> SPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SpaceName").build();
 
     private static final DescribeAppRequestMarshaller instance = new DescribeAppRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class DescribeAppRequestMarshaller {
             protocolMarshaller.marshall(describeAppRequest.getUserProfileName(), USERPROFILENAME_BINDING);
             protocolMarshaller.marshall(describeAppRequest.getAppType(), APPTYPE_BINDING);
             protocolMarshaller.marshall(describeAppRequest.getAppName(), APPNAME_BINDING);
+            protocolMarshaller.marshall(describeAppRequest.getSpaceName(), SPACENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

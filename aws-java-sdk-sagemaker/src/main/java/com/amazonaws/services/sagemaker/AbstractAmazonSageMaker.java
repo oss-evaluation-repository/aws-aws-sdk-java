@@ -149,6 +149,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateHubResult createHub(CreateHubRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateHumanTaskUiResult createHumanTaskUi(CreateHumanTaskUiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -169,6 +174,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateInferenceExperimentResult createInferenceExperiment(CreateInferenceExperimentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInferenceRecommendationsJobResult createInferenceRecommendationsJob(CreateInferenceRecommendationsJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -185,6 +195,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public CreateModelBiasJobDefinitionResult createModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateModelCardResult createModelCard(CreateModelCardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateModelCardExportJobResult createModelCardExportJob(CreateModelCardExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -245,6 +265,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public CreateProjectResult createProject(CreateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSpaceResult createSpace(CreateSpaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -379,6 +404,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteHubResult deleteHub(DeleteHubRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteHubContentResult deleteHubContent(DeleteHubContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteHumanTaskUiResult deleteHumanTaskUi(DeleteHumanTaskUiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -394,12 +429,22 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteInferenceExperimentResult deleteInferenceExperiment(DeleteInferenceExperimentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteModelResult deleteModel(DeleteModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteModelBiasJobDefinitionResult deleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelCardResult deleteModelCard(DeleteModelCardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -450,6 +495,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSpaceResult deleteSpace(DeleteSpaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -599,6 +649,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeHubResult describeHub(DescribeHubRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeHubContentResult describeHubContent(DescribeHubContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeHumanTaskUiResult describeHumanTaskUi(DescribeHumanTaskUiRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -615,6 +675,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DescribeImageVersionResult describeImageVersion(DescribeImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeInferenceExperimentResult describeInferenceExperiment(DescribeInferenceExperimentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -640,6 +705,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DescribeModelBiasJobDefinitionResult describeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelCardResult describeModelCard(DescribeModelCardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelCardExportJobResult describeModelCardExportJob(DescribeModelCardExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -700,6 +775,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DescribeProjectResult describeProject(DescribeProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSpaceResult describeSpace(DescribeSpaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -785,6 +865,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public GetSearchSuggestionsResult getSearchSuggestions(GetSearchSuggestionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportHubContentResult importHubContent(ImportHubContentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -899,6 +984,21 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListHubContentVersionsResult listHubContentVersions(ListHubContentVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHubContentsResult listHubContents(ListHubContentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHubsResult listHubs(ListHubsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListHumanTaskUisResult listHumanTaskUis(ListHumanTaskUisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -915,6 +1015,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public ListImagesResult listImages(ListImagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListInferenceExperimentsResult listInferenceExperiments(ListInferenceExperimentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -949,6 +1054,21 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListModelCardExportJobsResult listModelCardExportJobs(ListModelCardExportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListModelCardVersionsResult listModelCardVersions(ListModelCardVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListModelCardsResult listModelCards(ListModelCardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListModelExplainabilityJobDefinitionsResult listModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -975,6 +1095,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public ListModelsResult listModels(ListModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMonitoringAlertHistoryResult listMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMonitoringAlertsResult listMonitoringAlerts(ListMonitoringAlertsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1025,6 +1155,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public ListProjectsResult listProjects(ListProjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSpacesResult listSpaces(ListSpacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1134,6 +1269,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public StartInferenceExperimentResult startInferenceExperiment(StartInferenceExperimentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartMonitoringScheduleResult startMonitoringSchedule(StartMonitoringScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1170,6 +1310,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public StopHyperParameterTuningJobResult stopHyperParameterTuningJob(StopHyperParameterTuningJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopInferenceExperimentResult stopInferenceExperiment(StopInferenceExperimentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1279,12 +1424,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public UpdateHubResult updateHub(UpdateHubRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateImageResult updateImage(UpdateImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public UpdateInferenceExperimentResult updateInferenceExperiment(UpdateInferenceExperimentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateModelCardResult updateModelCard(UpdateModelCardRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateModelPackageResult updateModelPackage(UpdateModelPackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMonitoringAlertResult updateMonitoringAlert(UpdateMonitoringAlertRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1315,6 +1480,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public UpdateProjectResult updateProject(UpdateProjectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSpaceResult updateSpace(UpdateSpaceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

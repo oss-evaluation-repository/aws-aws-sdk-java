@@ -60,6 +60,10 @@ public class OfflineStoreConfigJsonUnmarshaller implements Unmarshaller<OfflineS
                     context.nextToken();
                     offlineStoreConfig.setDataCatalogConfig(DataCatalogConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("TableFormat", targetDepth)) {
+                    context.nextToken();
+                    offlineStoreConfig.setTableFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

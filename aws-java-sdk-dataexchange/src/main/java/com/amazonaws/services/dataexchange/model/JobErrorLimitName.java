@@ -22,7 +22,9 @@ public enum JobErrorLimitName {
 
     AssetsPerRevision("Assets per revision"),
     AssetSizeInGB("Asset size in GB"),
-    AmazonRedshiftDatashareAssetsPerRevision("Amazon Redshift datashare assets per revision");
+    AmazonRedshiftDatashareAssetsPerRevision("Amazon Redshift datashare assets per revision"),
+    AWSLakeFormationDataPermissionAssetsPerRevision("AWS Lake Formation data permission assets per revision"),
+    AmazonS3DataAccessAssetsPerRevision("Amazon S3 data access assets per revision");
 
     private String value;
 

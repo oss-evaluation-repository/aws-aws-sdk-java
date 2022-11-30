@@ -58,6 +58,12 @@ public class JupyterServerAppSettingsJsonUnmarshaller implements Unmarshaller<Ju
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("CodeRepositories", targetDepth)) {
+                    context.nextToken();
+                    jupyterServerAppSettings.setCodeRepositories(new ListUnmarshaller<CodeRepository>(CodeRepositoryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

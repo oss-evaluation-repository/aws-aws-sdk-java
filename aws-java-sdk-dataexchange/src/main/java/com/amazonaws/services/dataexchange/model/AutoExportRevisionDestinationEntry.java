@@ -30,7 +30,7 @@ public class AutoExportRevisionDestinationEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the event action.
+     * The Amazon S3 bucket that is the destination for the event action.
      * </p>
      */
     private String bucket;
@@ -46,11 +46,11 @@ public class AutoExportRevisionDestinationEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the event action.
+     * The Amazon S3 bucket that is the destination for the event action.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the event action.
+     *        The Amazon S3 bucket that is the destination for the event action.
      */
 
     public void setBucket(String bucket) {
@@ -59,10 +59,10 @@ public class AutoExportRevisionDestinationEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the event action.
+     * The Amazon S3 bucket that is the destination for the event action.
      * </p>
      * 
-     * @return The S3 bucket that is the destination for the event action.
+     * @return The Amazon S3 bucket that is the destination for the event action.
      */
 
     public String getBucket() {
@@ -71,11 +71,11 @@ public class AutoExportRevisionDestinationEntry implements Serializable, Cloneab
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the event action.
+     * The Amazon S3 bucket that is the destination for the event action.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the event action.
+     *        The Amazon S3 bucket that is the destination for the event action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

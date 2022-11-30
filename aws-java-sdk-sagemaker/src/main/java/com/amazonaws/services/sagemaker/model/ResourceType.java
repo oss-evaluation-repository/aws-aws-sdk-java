@@ -32,7 +32,9 @@ public enum ResourceType {
     FeatureGroup("FeatureGroup"),
     Project("Project"),
     FeatureMetadata("FeatureMetadata"),
-    HyperParameterTuningJob("HyperParameterTuningJob");
+    HyperParameterTuningJob("HyperParameterTuningJob"),
+    ModelCard("ModelCard"),
+    Model("Model");
 
     private String value;
 

@@ -60,6 +60,14 @@ public class AssetDetailsJsonUnmarshaller implements Unmarshaller<AssetDetails, 
                     context.nextToken();
                     assetDetails.setApiGatewayApiAsset(ApiGatewayApiAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("S3DataAccessAsset", targetDepth)) {
+                    context.nextToken();
+                    assetDetails.setS3DataAccessAsset(S3DataAccessAssetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LakeFormationDataPermissionAsset", targetDepth)) {
+                    context.nextToken();
+                    assetDetails.setLakeFormationDataPermissionAsset(LakeFormationDataPermissionAssetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

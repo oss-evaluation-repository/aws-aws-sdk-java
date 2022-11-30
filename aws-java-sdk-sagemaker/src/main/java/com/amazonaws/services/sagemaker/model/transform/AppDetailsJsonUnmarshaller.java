@@ -72,6 +72,10 @@ public class AppDetailsJsonUnmarshaller implements Unmarshaller<AppDetails, Json
                     context.nextToken();
                     appDetails.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("SpaceName", targetDepth)) {
+                    context.nextToken();
+                    appDetails.setSpaceName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
