@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ThirdPartyFirewall {
 
-    PALO_ALTO_NETWORKS_CLOUD_NGFW("PALO_ALTO_NETWORKS_CLOUD_NGFW");
+    PALO_ALTO_NETWORKS_CLOUD_NGFW("PALO_ALTO_NETWORKS_CLOUD_NGFW"),
+    FORTIGATE_CLOUD_NATIVE_FIREWALL("FORTIGATE_CLOUD_NATIVE_FIREWALL");
 
     private String value;
 

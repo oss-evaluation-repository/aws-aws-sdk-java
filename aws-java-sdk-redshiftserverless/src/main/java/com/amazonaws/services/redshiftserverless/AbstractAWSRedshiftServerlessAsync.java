@@ -262,6 +262,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest request) {
+
+        return getTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTableRestoreStatusRequest, GetTableRestoreStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUsageLimitResult> getUsageLimitAsync(GetUsageLimitRequest request) {
 
         return getUsageLimitAsync(request, null);
@@ -340,6 +353,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     }
 
     @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest request) {
+
+        return listTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTableRestoreStatusRequest, ListTableRestoreStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -413,6 +439,19 @@ public class AbstractAWSRedshiftServerlessAsync extends AbstractAWSRedshiftServe
     @Override
     public java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(RestoreFromSnapshotRequest request,
             com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request) {
+
+        return restoreTableFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreTableFromSnapshotRequest, RestoreTableFromSnapshotResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

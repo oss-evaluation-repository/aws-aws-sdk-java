@@ -3344,6 +3344,9 @@
       }, {
         "name" : "ArAE",
         "value" : "ar-AE"
+      }, {
+        "name" : "FiFI",
+        "value" : "fi-FI"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.polly.enum.LanguageCode",

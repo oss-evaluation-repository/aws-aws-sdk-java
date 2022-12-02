@@ -106,6 +106,10 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                     context.nextToken();
                     cmafGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("mpdManifestBandwidthType", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setMpdManifestBandwidthType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("mpdProfile", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));
@@ -133,6 +137,10 @@ public class CmafGroupSettingsJsonUnmarshaller implements Unmarshaller<CmafGroup
                 if (context.testExpression("targetDurationCompatibilityMode", targetDepth)) {
                     context.nextToken();
                     cmafGroupSettings.setTargetDurationCompatibilityMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("videoCompositionOffsets", targetDepth)) {
+                    context.nextToken();
+                    cmafGroupSettings.setVideoCompositionOffsets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("writeDashManifest", targetDepth)) {
                     context.nextToken();

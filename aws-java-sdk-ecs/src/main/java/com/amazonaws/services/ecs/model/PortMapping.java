@@ -100,9 +100,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
-     * name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are allowed.
-     * The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the
-     * first character.
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
      * </p>
      * <p>
      * For more information, see <a
@@ -507,9 +507,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
-     * name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are allowed.
-     * The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the
-     * first character.
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
      * </p>
      * <p>
      * For more information, see <a
@@ -519,9 +519,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param name
      *        The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter
-     *        is the name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64 characters
-     *        are allowed. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A
-     *        hyphen can't be the first character.</p>
+     *        is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can
+     *        include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and
+     *        hyphens (-). The name can't start with a hyphen.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
@@ -535,9 +535,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
-     * name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are allowed.
-     * The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the
-     * first character.
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
      * </p>
      * <p>
      * For more information, see <a
@@ -546,9 +546,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter
-     *         is the name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64
-     *         characters are allowed. The characters can include lowercase letters, numbers, underscores (_), and
-     *         hyphens (-). A hyphen can't be the first character.</p>
+     *         is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can
+     *         include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and
+     *         hyphens (-). The name can't start with a hyphen.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
@@ -562,9 +562,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
-     * name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64 characters are allowed.
-     * The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the
-     * first character.
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
      * </p>
      * <p>
      * For more information, see <a
@@ -574,9 +574,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param name
      *        The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter
-     *        is the name that you use in the <code>serviceConnectConfiguration</code> of a service. Up to 64 characters
-     *        are allowed. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A
-     *        hyphen can't be the first character.</p>
+     *        is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can
+     *        include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and
+     *        hyphens (-). The name can't start with a hyphen.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service

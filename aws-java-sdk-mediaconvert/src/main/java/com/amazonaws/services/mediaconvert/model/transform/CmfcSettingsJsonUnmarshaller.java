@@ -76,6 +76,10 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
                     context.nextToken();
                     cmfcSettings.setKlvMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("manifestMetadataSignaling", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setManifestMetadataSignaling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scte35Esam", targetDepth)) {
                     context.nextToken();
                     cmfcSettings.setScte35Esam(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,18 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
                 if (context.testExpression("timedMetadata", targetDepth)) {
                     context.nextToken();
                     cmfcSettings.setTimedMetadata(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataBoxVersion", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setTimedMetadataBoxVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataSchemeIdUri", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setTimedMetadataSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataValue", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setTimedMetadataValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

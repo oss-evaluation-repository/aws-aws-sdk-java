@@ -48,6 +48,10 @@ public class RecoveryPointJsonUnmarshaller implements Unmarshaller<RecoveryPoint
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("namespaceArn", targetDepth)) {
+                    context.nextToken();
+                    recoveryPoint.setNamespaceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("namespaceName", targetDepth)) {
                     context.nextToken();
                     recoveryPoint.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));

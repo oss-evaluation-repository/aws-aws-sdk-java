@@ -43,9 +43,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
     /**
      * <p>
      * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a
-     * service and don't specify a Service Connect configuration. Up to 1024 characters are allowed. The name is
-     * case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or
-     * slash (/).
+     * service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters.
+     * The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;),
+     * or slash (/).
      * </p>
      * <p>
      * If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
@@ -70,9 +70,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
     /**
      * <p>
      * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a
-     * service and don't specify a Service Connect configuration. Up to 1024 characters are allowed. The name is
-     * case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or
-     * slash (/).
+     * service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters.
+     * The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;),
+     * or slash (/).
      * </p>
      * <p>
      * If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
@@ -94,9 +94,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * 
      * @param namespace
      *        The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you
-     *        create a service and don't specify a Service Connect configuration. Up to 1024 characters are allowed. The
-     *        name is case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;), less
-     *        than (&lt;), or slash (/).</p>
+     *        create a service and don't specify a Service Connect configuration. The namespace name can include up to
+     *        1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than
+     *        (&gt;), less than (&lt;), or slash (/).</p>
      *        <p>
      *        If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
      *        supported. The namespace must be in this account and this Amazon Web Services Region.
@@ -124,9 +124,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
     /**
      * <p>
      * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a
-     * service and don't specify a Service Connect configuration. Up to 1024 characters are allowed. The name is
-     * case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or
-     * slash (/).
+     * service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters.
+     * The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;),
+     * or slash (/).
      * </p>
      * <p>
      * If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
@@ -147,9 +147,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * </p>
      * 
      * @return The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you
-     *         create a service and don't specify a Service Connect configuration. Up to 1024 characters are allowed.
-     *         The name is case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;),
-     *         less than (&lt;), or slash (/).</p>
+     *         create a service and don't specify a Service Connect configuration. The namespace name can include up to
+     *         1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than
+     *         (&gt;), less than (&lt;), or slash (/).</p>
      *         <p>
      *         If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
      *         supported. The namespace must be in this account and this Amazon Web Services Region.
@@ -177,9 +177,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
     /**
      * <p>
      * The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you create a
-     * service and don't specify a Service Connect configuration. Up to 1024 characters are allowed. The name is
-     * case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;), or
-     * slash (/).
+     * service and don't specify a Service Connect configuration. The namespace name can include up to 1024 characters.
+     * The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than (&gt;), less than (&lt;),
+     * or slash (/).
      * </p>
      * <p>
      * If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
@@ -201,9 +201,9 @@ public class ClusterServiceConnectDefaultsRequest implements Serializable, Clone
      * 
      * @param namespace
      *        The namespace name or full Amazon Resource Name (ARN) of the Cloud Map namespace that's used when you
-     *        create a service and don't specify a Service Connect configuration. Up to 1024 characters are allowed. The
-     *        name is case-sensitive. The characters can't include hyphens (-), tilde (~), greater than (&gt;), less
-     *        than (&lt;), or slash (/).</p>
+     *        create a service and don't specify a Service Connect configuration. The namespace name can include up to
+     *        1024 characters. The name is case-sensitive. The name can't include hyphens (-), tilde (~), greater than
+     *        (&gt;), less than (&lt;), or slash (/).</p>
      *        <p>
      *        If you enter an existing namespace name or ARN, then that namespace will be used. Any namespace type is
      *        supported. The namespace must be in this account and this Amazon Web Services Region.

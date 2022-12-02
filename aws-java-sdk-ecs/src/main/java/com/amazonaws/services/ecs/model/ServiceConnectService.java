@@ -40,11 +40,14 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon
-     * ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed. The characters
-     * can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the first character.
+     * ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The
+     * name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a
+     * hyphen.
      * </p>
      * <p>
-     * If this field isn't specified, <code>portName</code> is used.
+     * If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the
+     * <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.
      * </p>
      */
     private String discoveryName;
@@ -132,20 +135,25 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon
-     * ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed. The characters
-     * can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the first character.
+     * ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The
+     * name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a
+     * hyphen.
      * </p>
      * <p>
-     * If this field isn't specified, <code>portName</code> is used.
+     * If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the
+     * <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.
      * </p>
      * 
      * @param discoveryName
      *        The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this
-     *        Amazon ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed.
-     *        The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be
-     *        the first character.</p>
+     *        Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64
+     *        characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     *        can't start with a hyphen.</p>
      *        <p>
-     *        If this field isn't specified, <code>portName</code> is used.
+     *        If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If
+     *        the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     *        <code>portName.namespace</code>.
      */
 
     public void setDiscoveryName(String discoveryName) {
@@ -155,19 +163,24 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon
-     * ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed. The characters
-     * can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the first character.
+     * ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The
+     * name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a
+     * hyphen.
      * </p>
      * <p>
-     * If this field isn't specified, <code>portName</code> is used.
+     * If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the
+     * <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.
      * </p>
      * 
      * @return The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this
-     *         Amazon ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed.
-     *         The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't
-     *         be the first character.</p>
+     *         Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64
+     *         characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     *         can't start with a hyphen.</p>
      *         <p>
-     *         If this field isn't specified, <code>portName</code> is used.
+     *         If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If
+     *         the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     *         <code>portName.namespace</code>.
      */
 
     public String getDiscoveryName() {
@@ -177,20 +190,25 @@ public class ServiceConnectService implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this Amazon
-     * ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed. The characters
-     * can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be the first character.
+     * ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64 characters. The
+     * name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name can't start with a
+     * hyphen.
      * </p>
      * <p>
-     * If this field isn't specified, <code>portName</code> is used.
+     * If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If the
+     * <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.
      * </p>
      * 
      * @param discoveryName
      *        The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon ECS creates for this
-     *        Amazon ECS service. This must be unique within the Cloud Map namespace. Up to 64 characters are allowed.
-     *        The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). A hyphen can't be
-     *        the first character.</p>
+     *        Amazon ECS service. This must be unique within the Cloud Map namespace. The name can contain up to 64
+     *        characters. The name can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     *        can't start with a hyphen.</p>
      *        <p>
-     *        If this field isn't specified, <code>portName</code> is used.
+     *        If this parameter isn't specified, the default value of <code>discoveryName.namespace</code> is used. If
+     *        the <code>discoveryName</code> isn't specified, the port mapping name from the task definition is used in
+     *        <code>portName.namespace</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

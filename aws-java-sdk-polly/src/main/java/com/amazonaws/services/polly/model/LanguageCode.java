@@ -54,7 +54,8 @@ public enum LanguageCode {
     CaES("ca-ES"),
     DeAT("de-AT"),
     YueCN("yue-CN"),
-    ArAE("ar-AE");
+    ArAE("ar-AE"),
+    FiFI("fi-FI");
 
     private String value;
 

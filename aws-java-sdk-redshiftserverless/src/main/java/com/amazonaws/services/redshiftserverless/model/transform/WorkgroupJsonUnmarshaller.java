@@ -74,6 +74,10 @@ public class WorkgroupJsonUnmarshaller implements Unmarshaller<Workgroup, JsonUn
                     context.nextToken();
                     workgroup.setNamespaceName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("port", targetDepth)) {
+                    context.nextToken();
+                    workgroup.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
                     context.nextToken();
                     workgroup.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));

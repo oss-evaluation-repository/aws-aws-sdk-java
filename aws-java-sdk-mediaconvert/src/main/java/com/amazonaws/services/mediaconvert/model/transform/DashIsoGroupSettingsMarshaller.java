@@ -52,6 +52,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minBufferTime").build();
     private static final MarshallingInfo<Double> MINFINALSEGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minFinalSegmentLength").build();
+    private static final MarshallingInfo<String> MPDMANIFESTBANDWIDTHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpdManifestBandwidthType").build();
     private static final MarshallingInfo<String> MPDPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpdProfile").build();
     private static final MarshallingInfo<String> PTSOFFSETHANDLINGFORBFRAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,8 @@ public class DashIsoGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentLength").build();
     private static final MarshallingInfo<String> SEGMENTLENGTHCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentLengthControl").build();
+    private static final MarshallingInfo<String> VIDEOCOMPOSITIONOFFSETS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoCompositionOffsets").build();
     private static final MarshallingInfo<String> WRITESEGMENTTIMELINEINREPRESENTATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeSegmentTimelineInRepresentation").build();
 
@@ -93,11 +97,13 @@ public class DashIsoGroupSettingsMarshaller {
             protocolMarshaller.marshall(dashIsoGroupSettings.getImageBasedTrickPlaySettings(), IMAGEBASEDTRICKPLAYSETTINGS_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getMinBufferTime(), MINBUFFERTIME_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getMinFinalSegmentLength(), MINFINALSEGMENTLENGTH_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getMpdManifestBandwidthType(), MPDMANIFESTBANDWIDTHTYPE_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getMpdProfile(), MPDPROFILE_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getPtsOffsetHandlingForBFrames(), PTSOFFSETHANDLINGFORBFRAMES_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentControl(), SEGMENTCONTROL_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentLength(), SEGMENTLENGTH_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getSegmentLengthControl(), SEGMENTLENGTHCONTROL_BINDING);
+            protocolMarshaller.marshall(dashIsoGroupSettings.getVideoCompositionOffsets(), VIDEOCOMPOSITIONOFFSETS_BINDING);
             protocolMarshaller.marshall(dashIsoGroupSettings.getWriteSegmentTimelineInRepresentation(), WRITESEGMENTTIMELINEINREPRESENTATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -64,6 +64,10 @@ public class MpdSettingsJsonUnmarshaller implements Unmarshaller<MpdSettings, Js
                     context.nextToken();
                     mpdSettings.setKlvMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("manifestMetadataSignaling", targetDepth)) {
+                    context.nextToken();
+                    mpdSettings.setManifestMetadataSignaling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scte35Esam", targetDepth)) {
                     context.nextToken();
                     mpdSettings.setScte35Esam(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,18 @@ public class MpdSettingsJsonUnmarshaller implements Unmarshaller<MpdSettings, Js
                 if (context.testExpression("timedMetadata", targetDepth)) {
                     context.nextToken();
                     mpdSettings.setTimedMetadata(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataBoxVersion", targetDepth)) {
+                    context.nextToken();
+                    mpdSettings.setTimedMetadataBoxVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataSchemeIdUri", targetDepth)) {
+                    context.nextToken();
+                    mpdSettings.setTimedMetadataSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataValue", targetDepth)) {
+                    context.nextToken();
+                    mpdSettings.setTimedMetadataValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

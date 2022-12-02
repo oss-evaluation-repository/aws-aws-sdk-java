@@ -55,8 +55,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used
-     * by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.
+     * by other Amazon ECS services to connect to this service.
      * </p>
      * <p>
      * This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to
@@ -185,8 +184,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used
-     * by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.
+     * by other Amazon ECS services to connect to this service.
      * </p>
      * <p>
      * This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to
@@ -199,8 +197,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
      * </p>
      * 
      * @return The list of Service Connect service objects. These are names and aliases (also known as endpoints) that
-     *         are used by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects
-     *         per Amazon ECS service.</p>
+     *         are used by other Amazon ECS services to connect to this service. </p>
      *         <p>
      *         This field is not required for a "client" Amazon ECS service that's a member of a namespace only to
      *         connect to other services within the namespace. An example of this would be a frontend application that
@@ -221,8 +218,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used
-     * by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.
+     * by other Amazon ECS services to connect to this service.
      * </p>
      * <p>
      * This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to
@@ -236,8 +232,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
      * 
      * @param services
      *        The list of Service Connect service objects. These are names and aliases (also known as endpoints) that
-     *        are used by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects
-     *        per Amazon ECS service.</p>
+     *        are used by other Amazon ECS services to connect to this service. </p>
      *        <p>
      *        This field is not required for a "client" Amazon ECS service that's a member of a namespace only to
      *        connect to other services within the namespace. An example of this would be a frontend application that
@@ -260,8 +255,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used
-     * by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.
+     * by other Amazon ECS services to connect to this service.
      * </p>
      * <p>
      * This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to
@@ -280,8 +274,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
      * 
      * @param services
      *        The list of Service Connect service objects. These are names and aliases (also known as endpoints) that
-     *        are used by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects
-     *        per Amazon ECS service.</p>
+     *        are used by other Amazon ECS services to connect to this service. </p>
      *        <p>
      *        This field is not required for a "client" Amazon ECS service that's a member of a namespace only to
      *        connect to other services within the namespace. An example of this would be a frontend application that
@@ -306,8 +299,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of Service Connect service objects. These are names and aliases (also known as endpoints) that are used
-     * by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects per Amazon ECS
-     * service.
+     * by other Amazon ECS services to connect to this service.
      * </p>
      * <p>
      * This field is not required for a "client" Amazon ECS service that's a member of a namespace only to connect to
@@ -321,8 +313,7 @@ public class ServiceConnectConfiguration implements Serializable, Cloneable, Str
      * 
      * @param services
      *        The list of Service Connect service objects. These are names and aliases (also known as endpoints) that
-     *        are used by other Amazon ECS services to connect to this service. You can specify up to X (30?) objects
-     *        per Amazon ECS service.</p>
+     *        are used by other Amazon ECS services to connect to this service. </p>
      *        <p>
      *        This field is not required for a "client" Amazon ECS service that's a member of a namespace only to
      *        connect to other services within the namespace. An example of this would be a frontend application that
