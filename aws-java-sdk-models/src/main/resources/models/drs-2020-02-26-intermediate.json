@@ -49,6 +49,7 @@
     "asyncClient" : "AWSdrsAsyncClient",
     "asyncClientBuilderClassName" : "AWSdrsAsyncClientBuilder",
     "asyncInterface" : "AWSdrsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

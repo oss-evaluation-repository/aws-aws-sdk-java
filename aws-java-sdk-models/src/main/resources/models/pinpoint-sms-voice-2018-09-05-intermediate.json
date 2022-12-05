@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonPinpointSMSVoiceAsyncClient",
     "asyncClientBuilderClassName" : "AmazonPinpointSMSVoiceAsyncClientBuilder",
     "asyncInterface" : "AmazonPinpointSMSVoiceAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

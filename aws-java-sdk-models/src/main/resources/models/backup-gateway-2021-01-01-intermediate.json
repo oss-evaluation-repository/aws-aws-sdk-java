@@ -49,6 +49,7 @@
     "asyncClient" : "AWSBackupGatewayAsyncClient",
     "asyncClientBuilderClassName" : "AWSBackupGatewayAsyncClientBuilder",
     "asyncInterface" : "AWSBackupGatewayAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

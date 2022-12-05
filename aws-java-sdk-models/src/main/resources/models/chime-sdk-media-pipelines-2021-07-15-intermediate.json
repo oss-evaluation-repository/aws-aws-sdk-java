@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonChimeSDKMediaPipelinesAsyncClient",
     "asyncClientBuilderClassName" : "AmazonChimeSDKMediaPipelinesAsyncClientBuilder",
     "asyncInterface" : "AmazonChimeSDKMediaPipelinesAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

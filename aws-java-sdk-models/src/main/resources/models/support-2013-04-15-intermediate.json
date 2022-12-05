@@ -66,6 +66,7 @@
     "asyncClient" : "AWSSupportAsyncClient",
     "asyncClientBuilderClassName" : "AWSSupportAsyncClientBuilder",
     "asyncInterface" : "AWSSupportAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSRedshiftServerlessAsyncClient",
     "asyncClientBuilderClassName" : "AWSRedshiftServerlessAsyncClientBuilder",
     "asyncInterface" : "AWSRedshiftServerlessAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

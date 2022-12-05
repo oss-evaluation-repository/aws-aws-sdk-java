@@ -49,6 +49,7 @@
     "asyncClient" : "AWSACMPCAAsyncClient",
     "asyncClientBuilderClassName" : "AWSACMPCAAsyncClientBuilder",
     "asyncInterface" : "AWSACMPCAAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

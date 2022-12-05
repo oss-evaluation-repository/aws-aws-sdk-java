@@ -110,6 +110,7 @@
     "asyncClient" : "AWSCloudHSMAsyncClient",
     "asyncClientBuilderClassName" : "AWSCloudHSMAsyncClientBuilder",
     "asyncInterface" : "AWSCloudHSMAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

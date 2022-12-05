@@ -252,6 +252,7 @@
     "asyncClient" : "AmazonGlacierAsyncClient",
     "asyncClientBuilderClassName" : "AmazonGlacierAsyncClientBuilder",
     "asyncInterface" : "AmazonGlacierAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

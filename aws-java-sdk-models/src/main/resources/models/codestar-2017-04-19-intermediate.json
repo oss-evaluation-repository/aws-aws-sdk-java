@@ -49,6 +49,7 @@
     "asyncClient" : "AWSCodeStarAsyncClient",
     "asyncClientBuilderClassName" : "AWSCodeStarAsyncClientBuilder",
     "asyncInterface" : "AWSCodeStarAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

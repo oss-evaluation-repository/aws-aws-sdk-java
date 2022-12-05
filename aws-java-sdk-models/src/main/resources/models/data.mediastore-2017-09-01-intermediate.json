@@ -49,6 +49,7 @@
     "asyncClient" : "AWSMediaStoreDataAsyncClient",
     "asyncClientBuilderClassName" : "AWSMediaStoreDataAsyncClientBuilder",
     "asyncInterface" : "AWSMediaStoreDataAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

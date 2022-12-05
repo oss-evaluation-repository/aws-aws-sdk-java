@@ -60,6 +60,7 @@
     "asyncClient" : "AWSStepFunctionsAsyncClient",
     "asyncClientBuilderClassName" : "AWSStepFunctionsAsyncClientBuilder",
     "asyncInterface" : "AWSStepFunctionsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

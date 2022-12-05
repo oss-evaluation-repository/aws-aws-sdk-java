@@ -49,6 +49,7 @@
     "asyncClient" : "AWSCloudHSMV2AsyncClient",
     "asyncClientBuilderClassName" : "AWSCloudHSMV2AsyncClientBuilder",
     "asyncInterface" : "AWSCloudHSMV2Async",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSSSMIncidentsAsyncClient",
     "asyncClientBuilderClassName" : "AWSSSMIncidentsAsyncClientBuilder",
     "asyncInterface" : "AWSSSMIncidentsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

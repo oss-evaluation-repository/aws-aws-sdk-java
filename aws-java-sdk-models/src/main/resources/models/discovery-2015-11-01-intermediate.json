@@ -50,6 +50,7 @@
     "asyncClient" : "AWSApplicationDiscoveryAsyncClient",
     "asyncClientBuilderClassName" : "AWSApplicationDiscoveryAsyncClientBuilder",
     "asyncInterface" : "AWSApplicationDiscoveryAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

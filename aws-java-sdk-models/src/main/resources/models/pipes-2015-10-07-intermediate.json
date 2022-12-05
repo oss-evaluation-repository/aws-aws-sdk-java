@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonPipesAsyncClient",
     "asyncClientBuilderClassName" : "AmazonPipesAsyncClientBuilder",
     "asyncInterface" : "AmazonPipesAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

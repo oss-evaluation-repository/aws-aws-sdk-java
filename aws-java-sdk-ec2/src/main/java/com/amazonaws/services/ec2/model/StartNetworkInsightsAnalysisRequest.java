@@ -32,7 +32,11 @@ public class StartNetworkInsightsAnalysisRequest extends AmazonWebServiceRequest
      * </p>
      */
     private String networkInsightsPathId;
-
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> additionalAccounts;
     /**
      * <p>
@@ -97,7 +101,11 @@ public class StartNetworkInsightsAnalysisRequest extends AmazonWebServiceRequest
     }
 
     /**
-     * @return
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
+     * @return The member accounts that contain resources that the path can traverse.
      */
 
     public java.util.List<String> getAdditionalAccounts() {
@@ -108,7 +116,12 @@ public class StartNetworkInsightsAnalysisRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
      * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
      */
 
     public void setAdditionalAccounts(java.util.Collection<String> additionalAccounts) {
@@ -122,12 +135,16 @@ public class StartNetworkInsightsAnalysisRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalAccounts(java.util.Collection)} or {@link #withAdditionalAccounts(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +159,12 @@ public class StartNetworkInsightsAnalysisRequest extends AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
      * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

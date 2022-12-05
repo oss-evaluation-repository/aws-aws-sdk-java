@@ -32,30 +32,30 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     * An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      * </p>
      */
     private CloudWatchLogsDestinationConfiguration cloudWatchLogs;
     /**
      * <p>
-     * Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     * An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      * </p>
      */
     private FirehoseDestinationConfiguration firehose;
     /**
      * <p>
-     * Name of the Amazon S3 bucket where chat activity will be logged.
+     * An Amazon S3 destination configuration where chat activity will be logged.
      * </p>
      */
     private S3DestinationConfiguration s3;
 
     /**
      * <p>
-     * Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     * An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      * </p>
      * 
      * @param cloudWatchLogs
-     *        Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     *        An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      */
 
     public void setCloudWatchLogs(CloudWatchLogsDestinationConfiguration cloudWatchLogs) {
@@ -64,10 +64,10 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     * An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      * </p>
      * 
-     * @return Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     * @return An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      */
 
     public CloudWatchLogsDestinationConfiguration getCloudWatchLogs() {
@@ -76,11 +76,11 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     * An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      * </p>
      * 
      * @param cloudWatchLogs
-     *        Name of the Amazon CloudWatch Logs destination where chat activity will be logged.
+     *        An Amazon CloudWatch Logs destination configuration where chat activity will be logged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,11 +91,11 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     * An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      * </p>
      * 
      * @param firehose
-     *        Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     *        An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      */
 
     public void setFirehose(FirehoseDestinationConfiguration firehose) {
@@ -104,10 +104,10 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     * An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      * </p>
      * 
-     * @return Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     * @return An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      */
 
     public FirehoseDestinationConfiguration getFirehose() {
@@ -116,11 +116,11 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     * An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      * </p>
      * 
      * @param firehose
-     *        Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged
+     *        An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +131,11 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon S3 bucket where chat activity will be logged.
+     * An Amazon S3 destination configuration where chat activity will be logged.
      * </p>
      * 
      * @param s3
-     *        Name of the Amazon S3 bucket where chat activity will be logged.
+     *        An Amazon S3 destination configuration where chat activity will be logged.
      */
 
     public void setS3(S3DestinationConfiguration s3) {
@@ -144,10 +144,10 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon S3 bucket where chat activity will be logged.
+     * An Amazon S3 destination configuration where chat activity will be logged.
      * </p>
      * 
-     * @return Name of the Amazon S3 bucket where chat activity will be logged.
+     * @return An Amazon S3 destination configuration where chat activity will be logged.
      */
 
     public S3DestinationConfiguration getS3() {
@@ -156,11 +156,11 @@ public class DestinationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Name of the Amazon S3 bucket where chat activity will be logged.
+     * An Amazon S3 destination configuration where chat activity will be logged.
      * </p>
      * 
      * @param s3
-     *        Name of the Amazon S3 bucket where chat activity will be logged.
+     *        An Amazon S3 destination configuration where chat activity will be logged.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

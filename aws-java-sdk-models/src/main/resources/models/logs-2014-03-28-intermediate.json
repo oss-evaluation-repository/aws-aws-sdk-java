@@ -101,6 +101,7 @@
     "asyncClient" : "AWSLogsAsyncClient",
     "asyncClientBuilderClassName" : "AWSLogsAsyncClientBuilder",
     "asyncInterface" : "AWSLogsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

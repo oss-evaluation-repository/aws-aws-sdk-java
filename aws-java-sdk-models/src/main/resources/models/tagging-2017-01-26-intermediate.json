@@ -51,6 +51,7 @@
     "asyncClient" : "AWSResourceGroupsTaggingAPIAsyncClient",
     "asyncClientBuilderClassName" : "AWSResourceGroupsTaggingAPIAsyncClientBuilder",
     "asyncInterface" : "AWSResourceGroupsTaggingAPIAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

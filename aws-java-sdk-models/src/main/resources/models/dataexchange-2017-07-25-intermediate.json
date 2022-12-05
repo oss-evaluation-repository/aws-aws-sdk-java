@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : {
       "SendApiAsset" : {
@@ -56,6 +56,7 @@
     "asyncClient" : "AWSDataExchangeAsyncClient",
     "asyncClientBuilderClassName" : "AWSDataExchangeAsyncClientBuilder",
     "asyncInterface" : "AWSDataExchangeAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

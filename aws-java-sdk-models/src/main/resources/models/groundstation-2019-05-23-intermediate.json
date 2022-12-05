@@ -49,6 +49,7 @@
     "asyncClient" : "AWSGroundStationAsyncClient",
     "asyncClientBuilderClassName" : "AWSGroundStationAsyncClientBuilder",
     "asyncInterface" : "AWSGroundStationAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

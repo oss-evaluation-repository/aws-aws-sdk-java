@@ -66,6 +66,7 @@
     "asyncClient" : "AmazonRoute53DomainsAsyncClient",
     "asyncClientBuilderClassName" : "AmazonRoute53DomainsAsyncClientBuilder",
     "asyncInterface" : "AmazonRoute53DomainsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

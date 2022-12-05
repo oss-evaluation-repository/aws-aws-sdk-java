@@ -65,6 +65,7 @@
     "asyncClient" : "AWSCodePipelineAsyncClient",
     "asyncClientBuilderClassName" : "AWSCodePipelineAsyncClientBuilder",
     "asyncInterface" : "AWSCodePipelineAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

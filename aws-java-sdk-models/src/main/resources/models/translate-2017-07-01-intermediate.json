@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonTranslateAsyncClient",
     "asyncClientBuilderClassName" : "AmazonTranslateAsyncClientBuilder",
     "asyncInterface" : "AmazonTranslateAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

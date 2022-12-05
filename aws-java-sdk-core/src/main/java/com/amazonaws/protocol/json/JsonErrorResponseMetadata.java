@@ -38,6 +38,11 @@ public class JsonErrorResponseMetadata {
      */
     private List<JsonErrorShapeMetadata> errorShapes;
 
+    /**
+     * Correlates to AwsQueryCompatible trait
+     */
+    private boolean hasAwsQueryCompatible;
+
     public String getCustomErrorCodeFieldName() {
         return customErrorCodeFieldName;
     }
@@ -53,6 +58,15 @@ public class JsonErrorResponseMetadata {
 
     public JsonErrorResponseMetadata withErrorShapes(List<JsonErrorShapeMetadata> errorShapes) {
         this.errorShapes = errorShapes;
+        return this;
+    }
+
+    public boolean getAwsQueryCompatible() {
+        return hasAwsQueryCompatible;
+    }
+
+    public JsonErrorResponseMetadata withAwsQueryCompatible(Boolean hasAwsQueryCompatible) {
+        this.hasAwsQueryCompatible = hasAwsQueryCompatible != null && hasAwsQueryCompatible;
         return this;
     }
 }

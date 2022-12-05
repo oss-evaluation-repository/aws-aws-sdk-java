@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonLookoutforVisionAsyncClient",
     "asyncClientBuilderClassName" : "AmazonLookoutforVisionAsyncClientBuilder",
     "asyncInterface" : "AmazonLookoutforVisionAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

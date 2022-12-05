@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIoTRoboRunnerAsyncClient",
     "asyncClientBuilderClassName" : "AWSIoTRoboRunnerAsyncClientBuilder",
     "asyncInterface" : "AWSIoTRoboRunnerAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSMediaStoreAsyncClient",
     "asyncClientBuilderClassName" : "AWSMediaStoreAsyncClientBuilder",
     "asyncInterface" : "AWSMediaStoreAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

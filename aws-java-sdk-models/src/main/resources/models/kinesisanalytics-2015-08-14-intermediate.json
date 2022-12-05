@@ -55,6 +55,7 @@
     "asyncClient" : "AmazonKinesisAnalyticsAsyncClient",
     "asyncClientBuilderClassName" : "AmazonKinesisAnalyticsAsyncClientBuilder",
     "asyncInterface" : "AmazonKinesisAnalyticsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

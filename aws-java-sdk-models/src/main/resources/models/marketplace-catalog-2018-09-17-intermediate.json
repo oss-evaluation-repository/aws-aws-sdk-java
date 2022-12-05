@@ -49,6 +49,7 @@
     "asyncClient" : "AWSMarketplaceCatalogAsyncClient",
     "asyncClientBuilderClassName" : "AWSMarketplaceCatalogAsyncClientBuilder",
     "asyncInterface" : "AWSMarketplaceCatalogAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

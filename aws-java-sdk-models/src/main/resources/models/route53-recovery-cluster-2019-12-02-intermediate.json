@@ -49,6 +49,7 @@
     "asyncClient" : "AWSRoute53RecoveryClusterAsyncClient",
     "asyncClientBuilderClassName" : "AWSRoute53RecoveryClusterAsyncClientBuilder",
     "asyncInterface" : "AWSRoute53RecoveryClusterAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

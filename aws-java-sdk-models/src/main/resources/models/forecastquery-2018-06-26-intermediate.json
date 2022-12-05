@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonForecastQueryAsyncClient",
     "asyncClientBuilderClassName" : "AmazonForecastQueryAsyncClientBuilder",
     "asyncInterface" : "AmazonForecastQueryAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSResilienceHubAsyncClient",
     "asyncClientBuilderClassName" : "AWSResilienceHubAsyncClientBuilder",
     "asyncInterface" : "AWSResilienceHubAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

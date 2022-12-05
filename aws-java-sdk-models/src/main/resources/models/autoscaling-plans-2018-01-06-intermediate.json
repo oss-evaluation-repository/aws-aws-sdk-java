@@ -49,6 +49,7 @@
     "asyncClient" : "AWSAutoScalingPlansAsyncClient",
     "asyncClientBuilderClassName" : "AWSAutoScalingPlansAsyncClientBuilder",
     "asyncInterface" : "AWSAutoScalingPlansAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

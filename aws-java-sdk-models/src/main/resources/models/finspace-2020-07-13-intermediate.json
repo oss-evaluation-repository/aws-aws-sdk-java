@@ -49,6 +49,7 @@
     "asyncClient" : "AWSFinSpaceDataAsyncClient",
     "asyncClientBuilderClassName" : "AWSFinSpaceDataAsyncClientBuilder",
     "asyncInterface" : "AWSFinSpaceDataAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

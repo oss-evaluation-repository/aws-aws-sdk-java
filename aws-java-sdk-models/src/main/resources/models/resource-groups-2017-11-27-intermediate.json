@@ -49,6 +49,7 @@
     "asyncClient" : "AWSResourceGroupsAsyncClient",
     "asyncClientBuilderClassName" : "AWSResourceGroupsAsyncClientBuilder",
     "asyncInterface" : "AWSResourceGroupsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

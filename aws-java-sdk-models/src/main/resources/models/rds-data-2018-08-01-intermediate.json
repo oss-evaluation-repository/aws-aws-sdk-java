@@ -49,6 +49,7 @@
     "asyncClient" : "AWSRDSDataAsyncClient",
     "asyncClientBuilderClassName" : "AWSRDSDataAsyncClientBuilder",
     "asyncInterface" : "AWSRDSDataAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

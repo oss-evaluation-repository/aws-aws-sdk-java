@@ -58,6 +58,7 @@
     "asyncClient" : "AmazonCloudSearchAsyncClient",
     "asyncClientBuilderClassName" : "AmazonCloudSearchAsyncClientBuilder",
     "asyncInterface" : "AmazonCloudSearchAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

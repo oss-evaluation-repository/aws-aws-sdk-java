@@ -51,6 +51,7 @@
     "asyncClient" : "AWSMarketplaceMeteringAsyncClient",
     "asyncClientBuilderClassName" : "AWSMarketplaceMeteringAsyncClientBuilder",
     "asyncInterface" : "AWSMarketplaceMeteringAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

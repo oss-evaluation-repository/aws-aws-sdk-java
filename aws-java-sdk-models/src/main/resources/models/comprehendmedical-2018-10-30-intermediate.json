@@ -49,6 +49,7 @@
     "asyncClient" : "AWSComprehendMedicalAsyncClient",
     "asyncClientBuilderClassName" : "AWSComprehendMedicalAsyncClientBuilder",
     "asyncInterface" : "AWSComprehendMedicalAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSAccessAnalyzerAsyncClient",
     "asyncClientBuilderClassName" : "AWSAccessAnalyzerAsyncClientBuilder",
     "asyncInterface" : "AWSAccessAnalyzerAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

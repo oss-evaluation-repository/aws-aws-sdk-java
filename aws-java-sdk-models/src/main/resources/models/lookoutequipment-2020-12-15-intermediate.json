@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonLookoutEquipmentAsyncClient",
     "asyncClientBuilderClassName" : "AmazonLookoutEquipmentAsyncClientBuilder",
     "asyncInterface" : "AmazonLookoutEquipmentAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

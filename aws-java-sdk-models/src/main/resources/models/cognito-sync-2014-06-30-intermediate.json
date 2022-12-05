@@ -54,6 +54,7 @@
     "asyncClient" : "AmazonCognitoSyncAsyncClient",
     "asyncClientBuilderClassName" : "AmazonCognitoSyncAsyncClientBuilder",
     "asyncInterface" : "AmazonCognitoSyncAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

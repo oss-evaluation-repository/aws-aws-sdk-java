@@ -49,6 +49,7 @@
     "asyncClient" : "AWSMigrationHubAsyncClient",
     "asyncClientBuilderClassName" : "AWSMigrationHubAsyncClientBuilder",
     "asyncInterface" : "AWSMigrationHubAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

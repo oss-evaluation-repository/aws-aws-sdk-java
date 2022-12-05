@@ -59,6 +59,7 @@
     "asyncClient" : "AmazonSnowballAsyncClient",
     "asyncClientBuilderClassName" : "AmazonSnowballAsyncClientBuilder",
     "asyncInterface" : "AmazonSnowballAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

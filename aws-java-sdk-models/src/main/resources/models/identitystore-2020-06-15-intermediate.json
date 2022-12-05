@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIdentityStoreAsyncClient",
     "asyncClientBuilderClassName" : "AWSIdentityStoreAsyncClientBuilder",
     "asyncInterface" : "AWSIdentityStoreAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

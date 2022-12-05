@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonConnectParticipantAsyncClient",
     "asyncClientBuilderClassName" : "AmazonConnectParticipantAsyncClientBuilder",
     "asyncInterface" : "AmazonConnectParticipantAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

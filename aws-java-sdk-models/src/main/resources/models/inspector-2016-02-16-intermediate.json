@@ -144,6 +144,7 @@
     "asyncClient" : "AmazonInspectorAsyncClient",
     "asyncClientBuilderClassName" : "AmazonInspectorAsyncClientBuilder",
     "asyncInterface" : "AmazonInspectorAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

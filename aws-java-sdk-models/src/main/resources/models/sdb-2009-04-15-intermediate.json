@@ -139,6 +139,7 @@
     "asyncClient" : "AmazonSimpleDBAsyncClient",
     "asyncClientBuilderClassName" : "AmazonSimpleDBAsyncClientBuilder",
     "asyncInterface" : "AmazonSimpleDBAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

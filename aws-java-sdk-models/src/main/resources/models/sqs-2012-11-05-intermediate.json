@@ -192,6 +192,7 @@
     "asyncClient" : "AmazonSQSAsyncClient",
     "asyncClientBuilderClassName" : "AmazonSQSAsyncClientBuilder",
     "asyncInterface" : "AmazonSQSAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

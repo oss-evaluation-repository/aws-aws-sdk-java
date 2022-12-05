@@ -49,6 +49,7 @@
     "asyncClient" : "AWSCloudControlApiAsyncClient",
     "asyncClientBuilderClassName" : "AWSCloudControlApiAsyncClientBuilder",
     "asyncInterface" : "AWSCloudControlApiAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

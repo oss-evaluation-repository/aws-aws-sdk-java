@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIoTDeviceAdvisorAsyncClient",
     "asyncClientBuilderClassName" : "AWSIoTDeviceAdvisorAsyncClientBuilder",
     "asyncInterface" : "AWSIoTDeviceAdvisorAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

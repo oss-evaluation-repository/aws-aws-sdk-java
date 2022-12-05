@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonQLDBAsyncClient",
     "asyncClientBuilderClassName" : "AmazonQLDBAsyncClientBuilder",
     "asyncInterface" : "AmazonQLDBAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

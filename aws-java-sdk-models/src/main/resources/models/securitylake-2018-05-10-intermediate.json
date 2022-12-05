@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonSecurityLakeAsyncClient",
     "asyncClientBuilderClassName" : "AmazonSecurityLakeAsyncClientBuilder",
     "asyncInterface" : "AmazonSecurityLakeAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

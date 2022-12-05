@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonPrometheusAsyncClient",
     "asyncClientBuilderClassName" : "AmazonPrometheusAsyncClientBuilder",
     "asyncInterface" : "AmazonPrometheusAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

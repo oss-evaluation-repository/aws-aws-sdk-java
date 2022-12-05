@@ -49,6 +49,7 @@
     "asyncClient" : "AWSSavingsPlansAsyncClient",
     "asyncClientBuilderClassName" : "AWSSavingsPlansAsyncClientBuilder",
     "asyncInterface" : "AWSSavingsPlansAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

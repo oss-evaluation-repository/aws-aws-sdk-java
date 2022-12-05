@@ -49,6 +49,7 @@
     "asyncClient" : "AWSMediaConnectAsyncClient",
     "asyncClientBuilderClassName" : "AWSMediaConnectAsyncClientBuilder",
     "asyncInterface" : "AWSMediaConnectAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

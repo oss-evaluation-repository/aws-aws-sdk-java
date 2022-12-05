@@ -4664,7 +4664,7 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Describes the curent Infrastructure Performance metric subscriptions.
+     * Describes the current Infrastructure Performance metric subscriptions.
      * </p>
      * 
      * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
@@ -8085,6 +8085,15 @@ public interface AmazonEC2 {
             EnableIpamOrganizationAdminAccountRequest enableIpamOrganizationAdminAccountRequest);
 
     /**
+     * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
      * @param enableReachabilityAnalyzerOrganizationSharingRequest
      * @return Result of the EnableReachabilityAnalyzerOrganizationSharing operation returned by the service.
      * @sample AmazonEC2.EnableReachabilityAnalyzerOrganizationSharing

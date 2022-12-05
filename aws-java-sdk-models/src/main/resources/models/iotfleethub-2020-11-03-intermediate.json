@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIoTFleetHubAsyncClient",
     "asyncClientBuilderClassName" : "AWSIoTFleetHubAsyncClientBuilder",
     "asyncInterface" : "AWSIoTFleetHubAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

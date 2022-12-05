@@ -49,6 +49,7 @@
     "asyncClient" : "AWSGlobalAcceleratorAsyncClient",
     "asyncClientBuilderClassName" : "AWSGlobalAcceleratorAsyncClientBuilder",
     "asyncInterface" : "AWSGlobalAcceleratorAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

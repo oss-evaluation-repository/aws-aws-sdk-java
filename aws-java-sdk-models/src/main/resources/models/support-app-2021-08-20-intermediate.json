@@ -49,6 +49,7 @@
     "asyncClient" : "AWSSupportAppAsyncClient",
     "asyncClientBuilderClassName" : "AWSSupportAppAsyncClientBuilder",
     "asyncInterface" : "AWSSupportAppAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

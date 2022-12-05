@@ -49,6 +49,7 @@
     "asyncClient" : "AWSCloud9AsyncClient",
     "asyncClientBuilderClassName" : "AWSCloud9AsyncClientBuilder",
     "asyncInterface" : "AWSCloud9Async",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

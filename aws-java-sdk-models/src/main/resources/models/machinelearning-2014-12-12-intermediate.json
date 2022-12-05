@@ -87,6 +87,7 @@
     "asyncClient" : "AmazonMachineLearningAsyncClient",
     "asyncClientBuilderClassName" : "AmazonMachineLearningAsyncClientBuilder",
     "asyncInterface" : "AmazonMachineLearningAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

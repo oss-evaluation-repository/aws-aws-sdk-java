@@ -24,10 +24,20 @@ import com.amazonaws.AmazonWebServiceResult;
 public class EnableReachabilityAnalyzerOrganizationSharingResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+     * </p>
+     */
     private Boolean returnValue;
 
     /**
+     * <p>
+     * Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+     * </p>
+     * 
      * @param returnValue
+     *        Returns <code>true</code> if the request succeeds; otherwise, returns an error.
      */
 
     public void setReturnValue(Boolean returnValue) {
@@ -35,7 +45,11 @@ public class EnableReachabilityAnalyzerOrganizationSharingResult extends com.ama
     }
 
     /**
-     * @return
+     * <p>
+     * Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+     * </p>
+     * 
+     * @return Returns <code>true</code> if the request succeeds; otherwise, returns an error.
      */
 
     public Boolean getReturnValue() {
@@ -43,7 +57,12 @@ public class EnableReachabilityAnalyzerOrganizationSharingResult extends com.ama
     }
 
     /**
+     * <p>
+     * Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+     * </p>
+     * 
      * @param returnValue
+     *        Returns <code>true</code> if the request succeeds; otherwise, returns an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -53,7 +72,11 @@ public class EnableReachabilityAnalyzerOrganizationSharingResult extends com.ama
     }
 
     /**
-     * @return
+     * <p>
+     * Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+     * </p>
+     * 
+     * @return Returns <code>true</code> if the request succeeds; otherwise, returns an error.
      */
 
     public Boolean isReturnValue() {

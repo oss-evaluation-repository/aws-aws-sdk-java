@@ -49,6 +49,7 @@
     "asyncClient" : "AWSMobileAsyncClient",
     "asyncClientBuilderClassName" : "AWSMobileAsyncClientBuilder",
     "asyncInterface" : "AWSMobileAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

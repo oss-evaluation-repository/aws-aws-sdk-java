@@ -49,6 +49,7 @@
     "asyncClient" : "AWSComputeOptimizerAsyncClient",
     "asyncClientBuilderClassName" : "AWSComputeOptimizerAsyncClientBuilder",
     "asyncInterface" : "AWSComputeOptimizerAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

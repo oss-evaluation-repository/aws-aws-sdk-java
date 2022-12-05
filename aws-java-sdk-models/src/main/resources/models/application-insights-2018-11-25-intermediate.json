@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonApplicationInsightsAsyncClient",
     "asyncClientBuilderClassName" : "AmazonApplicationInsightsAsyncClientBuilder",
     "asyncInterface" : "AmazonApplicationInsightsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

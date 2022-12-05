@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonECRPublicAsyncClient",
     "asyncClientBuilderClassName" : "AmazonECRPublicAsyncClientBuilder",
     "asyncInterface" : "AmazonECRPublicAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

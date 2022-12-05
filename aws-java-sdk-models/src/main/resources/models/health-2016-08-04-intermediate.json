@@ -54,6 +54,7 @@
     "asyncClient" : "AWSHealthAsyncClient",
     "asyncClientBuilderClassName" : "AWSHealthAsyncClientBuilder",
     "asyncInterface" : "AWSHealthAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

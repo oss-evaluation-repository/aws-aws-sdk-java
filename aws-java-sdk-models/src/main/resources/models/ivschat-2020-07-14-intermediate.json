@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonivschatAsyncClient",
     "asyncClientBuilderClassName" : "AmazonivschatAsyncClientBuilder",
     "asyncInterface" : "AmazonivschatAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",
@@ -326,6 +327,10 @@
         "documentation" : "<p/>",
         "httpStatusCode" : 404
       }, {
+        "exceptionName" : "PendingVerificationException",
+        "documentation" : "<p/>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ValidationException",
         "documentation" : "<p/>",
         "httpStatusCode" : 400
@@ -423,6 +428,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p/>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "PendingVerificationException",
+        "documentation" : "<p/>",
+        "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
         "documentation" : "<p/>",
@@ -693,6 +702,10 @@
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p/>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "PendingVerificationException",
+        "documentation" : "<p/>",
+        "httpStatusCode" : 403
       }, {
         "exceptionName" : "ValidationException",
         "documentation" : "<p/>",
@@ -9182,12 +9195,12 @@
         "c2jName" : "cloudWatchLogs",
         "c2jShape" : "CloudWatchLogsDestinationConfiguration",
         "deprecated" : false,
-        "documentation" : "<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>",
+        "documentation" : "<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@param cloudWatchLogs Name of the Amazon CloudWatch Logs destination where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@param cloudWatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withCloudWatchLogs",
-        "getterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@return Name of the Amazon CloudWatch Logs destination where chat activity will be logged.*/",
+        "getterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@return An Amazon CloudWatch Logs destination configuration where chat activity will be logged.*/",
         "getterMethodName" : "getCloudWatchLogs",
         "getterModel" : {
           "returnType" : "CloudWatchLogsDestinationConfiguration",
@@ -9221,7 +9234,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "CloudWatchLogs",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@param cloudWatchLogs Name of the Amazon CloudWatch Logs destination where chat activity will be logged.*/",
+        "setterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@param cloudWatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.*/",
         "setterMethodName" : "setCloudWatchLogs",
         "setterModel" : {
           "timestampFormat" : null,
@@ -9236,13 +9249,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@param cloudWatchLogs Name of the Amazon CloudWatch Logs destination where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@param cloudWatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "CloudWatchLogsDestinationConfiguration",
           "variableName" : "cloudWatchLogs",
           "variableType" : "CloudWatchLogsDestinationConfiguration",
-          "documentation" : "<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>",
+          "documentation" : "<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>",
           "simpleType" : "CloudWatchLogsDestinationConfiguration",
           "variableSetterType" : "CloudWatchLogsDestinationConfiguration"
         },
@@ -9251,12 +9264,12 @@
         "c2jName" : "firehose",
         "c2jShape" : "FirehoseDestinationConfiguration",
         "deprecated" : false,
-        "documentation" : "<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>",
+        "documentation" : "<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@param firehose Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withFirehose",
-        "getterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@return Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged*/",
+        "getterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@return An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.*/",
         "getterMethodName" : "getFirehose",
         "getterModel" : {
           "returnType" : "FirehoseDestinationConfiguration",
@@ -9290,7 +9303,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "Firehose",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@param firehose Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged*/",
+        "setterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.*/",
         "setterMethodName" : "setFirehose",
         "setterModel" : {
           "timestampFormat" : null,
@@ -9305,13 +9318,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@param firehose Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "FirehoseDestinationConfiguration",
           "variableName" : "firehose",
           "variableType" : "FirehoseDestinationConfiguration",
-          "documentation" : "<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>",
+          "documentation" : "<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>",
           "simpleType" : "FirehoseDestinationConfiguration",
           "variableSetterType" : "FirehoseDestinationConfiguration"
         },
@@ -9320,12 +9333,12 @@
         "c2jName" : "s3",
         "c2jShape" : "S3DestinationConfiguration",
         "deprecated" : false,
-        "documentation" : "<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>",
+        "documentation" : "<p>An Amazon S3 destination configuration where chat activity will be logged.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@param s3 Name of the Amazon S3 bucket where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@param s3 An Amazon S3 destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withS3",
-        "getterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@return Name of the Amazon S3 bucket where chat activity will be logged.*/",
+        "getterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@return An Amazon S3 destination configuration where chat activity will be logged.*/",
         "getterMethodName" : "getS3",
         "getterModel" : {
           "returnType" : "S3DestinationConfiguration",
@@ -9359,7 +9372,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "S3",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@param s3 Name of the Amazon S3 bucket where chat activity will be logged.*/",
+        "setterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@param s3 An Amazon S3 destination configuration where chat activity will be logged.*/",
         "setterMethodName" : "setS3",
         "setterModel" : {
           "timestampFormat" : null,
@@ -9374,13 +9387,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@param s3 Name of the Amazon S3 bucket where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@param s3 An Amazon S3 destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "S3DestinationConfiguration",
           "variableName" : "s3",
           "variableType" : "S3DestinationConfiguration",
-          "documentation" : "<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>",
+          "documentation" : "<p>An Amazon S3 destination configuration where chat activity will be logged.</p>",
           "simpleType" : "S3DestinationConfiguration",
           "variableSetterType" : "S3DestinationConfiguration"
         },
@@ -9391,12 +9404,12 @@
           "c2jName" : "cloudWatchLogs",
           "c2jShape" : "CloudWatchLogsDestinationConfiguration",
           "deprecated" : false,
-          "documentation" : "<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>",
+          "documentation" : "<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@param cloudWatchLogs Name of the Amazon CloudWatch Logs destination where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@param cloudWatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withCloudWatchLogs",
-          "getterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@return Name of the Amazon CloudWatch Logs destination where chat activity will be logged.*/",
+          "getterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@return An Amazon CloudWatch Logs destination configuration where chat activity will be logged.*/",
           "getterMethodName" : "getCloudWatchLogs",
           "getterModel" : {
             "returnType" : "CloudWatchLogsDestinationConfiguration",
@@ -9430,7 +9443,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "CloudWatchLogs",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@param cloudWatchLogs Name of the Amazon CloudWatch Logs destination where chat activity will be logged.*/",
+          "setterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@param cloudWatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.*/",
           "setterMethodName" : "setCloudWatchLogs",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9445,13 +9458,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>\n@param cloudWatchLogs Name of the Amazon CloudWatch Logs destination where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>\n@param cloudWatchLogs An Amazon CloudWatch Logs destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "CloudWatchLogsDestinationConfiguration",
             "variableName" : "cloudWatchLogs",
             "variableType" : "CloudWatchLogsDestinationConfiguration",
-            "documentation" : "<p>Name of the Amazon CloudWatch Logs destination where chat activity will be logged.</p>",
+            "documentation" : "<p>An Amazon CloudWatch Logs destination configuration where chat activity will be logged.</p>",
             "simpleType" : "CloudWatchLogsDestinationConfiguration",
             "variableSetterType" : "CloudWatchLogsDestinationConfiguration"
           },
@@ -9461,12 +9474,12 @@
           "c2jName" : "firehose",
           "c2jShape" : "FirehoseDestinationConfiguration",
           "deprecated" : false,
-          "documentation" : "<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>",
+          "documentation" : "<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@param firehose Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withFirehose",
-          "getterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@return Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged*/",
+          "getterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@return An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.*/",
           "getterMethodName" : "getFirehose",
           "getterModel" : {
             "returnType" : "FirehoseDestinationConfiguration",
@@ -9500,7 +9513,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "Firehose",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@param firehose Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged*/",
+          "setterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.*/",
           "setterMethodName" : "setFirehose",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9515,13 +9528,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>\n@param firehose Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>\n@param firehose An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "FirehoseDestinationConfiguration",
             "variableName" : "firehose",
             "variableType" : "FirehoseDestinationConfiguration",
-            "documentation" : "<p>Name of the Amazon Kinesis Data Firehose destination where chat activity will be logged</p>",
+            "documentation" : "<p>An Amazon Kinesis Data Firehose destination configuration where chat activity will be logged.</p>",
             "simpleType" : "FirehoseDestinationConfiguration",
             "variableSetterType" : "FirehoseDestinationConfiguration"
           },
@@ -9531,12 +9544,12 @@
           "c2jName" : "s3",
           "c2jShape" : "S3DestinationConfiguration",
           "deprecated" : false,
-          "documentation" : "<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>",
+          "documentation" : "<p>An Amazon S3 destination configuration where chat activity will be logged.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@param s3 Name of the Amazon S3 bucket where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@param s3 An Amazon S3 destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withS3",
-          "getterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@return Name of the Amazon S3 bucket where chat activity will be logged.*/",
+          "getterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@return An Amazon S3 destination configuration where chat activity will be logged.*/",
           "getterMethodName" : "getS3",
           "getterModel" : {
             "returnType" : "S3DestinationConfiguration",
@@ -9570,7 +9583,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "S3",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@param s3 Name of the Amazon S3 bucket where chat activity will be logged.*/",
+          "setterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@param s3 An Amazon S3 destination configuration where chat activity will be logged.*/",
           "setterMethodName" : "setS3",
           "setterModel" : {
             "timestampFormat" : null,
@@ -9585,13 +9598,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>\n@param s3 Name of the Amazon S3 bucket where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>An Amazon S3 destination configuration where chat activity will be logged.</p>\n@param s3 An Amazon S3 destination configuration where chat activity will be logged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "S3DestinationConfiguration",
             "variableName" : "s3",
             "variableType" : "S3DestinationConfiguration",
-            "documentation" : "<p>Name of the Amazon S3 bucket where chat activity will be logged.</p>",
+            "documentation" : "<p>An Amazon S3 destination configuration where chat activity will be logged.</p>",
             "simpleType" : "S3DestinationConfiguration",
             "variableSetterType" : "S3DestinationConfiguration"
           },

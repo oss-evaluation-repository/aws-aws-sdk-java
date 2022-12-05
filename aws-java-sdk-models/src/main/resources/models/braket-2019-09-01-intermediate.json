@@ -49,6 +49,7 @@
     "asyncClient" : "AWSBraketAsyncClient",
     "asyncClientBuilderClassName" : "AWSBraketAsyncClientBuilder",
     "asyncInterface" : "AWSBraketAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonMacieAsyncClient",
     "asyncClientBuilderClassName" : "AmazonMacieAsyncClientBuilder",
     "asyncInterface" : "AmazonMacieAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

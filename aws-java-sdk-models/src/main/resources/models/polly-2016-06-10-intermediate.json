@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonPollyAsyncClient",
     "asyncClientBuilderClassName" : "AmazonPollyAsyncClientBuilder",
     "asyncInterface" : "AmazonPollyAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

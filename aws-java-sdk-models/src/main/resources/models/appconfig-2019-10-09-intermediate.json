@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonAppConfigAsyncClient",
     "asyncClientBuilderClassName" : "AmazonAppConfigAsyncClientBuilder",
     "asyncInterface" : "AmazonAppConfigAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

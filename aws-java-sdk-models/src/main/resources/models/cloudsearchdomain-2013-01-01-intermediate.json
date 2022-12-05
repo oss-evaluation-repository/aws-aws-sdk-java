@@ -79,6 +79,7 @@
     "asyncClient" : "AmazonCloudSearchDomainAsyncClient",
     "asyncClientBuilderClassName" : "AmazonCloudSearchDomainAsyncClientBuilder",
     "asyncInterface" : "AmazonCloudSearchDomainAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

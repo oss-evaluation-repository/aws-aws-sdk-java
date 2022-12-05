@@ -49,6 +49,7 @@
     "asyncClient" : "AWSCloudWatchRUMAsyncClient",
     "asyncClientBuilderClassName" : "AWSCloudWatchRUMAsyncClientBuilder",
     "asyncInterface" : "AWSCloudWatchRUMAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

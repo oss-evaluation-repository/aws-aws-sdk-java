@@ -39,6 +39,8 @@ public interface HttpResponseHandler<T> {
      */
     String X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER = "x-amz-request-id";
 
+    String X_AMZN_QUERY_ERROR = "x-amzn-query-error";
+
     /**
      * Accepts an HTTP response object, and returns an object of type T.
      * Individual implementations may choose to handle the response however they

@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonMemoryDBAsyncClient",
     "asyncClientBuilderClassName" : "AmazonMemoryDBAsyncClientBuilder",
     "asyncInterface" : "AmazonMemoryDBAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

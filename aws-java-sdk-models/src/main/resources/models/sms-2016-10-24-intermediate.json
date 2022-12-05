@@ -58,6 +58,7 @@
     "asyncClient" : "AWSServerMigrationAsyncClient",
     "asyncClientBuilderClassName" : "AWSServerMigrationAsyncClientBuilder",
     "asyncInterface" : "AWSServerMigrationAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

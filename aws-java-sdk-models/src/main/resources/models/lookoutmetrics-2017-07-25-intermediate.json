@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonLookoutMetricsAsyncClient",
     "asyncClientBuilderClassName" : "AmazonLookoutMetricsAsyncClientBuilder",
     "asyncInterface" : "AmazonLookoutMetricsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

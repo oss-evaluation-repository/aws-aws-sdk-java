@@ -183,6 +183,7 @@
     "asyncClient" : "AmazonSNSAsyncClient",
     "asyncClientBuilderClassName" : "AmazonSNSAsyncClientBuilder",
     "asyncInterface" : "AmazonSNSAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

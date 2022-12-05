@@ -49,6 +49,7 @@
     "asyncClient" : "AWSRedshiftDataAPIAsyncClient",
     "asyncClientBuilderClassName" : "AWSRedshiftDataAPIAsyncClientBuilder",
     "asyncInterface" : "AWSRedshiftDataAPIAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

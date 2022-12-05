@@ -49,6 +49,7 @@
     "asyncClient" : "AWSPanoramaAsyncClient",
     "asyncClientBuilderClassName" : "AWSPanoramaAsyncClientBuilder",
     "asyncInterface" : "AWSPanoramaAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

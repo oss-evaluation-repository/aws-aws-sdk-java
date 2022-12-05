@@ -57,6 +57,7 @@
     "asyncClient" : "DataPipelineAsyncClient",
     "asyncClientBuilderClassName" : "DataPipelineAsyncClientBuilder",
     "asyncInterface" : "DataPipelineAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

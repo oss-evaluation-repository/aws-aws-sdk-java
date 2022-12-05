@@ -60,6 +60,7 @@
     "asyncClient" : "AmazonImportExportAsyncClient",
     "asyncClientBuilderClassName" : "AmazonImportExportAsyncClientBuilder",
     "asyncInterface" : "AmazonImportExportAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIAMRolesAnywhereAsyncClient",
     "asyncClientBuilderClassName" : "AWSIAMRolesAnywhereAsyncClientBuilder",
     "asyncInterface" : "AWSIAMRolesAnywhereAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

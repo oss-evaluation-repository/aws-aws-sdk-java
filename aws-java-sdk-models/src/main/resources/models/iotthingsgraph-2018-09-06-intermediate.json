@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIoTThingsGraphAsyncClient",
     "asyncClientBuilderClassName" : "AWSIoTThingsGraphAsyncClientBuilder",
     "asyncInterface" : "AWSIoTThingsGraphAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

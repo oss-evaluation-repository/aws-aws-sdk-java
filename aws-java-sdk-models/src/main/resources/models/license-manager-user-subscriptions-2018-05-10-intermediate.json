@@ -49,6 +49,7 @@
     "asyncClient" : "AWSLicenseManagerUserSubscriptionsAsyncClient",
     "asyncClientBuilderClassName" : "AWSLicenseManagerUserSubscriptionsAsyncClientBuilder",
     "asyncInterface" : "AWSLicenseManagerUserSubscriptionsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

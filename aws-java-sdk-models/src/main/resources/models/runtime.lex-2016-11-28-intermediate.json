@@ -53,6 +53,7 @@
     "asyncClient" : "AmazonLexRuntimeAsyncClient",
     "asyncClientBuilderClassName" : "AmazonLexRuntimeAsyncClientBuilder",
     "asyncInterface" : "AmazonLexRuntimeAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

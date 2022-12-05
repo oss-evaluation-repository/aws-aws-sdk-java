@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonMQAsyncClient",
     "asyncClientBuilderClassName" : "AmazonMQAsyncClientBuilder",
     "asyncInterface" : "AmazonMQAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

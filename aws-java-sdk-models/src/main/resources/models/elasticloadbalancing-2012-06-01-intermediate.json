@@ -137,6 +137,7 @@
     "asyncClient" : "AmazonElasticLoadBalancingAsyncClient",
     "asyncClientBuilderClassName" : "AmazonElasticLoadBalancingAsyncClientBuilder",
     "asyncInterface" : "AmazonElasticLoadBalancingAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -51,6 +51,7 @@
     "asyncClient" : "AWSCostAndUsageReportAsyncClient",
     "asyncClientBuilderClassName" : "AWSCostAndUsageReportAsyncClientBuilder",
     "asyncInterface" : "AWSCostAndUsageReportAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

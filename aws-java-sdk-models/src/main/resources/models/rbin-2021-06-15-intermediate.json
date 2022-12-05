@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonRecycleBinAsyncClient",
     "asyncClientBuilderClassName" : "AmazonRecycleBinAsyncClientBuilder",
     "asyncInterface" : "AmazonRecycleBinAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonHealthLakeAsyncClient",
     "asyncClientBuilderClassName" : "AmazonHealthLakeAsyncClientBuilder",
     "asyncInterface" : "AmazonHealthLakeAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

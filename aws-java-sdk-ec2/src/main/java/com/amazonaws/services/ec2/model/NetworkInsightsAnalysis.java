@@ -44,7 +44,11 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
      * </p>
      */
     private String networkInsightsPathId;
-
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> additionalAccounts;
     /**
      * <p>
@@ -108,7 +112,11 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AlternatePathHint> alternatePathHints;
-
+    /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> suggestedAccounts;
     /**
      * <p>
@@ -238,7 +246,11 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
+     * @return The member accounts that contain resources that the path can traverse.
      */
 
     public java.util.List<String> getAdditionalAccounts() {
@@ -249,7 +261,12 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
      * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
      */
 
     public void setAdditionalAccounts(java.util.Collection<String> additionalAccounts) {
@@ -263,12 +280,16 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAdditionalAccounts(java.util.Collection)} or {@link #withAdditionalAccounts(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,7 +304,12 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
      * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -905,7 +931,11 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * 
+     * @return Potential intermediate accounts.
      */
 
     public java.util.List<String> getSuggestedAccounts() {
@@ -916,7 +946,12 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * 
      * @param suggestedAccounts
+     *        Potential intermediate accounts.
      */
 
     public void setSuggestedAccounts(java.util.Collection<String> suggestedAccounts) {
@@ -930,12 +965,16 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSuggestedAccounts(java.util.Collection)} or {@link #withSuggestedAccounts(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param suggestedAccounts
+     *        Potential intermediate accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -950,7 +989,12 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * 
      * @param suggestedAccounts
+     *        Potential intermediate accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

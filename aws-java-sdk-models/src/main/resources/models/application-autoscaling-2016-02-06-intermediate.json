@@ -63,6 +63,7 @@
     "asyncClient" : "AWSApplicationAutoScalingAsyncClient",
     "asyncClientBuilderClassName" : "AWSApplicationAutoScalingAsyncClientBuilder",
     "asyncInterface" : "AWSApplicationAutoScalingAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

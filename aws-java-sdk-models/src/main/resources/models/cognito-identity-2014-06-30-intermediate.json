@@ -53,6 +53,7 @@
     "asyncClient" : "AmazonCognitoIdentityAsyncClient",
     "asyncClientBuilderClassName" : "AmazonCognitoIdentityAsyncClientBuilder",
     "asyncInterface" : "AmazonCognitoIdentityAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIoTJobsDataPlaneAsyncClient",
     "asyncClientBuilderClassName" : "AWSIoTJobsDataPlaneAsyncClientBuilder",
     "asyncInterface" : "AWSIoTJobsDataPlaneAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

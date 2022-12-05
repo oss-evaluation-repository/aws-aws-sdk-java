@@ -24,7 +24,9 @@ public enum CLMLanguageCode {
     HiIN("hi-IN"),
     EsUS("es-US"),
     EnGB("en-GB"),
-    EnAU("en-AU");
+    EnAU("en-AU"),
+    DeDE("de-DE"),
+    JaJP("ja-JP");
 
     private String value;
 

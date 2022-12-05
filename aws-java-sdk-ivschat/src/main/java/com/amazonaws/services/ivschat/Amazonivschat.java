@@ -405,6 +405,7 @@ public interface Amazonivschat {
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.DeleteMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage" target="_top">AWS API
@@ -441,6 +442,7 @@ public interface Amazonivschat {
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.DisconnectUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser" target="_top">AWS API
@@ -540,6 +542,7 @@ public interface Amazonivschat {
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.SendEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent" target="_top">AWS API

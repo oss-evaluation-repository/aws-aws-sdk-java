@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonEMRContainersAsyncClient",
     "asyncClientBuilderClassName" : "AmazonEMRContainersAsyncClientBuilder",
     "asyncInterface" : "AmazonEMRContainersAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

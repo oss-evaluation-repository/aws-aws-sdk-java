@@ -49,6 +49,7 @@
     "asyncClient" : "AWSGreengrassV2AsyncClient",
     "asyncClientBuilderClassName" : "AWSGreengrassV2AsyncClientBuilder",
     "asyncInterface" : "AWSGreengrassV2Async",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

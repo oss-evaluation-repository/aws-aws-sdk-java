@@ -52,6 +52,7 @@
     "asyncClient" : "AWSMarketplaceCommerceAnalyticsAsyncClient",
     "asyncClientBuilderClassName" : "AWSMarketplaceCommerceAnalyticsAsyncClientBuilder",
     "asyncInterface" : "AWSMarketplaceCommerceAnalyticsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

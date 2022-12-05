@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonSageMakerFeatureStoreRuntimeAsyncClient",
     "asyncClientBuilderClassName" : "AmazonSageMakerFeatureStoreRuntimeAsyncClientBuilder",
     "asyncInterface" : "AmazonSageMakerFeatureStoreRuntimeAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

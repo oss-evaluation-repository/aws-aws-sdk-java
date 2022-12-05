@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonConnectContactLensAsyncClient",
     "asyncClientBuilderClassName" : "AmazonConnectContactLensAsyncClientBuilder",
     "asyncInterface" : "AmazonConnectContactLensAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

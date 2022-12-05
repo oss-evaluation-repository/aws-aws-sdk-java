@@ -49,6 +49,7 @@
     "asyncClient" : "AWSAppRegistryAsyncClient",
     "asyncClientBuilderClassName" : "AWSAppRegistryAsyncClientBuilder",
     "asyncInterface" : "AWSAppRegistryAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

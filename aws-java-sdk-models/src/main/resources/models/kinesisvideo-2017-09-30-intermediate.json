@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonKinesisVideoAsyncClient",
     "asyncClientBuilderClassName" : "AmazonKinesisVideoAsyncClientBuilder",
     "asyncInterface" : "AmazonKinesisVideoAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

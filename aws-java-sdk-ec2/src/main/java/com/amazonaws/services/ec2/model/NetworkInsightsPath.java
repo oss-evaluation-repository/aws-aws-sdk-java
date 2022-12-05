@@ -56,9 +56,17 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
      * </p>
      */
     private String destination;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source.
+     * </p>
+     */
     private String sourceArn;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     */
     private String destinationArn;
     /**
      * <p>
@@ -292,7 +300,12 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source.
+     * </p>
+     * 
      * @param sourceArn
+     *        The Amazon Resource Name (ARN) of the source.
      */
 
     public void setSourceArn(String sourceArn) {
@@ -300,7 +313,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the source.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the source.
      */
 
     public String getSourceArn() {
@@ -308,7 +325,12 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source.
+     * </p>
+     * 
      * @param sourceArn
+     *        The Amazon Resource Name (ARN) of the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,7 +340,12 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     * 
      * @param destinationArn
+     *        The Amazon Resource Name (ARN) of the destination.
      */
 
     public void setDestinationArn(String destinationArn) {
@@ -326,7 +353,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the destination.
      */
 
     public String getDestinationArn() {
@@ -334,7 +365,12 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the destination.
+     * </p>
+     * 
      * @param destinationArn
+     *        The Amazon Resource Name (ARN) of the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

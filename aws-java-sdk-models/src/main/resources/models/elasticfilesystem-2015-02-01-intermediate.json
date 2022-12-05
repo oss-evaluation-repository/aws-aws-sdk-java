@@ -58,6 +58,7 @@
     "asyncClient" : "AmazonElasticFileSystemAsyncClient",
     "asyncClientBuilderClassName" : "AmazonElasticFileSystemAsyncClientBuilder",
     "asyncInterface" : "AmazonElasticFileSystemAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonQLDBSessionAsyncClient",
     "asyncClientBuilderClassName" : "AmazonQLDBSessionAsyncClientBuilder",
     "asyncInterface" : "AmazonQLDBSessionAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

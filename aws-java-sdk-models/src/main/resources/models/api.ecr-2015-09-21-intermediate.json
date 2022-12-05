@@ -55,6 +55,7 @@
     "asyncClient" : "AmazonECRAsyncClient",
     "asyncClientBuilderClassName" : "AmazonECRAsyncClientBuilder",
     "asyncInterface" : "AmazonECRAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

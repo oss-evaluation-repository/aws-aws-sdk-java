@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIotDataAsyncClient",
     "asyncClientBuilderClassName" : "AWSIotDataAsyncClientBuilder",
     "asyncInterface" : "AWSIotDataAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

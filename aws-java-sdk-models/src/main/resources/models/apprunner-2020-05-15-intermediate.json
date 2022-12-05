@@ -49,6 +49,7 @@
     "asyncClient" : "AWSAppRunnerAsyncClient",
     "asyncClientBuilderClassName" : "AWSAppRunnerAsyncClientBuilder",
     "asyncInterface" : "AWSAppRunnerAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

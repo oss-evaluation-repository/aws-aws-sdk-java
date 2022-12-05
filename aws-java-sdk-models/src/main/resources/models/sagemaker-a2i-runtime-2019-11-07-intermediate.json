@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonAugmentedAIRuntimeAsyncClient",
     "asyncClientBuilderClassName" : "AmazonAugmentedAIRuntimeAsyncClientBuilder",
     "asyncInterface" : "AmazonAugmentedAIRuntimeAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",

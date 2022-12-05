@@ -105,6 +105,7 @@
     "asyncClient" : "AmazonDynamoDBStreamsAsyncClient",
     "asyncClientBuilderClassName" : "AmazonDynamoDBStreamsAsyncClientBuilder",
     "asyncInterface" : "AmazonDynamoDBStreamsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

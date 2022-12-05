@@ -51,6 +51,7 @@
     "asyncClient" : "AWSShieldAsyncClient",
     "asyncClientBuilderClassName" : "AWSShieldAsyncClientBuilder",
     "asyncInterface" : "AWSShieldAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

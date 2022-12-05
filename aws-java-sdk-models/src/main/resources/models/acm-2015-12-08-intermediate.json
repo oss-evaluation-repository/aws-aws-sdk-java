@@ -53,6 +53,7 @@
     "asyncClient" : "AWSCertificateManagerAsyncClient",
     "asyncClientBuilderClassName" : "AWSCertificateManagerAsyncClientBuilder",
     "asyncInterface" : "AWSCertificateManagerAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,

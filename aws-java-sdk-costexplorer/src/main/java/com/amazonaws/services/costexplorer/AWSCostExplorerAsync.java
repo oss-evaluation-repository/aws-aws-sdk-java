@@ -1035,7 +1035,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * Retrieves the Savings Plans recommendations for your account. First use
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then
+     * use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.
      * </p>
      * 
      * @param getSavingsPlansPurchaseRecommendationRequest
@@ -1050,7 +1052,9 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * Retrieves the Savings Plans recommendations for your account. First use
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then
+     * use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.
      * </p>
      * 
      * @param getSavingsPlansPurchaseRecommendationRequest
@@ -1312,6 +1316,43 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves a list of your historical recommendation generations within the past 30 days.
+     * </p>
+     * 
+     * @param listSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return A Java Future containing the result of the ListSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsync.ListSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest listSavingsPlansPurchaseRecommendationGenerationRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of your historical recommendation generations within the past 30 days.
+     * </p>
+     * 
+     * @param listSavingsPlansPurchaseRecommendationGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.ListSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest listSavingsPlansPurchaseRecommendationGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSavingsPlansPurchaseRecommendationGenerationRequest, ListSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN).
      * </p>
      * 
@@ -1371,6 +1412,59 @@ public interface AWSCostExplorerAsync extends AWSCostExplorer {
      */
     java.util.concurrent.Future<ProvideAnomalyFeedbackResult> provideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest,
             com.amazonaws.handlers.AsyncHandler<ProvideAnomalyFeedbackRequest, ProvideAnomalyFeedbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans
+     * recommendations that takes your latest usage data and current Savings Plans inventory into account. You can
+     * refresh Savings Plans recommendations up to three times daily for a consolidated billing family.
+     * </p>
+     * <note>
+     * <p>
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters
+     * are needed to support this operation.
+     * </p>
+     * </note>
+     * 
+     * @param startSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return A Java Future containing the result of the StartSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsync.StartSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest startSavingsPlansPurchaseRecommendationGenerationRequest);
+
+    /**
+     * <p>
+     * Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans
+     * recommendations that takes your latest usage data and current Savings Plans inventory into account. You can
+     * refresh Savings Plans recommendations up to three times daily for a consolidated billing family.
+     * </p>
+     * <note>
+     * <p>
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters
+     * are needed to support this operation.
+     * </p>
+     * </note>
+     * 
+     * @param startSavingsPlansPurchaseRecommendationGenerationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSavingsPlansPurchaseRecommendationGeneration operation
+     *         returned by the service.
+     * @sample AWSCostExplorerAsyncHandler.StartSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest startSavingsPlansPurchaseRecommendationGenerationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSavingsPlansPurchaseRecommendationGenerationRequest, StartSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler);
 
     /**
      * <p>

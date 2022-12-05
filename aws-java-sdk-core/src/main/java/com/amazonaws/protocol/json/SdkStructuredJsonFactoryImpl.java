@@ -65,13 +65,31 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
 
     @Override
     public JsonErrorResponseHandler createErrorResponseHandler(
-            final List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName) {
+            JsonErrorResponseMetadata jsonErrorResponseMetadata,
+            final List<JsonErrorUnmarshaller> errorUnmarshallers
+    ) {
+        boolean hasAwsQueryCompatible =
+                jsonErrorResponseMetadata != null && jsonErrorResponseMetadata.getAwsQueryCompatible();
+        String customErrorCodeFieldName =
+                jsonErrorResponseMetadata != null ? jsonErrorResponseMetadata.getCustomErrorCodeFieldName() : null;
         return new JsonErrorResponseHandler(errorUnmarshallers,
                                             unmarshallers,
                                             customTypeUnmarshallers,
                                             getErrorCodeParser(customErrorCodeFieldName),
+                                            hasAwsQueryCompatible,
                                             JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                                             jsonFactory);
+    }
+
+    @Override
+    public JsonErrorResponseHandler createErrorResponseHandler(
+            final List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName) {
+        return new JsonErrorResponseHandler(errorUnmarshallers,
+                unmarshallers,
+                customTypeUnmarshallers,
+                getErrorCodeParser(customErrorCodeFieldName),
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
+                jsonFactory);
     }
 
     protected ErrorCodeParser getErrorCodeParser(String customErrorCodeFieldName) {

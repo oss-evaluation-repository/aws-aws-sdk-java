@@ -49,6 +49,7 @@
     "asyncClient" : "AWSAppConfigDataAsyncClient",
     "asyncClientBuilderClassName" : "AWSAppConfigDataAsyncClientBuilder",
     "asyncInterface" : "AWSAppConfigDataAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",
