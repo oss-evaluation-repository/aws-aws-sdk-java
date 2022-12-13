@@ -89,6 +89,21 @@ public class OptionGroupStaxUnmarshaller implements Unmarshaller<OptionGroup, St
                     optionGroup.setOptionGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SourceOptionGroup", targetDepth)) {
+                    optionGroup.setSourceOptionGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SourceAccountId", targetDepth)) {
+                    optionGroup.setSourceAccountId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CopyTimestamp", targetDepth)) {
+                    optionGroup.setCopyTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroup;

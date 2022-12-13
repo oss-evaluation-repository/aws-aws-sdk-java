@@ -48,6 +48,11 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
     }
 
     @Override
+    public DescribeEdgeConfigurationResult describeEdgeConfiguration(DescribeEdgeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeImageGenerationConfigurationResult describeImageGenerationConfiguration(DescribeImageGenerationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +99,11 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
 
     @Override
     public ListTagsForStreamResult listTagsForStream(ListTagsForStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartEdgeConfigurationUpdateResult startEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

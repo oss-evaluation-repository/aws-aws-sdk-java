@@ -918,6 +918,11 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * </li>
      * <li>
      * <p>
+     * <code>kms:GenerateDataKey</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>greengrass:CreateComponentVersion</code>
      * </p>
      * </li>
@@ -977,6 +982,11 @@ public interface AmazonLookoutforVisionAsync extends AmazonLookoutforVision {
      * <li>
      * <p>
      * <code>s3:GetBucketLocation</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kms:GenerateDataKey</code>
      * </p>
      * </li>
      * <li>

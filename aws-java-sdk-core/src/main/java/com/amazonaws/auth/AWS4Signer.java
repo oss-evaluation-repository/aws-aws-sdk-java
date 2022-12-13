@@ -502,7 +502,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 continue;
             }
             String key = StringUtils.lowerCase(header);
-            String value = requestHeaders.get(header);
+            String value = StringUtils.trim(requestHeaders.get(header));
 
             StringUtils.appendCompactedString(buffer, key);
             buffer.append(":");

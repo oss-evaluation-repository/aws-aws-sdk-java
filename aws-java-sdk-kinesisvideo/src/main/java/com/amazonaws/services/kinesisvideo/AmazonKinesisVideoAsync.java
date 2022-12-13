@@ -218,6 +218,41 @@ public interface AmazonKinesisVideoAsync extends AmazonKinesisVideo {
 
     /**
      * <p>
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use
+     * this API to get the status of the configuration if the configuration is in sync with the Edge Agent.
+     * </p>
+     * 
+     * @param describeEdgeConfigurationRequest
+     * @return A Java Future containing the result of the DescribeEdgeConfiguration operation returned by the service.
+     * @sample AmazonKinesisVideoAsync.DescribeEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(
+            DescribeEdgeConfigurationRequest describeEdgeConfigurationRequest);
+
+    /**
+     * <p>
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use
+     * this API to get the status of the configuration if the configuration is in sync with the Edge Agent.
+     * </p>
+     * 
+     * @param describeEdgeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEdgeConfiguration operation returned by the service.
+     * @sample AmazonKinesisVideoAsyncHandler.DescribeEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(
+            DescribeEdgeConfigurationRequest describeEdgeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEdgeConfigurationRequest, DescribeEdgeConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.
      * </p>
      * 
@@ -599,6 +634,69 @@ public interface AmazonKinesisVideoAsync extends AmazonKinesisVideo {
      */
     java.util.concurrent.Future<ListTagsForStreamResult> listTagsForStreamAsync(ListTagsForStreamRequest listTagsForStreamRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForStreamRequest, ListTagsForStreamResult> asyncHandler);
+
+    /**
+     * <p>
+     * An asynchronous API that updates a stream’s existing edge configuration. If this API is invoked for the first
+     * time, a new edge configuration will be created for the stream, and the sync status will be set to
+     * <code>SYNCING</code>.
+     * </p>
+     * <p>
+     * The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass component
+     * that runs on an IoT Hub Device setup at your premise. The time to sync can vary and depends on the connectivity
+     * of the Hub Device. The <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and
+     * synced with the Edge Agent. You will have to wait for the sync status to reach a terminal state such as:
+     * <code>IN_SYNC</code> and <code>SYNC_FAILED</code>, before using this API again.
+     * </p>
+     * <p>
+     * If you invoke this API during the syncing process, a <code>ResourceInUseException</code> will be thrown. The
+     * connectivity of the stream's edge configuration and the Edge Agent will be retried for 15 minutes. After 15
+     * minutes, the status will transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * 
+     * @param startEdgeConfigurationUpdateRequest
+     * @return A Java Future containing the result of the StartEdgeConfigurationUpdate operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsync.StartEdgeConfigurationUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(
+            StartEdgeConfigurationUpdateRequest startEdgeConfigurationUpdateRequest);
+
+    /**
+     * <p>
+     * An asynchronous API that updates a stream’s existing edge configuration. If this API is invoked for the first
+     * time, a new edge configuration will be created for the stream, and the sync status will be set to
+     * <code>SYNCING</code>.
+     * </p>
+     * <p>
+     * The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass component
+     * that runs on an IoT Hub Device setup at your premise. The time to sync can vary and depends on the connectivity
+     * of the Hub Device. The <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and
+     * synced with the Edge Agent. You will have to wait for the sync status to reach a terminal state such as:
+     * <code>IN_SYNC</code> and <code>SYNC_FAILED</code>, before using this API again.
+     * </p>
+     * <p>
+     * If you invoke this API during the syncing process, a <code>ResourceInUseException</code> will be thrown. The
+     * connectivity of the stream's edge configuration and the Edge Agent will be retried for 15 minutes. After 15
+     * minutes, the status will transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * 
+     * @param startEdgeConfigurationUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEdgeConfigurationUpdate operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsyncHandler.StartEdgeConfigurationUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(
+            StartEdgeConfigurationUpdateRequest startEdgeConfigurationUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEdgeConfigurationUpdateRequest, StartEdgeConfigurationUpdateResult> asyncHandler);
 
     /**
      * <p>

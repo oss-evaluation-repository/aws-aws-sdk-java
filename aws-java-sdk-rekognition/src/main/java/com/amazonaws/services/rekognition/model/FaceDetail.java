@@ -31,7 +31,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the
  * <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video
  * operations return only the default attributes. The corresponding Start operations don't have a
- * <code>FaceAttributes</code> input parameter.
+ * <code>FaceAttributes</code> input parameter:
  * </p>
  * <ul>
  * <li>

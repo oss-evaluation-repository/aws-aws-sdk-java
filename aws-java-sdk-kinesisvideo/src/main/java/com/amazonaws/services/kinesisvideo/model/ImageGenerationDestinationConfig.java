@@ -30,7 +30,7 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      */
     private String uri;
@@ -44,11 +44,11 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
      * @param uri
-     *        The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     *        The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      */
 
     public void setUri(String uri) {
@@ -57,10 +57,10 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
-     * @return The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * @return The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      */
 
     public String getUri() {
@@ -69,11 +69,11 @@ public class ImageGenerationDestinationConfig implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
      * @param uri
-     *        The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     *        The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

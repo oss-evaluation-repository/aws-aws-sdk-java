@@ -80,6 +80,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(DescribeEdgeConfigurationRequest request) {
+
+        return describeEdgeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(DescribeEdgeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEdgeConfigurationRequest, DescribeEdgeConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeImageGenerationConfigurationResult> describeImageGenerationConfigurationAsync(
             DescribeImageGenerationConfigurationRequest request) {
 
@@ -209,6 +222,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     @Override
     public java.util.concurrent.Future<ListTagsForStreamResult> listTagsForStreamAsync(ListTagsForStreamRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForStreamRequest, ListTagsForStreamResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(StartEdgeConfigurationUpdateRequest request) {
+
+        return startEdgeConfigurationUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(StartEdgeConfigurationUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartEdgeConfigurationUpdateRequest, StartEdgeConfigurationUpdateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

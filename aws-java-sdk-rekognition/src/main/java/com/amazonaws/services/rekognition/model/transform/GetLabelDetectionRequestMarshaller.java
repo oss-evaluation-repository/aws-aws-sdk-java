@@ -35,6 +35,8 @@ public class GetLabelDetectionRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<String> AGGREGATEBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AggregateBy").build();
 
     private static final GetLabelDetectionRequestMarshaller instance = new GetLabelDetectionRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class GetLabelDetectionRequestMarshaller {
             protocolMarshaller.marshall(getLabelDetectionRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getLabelDetectionRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getLabelDetectionRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(getLabelDetectionRequest.getAggregateBy(), AGGREGATEBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

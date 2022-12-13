@@ -31,6 +31,12 @@ public class LabelDetectionMarshaller {
             .marshallLocationName("Timestamp").build();
     private static final MarshallingInfo<StructuredPojo> LABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Label").build();
+    private static final MarshallingInfo<Long> STARTTIMESTAMPMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartTimestampMillis").build();
+    private static final MarshallingInfo<Long> ENDTIMESTAMPMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTimestampMillis").build();
+    private static final MarshallingInfo<Long> DURATIONMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DurationMillis").build();
 
     private static final LabelDetectionMarshaller instance = new LabelDetectionMarshaller();
 
@@ -50,6 +56,9 @@ public class LabelDetectionMarshaller {
         try {
             protocolMarshaller.marshall(labelDetection.getTimestamp(), TIMESTAMP_BINDING);
             protocolMarshaller.marshall(labelDetection.getLabel(), LABEL_BINDING);
+            protocolMarshaller.marshall(labelDetection.getStartTimestampMillis(), STARTTIMESTAMPMILLIS_BINDING);
+            protocolMarshaller.marshall(labelDetection.getEndTimestampMillis(), ENDTIMESTAMPMILLIS_BINDING);
+            protocolMarshaller.marshall(labelDetection.getDurationMillis(), DURATIONMILLIS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

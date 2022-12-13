@@ -30,18 +30,18 @@ public class LambdaEndpointInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda endpoint.
+     * The Amazon Resource Name (ARN) of the Lambda function or alias.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda endpoint.
+     * The Amazon Resource Name (ARN) of the Lambda function or alias.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the Lambda endpoint.
+     *        The Amazon Resource Name (ARN) of the Lambda function or alias.
      */
 
     public void setArn(String arn) {
@@ -50,10 +50,10 @@ public class LambdaEndpointInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda endpoint.
+     * The Amazon Resource Name (ARN) of the Lambda function or alias.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Lambda endpoint.
+     * @return The Amazon Resource Name (ARN) of the Lambda function or alias.
      */
 
     public String getArn() {
@@ -62,11 +62,11 @@ public class LambdaEndpointInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Lambda endpoint.
+     * The Amazon Resource Name (ARN) of the Lambda function or alias.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the Lambda endpoint.
+     *        The Amazon Resource Name (ARN) of the Lambda function or alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

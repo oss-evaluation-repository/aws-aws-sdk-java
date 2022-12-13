@@ -38,6 +38,25 @@ public class LabelDetection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Label label;
+    /**
+     * <p>
+     * The time in milliseconds defining the start of the timeline segment containing a continuously detected label.
+     * </p>
+     */
+    private Long startTimestampMillis;
+    /**
+     * <p>
+     * The time in milliseconds defining the end of the timeline segment containing a continuously detected label.
+     * </p>
+     */
+    private Long endTimestampMillis;
+    /**
+     * <p>
+     * The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     * EndTimestampMillis.
+     * </p>
+     */
+    private Long durationMillis;
 
     /**
      * <p>
@@ -129,6 +148,138 @@ public class LabelDetection implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The time in milliseconds defining the start of the timeline segment containing a continuously detected label.
+     * </p>
+     * 
+     * @param startTimestampMillis
+     *        The time in milliseconds defining the start of the timeline segment containing a continuously detected
+     *        label.
+     */
+
+    public void setStartTimestampMillis(Long startTimestampMillis) {
+        this.startTimestampMillis = startTimestampMillis;
+    }
+
+    /**
+     * <p>
+     * The time in milliseconds defining the start of the timeline segment containing a continuously detected label.
+     * </p>
+     * 
+     * @return The time in milliseconds defining the start of the timeline segment containing a continuously detected
+     *         label.
+     */
+
+    public Long getStartTimestampMillis() {
+        return this.startTimestampMillis;
+    }
+
+    /**
+     * <p>
+     * The time in milliseconds defining the start of the timeline segment containing a continuously detected label.
+     * </p>
+     * 
+     * @param startTimestampMillis
+     *        The time in milliseconds defining the start of the timeline segment containing a continuously detected
+     *        label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelDetection withStartTimestampMillis(Long startTimestampMillis) {
+        setStartTimestampMillis(startTimestampMillis);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time in milliseconds defining the end of the timeline segment containing a continuously detected label.
+     * </p>
+     * 
+     * @param endTimestampMillis
+     *        The time in milliseconds defining the end of the timeline segment containing a continuously detected
+     *        label.
+     */
+
+    public void setEndTimestampMillis(Long endTimestampMillis) {
+        this.endTimestampMillis = endTimestampMillis;
+    }
+
+    /**
+     * <p>
+     * The time in milliseconds defining the end of the timeline segment containing a continuously detected label.
+     * </p>
+     * 
+     * @return The time in milliseconds defining the end of the timeline segment containing a continuously detected
+     *         label.
+     */
+
+    public Long getEndTimestampMillis() {
+        return this.endTimestampMillis;
+    }
+
+    /**
+     * <p>
+     * The time in milliseconds defining the end of the timeline segment containing a continuously detected label.
+     * </p>
+     * 
+     * @param endTimestampMillis
+     *        The time in milliseconds defining the end of the timeline segment containing a continuously detected
+     *        label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelDetection withEndTimestampMillis(Long endTimestampMillis) {
+        setEndTimestampMillis(endTimestampMillis);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     * EndTimestampMillis.
+     * </p>
+     * 
+     * @param durationMillis
+     *        The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     *        EndTimestampMillis.
+     */
+
+    public void setDurationMillis(Long durationMillis) {
+        this.durationMillis = durationMillis;
+    }
+
+    /**
+     * <p>
+     * The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     * EndTimestampMillis.
+     * </p>
+     * 
+     * @return The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     *         EndTimestampMillis.
+     */
+
+    public Long getDurationMillis() {
+        return this.durationMillis;
+    }
+
+    /**
+     * <p>
+     * The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     * EndTimestampMillis.
+     * </p>
+     * 
+     * @param durationMillis
+     *        The time duration of a segment in milliseconds, I.e. time elapsed from StartTimestampMillis to
+     *        EndTimestampMillis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelDetection withDurationMillis(Long durationMillis) {
+        setDurationMillis(durationMillis);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,7 +294,13 @@ public class LabelDetection implements Serializable, Cloneable, StructuredPojo {
         if (getTimestamp() != null)
             sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getLabel() != null)
-            sb.append("Label: ").append(getLabel());
+            sb.append("Label: ").append(getLabel()).append(",");
+        if (getStartTimestampMillis() != null)
+            sb.append("StartTimestampMillis: ").append(getStartTimestampMillis()).append(",");
+        if (getEndTimestampMillis() != null)
+            sb.append("EndTimestampMillis: ").append(getEndTimestampMillis()).append(",");
+        if (getDurationMillis() != null)
+            sb.append("DurationMillis: ").append(getDurationMillis());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +323,18 @@ public class LabelDetection implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
             return false;
+        if (other.getStartTimestampMillis() == null ^ this.getStartTimestampMillis() == null)
+            return false;
+        if (other.getStartTimestampMillis() != null && other.getStartTimestampMillis().equals(this.getStartTimestampMillis()) == false)
+            return false;
+        if (other.getEndTimestampMillis() == null ^ this.getEndTimestampMillis() == null)
+            return false;
+        if (other.getEndTimestampMillis() != null && other.getEndTimestampMillis().equals(this.getEndTimestampMillis()) == false)
+            return false;
+        if (other.getDurationMillis() == null ^ this.getDurationMillis() == null)
+            return false;
+        if (other.getDurationMillis() != null && other.getDurationMillis().equals(this.getDurationMillis()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +345,9 @@ public class LabelDetection implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
+        hashCode = prime * hashCode + ((getStartTimestampMillis() == null) ? 0 : getStartTimestampMillis().hashCode());
+        hashCode = prime * hashCode + ((getEndTimestampMillis() == null) ? 0 : getEndTimestampMillis().hashCode());
+        hashCode = prime * hashCode + ((getDurationMillis() == null) ? 0 : getDurationMillis().hashCode());
         return hashCode;
     }
 

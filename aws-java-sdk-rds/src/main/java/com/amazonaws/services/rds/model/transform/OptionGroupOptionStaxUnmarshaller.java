@@ -145,6 +145,10 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     continue;
                 }
 
+                if (context.testExpression("CopyableCrossAccount", targetDepth)) {
+                    optionGroupOption.setCopyableCrossAccount(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroupOption;

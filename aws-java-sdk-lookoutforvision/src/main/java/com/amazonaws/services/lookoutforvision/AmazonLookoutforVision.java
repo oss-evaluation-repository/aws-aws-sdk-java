@@ -691,6 +691,11 @@ public interface AmazonLookoutforVision {
      * </li>
      * <li>
      * <p>
+     * <code>kms:GenerateDataKey</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>greengrass:CreateComponentVersion</code>
      * </p>
      * </li>

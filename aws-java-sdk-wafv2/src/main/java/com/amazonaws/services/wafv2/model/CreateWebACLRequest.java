@@ -132,6 +132,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
      * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      */
     private java.util.List<String> tokenDomains;
 
@@ -904,6 +908,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
      * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      * 
      * @return Specifies the domains that WAF should accept in a web request token. This enables the use of tokens
      *         across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web
@@ -913,6 +921,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         subdomains.</p>
      *         <p>
      *         Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     *         </p>
+     *         <p>
+     *         Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *         token domains.
      */
 
     public java.util.List<String> getTokenDomains() {
@@ -930,6 +942,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
      * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      * 
      * @param tokenDomains
      *        Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
@@ -939,6 +955,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        domain plus all domains in the token domain list, including their prefixed subdomains.</p>
      *        <p>
      *        Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     *        </p>
+     *        <p>
+     *        Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *        token domains.
      */
 
     public void setTokenDomains(java.util.Collection<String> tokenDomains) {
@@ -962,6 +982,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
      * </p>
      * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTokenDomains(java.util.Collection)} or {@link #withTokenDomains(java.util.Collection)} if you want to
      * override the existing values.
@@ -975,6 +999,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        domain plus all domains in the token domain list, including their prefixed subdomains.</p>
      *        <p>
      *        Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     *        </p>
+     *        <p>
+     *        Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *        token domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -999,6 +1027,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
      * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      * 
      * @param tokenDomains
      *        Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across
@@ -1008,6 +1040,10 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        domain plus all domains in the token domain list, including their prefixed subdomains.</p>
      *        <p>
      *        Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
+     *        </p>
+     *        <p>
+     *        Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *        token domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

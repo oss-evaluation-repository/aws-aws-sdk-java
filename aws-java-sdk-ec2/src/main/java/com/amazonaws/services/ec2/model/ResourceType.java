@@ -101,7 +101,8 @@ public enum ResourceType {
     VerifiedAccessEndpoint("verified-access-endpoint"),
     VerifiedAccessPolicy("verified-access-policy"),
     VerifiedAccessTrustProvider("verified-access-trust-provider"),
-    VpnConnectionDeviceType("vpn-connection-device-type");
+    VpnConnectionDeviceType("vpn-connection-device-type"),
+    VpcBlockPublicAccessExclusion("vpc-block-public-access-exclusion");
 
     private String value;
 
