@@ -67,6 +67,11 @@ public class UserAuthConfigInfoStaxUnmarshaller implements Unmarshaller<UserAuth
                     userAuthConfigInfo.setIAMAuth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ClientPasswordAuthType", targetDepth)) {
+                    userAuthConfigInfo.setClientPasswordAuthType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userAuthConfigInfo;

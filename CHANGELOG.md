@@ -1,3 +1,12 @@
+# __1.12.364__ __2022-12-13__
+## __AWS CloudTrail__
+  - ### Features
+    - Merging mainline branch for service model into mainline release branch. There are no new APIs.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This deployment adds ClientPasswordAuthType field to the Auth structure of the DBProxy.
+
 # __1.12.363__ __2022-12-12__
 ## __AWS Migration Hub Refactor Spaces__
   - ### Features

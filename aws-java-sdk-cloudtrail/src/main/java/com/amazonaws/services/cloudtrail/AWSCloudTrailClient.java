@@ -214,11 +214,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEventSelectorsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.InvalidEventSelectorsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ChannelARNInvalidException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.ChannelARNInvalidExceptionUnmarshaller.getInstance()))
@@ -736,6 +736,40 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         An event data store with that name already exists.
      * @throws EventDataStoreMaxLimitExceededException
      *         Your account has used the maximum number of event data stores.
+     * @throws InvalidEventSelectorsException
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors, advanced event selectors, or data resources that is not valid. The combination of event
+     *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
+     *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
+     *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of event selectors (1 to 5) for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify up to 500 values for all conditions in all advanced event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
+     *         with a value of <code>read-only</code> is not valid.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws InvalidTagParameterException
@@ -897,6 +931,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         </li>
      * @throws TrailNotProvidedException
      *         This exception is no longer in use.
+     * @throws TagsLimitExceededException
+     *         The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
@@ -1030,6 +1066,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreHasOngoingImportException
      *         This exception is thrown when you try to update or delete an event data store that currently has an
      *         import in progress.
+     * @throws InactiveEventDataStoreException
+     *         The event data store is inactive.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws OperationNotPermittedException
@@ -1139,6 +1177,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
@@ -1681,6 +1724,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -1845,6 +1893,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -1989,11 +2042,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * 
      * @param getTrailRequest
      * @return Result of the GetTrail operation returned by the service.
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
-     *         requirements:</p>
+     *         requirements:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2084,11 +2143,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @param getTrailStatusRequest
      *        The name of a trail about which you want the current status.
      * @return Result of the GetTrailStatus operation returned by the service.
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
-     *         requirements:</p>
+     *         requirements:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -3013,6 +3078,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
@@ -3022,7 +3092,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
      *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
      *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
-     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.
+     *         </p>
      *         <p>
      *         You can:
      *         </p>
@@ -3157,13 +3228,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws InvalidInsightSelectorsException
-     *         The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
-     *         <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the
-     *         specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.
+     *         The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>
+     *         PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified
+     *         insight type in the <code>InsightSelectors</code> statement is not a valid insight type.
      * @throws InsufficientS3BucketPolicyException
      *         This exception is thrown when the policy on the S3 bucket is not sufficient.
      * @throws InsufficientEncryptionPolicyException
@@ -3655,11 +3731,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @param startLoggingRequest
      *        The request to CloudTrail to start logging Amazon Web Services API calls for an account.
      * @return Result of the StartLogging operation returned by the service.
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
-     *         requirements:</p>
+     *         requirements:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -3952,6 +4034,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
@@ -4036,6 +4123,40 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         The specified event data store ARN is not valid or does not map to an event data store in your account.
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
+     * @throws InvalidEventSelectorsException
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors, advanced event selectors, or data resources that is not valid. The combination of event
+     *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
+     *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
+     *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of event selectors (1 to 5) for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify up to 500 values for all conditions in all advanced event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
+     *         with a value of <code>read-only</code> is not valid.
+     *         </p>
+     *         </li>
      * @throws EventDataStoreHasOngoingImportException
      *         This exception is thrown when you try to update or delete an event data store that currently has an
      *         import in progress.
@@ -4231,6 +4352,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         with a value of <code>read-only</code> is not valid.
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws InvalidHomeRegionException

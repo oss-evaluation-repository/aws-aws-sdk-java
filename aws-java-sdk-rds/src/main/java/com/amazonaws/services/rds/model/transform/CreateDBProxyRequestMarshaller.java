@@ -76,6 +76,11 @@ public class CreateDBProxyRequestMarshaller implements Marshaller<Request<Create
                     if (authListValue.getIAMAuth() != null) {
                         request.addParameter("Auth.member." + authListIndex + ".IAMAuth", StringUtils.fromString(authListValue.getIAMAuth()));
                     }
+
+                    if (authListValue.getClientPasswordAuthType() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".ClientPasswordAuthType",
+                                StringUtils.fromString(authListValue.getClientPasswordAuthType()));
+                    }
                 }
                 authListIndex++;
             }
