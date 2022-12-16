@@ -1628,6 +1628,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         The request couldn't be completed because the server temporarily failed.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @sample AWSIoTFleetWise.GetModelManifest
@@ -3610,6 +3612,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         branch, sensor, actuator, or attribute.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InvalidSignalsException
      *         The request couldn't be completed because it contains signals that aren't valid.
      * @throws AccessDeniedException

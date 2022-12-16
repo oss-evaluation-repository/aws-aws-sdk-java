@@ -2741,14 +2741,15 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-     * consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+     * Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A
+     * <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the
-     * lower-cost Infrequent Access (IA) storage class.
+     * lower-cost EFS Infrequent Access (IA) storage class.
      * </p>
      * <p>
      * To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.
@@ -2756,11 +2757,11 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
-     * system's primary storage class (Standard or One Zone Standard.
+     * <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
+     * system's primary storage class (EFS Standard or EFS One Zone Standard).
      * </p>
      * <p>
-     * To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
+     * To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
      * <code>AFTER_1_ACCESS</code>.
      * </p>
      * </li>
@@ -2774,8 +2775,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent
-     * tiering for the file system.
+     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS
+     * Intelligent-Tiering for the file system.
      * </p>
      * <p>
      * In the request, specify the following:
@@ -2783,8 +2784,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * <ul>
      * <li>
      * <p>
-     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and
-     * intelligent tiering.
+     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS
+     * Intelligent-Tiering.
      * </p>
      * </li>
      * <li>

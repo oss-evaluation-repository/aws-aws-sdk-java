@@ -36,8 +36,8 @@ public class OriginShield implements Serializable, Cloneable {
      * A flag that specifies whether Origin Shield is enabled.
      * </p>
      * <p>
-     * When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
-     * it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
+     * When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
+     * it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
      * edge caches.
      * </p>
      */
@@ -65,16 +65,16 @@ public class OriginShield implements Serializable, Cloneable {
      * A flag that specifies whether Origin Shield is enabled.
      * </p>
      * <p>
-     * When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
-     * it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
+     * When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
+     * it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
      * edge caches.
      * </p>
      * 
      * @param enabled
      *        A flag that specifies whether Origin Shield is enabled.</p>
      *        <p>
-     *        When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your
-     *        origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge
+     *        When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your
+     *        origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge
      *        locations or regional edge caches.
      */
 
@@ -87,15 +87,15 @@ public class OriginShield implements Serializable, Cloneable {
      * A flag that specifies whether Origin Shield is enabled.
      * </p>
      * <p>
-     * When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
-     * it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
+     * When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
+     * it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
      * edge caches.
      * </p>
      * 
      * @return A flag that specifies whether Origin Shield is enabled.</p>
      *         <p>
-     *         When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your
-     *         origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge
+     *         When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your
+     *         origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge
      *         locations or regional edge caches.
      */
 
@@ -108,16 +108,16 @@ public class OriginShield implements Serializable, Cloneable {
      * A flag that specifies whether Origin Shield is enabled.
      * </p>
      * <p>
-     * When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
-     * it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
+     * When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
+     * it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
      * edge caches.
      * </p>
      * 
      * @param enabled
      *        A flag that specifies whether Origin Shield is enabled.</p>
      *        <p>
-     *        When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your
-     *        origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge
+     *        When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your
+     *        origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge
      *        locations or regional edge caches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -132,15 +132,15 @@ public class OriginShield implements Serializable, Cloneable {
      * A flag that specifies whether Origin Shield is enabled.
      * </p>
      * <p>
-     * When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
-     * it’s disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
+     * When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your origin. When
+     * it's disabled, CloudFront might send requests directly to your origin from multiple edge locations or regional
      * edge caches.
      * </p>
      * 
      * @return A flag that specifies whether Origin Shield is enabled.</p>
      *         <p>
-     *         When it’s enabled, CloudFront routes all requests through Origin Shield, which can help protect your
-     *         origin. When it’s disabled, CloudFront might send requests directly to your origin from multiple edge
+     *         When it's enabled, CloudFront routes all requests through Origin Shield, which can help protect your
+     *         origin. When it's disabled, CloudFront might send requests directly to your origin from multiple edge
      *         locations or regional edge caches.
      */
 

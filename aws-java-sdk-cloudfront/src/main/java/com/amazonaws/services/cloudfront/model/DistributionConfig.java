@@ -127,7 +127,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private CustomErrorResponses customErrorResponses;
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
@@ -170,7 +170,7 @@ public class DistributionConfig implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      */
     private ViewerCertificate viewerCertificate;
@@ -931,11 +931,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     *        A comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -944,10 +944,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * @return A comment to describe the distribution. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -956,11 +956,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     * A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        An optional comment to describe the distribution. The comment cannot be longer than 128 characters.
+     *        A comment to describe the distribution. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1304,11 +1304,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
@@ -1317,10 +1317,10 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
-     * @return A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * @return A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public ViewerCertificate getViewerCertificate() {
@@ -1329,11 +1329,11 @@ public class DistributionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1762,7 +1762,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify
      *        <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the
      *        DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second
-     *        request, for an IPv4 address for your distribution. </p>
+     *        request, for an IPv4 address for your distribution.</p>
      *        <p>
      *        In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *        However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -1855,7 +1855,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution,
      *         specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests
      *         with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a
-     *         second request, for an IPv4 address for your distribution. </p>
+     *         second request, for an IPv4 address for your distribution.</p>
      *         <p>
      *         In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *         However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -1949,7 +1949,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution, specify
      *        <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests with the
      *        DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a second
-     *        request, for an IPv4 address for your distribution. </p>
+     *        request, for an IPv4 address for your distribution.</p>
      *        <p>
      *        In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *        However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're
@@ -2044,7 +2044,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * @return If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your distribution,
      *         specify <code>true</code>. If you specify <code>false</code>, CloudFront responds to IPv6 DNS requests
      *         with the DNS response code <code>NOERROR</code> and with no IP addresses. This allows viewers to submit a
-     *         second request, for an IPv4 address for your distribution. </p>
+     *         second request, for an IPv4 address for your distribution.</p>
      *         <p>
      *         In general, you should enable IPv6 if you have users on IPv6 networks who want to access your content.
      *         However, if you're using signed URLs or signed cookies to restrict access to your content, and if you're

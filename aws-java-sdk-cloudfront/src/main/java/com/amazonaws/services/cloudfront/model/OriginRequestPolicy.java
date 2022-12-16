@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * An origin request policy.
  * </p>
  * <p>
- * When it’s attached to a cache behavior, the origin request policy determines the values that CloudFront includes in
+ * When it's attached to a cache behavior, the origin request policy determines the values that CloudFront includes in
  * requests that it sends to the origin. Each request that CloudFront sends to the origin includes the following:
  * </p>
  * <ul>
@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send
+ * CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send
  * values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
  * </p>
  * 

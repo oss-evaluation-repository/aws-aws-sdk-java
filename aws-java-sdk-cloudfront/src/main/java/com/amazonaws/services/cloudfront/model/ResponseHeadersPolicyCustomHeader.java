@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for
- * requests that match a cache behavior that’s associated with this response headers policy.
+ * requests that match a cache behavior that's associated with this response headers policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyCustomHeader"

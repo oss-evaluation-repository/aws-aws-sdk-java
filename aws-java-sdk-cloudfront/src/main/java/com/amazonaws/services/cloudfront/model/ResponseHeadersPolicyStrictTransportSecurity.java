@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the
- * header’s value.
+ * header's value.
  * </p>
  * <p>
  * For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a

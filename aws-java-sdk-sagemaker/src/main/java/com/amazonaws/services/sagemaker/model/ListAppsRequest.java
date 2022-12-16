@@ -58,13 +58,14 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String domainIdEquals;
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      */
     private String userProfileNameEquals;
     /**
      * <p>
-     * A parameter to search by space name.
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
      * </p>
      */
     private String spaceNameEquals;
@@ -315,11 +316,13 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      * 
      * @param userProfileNameEquals
-     *        A parameter to search by user profile name.
+     *        A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot
+     *        be set.
      */
 
     public void setUserProfileNameEquals(String userProfileNameEquals) {
@@ -328,10 +331,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      * 
-     * @return A parameter to search by user profile name.
+     * @return A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value
+     *         cannot be set.
      */
 
     public String getUserProfileNameEquals() {
@@ -340,11 +345,13 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      * 
      * @param userProfileNameEquals
-     *        A parameter to search by user profile name.
+     *        A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot
+     *        be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +362,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by space name.
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
      * </p>
      * 
      * @param spaceNameEquals
-     *        A parameter to search by space name.
+     *        A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot
+     *        be set.
      */
 
     public void setSpaceNameEquals(String spaceNameEquals) {
@@ -368,10 +376,11 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by space name.
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
      * </p>
      * 
-     * @return A parameter to search by space name.
+     * @return A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot
+     *         be set.
      */
 
     public String getSpaceNameEquals() {
@@ -380,11 +389,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by space name.
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
      * </p>
      * 
      * @param spaceNameEquals
-     *        A parameter to search by space name.
+     *        A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot
+     *        be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

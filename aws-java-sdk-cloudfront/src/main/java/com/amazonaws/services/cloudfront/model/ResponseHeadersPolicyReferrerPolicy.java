@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s value.
+ * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's value.
  * </p>
  * <p>
  * For more information about the <code>Referrer-Policy</code> HTTP response header, see <a

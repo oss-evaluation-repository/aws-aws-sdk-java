@@ -27,7 +27,7 @@ public class AssociateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the distribution that you’re associating the alias with.
+     * The ID of the distribution that you're associating the alias with.
      * </p>
      */
     private String targetDistributionId;
@@ -40,11 +40,11 @@ public class AssociateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the distribution that you’re associating the alias with.
+     * The ID of the distribution that you're associating the alias with.
      * </p>
      * 
      * @param targetDistributionId
-     *        The ID of the distribution that you’re associating the alias with.
+     *        The ID of the distribution that you're associating the alias with.
      */
 
     public void setTargetDistributionId(String targetDistributionId) {
@@ -53,10 +53,10 @@ public class AssociateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the distribution that you’re associating the alias with.
+     * The ID of the distribution that you're associating the alias with.
      * </p>
      * 
-     * @return The ID of the distribution that you’re associating the alias with.
+     * @return The ID of the distribution that you're associating the alias with.
      */
 
     public String getTargetDistributionId() {
@@ -65,11 +65,11 @@ public class AssociateAliasRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the distribution that you’re associating the alias with.
+     * The ID of the distribution that you're associating the alias with.
      * </p>
      * 
      * @param targetDistributionId
-     *        The ID of the distribution that you’re associating the alias with.
+     *        The ID of the distribution that you're associating the alias with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

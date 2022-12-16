@@ -33,7 +33,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String domainId;
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      */
     private String userProfileName;
@@ -72,7 +72,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private ResourceSpec resourceSpec;
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      */
     private String spaceName;
@@ -119,11 +119,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public void setUserProfileName(String userProfileName) {
@@ -132,10 +132,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
-     * @return The user profile name.
+     * @return The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public String getUserProfileName() {
@@ -144,11 +144,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,11 +419,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      * 
      * @param spaceName
-     *        The name of the space.
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      */
 
     public void setSpaceName(String spaceName) {
@@ -432,10 +432,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      * 
-     * @return The name of the space.
+     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      */
 
     public String getSpaceName() {
@@ -444,11 +444,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      * 
      * @param spaceName
-     *        The name of the space.
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

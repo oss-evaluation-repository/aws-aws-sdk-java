@@ -117,7 +117,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      */
     private ViewerCertificate viewerCertificate;
@@ -810,11 +810,11 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
@@ -823,10 +823,10 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
-     * @return A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * @return A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public ViewerCertificate getViewerCertificate() {
@@ -835,11 +835,11 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

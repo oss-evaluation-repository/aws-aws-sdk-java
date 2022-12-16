@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * <p>
  * A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon Web Services accounts that they
  * are associated with. In the list, the distribution and account IDs are partially hidden, which allows you to identify
- * the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+ * the distributions and accounts that you own, but helps to protect the information of ones that you don't own.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAliasesList" target="_top">AWS

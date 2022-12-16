@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Cannot delete the function because it’s attached to one or more cache behaviors.
+ * Cannot delete the function because it's attached to one or more cache behaviors.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a
- * CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP
+ * CloudFront distribution. When it's attached to a cache behavior, CloudFront adds the headers in the policy to HTTP
  * responses that it sends for requests that match the cache behavior.
  * </p>
  * <p>
@@ -57,7 +57,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * </p>
      * <p>
      * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
+     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that's
      * associated with the policy.
      * </p>
      */
@@ -149,7 +149,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * </p>
      * <p>
      * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
+     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that's
      * associated with the policy.
      * </p>
      * 
@@ -158,7 +158,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      *        <p>
      *        A response headers policy contains information about a set of HTTP response headers and their values.
      *        CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache
-     *        behavior that’s associated with the policy.
+     *        behavior that's associated with the policy.
      */
 
     public void setResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig responseHeadersPolicyConfig) {
@@ -171,7 +171,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * </p>
      * <p>
      * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
+     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that's
      * associated with the policy.
      * </p>
      * 
@@ -179,7 +179,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      *         <p>
      *         A response headers policy contains information about a set of HTTP response headers and their values.
      *         CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache
-     *         behavior that’s associated with the policy.
+     *         behavior that's associated with the policy.
      */
 
     public ResponseHeadersPolicyConfig getResponseHeadersPolicyConfig() {
@@ -192,7 +192,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * </p>
      * <p>
      * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
+     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that's
      * associated with the policy.
      * </p>
      * 
@@ -201,7 +201,7 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      *        <p>
      *        A response headers policy contains information about a set of HTTP response headers and their values.
      *        CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache
-     *        behavior that’s associated with the policy.
+     *        behavior that's associated with the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

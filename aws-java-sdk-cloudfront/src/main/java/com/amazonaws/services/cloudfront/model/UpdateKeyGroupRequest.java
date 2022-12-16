@@ -39,7 +39,7 @@ public class UpdateKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private String id;
     /**
      * <p>
-     * The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.
+     * The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.
      * </p>
      */
     private String ifMatch;
@@ -126,11 +126,11 @@ public class UpdateKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.
+     * The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the key group that you are updating. The version is the key group’s <code>ETag</code>
+     *        The version of the key group that you are updating. The version is the key group's <code>ETag</code>
      *        value.
      */
 
@@ -140,10 +140,10 @@ public class UpdateKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.
+     * The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.
      * </p>
      * 
-     * @return The version of the key group that you are updating. The version is the key group’s <code>ETag</code>
+     * @return The version of the key group that you are updating. The version is the key group's <code>ETag</code>
      *         value.
      */
 
@@ -153,11 +153,11 @@ public class UpdateKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the key group that you are updating. The version is the key group’s <code>ETag</code> value.
+     * The version of the key group that you are updating. The version is the key group's <code>ETag</code> value.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the key group that you are updating. The version is the key group’s <code>ETag</code>
+     *        The version of the key group that you are updating. The version is the key group's <code>ETag</code>
      *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

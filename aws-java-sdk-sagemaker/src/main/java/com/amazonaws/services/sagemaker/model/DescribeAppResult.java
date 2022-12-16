@@ -93,7 +93,7 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
     private ResourceSpec resourceSpec;
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      */
     private String spaceName;
@@ -590,11 +590,11 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      * 
      * @param spaceName
-     *        The name of the space.
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      */
 
     public void setSpaceName(String spaceName) {
@@ -603,10 +603,10 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      * 
-     * @return The name of the space.
+     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      */
 
     public String getSpaceName() {
@@ -615,11 +615,11 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the space.
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * </p>
      * 
      * @param spaceName
-     *        The name of the space.
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

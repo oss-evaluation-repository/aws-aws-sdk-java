@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The continuous deployment policy doesn’t exist.
+ * The continuous deployment policy doesn't exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

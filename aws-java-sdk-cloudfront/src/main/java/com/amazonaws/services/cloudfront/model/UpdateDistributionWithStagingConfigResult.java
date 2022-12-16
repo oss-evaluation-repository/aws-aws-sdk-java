@@ -27,7 +27,7 @@ public class UpdateDistributionWithStagingConfigResult extends com.amazonaws.Ama
     private Distribution distribution;
     /**
      * <p>
-     * The current version of the primary distribution (after it’s updated).
+     * The current version of the primary distribution (after it's updated).
      * </p>
      */
     private String eTag;
@@ -60,11 +60,11 @@ public class UpdateDistributionWithStagingConfigResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The current version of the primary distribution (after it’s updated).
+     * The current version of the primary distribution (after it's updated).
      * </p>
      * 
      * @param eTag
-     *        The current version of the primary distribution (after it’s updated).
+     *        The current version of the primary distribution (after it's updated).
      */
 
     public void setETag(String eTag) {
@@ -73,10 +73,10 @@ public class UpdateDistributionWithStagingConfigResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The current version of the primary distribution (after it’s updated).
+     * The current version of the primary distribution (after it's updated).
      * </p>
      * 
-     * @return The current version of the primary distribution (after it’s updated).
+     * @return The current version of the primary distribution (after it's updated).
      */
 
     public String getETag() {
@@ -85,11 +85,11 @@ public class UpdateDistributionWithStagingConfigResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The current version of the primary distribution (after it’s updated).
+     * The current version of the primary distribution (after it's updated).
      * </p>
      * 
      * @param eTag
-     *        The current version of the primary distribution (after it’s updated).
+     *        The current version of the primary distribution (after it's updated).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

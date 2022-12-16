@@ -144,7 +144,7 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * 
      * @param iCPRecordalStatus
      *        The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED
-     *        for all CNAMEs (aliases) in regions outside of China. </p>
+     *        for all CNAMEs (aliases) in regions outside of China.</p>
      *        <p>
      *        The status values returned are the following:
      *        </p>
@@ -207,7 +207,7 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * </ul>
      * 
      * @return The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED
-     *         for all CNAMEs (aliases) in regions outside of China. </p>
+     *         for all CNAMEs (aliases) in regions outside of China.</p>
      *         <p>
      *         The status values returned are the following:
      *         </p>
@@ -271,7 +271,7 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * 
      * @param iCPRecordalStatus
      *        The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED
-     *        for all CNAMEs (aliases) in regions outside of China. </p>
+     *        for all CNAMEs (aliases) in regions outside of China.</p>
      *        <p>
      *        The status values returned are the following:
      *        </p>
@@ -337,7 +337,7 @@ public class AliasICPRecordal implements Serializable, Cloneable {
      * 
      * @param iCPRecordalStatus
      *        The Internet Content Provider (ICP) recordal status for a CNAME. The ICPRecordalStatus is set to APPROVED
-     *        for all CNAMEs (aliases) in regions outside of China. </p>
+     *        for all CNAMEs (aliases) in regions outside of China.</p>
      *        <p>
      *        The status values returned are the following:
      *        </p>

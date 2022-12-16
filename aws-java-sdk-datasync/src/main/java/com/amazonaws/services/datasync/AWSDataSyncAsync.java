@@ -526,27 +526,6 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      * A task includes a source location, a destination location, and the preferences for how and when you want to
      * transfer your data (such as bandwidth limits, scheduling, among other options).
      * </p>
-     * <p>
-     * When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services
-     * Regions, one of your locations must reside in the Region where you're using DataSync.
-     * </p>
-     * <p>
-     * For more information, see the following topics:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working with DataSync
-     * locations</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure DataSync task
-     * settings</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createTaskRequest
      *        CreateTaskRequest
@@ -565,27 +544,6 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      * A task includes a source location, a destination location, and the preferences for how and when you want to
      * transfer your data (such as bandwidth limits, scheduling, among other options).
      * </p>
-     * <p>
-     * When you create a task that transfers data between Amazon Web Services services in different Amazon Web Services
-     * Regions, one of your locations must reside in the Region where you're using DataSync.
-     * </p>
-     * <p>
-     * For more information, see the following topics:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html">Working with DataSync
-     * locations</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html">Configure DataSync task
-     * settings</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createTaskRequest
      *        CreateTaskRequest
@@ -673,7 +631,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Deletes a task.
+     * Deletes an DataSync task.
      * </p>
      * 
      * @param deleteTaskRequest
@@ -687,7 +645,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Deletes a task.
+     * Deletes an DataSync task.
      * </p>
      * 
      * @param deleteTaskRequest
@@ -1261,7 +1219,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns all the tags associated with a specified resource.
+     * Returns all the tags associated with an Amazon Web Services resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1275,7 +1233,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns all the tags associated with a specified resource.
+     * Returns all the tags associated with an Amazon Web Services resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1360,16 +1318,12 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Starts a specific invocation of a task. A <code>TaskExecution</code> value represents an individual run of a
-     * task. Each task can have at most one <code>TaskExecution</code> at a time.
+     * Starts an DataSync task. For each task, you can only run one task execution at a time.
      * </p>
      * <p>
-     * <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING | TRANSFERRING |
-     * VERIFYING | SUCCESS/FAILURE.
-     * </p>
-     * <p>
-     * For detailed information, see the Task Execution section in the Components and Terminology topic in the
-     * <i>DataSync User Guide</i>.
+     * There are several phases to a task execution. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses"
+     * >Task execution statuses</a>.
      * </p>
      * 
      * @param startTaskExecutionRequest
@@ -1383,16 +1337,12 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Starts a specific invocation of a task. A <code>TaskExecution</code> value represents an individual run of a
-     * task. Each task can have at most one <code>TaskExecution</code> at a time.
+     * Starts an DataSync task. For each task, you can only run one task execution at a time.
      * </p>
      * <p>
-     * <code>TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING | TRANSFERRING |
-     * VERIFYING | SUCCESS/FAILURE.
-     * </p>
-     * <p>
-     * For detailed information, see the Task Execution section in the Components and Terminology topic in the
-     * <i>DataSync User Guide</i>.
+     * There are several phases to a task execution. For more information, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/working-with-task-executions.html#understand-task-execution-statuses"
+     * >Task execution statuses</a>.
      * </p>
      * 
      * @param startTaskExecutionRequest
@@ -1411,7 +1361,11 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Applies a key-value pair to an Amazon Web Services resource.
+     * Applies a <i>tag</i> to an Amazon Web Services resource. Tags are key-value pairs that can help you manage,
+     * filter, and search for your resources.
+     * </p>
+     * <p>
+     * These include DataSync resources, such as locations, tasks, and task executions.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1425,7 +1379,11 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Applies a key-value pair to an Amazon Web Services resource.
+     * Applies a <i>tag</i> to an Amazon Web Services resource. Tags are key-value pairs that can help you manage,
+     * filter, and search for your resources.
+     * </p>
+     * <p>
+     * These include DataSync resources, such as locations, tasks, and task executions.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1444,7 +1402,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Removes a tag from an Amazon Web Services resource.
+     * Removes tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1458,7 +1416,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Removes a tag from an Amazon Web Services resource.
+     * Removes tags from an Amazon Web Services resource.
      * </p>
      * 
      * @param untagResourceRequest

@@ -29,7 +29,7 @@ public class ListContinuousDeploymentPoliciesRequest extends com.amazonaws.Amazo
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of continuous deployment policies.
      * The response includes policies in the list that occur after the marker. To get the next page of the list, set
-     * this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * this field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      */
     private String marker;
@@ -44,13 +44,13 @@ public class ListContinuousDeploymentPoliciesRequest extends com.amazonaws.Amazo
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of continuous deployment policies.
      * The response includes policies in the list that occur after the marker. To get the next page of the list, set
-     * this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * this field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      * 
      * @param marker
      *        Use this field when paginating results to indicate where to begin in your list of continuous deployment
      *        policies. The response includes policies in the list that occur after the marker. To get the next page of
-     *        the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     *        the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.
      */
 
     public void setMarker(String marker) {
@@ -61,12 +61,12 @@ public class ListContinuousDeploymentPoliciesRequest extends com.amazonaws.Amazo
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of continuous deployment policies.
      * The response includes policies in the list that occur after the marker. To get the next page of the list, set
-     * this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * this field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      * 
      * @return Use this field when paginating results to indicate where to begin in your list of continuous deployment
      *         policies. The response includes policies in the list that occur after the marker. To get the next page of
-     *         the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s
+     *         the list, set this field's value to the value of <code>NextMarker</code> from the current page's
      *         response.
      */
 
@@ -78,13 +78,13 @@ public class ListContinuousDeploymentPoliciesRequest extends com.amazonaws.Amazo
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of continuous deployment policies.
      * The response includes policies in the list that occur after the marker. To get the next page of the list, set
-     * this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * this field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      * 
      * @param marker
      *        Use this field when paginating results to indicate where to begin in your list of continuous deployment
      *        policies. The response includes policies in the list that occur after the marker. To get the next page of
-     *        the list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     *        the list, set this field's value to the value of <code>NextMarker</code> from the current page's response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

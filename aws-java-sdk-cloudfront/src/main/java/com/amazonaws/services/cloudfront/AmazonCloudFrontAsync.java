@@ -40,7 +40,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.
      * </p>
      * <p>
-     * With this operation you can move an alias that’s already in use on a CloudFront distribution to a different
+     * With this operation you can move an alias that's already in use on a CloudFront distribution to a different
      * distribution in one step. This prevents the downtime that could occur if you first remove the alias from one
      * distribution and then separately add the alias to another distribution.
      * </p>
@@ -65,7 +65,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.
      * </p>
      * <p>
-     * With this operation you can move an alias that’s already in use on a CloudFront distribution to a different
+     * With this operation you can move an alias that's already in use on a CloudFront distribution to a different
      * distribution in one step. This prevents the downtime that could occur if you first remove the alias from one
      * distribution and then separately add the alias to another distribution.
      * </p>
@@ -98,7 +98,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging
-     * distribution’s configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
+     * distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
      * move traffic to the staging distribution.
      * </p>
      * 
@@ -118,7 +118,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * After you create a staging distribution, you can use <code>UpdateDistribution</code> to modify the staging
-     * distribution’s configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
+     * distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code> to incrementally
      * move traffic to the staging distribution.
      * </p>
      * 
@@ -140,7 +140,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Creates a cache policy.
      * </p>
      * <p>
-     * After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache
+     * After you create a cache policy, you can attach it to one or more cache behaviors. When it's attached to a cache
      * behavior, the cache policy determines the following:
      * </p>
      * <ul>
@@ -159,8 +159,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </ul>
      * <p>
      * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
-     * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
-     * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
+     * that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that
+     * matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the
      * cache key, use <code>OriginRequestPolicy</code>.
      * </p>
      * <p>
@@ -182,7 +182,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Creates a cache policy.
      * </p>
      * <p>
-     * After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache
+     * After you create a cache policy, you can attach it to one or more cache behaviors. When it's attached to a cache
      * behavior, the cache policy determines the following:
      * </p>
      * <ul>
@@ -201,8 +201,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </ul>
      * <p>
      * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
-     * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
-     * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
+     * that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that
+     * matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the
      * cache key, use <code>OriginRequestPolicy</code>.
      * </p>
      * <p>
@@ -286,12 +286,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * To use a continuous deployment policy, first use <code>CopyDistribution</code> to create a staging distribution,
-     * then use <code>UpdateDistribution</code> to modify the staging distribution’s configuration.
+     * then use <code>UpdateDistribution</code> to modify the staging distribution's configuration.
      * </p>
      * <p>
      * After you create and update a staging distribution, you can use a continuous deployment policy to incrementally
-     * move traffic to the staging distribution. This workflow enables you to test changes to a distribution’s
-     * configuration before moving all of your domain’s production traffic to the new configuration.
+     * move traffic to the staging distribution. This workflow enables you to test changes to a distribution's
+     * configuration before moving all of your domain's production traffic to the new configuration.
      * </p>
      * 
      * @param createContinuousDeploymentPolicyRequest
@@ -311,12 +311,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * To use a continuous deployment policy, first use <code>CopyDistribution</code> to create a staging distribution,
-     * then use <code>UpdateDistribution</code> to modify the staging distribution’s configuration.
+     * then use <code>UpdateDistribution</code> to modify the staging distribution's configuration.
      * </p>
      * <p>
      * After you create and update a staging distribution, you can use a continuous deployment policy to incrementally
-     * move traffic to the staging distribution. This workflow enables you to test changes to a distribution’s
-     * configuration before moving all of your domain’s production traffic to the new configuration.
+     * move traffic to the staging distribution. This workflow enables you to test changes to a distribution's
+     * configuration before moving all of your domain's production traffic to the new configuration.
      * </p>
      * 
      * @param createContinuousDeploymentPolicyRequest
@@ -481,13 +481,13 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * response contains an Amazon Resource Name (ARN) that uniquely identifies the function.
      * </p>
      * <p>
-     * When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
+     * When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
      * with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
-     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the
-     * function to a distribution’s cache behavior, using the function’s ARN.
+     * When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
+     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it's live, you can attach the
+     * function to a distribution's cache behavior, using the function's ARN.
      * </p>
      * 
      * @param createFunctionRequest
@@ -507,13 +507,13 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * response contains an Amazon Resource Name (ARN) that uniquely identifies the function.
      * </p>
      * <p>
-     * When you create a function, it’s in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
+     * When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage, you can test the function
      * with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When you’re ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
-     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it’s live, you can attach the
-     * function to a distribution’s cache behavior, using the function’s ARN.
+     * When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code> to copy
+     * the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. When it's live, you can attach the
+     * function to a distribution's cache behavior, using the function's ARN.
      * </p>
      * 
      * @param createFunctionRequest
@@ -722,7 +722,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Creates an origin request policy.
      * </p>
      * <p>
-     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached
+     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it's attached
      * to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it
      * sends to the origin. Each request that CloudFront sends to the origin includes the following:
      * </p>
@@ -747,7 +747,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * </ul>
      * <p>
-     * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
+     * CloudFront sends a request when it can't find a valid object in its cache that matches the request. If you want
      * to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
      * </p>
      * <p>
@@ -770,7 +770,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Creates an origin request policy.
      * </p>
      * <p>
-     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached
+     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it's attached
      * to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it
      * sends to the origin. Each request that CloudFront sends to the origin includes the following:
      * </p>
@@ -795,7 +795,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * </ul>
      * <p>
-     * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
+     * CloudFront sends a request when it can't find a valid object in its cache that matches the request. If you want
      * to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
      * </p>
      * <p>
@@ -917,7 +917,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a
-     * CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to
+     * CloudFront distribution. When it's attached to a cache behavior, CloudFront adds the headers in the policy to
      * HTTP responses that it sends for requests that match the cache behavior.
      * </p>
      * 
@@ -941,7 +941,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a
-     * CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to
+     * CloudFront distribution. When it's attached to a cache behavior, CloudFront adds the headers in the policy to
      * HTTP responses that it sends for requests that match the cache behavior.
      * </p>
      * 
@@ -1044,11 +1044,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a cache policy.
      * </p>
      * <p>
-     * You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove
+     * You cannot delete a cache policy if it's attached to a cache behavior. First update your distributions to remove
      * the cache policy from all cache behaviors, then delete the cache policy.
      * </p>
      * <p>
-     * To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use
+     * To delete a cache policy, you must provide the policy's identifier and version. To get these values, you can use
      * <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
      * </p>
      * 
@@ -1065,11 +1065,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a cache policy.
      * </p>
      * <p>
-     * You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove
+     * You cannot delete a cache policy if it's attached to a cache behavior. First update your distributions to remove
      * the cache policy from all cache behaviors, then delete the cache policy.
      * </p>
      * <p>
-     * To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use
+     * To delete a cache policy, you must provide the policy's identifier and version. To get these values, you can use
      * <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
      * </p>
      * 
@@ -1128,7 +1128,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a continuous deployment policy.
      * </p>
      * <p>
-     * You cannot delete a continuous deployment policy that’s attached to a primary distribution. First update your
+     * You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your
      * distribution to remove the continuous deployment policy, then you can delete the policy.
      * </p>
      * 
@@ -1147,7 +1147,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a continuous deployment policy.
      * </p>
      * <p>
-     * You cannot delete a continuous deployment policy that’s attached to a primary distribution. First update your
+     * You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your
      * distribution to remove the continuous deployment policy, then you can delete the policy.
      * </p>
      * 
@@ -1394,11 +1394,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a CloudFront function.
      * </p>
      * <p>
-     * You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove
+     * You cannot delete a function if it's associated with a cache behavior. First, update your distributions to remove
      * the function association from all cache behaviors, then delete the function.
      * </p>
      * <p>
-     * To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * To delete a function, you must provide the function's name and version (<code>ETag</code> value). To get these
      * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
      * </p>
      * 
@@ -1415,11 +1415,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a CloudFront function.
      * </p>
      * <p>
-     * You cannot delete a function if it’s associated with a cache behavior. First, update your distributions to remove
+     * You cannot delete a function if it's associated with a cache behavior. First, update your distributions to remove
      * the function association from all cache behaviors, then delete the function.
      * </p>
      * <p>
-     * To delete a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * To delete a function, you must provide the function's name and version (<code>ETag</code> value). To get these
      * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
      * </p>
      * 
@@ -1445,7 +1445,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * the key group from all cache behaviors, then delete the key group.
      * </p>
      * <p>
-     * To delete a key group, you must provide the key group’s identifier and version. To get these values, use
+     * To delete a key group, you must provide the key group's identifier and version. To get these values, use
      * <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * </p>
      * 
@@ -1466,7 +1466,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * the key group from all cache behaviors, then delete the key group.
      * </p>
      * <p>
-     * To delete a key group, you must provide the key group’s identifier and version. To get these values, use
+     * To delete a key group, you must provide the key group's identifier and version. To get these values, use
      * <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * </p>
      * 
@@ -1564,12 +1564,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes an origin request policy.
      * </p>
      * <p>
-     * You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your
+     * You cannot delete an origin request policy if it's attached to any cache behaviors. First update your
      * distributions to remove the origin request policy from all cache behaviors, then delete the origin request
      * policy.
      * </p>
      * <p>
-     * To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier,
+     * To delete an origin request policy, you must provide the policy's identifier and version. To get the identifier,
      * you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
      * </p>
      * 
@@ -1587,12 +1587,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes an origin request policy.
      * </p>
      * <p>
-     * You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your
+     * You cannot delete an origin request policy if it's attached to any cache behaviors. First update your
      * distributions to remove the origin request policy from all cache behaviors, then delete the origin request
      * policy.
      * </p>
      * <p>
-     * To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier,
+     * To delete an origin request policy, you must provide the policy's identifier and version. To get the identifier,
      * you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
      * </p>
      * 
@@ -1646,12 +1646,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a real-time log configuration.
      * </p>
      * <p>
-     * You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your
+     * You cannot delete a real-time log configuration if it's attached to a cache behavior. First update your
      * distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log
      * configuration.
      * </p>
      * <p>
-     * To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name
+     * To delete a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name
      * (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
      * configuration to delete.
      * </p>
@@ -1669,12 +1669,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a real-time log configuration.
      * </p>
      * <p>
-     * You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your
+     * You cannot delete a real-time log configuration if it's attached to a cache behavior. First update your
      * distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log
      * configuration.
      * </p>
      * <p>
-     * To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name
+     * To delete a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name
      * (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
      * configuration to delete.
      * </p>
@@ -1697,11 +1697,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a response headers policy.
      * </p>
      * <p>
-     * You cannot delete a response headers policy if it’s attached to a cache behavior. First update your distributions
+     * You cannot delete a response headers policy if it's attached to a cache behavior. First update your distributions
      * to remove the response headers policy from all cache behaviors, then delete the response headers policy.
      * </p>
      * <p>
-     * To delete a response headers policy, you must provide the policy’s identifier and version. To get these values,
+     * To delete a response headers policy, you must provide the policy's identifier and version. To get these values,
      * you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>.
      * </p>
      * 
@@ -1719,11 +1719,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Deletes a response headers policy.
      * </p>
      * <p>
-     * You cannot delete a response headers policy if it’s attached to a cache behavior. First update your distributions
+     * You cannot delete a response headers policy if it's attached to a cache behavior. First update your distributions
      * to remove the response headers policy from all cache behaviors, then delete the response headers policy.
      * </p>
      * <p>
-     * To delete a response headers policy, you must provide the policy’s identifier and version. To get these values,
+     * To delete a response headers policy, you must provide the policy's identifier and version. To get these values,
      * you can use <code>ListResponseHeadersPolicies</code> or <code>GetResponseHeadersPolicy</code>.
      * </p>
      * 
@@ -1900,11 +1900,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a
-     * function’s code, use <code>GetFunction</code>.
+     * Gets configuration information and metadata about a CloudFront function, but not the function's code. To get a
+     * function's code, use <code>GetFunction</code>.
      * </p>
      * <p>
-     * To get configuration information and metadata about a function, you must provide the function’s name and stage.
+     * To get configuration information and metadata about a function, you must provide the function's name and stage.
      * To get these values, you can use <code>ListFunctions</code>.
      * </p>
      * 
@@ -1918,11 +1918,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets configuration information and metadata about a CloudFront function, but not the function’s code. To get a
-     * function’s code, use <code>GetFunction</code>.
+     * Gets configuration information and metadata about a CloudFront function, but not the function's code. To get a
+     * function's code, use <code>GetFunction</code>.
      * </p>
      * <p>
-     * To get configuration information and metadata about a function, you must provide the function’s name and stage.
+     * To get configuration information and metadata about a function, you must provide the function's name and stage.
      * To get these values, you can use <code>ListFunctions</code>.
      * </p>
      * 
@@ -1946,7 +1946,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <ul>
      * <li>
      * <p>
-     * The policy’s identifier.
+     * The policy's identifier.
      * </p>
      * </li>
      * <li>
@@ -1956,8 +1956,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * </ul>
      * <p>
-     * To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a
-     * distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * To get a cache policy, you must provide the policy's identifier. If the cache policy is attached to a
+     * distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
      * using <code>ListCachePolicies</code>.
      * </p>
@@ -1977,7 +1977,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <ul>
      * <li>
      * <p>
-     * The policy’s identifier.
+     * The policy's identifier.
      * </p>
      * </li>
      * <li>
@@ -1987,8 +1987,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * </ul>
      * <p>
-     * To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a
-     * distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * To get a cache policy, you must provide the policy's identifier. If the cache policy is attached to a
+     * distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
      * using <code>ListCachePolicies</code>.
      * </p>
@@ -2011,8 +2011,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a cache policy configuration.
      * </p>
      * <p>
-     * To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to
-     * a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * To get a cache policy configuration, you must provide the policy's identifier. If the cache policy is attached to
+     * a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
      * using <code>ListCachePolicies</code>.
      * </p>
@@ -2030,8 +2030,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a cache policy configuration.
      * </p>
      * <p>
-     * To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to
-     * a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * To get a cache policy configuration, you must provide the policy's identifier. If the cache policy is attached to
+     * a distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
      * using <code>ListCachePolicies</code>.
      * </p>
@@ -2131,7 +2131,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a continuous deployment policy, including metadata (the policy’s identifier and the date and time when the
+     * Gets a continuous deployment policy, including metadata (the policy's identifier and the date and time when the
      * policy was last modified).
      * </p>
      * 
@@ -2147,7 +2147,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a continuous deployment policy, including metadata (the policy’s identifier and the date and time when the
+     * Gets a continuous deployment policy, including metadata (the policy's identifier and the date and time when the
      * policy was last modified).
      * </p>
      * 
@@ -2409,7 +2409,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <code>DescribeFunction</code>.
      * </p>
      * <p>
-     * To get a function’s code, you must provide the function’s name and stage. To get these values, you can use
+     * To get a function's code, you must provide the function's name and stage. To get these values, you can use
      * <code>ListFunctions</code>.
      * </p>
      * 
@@ -2427,7 +2427,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <code>DescribeFunction</code>.
      * </p>
      * <p>
-     * To get a function’s code, you must provide the function’s name and stage. To get these values, you can use
+     * To get a function's code, you must provide the function's name and stage. To get these values, you can use
      * <code>ListFunctions</code>.
      * </p>
      * 
@@ -2482,8 +2482,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a key group, including the date and time when the key group was last modified.
      * </p>
      * <p>
-     * To get a key group, you must provide the key group’s identifier. If the key group is referenced in a
-     * distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * To get a key group, you must provide the key group's identifier. If the key group is referenced in a
+     * distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
      * using <code>ListKeyGroups</code>.
      * </p>
@@ -2501,8 +2501,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a key group, including the date and time when the key group was last modified.
      * </p>
      * <p>
-     * To get a key group, you must provide the key group’s identifier. If the key group is referenced in a
-     * distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * To get a key group, you must provide the key group's identifier. If the key group is referenced in a
+     * distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
      * using <code>ListKeyGroups</code>.
      * </p>
@@ -2525,8 +2525,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a key group configuration.
      * </p>
      * <p>
-     * To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in
-     * a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * To get a key group configuration, you must provide the key group's identifier. If the key group is referenced in
+     * a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
      * using <code>ListKeyGroups</code>.
      * </p>
@@ -2544,8 +2544,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a key group configuration.
      * </p>
      * <p>
-     * To get a key group configuration, you must provide the key group’s identifier. If the key group is referenced in
-     * a distribution’s cache behavior, you can get the key group’s identifier using <code>ListDistributions</code> or
+     * To get a key group configuration, you must provide the key group's identifier. If the key group is referenced in
+     * a distribution's cache behavior, you can get the key group's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the key group is not referenced in a cache behavior, you can get the identifier
      * using <code>ListKeyGroups</code>.
      * </p>
@@ -2671,7 +2671,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <ul>
      * <li>
      * <p>
-     * The policy’s identifier.
+     * The policy's identifier.
      * </p>
      * </li>
      * <li>
@@ -2681,8 +2681,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * </ul>
      * <p>
-     * To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is
-     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get an origin request policy, you must provide the policy's identifier. If the origin request policy is
+     * attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
      * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
@@ -2702,7 +2702,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <ul>
      * <li>
      * <p>
-     * The policy’s identifier.
+     * The policy's identifier.
      * </p>
      * </li>
      * <li>
@@ -2712,8 +2712,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * </ul>
      * <p>
-     * To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is
-     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get an origin request policy, you must provide the policy's identifier. If the origin request policy is
+     * attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
      * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
@@ -2736,8 +2736,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets an origin request policy configuration.
      * </p>
      * <p>
-     * To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get an origin request policy configuration, you must provide the policy's identifier. If the origin request
+     * policy is attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
      * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
@@ -2757,8 +2757,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets an origin request policy configuration.
      * </p>
      * <p>
-     * To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get an origin request policy configuration, you must provide the policy's identifier. If the origin request
+     * policy is attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
      * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
@@ -2845,7 +2845,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a real-time log configuration.
      * </p>
      * <p>
-     * To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN).
+     * To get a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN).
      * You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
      * configuration to get.
      * </p>
@@ -2863,7 +2863,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a real-time log configuration.
      * </p>
      * <p>
-     * To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN).
+     * To get a real-time log configuration, you can provide the configuration's name or its Amazon Resource Name (ARN).
      * You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
      * configuration to get.
      * </p>
@@ -2883,12 +2883,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a response headers policy, including metadata (the policy’s identifier and the date and time when the policy
+     * Gets a response headers policy, including metadata (the policy's identifier and the date and time when the policy
      * was last modified).
      * </p>
      * <p>
-     * To get a response headers policy, you must provide the policy’s identifier. If the response headers policy is
-     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get a response headers policy, you must provide the policy's identifier. If the response headers policy is
+     * attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -2903,12 +2903,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a response headers policy, including metadata (the policy’s identifier and the date and time when the policy
+     * Gets a response headers policy, including metadata (the policy's identifier and the date and time when the policy
      * was last modified).
      * </p>
      * <p>
-     * To get a response headers policy, you must provide the policy’s identifier. If the response headers policy is
-     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get a response headers policy, you must provide the policy's identifier. If the response headers policy is
+     * attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -2931,8 +2931,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a response headers policy configuration.
      * </p>
      * <p>
-     * To get a response headers policy configuration, you must provide the policy’s identifier. If the response headers
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get a response headers policy configuration, you must provide the policy's identifier. If the response headers
+     * policy is attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -2952,8 +2952,8 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a response headers policy configuration.
      * </p>
      * <p>
-     * To get a response headers policy configuration, you must provide the policy’s identifier. If the response headers
-     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * To get a response headers policy configuration, you must provide the policy's identifier. If the response headers
+     * policy is attached to a distribution's cache behavior, you can get the policy's identifier using
      * <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy is not attached to
      * a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -3136,7 +3136,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided
      * alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias.
      * In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the
-     * distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+     * distributions and accounts that you own, but helps to protect the information of ones that you don't own.
      * </p>
      * <p>
      * Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided
@@ -3174,7 +3174,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided
      * alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias.
      * In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the
-     * distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+     * distributions and accounts that you own, but helps to protect the information of ones that you don't own.
      * </p>
      * <p>
      * Use this operation to find aliases that are in use in CloudFront that conflict or overlap with the provided
@@ -3294,7 +3294,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified
      * cache policy.
      * </p>
      * <p>
@@ -3316,7 +3316,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified
      * cache policy.
      * </p>
      * <p>
@@ -3390,7 +3390,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified
      * origin request policy.
      * </p>
      * <p>
@@ -3413,7 +3413,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified
      * origin request policy.
      * </p>
      * <p>
@@ -3441,7 +3441,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distributions that have a cache behavior that’s associated with the specified real-time log
+     * Gets a list of distributions that have a cache behavior that's associated with the specified real-time log
      * configuration.
      * </p>
      * <p>
@@ -3468,7 +3468,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distributions that have a cache behavior that’s associated with the specified real-time log
+     * Gets a list of distributions that have a cache behavior that's associated with the specified real-time log
      * configuration.
      * </p>
      * <p>
@@ -3500,7 +3500,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified
      * response headers policy.
      * </p>
      * <p>
@@ -3523,7 +3523,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified
      * response headers policy.
      * </p>
      * <p>
@@ -4079,11 +4079,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * published copy in the <code>LIVE</code> stage.
      * </p>
      * <p>
-     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s
-     * cache behavior, using the function’s Amazon Resource Name (ARN).
+     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution's
+     * cache behavior, using the function's Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * To publish a function, you must provide the function's name and version (<code>ETag</code> value). To get these
      * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
      * </p>
      * 
@@ -4102,11 +4102,11 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * published copy in the <code>LIVE</code> stage.
      * </p>
      * <p>
-     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution’s
-     * cache behavior, using the function’s Amazon Resource Name (ARN).
+     * When a function is published to the <code>LIVE</code> stage, you can attach the function to a distribution's
+     * cache behavior, using the function's Amazon Resource Name (ARN).
      * </p>
      * <p>
-     * To publish a function, you must provide the function’s name and version (<code>ETag</code> value). To get these
+     * To publish a function, you must provide the function's name and version (<code>ETag</code> value). To get these
      * values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
      * </p>
      * 
@@ -4163,15 +4163,15 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <p>
      * To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your
      * CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object
-     * that you provided, and returns the function’s result (the modified event object) in the response. The response
+     * that you provided, and returns the function's result (the modified event object) in the response. The response
      * also contains function logs and error messages, if any exist. For more information about testing functions, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function"
      * >Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event
-     * object. To get the function’s name and version, you can use <code>ListFunctions</code> and
+     * To test a function, you provide the function's name and version (<code>ETag</code> value) along with the event
+     * object. To get the function's name and version, you can use <code>ListFunctions</code> and
      * <code>DescribeFunction</code>.
      * </p>
      * 
@@ -4190,15 +4190,15 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <p>
      * To test a function, you provide an <i>event object</i> that represents an HTTP request or response that your
      * CloudFront distribution could receive in production. CloudFront runs the function, passing it the event object
-     * that you provided, and returns the function’s result (the modified event object) in the response. The response
+     * that you provided, and returns the function's result (the modified event object) in the response. The response
      * also contains function logs and error messages, if any exist. For more information about testing functions, see
      * <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/managing-functions.html#test-function"
      * >Testing functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * To test a function, you provide the function’s name and version (<code>ETag</code> value) along with the event
-     * object. To get the function’s name and version, you can use <code>ListFunctions</code> and
+     * To test a function, you provide the function's name and version (<code>ETag</code> value) along with the event
+     * object. To get the function's name and version, you can use <code>ListFunctions</code> and
      * <code>DescribeFunction</code>.
      * </p>
      * 
@@ -4270,7 +4270,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that
-     * you modified and those that you didn’t.
+     * you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4305,7 +4305,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that
-     * you modified and those that you didn’t.
+     * you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4385,7 +4385,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous deployment policy
-     * configuration, including the fields that you modified and those that you didn’t.
+     * configuration, including the fields that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4425,7 +4425,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous deployment policy
-     * configuration, including the fields that you modified and those that you didn’t.
+     * configuration, including the fields that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4477,7 +4477,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * <li>
      * <p>
-     * You can’t change the value of <code>CallerReference</code>.
+     * You can't change the value of <code>CallerReference</code>.
      * </p>
      * </li>
      * </ul>
@@ -4487,7 +4487,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new
      * configuration replaces the existing configuration. The values that you specify in an
      * <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all
-     * fields: the ones that you modified and also the ones that you didn’t.
+     * fields: the ones that you modified and also the ones that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4533,7 +4533,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </li>
      * <li>
      * <p>
-     * You can’t change the value of <code>CallerReference</code>.
+     * You can't change the value of <code>CallerReference</code>.
      * </p>
      * </li>
      * </ul>
@@ -4543,7 +4543,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Submit an <code>UpdateDistribution</code> request, providing the distribution configuration. The new
      * configuration replaces the existing configuration. The values that you specify in an
      * <code>UpdateDistribution</code> request are not merged into your existing configuration. Make sure to include all
-     * fields: the ones that you modified and also the ones that you didn’t.
+     * fields: the ones that you modified and also the ones that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4571,10 +4571,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * You can use this operation in a continuous deployment workflow after you have tested configuration changes on the
-     * staging distribution. After using a continuous deployment policy to move a portion of your domain name’s traffic
+     * staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic
      * to the staging distribution and verifying that it works as intended, you can use this operation to copy the
-     * staging distribution’s configuration to the primary distribution. This action will disable the continuous
-     * deployment policy and move your domain’s traffic back to the primary distribution.
+     * staging distribution's configuration to the primary distribution. This action will disable the continuous
+     * deployment policy and move your domain's traffic back to the primary distribution.
      * </p>
      * 
      * @param updateDistributionWithStagingConfigRequest
@@ -4596,10 +4596,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </p>
      * <p>
      * You can use this operation in a continuous deployment workflow after you have tested configuration changes on the
-     * staging distribution. After using a continuous deployment policy to move a portion of your domain name’s traffic
+     * staging distribution. After using a continuous deployment policy to move a portion of your domain name's traffic
      * to the staging distribution and verifying that it works as intended, you can use this operation to copy the
-     * staging distribution’s configuration to the primary distribution. This action will disable the continuous
-     * deployment policy and move your domain’s traffic back to the primary distribution.
+     * staging distribution's configuration to the primary distribution. This action will disable the continuous
+     * deployment policy and move your domain's traffic back to the primary distribution.
      * </p>
      * 
      * @param updateDistributionWithStagingConfigRequest
@@ -4692,10 +4692,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Updates a CloudFront function.
      * </p>
      * <p>
-     * You can update a function’s code or the comment that describes the function. You cannot update a function’s name.
+     * You can update a function's code or the comment that describes the function. You cannot update a function's name.
      * </p>
      * <p>
-     * To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the
+     * To update a function, you provide the function's name and version (<code>ETag</code> value) along with the
      * updated function code. To get the name and version, you can use <code>ListFunctions</code> and
      * <code>DescribeFunction</code>.
      * </p>
@@ -4713,10 +4713,10 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * Updates a CloudFront function.
      * </p>
      * <p>
-     * You can update a function’s code or the comment that describes the function. You cannot update a function’s name.
+     * You can update a function's code or the comment that describes the function. You cannot update a function's name.
      * </p>
      * <p>
-     * To update a function, you provide the function’s name and version (<code>ETag</code> value) along with the
+     * To update a function, you provide the function's name and version (<code>ETag</code> value) along with the
      * updated function code. To get the name and version, you can use <code>ListFunctions</code> and
      * <code>DescribeFunction</code>.
      * </p>
@@ -4756,7 +4756,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and
-     * those that you didn’t.
+     * those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4791,7 +4791,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields that you modified and
-     * those that you didn’t.
+     * those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4865,7 +4865,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration,
-     * including the fields that you modified and those that you didn’t.
+     * including the fields that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4902,7 +4902,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration,
-     * including the fields that you modified and those that you didn’t.
+     * including the fields that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -4974,12 +4974,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration,
-     * including the parameters that you modified and those that you didn’t.
+     * including the parameters that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+     * You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.
      * </p>
      * 
      * @param updateRealtimeLogConfigRequest
@@ -5012,12 +5012,12 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration,
-     * including the parameters that you modified and those that you didn’t.
+     * including the parameters that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+     * You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.
      * </p>
      * 
      * @param updateRealtimeLogConfigRequest
@@ -5044,7 +5044,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <ol>
      * <li>
      * <p>
-     * Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+     * Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
      * </p>
      * </li>
      * <li>
@@ -5055,7 +5055,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration,
-     * including the fields that you modified and those that you didn’t.
+     * including the fields that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>
@@ -5080,7 +5080,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <ol>
      * <li>
      * <p>
-     * Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy’s configuration.
+     * Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
      * </p>
      * </li>
      * <li>
@@ -5091,7 +5091,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * <li>
      * <p>
      * Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers policy configuration,
-     * including the fields that you modified and those that you didn’t.
+     * including the fields that you modified and those that you didn't.
      * </p>
      * </li>
      * </ol>

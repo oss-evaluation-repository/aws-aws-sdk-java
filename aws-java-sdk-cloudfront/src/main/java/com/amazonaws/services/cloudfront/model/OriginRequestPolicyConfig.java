@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send
+ * CloudFront sends a request when it can't find an object in its cache that matches the request. If you want to send
  * values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
  * </p>
  * 

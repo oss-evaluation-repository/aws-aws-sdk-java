@@ -41,8 +41,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      * <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.
+     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.
      * </p>
      */
     private String stage;
@@ -108,8 +108,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      * <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.
+     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.
      * </p>
      * 
      * @param stage
@@ -119,8 +119,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      *        <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      *        </p>
      *        <p>
-     *        When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     *        behavior, using the function’s ARN.
+     *        When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     *        behavior, using the function's ARN.
      * @see FunctionStage
      */
 
@@ -137,8 +137,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      * <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.
+     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.
      * </p>
      * 
      * @return The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.</p>
@@ -147,8 +147,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      *         <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      *         </p>
      *         <p>
-     *         When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     *         behavior, using the function’s ARN.
+     *         When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     *         behavior, using the function's ARN.
      * @see FunctionStage
      */
 
@@ -165,8 +165,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      * <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.
+     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.
      * </p>
      * 
      * @param stage
@@ -176,8 +176,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      *        <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      *        </p>
      *        <p>
-     *        When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     *        behavior, using the function’s ARN.
+     *        When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     *        behavior, using the function's ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionStage
      */
@@ -196,8 +196,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      * <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      * </p>
      * <p>
-     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     * behavior, using the function’s ARN.
+     * When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     * behavior, using the function's ARN.
      * </p>
      * 
      * @param stage
@@ -207,8 +207,8 @@ public class FunctionMetadata implements Serializable, Cloneable {
      *        <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
      *        </p>
      *        <p>
-     *        When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution’s cache
-     *        behavior, using the function’s ARN.
+     *        When a function is in the <code>LIVE</code> stage, you can attach the function to a distribution's cache
+     *        behavior, using the function's ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionStage
      */

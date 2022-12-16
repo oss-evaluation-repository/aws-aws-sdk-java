@@ -33,7 +33,7 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      */
     private String stage;
@@ -80,11 +80,11 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
      * @param stage
-     *        The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     *        The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @see FunctionStage
      */
 
@@ -94,10 +94,10 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
-     * @return The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * @return The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @see FunctionStage
      */
 
@@ -107,11 +107,11 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
      * @param stage
-     *        The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     *        The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionStage
      */
@@ -123,11 +123,11 @@ public class GetFunctionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
      * @param stage
-     *        The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     *        The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionStage
      */

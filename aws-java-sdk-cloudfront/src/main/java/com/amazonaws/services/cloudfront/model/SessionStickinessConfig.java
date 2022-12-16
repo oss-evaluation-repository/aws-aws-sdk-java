@@ -30,7 +30,7 @@ public class SessionStickinessConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed values are
+     * The amount of time after which you want sessions to cease if no requests are received. Allowed values are
      * 300–3600 seconds (5–60 minutes).
      * </p>
      * <p>
@@ -51,7 +51,7 @@ public class SessionStickinessConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed values are
+     * The amount of time after which you want sessions to cease if no requests are received. Allowed values are
      * 300–3600 seconds (5–60 minutes).
      * </p>
      * <p>
@@ -59,8 +59,8 @@ public class SessionStickinessConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param idleTTL
-     *        The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed
-     *        values are 300–3600 seconds (5–60 minutes).</p>
+     *        The amount of time after which you want sessions to cease if no requests are received. Allowed values are
+     *        300–3600 seconds (5–60 minutes).</p>
      *        <p>
      *        The value must be less than or equal to <code>MaximumTTL</code>.
      */
@@ -71,15 +71,15 @@ public class SessionStickinessConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed values are
+     * The amount of time after which you want sessions to cease if no requests are received. Allowed values are
      * 300–3600 seconds (5–60 minutes).
      * </p>
      * <p>
      * The value must be less than or equal to <code>MaximumTTL</code>.
      * </p>
      * 
-     * @return The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed
-     *         values are 300–3600 seconds (5–60 minutes).</p>
+     * @return The amount of time after which you want sessions to cease if no requests are received. Allowed values are
+     *         300–3600 seconds (5–60 minutes).</p>
      *         <p>
      *         The value must be less than or equal to <code>MaximumTTL</code>.
      */
@@ -90,7 +90,7 @@ public class SessionStickinessConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed values are
+     * The amount of time after which you want sessions to cease if no requests are received. Allowed values are
      * 300–3600 seconds (5–60 minutes).
      * </p>
      * <p>
@@ -98,8 +98,8 @@ public class SessionStickinessConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param idleTTL
-     *        The amount of time after which you want sessions to cease if no requests are received.&#x2028;Allowed
-     *        values are 300–3600 seconds (5–60 minutes).</p>
+     *        The amount of time after which you want sessions to cease if no requests are received. Allowed values are
+     *        300–3600 seconds (5–60 minutes).</p>
      *        <p>
      *        The value must be less than or equal to <code>MaximumTTL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -30,7 +30,8 @@ public class ContinuousDeploymentSingleHeaderConfig implements Serializable, Clo
 
     /**
      * <p>
-     * The request header name that you want CloudFront to send to your staging distribution.
+     * The request header name that you want CloudFront to send to your staging distribution. The header must contain
+     * the prefix <code>aws-cf-cd-</code>.
      * </p>
      */
     private String header;
@@ -43,11 +44,13 @@ public class ContinuousDeploymentSingleHeaderConfig implements Serializable, Clo
 
     /**
      * <p>
-     * The request header name that you want CloudFront to send to your staging distribution.
+     * The request header name that you want CloudFront to send to your staging distribution. The header must contain
+     * the prefix <code>aws-cf-cd-</code>.
      * </p>
      * 
      * @param header
-     *        The request header name that you want CloudFront to send to your staging distribution.
+     *        The request header name that you want CloudFront to send to your staging distribution. The header must
+     *        contain the prefix <code>aws-cf-cd-</code>.
      */
 
     public void setHeader(String header) {
@@ -56,10 +59,12 @@ public class ContinuousDeploymentSingleHeaderConfig implements Serializable, Clo
 
     /**
      * <p>
-     * The request header name that you want CloudFront to send to your staging distribution.
+     * The request header name that you want CloudFront to send to your staging distribution. The header must contain
+     * the prefix <code>aws-cf-cd-</code>.
      * </p>
      * 
-     * @return The request header name that you want CloudFront to send to your staging distribution.
+     * @return The request header name that you want CloudFront to send to your staging distribution. The header must
+     *         contain the prefix <code>aws-cf-cd-</code>.
      */
 
     public String getHeader() {
@@ -68,11 +73,13 @@ public class ContinuousDeploymentSingleHeaderConfig implements Serializable, Clo
 
     /**
      * <p>
-     * The request header name that you want CloudFront to send to your staging distribution.
+     * The request header name that you want CloudFront to send to your staging distribution. The header must contain
+     * the prefix <code>aws-cf-cd-</code>.
      * </p>
      * 
      * @param header
-     *        The request header name that you want CloudFront to send to your staging distribution.
+     *        The request header name that you want CloudFront to send to your staging distribution. The header must
+     *        contain the prefix <code>aws-cf-cd-</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

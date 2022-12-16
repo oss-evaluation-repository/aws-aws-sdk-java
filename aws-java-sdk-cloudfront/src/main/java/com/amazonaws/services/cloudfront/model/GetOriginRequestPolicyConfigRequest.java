@@ -27,8 +27,8 @@ public class GetOriginRequestPolicyConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s
-     * cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's
+     * cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the
      * identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
@@ -37,15 +37,15 @@ public class GetOriginRequestPolicyConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s
-     * cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's
+     * cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the
      * identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
      * 
      * @param id
      *        The unique identifier for the origin request policy. If the origin request policy is attached to a
-     *        distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     *        distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      *        <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can
      *        get the identifier using <code>ListOriginRequestPolicies</code>.
      */
@@ -56,14 +56,14 @@ public class GetOriginRequestPolicyConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s
-     * cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's
+     * cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the
      * identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
      * 
      * @return The unique identifier for the origin request policy. If the origin request policy is attached to a
-     *         distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code>
+     *         distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code>
      *         or <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you
      *         can get the identifier using <code>ListOriginRequestPolicies</code>.
      */
@@ -74,15 +74,15 @@ public class GetOriginRequestPolicyConfigRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution’s
-     * cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * The unique identifier for the origin request policy. If the origin request policy is attached to a distribution's
+     * cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      * <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can get the
      * identifier using <code>ListOriginRequestPolicies</code>.
      * </p>
      * 
      * @param id
      *        The unique identifier for the origin request policy. If the origin request policy is attached to a
-     *        distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     *        distribution's cache behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      *        <code>GetDistribution</code>. If the origin request policy is not attached to a cache behavior, you can
      *        get the identifier using <code>ListOriginRequestPolicies</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

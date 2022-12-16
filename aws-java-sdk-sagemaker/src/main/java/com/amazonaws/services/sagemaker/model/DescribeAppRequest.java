@@ -33,7 +33,7 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String domainId;
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      */
     private String userProfileName;
@@ -98,11 +98,11 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public void setUserProfileName(String userProfileName) {
@@ -111,10 +111,10 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
-     * @return The user profile name.
+     * @return The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public String getUserProfileName() {
@@ -123,11 +123,11 @@ public class DescribeAppRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
