@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,36 +27,38 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The account IDs for which a static snapshot of the current Region, including enabled accounts and log sources is
-     * retrieved.
+     * The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     * including enabled accounts and log sources, is retrieved.
      * </p>
      */
     private java.util.List<String> accountSet;
     /**
      * <p>
-     * The maximum limit of accounts for which the static snapshot of the current Region including enabled accounts and
-     * log sources is retrieved.
+     * The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and
+     * log sources, is retrieved.
      * </p>
      */
     private Integer maxAccountResults;
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The account IDs for which a static snapshot of the current Region, including enabled accounts and log sources is
-     * retrieved.
+     * The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     * including enabled accounts and log sources, is retrieved.
      * </p>
      * 
-     * @return The account IDs for which a static snapshot of the current Region, including enabled accounts and log
-     *         sources is retrieved.
+     * @return The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     *         including enabled accounts and log sources, is retrieved.
      */
 
     public java.util.List<String> getAccountSet() {
@@ -65,13 +67,13 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The account IDs for which a static snapshot of the current Region, including enabled accounts and log sources is
-     * retrieved.
+     * The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     * including enabled accounts and log sources, is retrieved.
      * </p>
      * 
      * @param accountSet
-     *        The account IDs for which a static snapshot of the current Region, including enabled accounts and log
-     *        sources is retrieved.
+     *        The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     *        including enabled accounts and log sources, is retrieved.
      */
 
     public void setAccountSet(java.util.Collection<String> accountSet) {
@@ -85,8 +87,8 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The account IDs for which a static snapshot of the current Region, including enabled accounts and log sources is
-     * retrieved.
+     * The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     * including enabled accounts and log sources, is retrieved.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -95,8 +97,8 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param accountSet
-     *        The account IDs for which a static snapshot of the current Region, including enabled accounts and log
-     *        sources is retrieved.
+     *        The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     *        including enabled accounts and log sources, is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +114,13 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The account IDs for which a static snapshot of the current Region, including enabled accounts and log sources is
-     * retrieved.
+     * The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     * including enabled accounts and log sources, is retrieved.
      * </p>
      * 
      * @param accountSet
-     *        The account IDs for which a static snapshot of the current Region, including enabled accounts and log
-     *        sources is retrieved.
+     *        The Amazon Web Services account ID for which a static snapshot of the current Amazon Web Services Region,
+     *        including enabled accounts and log sources, is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,13 +131,13 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum limit of accounts for which the static snapshot of the current Region including enabled accounts and
-     * log sources is retrieved.
+     * The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and
+     * log sources, is retrieved.
      * </p>
      * 
      * @param maxAccountResults
-     *        The maximum limit of accounts for which the static snapshot of the current Region including enabled
-     *        accounts and log sources is retrieved.
+     *        The maximum limit of accounts for which the static snapshot of the current Region, including enabled
+     *        accounts and log sources, is retrieved.
      */
 
     public void setMaxAccountResults(Integer maxAccountResults) {
@@ -144,12 +146,12 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum limit of accounts for which the static snapshot of the current Region including enabled accounts and
-     * log sources is retrieved.
+     * The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and
+     * log sources, is retrieved.
      * </p>
      * 
-     * @return The maximum limit of accounts for which the static snapshot of the current Region including enabled
-     *         accounts and log sources is retrieved.
+     * @return The maximum limit of accounts for which the static snapshot of the current Region, including enabled
+     *         accounts and log sources, is retrieved.
      */
 
     public Integer getMaxAccountResults() {
@@ -158,13 +160,13 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum limit of accounts for which the static snapshot of the current Region including enabled accounts and
-     * log sources is retrieved.
+     * The maximum limit of accounts for which the static snapshot of the current Region, including enabled accounts and
+     * log sources, is retrieved.
      * </p>
      * 
      * @param maxAccountResults
-     *        The maximum limit of accounts for which the static snapshot of the current Region including enabled
-     *        accounts and log sources is retrieved.
+     *        The maximum limit of accounts for which the static snapshot of the current Region, including enabled
+     *        accounts and log sources, is retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,17 +177,21 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token
-     *        will return an HTTP 400 InvalidToken error.
+     *        Lists if there are more results available. The value of nextToken is a unique pagination token for each
+     *        page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *        unchanged. </p>
+     *        <p>
+     *        Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *        InvalidToken error.
      */
 
     public void setNextToken(String nextToken) {
@@ -194,16 +200,20 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *         token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *         other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-     *         token will return an HTTP 400 InvalidToken error.
+     * @return Lists if there are more results available. The value of nextToken is a unique pagination token for each
+     *         page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *         unchanged. </p>
+     *         <p>
+     *         Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *         InvalidToken error.
      */
 
     public String getNextToken() {
@@ -212,17 +222,21 @@ public class GetDatalakeStatusRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token
-     *        will return an HTTP 400 InvalidToken error.
+     *        Lists if there are more results available. The value of nextToken is a unique pagination token for each
+     *        page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *        unchanged. </p>
+     *        <p>
+     *        Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *        InvalidToken error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

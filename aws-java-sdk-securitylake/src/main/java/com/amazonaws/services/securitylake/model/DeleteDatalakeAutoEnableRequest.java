@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeleteDatalakeAutoEnableRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for new
+     * Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new
      * accounts in Security Lake.
      * </p>
      */
@@ -35,12 +35,12 @@ public class DeleteDatalakeAutoEnableRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for new
+     * Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new
      * accounts in Security Lake.
      * </p>
      * 
-     * @return Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data
-     *         for new accounts in Security Lake.
+     * @return Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for
+     *         new accounts in Security Lake.
      */
 
     public java.util.List<AutoEnableNewRegionConfiguration> getRemoveFromConfigurationForNewAccounts() {
@@ -49,12 +49,12 @@ public class DeleteDatalakeAutoEnableRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for new
+     * Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new
      * accounts in Security Lake.
      * </p>
      * 
      * @param removeFromConfigurationForNewAccounts
-     *        Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for
+     *        Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for
      *        new accounts in Security Lake.
      */
 
@@ -69,7 +69,7 @@ public class DeleteDatalakeAutoEnableRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for new
+     * Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new
      * accounts in Security Lake.
      * </p>
      * <p>
@@ -80,7 +80,7 @@ public class DeleteDatalakeAutoEnableRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param removeFromConfigurationForNewAccounts
-     *        Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for
+     *        Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for
      *        new accounts in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -97,12 +97,12 @@ public class DeleteDatalakeAutoEnableRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for new
+     * Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for new
      * accounts in Security Lake.
      * </p>
      * 
      * @param removeFromConfigurationForNewAccounts
-     *        Delete Amazon Security Lake with the specified configurations settings to stop ingesting security data for
+     *        Delete Amazon Security Lake with the specified configuration settings to stop ingesting security data for
      *        new accounts in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

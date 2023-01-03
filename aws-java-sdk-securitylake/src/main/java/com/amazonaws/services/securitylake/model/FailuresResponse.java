@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Response element for actions which make changes namely create, update, or delete actions.
+ * Response element for actions that make changes, namely create, update, or delete actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/FailuresResponse" target="_top">AWS API
@@ -36,7 +36,7 @@ public class FailuresResponse implements Serializable, Cloneable, StructuredPojo
     private java.util.List<Failures> failures;
     /**
      * <p>
-     * List of Regions where the failure occurred.
+     * List of Amazon Web Services Regions where the failure occurred.
      * </p>
      */
     private String region;
@@ -113,11 +113,11 @@ public class FailuresResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of Regions where the failure occurred.
+     * List of Amazon Web Services Regions where the failure occurred.
      * </p>
      * 
      * @param region
-     *        List of Regions where the failure occurred.
+     *        List of Amazon Web Services Regions where the failure occurred.
      */
 
     public void setRegion(String region) {
@@ -126,10 +126,10 @@ public class FailuresResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of Regions where the failure occurred.
+     * List of Amazon Web Services Regions where the failure occurred.
      * </p>
      * 
-     * @return List of Regions where the failure occurred.
+     * @return List of Amazon Web Services Regions where the failure occurred.
      */
 
     public String getRegion() {
@@ -138,11 +138,11 @@ public class FailuresResponse implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * List of Regions where the failure occurred.
+     * List of Amazon Web Services Regions where the failure occurred.
      * </p>
      * 
      * @param region
-     *        List of Regions where the failure occurred.
+     *        List of Amazon Web Services Regions where the failure occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

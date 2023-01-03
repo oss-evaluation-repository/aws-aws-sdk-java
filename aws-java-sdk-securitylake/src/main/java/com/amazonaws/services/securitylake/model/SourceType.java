@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The supported source types from which logs and events are collected in Amazon Security Lake.
+ * The supported source types from which logs and events are collected in Amazon Security Lake. For the list of
+ * supported Amazon Web Services, see the <a
+ * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SourceType" target="_top">AWS API
@@ -30,28 +33,24 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services services. For
-     * more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * </p>
      */
     private String awsSourceType;
     /**
      * <p>
-     * Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake User
-     * Guide.
+     * Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User Guide.
      * </p>
      */
     private String customSourceType;
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services services. For
-     * more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param awsSourceType
-     *        Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services
-     *        services. For more information, see the Amazon Security Lake User Guide.
+     *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * @see AwsLogSourceType
      */
 
@@ -61,12 +60,10 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services services. For
-     * more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * </p>
      * 
-     * @return Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services
-     *         services. For more information, see the Amazon Security Lake User Guide.
+     * @return Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * @see AwsLogSourceType
      */
 
@@ -76,13 +73,11 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services services. For
-     * more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param awsSourceType
-     *        Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services
-     *        services. For more information, see the Amazon Security Lake User Guide.
+     *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AwsLogSourceType
      */
@@ -94,13 +89,11 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services services. For
-     * more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param awsSourceType
-     *        Amazon Security Lake supports logs and events collection for natively-supported Amazon Web Services
-     *        services. For more information, see the Amazon Security Lake User Guide.
+     *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AwsLogSourceType
      */
@@ -112,13 +105,12 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake User
-     * Guide.
+     * Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User Guide.
      * </p>
      * 
      * @param customSourceType
-     *        Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake
-     *        User Guide.
+     *        Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User
+     *        Guide.
      */
 
     public void setCustomSourceType(String customSourceType) {
@@ -127,12 +119,11 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake User
-     * Guide.
+     * Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User Guide.
      * </p>
      * 
-     * @return Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake
-     *         User Guide.
+     * @return Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User
+     *         Guide.
      */
 
     public String getCustomSourceType() {
@@ -141,13 +132,12 @@ public class SourceType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake User
-     * Guide.
+     * Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User Guide.
      * </p>
      * 
      * @param customSourceType
-     *        Amazon Security Lake supports custom source types. For the detailed list, see the Amazon Security Lake
-     *        User Guide.
+     *        Amazon Security Lake supports custom source types. For a detailed list, see the Amazon Security Lake User
+     *        Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

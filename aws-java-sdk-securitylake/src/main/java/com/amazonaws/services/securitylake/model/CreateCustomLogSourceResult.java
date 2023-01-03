@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      */
     private String customDataLocation;
@@ -50,20 +50,21 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
     private String glueTableName;
     /**
      * <p>
-     * IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will apply
-     * the correct access policies to this Role, but this Role must have the trust policy created manually. This Role's
-     * name must start with the text 'Security Lake'. It must trust the <code>logProviderAccountId</code> to assume it.
+     * The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake
+     * will apply the correct access policies to this role, but you must first manually create the trust policy for this
+     * role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the
+     * <code>logProviderAccountId</code> to assume the role.
      * </p>
      */
     private String logProviderAccessRoleArn;
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      * 
      * @param customDataLocation
-     *        The location of the partition in the Security Lake S3 bucket.
+     *        The location of the partition in the Amazon S3 bucket for Security Lake.
      */
 
     public void setCustomDataLocation(String customDataLocation) {
@@ -72,10 +73,10 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      * 
-     * @return The location of the partition in the Security Lake S3 bucket.
+     * @return The location of the partition in the Amazon S3 bucket for Security Lake.
      */
 
     public String getCustomDataLocation() {
@@ -84,11 +85,11 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      * 
      * @param customDataLocation
-     *        The location of the partition in the Security Lake S3 bucket.
+     *        The location of the partition in the Amazon S3 bucket for Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,16 +226,17 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will apply
-     * the correct access policies to this Role, but this Role must have the trust policy created manually. This Role's
-     * name must start with the text 'Security Lake'. It must trust the <code>logProviderAccountId</code> to assume it.
+     * The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake
+     * will apply the correct access policies to this role, but you must first manually create the trust policy for this
+     * role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the
+     * <code>logProviderAccountId</code> to assume the role.
      * </p>
      * 
      * @param logProviderAccessRoleArn
-     *        IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will
-     *        apply the correct access policies to this Role, but this Role must have the trust policy created manually.
-     *        This Role's name must start with the text 'Security Lake'. It must trust the
-     *        <code>logProviderAccountId</code> to assume it.
+     *        The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security
+     *        Lake will apply the correct access policies to this role, but you must first manually create the trust
+     *        policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust
+     *        the <code>logProviderAccountId</code> to assume the role.
      */
 
     public void setLogProviderAccessRoleArn(String logProviderAccessRoleArn) {
@@ -243,15 +245,16 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will apply
-     * the correct access policies to this Role, but this Role must have the trust policy created manually. This Role's
-     * name must start with the text 'Security Lake'. It must trust the <code>logProviderAccountId</code> to assume it.
+     * The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake
+     * will apply the correct access policies to this role, but you must first manually create the trust policy for this
+     * role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the
+     * <code>logProviderAccountId</code> to assume the role.
      * </p>
      * 
-     * @return IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will
-     *         apply the correct access policies to this Role, but this Role must have the trust policy created
-     *         manually. This Role's name must start with the text 'Security Lake'. It must trust the
-     *         <code>logProviderAccountId</code> to assume it.
+     * @return The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security
+     *         Lake will apply the correct access policies to this role, but you must first manually create the trust
+     *         policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust
+     *         the <code>logProviderAccountId</code> to assume the role.
      */
 
     public String getLogProviderAccessRoleArn() {
@@ -260,16 +263,17 @@ public class CreateCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will apply
-     * the correct access policies to this Role, but this Role must have the trust policy created manually. This Role's
-     * name must start with the text 'Security Lake'. It must trust the <code>logProviderAccountId</code> to assume it.
+     * The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security Lake
+     * will apply the correct access policies to this role, but you must first manually create the trust policy for this
+     * role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust the
+     * <code>logProviderAccountId</code> to assume the role.
      * </p>
      * 
      * @param logProviderAccessRoleArn
-     *        IAM Role ARN to be used by the entity putting logs into your Custom Source partition. Security Lake will
-     *        apply the correct access policies to this Role, but this Role must have the trust policy created manually.
-     *        This Role's name must start with the text 'Security Lake'. It must trust the
-     *        <code>logProviderAccountId</code> to assume it.
+     *        The ARN of the IAM role to be used by the entity putting logs into your custom source partition. Security
+     *        Lake will apply the correct access policies to this role, but you must first manually create the trust
+     *        policy for this role. The IAM role name must start with the text 'Security Lake'. The IAM role must trust
+     *        the <code>logProviderAccountId</code> to assume the role.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Automatically enable new organization accounts as member accounts from a Security Lake administrator account.
+ * Automatically enable new organization accounts as member accounts from an Amazon Security Lake administrator account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AutoEnableNewRegionConfiguration"
@@ -30,24 +30,24 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Regions where Security Lake is auto enabled
+     * The Amazon Web Services Regions where Security Lake is automatically enabled.
      * </p>
      */
     private String region;
     /**
      * <p>
-     * The Amazon Web Services sources which are auto enabled in Security Lake.
+     * The Amazon Web Services sources that are automatically enabled in Security Lake.
      * </p>
      */
     private java.util.List<String> sources;
 
     /**
      * <p>
-     * The Regions where Security Lake is auto enabled
+     * The Amazon Web Services Regions where Security Lake is automatically enabled.
      * </p>
      * 
      * @param region
-     *        The Regions where Security Lake is auto enabled
+     *        The Amazon Web Services Regions where Security Lake is automatically enabled.
      * @see Region
      */
 
@@ -57,10 +57,10 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Regions where Security Lake is auto enabled
+     * The Amazon Web Services Regions where Security Lake is automatically enabled.
      * </p>
      * 
-     * @return The Regions where Security Lake is auto enabled
+     * @return The Amazon Web Services Regions where Security Lake is automatically enabled.
      * @see Region
      */
 
@@ -70,11 +70,11 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Regions where Security Lake is auto enabled
+     * The Amazon Web Services Regions where Security Lake is automatically enabled.
      * </p>
      * 
      * @param region
-     *        The Regions where Security Lake is auto enabled
+     *        The Amazon Web Services Regions where Security Lake is automatically enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Region
      */
@@ -86,11 +86,11 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Regions where Security Lake is auto enabled
+     * The Amazon Web Services Regions where Security Lake is automatically enabled.
      * </p>
      * 
      * @param region
-     *        The Regions where Security Lake is auto enabled
+     *        The Amazon Web Services Regions where Security Lake is automatically enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Region
      */
@@ -102,10 +102,10 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Web Services sources which are auto enabled in Security Lake.
+     * The Amazon Web Services sources that are automatically enabled in Security Lake.
      * </p>
      * 
-     * @return The Amazon Web Services sources which are auto enabled in Security Lake.
+     * @return The Amazon Web Services sources that are automatically enabled in Security Lake.
      * @see AwsLogSourceType
      */
 
@@ -115,11 +115,11 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Web Services sources which are auto enabled in Security Lake.
+     * The Amazon Web Services sources that are automatically enabled in Security Lake.
      * </p>
      * 
      * @param sources
-     *        The Amazon Web Services sources which are auto enabled in Security Lake.
+     *        The Amazon Web Services sources that are automatically enabled in Security Lake.
      * @see AwsLogSourceType
      */
 
@@ -134,7 +134,7 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Web Services sources which are auto enabled in Security Lake.
+     * The Amazon Web Services sources that are automatically enabled in Security Lake.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -143,7 +143,7 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
      * </p>
      * 
      * @param sources
-     *        The Amazon Web Services sources which are auto enabled in Security Lake.
+     *        The Amazon Web Services sources that are automatically enabled in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AwsLogSourceType
      */
@@ -160,11 +160,11 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Web Services sources which are auto enabled in Security Lake.
+     * The Amazon Web Services sources that are automatically enabled in Security Lake.
      * </p>
      * 
      * @param sources
-     *        The Amazon Web Services sources which are auto enabled in Security Lake.
+     *        The Amazon Web Services sources that are automatically enabled in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AwsLogSourceType
      */
@@ -176,11 +176,11 @@ public class AutoEnableNewRegionConfiguration implements Serializable, Cloneable
 
     /**
      * <p>
-     * The Amazon Web Services sources which are auto enabled in Security Lake.
+     * The Amazon Web Services sources that are automatically enabled in Security Lake.
      * </p>
      * 
      * @param sources
-     *        The Amazon Web Services sources which are auto enabled in Security Lake.
+     *        The Amazon Web Services sources that are automatically enabled in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AwsLogSourceType
      */

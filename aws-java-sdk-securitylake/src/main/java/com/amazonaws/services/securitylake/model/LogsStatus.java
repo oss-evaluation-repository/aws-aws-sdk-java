@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Log status for the Security Lake account.
+ * Retrieves the Logs status for the Amazon Security Lake account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LogsStatus" target="_top">AWS API
@@ -30,7 +30,7 @@ public class LogsStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Health status of services including error codes and patterns.
+     * The health status of services, including error codes and patterns.
      * </p>
      */
     private String healthStatus;
@@ -43,11 +43,11 @@ public class LogsStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Health status of services including error codes and patterns.
+     * The health status of services, including error codes and patterns.
      * </p>
      * 
      * @param healthStatus
-     *        Health status of services including error codes and patterns.
+     *        The health status of services, including error codes and patterns.
      * @see SourceStatus
      */
 
@@ -57,10 +57,10 @@ public class LogsStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Health status of services including error codes and patterns.
+     * The health status of services, including error codes and patterns.
      * </p>
      * 
-     * @return Health status of services including error codes and patterns.
+     * @return The health status of services, including error codes and patterns.
      * @see SourceStatus
      */
 
@@ -70,11 +70,11 @@ public class LogsStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Health status of services including error codes and patterns.
+     * The health status of services, including error codes and patterns.
      * </p>
      * 
      * @param healthStatus
-     *        Health status of services including error codes and patterns.
+     *        The health status of services, including error codes and patterns.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceStatus
      */
@@ -86,11 +86,11 @@ public class LogsStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Health status of services including error codes and patterns.
+     * The health status of services, including error codes and patterns.
      * </p>
      * 
      * @param healthStatus
-     *        Health status of services including error codes and patterns.
+     *        The health status of services, including error codes and patterns.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SourceStatus
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The account subscriber in Amazon Security Lake.
+     * The account of the subscriber.
      * </p>
      */
     private SubscriberResource subscriber;
 
     /**
      * <p>
-     * The account subscriber in Amazon Security Lake.
+     * The account of the subscriber.
      * </p>
      * 
      * @param subscriber
-     *        The account subscriber in Amazon Security Lake.
+     *        The account of the subscriber.
      */
 
     public void setSubscriber(SubscriberResource subscriber) {
@@ -45,10 +45,10 @@ public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The account subscriber in Amazon Security Lake.
+     * The account of the subscriber.
      * </p>
      * 
-     * @return The account subscriber in Amazon Security Lake.
+     * @return The account of the subscriber.
      */
 
     public SubscriberResource getSubscriber() {
@@ -57,11 +57,11 @@ public class UpdateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The account subscriber in Amazon Security Lake.
+     * The account of the subscriber.
      * </p>
      * 
      * @param subscriber
-     *        The account subscriber in Amazon Security Lake.
+     *        The account of the subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

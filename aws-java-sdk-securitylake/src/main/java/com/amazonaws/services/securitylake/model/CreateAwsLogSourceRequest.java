@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,35 +27,36 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables specific sources in all Regions and source types.
+     * Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, java.util.List<String>>> enableAllDimensions;
     /**
      * <p>
-     * Enables all sources in specific accounts or Regions.
+     * Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * </p>
      */
     private java.util.List<String> enableSingleDimension;
     /**
      * <p>
-     * Enables specific service sources in specific accounts or Regions.
+     * Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> enableTwoDimensions;
     /**
      * <p>
-     * Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member account.
+     * Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.
      * </p>
      */
     private java.util.List<String> inputOrder;
 
     /**
      * <p>
-     * Enables specific sources in all Regions and source types.
+     * Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.
      * </p>
      * 
-     * @return Enables specific sources in all Regions and source types.
+     * @return Enables data collection from specific Amazon Web Services sources in all specific accounts and specific
+     *         Regions.
      */
 
     public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getEnableAllDimensions() {
@@ -64,11 +65,12 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables specific sources in all Regions and source types.
+     * Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.
      * </p>
      * 
      * @param enableAllDimensions
-     *        Enables specific sources in all Regions and source types.
+     *        Enables data collection from specific Amazon Web Services sources in all specific accounts and specific
+     *        Regions.
      */
 
     public void setEnableAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> enableAllDimensions) {
@@ -77,11 +79,12 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables specific sources in all Regions and source types.
+     * Enables data collection from specific Amazon Web Services sources in all specific accounts and specific Regions.
      * </p>
      * 
      * @param enableAllDimensions
-     *        Enables specific sources in all Regions and source types.
+     *        Enables data collection from specific Amazon Web Services sources in all specific accounts and specific
+     *        Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,10 +123,10 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables all sources in specific accounts or Regions.
+     * Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * 
-     * @return Enables all sources in specific accounts or Regions.
+     * @return Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      */
 
     public java.util.List<String> getEnableSingleDimension() {
@@ -132,11 +135,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables all sources in specific accounts or Regions.
+     * Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * 
      * @param enableSingleDimension
-     *        Enables all sources in specific accounts or Regions.
+     *        Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      */
 
     public void setEnableSingleDimension(java.util.Collection<String> enableSingleDimension) {
@@ -150,7 +153,7 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables all sources in specific accounts or Regions.
+     * Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +162,7 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param enableSingleDimension
-     *        Enables all sources in specific accounts or Regions.
+     *        Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +178,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables all sources in specific accounts or Regions.
+     * Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * 
      * @param enableSingleDimension
-     *        Enables all sources in specific accounts or Regions.
+     *        Enables data collection from all Amazon Web Services sources in specific accounts or Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,10 +193,10 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables specific service sources in specific accounts or Regions.
+     * Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * 
-     * @return Enables specific service sources in specific accounts or Regions.
+     * @return Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      */
 
     public java.util.Map<String, java.util.List<String>> getEnableTwoDimensions() {
@@ -202,11 +205,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables specific service sources in specific accounts or Regions.
+     * Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * 
      * @param enableTwoDimensions
-     *        Enables specific service sources in specific accounts or Regions.
+     *        Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      */
 
     public void setEnableTwoDimensions(java.util.Map<String, java.util.List<String>> enableTwoDimensions) {
@@ -215,11 +218,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Enables specific service sources in specific accounts or Regions.
+     * Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      * </p>
      * 
      * @param enableTwoDimensions
-     *        Enables specific service sources in specific accounts or Regions.
+     *        Enables data collection from specific Amazon Web Services sources in specific accounts or Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,10 +261,10 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member account.
+     * Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.
      * </p>
      * 
-     * @return Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member
+     * @return Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member
      *         account.
      * @see Dimension
      */
@@ -272,11 +275,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member account.
+     * Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.
      * </p>
      * 
      * @param inputOrder
-     *        Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member
+     *        Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member
      *        account.
      * @see Dimension
      */
@@ -292,7 +295,7 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member account.
+     * Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -301,7 +304,7 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param inputOrder
-     *        Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member
+     *        Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member
      *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
@@ -319,11 +322,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member account.
+     * Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.
      * </p>
      * 
      * @param inputOrder
-     *        Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member
+     *        Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member
      *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
@@ -336,11 +339,11 @@ public class CreateAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member account.
+     * Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member account.
      * </p>
      * 
      * @param inputOrder
-     *        Specifies the input order to enable dimensions in Security Lake, namely region, source type, and member
+     *        Specifies the input order to enable dimensions in Security Lake, namely Region, source type, and member
      *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension

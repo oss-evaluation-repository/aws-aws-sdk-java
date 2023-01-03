@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Provides an extension of the AmazonServiceException for errors reported by Amazon S3 while processing a request. In
- * particular, this class provides access to Amazon S3's extended request ID. This ID is required debugging information
- * in the case the user needs to contact Amazon about an issue where Amazon S3 is incorrectly handling a request.
+ * particular, this class provides access to the Amazon S3 extended request ID. If Amazon S3 is incorrectly handling a
+ * request and you need to contact Amazon, this extended request ID may provide useful debugging information.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

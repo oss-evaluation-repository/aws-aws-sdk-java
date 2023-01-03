@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of lake configuration object in Amazon Security Lake.
+ * Provides details of Amazon Security Lake lake configuration object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LakeConfigurationResponse"
@@ -30,16 +30,17 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration
+     * The type of encryption key used by secure the Security Lake configuration object.
      * </p>
      */
     private String encryptionKey;
     /**
      * <p>
      * Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that
-     * are configured for object replication can be owned by the same AWS account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can
-     * be in different Amazon Web Services Regions or within the same Region as the source bucket.
+     * are configured for object replication can be owned by the same Amazon Web Services account or by different
+     * accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The
+     * destination buckets can be in different Amazon Web Services Regions or within the same Region as the source
+     * bucket.
      * </p>
      * <p>
      * Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup
@@ -49,8 +50,8 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
     private java.util.List<String> replicationDestinationRegions;
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct.
      * </p>
      */
     private String replicationRoleArn;
@@ -84,11 +85,11 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration
+     * The type of encryption key used by secure the Security Lake configuration object.
      * </p>
      * 
      * @param encryptionKey
-     *        The type of encryption key used by Security Lake to encrypt the lake configuration
+     *        The type of encryption key used by secure the Security Lake configuration object.
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -97,10 +98,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration
+     * The type of encryption key used by secure the Security Lake configuration object.
      * </p>
      * 
-     * @return The type of encryption key used by Security Lake to encrypt the lake configuration
+     * @return The type of encryption key used by secure the Security Lake configuration object.
      */
 
     public String getEncryptionKey() {
@@ -109,11 +110,11 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration
+     * The type of encryption key used by secure the Security Lake configuration object.
      * </p>
      * 
      * @param encryptionKey
-     *        The type of encryption key used by Security Lake to encrypt the lake configuration
+     *        The type of encryption key used by secure the Security Lake configuration object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,9 +126,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that
-     * are configured for object replication can be owned by the same AWS account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can
-     * be in different Amazon Web Services Regions or within the same Region as the source bucket.
+     * are configured for object replication can be owned by the same Amazon Web Services account or by different
+     * accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The
+     * destination buckets can be in different Amazon Web Services Regions or within the same Region as the source
+     * bucket.
      * </p>
      * <p>
      * Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup
@@ -135,10 +137,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @return Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3
-     *         buckets that are configured for object replication can be owned by the same AWS account or by different
-     *         accounts. You can replicate objects to a single destination bucket or to multiple destination buckets.
-     *         The destination buckets can be in different Amazon Web Services Regions or within the same Region as the
-     *         source bucket.</p>
+     *         buckets that are configured for object replication can be owned by the same Amazon Web Services account
+     *         or by different accounts. You can replicate objects to a single destination bucket or to multiple
+     *         destination buckets. The destination buckets can be in different Amazon Web Services Regions or within
+     *         the same Region as the source bucket.</p>
      *         <p>
      *         Set up one or more rollup Regions by providing the Region or Regions that should contribute to the
      *         central rollup Region.
@@ -152,9 +154,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that
-     * are configured for object replication can be owned by the same AWS account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can
-     * be in different Amazon Web Services Regions or within the same Region as the source bucket.
+     * are configured for object replication can be owned by the same Amazon Web Services account or by different
+     * accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The
+     * destination buckets can be in different Amazon Web Services Regions or within the same Region as the source
+     * bucket.
      * </p>
      * <p>
      * Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup
@@ -163,10 +166,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
      * 
      * @param replicationDestinationRegions
      *        Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets
-     *        that are configured for object replication can be owned by the same AWS account or by different accounts.
-     *        You can replicate objects to a single destination bucket or to multiple destination buckets. The
-     *        destination buckets can be in different Amazon Web Services Regions or within the same Region as the
-     *        source bucket.</p>
+     *        that are configured for object replication can be owned by the same Amazon Web Services account or by
+     *        different accounts. You can replicate objects to a single destination bucket or to multiple destination
+     *        buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region
+     *        as the source bucket.</p>
      *        <p>
      *        Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central
      *        rollup Region.
@@ -185,9 +188,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that
-     * are configured for object replication can be owned by the same AWS account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can
-     * be in different Amazon Web Services Regions or within the same Region as the source bucket.
+     * are configured for object replication can be owned by the same Amazon Web Services account or by different
+     * accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The
+     * destination buckets can be in different Amazon Web Services Regions or within the same Region as the source
+     * bucket.
      * </p>
      * <p>
      * Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup
@@ -201,10 +205,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
      * 
      * @param replicationDestinationRegions
      *        Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets
-     *        that are configured for object replication can be owned by the same AWS account or by different accounts.
-     *        You can replicate objects to a single destination bucket or to multiple destination buckets. The
-     *        destination buckets can be in different Amazon Web Services Regions or within the same Region as the
-     *        source bucket.</p>
+     *        that are configured for object replication can be owned by the same Amazon Web Services account or by
+     *        different accounts. You can replicate objects to a single destination bucket or to multiple destination
+     *        buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region
+     *        as the source bucket.</p>
      *        <p>
      *        Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central
      *        rollup Region.
@@ -225,9 +229,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that
-     * are configured for object replication can be owned by the same AWS account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can
-     * be in different Amazon Web Services Regions or within the same Region as the source bucket.
+     * are configured for object replication can be owned by the same Amazon Web Services account or by different
+     * accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The
+     * destination buckets can be in different Amazon Web Services Regions or within the same Region as the source
+     * bucket.
      * </p>
      * <p>
      * Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup
@@ -236,10 +241,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
      * 
      * @param replicationDestinationRegions
      *        Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets
-     *        that are configured for object replication can be owned by the same AWS account or by different accounts.
-     *        You can replicate objects to a single destination bucket or to multiple destination buckets. The
-     *        destination buckets can be in different Amazon Web Services Regions or within the same Region as the
-     *        source bucket.</p>
+     *        that are configured for object replication can be owned by the same Amazon Web Services account or by
+     *        different accounts. You can replicate objects to a single destination bucket or to multiple destination
+     *        buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region
+     *        as the source bucket.</p>
      *        <p>
      *        Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central
      *        rollup Region.
@@ -255,9 +260,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
     /**
      * <p>
      * Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets that
-     * are configured for object replication can be owned by the same AWS account or by different accounts. You can
-     * replicate objects to a single destination bucket or to multiple destination buckets. The destination buckets can
-     * be in different Amazon Web Services Regions or within the same Region as the source bucket.
+     * are configured for object replication can be owned by the same Amazon Web Services account or by different
+     * accounts. You can replicate objects to a single destination bucket or to multiple destination buckets. The
+     * destination buckets can be in different Amazon Web Services Regions or within the same Region as the source
+     * bucket.
      * </p>
      * <p>
      * Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central rollup
@@ -266,10 +272,10 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
      * 
      * @param replicationDestinationRegions
      *        Replication enables automatic, asynchronous copying of objects across Amazon S3 buckets. Amazon S3 buckets
-     *        that are configured for object replication can be owned by the same AWS account or by different accounts.
-     *        You can replicate objects to a single destination bucket or to multiple destination buckets. The
-     *        destination buckets can be in different Amazon Web Services Regions or within the same Region as the
-     *        source bucket.</p>
+     *        that are configured for object replication can be owned by the same Amazon Web Services account or by
+     *        different accounts. You can replicate objects to a single destination bucket or to multiple destination
+     *        buckets. The destination buckets can be in different Amazon Web Services Regions or within the same Region
+     *        as the source bucket.</p>
      *        <p>
      *        Set up one or more rollup Regions by providing the Region or Regions that should contribute to the central
      *        rollup Region.
@@ -292,12 +298,12 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct.
      * </p>
      * 
      * @param replicationRoleArn
-     *        Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is
+     *        Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is
      *        managed by Security Lake, to ensure the replication setting is correct.
      */
 
@@ -307,11 +313,11 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct.
      * </p>
      * 
-     * @return Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is
+     * @return Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is
      *         managed by Security Lake, to ensure the replication setting is correct.
      */
 
@@ -321,12 +327,12 @@ public class LakeConfigurationResponse implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is managed by
+     * Security Lake, to ensure the replication setting is correct.
      * </p>
      * 
      * @param replicationRoleArn
-     *        Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is
+     *        Replication settings for the Amazon S3 buckets. This parameter uses the IAM role you created that is
      *        managed by Security Lake, to ensure the replication setting is correct.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

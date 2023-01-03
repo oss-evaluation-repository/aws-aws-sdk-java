@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of the Amazon Security Lake account subscription. Subscribers are notified of new objects for a
- * source as the data is written to your Amazon Security Lake S3 bucket.
+ * Provides details about the Amazon Security Lake account subscription. Subscribers are notified of new objects for a
+ * source as the data is written to your Amazon S3 bucket for Security Lake.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SubscriberResource" target="_top">AWS
@@ -35,14 +35,14 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * through messaging to an HTTPS endpoint provided by the subscriber.
      * </p>
      * <p>
-     * Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     * Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services
+     * like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * </p>
      */
     private java.util.List<String> accessTypes;
     /**
      * <p>
-     * The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake account.
+     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      * </p>
      */
     private String accountId;
@@ -54,7 +54,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     private java.util.Date createdAt;
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
      * assumed only under specific circumstances.
      * </p>
@@ -68,20 +68,20 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     private String roleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      */
     private String s3BucketArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      */
     private String snsArn;
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services services.
-     * For more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
+     * information, see the Amazon Security Lake User Guide.
      * </p>
      */
     private java.util.List<SourceType> sourceTypes;
@@ -118,7 +118,7 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
     private String subscriptionProtocol;
     /**
      * <p>
-     * Subscription status of the Amazon Security Lake subscriber account.
+     * The subscription status of the Amazon Security Lake subscriber account.
      * </p>
      */
     private String subscriptionStatus;
@@ -135,15 +135,15 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * through messaging to an HTTPS endpoint provided by the subscriber.
      * </p>
      * <p>
-     * Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     * Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services
+     * like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * </p>
      * 
      * @return You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS)
      *         queue or through messaging to an HTTPS endpoint provided by the subscriber. </p>
      *         <p>
-     *         Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services
-     *         like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     *         Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
+     *         services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * @see AccessType
      */
 
@@ -157,16 +157,16 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * through messaging to an HTTPS endpoint provided by the subscriber.
      * </p>
      * <p>
-     * Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     * Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services
+     * like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * </p>
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
      *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
      *        <p>
-     *        Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services
-     *        like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
+     *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * @see AccessType
      */
 
@@ -185,8 +185,8 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * through messaging to an HTTPS endpoint provided by the subscriber.
      * </p>
      * <p>
-     * Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     * Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services
+     * like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -198,8 +198,8 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
      *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
      *        <p>
-     *        Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services
-     *        like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
+     *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessType
      */
@@ -220,16 +220,16 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * through messaging to an HTTPS endpoint provided by the subscriber.
      * </p>
      * <p>
-     * Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     * Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services
+     * like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * </p>
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
      *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
      *        <p>
-     *        Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services
-     *        like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
+     *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessType
      */
@@ -245,16 +245,16 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * through messaging to an HTTPS endpoint provided by the subscriber.
      * </p>
      * <p>
-     * Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     * Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through services
+     * like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * </p>
      * 
      * @param accessTypes
      *        You can choose to notify subscribers of new objects with an Amazon Simple Queue Service (Amazon SQS) queue
      *        or through messaging to an HTTPS endpoint provided by the subscriber. </p>
      *        <p>
-     *        Subscribers can consume data by directly querying Lake Formation tables in your S3 bucket via services
-     *        like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
+     *        Subscribers can consume data by directly querying Lake Formation tables in your Amazon S3 bucket through
+     *        services like Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessType
      */
@@ -274,12 +274,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake account.
+     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      * </p>
      * 
      * @param accountId
-     *        The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake
-     *        account.
+     *        The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      */
 
     public void setAccountId(String accountId) {
@@ -288,11 +287,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake account.
+     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      * </p>
      * 
-     * @return The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake
-     *         account.
+     * @return The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      */
 
     public String getAccountId() {
@@ -301,12 +299,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake account.
+     * The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      * </p>
      * 
      * @param accountId
-     *        The Amazon Web Services account ID of the account that you are using to create your Amazon Security Lake
-     *        account.
+     *        The Amazon Web Services account ID you are using to create your Amazon Security Lake account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,13 +354,13 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
      * assumed only under specific circumstances.
      * </p>
      * 
      * @param externalId
-     *        The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     *        The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      *        circumstances in which they are operating. It also provides a way for the account owner to permit the role
      *        to be assumed only under specific circumstances.
      */
@@ -374,12 +371,12 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
      * assumed only under specific circumstances.
      * </p>
      * 
-     * @return The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     * @return The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      *         circumstances in which they are operating. It also provides a way for the account owner to permit the
      *         role to be assumed only under specific circumstances.
      */
@@ -390,13 +387,13 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     * The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
      * assumed only under specific circumstances.
      * </p>
      * 
      * @param externalId
-     *        The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
+     *        The external ID of the subscriber. The external ID lets the user that is assuming the role assert the
      *        circumstances in which they are operating. It also provides a way for the account owner to permit the role
      *        to be assumed only under specific circumstances.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -449,11 +446,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      * 
      * @param s3BucketArn
-     *        The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     *        The ARN for the Amazon S3 bucket.
      */
 
     public void setS3BucketArn(String s3BucketArn) {
@@ -462,10 +459,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * @return The ARN for the Amazon S3 bucket.
      */
 
     public String getS3BucketArn() {
@@ -474,11 +471,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      * 
      * @param s3BucketArn
-     *        The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     *        The ARN for the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,11 +486,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      * 
      * @param snsArn
-     *        The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     *        The ARN for the Amazon Simple Notification Service.
      */
 
     public void setSnsArn(String snsArn) {
@@ -502,10 +499,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * @return The ARN for the Amazon Simple Notification Service.
      */
 
     public String getSnsArn() {
@@ -514,11 +511,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      * 
      * @param snsArn
-     *        The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     *        The ARN for the Amazon Simple Notification Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,12 +526,12 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services services.
-     * For more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
+     * information, see the Amazon Security Lake User Guide.
      * </p>
      * 
-     * @return Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services
-     *         services. For more information, see the Amazon Security Lake User Guide.
+     * @return Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
+     *         more information, see the Amazon Security Lake User Guide.
      */
 
     public java.util.List<SourceType> getSourceTypes() {
@@ -543,13 +540,13 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services services.
-     * For more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
+     * information, see the Amazon Security Lake User Guide.
      * </p>
      * 
      * @param sourceTypes
-     *        Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services
-     *        services. For more information, see the Amazon Security Lake User Guide.
+     *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
+     *        more information, see the Amazon Security Lake User Guide.
      */
 
     public void setSourceTypes(java.util.Collection<SourceType> sourceTypes) {
@@ -563,8 +560,8 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services services.
-     * For more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
+     * information, see the Amazon Security Lake User Guide.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -573,8 +570,8 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param sourceTypes
-     *        Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services
-     *        services. For more information, see the Amazon Security Lake User Guide.
+     *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
+     *        more information, see the Amazon Security Lake User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,13 +587,13 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services services.
-     * For more information, see the Amazon Security Lake User Guide.
+     * Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For more
+     * information, see the Amazon Security Lake User Guide.
      * </p>
      * 
      * @param sourceTypes
-     *        Amazon Security Lake supports logs and events collection for the natively-supported Amazon Web Services
-     *        services. For more information, see the Amazon Security Lake User Guide.
+     *        Amazon Security Lake supports log and event collection for natively supported Amazon Web Services. For
+     *        more information, see the Amazon Security Lake User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -835,11 +832,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription status of the Amazon Security Lake subscriber account.
+     * The subscription status of the Amazon Security Lake subscriber account.
      * </p>
      * 
      * @param subscriptionStatus
-     *        Subscription status of the Amazon Security Lake subscriber account.
+     *        The subscription status of the Amazon Security Lake subscriber account.
      * @see SubscriptionStatus
      */
 
@@ -849,10 +846,10 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription status of the Amazon Security Lake subscriber account.
+     * The subscription status of the Amazon Security Lake subscriber account.
      * </p>
      * 
-     * @return Subscription status of the Amazon Security Lake subscriber account.
+     * @return The subscription status of the Amazon Security Lake subscriber account.
      * @see SubscriptionStatus
      */
 
@@ -862,11 +859,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription status of the Amazon Security Lake subscriber account.
+     * The subscription status of the Amazon Security Lake subscriber account.
      * </p>
      * 
      * @param subscriptionStatus
-     *        Subscription status of the Amazon Security Lake subscriber account.
+     *        The subscription status of the Amazon Security Lake subscriber account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionStatus
      */
@@ -878,11 +875,11 @@ public class SubscriberResource implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Subscription status of the Amazon Security Lake subscriber account.
+     * The subscription status of the Amazon Security Lake subscriber account.
      * </p>
      * 
      * @param subscriptionStatus
-     *        Subscription status of the Amazon Security Lake subscriber account.
+     *        The subscription status of the Amazon Security Lake subscriber account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionStatus
      */

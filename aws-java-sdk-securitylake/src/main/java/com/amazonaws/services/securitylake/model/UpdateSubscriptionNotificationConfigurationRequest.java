@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class UpdateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      * </p>
      */
     private Boolean createSqs;
@@ -71,11 +71,11 @@ public class UpdateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      * </p>
      * 
      * @param createSqs
-     *        Create a new subscription notification for the specified subscription ID in Security Lake.
+     *        Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      */
 
     public void setCreateSqs(Boolean createSqs) {
@@ -84,10 +84,10 @@ public class UpdateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      * </p>
      * 
-     * @return Create a new subscription notification for the specified subscription ID in Security Lake.
+     * @return Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      */
 
     public Boolean getCreateSqs() {
@@ -96,11 +96,11 @@ public class UpdateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      * </p>
      * 
      * @param createSqs
-     *        Create a new subscription notification for the specified subscription ID in Security Lake.
+     *        Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +111,10 @@ public class UpdateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      * </p>
      * 
-     * @return Create a new subscription notification for the specified subscription ID in Security Lake.
+     * @return Create a new subscription notification for the specified subscription ID in Amazon Security Lake.
      */
 
     public Boolean isCreateSqs() {

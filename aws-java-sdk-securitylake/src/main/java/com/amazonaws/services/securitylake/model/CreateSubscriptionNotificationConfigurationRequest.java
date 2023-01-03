@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,54 +28,55 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create an Amazon Simple Queue Service queue.
      * </p>
      */
     private Boolean createSqs;
     /**
      * <p>
-     * The key name for the subscription notification.
+     * The key name for the notification subscription.
      * </p>
      */
     private String httpsApiKeyName;
     /**
      * <p>
-     * The key value for the subscription notification.
+     * The key value for the notification subscription.
      * </p>
      */
     private String httpsApiKeyValue;
     /**
      * <p>
-     * The HTTPS method used for the subscription notification.
+     * The HTTPS method used for the notification subscription.
      * </p>
      */
     private String httpsMethod;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     * The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The subscription endpoint in Security Lake.
+     * The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this
+     * field.
      * </p>
      */
     private String subscriptionEndpoint;
     /**
      * <p>
-     * The subscription ID for which the subscription notification is specified.
+     * The subscription ID for the notification subscription/
      * </p>
      */
     private String subscriptionId;
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create an Amazon Simple Queue Service queue.
      * </p>
      * 
      * @param createSqs
-     *        Create a new subscription notification for the specified subscription ID in Security Lake.
+     *        Create an Amazon Simple Queue Service queue.
      */
 
     public void setCreateSqs(Boolean createSqs) {
@@ -84,10 +85,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create an Amazon Simple Queue Service queue.
      * </p>
      * 
-     * @return Create a new subscription notification for the specified subscription ID in Security Lake.
+     * @return Create an Amazon Simple Queue Service queue.
      */
 
     public Boolean getCreateSqs() {
@@ -96,11 +97,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create an Amazon Simple Queue Service queue.
      * </p>
      * 
      * @param createSqs
-     *        Create a new subscription notification for the specified subscription ID in Security Lake.
+     *        Create an Amazon Simple Queue Service queue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +112,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * Create a new subscription notification for the specified subscription ID in Security Lake.
+     * Create an Amazon Simple Queue Service queue.
      * </p>
      * 
-     * @return Create a new subscription notification for the specified subscription ID in Security Lake.
+     * @return Create an Amazon Simple Queue Service queue.
      */
 
     public Boolean isCreateSqs() {
@@ -123,11 +124,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The key name for the subscription notification.
+     * The key name for the notification subscription.
      * </p>
      * 
      * @param httpsApiKeyName
-     *        The key name for the subscription notification.
+     *        The key name for the notification subscription.
      */
 
     public void setHttpsApiKeyName(String httpsApiKeyName) {
@@ -136,10 +137,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The key name for the subscription notification.
+     * The key name for the notification subscription.
      * </p>
      * 
-     * @return The key name for the subscription notification.
+     * @return The key name for the notification subscription.
      */
 
     public String getHttpsApiKeyName() {
@@ -148,11 +149,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The key name for the subscription notification.
+     * The key name for the notification subscription.
      * </p>
      * 
      * @param httpsApiKeyName
-     *        The key name for the subscription notification.
+     *        The key name for the notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +164,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The key value for the subscription notification.
+     * The key value for the notification subscription.
      * </p>
      * 
      * @param httpsApiKeyValue
-     *        The key value for the subscription notification.
+     *        The key value for the notification subscription.
      */
 
     public void setHttpsApiKeyValue(String httpsApiKeyValue) {
@@ -176,10 +177,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The key value for the subscription notification.
+     * The key value for the notification subscription.
      * </p>
      * 
-     * @return The key value for the subscription notification.
+     * @return The key value for the notification subscription.
      */
 
     public String getHttpsApiKeyValue() {
@@ -188,11 +189,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The key value for the subscription notification.
+     * The key value for the notification subscription.
      * </p>
      * 
      * @param httpsApiKeyValue
-     *        The key value for the subscription notification.
+     *        The key value for the notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,11 +204,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The HTTPS method used for the subscription notification.
+     * The HTTPS method used for the notification subscription.
      * </p>
      * 
      * @param httpsMethod
-     *        The HTTPS method used for the subscription notification.
+     *        The HTTPS method used for the notification subscription.
      * @see HttpsMethod
      */
 
@@ -217,10 +218,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The HTTPS method used for the subscription notification.
+     * The HTTPS method used for the notification subscription.
      * </p>
      * 
-     * @return The HTTPS method used for the subscription notification.
+     * @return The HTTPS method used for the notification subscription.
      * @see HttpsMethod
      */
 
@@ -230,11 +231,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The HTTPS method used for the subscription notification.
+     * The HTTPS method used for the notification subscription.
      * </p>
      * 
      * @param httpsMethod
-     *        The HTTPS method used for the subscription notification.
+     *        The HTTPS method used for the notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpsMethod
      */
@@ -246,11 +247,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The HTTPS method used for the subscription notification.
+     * The HTTPS method used for the notification subscription.
      * </p>
      * 
      * @param httpsMethod
-     *        The HTTPS method used for the subscription notification.
+     *        The HTTPS method used for the notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpsMethod
      */
@@ -262,11 +263,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     * The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     *        The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      */
 
     public void setRoleArn(String roleArn) {
@@ -275,10 +276,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     * The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     * @return The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      */
 
     public String getRoleArn() {
@@ -287,11 +288,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     * The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) specifying the role of the subscriber.
+     *        The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,11 +303,13 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription endpoint in Security Lake.
+     * The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this
+     * field.
      * </p>
      * 
      * @param subscriptionEndpoint
-     *        The subscription endpoint in Security Lake.
+     *        The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate
+     *        this field.
      */
 
     public void setSubscriptionEndpoint(String subscriptionEndpoint) {
@@ -315,10 +318,12 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription endpoint in Security Lake.
+     * The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this
+     * field.
      * </p>
      * 
-     * @return The subscription endpoint in Security Lake.
+     * @return The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate
+     *         this field.
      */
 
     public String getSubscriptionEndpoint() {
@@ -327,11 +332,13 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription endpoint in Security Lake.
+     * The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate this
+     * field.
      * </p>
      * 
      * @param subscriptionEndpoint
-     *        The subscription endpoint in Security Lake.
+     *        The subscription endpoint in Security Lake. If you prefer notification with an HTTPs endpoint, populate
+     *        this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,11 +349,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription ID for which the subscription notification is specified.
+     * The subscription ID for the notification subscription/
      * </p>
      * 
      * @param subscriptionId
-     *        The subscription ID for which the subscription notification is specified.
+     *        The subscription ID for the notification subscription/
      */
 
     public void setSubscriptionId(String subscriptionId) {
@@ -355,10 +362,10 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription ID for which the subscription notification is specified.
+     * The subscription ID for the notification subscription/
      * </p>
      * 
-     * @return The subscription ID for which the subscription notification is specified.
+     * @return The subscription ID for the notification subscription/
      */
 
     public String getSubscriptionId() {
@@ -367,11 +374,11 @@ public class CreateSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription ID for which the subscription notification is specified.
+     * The subscription ID for the notification subscription/
      * </p>
      * 
      * @param subscriptionId
-     *        The subscription ID for which the subscription notification is specified.
+     *        The subscription ID for the notification subscription/
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

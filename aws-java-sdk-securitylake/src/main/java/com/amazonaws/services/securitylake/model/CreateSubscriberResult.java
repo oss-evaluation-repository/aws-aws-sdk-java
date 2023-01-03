@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,39 +25,45 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information about ARNs
-     * and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     * The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and
+     * how to use them in policies, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     * Identity and Access Management (IAM) User Guide</a>. .
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      */
     private String s3BucketArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      */
     private String snsArn;
     /**
      * <p>
-     * The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     * The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      * </p>
      */
     private String subscriptionId;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information about ARNs
-     * and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     * The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and
+     * how to use them in policies, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     * Identity and Access Management (IAM) User Guide</a>. .
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information
-     *        about ARNs and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     *        The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about
+     *        ARNs and how to use them in policies, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     *        Identity and Access Management (IAM) User Guide</a>. .
      */
 
     public void setRoleArn(String roleArn) {
@@ -66,12 +72,16 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information about ARNs
-     * and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     * The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and
+     * how to use them in policies, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     * Identity and Access Management (IAM) User Guide</a>. .
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information
-     *         about ARNs and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     * @return The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about
+     *         ARNs and how to use them in policies, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     *         Identity and Access Management (IAM) User Guide</a>. .
      */
 
     public String getRoleArn() {
@@ -80,13 +90,17 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information about ARNs
-     * and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     * The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about ARNs and
+     * how to use them in policies, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     * Identity and Access Management (IAM) User Guide</a>. .
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) created by the user to provide to the subscriber. For more information
-     *        about ARNs and how to use them in policies, see IAM identifiers in the IAM User Guide.
+     *        The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more information about
+     *        ARNs and how to use them in policies, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM identifiers in the
+     *        Identity and Access Management (IAM) User Guide</a>. .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +111,11 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      * 
      * @param s3BucketArn
-     *        The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     *        The ARN for the Amazon S3 bucket.
      */
 
     public void setS3BucketArn(String s3BucketArn) {
@@ -110,10 +124,10 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * @return The ARN for the Amazon S3 bucket.
      */
 
     public String getS3BucketArn() {
@@ -122,11 +136,11 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     * The ARN for the Amazon S3 bucket.
      * </p>
      * 
      * @param s3BucketArn
-     *        The Amazon Resource Name (ARN) for the Amazon S3 bucket.
+     *        The ARN for the Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +151,11 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      * 
      * @param snsArn
-     *        The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     *        The ARN for the Amazon Simple Notification Service.
      */
 
     public void setSnsArn(String snsArn) {
@@ -150,10 +164,10 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * @return The ARN for the Amazon Simple Notification Service.
      */
 
     public String getSnsArn() {
@@ -162,11 +176,11 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     * The ARN for the Amazon Simple Notification Service.
      * </p>
      * 
      * @param snsArn
-     *        The Amazon Resource Name (ARN) for the Amazon Simple Notification Service.
+     *        The ARN for the Amazon Simple Notification Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,11 +191,11 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     * The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      * </p>
      * 
      * @param subscriptionId
-     *        The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     *        The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      */
 
     public void setSubscriptionId(String subscriptionId) {
@@ -190,10 +204,10 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     * The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      * </p>
      * 
-     * @return The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     * @return The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      */
 
     public String getSubscriptionId() {
@@ -202,11 +216,11 @@ public class CreateSubscriberResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     * The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      * </p>
      * 
      * @param subscriptionId
-     *        The <code>subscriptionId</code> that was created by the <code>CreateSubscriber</code> API call.
+     *        The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

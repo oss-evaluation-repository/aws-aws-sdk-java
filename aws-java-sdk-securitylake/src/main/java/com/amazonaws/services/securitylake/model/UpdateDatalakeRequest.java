@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,17 @@ public class UpdateDatalakeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration object
+     * Specify the Region or Regions that will contribute data to the rollup region.
      * </p>
      */
     private java.util.Map<String, LakeConfigurationRequest> configurations;
 
     /**
      * <p>
-     * The configuration object
+     * Specify the Region or Regions that will contribute data to the rollup region.
      * </p>
      * 
-     * @return The configuration object
+     * @return Specify the Region or Regions that will contribute data to the rollup region.
      */
 
     public java.util.Map<String, LakeConfigurationRequest> getConfigurations() {
@@ -46,11 +46,11 @@ public class UpdateDatalakeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration object
+     * Specify the Region or Regions that will contribute data to the rollup region.
      * </p>
      * 
      * @param configurations
-     *        The configuration object
+     *        Specify the Region or Regions that will contribute data to the rollup region.
      */
 
     public void setConfigurations(java.util.Map<String, LakeConfigurationRequest> configurations) {
@@ -59,11 +59,11 @@ public class UpdateDatalakeRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The configuration object
+     * Specify the Region or Regions that will contribute data to the rollup region.
      * </p>
      * 
      * @param configurations
-     *        The configuration object
+     *        Specify the Region or Regions that will contribute data to the rollup region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

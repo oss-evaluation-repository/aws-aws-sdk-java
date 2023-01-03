@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,19 +27,21 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The custom source name for a third-party custom source.
+     * The name for a third-party custom source. This must be a Regionally unique value.
      * </p>
      */
     private String customSourceName;
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class.
+     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
+     * source will send to Security Lake.
      * </p>
      */
     private String eventClass;
     /**
      * <p>
-     * The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
+     * The recommended IAM policies are:
      * </p>
      * <ul>
      * <li>
@@ -49,7 +51,7 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your S3 Data Lake
+     * A custom policy granting access to your Amazon S3 Data Lake
      * </p>
      * </li>
      * </ul>
@@ -57,18 +59,19 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
     private String glueInvocationRoleArn;
     /**
      * <p>
-     * The Account ID that will assume the above Role to put logs into the Data Lake.
+     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
+     * Lake.
      * </p>
      */
     private String logProviderAccountId;
 
     /**
      * <p>
-     * The custom source name for a third-party custom source.
+     * The name for a third-party custom source. This must be a Regionally unique value.
      * </p>
      * 
      * @param customSourceName
-     *        The custom source name for a third-party custom source.
+     *        The name for a third-party custom source. This must be a Regionally unique value.
      */
 
     public void setCustomSourceName(String customSourceName) {
@@ -77,10 +80,10 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The custom source name for a third-party custom source.
+     * The name for a third-party custom source. This must be a Regionally unique value.
      * </p>
      * 
-     * @return The custom source name for a third-party custom source.
+     * @return The name for a third-party custom source. This must be a Regionally unique value.
      */
 
     public String getCustomSourceName() {
@@ -89,11 +92,11 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The custom source name for a third-party custom source.
+     * The name for a third-party custom source. This must be a Regionally unique value.
      * </p>
      * 
      * @param customSourceName
-     *        The custom source name for a third-party custom source.
+     *        The name for a third-party custom source. This must be a Regionally unique value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +107,13 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class.
+     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
+     * source will send to Security Lake.
      * </p>
      * 
      * @param eventClass
-     *        The Open Cybersecurity Schema Framework (OCSF) event class.
+     *        The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
+     *        custom source will send to Security Lake.
      * @see OcsfEventClass
      */
 
@@ -118,10 +123,12 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class.
+     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
+     * source will send to Security Lake.
      * </p>
      * 
-     * @return The Open Cybersecurity Schema Framework (OCSF) event class.
+     * @return The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
+     *         custom source will send to Security Lake.
      * @see OcsfEventClass
      */
 
@@ -131,11 +138,13 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class.
+     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
+     * source will send to Security Lake.
      * </p>
      * 
      * @param eventClass
-     *        The Open Cybersecurity Schema Framework (OCSF) event class.
+     *        The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
+     *        custom source will send to Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OcsfEventClass
      */
@@ -147,11 +156,13 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Open Cybersecurity Schema Framework (OCSF) event class.
+     * The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the custom
+     * source will send to Security Lake.
      * </p>
      * 
      * @param eventClass
-     *        The Open Cybersecurity Schema Framework (OCSF) event class.
+     *        The Open Cybersecurity Schema Framework (OCSF) event class which describes the type of data that the
+     *        custom source will send to Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OcsfEventClass
      */
@@ -163,7 +174,8 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
+     * The recommended IAM policies are:
      * </p>
      * <ul>
      * <li>
@@ -173,13 +185,14 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your S3 Data Lake
+     * A custom policy granting access to your Amazon S3 Data Lake
      * </p>
      * </li>
      * </ul>
      * 
      * @param glueInvocationRoleArn
-     *        The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:</p>
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue
+     *        crawler. The recommended IAM policies are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -188,7 +201,7 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        A custom policy granting access to your S3 Data Lake
+     *        A custom policy granting access to your Amazon S3 Data Lake
      *        </p>
      *        </li>
      */
@@ -199,7 +212,8 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
+     * The recommended IAM policies are:
      * </p>
      * <ul>
      * <li>
@@ -209,12 +223,13 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your S3 Data Lake
+     * A custom policy granting access to your Amazon S3 Data Lake
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:</p>
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue
+     *         crawler. The recommended IAM policies are:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -223,7 +238,7 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      *         </li>
      *         <li>
      *         <p>
-     *         A custom policy granting access to your S3 Data Lake
+     *         A custom policy granting access to your Amazon S3 Data Lake
      *         </p>
      *         </li>
      */
@@ -234,7 +249,8 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue crawler.
+     * The recommended IAM policies are:
      * </p>
      * <ul>
      * <li>
@@ -244,13 +260,14 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      * </li>
      * <li>
      * <p>
-     * A custom policy granting access to your S3 Data Lake
+     * A custom policy granting access to your Amazon S3 Data Lake
      * </p>
      * </li>
      * </ul>
      * 
      * @param glueInvocationRoleArn
-     *        The IAM Role ARN to be used by the Glue Crawler. The recommended IAM policies are:</p>
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to be used by the Glue
+     *        crawler. The recommended IAM policies are:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -259,7 +276,7 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
      *        </li>
      *        <li>
      *        <p>
-     *        A custom policy granting access to your S3 Data Lake
+     *        A custom policy granting access to your Amazon S3 Data Lake
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -272,11 +289,13 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Account ID that will assume the above Role to put logs into the Data Lake.
+     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
+     * Lake.
      * </p>
      * 
      * @param logProviderAccountId
-     *        The Account ID that will assume the above Role to put logs into the Data Lake.
+     *        The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3
+     *        Data Lake.
      */
 
     public void setLogProviderAccountId(String logProviderAccountId) {
@@ -285,10 +304,12 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Account ID that will assume the above Role to put logs into the Data Lake.
+     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
+     * Lake.
      * </p>
      * 
-     * @return The Account ID that will assume the above Role to put logs into the Data Lake.
+     * @return The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon
+     *         S3 Data Lake.
      */
 
     public String getLogProviderAccountId() {
@@ -297,11 +318,13 @@ public class CreateCustomLogSourceRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Account ID that will assume the above Role to put logs into the Data Lake.
+     * The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3 Data
+     * Lake.
      * </p>
      * 
      * @param logProviderAccountId
-     *        The Account ID that will assume the above Role to put logs into the Data Lake.
+     *        The Amazon Web Services account ID of the custom source that will write logs and events into the Amazon S3
+     *        Data Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

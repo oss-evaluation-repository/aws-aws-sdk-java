@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,19 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      * 
      * @param id
-     *        A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     *        A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API
+     *        request.
      */
 
     public void setId(String id) {
@@ -47,10 +48,11 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      * 
-     * @return A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     * @return A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API
+     *         request.
      */
 
     public String getId() {
@@ -59,11 +61,12 @@ public class GetSubscriberRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     * A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
      * </p>
      * 
      * @param id
-     *        A value created by Security Lake that uniquely identifies your <code>GetSubscriber</code> API request.
+     *        A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code> API
+     *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

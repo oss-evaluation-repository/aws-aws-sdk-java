@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class DeleteSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
+     * The ID of the Security Lake subscriber account.
      * </p>
      */
     private String subscriptionId;
 
     /**
      * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
+     * The ID of the Security Lake subscriber account.
      * </p>
      * 
      * @param subscriptionId
-     *        The subscription ID of the Amazon Security Lake subscriber account.
+     *        The ID of the Security Lake subscriber account.
      */
 
     public void setSubscriptionId(String subscriptionId) {
@@ -48,10 +48,10 @@ public class DeleteSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
+     * The ID of the Security Lake subscriber account.
      * </p>
      * 
-     * @return The subscription ID of the Amazon Security Lake subscriber account.
+     * @return The ID of the Security Lake subscriber account.
      */
 
     public String getSubscriptionId() {
@@ -60,11 +60,11 @@ public class DeleteSubscriptionNotificationConfigurationRequest extends com.amaz
 
     /**
      * <p>
-     * The subscription ID of the Amazon Security Lake subscriber account.
+     * The ID of the Security Lake subscriber account.
      * </p>
      * 
      * @param subscriptionId
-     *        The subscription ID of the Amazon Security Lake subscriber account.
+     *        The ID of the Security Lake subscriber account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

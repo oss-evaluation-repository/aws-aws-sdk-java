@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account in which the exception notifications subscription is created.
+     * The Amazon Web Services account where you want to receive exception notifications.
      * </p>
      */
     private String notificationEndpoint;
     /**
      * <p>
-     * The subscription protocol to which exception messages are posted.
+     * The subscription protocol to which exception notifications are posted.
      * </p>
      */
     private String subscriptionProtocol;
 
     /**
      * <p>
-     * The account in which the exception notifications subscription is created.
+     * The Amazon Web Services account where you want to receive exception notifications.
      * </p>
      * 
      * @param notificationEndpoint
-     *        The account in which the exception notifications subscription is created.
+     *        The Amazon Web Services account where you want to receive exception notifications.
      */
 
     public void setNotificationEndpoint(String notificationEndpoint) {
@@ -53,10 +53,10 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account in which the exception notifications subscription is created.
+     * The Amazon Web Services account where you want to receive exception notifications.
      * </p>
      * 
-     * @return The account in which the exception notifications subscription is created.
+     * @return The Amazon Web Services account where you want to receive exception notifications.
      */
 
     public String getNotificationEndpoint() {
@@ -65,11 +65,11 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account in which the exception notifications subscription is created.
+     * The Amazon Web Services account where you want to receive exception notifications.
      * </p>
      * 
      * @param notificationEndpoint
-     *        The account in which the exception notifications subscription is created.
+     *        The Amazon Web Services account where you want to receive exception notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The subscription protocol to which exception messages are posted.
+     * The subscription protocol to which exception notifications are posted.
      * </p>
      * 
      * @param subscriptionProtocol
-     *        The subscription protocol to which exception messages are posted.
+     *        The subscription protocol to which exception notifications are posted.
      * @see SubscriptionProtocolType
      */
 
@@ -94,10 +94,10 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The subscription protocol to which exception messages are posted.
+     * The subscription protocol to which exception notifications are posted.
      * </p>
      * 
-     * @return The subscription protocol to which exception messages are posted.
+     * @return The subscription protocol to which exception notifications are posted.
      * @see SubscriptionProtocolType
      */
 
@@ -107,11 +107,11 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The subscription protocol to which exception messages are posted.
+     * The subscription protocol to which exception notifications are posted.
      * </p>
      * 
      * @param subscriptionProtocol
-     *        The subscription protocol to which exception messages are posted.
+     *        The subscription protocol to which exception notifications are posted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionProtocolType
      */
@@ -123,11 +123,11 @@ public class CreateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The subscription protocol to which exception messages are posted.
+     * The subscription protocol to which exception notifications are posted.
      * </p>
      * 
      * @param subscriptionProtocol
-     *        The subscription protocol to which exception messages are posted.
+     *        The subscription protocol to which exception notifications are posted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SubscriptionProtocolType
      */

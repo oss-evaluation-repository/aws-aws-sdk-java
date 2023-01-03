@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Notifications in Security Lake which dictates how notifications are posted at the endpoint.
+ * Protocol used in Amazon Security Lake that dictates how notifications are posted at the endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ProtocolAndNotificationEndpoint"
@@ -30,7 +30,7 @@ public class ProtocolAndNotificationEndpoint implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      */
     private String endpoint;
@@ -43,11 +43,11 @@ public class ProtocolAndNotificationEndpoint implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      * 
      * @param endpoint
-     *        The account which is subscribed to receive exception notifications.
+     *        The account that is subscribed to receive exception notifications.
      */
 
     public void setEndpoint(String endpoint) {
@@ -56,10 +56,10 @@ public class ProtocolAndNotificationEndpoint implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      * 
-     * @return The account which is subscribed to receive exception notifications.
+     * @return The account that is subscribed to receive exception notifications.
      */
 
     public String getEndpoint() {
@@ -68,11 +68,11 @@ public class ProtocolAndNotificationEndpoint implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      * 
      * @param endpoint
-     *        The account which is subscribed to receive exception notifications.
+     *        The account that is subscribed to receive exception notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,26 +25,26 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Lists the log sources in the Regions for enabled Security Lake accounts.
+     * Lists the log sources by Regions for enabled Security Lake accounts.
      * </p>
      */
     private java.util.List<java.util.Map<String, java.util.Map<String, java.util.List<String>>>> regionSourceTypesAccountsList;
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      */
 
@@ -54,12 +54,12 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. You can make the call again using the
-     *         returned token to retrieve the next page.
+     * @return If nextToken is returned, there are more results available. You can repeat the call using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -68,12 +68,12 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -85,10 +85,10 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists the log sources in the Regions for enabled Security Lake accounts.
+     * Lists the log sources by Regions for enabled Security Lake accounts.
      * </p>
      * 
-     * @return Lists the log sources in the Regions for enabled Security Lake accounts.
+     * @return Lists the log sources by Regions for enabled Security Lake accounts.
      */
 
     public java.util.List<java.util.Map<String, java.util.Map<String, java.util.List<String>>>> getRegionSourceTypesAccountsList() {
@@ -97,11 +97,11 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists the log sources in the Regions for enabled Security Lake accounts.
+     * Lists the log sources by Regions for enabled Security Lake accounts.
      * </p>
      * 
      * @param regionSourceTypesAccountsList
-     *        Lists the log sources in the Regions for enabled Security Lake accounts.
+     *        Lists the log sources by Regions for enabled Security Lake accounts.
      */
 
     public void setRegionSourceTypesAccountsList(
@@ -117,7 +117,7 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists the log sources in the Regions for enabled Security Lake accounts.
+     * Lists the log sources by Regions for enabled Security Lake accounts.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -126,7 +126,7 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param regionSourceTypesAccountsList
-     *        Lists the log sources in the Regions for enabled Security Lake accounts.
+     *        Lists the log sources by Regions for enabled Security Lake accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class ListLogSourcesResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Lists the log sources in the Regions for enabled Security Lake accounts.
+     * Lists the log sources by Regions for enabled Security Lake accounts.
      * </p>
      * 
      * @param regionSourceTypesAccountsList
-     *        Lists the log sources in the Regions for enabled Security Lake accounts.
+     *        Lists the log sources by Regions for enabled Security Lake accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,34 +33,34 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
     private java.util.List<String> accessTypes;
     /**
      * <p>
-     * The third party Amazon Web Services account ID used to access your data.
+     * The Amazon Web Services account ID used to access your data.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
+     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
+     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
+     * specific circumstances.
      * </p>
      */
     private String externalId;
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services.
+     * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
+     * collection for natively supported Amazon Web Services.
      * </p>
      */
     private java.util.List<SourceType> sourceTypes;
     /**
      * <p>
-     * The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     * The description for your subscriber account in Security Lake.
      * </p>
      */
     private String subscriberDescription;
     /**
      * <p>
-     * The name of your Amazon Security Lake subscriber account.
+     * The name of your Security Lake subscriber account.
      * </p>
      */
     private String subscriberName;
@@ -165,11 +165,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The third party Amazon Web Services account ID used to access your data.
+     * The Amazon Web Services account ID used to access your data.
      * </p>
      * 
      * @param accountId
-     *        The third party Amazon Web Services account ID used to access your data.
+     *        The Amazon Web Services account ID used to access your data.
      */
 
     public void setAccountId(String accountId) {
@@ -178,10 +178,10 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The third party Amazon Web Services account ID used to access your data.
+     * The Amazon Web Services account ID used to access your data.
      * </p>
      * 
-     * @return The third party Amazon Web Services account ID used to access your data.
+     * @return The Amazon Web Services account ID used to access your data.
      */
 
     public String getAccountId() {
@@ -190,11 +190,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The third party Amazon Web Services account ID used to access your data.
+     * The Amazon Web Services account ID used to access your data.
      * </p>
      * 
      * @param accountId
-     *        The third party Amazon Web Services account ID used to access your data.
+     *        The Amazon Web Services account ID used to access your data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,15 +205,15 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
+     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
+     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
+     * specific circumstances.
      * </p>
      * 
      * @param externalId
-     *        The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     *        circumstances in which they are operating. It also provides a way for the account owner to permit the role
-     *        to be assumed only under specific circumstances.
+     *        The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances
+     *        in which they are operating. It also provides a way for the account owner to permit the role to be assumed
+     *        only under specific circumstances.
      */
 
     public void setExternalId(String externalId) {
@@ -222,14 +222,14 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
+     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
+     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
+     * specific circumstances.
      * </p>
      * 
-     * @return The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     *         circumstances in which they are operating. It also provides a way for the account owner to permit the
-     *         role to be assumed only under specific circumstances.
+     * @return The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances
+     *         in which they are operating. It also provides a way for the account owner to permit the role to be
+     *         assumed only under specific circumstances.
      */
 
     public String getExternalId() {
@@ -238,15 +238,15 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     * circumstances in which they are operating. It also provides a way for the account owner to permit the role to be
-     * assumed only under specific circumstances.
+     * The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances in which
+     * they are operating. It also provides a way for the account owner to permit the role to be assumed only under
+     * specific circumstances.
      * </p>
      * 
      * @param externalId
-     *        The external ID of the subscriber. External ID allows the user that is assuming the role to assert the
-     *        circumstances in which they are operating. It also provides a way for the account owner to permit the role
-     *        to be assumed only under specific circumstances.
+     *        The external ID of the subscriber. This lets the user that is assuming the role assert the circumstances
+     *        in which they are operating. It also provides a way for the account owner to permit the role to be assumed
+     *        only under specific circumstances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,12 +257,12 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services.
+     * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
+     * collection for natively supported Amazon Web Services.
      * </p>
      * 
-     * @return The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *         supports logs and events collection for natively-supported Amazon Web Services services.
+     * @return The supported Amazon Web Services from which logs and events are collected. Security Lake supports log
+     *         and event collection for natively supported Amazon Web Services.
      */
 
     public java.util.List<SourceType> getSourceTypes() {
@@ -271,13 +271,13 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services.
+     * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
+     * collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param sourceTypes
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for natively-supported Amazon Web Services services.
+     *        The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and
+     *        event collection for natively supported Amazon Web Services.
      */
 
     public void setSourceTypes(java.util.Collection<SourceType> sourceTypes) {
@@ -291,8 +291,8 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services.
+     * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
+     * collection for natively supported Amazon Web Services.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -301,8 +301,8 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param sourceTypes
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for natively-supported Amazon Web Services services.
+     *        The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and
+     *        event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -318,13 +318,13 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services.
+     * The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and event
+     * collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param sourceTypes
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for natively-supported Amazon Web Services services.
+     *        The supported Amazon Web Services from which logs and events are collected. Security Lake supports log and
+     *        event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +335,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     * The description for your subscriber account in Security Lake.
      * </p>
      * 
      * @param subscriberDescription
-     *        The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     *        The description for your subscriber account in Security Lake.
      */
 
     public void setSubscriberDescription(String subscriberDescription) {
@@ -348,10 +348,10 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     * The description for your subscriber account in Security Lake.
      * </p>
      * 
-     * @return The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     * @return The description for your subscriber account in Security Lake.
      */
 
     public String getSubscriberDescription() {
@@ -360,11 +360,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     * The description for your subscriber account in Security Lake.
      * </p>
      * 
      * @param subscriberDescription
-     *        The subscriber descriptions for the subscriber account in Amazon Security Lake.
+     *        The description for your subscriber account in Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +375,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of your Amazon Security Lake subscriber account.
+     * The name of your Security Lake subscriber account.
      * </p>
      * 
      * @param subscriberName
-     *        The name of your Amazon Security Lake subscriber account.
+     *        The name of your Security Lake subscriber account.
      */
 
     public void setSubscriberName(String subscriberName) {
@@ -388,10 +388,10 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of your Amazon Security Lake subscriber account.
+     * The name of your Security Lake subscriber account.
      * </p>
      * 
-     * @return The name of your Amazon Security Lake subscriber account.
+     * @return The name of your Security Lake subscriber account.
      */
 
     public String getSubscriberName() {
@@ -400,11 +400,11 @@ public class CreateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of your Amazon Security Lake subscriber account.
+     * The name of your Security Lake subscriber account.
      * </p>
      * 
      * @param subscriberName
-     *        The name of your Amazon Security Lake subscriber account.
+     *        The name of your Security Lake subscriber account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

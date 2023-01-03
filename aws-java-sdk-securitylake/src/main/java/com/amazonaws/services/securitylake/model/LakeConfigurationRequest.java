@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details of lake configuration object in Amazon Security Lake.
+ * Provides details of Amazon Security Lake configuration object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/LakeConfigurationRequest"
@@ -30,7 +30,7 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     * The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.
      * </p>
      */
     private String encryptionKey;
@@ -50,8 +50,8 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
     private java.util.List<String> replicationDestinationRegions;
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role
+     * you created that is managed by Security Lake, to ensure the replication setting is correct.
      * </p>
      */
     private String replicationRoleArn;
@@ -71,11 +71,11 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     * The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.
      * </p>
      * 
      * @param encryptionKey
-     *        The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     *        The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -84,10 +84,11 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     * The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.
      * </p>
      * 
-     * @return The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     * @return The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration
+     *         object.
      */
 
     public String getEncryptionKey() {
@@ -96,11 +97,11 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     * The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.
      * </p>
      * 
      * @param encryptionKey
-     *        The type of encryption key used by Security Lake to encrypt the lake configuration object.
+     *        The type of encryption key used by Amazon Security Lake to encrypt the Security Lake configuration object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,13 +285,13 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role
+     * you created that is managed by Security Lake, to ensure the replication setting is correct.
      * </p>
      * 
      * @param replicationRoleArn
-     *        Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is
-     *        managed by Security Lake, to ensure the replication setting is correct.
+     *        Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management
+     *        (IAM) role you created that is managed by Security Lake, to ensure the replication setting is correct.
      */
 
     public void setReplicationRoleArn(String replicationRoleArn) {
@@ -299,12 +300,12 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role
+     * you created that is managed by Security Lake, to ensure the replication setting is correct.
      * </p>
      * 
-     * @return Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is
-     *         managed by Security Lake, to ensure the replication setting is correct.
+     * @return Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management
+     *         (IAM) role you created that is managed by Security Lake, to ensure the replication setting is correct.
      */
 
     public String getReplicationRoleArn() {
@@ -313,13 +314,13 @@ public class LakeConfigurationRequest implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is managed
-     * by Security Lake, to ensure the replication setting is correct.
+     * Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management (IAM) role
+     * you created that is managed by Security Lake, to ensure the replication setting is correct.
      * </p>
      * 
      * @param replicationRoleArn
-     *        Replication settings for the Amazon S3 buckets. This parameter uses the IAM role created by you that is
-     *        managed by Security Lake, to ensure the replication setting is correct.
+     *        Replication settings for the Amazon S3 buckets. This parameter uses the Identity and Access Management
+     *        (IAM) role you created that is managed by Security Lake, to ensure the replication setting is correct.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

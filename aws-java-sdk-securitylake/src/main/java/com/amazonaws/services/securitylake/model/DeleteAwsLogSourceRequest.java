@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from all Regions and source types.
+     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, java.util.List<String>>> disableAllDimensions;
@@ -45,18 +45,18 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.Map<String, java.util.List<String>> disableTwoDimensions;
     /**
      * <p>
-     * This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely Region,
-     * source type, and member.
+     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
+     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
      * </p>
      */
     private java.util.List<String> inputOrder;
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from all Regions and source types.
+     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      * </p>
      * 
-     * @return Removes the specific Amazon Web Services sources from all Regions and source types.
+     * @return Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      */
 
     public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getDisableAllDimensions() {
@@ -65,11 +65,11 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from all Regions and source types.
+     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      * </p>
      * 
      * @param disableAllDimensions
-     *        Removes the specific Amazon Web Services sources from all Regions and source types.
+     *        Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      */
 
     public void setDisableAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> disableAllDimensions) {
@@ -78,11 +78,11 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Removes the specific Amazon Web Services sources from all Regions and source types.
+     * Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      * </p>
      * 
      * @param disableAllDimensions
-     *        Removes the specific Amazon Web Services sources from all Regions and source types.
+     *        Removes the specific Amazon Web Services sources from specific accounts and specific Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,12 +259,13 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely Region,
-     * source type, and member.
+     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
+     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
      * </p>
      * 
-     * @return This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely
-     *         Region, source type, and member.
+     * @return This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
+     *         (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
+     *         account).
      * @see Dimension
      */
 
@@ -274,13 +275,14 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely Region,
-     * source type, and member.
+     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
+     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
      * </p>
      * 
      * @param inputOrder
-     *        This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely
-     *        Region, source type, and member.
+     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
+     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
+     *        account).
      * @see Dimension
      */
 
@@ -295,8 +297,8 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely Region,
-     * source type, and member.
+     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
+     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,8 +307,9 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param inputOrder
-     *        This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely
-     *        Region, source type, and member.
+     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
+     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
+     *        account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */
@@ -323,13 +326,14 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely Region,
-     * source type, and member.
+     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
+     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
      * </p>
      * 
      * @param inputOrder
-     *        This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely
-     *        Region, source type, and member.
+     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
+     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
+     *        account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */
@@ -341,13 +345,14 @@ public class DeleteAwsLogSourceRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely Region,
-     * source type, and member.
+     * This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region (Amazon
+     * Web Services Region code, source type, and member (account ID of a specific Amazon Web Services account).
      * </p>
      * 
      * @param inputOrder
-     *        This is a mandatory input. Specifies the input order to disable dimensions in Security Lake, namely
-     *        Region, source type, and member.
+     *        This is a mandatory input. Specify the input order to disable dimensions in Security Lake, namely Region
+     *        (Amazon Web Services Region code, source type, and member (account ID of a specific Amazon Web Services
+     *        account).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */

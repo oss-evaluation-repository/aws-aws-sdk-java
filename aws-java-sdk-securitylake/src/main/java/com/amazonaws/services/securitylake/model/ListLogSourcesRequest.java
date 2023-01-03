@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,33 +33,35 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<String> inputOrder;
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
+     * from specific accounts and specific Regions.
      * </p>
      */
     private java.util.Map<String, java.util.Map<String, java.util.List<String>>> listAllDimensions;
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts for the entire region.
+     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
+     * accounts or specific Regions.
      * </p>
      */
     private java.util.List<String> listSingleDimension;
     /**
      * <p>
-     * Lists the log sources for the specified source types in enabled Security Lake accounts for the entire Region, for
-     * selected member accounts.
+     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
+     * specific accounts or specific Regions.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> listTwoDimensions;
     /**
      * <p>
-     * The maximum number of accounts for which the configuration is displayed.
+     * The maximum number of accounts for which the log sources are displayed.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      */
     private String nextToken;
@@ -164,10 +166,12 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
+     * from specific accounts and specific Regions.
      * </p>
      * 
-     * @return List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     * @return List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services
+     *         sources from specific accounts and specific Regions.
      */
 
     public java.util.Map<String, java.util.Map<String, java.util.List<String>>> getListAllDimensions() {
@@ -176,11 +180,13 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
+     * from specific accounts and specific Regions.
      * </p>
      * 
      * @param listAllDimensions
-     *        List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     *        List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services
+     *        sources from specific accounts and specific Regions.
      */
 
     public void setListAllDimensions(java.util.Map<String, java.util.Map<String, java.util.List<String>>> listAllDimensions) {
@@ -189,11 +195,13 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     * List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services sources
+     * from specific accounts and specific Regions.
      * </p>
      * 
      * @param listAllDimensions
-     *        List the view of log sources for enabled Security Lake accounts in all Regions and source types.
+     *        List the view of log sources for enabled Amazon Security Lake accounts for specific Amazon Web Services
+     *        sources from specific accounts and specific Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,10 +240,12 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts for the entire region.
+     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
+     * accounts or specific Regions.
      * </p>
      * 
-     * @return List the view of log sources for enabled Security Lake accounts for the entire region.
+     * @return List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
+     *         specific accounts or specific Regions.
      */
 
     public java.util.List<String> getListSingleDimension() {
@@ -244,11 +254,13 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts for the entire region.
+     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
+     * accounts or specific Regions.
      * </p>
      * 
      * @param listSingleDimension
-     *        List the view of log sources for enabled Security Lake accounts for the entire region.
+     *        List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
+     *        specific accounts or specific Regions.
      */
 
     public void setListSingleDimension(java.util.Collection<String> listSingleDimension) {
@@ -262,7 +274,8 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts for the entire region.
+     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
+     * accounts or specific Regions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -271,7 +284,8 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param listSingleDimension
-     *        List the view of log sources for enabled Security Lake accounts for the entire region.
+     *        List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
+     *        specific accounts or specific Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,11 +301,13 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * List the view of log sources for enabled Security Lake accounts for the entire region.
+     * List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from specific
+     * accounts or specific Regions.
      * </p>
      * 
      * @param listSingleDimension
-     *        List the view of log sources for enabled Security Lake accounts for the entire region.
+     *        List the view of log sources for enabled Security Lake accounts for all Amazon Web Services sources from
+     *        specific accounts or specific Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,12 +318,12 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Lists the log sources for the specified source types in enabled Security Lake accounts for the entire Region, for
-     * selected member accounts.
+     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
+     * specific accounts or specific Regions.
      * </p>
      * 
-     * @return Lists the log sources for the specified source types in enabled Security Lake accounts for the entire
-     *         Region, for selected member accounts.
+     * @return Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources
+     *         from specific accounts or specific Regions.
      */
 
     public java.util.Map<String, java.util.List<String>> getListTwoDimensions() {
@@ -316,13 +332,13 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Lists the log sources for the specified source types in enabled Security Lake accounts for the entire Region, for
-     * selected member accounts.
+     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
+     * specific accounts or specific Regions.
      * </p>
      * 
      * @param listTwoDimensions
-     *        Lists the log sources for the specified source types in enabled Security Lake accounts for the entire
-     *        Region, for selected member accounts.
+     *        Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources
+     *        from specific accounts or specific Regions.
      */
 
     public void setListTwoDimensions(java.util.Map<String, java.util.List<String>> listTwoDimensions) {
@@ -331,13 +347,13 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Lists the log sources for the specified source types in enabled Security Lake accounts for the entire Region, for
-     * selected member accounts.
+     * Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources from
+     * specific accounts or specific Regions.
      * </p>
      * 
      * @param listTwoDimensions
-     *        Lists the log sources for the specified source types in enabled Security Lake accounts for the entire
-     *        Region, for selected member accounts.
+     *        Lists the view of log sources for enabled Security Lake accounts for specific Amazon Web Services sources
+     *        from specific accounts or specific Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,11 +392,11 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of accounts for which the configuration is displayed.
+     * The maximum number of accounts for which the log sources are displayed.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of accounts for which the configuration is displayed.
+     *        The maximum number of accounts for which the log sources are displayed.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -389,10 +405,10 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of accounts for which the configuration is displayed.
+     * The maximum number of accounts for which the log sources are displayed.
      * </p>
      * 
-     * @return The maximum number of accounts for which the configuration is displayed.
+     * @return The maximum number of accounts for which the log sources are displayed.
      */
 
     public Integer getMaxResults() {
@@ -401,11 +417,11 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum number of accounts for which the configuration is displayed.
+     * The maximum number of accounts for which the log sources are displayed.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of accounts for which the configuration is displayed.
+     *        The maximum number of accounts for which the log sources are displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -416,12 +432,12 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      */
 
@@ -431,12 +447,12 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. You can make the call again using the
-     *         returned token to retrieve the next page.
+     * @return If nextToken is returned, there are more results available. You can repeat the call using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -445,12 +461,12 @@ public class ListLogSourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

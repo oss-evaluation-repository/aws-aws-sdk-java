@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,12 @@ public class GetDatalakeStatusResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<AccountSources> accountSourcesList;
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      */
     private String nextToken;
@@ -111,17 +113,21 @@ public class GetDatalakeStatusResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token
-     *        will return an HTTP 400 InvalidToken error.
+     *        Lists if there are more results available. The value of nextToken is a unique pagination token for each
+     *        page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *        unchanged. </p>
+     *        <p>
+     *        Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *        InvalidToken error.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,16 +136,20 @@ public class GetDatalakeStatusResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *         token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *         other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-     *         token will return an HTTP 400 InvalidToken error.
+     * @return Lists if there are more results available. The value of nextToken is a unique pagination token for each
+     *         page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *         unchanged. </p>
+     *         <p>
+     *         Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *         InvalidToken error.
      */
 
     public String getNextToken() {
@@ -148,17 +158,21 @@ public class GetDatalakeStatusResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token
-     * for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments
-     * unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP
-     * 400 InvalidToken error.
+     * Lists if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. The value of nextToken is a unique pagination
-     *        token for each page. Make the call again using the returned token to retrieve the next page. Keep all
-     *        other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token
-     *        will return an HTTP 400 InvalidToken error.
+     *        Lists if there are more results available. The value of nextToken is a unique pagination token for each
+     *        page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *        unchanged. </p>
+     *        <p>
+     *        Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *        InvalidToken error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

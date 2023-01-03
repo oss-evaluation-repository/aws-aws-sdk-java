@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Retention settings for the destination Amazon S3 buckets in Security Lake.
+ * Retention settings for the destination Amazon S3 buckets in Amazon Security Lake.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RetentionSetting" target="_top">AWS API
@@ -31,7 +31,7 @@ public class RetentionSetting implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The retention period specifies a fixed period of time during which the Security Lake object remains locked. You
-     * can specify the retention period for one or more source in days.
+     * can specify the retention period in days for one or more sources.
      * </p>
      */
     private Integer retentionPeriod;
@@ -46,12 +46,12 @@ public class RetentionSetting implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The retention period specifies a fixed period of time during which the Security Lake object remains locked. You
-     * can specify the retention period for one or more source in days.
+     * can specify the retention period in days for one or more sources.
      * </p>
      * 
      * @param retentionPeriod
      *        The retention period specifies a fixed period of time during which the Security Lake object remains
-     *        locked. You can specify the retention period for one or more source in days.
+     *        locked. You can specify the retention period in days for one or more sources.
      */
 
     public void setRetentionPeriod(Integer retentionPeriod) {
@@ -61,11 +61,11 @@ public class RetentionSetting implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The retention period specifies a fixed period of time during which the Security Lake object remains locked. You
-     * can specify the retention period for one or more source in days.
+     * can specify the retention period in days for one or more sources.
      * </p>
      * 
      * @return The retention period specifies a fixed period of time during which the Security Lake object remains
-     *         locked. You can specify the retention period for one or more source in days.
+     *         locked. You can specify the retention period in days for one or more sources.
      */
 
     public Integer getRetentionPeriod() {
@@ -75,12 +75,12 @@ public class RetentionSetting implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The retention period specifies a fixed period of time during which the Security Lake object remains locked. You
-     * can specify the retention period for one or more source in days.
+     * can specify the retention period in days for one or more sources.
      * </p>
      * 
      * @param retentionPeriod
      *        The retention period specifies a fixed period of time during which the Security Lake object remains
-     *        locked. You can specify the retention period for one or more source in days.
+     *        locked. You can specify the retention period in days for one or more sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -364,7 +364,7 @@ public enum Region {
      * located in Virginia.
      * <p>
      * When using buckets in this region, you must set the client endpoint to
-     * <code>s3.us-iso-east-1.c2c.ic.gov</code>.
+     * <code>s3.us-iso-east-1.c2s.ic.gov</code>.
      * </p>
      */
     US_ISO_EAST_1("us-iso-east-1"),
@@ -384,7 +384,7 @@ public enum Region {
      * located in Colorado.
      * <p>
      * When using buckets in this region, you must set the client endpoint to
-     * <code>s3.us-iso-west-1.c2c.ic.gov</code>.
+     * <code>s3.us-iso-west-1.c2s.ic.gov</code>.
      * </p>
      */
     US_ISO_WEST_1("us-iso-west-1")

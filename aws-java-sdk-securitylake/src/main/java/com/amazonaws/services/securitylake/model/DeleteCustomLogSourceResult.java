@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      */
     private String customDataLocation;
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      * 
      * @param customDataLocation
-     *        The location of the partition in the Security Lake S3 bucket.
+     *        The location of the partition in the Amazon S3 bucket for Security Lake.
      */
 
     public void setCustomDataLocation(String customDataLocation) {
@@ -45,10 +45,10 @@ public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      * 
-     * @return The location of the partition in the Security Lake S3 bucket.
+     * @return The location of the partition in the Amazon S3 bucket for Security Lake.
      */
 
     public String getCustomDataLocation() {
@@ -57,11 +57,11 @@ public class DeleteCustomLogSourceResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The location of the partition in the Security Lake S3 bucket.
+     * The location of the partition in the Amazon S3 bucket for Security Lake.
      * </p>
      * 
      * @param customDataLocation
-     *        The location of the partition in the Security Lake S3 bucket.
+     *        The location of the partition in the Amazon S3 bucket for Security Lake.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

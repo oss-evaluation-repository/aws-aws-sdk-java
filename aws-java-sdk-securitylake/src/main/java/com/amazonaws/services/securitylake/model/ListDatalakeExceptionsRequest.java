@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,14 +33,18 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
     private Integer maxFailures;
     /**
      * <p>
-     * List if there are more results available. if nextToken is returned, You can make the call again using the
-     * returned token to retrieve the next page
+     * List if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * List the regions from which exceptions are retrieved.
+     * List the Amazon Web Services Regions from which exceptions are retrieved.
      * </p>
      */
     private java.util.List<String> regionSet;
@@ -87,13 +91,21 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List if there are more results available. if nextToken is returned, You can make the call again using the
-     * returned token to retrieve the next page
+     * List if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
      * @param nextToken
-     *        List if there are more results available. if nextToken is returned, You can make the call again using the
-     *        returned token to retrieve the next page
+     *        List if there are more results available. The value of nextToken is a unique pagination token for each
+     *        page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *        unchanged. </p>
+     *        <p>
+     *        Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *        InvalidToken error.
      */
 
     public void setNextToken(String nextToken) {
@@ -102,12 +114,20 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List if there are more results available. if nextToken is returned, You can make the call again using the
-     * returned token to retrieve the next page
+     * List if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
-     * @return List if there are more results available. if nextToken is returned, You can make the call again using the
-     *         returned token to retrieve the next page
+     * @return List if there are more results available. The value of nextToken is a unique pagination token for each
+     *         page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *         unchanged. </p>
+     *         <p>
+     *         Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *         InvalidToken error.
      */
 
     public String getNextToken() {
@@ -116,13 +136,21 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List if there are more results available. if nextToken is returned, You can make the call again using the
-     * returned token to retrieve the next page
+     * List if there are more results available. The value of nextToken is a unique pagination token for each page.
+     * Repeat the call using the returned token to retrieve the next page. Keep all other arguments unchanged.
+     * </p>
+     * <p>
+     * Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     * InvalidToken error.
      * </p>
      * 
      * @param nextToken
-     *        List if there are more results available. if nextToken is returned, You can make the call again using the
-     *        returned token to retrieve the next page
+     *        List if there are more results available. The value of nextToken is a unique pagination token for each
+     *        page. Repeat the call using the returned token to retrieve the next page. Keep all other arguments
+     *        unchanged. </p>
+     *        <p>
+     *        Each pagination token expires after 24 hours. Using an expired pagination token will return an HTTP 400
+     *        InvalidToken error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +161,10 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List the regions from which exceptions are retrieved.
+     * List the Amazon Web Services Regions from which exceptions are retrieved.
      * </p>
      * 
-     * @return List the regions from which exceptions are retrieved.
+     * @return List the Amazon Web Services Regions from which exceptions are retrieved.
      * @see Region
      */
 
@@ -146,11 +174,11 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List the regions from which exceptions are retrieved.
+     * List the Amazon Web Services Regions from which exceptions are retrieved.
      * </p>
      * 
      * @param regionSet
-     *        List the regions from which exceptions are retrieved.
+     *        List the Amazon Web Services Regions from which exceptions are retrieved.
      * @see Region
      */
 
@@ -165,7 +193,7 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List the regions from which exceptions are retrieved.
+     * List the Amazon Web Services Regions from which exceptions are retrieved.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -174,7 +202,7 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param regionSet
-     *        List the regions from which exceptions are retrieved.
+     *        List the Amazon Web Services Regions from which exceptions are retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Region
      */
@@ -191,11 +219,11 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List the regions from which exceptions are retrieved.
+     * List the Amazon Web Services Regions from which exceptions are retrieved.
      * </p>
      * 
      * @param regionSet
-     *        List the regions from which exceptions are retrieved.
+     *        List the Amazon Web Services Regions from which exceptions are retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Region
      */
@@ -207,11 +235,11 @@ public class ListDatalakeExceptionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * List the regions from which exceptions are retrieved.
+     * List the Amazon Web Services Regions from which exceptions are retrieved.
      * </p>
      * 
      * @param regionSet
-     *        List the regions from which exceptions are retrieved.
+     *        List the Amazon Web Services Regions from which exceptions are retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Region
      */

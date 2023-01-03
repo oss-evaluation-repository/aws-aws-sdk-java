@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.List<String> failed;
     /**
      * <p>
-     * Deletion of the Amazon Web Services sources is in-progress.
+     * Deletion of the Amazon Web Services sources is in progress.
      * </p>
      */
     private java.util.List<String> processing;
@@ -108,10 +108,10 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Deletion of the Amazon Web Services sources is in-progress.
+     * Deletion of the Amazon Web Services sources is in progress.
      * </p>
      * 
-     * @return Deletion of the Amazon Web Services sources is in-progress.
+     * @return Deletion of the Amazon Web Services sources is in progress.
      */
 
     public java.util.List<String> getProcessing() {
@@ -120,11 +120,11 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Deletion of the Amazon Web Services sources is in-progress.
+     * Deletion of the Amazon Web Services sources is in progress.
      * </p>
      * 
      * @param processing
-     *        Deletion of the Amazon Web Services sources is in-progress.
+     *        Deletion of the Amazon Web Services sources is in progress.
      */
 
     public void setProcessing(java.util.Collection<String> processing) {
@@ -138,7 +138,7 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Deletion of the Amazon Web Services sources is in-progress.
+     * Deletion of the Amazon Web Services sources is in progress.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -147,7 +147,7 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param processing
-     *        Deletion of the Amazon Web Services sources is in-progress.
+     *        Deletion of the Amazon Web Services sources is in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,11 +163,11 @@ public class DeleteAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Deletion of the Amazon Web Services sources is in-progress.
+     * Deletion of the Amazon Web Services sources is in progress.
      * </p>
      * 
      * @param processing
-     *        Deletion of the Amazon Web Services sources is in-progress.
+     *        Deletion of the Amazon Web Services sources is in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

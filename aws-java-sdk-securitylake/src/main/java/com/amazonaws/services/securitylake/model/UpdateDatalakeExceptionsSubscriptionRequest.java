@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      */
     private String notificationEndpoint;
@@ -40,11 +40,11 @@ public class UpdateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      * 
      * @param notificationEndpoint
-     *        The account which is subscribed to receive exception notifications.
+     *        The account that is subscribed to receive exception notifications.
      */
 
     public void setNotificationEndpoint(String notificationEndpoint) {
@@ -53,10 +53,10 @@ public class UpdateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      * 
-     * @return The account which is subscribed to receive exception notifications.
+     * @return The account that is subscribed to receive exception notifications.
      */
 
     public String getNotificationEndpoint() {
@@ -65,11 +65,11 @@ public class UpdateDatalakeExceptionsSubscriptionRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The account which is subscribed to receive exception notifications.
+     * The account that is subscribed to receive exception notifications.
      * </p>
      * 
      * @param notificationEndpoint
-     *        The account which is subscribed to receive exception notifications.
+     *        The account that is subscribed to receive exception notifications.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

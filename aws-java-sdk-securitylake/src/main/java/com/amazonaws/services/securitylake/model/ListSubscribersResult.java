@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,26 +25,26 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The subscribers available in the specified Security Lake account ID.
+     * The subscribers available for the specified Security Lake account ID.
      * </p>
      */
     private java.util.List<SubscriberResource> subscribers;
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      */
 
@@ -54,12 +54,12 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. You can make the call again using the
-     *         returned token to retrieve the next page.
+     * @return If nextToken is returned, there are more results available. You can repeat the call using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -68,12 +68,12 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -85,10 +85,10 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The subscribers available in the specified Security Lake account ID.
+     * The subscribers available for the specified Security Lake account ID.
      * </p>
      * 
-     * @return The subscribers available in the specified Security Lake account ID.
+     * @return The subscribers available for the specified Security Lake account ID.
      */
 
     public java.util.List<SubscriberResource> getSubscribers() {
@@ -97,11 +97,11 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The subscribers available in the specified Security Lake account ID.
+     * The subscribers available for the specified Security Lake account ID.
      * </p>
      * 
      * @param subscribers
-     *        The subscribers available in the specified Security Lake account ID.
+     *        The subscribers available for the specified Security Lake account ID.
      */
 
     public void setSubscribers(java.util.Collection<SubscriberResource> subscribers) {
@@ -115,7 +115,7 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The subscribers available in the specified Security Lake account ID.
+     * The subscribers available for the specified Security Lake account ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -124,7 +124,7 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param subscribers
-     *        The subscribers available in the specified Security Lake account ID.
+     *        The subscribers available for the specified Security Lake account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListSubscribersResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The subscribers available in the specified Security Lake account ID.
+     * The subscribers available for the specified Security Lake account ID.
      * </p>
      * 
      * @param subscribers
-     *        The subscribers available in the specified Security Lake account ID.
+     *        The subscribers available for the specified Security Lake account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

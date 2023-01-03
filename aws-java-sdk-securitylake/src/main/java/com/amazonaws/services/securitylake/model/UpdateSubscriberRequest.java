@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,44 +27,45 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * External ID of the Security Lake account.
+     * The external ID of the Security Lake account.
      * </p>
      */
     private String externalId;
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     * A value created by Security Lake that uniquely identifies your subscription.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for the following natively-supported Amazon Web Services services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web
+     * Services, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+     * Guide</a>.
      * </p>
      */
     private java.util.List<SourceType> sourceTypes;
     /**
      * <p>
-     * Description of the Security Lake account subscriber.
+     * The description of the Security Lake account subscriber.
      * </p>
      */
     private String subscriberDescription;
     /**
      * <p>
-     * Name of the Security Lake account subscriber.
+     * The name of the Security Lake account subscriber.
      * </p>
      */
     private String subscriberName;
 
     /**
      * <p>
-     * External ID of the Security Lake account.
+     * The external ID of the Security Lake account.
      * </p>
      * 
      * @param externalId
-     *        External ID of the Security Lake account.
+     *        The external ID of the Security Lake account.
      */
 
     public void setExternalId(String externalId) {
@@ -73,10 +74,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * External ID of the Security Lake account.
+     * The external ID of the Security Lake account.
      * </p>
      * 
-     * @return External ID of the Security Lake account.
+     * @return The external ID of the Security Lake account.
      */
 
     public String getExternalId() {
@@ -85,11 +86,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * External ID of the Security Lake account.
+     * The external ID of the Security Lake account.
      * </p>
      * 
      * @param externalId
-     *        External ID of the Security Lake account.
+     *        The external ID of the Security Lake account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +101,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     * A value created by Security Lake that uniquely identifies your subscription.
      * </p>
      * 
      * @param id
-     *        A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     *        A value created by Security Lake that uniquely identifies your subscription.
      */
 
     public void setId(String id) {
@@ -113,10 +114,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     * A value created by Security Lake that uniquely identifies your subscription.
      * </p>
      * 
-     * @return A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     * @return A value created by Security Lake that uniquely identifies your subscription.
      */
 
     public String getId() {
@@ -125,11 +126,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     * A value created by Security Lake that uniquely identifies your subscription.
      * </p>
      * 
      * @param id
-     *        A value created by Security Lake that uniquely identifies your <code>UpdateSubscriber</code> API request.
+     *        A value created by Security Lake that uniquely identifies your subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,14 +141,16 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for the following natively-supported Amazon Web Services services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web
+     * Services, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+     * Guide</a>.
      * </p>
      * 
-     * @return The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *         supports logs and events collection for the following natively-supported Amazon Web Services services.
-     *         For more information, see the Amazon Security Lake User Guide.
+     * @return The supported Amazon Web Services from which logs and events are collected. For the list of supported
+     *         Amazon Web Services, see the <a
+     *         href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
+     *         Lake User Guide</a>.
      */
 
     public java.util.List<SourceType> getSourceTypes() {
@@ -156,15 +159,17 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for the following natively-supported Amazon Web Services services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web
+     * Services, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+     * Guide</a>.
      * </p>
      * 
      * @param sourceTypes
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for the following natively-supported Amazon Web Services services. For
-     *        more information, see the Amazon Security Lake User Guide.
+     *        The supported Amazon Web Services from which logs and events are collected. For the list of supported
+     *        Amazon Web Services, see the <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
+     *        Lake User Guide</a>.
      */
 
     public void setSourceTypes(java.util.Collection<SourceType> sourceTypes) {
@@ -178,9 +183,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for the following natively-supported Amazon Web Services services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web
+     * Services, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+     * Guide</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -189,9 +195,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param sourceTypes
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for the following natively-supported Amazon Web Services services. For
-     *        more information, see the Amazon Security Lake User Guide.
+     *        The supported Amazon Web Services from which logs and events are collected. For the list of supported
+     *        Amazon Web Services, see the <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
+     *        Lake User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,15 +214,17 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for the following natively-supported Amazon Web Services services. For more
-     * information, see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. For the list of supported Amazon Web
+     * Services, see the <a
+     * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+     * Guide</a>.
      * </p>
      * 
      * @param sourceTypes
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for the following natively-supported Amazon Web Services services. For
-     *        more information, see the Amazon Security Lake User Guide.
+     *        The supported Amazon Web Services from which logs and events are collected. For the list of supported
+     *        Amazon Web Services, see the <a
+     *        href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security
+     *        Lake User Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +235,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Description of the Security Lake account subscriber.
+     * The description of the Security Lake account subscriber.
      * </p>
      * 
      * @param subscriberDescription
-     *        Description of the Security Lake account subscriber.
+     *        The description of the Security Lake account subscriber.
      */
 
     public void setSubscriberDescription(String subscriberDescription) {
@@ -239,10 +248,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Description of the Security Lake account subscriber.
+     * The description of the Security Lake account subscriber.
      * </p>
      * 
-     * @return Description of the Security Lake account subscriber.
+     * @return The description of the Security Lake account subscriber.
      */
 
     public String getSubscriberDescription() {
@@ -251,11 +260,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Description of the Security Lake account subscriber.
+     * The description of the Security Lake account subscriber.
      * </p>
      * 
      * @param subscriberDescription
-     *        Description of the Security Lake account subscriber.
+     *        The description of the Security Lake account subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +275,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Name of the Security Lake account subscriber.
+     * The name of the Security Lake account subscriber.
      * </p>
      * 
      * @param subscriberName
-     *        Name of the Security Lake account subscriber.
+     *        The name of the Security Lake account subscriber.
      */
 
     public void setSubscriberName(String subscriberName) {
@@ -279,10 +288,10 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Name of the Security Lake account subscriber.
+     * The name of the Security Lake account subscriber.
      * </p>
      * 
-     * @return Name of the Security Lake account subscriber.
+     * @return The name of the Security Lake account subscriber.
      */
 
     public String getSubscriberName() {
@@ -291,11 +300,11 @@ public class UpdateSubscriberRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Name of the Security Lake account subscriber.
+     * The name of the Security Lake account subscriber.
      * </p>
      * 
      * @param subscriberName
-     *        Name of the Security Lake account subscriber.
+     *        The name of the Security Lake account subscriber.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

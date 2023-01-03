@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,27 +25,27 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
-     * failed. The failure occurred as these accounts are not part of an organization.
+     * Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed.
+     * The failure occurred as these accounts are not part of an organization.
      * </p>
      */
     private java.util.List<String> failed;
     /**
      * <p>
-     * List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service as a
-     * Security Lake.
+     * Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake
+     * source.
      * </p>
      */
     private java.util.List<String> processing;
 
     /**
      * <p>
-     * List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
-     * failed. The failure occurred as these accounts are not part of an organization.
+     * Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed.
+     * The failure occurred as these accounts are not part of an organization.
      * </p>
      * 
-     * @return List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security
-     *         Lake failed. The failure occurred as these accounts are not part of an organization.
+     * @return Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source
+     *         failed. The failure occurred as these accounts are not part of an organization.
      */
 
     public java.util.List<String> getFailed() {
@@ -54,12 +54,12 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
-     * failed. The failure occurred as these accounts are not part of an organization.
+     * Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed.
+     * The failure occurred as these accounts are not part of an organization.
      * </p>
      * 
      * @param failed
-     *        List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
+     *        Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source
      *        failed. The failure occurred as these accounts are not part of an organization.
      */
 
@@ -74,8 +74,8 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
-     * failed. The failure occurred as these accounts are not part of an organization.
+     * Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed.
+     * The failure occurred as these accounts are not part of an organization.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +84,7 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param failed
-     *        List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
+     *        Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source
      *        failed. The failure occurred as these accounts are not part of an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -101,12 +101,12 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
-     * failed. The failure occurred as these accounts are not part of an organization.
+     * Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source failed.
+     * The failure occurred as these accounts are not part of an organization.
      * </p>
      * 
      * @param failed
-     *        List of all accounts in which enabling a natively-supported Amazon Web Services service as a Security Lake
+     *        Lists all accounts in which enabling a natively supported Amazon Web Service as a Security Lake source
      *        failed. The failure occurred as these accounts are not part of an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -118,12 +118,12 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service as a
-     * Security Lake.
+     * Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake
+     * source.
      * </p>
      * 
-     * @return List of all accounts which are in the process of enabling a natively-supported Amazon Web Services
-     *         service as a Security Lake.
+     * @return Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a
+     *         Security Lake source.
      */
 
     public java.util.List<String> getProcessing() {
@@ -132,13 +132,13 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service as a
-     * Security Lake.
+     * Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake
+     * source.
      * </p>
      * 
      * @param processing
-     *        List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service
-     *        as a Security Lake.
+     *        Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a
+     *        Security Lake source.
      */
 
     public void setProcessing(java.util.Collection<String> processing) {
@@ -152,8 +152,8 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service as a
-     * Security Lake.
+     * Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake
+     * source.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -162,8 +162,8 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param processing
-     *        List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service
-     *        as a Security Lake.
+     *        Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a
+     *        Security Lake source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,13 +179,13 @@ public class CreateAwsLogSourceResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service as a
-     * Security Lake.
+     * Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a Security Lake
+     * source.
      * </p>
      * 
      * @param processing
-     *        List of all accounts which are in the process of enabling a natively-supported Amazon Web Services service
-     *        as a Security Lake.
+     *        Lists the accounts that are in the process of enabling a natively supported Amazon Web Service as a
+     *        Security Lake source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

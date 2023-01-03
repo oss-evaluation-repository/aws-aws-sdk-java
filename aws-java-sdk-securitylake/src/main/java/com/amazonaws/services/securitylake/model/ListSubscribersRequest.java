@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,8 @@ public class ListSubscribersRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer maxResults;
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      */
     private String nextToken;
@@ -81,12 +81,12 @@ public class ListSubscribersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      */
 
@@ -96,12 +96,12 @@ public class ListSubscribersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
-     * @return If nextToken is returned, there are more results available. You can make the call again using the
-     *         returned token to retrieve the next page.
+     * @return If nextToken is returned, there are more results available. You can repeat the call using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -110,12 +110,12 @@ public class ListSubscribersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If nextToken is returned, there are more results available. You can make the call again using the returned token
-     * to retrieve the next page.
+     * If nextToken is returned, there are more results available. You can repeat the call using the returned token to
+     * retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        If nextToken is returned, there are more results available. You can make the call again using the returned
+     *        If nextToken is returned, there are more results available. You can repeat the call using the returned
      *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

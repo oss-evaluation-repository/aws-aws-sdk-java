@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Security Lake can't find an Amazon Web Services account with the accountID that you specified, or the account
+ * Amazon Security Lake cannot find an Amazon Web Services account with the accountID that you specified, or the account
  * whose credentials you used to make this request isn't a member of an organization.
  * </p>
  */

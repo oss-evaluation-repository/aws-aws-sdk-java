@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Security Lake can collect logs and events from supported Amazon Web Services services and custom sources.
+ * Amazon Security Lake collects logs and events from supported Amazon Web Services and custom sources. For the list of
+ * supported Amazon Web Services, see the <a
+ * href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon Security Lake User
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/AccountSources" target="_top">AWS API
@@ -30,7 +33,7 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Account ID of the Security Lake account for which logs are collected.
+     * The ID of the Security Lake account for which logs are collected.
      * </p>
      */
     private String account;
@@ -42,26 +45,25 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
     private String eventClass;
     /**
      * <p>
-     * Log status for the Security Lake account.
+     * The log status for the Security Lake account.
      * </p>
      */
     private java.util.List<LogsStatus> logsStatus;
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services. For more information,
-     * see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and
+     * event collection for natively supported Amazon Web Services.
      * </p>
      */
     private String sourceType;
 
     /**
      * <p>
-     * Account ID of the Security Lake account for which logs are collected.
+     * The ID of the Security Lake account for which logs are collected.
      * </p>
      * 
      * @param account
-     *        Account ID of the Security Lake account for which logs are collected.
+     *        The ID of the Security Lake account for which logs are collected.
      */
 
     public void setAccount(String account) {
@@ -70,10 +72,10 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Account ID of the Security Lake account for which logs are collected.
+     * The ID of the Security Lake account for which logs are collected.
      * </p>
      * 
-     * @return Account ID of the Security Lake account for which logs are collected.
+     * @return The ID of the Security Lake account for which logs are collected.
      */
 
     public String getAccount() {
@@ -82,11 +84,11 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Account ID of the Security Lake account for which logs are collected.
+     * The ID of the Security Lake account for which logs are collected.
      * </p>
      * 
      * @param account
-     *        Account ID of the Security Lake account for which logs are collected.
+     *        The ID of the Security Lake account for which logs are collected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,10 +158,10 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log status for the Security Lake account.
+     * The log status for the Security Lake account.
      * </p>
      * 
-     * @return Log status for the Security Lake account.
+     * @return The log status for the Security Lake account.
      */
 
     public java.util.List<LogsStatus> getLogsStatus() {
@@ -168,11 +170,11 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log status for the Security Lake account.
+     * The log status for the Security Lake account.
      * </p>
      * 
      * @param logsStatus
-     *        Log status for the Security Lake account.
+     *        The log status for the Security Lake account.
      */
 
     public void setLogsStatus(java.util.Collection<LogsStatus> logsStatus) {
@@ -186,7 +188,7 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log status for the Security Lake account.
+     * The log status for the Security Lake account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,7 +197,7 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param logsStatus
-     *        Log status for the Security Lake account.
+     *        The log status for the Security Lake account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +213,11 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log status for the Security Lake account.
+     * The log status for the Security Lake account.
      * </p>
      * 
      * @param logsStatus
-     *        Log status for the Security Lake account.
+     *        The log status for the Security Lake account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,15 +228,13 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services. For more information,
-     * see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and
+     * event collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param sourceType
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for natively-supported Amazon Web Services services. For more
-     *        information, see the Amazon Security Lake User Guide.
+     *        The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports
+     *        log and event collection for natively supported Amazon Web Services.
      */
 
     public void setSourceType(String sourceType) {
@@ -243,14 +243,12 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services. For more information,
-     * see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and
+     * event collection for natively supported Amazon Web Services.
      * </p>
      * 
-     * @return The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *         supports logs and events collection for natively-supported Amazon Web Services services. For more
-     *         information, see the Amazon Security Lake User Guide.
+     * @return The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports
+     *         log and event collection for natively supported Amazon Web Services.
      */
 
     public String getSourceType() {
@@ -259,15 +257,13 @@ public class AccountSources implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     * supports logs and events collection for natively-supported Amazon Web Services services. For more information,
-     * see the Amazon Security Lake User Guide.
+     * The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports log and
+     * event collection for natively supported Amazon Web Services.
      * </p>
      * 
      * @param sourceType
-     *        The supported Amazon Web Services services from which logs and events are collected. Amazon Security Lake
-     *        supports logs and events collection for natively-supported Amazon Web Services services. For more
-     *        information, see the Amazon Security Lake User Guide.
+     *        The supported Amazon Web Services from which logs and events are collected. Amazon Security Lake supports
+     *        log and event collection for natively supported Amazon Web Services.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
