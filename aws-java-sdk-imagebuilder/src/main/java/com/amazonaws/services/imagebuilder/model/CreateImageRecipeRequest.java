@@ -61,7 +61,7 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
     private String semanticVersion;
     /**
      * <p>
-     * The components of the image recipe.
+     * The components included in the image recipe.
      * </p>
      */
     private java.util.List<ComponentConfiguration> components;
@@ -319,10 +319,10 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The components of the image recipe.
+     * The components included in the image recipe.
      * </p>
      * 
-     * @return The components of the image recipe.
+     * @return The components included in the image recipe.
      */
 
     public java.util.List<ComponentConfiguration> getComponents() {
@@ -331,11 +331,11 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The components of the image recipe.
+     * The components included in the image recipe.
      * </p>
      * 
      * @param components
-     *        The components of the image recipe.
+     *        The components included in the image recipe.
      */
 
     public void setComponents(java.util.Collection<ComponentConfiguration> components) {
@@ -349,7 +349,7 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The components of the image recipe.
+     * The components included in the image recipe.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -358,7 +358,7 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param components
-     *        The components of the image recipe.
+     *        The components included in the image recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -374,11 +374,11 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The components of the image recipe.
+     * The components included in the image recipe.
      * </p>
      * 
      * @param components
-     *        The components of the image recipe.
+     *        The components included in the image recipe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

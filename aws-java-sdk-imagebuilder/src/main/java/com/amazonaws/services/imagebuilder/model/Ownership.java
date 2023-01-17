@@ -22,7 +22,8 @@ public enum Ownership {
 
     Self("Self"),
     Shared("Shared"),
-    Amazon("Amazon");
+    Amazon("Amazon"),
+    ThirdParty("ThirdParty");
 
     private String value;
 

@@ -117,6 +117,14 @@ public class ComponentJsonUnmarshaller implements Unmarshaller<Component, JsonUn
                     component.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("publisher", targetDepth)) {
+                    context.nextToken();
+                    component.setPublisher(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("obfuscate", targetDepth)) {
+                    context.nextToken();
+                    component.setObfuscate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

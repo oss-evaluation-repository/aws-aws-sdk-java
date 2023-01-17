@@ -59,7 +59,8 @@ public class InstanceMetadataOptions implements Serializable, Cloneable, Structu
     private String httpTokens;
     /**
      * <p>
-     * Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     * Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is
+     * one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.
      * </p>
      */
     private Integer httpPutResponseHopLimit;
@@ -214,11 +215,14 @@ public class InstanceMetadataOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     * Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is
+     * one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.
      * </p>
      * 
      * @param httpPutResponseHopLimit
-     *        Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     *        Limit the number of hops that an instance metadata request can traverse to reach its destination. The
+     *        default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two
+     *        hops.
      */
 
     public void setHttpPutResponseHopLimit(Integer httpPutResponseHopLimit) {
@@ -227,10 +231,13 @@ public class InstanceMetadataOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     * Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is
+     * one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.
      * </p>
      * 
-     * @return Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     * @return Limit the number of hops that an instance metadata request can traverse to reach its destination. The
+     *         default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two
+     *         hops.
      */
 
     public Integer getHttpPutResponseHopLimit() {
@@ -239,11 +246,14 @@ public class InstanceMetadataOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     * Limit the number of hops that an instance metadata request can traverse to reach its destination. The default is
+     * one hop. However, if HTTP tokens are required, container image builds need a minimum of two hops.
      * </p>
      * 
      * @param httpPutResponseHopLimit
-     *        Limit the number of hops that an instance metadata request can traverse to reach its destination.
+     *        Limit the number of hops that an instance metadata request can traverse to reach its destination. The
+     *        default is one hop. However, if HTTP tokens are required, container image builds need a minimum of two
+     *        hops.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

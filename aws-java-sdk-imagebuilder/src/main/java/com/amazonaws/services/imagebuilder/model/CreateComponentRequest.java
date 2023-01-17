@@ -55,7 +55,7 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String semanticVersion;
     /**
      * <p>
-     * The description of the component. Describes the contents of the component.
+     * Describes the contents of the component.
      * </p>
      */
     private String description;
@@ -68,7 +68,7 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String changeDescription;
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      */
     private String platform;
@@ -101,13 +101,13 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
     private String uri;
     /**
      * <p>
-     * The ID of the KMS key that should be used to encrypt this component.
+     * The ID of the KMS key that is used to encrypt this component.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The tags of the component.
+     * The tags that apply to the component.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -290,11 +290,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The description of the component. Describes the contents of the component.
+     * Describes the contents of the component.
      * </p>
      * 
      * @param description
-     *        The description of the component. Describes the contents of the component.
+     *        Describes the contents of the component.
      */
 
     public void setDescription(String description) {
@@ -303,10 +303,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The description of the component. Describes the contents of the component.
+     * Describes the contents of the component.
      * </p>
      * 
-     * @return The description of the component. Describes the contents of the component.
+     * @return Describes the contents of the component.
      */
 
     public String getDescription() {
@@ -315,11 +315,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The description of the component. Describes the contents of the component.
+     * Describes the contents of the component.
      * </p>
      * 
      * @param description
-     *        The description of the component. Describes the contents of the component.
+     *        Describes the contents of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -376,11 +376,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
      * @param platform
-     *        The platform of the component.
+     *        The operating system platform of the component.
      * @see Platform
      */
 
@@ -390,10 +390,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
-     * @return The platform of the component.
+     * @return The operating system platform of the component.
      * @see Platform
      */
 
@@ -403,11 +403,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
      * @param platform
-     *        The platform of the component.
+     *        The operating system platform of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -419,11 +419,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The platform of the component.
+     * The operating system platform of the component.
      * </p>
      * 
      * @param platform
-     *        The platform of the component.
+     *        The operating system platform of the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -638,11 +638,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the KMS key that should be used to encrypt this component.
+     * The ID of the KMS key that is used to encrypt this component.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID of the KMS key that should be used to encrypt this component.
+     *        The ID of the KMS key that is used to encrypt this component.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -651,10 +651,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the KMS key that should be used to encrypt this component.
+     * The ID of the KMS key that is used to encrypt this component.
      * </p>
      * 
-     * @return The ID of the KMS key that should be used to encrypt this component.
+     * @return The ID of the KMS key that is used to encrypt this component.
      */
 
     public String getKmsKeyId() {
@@ -663,11 +663,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the KMS key that should be used to encrypt this component.
+     * The ID of the KMS key that is used to encrypt this component.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID of the KMS key that should be used to encrypt this component.
+     *        The ID of the KMS key that is used to encrypt this component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -678,10 +678,10 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags of the component.
+     * The tags that apply to the component.
      * </p>
      * 
-     * @return The tags of the component.
+     * @return The tags that apply to the component.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -690,11 +690,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags of the component.
+     * The tags that apply to the component.
      * </p>
      * 
      * @param tags
-     *        The tags of the component.
+     *        The tags that apply to the component.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -703,11 +703,11 @@ public class CreateComponentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The tags of the component.
+     * The tags that apply to the component.
      * </p>
      * 
      * @param tags
-     *        The tags of the component.
+     *        The tags that apply to the component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

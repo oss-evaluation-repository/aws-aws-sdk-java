@@ -53,6 +53,10 @@ public class ComponentSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateCreated").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PUBLISHER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("publisher").build();
+    private static final MarshallingInfo<Boolean> OBFUSCATE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("obfuscate").build();
 
     private static final ComponentSummaryMarshaller instance = new ComponentSummaryMarshaller();
 
@@ -82,6 +86,8 @@ public class ComponentSummaryMarshaller {
             protocolMarshaller.marshall(componentSummary.getChangeDescription(), CHANGEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(componentSummary.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(componentSummary.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(componentSummary.getPublisher(), PUBLISHER_BINDING);
+            protocolMarshaller.marshall(componentSummary.getObfuscate(), OBFUSCATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

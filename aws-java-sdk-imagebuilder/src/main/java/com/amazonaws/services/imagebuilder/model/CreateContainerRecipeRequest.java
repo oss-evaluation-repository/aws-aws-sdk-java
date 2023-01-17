@@ -67,7 +67,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
     private String semanticVersion;
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      */
     private java.util.List<ComponentConfiguration> components;
@@ -410,10 +411,12 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
-     * @return Components for build and test that are included in the container recipe.
+     * @return Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *         build component, and can have a maximum of 20 build and test components in any combination.
      */
 
     public java.util.List<ComponentConfiguration> getComponents() {
@@ -422,11 +425,13 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      */
 
     public void setComponents(java.util.Collection<ComponentConfiguration> components) {
@@ -440,7 +445,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -449,7 +455,8 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,11 +472,13 @@ public class CreateContainerRecipeRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Components for build and test that are included in the container recipe.
+     * Components for build and test that are included in the container recipe. Recipes require a minimum of one build
+     * component, and can have a maximum of 20 build and test components in any combination.
      * </p>
      * 
      * @param components
-     *        Components for build and test that are included in the container recipe.
+     *        Components for build and test that are included in the container recipe. Recipes require a minimum of one
+     *        build component, and can have a maximum of 20 build and test components in any combination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

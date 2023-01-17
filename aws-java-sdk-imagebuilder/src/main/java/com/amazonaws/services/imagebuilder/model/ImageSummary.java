@@ -42,7 +42,7 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      */
     private String type;
@@ -54,14 +54,14 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
     private String version;
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      */
     private String platform;
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu
+     * 18, or Microsoft Windows Server 2019.
      * </p>
      */
     private String osVersion;
@@ -79,19 +79,19 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
     private String owner;
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      */
     private String dateCreated;
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produced when it created this image.
      * </p>
      */
     private OutputResources outputResources;
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -119,6 +119,12 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private String buildType;
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     */
+    private String imageSource;
 
     /**
      * <p>
@@ -202,11 +208,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this is an AMI or container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @see ImageType
      */
 
@@ -216,10 +222,10 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
-     * @return Specifies whether this is an AMI or container image.
+     * @return Specifies whether this image produces an AMI or a container image.
      * @see ImageType
      */
 
@@ -229,11 +235,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this is an AMI or container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageType
      */
@@ -245,11 +251,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether this is an AMI or container image.
+     * Specifies whether this image produces an AMI or a container image.
      * </p>
      * 
      * @param type
-     *        Specifies whether this is an AMI or container image.
+     *        Specifies whether this image produces an AMI or a container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImageType
      */
@@ -301,11 +307,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
      * @param platform
-     *        The platform of the image.
+     *        The image operating system platform, such as Linux or Windows.
      * @see Platform
      */
 
@@ -315,10 +321,10 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
-     * @return The platform of the image.
+     * @return The image operating system platform, such as Linux or Windows.
      * @see Platform
      */
 
@@ -328,11 +334,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
      * @param platform
-     *        The platform of the image.
+     *        The image operating system platform, such as Linux or Windows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -344,11 +350,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the image.
+     * The image operating system platform, such as Linux or Windows.
      * </p>
      * 
      * @param platform
-     *        The platform of the image.
+     *        The image operating system platform, such as Linux or Windows.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -360,13 +366,13 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu
+     * 18, or Microsoft Windows Server 2019.
      * </p>
      * 
      * @param osVersion
-     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
-     *        Server 2019.
+     *        The operating system version of the instances that launch from this image. For example, Amazon Linux 2,
+     *        Ubuntu 18, or Microsoft Windows Server 2019.
      */
 
     public void setOsVersion(String osVersion) {
@@ -375,12 +381,12 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu
+     * 18, or Microsoft Windows Server 2019.
      * </p>
      * 
-     * @return The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft
-     *         Windows Server 2019.
+     * @return The operating system version of the instances that launch from this image. For example, Amazon Linux 2,
+     *         Ubuntu 18, or Microsoft Windows Server 2019.
      */
 
     public String getOsVersion() {
@@ -389,13 +395,13 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server
-     * 2019.
+     * The operating system version of the instances that launch from this image. For example, Amazon Linux 2, Ubuntu
+     * 18, or Microsoft Windows Server 2019.
      * </p>
      * 
      * @param osVersion
-     *        The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows
-     *        Server 2019.
+     *        The operating system version of the instances that launch from this image. For example, Amazon Linux 2,
+     *        Ubuntu 18, or Microsoft Windows Server 2019.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,11 +492,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      * 
      * @param dateCreated
-     *        The date on which this image was created.
+     *        The date on which Image Builder created this image.
      */
 
     public void setDateCreated(String dateCreated) {
@@ -499,10 +505,10 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      * 
-     * @return The date on which this image was created.
+     * @return The date on which Image Builder created this image.
      */
 
     public String getDateCreated() {
@@ -511,11 +517,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date on which this image was created.
+     * The date on which Image Builder created this image.
      * </p>
      * 
      * @param dateCreated
-     *        The date on which this image was created.
+     *        The date on which Image Builder created this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,11 +532,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produced when it created this image.
      * </p>
      * 
      * @param outputResources
-     *        The output resources produced when creating this image.
+     *        The output resources that Image Builder produced when it created this image.
      */
 
     public void setOutputResources(OutputResources outputResources) {
@@ -539,10 +545,10 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produced when it created this image.
      * </p>
      * 
-     * @return The output resources produced when creating this image.
+     * @return The output resources that Image Builder produced when it created this image.
      */
 
     public OutputResources getOutputResources() {
@@ -551,11 +557,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The output resources produced when creating this image.
+     * The output resources that Image Builder produced when it created this image.
      * </p>
      * 
      * @param outputResources
-     *        The output resources produced when creating this image.
+     *        The output resources that Image Builder produced when it created this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,10 +572,10 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      * 
-     * @return The tags of the image.
+     * @return The tags that apply to this image.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -578,11 +584,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      * 
      * @param tags
-     *        The tags of the image.
+     *        The tags that apply to this image.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -591,11 +597,11 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tags of the image.
+     * The tags that apply to this image.
      * </p>
      * 
      * @param tags
-     *        The tags of the image.
+     *        The tags that apply to this image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -833,6 +839,65 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @see ImageSource
+     */
+
+    public void setImageSource(String imageSource) {
+        this.imageSource = imageSource;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @return The origin of the base image that Image Builder used to build this image.
+     * @see ImageSource
+     */
+
+    public String getImageSource() {
+        return this.imageSource;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageSource
+     */
+
+    public ImageSummary withImageSource(String imageSource) {
+        setImageSource(imageSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The origin of the base image that Image Builder used to build this image.
+     * </p>
+     * 
+     * @param imageSource
+     *        The origin of the base image that Image Builder used to build this image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageSource
+     */
+
+    public ImageSummary withImageSource(ImageSource imageSource) {
+        this.imageSource = imageSource.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -867,7 +932,9 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getBuildType() != null)
-            sb.append("BuildType: ").append(getBuildType());
+            sb.append("BuildType: ").append(getBuildType()).append(",");
+        if (getImageSource() != null)
+            sb.append("ImageSource: ").append(getImageSource());
         sb.append("}");
         return sb.toString();
     }
@@ -930,6 +997,10 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBuildType() != null && other.getBuildType().equals(this.getBuildType()) == false)
             return false;
+        if (other.getImageSource() == null ^ this.getImageSource() == null)
+            return false;
+        if (other.getImageSource() != null && other.getImageSource().equals(this.getImageSource()) == false)
+            return false;
         return true;
     }
 
@@ -950,6 +1021,7 @@ public class ImageSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOutputResources() == null) ? 0 : getOutputResources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getBuildType() == null) ? 0 : getBuildType().hashCode());
+        hashCode = prime * hashCode + ((getImageSource() == null) ? 0 : getImageSource().hashCode());
         return hashCode;
     }
 

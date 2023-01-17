@@ -92,6 +92,14 @@ public class UpdatePricingRuleResultJsonUnmarshaller implements Unmarshaller<Upd
                     context.nextToken();
                     updatePricingRuleResult.setTiering(UpdateTieringInputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UsageType", targetDepth)) {
+                    context.nextToken();
+                    updatePricingRuleResult.setUsageType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Operation", targetDepth)) {
+                    context.nextToken();
+                    updatePricingRuleResult.setOperation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

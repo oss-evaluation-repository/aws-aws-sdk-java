@@ -29,6 +29,8 @@ public class SubnetMappingMarshaller {
 
     private static final MarshallingInfo<String> SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SubnetId").build();
+    private static final MarshallingInfo<String> IPADDRESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPAddressType").build();
 
     private static final SubnetMappingMarshaller instance = new SubnetMappingMarshaller();
 
@@ -47,6 +49,7 @@ public class SubnetMappingMarshaller {
 
         try {
             protocolMarshaller.marshall(subnetMapping.getSubnetId(), SUBNETID_BINDING);
+            protocolMarshaller.marshall(subnetMapping.getIPAddressType(), IPADDRESSTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

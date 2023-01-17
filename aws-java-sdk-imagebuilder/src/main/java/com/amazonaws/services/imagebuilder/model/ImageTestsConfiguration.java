@@ -40,6 +40,11 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The maximum time in minutes that tests are permitted to run.
      * </p>
+     * <note>
+     * <p>
+     * The timeoutMinutes attribute is not currently active. This value is ignored.
+     * </p>
+     * </note>
      */
     private Integer timeoutMinutes;
 
@@ -107,9 +112,17 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The maximum time in minutes that tests are permitted to run.
      * </p>
+     * <note>
+     * <p>
+     * The timeoutMinutes attribute is not currently active. This value is ignored.
+     * </p>
+     * </note>
      * 
      * @param timeoutMinutes
-     *        The maximum time in minutes that tests are permitted to run.
+     *        The maximum time in minutes that tests are permitted to run.</p> <note>
+     *        <p>
+     *        The timeoutMinutes attribute is not currently active. This value is ignored.
+     *        </p>
      */
 
     public void setTimeoutMinutes(Integer timeoutMinutes) {
@@ -120,8 +133,16 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The maximum time in minutes that tests are permitted to run.
      * </p>
+     * <note>
+     * <p>
+     * The timeoutMinutes attribute is not currently active. This value is ignored.
+     * </p>
+     * </note>
      * 
-     * @return The maximum time in minutes that tests are permitted to run.
+     * @return The maximum time in minutes that tests are permitted to run.</p> <note>
+     *         <p>
+     *         The timeoutMinutes attribute is not currently active. This value is ignored.
+     *         </p>
      */
 
     public Integer getTimeoutMinutes() {
@@ -132,9 +153,17 @@ public class ImageTestsConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The maximum time in minutes that tests are permitted to run.
      * </p>
+     * <note>
+     * <p>
+     * The timeoutMinutes attribute is not currently active. This value is ignored.
+     * </p>
+     * </note>
      * 
      * @param timeoutMinutes
-     *        The maximum time in minutes that tests are permitted to run.
+     *        The maximum time in minutes that tests are permitted to run.</p> <note>
+     *        <p>
+     *        The timeoutMinutes attribute is not currently active. This value is ignored.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

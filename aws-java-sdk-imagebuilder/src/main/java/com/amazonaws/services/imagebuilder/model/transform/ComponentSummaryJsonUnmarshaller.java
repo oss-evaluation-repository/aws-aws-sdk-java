@@ -99,6 +99,14 @@ public class ComponentSummaryJsonUnmarshaller implements Unmarshaller<ComponentS
                     componentSummary.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
                 }
+                if (context.testExpression("publisher", targetDepth)) {
+                    context.nextToken();
+                    componentSummary.setPublisher(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("obfuscate", targetDepth)) {
+                    context.nextToken();
+                    componentSummary.setObfuscate(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
