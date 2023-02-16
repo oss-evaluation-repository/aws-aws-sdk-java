@@ -40,6 +40,8 @@ public class InstanceFleetConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceTypeConfigs").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHSPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchSpecifications").build();
+    private static final MarshallingInfo<StructuredPojo> RESIZESPECIFICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResizeSpecifications").build();
 
     private static final InstanceFleetConfigMarshaller instance = new InstanceFleetConfigMarshaller();
 
@@ -63,6 +65,7 @@ public class InstanceFleetConfigMarshaller {
             protocolMarshaller.marshall(instanceFleetConfig.getTargetSpotCapacity(), TARGETSPOTCAPACITY_BINDING);
             protocolMarshaller.marshall(instanceFleetConfig.getInstanceTypeConfigs(), INSTANCETYPECONFIGS_BINDING);
             protocolMarshaller.marshall(instanceFleetConfig.getLaunchSpecifications(), LAUNCHSPECIFICATIONS_BINDING);
+            protocolMarshaller.marshall(instanceFleetConfig.getResizeSpecifications(), RESIZESPECIFICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

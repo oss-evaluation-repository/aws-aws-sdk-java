@@ -520,9 +520,9 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * Provides Temporary, basic HTTP credentials that are associated with a given runtime IAM role and used by a
+     * Provides temporary, HTTP basic credentials that are associated with a given runtime IAM role and used by a
      * cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints
-     * that support username-based and password-based authentication.
+     * that support username and password authentication.
      * </p>
      * 
      * @param getClusterSessionCredentialsRequest

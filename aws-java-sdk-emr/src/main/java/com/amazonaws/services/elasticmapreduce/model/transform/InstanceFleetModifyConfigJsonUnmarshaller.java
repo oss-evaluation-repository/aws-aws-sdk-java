@@ -60,6 +60,10 @@ public class InstanceFleetModifyConfigJsonUnmarshaller implements Unmarshaller<I
                     context.nextToken();
                     instanceFleetModifyConfig.setTargetSpotCapacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ResizeSpecifications", targetDepth)) {
+                    context.nextToken();
+                    instanceFleetModifyConfig.setResizeSpecifications(InstanceFleetResizingSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -30,10 +30,14 @@ public class UpdateWorkspaceRequestMarshaller {
 
     private static final MarshallingInfo<String> ACCOUNTACCESSTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountAccessType").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACCESSCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkAccessControl").build();
     private static final MarshallingInfo<String> ORGANIZATIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("organizationRoleName").build();
     private static final MarshallingInfo<String> PERMISSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("permissionType").build();
+    private static final MarshallingInfo<Boolean> REMOVENETWORKACCESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeNetworkAccessConfiguration").build();
     private static final MarshallingInfo<Boolean> REMOVEVPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeVpcConfiguration").build();
     private static final MarshallingInfo<String> STACKSETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,8 +76,10 @@ public class UpdateWorkspaceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateWorkspaceRequest.getAccountAccessType(), ACCOUNTACCESSTYPE_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceRequest.getNetworkAccessControl(), NETWORKACCESSCONTROL_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getOrganizationRoleName(), ORGANIZATIONROLENAME_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getPermissionType(), PERMISSIONTYPE_BINDING);
+            protocolMarshaller.marshall(updateWorkspaceRequest.getRemoveNetworkAccessConfiguration(), REMOVENETWORKACCESSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getRemoveVpcConfiguration(), REMOVEVPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getStackSetName(), STACKSETNAME_BINDING);
             protocolMarshaller.marshall(updateWorkspaceRequest.getVpcConfiguration(), VPCCONFIGURATION_BINDING);

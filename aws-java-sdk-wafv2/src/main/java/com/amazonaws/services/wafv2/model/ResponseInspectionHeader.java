@@ -22,6 +22,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Configures inspection of the response header. This is part of the <code>ResponseInspection</code> configuration for
  * <code>AWSManagedRulesATPRuleSet</code>.
  * </p>
+ * <note>
+ * <p>
+ * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
+ * </p>
+ * </note> <note>
+ * <p>
+ * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
+ * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
+ * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ResponseInspectionHeader" target="_top">AWS API
  *      Documentation</a>

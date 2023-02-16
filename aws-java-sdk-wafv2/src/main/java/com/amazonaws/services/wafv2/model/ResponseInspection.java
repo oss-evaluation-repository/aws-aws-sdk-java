@@ -31,6 +31,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
  * </p>
+ * </note> <note>
+ * <p>
+ * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
+ * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
+ * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
+ * </p>
  * </note>
  * <p>
  * This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.

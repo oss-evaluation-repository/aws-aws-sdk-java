@@ -21,6 +21,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
  * </p>
+ * <note>
+ * <p>
+ * Provided <code>securityGroupIds</code> and <code>subnetIds</code> must be part of the same VPC.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/VpcConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -31,12 +36,14 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
+     * Duplicates not allowed.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not
+     * allowed.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -44,10 +51,11 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
+     * Duplicates not allowed.
      * </p>
      * 
      * @return The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to
-     *         connect.
+     *         connect. Duplicates not allowed.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -57,11 +65,12 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
+     * Duplicates not allowed.
      * </p>
      * 
      * @param securityGroupIds
      *        The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to
-     *        connect.
+     *        connect. Duplicates not allowed.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -76,6 +85,7 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
+     * Duplicates not allowed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +95,7 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
      * 
      * @param securityGroupIds
      *        The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to
-     *        connect.
+     *        connect. Duplicates not allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +112,12 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to connect.
+     * Duplicates not allowed.
      * </p>
      * 
      * @param securityGroupIds
      *        The list of Amazon EC2 security group IDs attached to the Amazon VPC for your Grafana workspace to
-     *        connect.
+     *        connect. Duplicates not allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,10 +128,12 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not
+     * allowed.
      * </p>
      * 
      * @return The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     *         Duplicates not allowed.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -129,11 +142,13 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not
+     * allowed.
      * </p>
      * 
      * @param subnetIds
      *        The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     *        Duplicates not allowed.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -147,7 +162,8 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not
+     * allowed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -157,6 +173,7 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
      * 
      * @param subnetIds
      *        The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     *        Duplicates not allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +189,13 @@ public class VpcConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     * The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect. Duplicates not
+     * allowed.
      * </p>
      * 
      * @param subnetIds
      *        The list of Amazon EC2 subnet IDs created in the Amazon VPC for your Grafana workspace to connect.
+     *        Duplicates not allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

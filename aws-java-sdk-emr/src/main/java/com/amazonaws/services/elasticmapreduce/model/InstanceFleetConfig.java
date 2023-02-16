@@ -100,6 +100,12 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private InstanceFleetProvisioningSpecifications launchSpecifications;
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     */
+    private InstanceFleetResizingSpecifications resizeSpecifications;
 
     /**
      * <p>
@@ -585,6 +591,46 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @param resizeSpecifications
+     *        The resize specification for the instance fleet.
+     */
+
+    public void setResizeSpecifications(InstanceFleetResizingSpecifications resizeSpecifications) {
+        this.resizeSpecifications = resizeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @return The resize specification for the instance fleet.
+     */
+
+    public InstanceFleetResizingSpecifications getResizeSpecifications() {
+        return this.resizeSpecifications;
+    }
+
+    /**
+     * <p>
+     * The resize specification for the instance fleet.
+     * </p>
+     * 
+     * @param resizeSpecifications
+     *        The resize specification for the instance fleet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceFleetConfig withResizeSpecifications(InstanceFleetResizingSpecifications resizeSpecifications) {
+        setResizeSpecifications(resizeSpecifications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -607,7 +653,9 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
         if (getInstanceTypeConfigs() != null)
             sb.append("InstanceTypeConfigs: ").append(getInstanceTypeConfigs()).append(",");
         if (getLaunchSpecifications() != null)
-            sb.append("LaunchSpecifications: ").append(getLaunchSpecifications());
+            sb.append("LaunchSpecifications: ").append(getLaunchSpecifications()).append(",");
+        if (getResizeSpecifications() != null)
+            sb.append("ResizeSpecifications: ").append(getResizeSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +694,10 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getLaunchSpecifications() != null && other.getLaunchSpecifications().equals(this.getLaunchSpecifications()) == false)
             return false;
+        if (other.getResizeSpecifications() == null ^ this.getResizeSpecifications() == null)
+            return false;
+        if (other.getResizeSpecifications() != null && other.getResizeSpecifications().equals(this.getResizeSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -660,6 +712,7 @@ public class InstanceFleetConfig implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getTargetSpotCapacity() == null) ? 0 : getTargetSpotCapacity().hashCode());
         hashCode = prime * hashCode + ((getInstanceTypeConfigs() == null) ? 0 : getInstanceTypeConfigs().hashCode());
         hashCode = prime * hashCode + ((getLaunchSpecifications() == null) ? 0 : getLaunchSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getResizeSpecifications() == null) ? 0 : getResizeSpecifications().hashCode());
         return hashCode;
     }
 

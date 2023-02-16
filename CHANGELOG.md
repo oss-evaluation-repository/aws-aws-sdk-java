@@ -1,3 +1,20 @@
+# __1.12.409__ __2023-02-16__
+## __AWS WAFV2__
+  - ### Features
+    - Added a notice for account takeover prevention (ATP). The interface incorrectly lets you to configure ATP response inspection in regional web ACLs in Region US East (N. Virginia), without returning an error. ATP response inspection is only available in web ACLs that protect CloudFront distributions.
+
+## __Amazon EMR__
+  - ### Features
+    - This release provides customers the ability to define a timeout period for procuring capacity during a resize operation for Instance Fleet clusters. Customers can specify this timeout using the ResizeSpecifications parameter supported by RunJobFlow, ModifyInstanceFleet and AddInstanceFleet APIs.
+
+## __Amazon Interactive Video Service__
+  - ### Features
+    - Doc-only update. Updated text description in DeleteChannel, Stream, and StreamSummary.
+
+## __Amazon Managed Grafana__
+  - ### Features
+    - With this release Amazon Managed Grafana now supports inbound Network Access Control that helps you to restrict user access to your Grafana workspaces
+
 # __1.12.408__ __2023-02-15__
 ## __AWS CloudTrail__
   - ### Features

@@ -60,6 +60,20 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String configuration;
     /**
      * <p>
+     * Configuration for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     */
+    private NetworkAccessConfiguration networkAccessControl;
+    /**
+     * <p>
      * The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources
      * and notification channels in other accounts in an organization.
      * </p>
@@ -482,6 +496,91 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateWorkspaceRequest withConfiguration(String configuration) {
         setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        Configuration for network access to your workspace.</p>
+     *        <p>
+     *        When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     *        Standard Grafana authentication and authorization will still be required.
+     *        </p>
+     *        <p>
+     *        If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *        Standard Grafana authentication and authorization will still be required.
+     */
+
+    public void setNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        this.networkAccessControl = networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * Configuration for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return Configuration for network access to your workspace.</p>
+     *         <p>
+     *         When this is configured, only listed IP addresses and VPC endpoints will be able to access your
+     *         workspace. Standard Grafana authentication and authorization will still be required.
+     *         </p>
+     *         <p>
+     *         If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *         Standard Grafana authentication and authorization will still be required.
+     */
+
+    public NetworkAccessConfiguration getNetworkAccessControl() {
+        return this.networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * Configuration for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        Configuration for network access to your workspace.</p>
+     *        <p>
+     *        When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     *        Standard Grafana authentication and authorization will still be required.
+     *        </p>
+     *        <p>
+     *        If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *        Standard Grafana authentication and authorization will still be required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkspaceRequest withNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        setNetworkAccessControl(networkAccessControl);
         return this;
     }
 
@@ -1386,6 +1485,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getNetworkAccessControl() != null)
+            sb.append("NetworkAccessControl: ").append(getNetworkAccessControl()).append(",");
         if (getOrganizationRoleName() != null)
             sb.append("OrganizationRoleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPermissionType() != null)
@@ -1437,6 +1538,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
+        if (other.getNetworkAccessControl() == null ^ this.getNetworkAccessControl() == null)
+            return false;
+        if (other.getNetworkAccessControl() != null && other.getNetworkAccessControl().equals(this.getNetworkAccessControl()) == false)
             return false;
         if (other.getOrganizationRoleName() == null ^ this.getOrganizationRoleName() == null)
             return false;
@@ -1495,6 +1600,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getAuthenticationProviders() == null) ? 0 : getAuthenticationProviders().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAccessControl() == null) ? 0 : getNetworkAccessControl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());

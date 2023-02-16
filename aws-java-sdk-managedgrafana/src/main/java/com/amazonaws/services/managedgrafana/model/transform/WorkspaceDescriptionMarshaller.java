@@ -57,6 +57,8 @@ public class WorkspaceDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modified").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACCESSCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkAccessControl").build();
     private static final MarshallingInfo<List> NOTIFICATIONDESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notificationDestinations").build();
     private static final MarshallingInfo<String> ORGANIZATIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -106,6 +108,7 @@ public class WorkspaceDescriptionMarshaller {
             protocolMarshaller.marshall(workspaceDescription.getLicenseType(), LICENSETYPE_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getModified(), MODIFIED_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(workspaceDescription.getNetworkAccessControl(), NETWORKACCESSCONTROL_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getNotificationDestinations(), NOTIFICATIONDESTINATIONS_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getOrganizationRoleName(), ORGANIZATIONROLENAME_BINDING);
             protocolMarshaller.marshall(workspaceDescription.getOrganizationalUnits(), ORGANIZATIONALUNITS_BINDING);

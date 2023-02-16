@@ -25,7 +25,7 @@ public class GetClusterSessionCredentialsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The credentials that you can use to connect to cluster endpoints that support username-based and password-based
+     * The credentials that you can use to connect to cluster endpoints that support username and password
      * authentication.
      * </p>
      */
@@ -39,13 +39,13 @@ public class GetClusterSessionCredentialsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The credentials that you can use to connect to cluster endpoints that support username-based and password-based
+     * The credentials that you can use to connect to cluster endpoints that support username and password
      * authentication.
      * </p>
      * 
      * @param credentials
-     *        The credentials that you can use to connect to cluster endpoints that support username-based and
-     *        password-based authentication.
+     *        The credentials that you can use to connect to cluster endpoints that support username and password
+     *        authentication.
      */
 
     public void setCredentials(Credentials credentials) {
@@ -54,12 +54,12 @@ public class GetClusterSessionCredentialsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The credentials that you can use to connect to cluster endpoints that support username-based and password-based
+     * The credentials that you can use to connect to cluster endpoints that support username and password
      * authentication.
      * </p>
      * 
-     * @return The credentials that you can use to connect to cluster endpoints that support username-based and
-     *         password-based authentication.
+     * @return The credentials that you can use to connect to cluster endpoints that support username and password
+     *         authentication.
      */
 
     public Credentials getCredentials() {
@@ -68,13 +68,13 @@ public class GetClusterSessionCredentialsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The credentials that you can use to connect to cluster endpoints that support username-based and password-based
+     * The credentials that you can use to connect to cluster endpoints that support username and password
      * authentication.
      * </p>
      * 
      * @param credentials
-     *        The credentials that you can use to connect to cluster endpoints that support username-based and
-     *        password-based authentication.
+     *        The credentials that you can use to connect to cluster endpoints that support username and password
+     *        authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

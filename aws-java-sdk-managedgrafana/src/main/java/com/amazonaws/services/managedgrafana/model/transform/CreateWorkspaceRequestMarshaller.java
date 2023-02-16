@@ -40,6 +40,8 @@ public class CreateWorkspaceRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<StructuredPojo> NETWORKACCESSCONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkAccessControl").build();
     private static final MarshallingInfo<String> ORGANIZATIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("organizationRoleName").build();
     private static final MarshallingInfo<String> PERMISSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -83,6 +85,7 @@ public class CreateWorkspaceRequestMarshaller {
             protocolMarshaller.marshall(createWorkspaceRequest.getAuthenticationProviders(), AUTHENTICATIONPROVIDERS_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createWorkspaceRequest.getNetworkAccessControl(), NETWORKACCESSCONTROL_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getOrganizationRoleName(), ORGANIZATIONROLENAME_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getPermissionType(), PERMISSIONTYPE_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getStackSetName(), STACKSETNAME_BINDING);

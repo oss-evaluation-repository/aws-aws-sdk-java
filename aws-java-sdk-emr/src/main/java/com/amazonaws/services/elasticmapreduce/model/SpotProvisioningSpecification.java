@@ -43,7 +43,7 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
+     * The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
@@ -87,13 +87,13 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
+     * The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
      * 
      * @param timeoutDurationMinutes
-     *        The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
+     *        The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
      *        period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout
      *        applies only during initial provisioning, when the cluster is first created.
      */
@@ -104,12 +104,12 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
+     * The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
      * 
-     * @return The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
+     * @return The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
      *         period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The
      *         timeout applies only during initial provisioning, when the cluster is first created.
      */
@@ -120,13 +120,13 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
+     * The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
      * 
      * @param timeoutDurationMinutes
-     *        The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
+     *        The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
      *        period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout
      *        applies only during initial provisioning, when the cluster is first created.
      * @return Returns a reference to this object so that method calls can be chained together.

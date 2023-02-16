@@ -59,6 +59,12 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      * <p>
      * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
      * </p>
+     * </note> <note>
+     * <p>
+     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
+     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
+     * </p>
      * </note>
      */
     private ResponseInspection responseInspection;
@@ -178,6 +184,12 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      * <p>
      * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
      * </p>
+     * </note> <note>
+     * <p>
+     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
+     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
+     * </p>
      * </note>
      * 
      * @param responseInspection
@@ -192,6 +204,13 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      *        <note>
      *        <p>
      *        Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response
+     *        inspection through the APIs, but ATP response inspection will not be enabled. You can only use the
+     *        response inspection capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     *        distributions.
      *        </p>
      */
 
@@ -213,6 +232,12 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      * <p>
      * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
      * </p>
+     * </note> <note>
+     * <p>
+     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
+     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
+     * </p>
      * </note>
      * 
      * @return The criteria for inspecting responses to login requests, used by the ATP rule group to track login
@@ -226,6 +251,13 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      *         <note>
      *         <p>
      *         Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response
+     *         inspection through the APIs, but ATP response inspection will not be enabled. You can only use the
+     *         response inspection capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     *         distributions.
      *         </p>
      */
 
@@ -247,6 +279,12 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      * <p>
      * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
      * </p>
+     * </note> <note>
+     * <p>
+     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
+     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
+     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
+     * </p>
      * </note>
      * 
      * @param responseInspection
@@ -261,6 +299,13 @@ public class AWSManagedRulesATPRuleSet implements Serializable, Cloneable, Struc
      *        <note>
      *        <p>
      *        Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response
+     *        inspection through the APIs, but ATP response inspection will not be enabled. You can only use the
+     *        response inspection capabilities of the ATP managed rule group in web ACLs that protect CloudFront
+     *        distributions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

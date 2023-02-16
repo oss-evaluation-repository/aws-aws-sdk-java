@@ -106,6 +106,10 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                     context.nextToken();
                     workspaceDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("networkAccessControl", targetDepth)) {
+                    context.nextToken();
+                    workspaceDescription.setNetworkAccessControl(NetworkAccessConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("notificationDestinations", targetDepth)) {
                     context.nextToken();
                     workspaceDescription.setNotificationDestinations(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

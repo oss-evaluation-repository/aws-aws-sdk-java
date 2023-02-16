@@ -121,6 +121,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private String name;
     /**
      * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     */
+    private NetworkAccessConfiguration networkAccessControl;
+    /**
+     * <p>
      * The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and
      * permissions for, to allow Amazon Managed Grafana to use these channels.
      * </p>
@@ -141,7 +147,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private java.util.List<String> organizationalUnits;
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -912,6 +918,46 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.
+     */
+
+    public void setNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        this.networkAccessControl = networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * 
+     * @return The configuration settings for network access to your workspace.
+     */
+
+    public NetworkAccessConfiguration getNetworkAccessControl() {
+        return this.networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDescription withNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        setNetworkAccessControl(networkAccessControl);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and
      * permissions for, to allow Amazon Managed Grafana to use these channels.
      * </p>
@@ -1138,7 +1184,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -1155,7 +1201,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param permissionType
-     *        If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     *        If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      *        provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *        notification channels.</p>
      *        <p>
@@ -1177,7 +1223,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -1193,7 +1239,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
      * 
-     * @return If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * @return If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      *         provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *         notification channels.</p>
      *         <p>
@@ -1215,7 +1261,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -1232,7 +1278,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param permissionType
-     *        If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     *        If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      *        provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *        notification channels.</p>
      *        <p>
@@ -1256,7 +1302,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -1273,7 +1319,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param permissionType
-     *        If this is <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     *        If this is <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      *        provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *        notification channels.</p>
      *        <p>
@@ -1589,6 +1635,8 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             sb.append("Modified: ").append(getModified()).append(",");
         if (getName() != null)
             sb.append("Name: ").append("***Sensitive Data Redacted***").append(",");
+        if (getNetworkAccessControl() != null)
+            sb.append("NetworkAccessControl: ").append(getNetworkAccessControl()).append(",");
         if (getNotificationDestinations() != null)
             sb.append("NotificationDestinations: ").append(getNotificationDestinations()).append(",");
         if (getOrganizationRoleName() != null)
@@ -1677,6 +1725,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getNetworkAccessControl() == null ^ this.getNetworkAccessControl() == null)
+            return false;
+        if (other.getNetworkAccessControl() != null && other.getNetworkAccessControl().equals(this.getNetworkAccessControl()) == false)
+            return false;
         if (other.getNotificationDestinations() == null ^ this.getNotificationDestinations() == null)
             return false;
         if (other.getNotificationDestinations() != null && other.getNotificationDestinations().equals(this.getNotificationDestinations()) == false)
@@ -1735,6 +1787,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getLicenseType() == null) ? 0 : getLicenseType().hashCode());
         hashCode = prime * hashCode + ((getModified() == null) ? 0 : getModified().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAccessControl() == null) ? 0 : getNetworkAccessControl().hashCode());
         hashCode = prime * hashCode + ((getNotificationDestinations() == null) ? 0 : getNotificationDestinations().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getOrganizationalUnits() == null) ? 0 : getOrganizationalUnits().hashCode());

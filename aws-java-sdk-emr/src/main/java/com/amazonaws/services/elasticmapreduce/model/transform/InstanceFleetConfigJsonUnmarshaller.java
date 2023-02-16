@@ -74,6 +74,10 @@ public class InstanceFleetConfigJsonUnmarshaller implements Unmarshaller<Instanc
                     context.nextToken();
                     instanceFleetConfig.setLaunchSpecifications(InstanceFleetProvisioningSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ResizeSpecifications", targetDepth)) {
+                    context.nextToken();
+                    instanceFleetConfig.setResizeSpecifications(InstanceFleetResizingSpecificationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

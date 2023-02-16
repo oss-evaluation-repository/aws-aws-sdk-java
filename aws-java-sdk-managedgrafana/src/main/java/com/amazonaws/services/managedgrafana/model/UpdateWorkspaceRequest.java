@@ -36,13 +36,27 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String accountAccessType;
     /**
      * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     */
+    private NetworkAccessConfiguration networkAccessControl;
+    /**
+     * <p>
      * The name of an IAM role that already exists to use to access resources through Organizations.
      * </p>
      */
     private String organizationRoleName;
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -59,6 +73,19 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String permissionType;
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     */
+    private Boolean removeNetworkAccessConfiguration;
     /**
      * <p>
      * Whether to remove the VPC configuration from the workspace.
@@ -221,6 +248,91 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.</p>
+     *        <p>
+     *        When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     *        Standard Grafana authentication and authorization will still be required.
+     *        </p>
+     *        <p>
+     *        If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *        Standard Grafana authentication and authorization will still be required.
+     */
+
+    public void setNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        this.networkAccessControl = networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return The configuration settings for network access to your workspace.</p>
+     *         <p>
+     *         When this is configured, only listed IP addresses and VPC endpoints will be able to access your
+     *         workspace. Standard Grafana authentication and authorization will still be required.
+     *         </p>
+     *         <p>
+     *         If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *         Standard Grafana authentication and authorization will still be required.
+     */
+
+    public NetworkAccessConfiguration getNetworkAccessControl() {
+        return this.networkAccessControl;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for network access to your workspace.
+     * </p>
+     * <p>
+     * When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     * Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * <p>
+     * If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed. Standard
+     * Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param networkAccessControl
+     *        The configuration settings for network access to your workspace.</p>
+     *        <p>
+     *        When this is configured, only listed IP addresses and VPC endpoints will be able to access your workspace.
+     *        Standard Grafana authentication and authorization will still be required.
+     *        </p>
+     *        <p>
+     *        If this is not configured, or is removed, then all IP addresses and VPC endpoints will be allowed.
+     *        Standard Grafana authentication and authorization will still be required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withNetworkAccessControl(NetworkAccessConfiguration networkAccessControl) {
+        setNetworkAccessControl(networkAccessControl);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of an IAM role that already exists to use to access resources through Organizations.
      * </p>
      * 
@@ -261,7 +373,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -278,7 +390,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissionType
-     *        If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
+     *        If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles
      *        and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *        notification channels.</p>
      *        <p>
@@ -300,7 +412,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -316,7 +428,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * permissions and policies for Amazon Web Services data sources and notification channels</a>
      * </p>
      * 
-     * @return If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
+     * @return If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles
      *         and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *         notification channels.</p>
      *         <p>
@@ -338,7 +450,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -355,7 +467,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissionType
-     *        If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
+     *        If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles
      *        and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *        notification channels.</p>
      *        <p>
@@ -379,7 +491,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles and
+     * If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles and
      * provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification
      * channels.
      * </p>
@@ -396,7 +508,7 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissionType
-     *        If you specify <code>Service Managed</code>, Amazon Managed Grafana automatically creates the IAM roles
+     *        If you specify <code>SERVICE_MANAGED</code>, Amazon Managed Grafana automatically creates the IAM roles
      *        and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
      *        notification channels.</p>
      *        <p>
@@ -416,6 +528,114 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     public UpdateWorkspaceRequest withPermissionType(PermissionType permissionType) {
         this.permissionType = permissionType.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param removeNetworkAccessConfiguration
+     *        Whether to remove the network access configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *        error.
+     *        </p>
+     *        <p>
+     *        If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *        endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     */
+
+    public void setRemoveNetworkAccessConfiguration(Boolean removeNetworkAccessConfiguration) {
+        this.removeNetworkAccessConfiguration = removeNetworkAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return Whether to remove the network access configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *         error.
+     *         </p>
+     *         <p>
+     *         If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *         endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     */
+
+    public Boolean getRemoveNetworkAccessConfiguration() {
+        return this.removeNetworkAccessConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @param removeNetworkAccessConfiguration
+     *        Whether to remove the network access configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *        error.
+     *        </p>
+     *        <p>
+     *        If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *        endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withRemoveNetworkAccessConfiguration(Boolean removeNetworkAccessConfiguration) {
+        setRemoveNetworkAccessConfiguration(removeNetworkAccessConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the network access configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an error.
+     * </p>
+     * <p>
+     * If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC endpoints
+     * will be allowed. Standard Grafana authentication and authorization will still be required.
+     * </p>
+     * 
+     * @return Whether to remove the network access configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>networkAccessControl</code> to set will return an
+     *         error.
+     *         </p>
+     *         <p>
+     *         If you remove this configuration by setting this to <code>true</code>, then all IP addresses and VPC
+     *         endpoints will be allowed. Standard Grafana authentication and authorization will still be required.
+     */
+
+    public Boolean isRemoveNetworkAccessConfiguration() {
+        return this.removeNetworkAccessConfiguration;
     }
 
     /**
@@ -1129,10 +1349,14 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getAccountAccessType() != null)
             sb.append("AccountAccessType: ").append(getAccountAccessType()).append(",");
+        if (getNetworkAccessControl() != null)
+            sb.append("NetworkAccessControl: ").append(getNetworkAccessControl()).append(",");
         if (getOrganizationRoleName() != null)
             sb.append("OrganizationRoleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPermissionType() != null)
             sb.append("PermissionType: ").append(getPermissionType()).append(",");
+        if (getRemoveNetworkAccessConfiguration() != null)
+            sb.append("RemoveNetworkAccessConfiguration: ").append(getRemoveNetworkAccessConfiguration()).append(",");
         if (getRemoveVpcConfiguration() != null)
             sb.append("RemoveVpcConfiguration: ").append(getRemoveVpcConfiguration()).append(",");
         if (getStackSetName() != null)
@@ -1171,6 +1395,10 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAccountAccessType() != null && other.getAccountAccessType().equals(this.getAccountAccessType()) == false)
             return false;
+        if (other.getNetworkAccessControl() == null ^ this.getNetworkAccessControl() == null)
+            return false;
+        if (other.getNetworkAccessControl() != null && other.getNetworkAccessControl().equals(this.getNetworkAccessControl()) == false)
+            return false;
         if (other.getOrganizationRoleName() == null ^ this.getOrganizationRoleName() == null)
             return false;
         if (other.getOrganizationRoleName() != null && other.getOrganizationRoleName().equals(this.getOrganizationRoleName()) == false)
@@ -1178,6 +1406,11 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getPermissionType() == null ^ this.getPermissionType() == null)
             return false;
         if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
+            return false;
+        if (other.getRemoveNetworkAccessConfiguration() == null ^ this.getRemoveNetworkAccessConfiguration() == null)
+            return false;
+        if (other.getRemoveNetworkAccessConfiguration() != null
+                && other.getRemoveNetworkAccessConfiguration().equals(this.getRemoveNetworkAccessConfiguration()) == false)
             return false;
         if (other.getRemoveVpcConfiguration() == null ^ this.getRemoveVpcConfiguration() == null)
             return false;
@@ -1229,8 +1462,10 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountAccessType() == null) ? 0 : getAccountAccessType().hashCode());
+        hashCode = prime * hashCode + ((getNetworkAccessControl() == null) ? 0 : getNetworkAccessControl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
+        hashCode = prime * hashCode + ((getRemoveNetworkAccessConfiguration() == null) ? 0 : getRemoveNetworkAccessConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRemoveVpcConfiguration() == null) ? 0 : getRemoveVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
