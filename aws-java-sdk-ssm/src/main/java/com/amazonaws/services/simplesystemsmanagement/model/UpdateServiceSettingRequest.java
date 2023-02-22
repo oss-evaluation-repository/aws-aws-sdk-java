@@ -37,6 +37,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -128,6 +133,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -168,6 +178,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *        . The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-destination</code>
@@ -218,6 +233,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -257,6 +277,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *         . The setting ID can be one of the following.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>/ssm/automation/customer-script-log-destination</code>
@@ -307,6 +332,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -347,6 +377,11 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *        . The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-destination</code>

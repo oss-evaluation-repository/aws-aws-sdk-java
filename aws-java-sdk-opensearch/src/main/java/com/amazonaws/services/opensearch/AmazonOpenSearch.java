@@ -63,11 +63,11 @@ public interface AmazonOpenSearch {
      *        Container for the parameters to the <code>AcceptInboundConnection</code> operation.
      * @return Result of the AcceptInboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.AcceptInboundConnection
      */
     AcceptInboundConnectionResult acceptInboundConnection(AcceptInboundConnectionRequest acceptInboundConnectionRequest);
@@ -89,7 +89,7 @@ public interface AmazonOpenSearch {
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.AddTags
@@ -111,13 +111,13 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws ConflictException
-     *         An error occurred because the client attempts to remove a resource that's currently in use.
+     *         An error occurred because the client attempts to remove a resource that is currently in use.
      * @sample AmazonOpenSearch.AssociatePackage
      */
     AssociatePackageResult associatePackage(AssociatePackageRequest associatePackageRequest);
@@ -130,13 +130,13 @@ public interface AmazonOpenSearch {
      * @param authorizeVpcEndpointAccessRequest
      * @return Result of the AuthorizeVpcEndpointAccess operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws BaseException
@@ -162,9 +162,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.CancelServiceSoftwareUpdate
      */
     CancelServiceSoftwareUpdateResult cancelServiceSoftwareUpdate(CancelServiceSoftwareUpdateRequest cancelServiceSoftwareUpdateRequest);
@@ -181,7 +181,7 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws InvalidTypeException
@@ -191,7 +191,7 @@ public interface AmazonOpenSearch {
      * @throws ResourceAlreadyExistsException
      *         An exception for creating a resource that already exists.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.CreateDomain
      */
     CreateDomainResult createDomain(CreateDomainRequest createDomainRequest);
@@ -214,7 +214,7 @@ public interface AmazonOpenSearch {
      * @throws ResourceAlreadyExistsException
      *         An exception for creating a resource that already exists.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.CreateOutboundConnection
      */
     CreateOutboundConnectionResult createOutboundConnection(CreateOutboundConnectionRequest createOutboundConnectionRequest);
@@ -242,7 +242,7 @@ public interface AmazonOpenSearch {
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.CreatePackage
      */
     CreatePackageResult createPackage(CreatePackageRequest createPackageRequest);
@@ -255,15 +255,15 @@ public interface AmazonOpenSearch {
      * @param createVpcEndpointRequest
      * @return Result of the CreateVpcEndpoint operation returned by the service.
      * @throws ConflictException
-     *         An error occurred because the client attempts to remove a resource that's currently in use.
+     *         An error occurred because the client attempts to remove a resource that is currently in use.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @sample AmazonOpenSearch.CreateVpcEndpoint
@@ -283,9 +283,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DeleteDomain
      */
     DeleteDomainResult deleteDomain(DeleteDomainRequest deleteDomainRequest);
@@ -302,9 +302,9 @@ public interface AmazonOpenSearch {
      *        Container for the parameters to the <code>DeleteInboundConnection</code> operation.
      * @return Result of the DeleteInboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.DeleteInboundConnection
      */
     DeleteInboundConnectionResult deleteInboundConnection(DeleteInboundConnectionRequest deleteInboundConnectionRequest);
@@ -321,9 +321,9 @@ public interface AmazonOpenSearch {
      *        Container for the parameters to the <code>DeleteOutboundConnection</code> operation.
      * @return Result of the DeleteOutboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.DeleteOutboundConnection
      */
     DeleteOutboundConnectionResult deleteOutboundConnection(DeleteOutboundConnectionRequest deleteOutboundConnectionRequest);
@@ -344,13 +344,13 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws ConflictException
-     *         An error occurred because the client attempts to remove a resource that's currently in use.
+     *         An error occurred because the client attempts to remove a resource that is currently in use.
      * @sample AmazonOpenSearch.DeletePackage
      */
     DeletePackageResult deletePackage(DeletePackageRequest deletePackageRequest);
@@ -363,9 +363,9 @@ public interface AmazonOpenSearch {
      * @param deleteVpcEndpointRequest
      * @return Result of the DeleteVpcEndpoint operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws BaseException
@@ -388,9 +388,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribeDomain
      */
     DescribeDomainResult describeDomain(DescribeDomainRequest describeDomainRequest);
@@ -411,9 +411,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribeDomainAutoTunes
      */
     DescribeDomainAutoTunesResult describeDomainAutoTunes(DescribeDomainAutoTunesRequest describeDomainAutoTunesRequest);
@@ -434,9 +434,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribeDomainChangeProgress
      */
     DescribeDomainChangeProgressResult describeDomainChangeProgress(DescribeDomainChangeProgressRequest describeDomainChangeProgressRequest);
@@ -454,9 +454,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribeDomainConfig
      */
     DescribeDomainConfigResult describeDomainConfig(DescribeDomainConfigRequest describeDomainConfigRequest);
@@ -474,7 +474,7 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribeDomains
      */
     DescribeDomainsResult describeDomains(DescribeDomainsRequest describeDomainsRequest);
@@ -494,11 +494,11 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.DescribeDryRunProgress
      */
     DescribeDryRunProgressResult describeDryRunProgress(DescribeDryRunProgressRequest describeDryRunProgressRequest);
@@ -517,7 +517,7 @@ public interface AmazonOpenSearch {
      * @throws InvalidPaginationTokenException
      *         The request processing has failed because you provided an invalid pagination token.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.DescribeInboundConnections
      */
     DescribeInboundConnectionsResult describeInboundConnections(DescribeInboundConnectionsRequest describeInboundConnectionsRequest);
@@ -540,9 +540,9 @@ public interface AmazonOpenSearch {
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribeInstanceTypeLimits
      */
     DescribeInstanceTypeLimitsResult describeInstanceTypeLimits(DescribeInstanceTypeLimitsRequest describeInstanceTypeLimitsRequest);
@@ -561,7 +561,7 @@ public interface AmazonOpenSearch {
      * @throws InvalidPaginationTokenException
      *         The request processing has failed because you provided an invalid pagination token.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.DescribeOutboundConnections
      */
     DescribeOutboundConnectionsResult describeOutboundConnections(DescribeOutboundConnectionsRequest describeOutboundConnectionsRequest);
@@ -581,11 +581,11 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.DescribePackages
      */
     DescribePackagesResult describePackages(DescribePackagesRequest describePackagesRequest);
@@ -601,11 +601,11 @@ public interface AmazonOpenSearch {
      *        Container for the request parameters to a <code>DescribeReservedInstanceOfferings</code> operation.
      * @return Result of the DescribeReservedInstanceOfferings operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.DescribeReservedInstanceOfferings
@@ -623,13 +623,13 @@ public interface AmazonOpenSearch {
      *        Container for the request parameters to the <code>DescribeReservedInstances</code> operation.
      * @return Result of the DescribeReservedInstances operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.DescribeReservedInstances
      */
     DescribeReservedInstancesResult describeReservedInstances(DescribeReservedInstancesRequest describeReservedInstancesRequest);
@@ -642,11 +642,11 @@ public interface AmazonOpenSearch {
      * @param describeVpcEndpointsRequest
      * @return Result of the DescribeVpcEndpoints operation returned by the service.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @sample AmazonOpenSearch.DescribeVpcEndpoints
@@ -670,13 +670,13 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws ConflictException
-     *         An error occurred because the client attempts to remove a resource that's currently in use.
+     *         An error occurred because the client attempts to remove a resource that is currently in use.
      * @sample AmazonOpenSearch.DissociatePackage
      */
     DissociatePackageResult dissociatePackage(DissociatePackageRequest dissociatePackageRequest);
@@ -692,11 +692,11 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.GetCompatibleVersions
@@ -719,11 +719,11 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.GetPackageVersionHistory
      */
     GetPackageVersionHistoryResult getPackageVersionHistory(GetPackageVersionHistoryRequest getPackageVersionHistoryRequest);
@@ -739,11 +739,11 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.GetUpgradeHistory
@@ -762,11 +762,11 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.GetUpgradeStatus
@@ -784,7 +784,7 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.ListDomainNames
      */
     ListDomainNamesResult listDomainNames(ListDomainNamesRequest listDomainNamesRequest);
@@ -804,11 +804,11 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.ListDomainsForPackage
      */
     ListDomainsForPackageResult listDomainsForPackage(ListDomainsForPackageRequest listDomainsForPackageRequest);
@@ -825,9 +825,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.ListInstanceTypeDetails
      */
     ListInstanceTypeDetailsResult listInstanceTypeDetails(ListInstanceTypeDetailsRequest listInstanceTypeDetailsRequest);
@@ -847,14 +847,39 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.ListPackagesForDomain
      */
     ListPackagesForDomainResult listPackagesForDomain(ListPackagesForDomainRequest listPackagesForDomainRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of configuration changes that are scheduled for a domain. These changes can be <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+     * software updates</a> or <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types"
+     * >blue/green Auto-Tune enhancements</a>.
+     * </p>
+     * 
+     * @param listScheduledActionsRequest
+     * @return Result of the ListScheduledActions operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist..
+     * @throws InvalidPaginationTokenException
+     *         The request processing has failed because you provided an invalid pagination token.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @sample AmazonOpenSearch.ListScheduledActions
+     */
+    ListScheduledActionsResult listScheduledActions(ListScheduledActionsRequest listScheduledActionsRequest);
 
     /**
      * <p>
@@ -869,9 +894,9 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.ListTags
@@ -891,9 +916,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.ListVersions
      */
     ListVersionsResult listVersions(ListVersionsRequest listVersionsRequest);
@@ -907,9 +932,9 @@ public interface AmazonOpenSearch {
      * @param listVpcEndpointAccessRequest
      * @return Result of the ListVpcEndpointAccess operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws BaseException
@@ -929,7 +954,7 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @sample AmazonOpenSearch.ListVpcEndpoints
@@ -946,9 +971,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws BaseException
      *         An error occurred while processing the request.
      * @sample AmazonOpenSearch.ListVpcEndpointsForDomain
@@ -964,15 +989,15 @@ public interface AmazonOpenSearch {
      *        Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation.
      * @return Result of the PurchaseReservedInstanceOffering operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ResourceAlreadyExistsException
      *         An exception for creating a resource that already exists.
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.PurchaseReservedInstanceOffering
@@ -988,9 +1013,9 @@ public interface AmazonOpenSearch {
      *        Container for the request parameters to the <code>RejectInboundConnection</code> operation.
      * @return Result of the RejectInboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @sample AmazonOpenSearch.RejectInboundConnection
      */
     RejectInboundConnectionResult rejectInboundConnection(RejectInboundConnectionRequest rejectInboundConnectionRequest);
@@ -1008,7 +1033,7 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.RemoveTags
@@ -1023,11 +1048,11 @@ public interface AmazonOpenSearch {
      * @param revokeVpcEndpointAccessRequest
      * @return Result of the RevokeVpcEndpointAccess operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws BaseException
@@ -1051,9 +1076,9 @@ public interface AmazonOpenSearch {
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.StartServiceSoftwareUpdate
      */
     StartServiceSoftwareUpdateResult startServiceSoftwareUpdate(StartServiceSoftwareUpdateRequest startServiceSoftwareUpdateRequest);
@@ -1075,9 +1100,9 @@ public interface AmazonOpenSearch {
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.UpdateDomainConfig
      */
     UpdateDomainConfigResult updateDomainConfig(UpdateDomainConfigRequest updateDomainConfigRequest);
@@ -1099,14 +1124,43 @@ public interface AmazonOpenSearch {
      * @throws LimitExceededException
      *         An exception for trying to create more than the allowed number of resources or sub-resources.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws AccessDeniedException
      *         An error occurred because you don't have permissions to access the resource.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @sample AmazonOpenSearch.UpdatePackage
      */
     UpdatePackageResult updatePackage(UpdatePackageRequest updatePackageRequest);
+
+    /**
+     * <p>
+     * Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+     * software update</a> or a <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types"
+     * >blue/green Auto-Tune enhancement</a>.
+     * </p>
+     * 
+     * @param updateScheduledActionRequest
+     * @return Result of the UpdateScheduledAction operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist..
+     * @throws SlotNotAvailableException
+     *         An exception for attempting to schedule a domain action during an unavailable time slot.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than the allowed number of resources or sub-resources.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @sample AmazonOpenSearch.UpdateScheduledAction
+     */
+    UpdateScheduledActionResult updateScheduledAction(UpdateScheduledActionRequest updateScheduledActionRequest);
 
     /**
      * <p>
@@ -1116,15 +1170,15 @@ public interface AmazonOpenSearch {
      * @param updateVpcEndpointRequest
      * @return Result of the UpdateVpcEndpoint operation returned by the service.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws ConflictException
-     *         An error occurred because the client attempts to remove a resource that's currently in use.
+     *         An error occurred because the client attempts to remove a resource that is currently in use.
      * @throws BaseException
      *         An error occurred while processing the request.
      * @sample AmazonOpenSearch.UpdateVpcEndpoint
@@ -1143,13 +1197,13 @@ public interface AmazonOpenSearch {
      * @throws BaseException
      *         An error occurred while processing the request.
      * @throws ResourceNotFoundException
-     *         An exception for accessing or deleting a resource that doesn't exist.
+     *         An exception for accessing or deleting a resource that does not exist..
      * @throws ResourceAlreadyExistsException
      *         An exception for creating a resource that already exists.
      * @throws DisabledOperationException
-     *         An error occured because the client wanted to access an unsupported operation.
+     *         An error occured because the client wanted to access a not supported operation.
      * @throws ValidationException
-     *         An exception for missing or invalid input fields.
+     *         An exception for accessing or deleting a resource that doesn't exist.
      * @throws InternalException
      *         Request processing failed because of an unknown error, exception, or internal failure.
      * @sample AmazonOpenSearch.UpgradeDomain

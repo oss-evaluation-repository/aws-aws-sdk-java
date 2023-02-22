@@ -22,7 +22,8 @@ public enum OriginRequestPolicyCookieBehavior {
 
     None("none"),
     Whitelist("whitelist"),
-    All("all");
+    All("all"),
+    AllExcept("allExcept");
 
     private String value;
 

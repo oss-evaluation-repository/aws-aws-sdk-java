@@ -22,10 +22,10 @@ import javax.annotation.Generated;
  * the viewer.
  * </p>
  * <p>
- * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
- * that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that
- * matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache
- * key, use <code>OriginRequestPolicy</code>.
+ * The headers, cookies, and query strings that are included in the cache key are also included in requests that
+ * CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that matches the
+ * request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache key, use
+ * <code>OriginRequestPolicy</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ParametersInCacheKeyAndForwardedToOrigin"
@@ -129,21 +129,21 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and
-     * automatically included in requests that CloudFront sends to the origin.
+     * in requests that CloudFront sends to the origin.
      * </p>
      */
     private CachePolicyHeadersConfig headersConfig;
     /**
      * <p>
      * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the
-     * cache key and automatically included in requests that CloudFront sends to the origin.
+     * cache key and in requests that CloudFront sends to the origin.
      * </p>
      */
     private CachePolicyCookiesConfig cookiesConfig;
     /**
      * <p>
      * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      */
     private CachePolicyQueryStringsConfig queryStringsConfig;
@@ -887,12 +887,12 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and
-     * automatically included in requests that CloudFront sends to the origin.
+     * in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param headersConfig
      *        An object that determines whether any HTTP headers (and if so, which headers) are included in the cache
-     *        key and automatically included in requests that CloudFront sends to the origin.
+     *        key and in requests that CloudFront sends to the origin.
      */
 
     public void setHeadersConfig(CachePolicyHeadersConfig headersConfig) {
@@ -902,11 +902,11 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and
-     * automatically included in requests that CloudFront sends to the origin.
+     * in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @return An object that determines whether any HTTP headers (and if so, which headers) are included in the cache
-     *         key and automatically included in requests that CloudFront sends to the origin.
+     *         key and in requests that CloudFront sends to the origin.
      */
 
     public CachePolicyHeadersConfig getHeadersConfig() {
@@ -916,12 +916,12 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any HTTP headers (and if so, which headers) are included in the cache key and
-     * automatically included in requests that CloudFront sends to the origin.
+     * in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param headersConfig
      *        An object that determines whether any HTTP headers (and if so, which headers) are included in the cache
-     *        key and automatically included in requests that CloudFront sends to the origin.
+     *        key and in requests that CloudFront sends to the origin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -933,12 +933,12 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the
-     * cache key and automatically included in requests that CloudFront sends to the origin.
+     * cache key and in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param cookiesConfig
      *        An object that determines whether any cookies in viewer requests (and if so, which cookies) are included
-     *        in the cache key and automatically included in requests that CloudFront sends to the origin.
+     *        in the cache key and in requests that CloudFront sends to the origin.
      */
 
     public void setCookiesConfig(CachePolicyCookiesConfig cookiesConfig) {
@@ -948,11 +948,11 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the
-     * cache key and automatically included in requests that CloudFront sends to the origin.
+     * cache key and in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @return An object that determines whether any cookies in viewer requests (and if so, which cookies) are included
-     *         in the cache key and automatically included in requests that CloudFront sends to the origin.
+     *         in the cache key and in requests that CloudFront sends to the origin.
      */
 
     public CachePolicyCookiesConfig getCookiesConfig() {
@@ -962,12 +962,12 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any cookies in viewer requests (and if so, which cookies) are included in the
-     * cache key and automatically included in requests that CloudFront sends to the origin.
+     * cache key and in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param cookiesConfig
      *        An object that determines whether any cookies in viewer requests (and if so, which cookies) are included
-     *        in the cache key and automatically included in requests that CloudFront sends to the origin.
+     *        in the cache key and in requests that CloudFront sends to the origin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -979,13 +979,12 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param queryStringsConfig
      *        An object that determines whether any URL query strings in viewer requests (and if so, which query
-     *        strings) are included in the cache key and automatically included in requests that CloudFront sends to the
-     *        origin.
+     *        strings) are included in the cache key and in requests that CloudFront sends to the origin.
      */
 
     public void setQueryStringsConfig(CachePolicyQueryStringsConfig queryStringsConfig) {
@@ -995,12 +994,11 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @return An object that determines whether any URL query strings in viewer requests (and if so, which query
-     *         strings) are included in the cache key and automatically included in requests that CloudFront sends to
-     *         the origin.
+     *         strings) are included in the cache key and in requests that CloudFront sends to the origin.
      */
 
     public CachePolicyQueryStringsConfig getQueryStringsConfig() {
@@ -1010,13 +1008,12 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
     /**
      * <p>
      * An object that determines whether any URL query strings in viewer requests (and if so, which query strings) are
-     * included in the cache key and automatically included in requests that CloudFront sends to the origin.
+     * included in the cache key and in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param queryStringsConfig
      *        An object that determines whether any URL query strings in viewer requests (and if so, which query
-     *        strings) are included in the cache key and automatically included in requests that CloudFront sends to the
-     *        origin.
+     *        strings) are included in the cache key and in requests that CloudFront sends to the origin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

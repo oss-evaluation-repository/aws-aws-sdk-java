@@ -498,6 +498,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request) {
+
+        return listScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -651,6 +664,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     @Override
     public java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request) {
+
+        return updateScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

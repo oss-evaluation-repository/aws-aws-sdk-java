@@ -57,6 +57,10 @@ public class DomainConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
     private static final MarshallingInfo<StructuredPojo> CHANGEPROGRESSDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeProgressDetails").build();
+    private static final MarshallingInfo<StructuredPojo> OFFPEAKWINDOWOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OffPeakWindowOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SOFTWAREUPDATEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SoftwareUpdateOptions").build();
 
     private static final DomainConfigMarshaller instance = new DomainConfigMarshaller();
 
@@ -89,6 +93,8 @@ public class DomainConfigMarshaller {
             protocolMarshaller.marshall(domainConfig.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
             protocolMarshaller.marshall(domainConfig.getChangeProgressDetails(), CHANGEPROGRESSDETAILS_BINDING);
+            protocolMarshaller.marshall(domainConfig.getOffPeakWindowOptions(), OFFPEAKWINDOWOPTIONS_BINDING);
+            protocolMarshaller.marshall(domainConfig.getSoftwareUpdateOptions(), SOFTWAREUPDATEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

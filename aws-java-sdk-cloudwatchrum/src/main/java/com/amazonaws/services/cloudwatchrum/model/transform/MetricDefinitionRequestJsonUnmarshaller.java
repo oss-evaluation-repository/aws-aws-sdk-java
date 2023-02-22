@@ -61,6 +61,10 @@ public class MetricDefinitionRequestJsonUnmarshaller implements Unmarshaller<Met
                     context.nextToken();
                     metricDefinitionRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Namespace", targetDepth)) {
+                    context.nextToken();
+                    metricDefinitionRequest.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("UnitLabel", targetDepth)) {
                     context.nextToken();
                     metricDefinitionRequest.setUnitLabel(context.getUnmarshaller(String.class).unmarshall(context));

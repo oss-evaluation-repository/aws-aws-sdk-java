@@ -61,6 +61,10 @@ public class UpdateDomainConfigRequestMarshaller {
             .marshallLocationName("DryRun").build();
     private static final MarshallingInfo<String> DRYRUNMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DryRunMode").build();
+    private static final MarshallingInfo<StructuredPojo> OFFPEAKWINDOWOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OffPeakWindowOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SOFTWAREUPDATEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SoftwareUpdateOptions").build();
 
     private static final UpdateDomainConfigRequestMarshaller instance = new UpdateDomainConfigRequestMarshaller();
 
@@ -94,6 +98,8 @@ public class UpdateDomainConfigRequestMarshaller {
             protocolMarshaller.marshall(updateDomainConfigRequest.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getDryRun(), DRYRUN_BINDING);
             protocolMarshaller.marshall(updateDomainConfigRequest.getDryRunMode(), DRYRUNMODE_BINDING);
+            protocolMarshaller.marshall(updateDomainConfigRequest.getOffPeakWindowOptions(), OFFPEAKWINDOWOPTIONS_BINDING);
+            protocolMarshaller.marshall(updateDomainConfigRequest.getSoftwareUpdateOptions(), SOFTWAREUPDATEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -66,7 +66,7 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private String documentName;
     /**
      * <p>
-     * The ID of the Amazon Web Services user account that started the session.
+     * The ID of the Amazon Web Services user that started the session.
      * </p>
      */
     private String owner;
@@ -362,11 +362,11 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services user account that started the session.
+     * The ID of the Amazon Web Services user that started the session.
      * </p>
      * 
      * @param owner
-     *        The ID of the Amazon Web Services user account that started the session.
+     *        The ID of the Amazon Web Services user that started the session.
      */
 
     public void setOwner(String owner) {
@@ -375,10 +375,10 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services user account that started the session.
+     * The ID of the Amazon Web Services user that started the session.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services user account that started the session.
+     * @return The ID of the Amazon Web Services user that started the session.
      */
 
     public String getOwner() {
@@ -387,11 +387,11 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the Amazon Web Services user account that started the session.
+     * The ID of the Amazon Web Services user that started the session.
      * </p>
      * 
      * @param owner
-     *        The ID of the Amazon Web Services user account that started the session.
+     *        The ID of the Amazon Web Services user that started the session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,7 +49,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     private String displayName;
     /**
      * <p>
-     * The Amazon Web Services user account that created the document.
+     * The Amazon Web Services user that created the document.
      * </p>
      */
     private String owner;
@@ -253,11 +253,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services user account that created the document.
+     * The Amazon Web Services user that created the document.
      * </p>
      * 
      * @param owner
-     *        The Amazon Web Services user account that created the document.
+     *        The Amazon Web Services user that created the document.
      */
 
     public void setOwner(String owner) {
@@ -266,10 +266,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services user account that created the document.
+     * The Amazon Web Services user that created the document.
      * </p>
      * 
-     * @return The Amazon Web Services user account that created the document.
+     * @return The Amazon Web Services user that created the document.
      */
 
     public String getOwner() {
@@ -278,11 +278,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Web Services user account that created the document.
+     * The Amazon Web Services user that created the document.
      * </p>
      * 
      * @param owner
-     *        The Amazon Web Services user account that created the document.
+     *        The Amazon Web Services user that created the document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

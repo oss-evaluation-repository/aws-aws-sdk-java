@@ -185,6 +185,19 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ChangeProgressDetails changeProgressDetails;
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     */
+    private OffPeakWindowOptions offPeakWindowOptions;
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     */
+    private SoftwareUpdateOptions softwareUpdateOptions;
 
     /**
      * <p>
@@ -1387,6 +1400,92 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration
+     *        changes on the domain.
+     */
+
+    public void setOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        this.offPeakWindowOptions = offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     * 
+     * @return Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration
+     *         changes on the domain.
+     */
+
+    public OffPeakWindowOptions getOffPeakWindowOptions() {
+        return this.offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration changes on
+     * the domain.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Options that specify a custom 10-hour window during which OpenSearch Service can perform configuration
+     *        changes on the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        setOffPeakWindowOptions(offPeakWindowOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Service software update options for the domain.
+     */
+
+    public void setSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        this.softwareUpdateOptions = softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     * 
+     * @return Service software update options for the domain.
+     */
+
+    public SoftwareUpdateOptions getSoftwareUpdateOptions() {
+        return this.softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Service software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Service software update options for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainStatus withSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        setSoftwareUpdateOptions(softwareUpdateOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1447,7 +1546,11 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         if (getAutoTuneOptions() != null)
             sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
         if (getChangeProgressDetails() != null)
-            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails());
+            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails()).append(",");
+        if (getOffPeakWindowOptions() != null)
+            sb.append("OffPeakWindowOptions: ").append(getOffPeakWindowOptions()).append(",");
+        if (getSoftwareUpdateOptions() != null)
+            sb.append("SoftwareUpdateOptions: ").append(getSoftwareUpdateOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1562,6 +1665,14 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChangeProgressDetails() != null && other.getChangeProgressDetails().equals(this.getChangeProgressDetails()) == false)
             return false;
+        if (other.getOffPeakWindowOptions() == null ^ this.getOffPeakWindowOptions() == null)
+            return false;
+        if (other.getOffPeakWindowOptions() != null && other.getOffPeakWindowOptions().equals(this.getOffPeakWindowOptions()) == false)
+            return false;
+        if (other.getSoftwareUpdateOptions() == null ^ this.getSoftwareUpdateOptions() == null)
+            return false;
+        if (other.getSoftwareUpdateOptions() != null && other.getSoftwareUpdateOptions().equals(this.getSoftwareUpdateOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1595,6 +1706,8 @@ public class DomainStatus implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         hashCode = prime * hashCode + ((getChangeProgressDetails() == null) ? 0 : getChangeProgressDetails().hashCode());
+        hashCode = prime * hashCode + ((getOffPeakWindowOptions() == null) ? 0 : getOffPeakWindowOptions().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdateOptions() == null) ? 0 : getSoftwareUpdateOptions().hashCode());
         return hashCode;
     }
 

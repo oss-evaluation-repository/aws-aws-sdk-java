@@ -27,6 +27,8 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     private Boolean enableSIPLogs;
 
+    private Boolean enableMediaMetricLogs;
+
     /**
      * @param enableSIPLogs
      */
@@ -62,6 +64,40 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     }
 
     /**
+     * @param enableMediaMetricLogs
+     */
+
+    public void setEnableMediaMetricLogs(Boolean enableMediaMetricLogs) {
+        this.enableMediaMetricLogs = enableMediaMetricLogs;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getEnableMediaMetricLogs() {
+        return this.enableMediaMetricLogs;
+    }
+
+    /**
+     * @param enableMediaMetricLogs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfiguration withEnableMediaMetricLogs(Boolean enableMediaMetricLogs) {
+        setEnableMediaMetricLogs(enableMediaMetricLogs);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isEnableMediaMetricLogs() {
+        return this.enableMediaMetricLogs;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -74,7 +110,9 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnableSIPLogs() != null)
-            sb.append("EnableSIPLogs: ").append(getEnableSIPLogs());
+            sb.append("EnableSIPLogs: ").append(getEnableSIPLogs()).append(",");
+        if (getEnableMediaMetricLogs() != null)
+            sb.append("EnableMediaMetricLogs: ").append(getEnableMediaMetricLogs());
         sb.append("}");
         return sb.toString();
     }
@@ -93,6 +131,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getEnableSIPLogs() != null && other.getEnableSIPLogs().equals(this.getEnableSIPLogs()) == false)
             return false;
+        if (other.getEnableMediaMetricLogs() == null ^ this.getEnableMediaMetricLogs() == null)
+            return false;
+        if (other.getEnableMediaMetricLogs() != null && other.getEnableMediaMetricLogs().equals(this.getEnableMediaMetricLogs()) == false)
+            return false;
         return true;
     }
 
@@ -102,6 +144,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEnableSIPLogs() == null) ? 0 : getEnableSIPLogs().hashCode());
+        hashCode = prime * hashCode + ((getEnableMediaMetricLogs() == null) ? 0 : getEnableMediaMetricLogs().hashCode());
         return hashCode;
     }
 

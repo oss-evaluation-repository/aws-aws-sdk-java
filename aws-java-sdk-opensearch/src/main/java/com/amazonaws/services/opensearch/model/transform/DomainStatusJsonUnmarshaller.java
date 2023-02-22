@@ -151,6 +151,14 @@ public class DomainStatusJsonUnmarshaller implements Unmarshaller<DomainStatus, 
                     context.nextToken();
                     domainStatus.setChangeProgressDetails(ChangeProgressDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("OffPeakWindowOptions", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setOffPeakWindowOptions(OffPeakWindowOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SoftwareUpdateOptions", targetDepth)) {
+                    context.nextToken();
+                    domainStatus.setSoftwareUpdateOptions(SoftwareUpdateOptionsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

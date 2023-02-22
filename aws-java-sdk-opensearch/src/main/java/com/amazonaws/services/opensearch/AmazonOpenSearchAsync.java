@@ -1222,6 +1222,41 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
+     * Retrieves a list of configuration changes that are scheduled for a domain. These changes can be <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+     * software updates</a> or <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types"
+     * >blue/green Auto-Tune enhancements</a>.
+     * </p>
+     * 
+     * @param listScheduledActionsRequest
+     * @return A Java Future containing the result of the ListScheduledActions operation returned by the service.
+     * @sample AmazonOpenSearchAsync.ListScheduledActions
+     */
+    java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest listScheduledActionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of configuration changes that are scheduled for a domain. These changes can be <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+     * software updates</a> or <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types"
+     * >blue/green Auto-Tune enhancements</a>.
+     * </p>
+     * 
+     * @param listScheduledActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListScheduledActions operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.ListScheduledActions
+     */
+    java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest listScheduledActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href=
      * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html"
      * >Tagging Amazon OpenSearch Service domains</a>.
@@ -1587,6 +1622,41 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
      */
     java.util.concurrent.Future<UpdatePackageResult> updatePackageAsync(UpdatePackageRequest updatePackageRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePackageRequest, UpdatePackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+     * software update</a> or a <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types"
+     * >blue/green Auto-Tune enhancement</a>.
+     * </p>
+     * 
+     * @param updateScheduledActionRequest
+     * @return A Java Future containing the result of the UpdateScheduledAction operation returned by the service.
+     * @sample AmazonOpenSearchAsync.UpdateScheduledAction
+     */
+    java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest updateScheduledActionRequest);
+
+    /**
+     * <p>
+     * Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service
+     * software update</a> or a <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types"
+     * >blue/green Auto-Tune enhancement</a>.
+     * </p>
+     * 
+     * @param updateScheduledActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateScheduledAction operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.UpdateScheduledAction
+     */
+    java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest updateScheduledActionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler);
 
     /**
      * <p>

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The Auto-Tune state for the domain. For valid states see <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"> Auto-Tune for Amazon
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
  * OpenSearch Service</a>.
  * </p>
  */

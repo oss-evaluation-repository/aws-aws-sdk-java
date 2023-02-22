@@ -44,10 +44,23 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
     private String rollbackOnDisable;
     /**
      * <p>
+     * DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a>
+     * instead.
+     * </p>
+     * <p>
      * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      */
     private java.util.List<AutoTuneMaintenanceSchedule> maintenanceSchedules;
+    /**
+     * <p>
+     * Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     * </p>
+     */
+    private Boolean useOffPeakWindow;
 
     /**
      * <p>
@@ -193,10 +206,19 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a>
+     * instead.
+     * </p>
+     * <p>
      * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * 
-     * @return A list of maintenance schedules during which Auto-Tune can deploy changes.
+     * @return DEPRECATED. Use <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *         window</a> instead.</p>
+     *         <p>
+     *         A list of maintenance schedules during which Auto-Tune can deploy changes.
      */
 
     public java.util.List<AutoTuneMaintenanceSchedule> getMaintenanceSchedules() {
@@ -205,10 +227,19 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a>
+     * instead.
+     * </p>
+     * <p>
      * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * 
      * @param maintenanceSchedules
+     *        DEPRECATED. Use <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *        window</a> instead.</p>
+     *        <p>
      *        A list of maintenance schedules during which Auto-Tune can deploy changes.
      */
 
@@ -223,6 +254,11 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a>
+     * instead.
+     * </p>
+     * <p>
      * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * <p>
@@ -232,6 +268,10 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param maintenanceSchedules
+     *        DEPRECATED. Use <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *        window</a> instead.</p>
+     *        <p>
      *        A list of maintenance schedules during which Auto-Tune can deploy changes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -248,10 +288,19 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * DEPRECATED. Use <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak window</a>
+     * instead.
+     * </p>
+     * <p>
      * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * 
      * @param maintenanceSchedules
+     *        DEPRECATED. Use <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+     *        window</a> instead.</p>
+     *        <p>
      *        A list of maintenance schedules during which Auto-Tune can deploy changes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -259,6 +308,74 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
     public AutoTuneOptions withMaintenanceSchedules(java.util.Collection<AutoTuneMaintenanceSchedule> maintenanceSchedules) {
         setMaintenanceSchedules(maintenanceSchedules);
         return this;
+    }
+
+    /**
+     * <p>
+     * Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     * </p>
+     * 
+     * @param useOffPeakWindow
+     *        Whether to use the domain's <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     *        window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     */
+
+    public void setUseOffPeakWindow(Boolean useOffPeakWindow) {
+        this.useOffPeakWindow = useOffPeakWindow;
+    }
+
+    /**
+     * <p>
+     * Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     * </p>
+     * 
+     * @return Whether to use the domain's <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     *         window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     */
+
+    public Boolean getUseOffPeakWindow() {
+        return this.useOffPeakWindow;
+    }
+
+    /**
+     * <p>
+     * Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     * </p>
+     * 
+     * @param useOffPeakWindow
+     *        Whether to use the domain's <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     *        window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoTuneOptions withUseOffPeakWindow(Boolean useOffPeakWindow) {
+        setUseOffPeakWindow(useOffPeakWindow);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to use the domain's <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     * window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     * </p>
+     * 
+     * @return Whether to use the domain's <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_OffPeakWindow.html">off-peak
+     *         window</a> to deploy configuration changes on the domain rather than a maintenance schedule.
+     */
+
+    public Boolean isUseOffPeakWindow() {
+        return this.useOffPeakWindow;
     }
 
     /**
@@ -278,7 +395,9 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
         if (getRollbackOnDisable() != null)
             sb.append("RollbackOnDisable: ").append(getRollbackOnDisable()).append(",");
         if (getMaintenanceSchedules() != null)
-            sb.append("MaintenanceSchedules: ").append(getMaintenanceSchedules());
+            sb.append("MaintenanceSchedules: ").append(getMaintenanceSchedules()).append(",");
+        if (getUseOffPeakWindow() != null)
+            sb.append("UseOffPeakWindow: ").append(getUseOffPeakWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -305,6 +424,10 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getMaintenanceSchedules() != null && other.getMaintenanceSchedules().equals(this.getMaintenanceSchedules()) == false)
             return false;
+        if (other.getUseOffPeakWindow() == null ^ this.getUseOffPeakWindow() == null)
+            return false;
+        if (other.getUseOffPeakWindow() != null && other.getUseOffPeakWindow().equals(this.getUseOffPeakWindow()) == false)
+            return false;
         return true;
     }
 
@@ -316,6 +439,7 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDesiredState() == null) ? 0 : getDesiredState().hashCode());
         hashCode = prime * hashCode + ((getRollbackOnDisable() == null) ? 0 : getRollbackOnDisable().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceSchedules() == null) ? 0 : getMaintenanceSchedules().hashCode());
+        hashCode = prime * hashCode + ((getUseOffPeakWindow() == null) ? 0 : getUseOffPeakWindow().hashCode());
         return hashCode;
     }
 

@@ -208,6 +208,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public ListScheduledActionsResult listScheduledActions(ListScheduledActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsResult listTags(ListTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -264,6 +269,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
 
     @Override
     public UpdatePackageResult updatePackage(UpdatePackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateScheduledActionResult updateScheduledAction(UpdateScheduledActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

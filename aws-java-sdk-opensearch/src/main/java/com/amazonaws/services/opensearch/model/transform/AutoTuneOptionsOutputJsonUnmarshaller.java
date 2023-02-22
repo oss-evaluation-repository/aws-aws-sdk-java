@@ -56,6 +56,10 @@ public class AutoTuneOptionsOutputJsonUnmarshaller implements Unmarshaller<AutoT
                     context.nextToken();
                     autoTuneOptionsOutput.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("UseOffPeakWindow", targetDepth)) {
+                    context.nextToken();
+                    autoTuneOptionsOutput.setUseOffPeakWindow(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -36,8 +36,8 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
- * that CloudFront sends to the origin. CloudFront sends a request when it can't find a valid object in its cache that
+ * The headers, cookies, and query strings that are included in the cache key are also included in requests that
+ * CloudFront sends to the origin. CloudFront sends a request when it can't find a valid object in its cache that
  * matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache
  * key, use <code>OriginRequestPolicy</code>.
  * </p>
@@ -102,7 +102,7 @@ public class CachePolicyConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache
-     * key are automatically included in requests that CloudFront sends to the origin.
+     * key are also included in requests that CloudFront sends to the origin.
      * </p>
      */
     private ParametersInCacheKeyAndForwardedToOrigin parametersInCacheKeyAndForwardedToOrigin;
@@ -436,12 +436,12 @@ public class CachePolicyConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache
-     * key are automatically included in requests that CloudFront sends to the origin.
+     * key are also included in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param parametersInCacheKeyAndForwardedToOrigin
      *        The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the
-     *        cache key are automatically included in requests that CloudFront sends to the origin.
+     *        cache key are also included in requests that CloudFront sends to the origin.
      */
 
     public void setParametersInCacheKeyAndForwardedToOrigin(ParametersInCacheKeyAndForwardedToOrigin parametersInCacheKeyAndForwardedToOrigin) {
@@ -451,11 +451,11 @@ public class CachePolicyConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache
-     * key are automatically included in requests that CloudFront sends to the origin.
+     * key are also included in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @return The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the
-     *         cache key are automatically included in requests that CloudFront sends to the origin.
+     *         cache key are also included in requests that CloudFront sends to the origin.
      */
 
     public ParametersInCacheKeyAndForwardedToOrigin getParametersInCacheKeyAndForwardedToOrigin() {
@@ -465,12 +465,12 @@ public class CachePolicyConfig implements Serializable, Cloneable {
     /**
      * <p>
      * The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the cache
-     * key are automatically included in requests that CloudFront sends to the origin.
+     * key are also included in requests that CloudFront sends to the origin.
      * </p>
      * 
      * @param parametersInCacheKeyAndForwardedToOrigin
      *        The HTTP headers, cookies, and URL query strings to include in the cache key. The values included in the
-     *        cache key are automatically included in requests that CloudFront sends to the origin.
+     *        cache key are also included in requests that CloudFront sends to the origin.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

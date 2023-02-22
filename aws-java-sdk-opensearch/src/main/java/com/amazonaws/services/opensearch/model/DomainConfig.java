@@ -39,7 +39,7 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
     private ClusterConfigStatus clusterConfig;
     /**
      * <p>
-     * Container for EBS options configured for an OpenSearch Service domain.
+     * Container for EBS options configured for the domain.
      * </p>
      */
     private EBSOptionsStatus eBSOptions;
@@ -117,6 +117,18 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ChangeProgressDetails changeProgressDetails;
+    /**
+     * <p>
+     * Container for off-peak window options for the domain.
+     * </p>
+     */
+    private OffPeakWindowOptionsStatus offPeakWindowOptions;
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     */
+    private SoftwareUpdateOptionsStatus softwareUpdateOptions;
 
     /**
      * <p>
@@ -200,11 +212,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Container for EBS options configured for an OpenSearch Service domain.
+     * Container for EBS options configured for the domain.
      * </p>
      * 
      * @param eBSOptions
-     *        Container for EBS options configured for an OpenSearch Service domain.
+     *        Container for EBS options configured for the domain.
      */
 
     public void setEBSOptions(EBSOptionsStatus eBSOptions) {
@@ -213,10 +225,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Container for EBS options configured for an OpenSearch Service domain.
+     * Container for EBS options configured for the domain.
      * </p>
      * 
-     * @return Container for EBS options configured for an OpenSearch Service domain.
+     * @return Container for EBS options configured for the domain.
      */
 
     public EBSOptionsStatus getEBSOptions() {
@@ -225,11 +237,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Container for EBS options configured for an OpenSearch Service domain.
+     * Container for EBS options configured for the domain.
      * </p>
      * 
      * @param eBSOptions
-     *        Container for EBS options configured for an OpenSearch Service domain.
+     *        Container for EBS options configured for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,6 +743,86 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Container for off-peak window options for the domain.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Container for off-peak window options for the domain.
+     */
+
+    public void setOffPeakWindowOptions(OffPeakWindowOptionsStatus offPeakWindowOptions) {
+        this.offPeakWindowOptions = offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Container for off-peak window options for the domain.
+     * </p>
+     * 
+     * @return Container for off-peak window options for the domain.
+     */
+
+    public OffPeakWindowOptionsStatus getOffPeakWindowOptions() {
+        return this.offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Container for off-peak window options for the domain.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Container for off-peak window options for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainConfig withOffPeakWindowOptions(OffPeakWindowOptionsStatus offPeakWindowOptions) {
+        setOffPeakWindowOptions(offPeakWindowOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Software update options for the domain.
+     */
+
+    public void setSoftwareUpdateOptions(SoftwareUpdateOptionsStatus softwareUpdateOptions) {
+        this.softwareUpdateOptions = softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @return Software update options for the domain.
+     */
+
+    public SoftwareUpdateOptionsStatus getSoftwareUpdateOptions() {
+        return this.softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Software update options for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainConfig withSoftwareUpdateOptions(SoftwareUpdateOptionsStatus softwareUpdateOptions) {
+        setSoftwareUpdateOptions(softwareUpdateOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -771,7 +863,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
         if (getAutoTuneOptions() != null)
             sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
         if (getChangeProgressDetails() != null)
-            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails());
+            sb.append("ChangeProgressDetails: ").append(getChangeProgressDetails()).append(",");
+        if (getOffPeakWindowOptions() != null)
+            sb.append("OffPeakWindowOptions: ").append(getOffPeakWindowOptions()).append(",");
+        if (getSoftwareUpdateOptions() != null)
+            sb.append("SoftwareUpdateOptions: ").append(getSoftwareUpdateOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -846,6 +942,14 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChangeProgressDetails() != null && other.getChangeProgressDetails().equals(this.getChangeProgressDetails()) == false)
             return false;
+        if (other.getOffPeakWindowOptions() == null ^ this.getOffPeakWindowOptions() == null)
+            return false;
+        if (other.getOffPeakWindowOptions() != null && other.getOffPeakWindowOptions().equals(this.getOffPeakWindowOptions()) == false)
+            return false;
+        if (other.getSoftwareUpdateOptions() == null ^ this.getSoftwareUpdateOptions() == null)
+            return false;
+        if (other.getSoftwareUpdateOptions() != null && other.getSoftwareUpdateOptions().equals(this.getSoftwareUpdateOptions()) == false)
+            return false;
         return true;
     }
 
@@ -869,6 +973,8 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         hashCode = prime * hashCode + ((getChangeProgressDetails() == null) ? 0 : getChangeProgressDetails().hashCode());
+        hashCode = prime * hashCode + ((getOffPeakWindowOptions() == null) ? 0 : getOffPeakWindowOptions().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdateOptions() == null) ? 0 : getSoftwareUpdateOptions().hashCode());
         return hashCode;
     }
 

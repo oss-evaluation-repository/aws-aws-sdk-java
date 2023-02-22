@@ -35,6 +35,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -79,6 +84,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -117,6 +127,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param settingId
      *        The ID of the service setting to get. The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-destination</code>
@@ -165,6 +180,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -202,6 +222,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @return The ID of the service setting to get. The setting ID can be one of the following.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>/ssm/automation/customer-script-log-destination</code>
@@ -250,6 +275,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/automation/customer-script-log-destination</code>
      * </p>
      * </li>
@@ -288,6 +318,11 @@ public class GetServiceSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * @param settingId
      *        The ID of the service setting to get. The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/managed-instance/default-ec2-instance-management-role</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/automation/customer-script-log-destination</code>

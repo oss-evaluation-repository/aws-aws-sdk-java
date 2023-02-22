@@ -32,7 +32,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -248,7 +248,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -273,7 +273,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        the managed node.</p>
      *        <p>
      *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-     *        shared with you from another account.
+     *        shared with you from another Amazon Web Services account.
      *        </p>
      *        <p>
      *        For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services
@@ -304,7 +304,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -328,7 +328,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *         for the managed node.</p>
      *         <p>
      *         You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-     *         shared with you from another account.
+     *         shared with you from another Amazon Web Services account.
      *         </p>
      *         <p>
      *         For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services
@@ -360,7 +360,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared
-     * with you from another account.
+     * with you from another Amazon Web Services account.
      * </p>
      * <p>
      * For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts,
@@ -385,7 +385,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        the managed node.</p>
      *        <p>
      *        You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
-     *        shared with you from another account.
+     *        shared with you from another Amazon Web Services account.
      *        </p>
      *        <p>
      *        For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services

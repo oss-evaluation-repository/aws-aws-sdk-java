@@ -27,8 +27,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -172,8 +173,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -200,8 +202,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param content
-     *        The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
-     *        new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *        The content for the new SSM document in JSON or YAML format. The content of the document must not exceed
+     *        64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing
+     *        the contents for your new document in an external JSON or YAML file and referencing the file in a
+     *        command.</p>
      *        <p>
      *        For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>
@@ -232,8 +236,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -259,8 +264,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
-     *         new document in an external JSON or YAML file and referencing the file in a command.</p>
+     * @return The content for the new SSM document in JSON or YAML format. The content of the document must not exceed
+     *         64KB. This quota also includes the content specified for input parameters at runtime. We recommend
+     *         storing the contents for your new document in an external JSON or YAML file and referencing the file in a
+     *         command.</p>
      *         <p>
      *         For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *         </p>
@@ -294,8 +301,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new
-     * document in an external JSON or YAML file and referencing the file in a command.
+     * The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB.
+     * This quota also includes the content specified for input parameters at runtime. We recommend storing the contents
+     * for your new document in an external JSON or YAML file and referencing the file in a command.
      * </p>
      * <p>
      * For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -322,8 +330,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param content
-     *        The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your
-     *        new document in an external JSON or YAML file and referencing the file in a command.</p>
+     *        The content for the new SSM document in JSON or YAML format. The content of the document must not exceed
+     *        64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing
+     *        the contents for your new document in an external JSON or YAML file and referencing the file in a
+     *        command.</p>
      *        <p>
      *        For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.
      *        </p>

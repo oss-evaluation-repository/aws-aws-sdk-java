@@ -8147,8 +8147,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a
-     * document privately, you must specify the Amazon Web Services user account IDs for those people who can use the
-     * document. If you share a document publicly, you must specify <i>All</i> as the account ID.
+     * document privately, you must specify the Amazon Web Services user IDs for those people who can use the document.
+     * If you share a document publicly, you must specify <i>All</i> as the account ID.
      * </p>
      * 
      * @param modifyDocumentPermissionRequest
@@ -8160,7 +8160,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidPermissionTypeException
      *         The permission type isn't supported. <i>Share</i> is the only supported permission type.
      * @throws DocumentPermissionLimitException
-     *         The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20
+     *         The document can't be shared with more Amazon Web Services accounts. You can specify a maximum of 20
      *         accounts per API operation to share a private document.</p>
      *         <p>
      *         By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to
@@ -9846,9 +9846,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * required for your <code>UpdateAssociation</code> call.
      * </p>
      * <p>
-     * In order to call this API operation, your Identity and Access Management (IAM) user account, group, or role must
-     * be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission
-     * to call <code>DescribeAssociation</code>, then you receive the following error:
+     * In order to call this API operation, a user, group, or role must be granted permission to call the
+     * <a>DescribeAssociation</a> API operation. If you don't have permission to call <code>DescribeAssociation</code>,
+     * then you receive the following error:
      * <code>An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code>
      * </p>
      * <important>

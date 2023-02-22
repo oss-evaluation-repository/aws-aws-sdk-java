@@ -35,6 +35,8 @@ public class MetricDefinitionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventPattern").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Namespace").build();
     private static final MarshallingInfo<String> UNITLABEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UnitLabel").build();
     private static final MarshallingInfo<String> VALUEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class MetricDefinitionRequestMarshaller {
             protocolMarshaller.marshall(metricDefinitionRequest.getDimensionKeys(), DIMENSIONKEYS_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getEventPattern(), EVENTPATTERN_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(metricDefinitionRequest.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getUnitLabel(), UNITLABEL_BINDING);
             protocolMarshaller.marshall(metricDefinitionRequest.getValueKey(), VALUEKEY_BINDING);
         } catch (Exception e) {

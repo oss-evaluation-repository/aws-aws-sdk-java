@@ -161,6 +161,21 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private AutoTuneOptionsInput autoTuneOptions;
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     */
+    private OffPeakWindowOptions offPeakWindowOptions;
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     */
+    private SoftwareUpdateOptions softwareUpdateOptions;
 
     /**
      * <p>
@@ -1162,6 +1177,104 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on
+     *        the domain, including service software updates and Auto-Tune enhancements that require a blue/green
+     *        deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region
+     *        that the domain is created in) is used.
+     */
+
+    public void setOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        this.offPeakWindowOptions = offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     * 
+     * @return Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on
+     *         the domain, including service software updates and Auto-Tune enhancements that require a blue/green
+     *         deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region
+     *         that the domain is created in) is used.
+     */
+
+    public OffPeakWindowOptions getOffPeakWindowOptions() {
+        return this.offPeakWindowOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the
+     * domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no
+     * options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created
+     * in) is used.
+     * </p>
+     * 
+     * @param offPeakWindowOptions
+     *        Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on
+     *        the domain, including service software updates and Auto-Tune enhancements that require a blue/green
+     *        deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region
+     *        that the domain is created in) is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withOffPeakWindowOptions(OffPeakWindowOptions offPeakWindowOptions) {
+        setOffPeakWindowOptions(offPeakWindowOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Software update options for the domain.
+     */
+
+    public void setSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        this.softwareUpdateOptions = softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @return Software update options for the domain.
+     */
+
+    public SoftwareUpdateOptions getSoftwareUpdateOptions() {
+        return this.softwareUpdateOptions;
+    }
+
+    /**
+     * <p>
+     * Software update options for the domain.
+     * </p>
+     * 
+     * @param softwareUpdateOptions
+     *        Software update options for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withSoftwareUpdateOptions(SoftwareUpdateOptions softwareUpdateOptions) {
+        setSoftwareUpdateOptions(softwareUpdateOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1204,7 +1317,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTagList() != null)
             sb.append("TagList: ").append(getTagList()).append(",");
         if (getAutoTuneOptions() != null)
-            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
+        if (getOffPeakWindowOptions() != null)
+            sb.append("OffPeakWindowOptions: ").append(getOffPeakWindowOptions()).append(",");
+        if (getSoftwareUpdateOptions() != null)
+            sb.append("SoftwareUpdateOptions: ").append(getSoftwareUpdateOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1283,6 +1400,14 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
             return false;
+        if (other.getOffPeakWindowOptions() == null ^ this.getOffPeakWindowOptions() == null)
+            return false;
+        if (other.getOffPeakWindowOptions() != null && other.getOffPeakWindowOptions().equals(this.getOffPeakWindowOptions()) == false)
+            return false;
+        if (other.getSoftwareUpdateOptions() == null ^ this.getSoftwareUpdateOptions() == null)
+            return false;
+        if (other.getSoftwareUpdateOptions() != null && other.getSoftwareUpdateOptions().equals(this.getSoftwareUpdateOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1307,6 +1432,8 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
+        hashCode = prime * hashCode + ((getOffPeakWindowOptions() == null) ? 0 : getOffPeakWindowOptions().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdateOptions() == null) ? 0 : getSoftwareUpdateOptions().hashCode());
         return hashCode;
     }
 

@@ -1276,6 +1276,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(ListScheduledActionsRequest request) {
+
+        return listScheduledActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScheduledActionsResult> listScheduledActionsAsync(final ListScheduledActionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListScheduledActionsRequest, ListScheduledActionsResult> asyncHandler) {
+        final ListScheduledActionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListScheduledActionsResult>() {
+            @Override
+            public ListScheduledActionsResult call() throws Exception {
+                ListScheduledActionsResult result = null;
+
+                try {
+                    result = executeListScheduledActions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request) {
 
         return listTagsAsync(request, null);
@@ -1658,6 +1691,39 @@ public class AmazonOpenSearchAsyncClient extends AmazonOpenSearchClient implemen
 
                 try {
                     result = executeUpdatePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(UpdateScheduledActionRequest request) {
+
+        return updateScheduledActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateScheduledActionResult> updateScheduledActionAsync(final UpdateScheduledActionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateScheduledActionRequest, UpdateScheduledActionResult> asyncHandler) {
+        final UpdateScheduledActionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateScheduledActionResult>() {
+            @Override
+            public UpdateScheduledActionResult call() throws Exception {
+                UpdateScheduledActionResult result = null;
+
+                try {
+                    result = executeUpdateScheduledAction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

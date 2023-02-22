@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An error occured because the client wanted to access an unsupported operation.
+ * An error occured because the client wanted to access a not supported operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

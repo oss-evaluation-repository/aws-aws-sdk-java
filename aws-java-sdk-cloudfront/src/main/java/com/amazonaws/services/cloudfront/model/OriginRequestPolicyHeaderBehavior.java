@@ -23,7 +23,8 @@ public enum OriginRequestPolicyHeaderBehavior {
     None("none"),
     Whitelist("whitelist"),
     AllViewer("allViewer"),
-    AllViewerAndWhitelistCloudFront("allViewerAndWhitelistCloudFront");
+    AllViewerAndWhitelistCloudFront("allViewerAndWhitelistCloudFront"),
+    AllExcept("allExcept");
 
     private String value;
 

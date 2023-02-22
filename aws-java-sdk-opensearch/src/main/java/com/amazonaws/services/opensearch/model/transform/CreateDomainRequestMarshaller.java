@@ -61,6 +61,10 @@ public class CreateDomainRequestMarshaller {
             .marshallLocationName("TagList").build();
     private static final MarshallingInfo<StructuredPojo> AUTOTUNEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoTuneOptions").build();
+    private static final MarshallingInfo<StructuredPojo> OFFPEAKWINDOWOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OffPeakWindowOptions").build();
+    private static final MarshallingInfo<StructuredPojo> SOFTWAREUPDATEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SoftwareUpdateOptions").build();
 
     private static final CreateDomainRequestMarshaller instance = new CreateDomainRequestMarshaller();
 
@@ -94,6 +98,8 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getAdvancedSecurityOptions(), ADVANCEDSECURITYOPTIONS_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getTagList(), TAGLIST_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAutoTuneOptions(), AUTOTUNEOPTIONS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getOffPeakWindowOptions(), OFFPEAKWINDOWOPTIONS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getSoftwareUpdateOptions(), SOFTWAREUPDATEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
