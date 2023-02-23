@@ -26,7 +26,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -55,7 +55,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -67,7 +67,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS. </p>
+     *        resource across all Amazon Web Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -83,7 +83,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -94,7 +94,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *         resource across all AWS. </p>
+     *         resource across all Amazon Web Services. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -110,7 +110,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -122,7 +122,7 @@ public class CreateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS. </p>
+     *        resource across all Amazon Web Services. </p>
      *        <ul>
      *        <li>
      *        <p>

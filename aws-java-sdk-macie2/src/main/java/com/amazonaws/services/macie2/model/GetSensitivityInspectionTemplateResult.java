@@ -45,7 +45,7 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
     private SensitivityInspectionTemplateIncludes includes;
     /**
      * <p>
-     * The name of the template.
+     * The name of the template: automated-sensitive-data-discovery.
      * </p>
      */
     private String name;
@@ -190,11 +190,11 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the template.
+     * The name of the template: automated-sensitive-data-discovery.
      * </p>
      * 
      * @param name
-     *        The name of the template.
+     *        The name of the template: automated-sensitive-data-discovery.
      */
 
     public void setName(String name) {
@@ -203,10 +203,10 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the template.
+     * The name of the template: automated-sensitive-data-discovery.
      * </p>
      * 
-     * @return The name of the template.
+     * @return The name of the template: automated-sensitive-data-discovery.
      */
 
     public String getName() {
@@ -215,11 +215,11 @@ public class GetSensitivityInspectionTemplateResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the template.
+     * The name of the template: automated-sensitive-data-discovery.
      * </p>
      * 
      * @param name
-     *        The name of the template.
+     *        The name of the template: automated-sensitive-data-discovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

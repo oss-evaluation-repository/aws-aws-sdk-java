@@ -45,7 +45,7 @@ public class SensitivityAggregations implements Serializable, Cloneable, Structu
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      */
@@ -145,13 +145,13 @@ public class SensitivityAggregations implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      * 
      * @param publiclyAccessibleCount
-     *        The total number of buckets that are publicly accessible based on a combination of permissions settings
-     *        for each bucket.
+     *        The total number of buckets that are publicly accessible due to a combination of permissions settings for
+     *        each bucket.
      */
 
     public void setPubliclyAccessibleCount(Long publiclyAccessibleCount) {
@@ -160,12 +160,12 @@ public class SensitivityAggregations implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      * 
-     * @return The total number of buckets that are publicly accessible based on a combination of permissions settings
-     *         for each bucket.
+     * @return The total number of buckets that are publicly accessible due to a combination of permissions settings for
+     *         each bucket.
      */
 
     public Long getPubliclyAccessibleCount() {
@@ -174,13 +174,13 @@ public class SensitivityAggregations implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      * 
      * @param publiclyAccessibleCount
-     *        The total number of buckets that are publicly accessible based on a combination of permissions settings
-     *        for each bucket.
+     *        The total number of buckets that are publicly accessible due to a combination of permissions settings for
+     *        each bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

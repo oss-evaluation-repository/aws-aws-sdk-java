@@ -29,7 +29,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * >Using managed scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * <p>
- * If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
+ * If managed scaling is off, the user must manage the scaling of the Auto Scaling group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ManagedScaling" target="_top">AWS API

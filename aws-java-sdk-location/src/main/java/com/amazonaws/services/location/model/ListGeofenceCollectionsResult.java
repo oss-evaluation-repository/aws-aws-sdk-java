@@ -25,7 +25,7 @@ public class ListGeofenceCollectionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists the geofence collections that exist in your AWS account.
+     * Lists the geofence collections that exist in your Amazon Web Services account.
      * </p>
      */
     private java.util.List<ListGeofenceCollectionsResponseEntry> entries;
@@ -39,10 +39,10 @@ public class ListGeofenceCollectionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists the geofence collections that exist in your AWS account.
+     * Lists the geofence collections that exist in your Amazon Web Services account.
      * </p>
      * 
-     * @return Lists the geofence collections that exist in your AWS account.
+     * @return Lists the geofence collections that exist in your Amazon Web Services account.
      */
 
     public java.util.List<ListGeofenceCollectionsResponseEntry> getEntries() {
@@ -51,11 +51,11 @@ public class ListGeofenceCollectionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists the geofence collections that exist in your AWS account.
+     * Lists the geofence collections that exist in your Amazon Web Services account.
      * </p>
      * 
      * @param entries
-     *        Lists the geofence collections that exist in your AWS account.
+     *        Lists the geofence collections that exist in your Amazon Web Services account.
      */
 
     public void setEntries(java.util.Collection<ListGeofenceCollectionsResponseEntry> entries) {
@@ -69,7 +69,7 @@ public class ListGeofenceCollectionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists the geofence collections that exist in your AWS account.
+     * Lists the geofence collections that exist in your Amazon Web Services account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class ListGeofenceCollectionsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param entries
-     *        Lists the geofence collections that exist in your AWS account.
+     *        Lists the geofence collections that exist in your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class ListGeofenceCollectionsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists the geofence collections that exist in your AWS account.
+     * Lists the geofence collections that exist in your Amazon Web Services account.
      * </p>
      * 
      * @param entries
-     *        Lists the geofence collections that exist in your AWS account.
+     *        Lists the geofence collections that exist in your Amazon Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

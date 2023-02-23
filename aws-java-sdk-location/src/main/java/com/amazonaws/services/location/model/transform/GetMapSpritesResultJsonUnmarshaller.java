@@ -32,6 +32,10 @@ public class GetMapSpritesResultJsonUnmarshaller implements Unmarshaller<GetMapS
         GetMapSpritesResult getMapSpritesResult = new GetMapSpritesResult();
 
         if (context.isStartOfDocument()) {
+            if (context.getHeader("Cache-Control") != null) {
+                context.setCurrentHeader("Cache-Control");
+                getMapSpritesResult.setCacheControl(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("Content-Type") != null) {
                 context.setCurrentHeader("Content-Type");
                 getMapSpritesResult.setContentType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -37,7 +37,7 @@ public class ProtectedTask implements Serializable, Cloneable, StructuredPojo {
     private String taskArn;
     /**
      * <p>
-     * The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>.
+     * The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>.
      * Otherwise, it is <code>false</code>.
      * </p>
      */
@@ -91,13 +91,13 @@ public class ProtectedTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>.
+     * The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>.
      * Otherwise, it is <code>false</code>.
      * </p>
      * 
      * @param protectionEnabled
-     *        The protection status of the task. If scale-in protection is enabled for a task, the value is
-     *        <code>true</code>. Otherwise, it is <code>false</code>.
+     *        The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>
+     *        . Otherwise, it is <code>false</code>.
      */
 
     public void setProtectionEnabled(Boolean protectionEnabled) {
@@ -106,11 +106,11 @@ public class ProtectedTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>.
+     * The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>.
      * Otherwise, it is <code>false</code>.
      * </p>
      * 
-     * @return The protection status of the task. If scale-in protection is enabled for a task, the value is
+     * @return The protection status of the task. If scale-in protection is on for a task, the value is
      *         <code>true</code>. Otherwise, it is <code>false</code>.
      */
 
@@ -120,13 +120,13 @@ public class ProtectedTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>.
+     * The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>.
      * Otherwise, it is <code>false</code>.
      * </p>
      * 
      * @param protectionEnabled
-     *        The protection status of the task. If scale-in protection is enabled for a task, the value is
-     *        <code>true</code>. Otherwise, it is <code>false</code>.
+     *        The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>
+     *        . Otherwise, it is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class ProtectedTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The protection status of the task. If scale-in protection is enabled for a task, the value is <code>true</code>.
+     * The protection status of the task. If scale-in protection is on for a task, the value is <code>true</code>.
      * Otherwise, it is <code>false</code>.
      * </p>
      * 
-     * @return The protection status of the task. If scale-in protection is enabled for a task, the value is
+     * @return The protection status of the task. If scale-in protection is on for a task, the value is
      *         <code>true</code>. Otherwise, it is <code>false</code>.
      */
 

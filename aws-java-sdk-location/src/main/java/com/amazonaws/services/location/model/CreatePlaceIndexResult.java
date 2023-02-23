@@ -33,7 +33,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date createTime;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -105,7 +106,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -116,7 +118,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
      * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     *        Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -131,7 +134,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -141,7 +145,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
      * </li>
      * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+     * @return The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     *         Services. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -156,7 +161,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -167,7 +173,8 @@ public class CreatePlaceIndexResult extends com.amazonaws.AmazonWebServiceResult
      * </ul>
      * 
      * @param indexArn
-     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across AWS. </p>
+     *        The Amazon Resource Name (ARN) for the place index resource. Used to specify a resource across Amazon Web
+     *        Services. </p>
      *        <ul>
      *        <li>
      *        <p>

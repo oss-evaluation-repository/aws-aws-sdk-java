@@ -33,7 +33,8 @@ public enum FindingType {
     PolicyIAMUserS3BucketSharedExternally("Policy:IAMUser/S3BucketSharedExternally"),
     PolicyIAMUserS3BucketReplicatedExternally("Policy:IAMUser/S3BucketReplicatedExternally"),
     PolicyIAMUserS3BucketEncryptionDisabled("Policy:IAMUser/S3BucketEncryptionDisabled"),
-    PolicyIAMUserS3BlockPublicAccessDisabled("Policy:IAMUser/S3BlockPublicAccessDisabled");
+    PolicyIAMUserS3BlockPublicAccessDisabled("Policy:IAMUser/S3BlockPublicAccessDisabled"),
+    PolicyIAMUserS3BucketSharedWithCloudFront("Policy:IAMUser/S3BucketSharedWithCloudFront");
 
     private String value;
 

@@ -84,6 +84,18 @@ public class GetFuotaTaskResultJsonUnmarshaller implements Unmarshaller<GetFuota
                     context.nextToken();
                     getFuotaTaskResult.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("RedundancyPercent", targetDepth)) {
+                    context.nextToken();
+                    getFuotaTaskResult.setRedundancyPercent(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FragmentSizeBytes", targetDepth)) {
+                    context.nextToken();
+                    getFuotaTaskResult.setFragmentSizeBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("FragmentIntervalMS", targetDepth)) {
+                    context.nextToken();
+                    getFuotaTaskResult.setFragmentIntervalMS(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

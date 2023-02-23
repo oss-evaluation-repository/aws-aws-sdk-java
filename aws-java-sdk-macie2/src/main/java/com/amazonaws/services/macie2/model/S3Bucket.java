@@ -67,7 +67,9 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the
+     * finding was created or last updated.
      * </p>
      */
     private java.util.Date createdAt;
@@ -403,11 +405,15 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the
+     * finding was created or last updated.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *        indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative
+     *        to when the finding was created or last updated.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -416,10 +422,14 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the
+     * finding was created or last updated.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *         indicate when changes such as edits to the bucket's policy were most recently made to the bucket,
+     *         relative to when the finding was created or last updated.
      */
 
     public java.util.Date getCreatedAt() {
@@ -428,11 +438,15 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket, relative to when the
+     * finding was created or last updated.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *        indicate when changes such as edits to the bucket's policy were most recently made to the bucket, relative
+     *        to when the finding was created or last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

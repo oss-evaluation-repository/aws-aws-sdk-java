@@ -68,7 +68,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -213,7 +213,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -265,7 +265,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      *        href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html"
      *        >store results</a> for locations in Japan. For more information, see the <a
-     *        href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     *        href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location
+     *        Service.
      *        </p>
      *        </important></li>
      *        </ul>
@@ -322,7 +323,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -374,7 +375,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *         If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      *         href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html"
      *         >store results</a> for locations in Japan. For more information, see the <a
-     *         href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     *         href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location
+     *         Service.
      *         </p>
      *         </important></li>
      *         </ul>
@@ -431,7 +433,7 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      * If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      * href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store
      * results</a> for locations in Japan. For more information, see the <a
-     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location Service.
      * </p>
      * </important></li>
      * </ul>
@@ -483,7 +485,8 @@ public class CreatePlaceIndexRequest extends com.amazonaws.AmazonWebServiceReque
      *        If you specify HERE Technologies (<code>Here</code>) as the data provider, you may not <a
      *        href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html"
      *        >store results</a> for locations in Japan. For more information, see the <a
-     *        href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.
+     *        href="http://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> for Amazon Location
+     *        Service.
      *        </p>
      *        </important></li>
      *        </ul>

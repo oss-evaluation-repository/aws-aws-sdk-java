@@ -41,8 +41,8 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
     private String accessPointId;
     /**
      * <p>
-     * Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS
-     * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
+     * Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file
+     * system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
      * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
@@ -122,19 +122,19 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS
-     * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
+     * Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file
+     * system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
      * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param iam
-     *        Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the
-     *        Amazon EFS file system. If enabled, transit encryption must be enabled in the
-     *        <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
-     *        <code>DISABLED</code> is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
+     *        Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon
+     *        EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>
+     *        . If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
      *        >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see EFSAuthorizationConfigIAM
      */
@@ -145,15 +145,15 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS
-     * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
+     * Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file
+     * system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
      * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the
-     *         Amazon EFS file system. If enabled, transit encryption must be enabled in the
+     * @return Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon
+     *         EFS file system. If enabled, transit encryption must be enabled in the
      *         <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
      *         <code>DISABLED</code> is used. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
@@ -167,19 +167,19 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS
-     * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
+     * Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file
+     * system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
      * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param iam
-     *        Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the
-     *        Amazon EFS file system. If enabled, transit encryption must be enabled in the
-     *        <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
-     *        <code>DISABLED</code> is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
+     *        Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon
+     *        EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>
+     *        . If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
      *        >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EFSAuthorizationConfigIAM
@@ -192,19 +192,19 @@ public class EFSAuthorizationConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the Amazon EFS
-     * file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
+     * Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon EFS file
+     * system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>. If this
      * parameter is omitted, the default value of <code>DISABLED</code> is used. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints">Using
      * Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param iam
-     *        Determines whether to use the Amazon ECS task IAM role defined in a task definition when mounting the
-     *        Amazon EFS file system. If enabled, transit encryption must be enabled in the
-     *        <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value of
-     *        <code>DISABLED</code> is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
+     *        Determines whether to use the Amazon ECS task role defined in a task definition when mounting the Amazon
+     *        EFS file system. If enabled, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>
+     *        . If this parameter is omitted, the default value of <code>DISABLED</code> is used. For more information,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html#efs-volume-accesspoints"
      *        >Using Amazon EFS access points</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EFSAuthorizationConfigIAM

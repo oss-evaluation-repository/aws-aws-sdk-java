@@ -31,12 +31,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
  * </p>
- * </note> <note>
- * <p>
- * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
- * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
- * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
- * </p>
  * </note>
  * <p>
  * This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.
@@ -66,13 +60,13 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
     private ResponseInspectionHeader header;
     /**
      * <p>
-     * Configures inspection of the response body.
+     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
      * </p>
      */
     private ResponseInspectionBodyContains bodyContains;
     /**
      * <p>
-     * Configures inspection of the response JSON.
+     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
      * </p>
      */
     private ResponseInspectionJson json;
@@ -159,11 +153,12 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response body.
+     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
      * </p>
      * 
      * @param bodyContains
-     *        Configures inspection of the response body.
+     *        Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response
+     *        body.
      */
 
     public void setBodyContains(ResponseInspectionBodyContains bodyContains) {
@@ -172,10 +167,11 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response body.
+     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
      * </p>
      * 
-     * @return Configures inspection of the response body.
+     * @return Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the
+     *         response body.
      */
 
     public ResponseInspectionBodyContains getBodyContains() {
@@ -184,11 +180,12 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response body.
+     * Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response body.
      * </p>
      * 
      * @param bodyContains
-     *        Configures inspection of the response body.
+     *        Configures inspection of the response body. WAF can inspect the first 65,536 bytes (64 KB) of the response
+     *        body.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +196,12 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response JSON.
+     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
      * </p>
      * 
      * @param json
-     *        Configures inspection of the response JSON.
+     *        Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response
+     *        JSON.
      */
 
     public void setJson(ResponseInspectionJson json) {
@@ -212,10 +210,11 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response JSON.
+     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
      * </p>
      * 
-     * @return Configures inspection of the response JSON.
+     * @return Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the
+     *         response JSON.
      */
 
     public ResponseInspectionJson getJson() {
@@ -224,11 +223,12 @@ public class ResponseInspection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Configures inspection of the response JSON.
+     * Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response JSON.
      * </p>
      * 
      * @param json
-     *        Configures inspection of the response JSON.
+     *        Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes (64 KB) of the response
+     *        JSON.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

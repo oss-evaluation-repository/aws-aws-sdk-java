@@ -63,6 +63,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceArn;
@@ -139,6 +145,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceArn
@@ -169,6 +181,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For an Amazon Cognito user pool:
      *        <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an App Runner service:
+     *        <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      *        </p>
      *        </li>
      */
@@ -209,6 +227,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
@@ -238,6 +262,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For an Amazon Cognito user pool:
      *         <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an App Runner service:
+     *         <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      *         </p>
      *         </li>
      */
@@ -278,6 +308,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an App Runner service:
+     * <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceArn
@@ -308,6 +344,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For an Amazon Cognito user pool:
      *        <code>arn:aws:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an App Runner service:
+     *        <code>arn:aws:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

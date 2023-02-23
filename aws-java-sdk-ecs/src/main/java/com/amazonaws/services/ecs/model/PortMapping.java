@@ -1130,7 +1130,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param containerPortRange
-     *        The port number range on the container that's bound to the dynamically mapped host port range.</p>
+     *        The port number range on the container that's bound to the dynamically mapped host port range. </p>
      *        <p>
      *        The following rules apply when you specify a <code>containerPortRange</code>:
      *        </p>
@@ -1322,7 +1322,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * the container ports.
      * </p>
      * 
-     * @return The port number range on the container that's bound to the dynamically mapped host port range.</p>
+     * @return The port number range on the container that's bound to the dynamically mapped host port range. </p>
      *         <p>
      *         The following rules apply when you specify a <code>containerPortRange</code>:
      *         </p>
@@ -1515,7 +1515,7 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param containerPortRange
-     *        The port number range on the container that's bound to the dynamically mapped host port range.</p>
+     *        The port number range on the container that's bound to the dynamically mapped host port range. </p>
      *        <p>
      *        The following rules apply when you specify a <code>containerPortRange</code>:
      *        </p>

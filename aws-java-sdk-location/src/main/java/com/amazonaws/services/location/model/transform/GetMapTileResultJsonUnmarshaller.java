@@ -32,6 +32,10 @@ public class GetMapTileResultJsonUnmarshaller implements Unmarshaller<GetMapTile
         GetMapTileResult getMapTileResult = new GetMapTileResult();
 
         if (context.isStartOfDocument()) {
+            if (context.getHeader("Cache-Control") != null) {
+                context.setCurrentHeader("Cache-Control");
+                getMapTileResult.setCacheControl(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("Content-Type") != null) {
                 context.setCurrentHeader("Content-Type");
                 getMapTileResult.setContentType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -36,7 +36,7 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The user-friendly name to identify the IPSet.
      * </p>
      * <p>
-     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     * Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      * </p>
      */
     private String name;
@@ -116,13 +116,13 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The user-friendly name to identify the IPSet.
      * </p>
      * <p>
-     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     * Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      * </p>
      * 
      * @param name
      *        The user-friendly name to identify the IPSet.</p>
      *        <p>
-     *        Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     *        Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      */
 
     public void setName(String name) {
@@ -134,12 +134,12 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The user-friendly name to identify the IPSet.
      * </p>
      * <p>
-     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     * Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      * </p>
      * 
      * @return The user-friendly name to identify the IPSet.</p>
      *         <p>
-     *         Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     *         Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      */
 
     public String getName() {
@@ -151,13 +151,13 @@ public class CreateIPSetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The user-friendly name to identify the IPSet.
      * </p>
      * <p>
-     * Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     * Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      * </p>
      * 
      * @param name
      *        The user-friendly name to identify the IPSet.</p>
      *        <p>
-     *        Allowed characters are alphanumerics, spaces, hyphens (-), and underscores (_).
+     *        Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

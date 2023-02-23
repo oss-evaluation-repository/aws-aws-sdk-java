@@ -37,7 +37,7 @@ public class SensitivityInspectionTemplatesEntry implements Serializable, Clonea
     private String id;
     /**
      * <p>
-     * The name of the sensitivity inspection template for the account.
+     * The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      * </p>
      */
     private String name;
@@ -84,11 +84,11 @@ public class SensitivityInspectionTemplatesEntry implements Serializable, Clonea
 
     /**
      * <p>
-     * The name of the sensitivity inspection template for the account.
+     * The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      * </p>
      * 
      * @param name
-     *        The name of the sensitivity inspection template for the account.
+     *        The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      */
 
     public void setName(String name) {
@@ -97,10 +97,10 @@ public class SensitivityInspectionTemplatesEntry implements Serializable, Clonea
 
     /**
      * <p>
-     * The name of the sensitivity inspection template for the account.
+     * The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      * </p>
      * 
-     * @return The name of the sensitivity inspection template for the account.
+     * @return The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      */
 
     public String getName() {
@@ -109,11 +109,11 @@ public class SensitivityInspectionTemplatesEntry implements Serializable, Clonea
 
     /**
      * <p>
-     * The name of the sensitivity inspection template for the account.
+     * The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      * </p>
      * 
      * @param name
-     *        The name of the sensitivity inspection template for the account.
+     *        The name of the sensitivity inspection template for the account: automated-sensitive-data-discovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the location of an occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML
- * file.
+ * Specifies the location of an occurrence of sensitive data in an email message or a non-binary text file such as an
+ * HTML, TXT, or XML file.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Range" target="_top">AWS API Documentation</a>

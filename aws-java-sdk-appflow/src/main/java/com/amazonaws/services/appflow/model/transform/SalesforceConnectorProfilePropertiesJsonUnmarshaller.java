@@ -56,6 +56,11 @@ public class SalesforceConnectorProfilePropertiesJsonUnmarshaller implements Unm
                     context.nextToken();
                     salesforceConnectorProfileProperties.setIsSandboxEnvironment(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("usePrivateLinkForMetadataAndAuthorization", targetDepth)) {
+                    context.nextToken();
+                    salesforceConnectorProfileProperties.setUsePrivateLinkForMetadataAndAuthorization(context.getUnmarshaller(Boolean.class)
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

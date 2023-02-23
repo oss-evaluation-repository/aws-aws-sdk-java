@@ -466,6 +466,11 @@ public interface AmazonManagedGrafana {
      * SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the
      * assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.
      * </p>
+     * <note>
+     * <p>
+     * Changes to the authentication method for a workspace may take a few minutes to take effect.
+     * </p>
+     * </note>
      * 
      * @param updateWorkspaceAuthenticationRequest
      * @return Result of the UpdateWorkspaceAuthentication operation returned by the service.

@@ -101,12 +101,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
      * associated with a cluster before it can be included as part of the default capacity provider strategy of the
-     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
+     * cluster or used in a capacity provider strategy when calling the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
-     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html"
+     * >CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -114,16 +117,20 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster to be used.
      * </p>
      * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
+     * The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     * PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a cluster
+     * after the cluster is created.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> capacityProviders;
     /**
      * <p>
      * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
-     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
-     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
+     * is set for a cluster, when you call the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs with no
+     * capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is
+     * used.
      * </p>
      * <p>
      * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
@@ -762,12 +769,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
      * associated with a cluster before it can be included as part of the default capacity provider strategy of the
-     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
+     * cluster or used in a capacity provider strategy when calling the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
-     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html"
+     * >CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -775,18 +785,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster to be used.
      * </p>
      * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
+     * The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     * PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a cluster
+     * after the cluster is created.
      * </p>
      * 
      * @return The short name of one or more capacity providers to associate with the cluster. A capacity provider must
      *         be associated with a cluster before it can be included as part of the default capacity provider strategy
-     *         of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
-     *         <a>RunTask</a> actions.</p>
+     *         of the cluster or used in a capacity provider strategy when calling the <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *         or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>
+     *         actions.</p>
      *         <p>
      *         If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
      *         but not associated with another cluster. New Auto Scaling group capacity providers can be created with
-     *         the <a>CreateCapacityProvider</a> API operation.
+     *         the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">
+     *         CreateCapacityProvider</a> API operation.
      *         </p>
      *         <p>
      *         To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -794,8 +808,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         associated with a cluster to be used.
      *         </p>
      *         <p>
-     *         The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *         providers for a cluster after the cluster is created.
+     *         The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     *         PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a
+     *         cluster after the cluster is created.
      */
 
     public java.util.List<String> getCapacityProviders() {
@@ -809,12 +824,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
      * associated with a cluster before it can be included as part of the default capacity provider strategy of the
-     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
+     * cluster or used in a capacity provider strategy when calling the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
-     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html"
+     * >CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -822,19 +840,23 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster to be used.
      * </p>
      * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
+     * The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     * PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a cluster
+     * after the cluster is created.
      * </p>
      * 
      * @param capacityProviders
      *        The short name of one or more capacity providers to associate with the cluster. A capacity provider must
      *        be associated with a cluster before it can be included as part of the default capacity provider strategy
-     *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
-     *        <a>RunTask</a> actions.</p>
+     *        of the cluster or used in a capacity provider strategy when calling the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *        or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>
+     *        actions.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
      *        but not associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     *        <a>CreateCapacityProvider</a> API operation.
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">
+     *        CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -842,8 +864,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        associated with a cluster to be used.
      *        </p>
      *        <p>
-     *        The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *        providers for a cluster after the cluster is created.
+     *        The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     *        PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a
+     *        cluster after the cluster is created.
      */
 
     public void setCapacityProviders(java.util.Collection<String> capacityProviders) {
@@ -859,12 +882,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
      * associated with a cluster before it can be included as part of the default capacity provider strategy of the
-     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
+     * cluster or used in a capacity provider strategy when calling the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
-     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html"
+     * >CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -872,8 +898,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster to be used.
      * </p>
      * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
+     * The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     * PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a cluster
+     * after the cluster is created.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -884,12 +911,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param capacityProviders
      *        The short name of one or more capacity providers to associate with the cluster. A capacity provider must
      *        be associated with a cluster before it can be included as part of the default capacity provider strategy
-     *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
-     *        <a>RunTask</a> actions.</p>
+     *        of the cluster or used in a capacity provider strategy when calling the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *        or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>
+     *        actions.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
      *        but not associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     *        <a>CreateCapacityProvider</a> API operation.
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">
+     *        CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -897,8 +927,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        associated with a cluster to be used.
      *        </p>
      *        <p>
-     *        The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *        providers for a cluster after the cluster is created.
+     *        The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     *        PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a
+     *        cluster after the cluster is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -916,12 +947,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The short name of one or more capacity providers to associate with the cluster. A capacity provider must be
      * associated with a cluster before it can be included as part of the default capacity provider strategy of the
-     * cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or <a>RunTask</a> actions.
+     * cluster or used in a capacity provider strategy when calling the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> actions.
      * </p>
      * <p>
      * If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created but not
-     * associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     * <a>CreateCapacityProvider</a> API operation.
+     * associated with another cluster. New Auto Scaling group capacity providers can be created with the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html"
+     * >CreateCapacityProvider</a> API operation.
      * </p>
      * <p>
      * To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity
@@ -929,19 +963,23 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * cluster to be used.
      * </p>
      * <p>
-     * The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity providers
-     * for a cluster after the cluster is created.
+     * The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     * PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a cluster
+     * after the cluster is created.
      * </p>
      * 
      * @param capacityProviders
      *        The short name of one or more capacity providers to associate with the cluster. A capacity provider must
      *        be associated with a cluster before it can be included as part of the default capacity provider strategy
-     *        of the cluster or used in a capacity provider strategy when calling the <a>CreateService</a> or
-     *        <a>RunTask</a> actions.</p>
+     *        of the cluster or used in a capacity provider strategy when calling the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *        or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a>
+     *        actions.</p>
      *        <p>
      *        If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must be created
      *        but not associated with another cluster. New Auto Scaling group capacity providers can be created with the
-     *        <a>CreateCapacityProvider</a> API operation.
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateCapacityProvider.html">
+     *        CreateCapacityProvider</a> API operation.
      *        </p>
      *        <p>
      *        To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
@@ -949,8 +987,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        associated with a cluster to be used.
      *        </p>
      *        <p>
-     *        The <a>PutClusterCapacityProviders</a> API operation is used to update the list of available capacity
-     *        providers for a cluster after the cluster is created.
+     *        The <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutCapacityProvider.html">
+     *        PutCapacityProvider</a> API operation is used to update the list of available capacity providers for a
+     *        cluster after the cluster is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -962,8 +1001,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
-     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
-     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
+     * is set for a cluster, when you call the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs with no
+     * capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is
+     * used.
      * </p>
      * <p>
      * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
@@ -971,9 +1013,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @return The capacity provider strategy to set as the default for the cluster. After a default capacity provider
-     *         strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
-     *         capacity provider strategy or launch type specified, the default capacity provider strategy for the
-     *         cluster is used.</p>
+     *         strategy is set for a cluster, when you call the <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *         or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs
+     *         with no capacity provider strategy or launch type specified, the default capacity provider strategy for
+     *         the cluster is used.</p>
      *         <p>
      *         If a default capacity provider strategy isn't defined for a cluster when it was created, it can be
      *         defined later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -989,8 +1033,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
-     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
-     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
+     * is set for a cluster, when you call the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs with no
+     * capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is
+     * used.
      * </p>
      * <p>
      * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
@@ -999,9 +1046,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param defaultCapacityProviderStrategy
      *        The capacity provider strategy to set as the default for the cluster. After a default capacity provider
-     *        strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
-     *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
-     *        cluster is used.</p>
+     *        strategy is set for a cluster, when you call the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *        or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs
+     *        with no capacity provider strategy or launch type specified, the default capacity provider strategy for
+     *        the cluster is used.</p>
      *        <p>
      *        If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -1019,8 +1068,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
-     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
-     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
+     * is set for a cluster, when you call the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs with no
+     * capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is
+     * used.
      * </p>
      * <p>
      * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
@@ -1034,9 +1086,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param defaultCapacityProviderStrategy
      *        The capacity provider strategy to set as the default for the cluster. After a default capacity provider
-     *        strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
-     *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
-     *        cluster is used.</p>
+     *        strategy is set for a cluster, when you call the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *        or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs
+     *        with no capacity provider strategy or launch type specified, the default capacity provider strategy for
+     *        the cluster is used.</p>
      *        <p>
      *        If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.
@@ -1056,8 +1110,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The capacity provider strategy to set as the default for the cluster. After a default capacity provider strategy
-     * is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity provider
-     * strategy or launch type specified, the default capacity provider strategy for the cluster is used.
+     * is set for a cluster, when you call the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs with no
+     * capacity provider strategy or launch type specified, the default capacity provider strategy for the cluster is
+     * used.
      * </p>
      * <p>
      * If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined later
@@ -1066,9 +1123,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param defaultCapacityProviderStrategy
      *        The capacity provider strategy to set as the default for the cluster. After a default capacity provider
-     *        strategy is set for a cluster, when you call the <a>RunTask</a> or <a>CreateService</a> APIs with no
-     *        capacity provider strategy or launch type specified, the default capacity provider strategy for the
-     *        cluster is used.</p>
+     *        strategy is set for a cluster, when you call the <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html">CreateService</a>
+     *        or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">RunTask</a> APIs
+     *        with no capacity provider strategy or launch type specified, the default capacity provider strategy for
+     *        the cluster is used.</p>
      *        <p>
      *        If a default capacity provider strategy isn't defined for a cluster when it was created, it can be defined
      *        later with the <a>PutClusterCapacityProviders</a> API operation.

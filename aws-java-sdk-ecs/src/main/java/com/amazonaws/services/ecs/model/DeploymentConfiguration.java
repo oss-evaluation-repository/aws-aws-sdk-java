@@ -38,9 +38,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      */
     private DeploymentCircuitBreaker deploymentCircuitBreaker;
@@ -147,9 +149,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      * 
      * @param deploymentCircuitBreaker
@@ -160,9 +164,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </note>
      *        <p>
      *        The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
-     *        can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition
-     *        to a failed state and stop launching new tasks. If rollback is enabled, when a service deployment fails,
-     *        the service is rolled back to the last deployment that completed successfully.
+     *        can't reach a steady state. If you use the deployment circuit breaker, a service deployment will
+     *        transition to a failed state and stop launching new tasks. If you use the rollback option, when a service
+     *        deployment fails, the service is rolled back to the last deployment that completed successfully. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     *        update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
      */
 
     public void setDeploymentCircuitBreaker(DeploymentCircuitBreaker deploymentCircuitBreaker) {
@@ -178,9 +185,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      * 
      * @return <p>
@@ -190,9 +199,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *         </note>
      *         <p>
      *         The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
-     *         can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will
-     *         transition to a failed state and stop launching new tasks. If rollback is enabled, when a service
-     *         deployment fails, the service is rolled back to the last deployment that completed successfully.
+     *         can't reach a steady state. If you use the deployment circuit breaker, a service deployment will
+     *         transition to a failed state and stop launching new tasks. If you use the rollback option, when a service
+     *         deployment fails, the service is rolled back to the last deployment that completed successfully. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     *         update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
      */
 
     public DeploymentCircuitBreaker getDeploymentCircuitBreaker() {
@@ -208,9 +220,11 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </note>
      * <p>
      * The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service can't
-     * reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition to a failed
-     * state and stop launching new tasks. If rollback is enabled, when a service deployment fails, the service is
-     * rolled back to the last deployment that completed successfully.
+     * reach a steady state. If you use the deployment circuit breaker, a service deployment will transition to a failed
+     * state and stop launching new tasks. If you use the rollback option, when a service deployment fails, the service
+     * is rolled back to the last deployment that completed successfully. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling update</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>
      * </p>
      * 
      * @param deploymentCircuitBreaker
@@ -221,9 +235,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      *        </note>
      *        <p>
      *        The <b>deployment circuit breaker</b> determines whether a service deployment will fail if the service
-     *        can't reach a steady state. If deployment circuit breaker is enabled, a service deployment will transition
-     *        to a failed state and stop launching new tasks. If rollback is enabled, when a service deployment fails,
-     *        the service is rolled back to the last deployment that completed successfully.
+     *        can't reach a steady state. If you use the deployment circuit breaker, a service deployment will
+     *        transition to a failed state and stop launching new tasks. If you use the rollback option, when a service
+     *        deployment fails, the service is rolled back to the last deployment that completed successfully. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+     *        update</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

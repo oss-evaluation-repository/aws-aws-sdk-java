@@ -167,6 +167,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTaskDefinitionsResult> deleteTaskDefinitionsAsync(DeleteTaskDefinitionsRequest request) {
+
+        return deleteTaskDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskDefinitionsResult> deleteTaskDefinitionsAsync(DeleteTaskDefinitionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTaskDefinitionsRequest, DeleteTaskDefinitionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest request) {
 
         return deleteTaskSetAsync(request, null);

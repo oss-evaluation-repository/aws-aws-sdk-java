@@ -31,7 +31,7 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private Long bucketCount;
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      */
@@ -52,7 +52,8 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountPolicyAllowsUnencryptedObjectUploads bucketCountByObjectEncryptionRequirement;
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     * The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     * origin access identities (OAIs), or CloudFront origin access controls (OACs).
      * </p>
      */
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
@@ -84,7 +85,7 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the buckets.
      * </p>
      */
@@ -173,13 +174,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      * 
      * @param bucketCountByEffectivePermission
-     *        The total number of buckets that are publicly accessible based on a combination of permissions settings
-     *        for each bucket.
+     *        The total number of buckets that are publicly accessible due to a combination of permissions settings for
+     *        each bucket.
      */
 
     public void setBucketCountByEffectivePermission(BucketCountByEffectivePermission bucketCountByEffectivePermission) {
@@ -188,12 +189,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      * 
-     * @return The total number of buckets that are publicly accessible based on a combination of permissions settings
-     *         for each bucket.
+     * @return The total number of buckets that are publicly accessible due to a combination of permissions settings for
+     *         each bucket.
      */
 
     public BucketCountByEffectivePermission getBucketCountByEffectivePermission() {
@@ -202,13 +203,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are publicly accessible based on a combination of permissions settings for each
+     * The total number of buckets that are publicly accessible due to a combination of permissions settings for each
      * bucket.
      * </p>
      * 
      * @param bucketCountByEffectivePermission
-     *        The total number of buckets that are publicly accessible based on a combination of permissions settings
-     *        for each bucket.
+     *        The total number of buckets that are publicly accessible due to a combination of permissions settings for
+     *        each bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,11 +313,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     * The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     * origin access identities (OAIs), or CloudFront origin access controls (OACs).
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     *        The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon
+     *        CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).
      */
 
     public void setBucketCountBySharedAccessType(BucketCountBySharedAccessType bucketCountBySharedAccessType) {
@@ -325,10 +328,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     * The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     * origin access identities (OAIs), or CloudFront origin access controls (OACs).
      * </p>
      * 
-     * @return The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     * @return The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon
+     *         CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).
      */
 
     public BucketCountBySharedAccessType getBucketCountBySharedAccessType() {
@@ -337,11 +342,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     * The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon CloudFront
+     * origin access identities (OAIs), or CloudFront origin access controls (OACs).
      * </p>
      * 
      * @param bucketCountBySharedAccessType
-     *        The total number of buckets that are or aren't shared with another Amazon Web Services account.
+     *        The total number of buckets that are or aren't shared with other Amazon Web Services accounts, Amazon
+     *        CloudFront origin access identities (OAIs), or CloudFront origin access controls (OACs).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,13 +527,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the buckets.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *        bucket and object metadata from Amazon S3 for the buckets.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *        or object metadata from Amazon S3 for the buckets.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -535,12 +542,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the buckets.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *         bucket and object metadata from Amazon S3 for the buckets.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *         or object metadata from Amazon S3 for the buckets.
      */
 
     public java.util.Date getLastUpdated() {
@@ -549,13 +556,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the buckets.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *        bucket and object metadata from Amazon S3 for the buckets.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *        or object metadata from Amazon S3 for the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

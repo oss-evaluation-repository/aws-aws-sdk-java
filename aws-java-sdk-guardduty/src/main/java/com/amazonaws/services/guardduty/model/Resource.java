@@ -31,8 +31,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      */
     private AccessKeyDetails accessKeyDetails;
@@ -84,12 +84,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      * 
      * @param accessKeyDetails
-     *        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *        The IAM access key details (user information) of a user that engaged in the activity that prompted
      *        GuardDuty to generate a finding.
      */
 
@@ -99,11 +99,11 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      * 
-     * @return The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     * @return The IAM access key details (user information) of a user that engaged in the activity that prompted
      *         GuardDuty to generate a finding.
      */
 
@@ -113,12 +113,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty
-     * to generate a finding.
+     * The IAM access key details (user information) of a user that engaged in the activity that prompted GuardDuty to
+     * generate a finding.
      * </p>
      * 
      * @param accessKeyDetails
-     *        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted
+     *        The IAM access key details (user information) of a user that engaged in the activity that prompted
      *        GuardDuty to generate a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

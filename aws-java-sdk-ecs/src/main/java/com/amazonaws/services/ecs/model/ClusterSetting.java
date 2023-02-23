@@ -39,9 +39,11 @@ public class ClusterSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>
      * . If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise
-     * it will be disabled unless the <code>containerInsights</code> account setting is enabled. If a cluster value is
-     * specified, it will override the <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.
+     * it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is
+     * specified, it will override the <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">
+     * PutAccountSettingDefault</a>.
      * </p>
      */
     private String value;
@@ -109,17 +111,22 @@ public class ClusterSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>
      * . If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise
-     * it will be disabled unless the <code>containerInsights</code> account setting is enabled. If a cluster value is
-     * specified, it will override the <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.
+     * it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is
+     * specified, it will override the <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">
+     * PutAccountSettingDefault</a>.
      * </p>
      * 
      * @param value
      *        The value to set for the cluster setting. The supported values are <code>enabled</code> and
      *        <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled
-     *        for the cluster, otherwise it will be disabled unless the <code>containerInsights</code> account setting
-     *        is enabled. If a cluster value is specified, it will override the <code>containerInsights</code> value set
-     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is
+     *        turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set
+     *        with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">
+     *        PutAccountSetting</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html"
+     *        >PutAccountSettingDefault</a>.
      */
 
     public void setValue(String value) {
@@ -130,16 +137,22 @@ public class ClusterSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>
      * . If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise
-     * it will be disabled unless the <code>containerInsights</code> account setting is enabled. If a cluster value is
-     * specified, it will override the <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.
+     * it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is
+     * specified, it will override the <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">
+     * PutAccountSettingDefault</a>.
      * </p>
      * 
      * @return The value to set for the cluster setting. The supported values are <code>enabled</code> and
      *         <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be
-     *         enabled for the cluster, otherwise it will be disabled unless the <code>containerInsights</code> account
-     *         setting is enabled. If a cluster value is specified, it will override the <code>containerInsights</code>
-     *         value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *         enabled for the cluster, otherwise it will be off unless the <code>containerInsights</code> account
+     *         setting is turned on. If a cluster value is specified, it will override the
+     *         <code>containerInsights</code> value set with <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html"
+     *         >PutAccountSetting</a> or <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html"
+     *         >PutAccountSettingDefault</a>.
      */
 
     public String getValue() {
@@ -150,17 +163,22 @@ public class ClusterSetting implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The value to set for the cluster setting. The supported values are <code>enabled</code> and <code>disabled</code>
      * . If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled for the cluster, otherwise
-     * it will be disabled unless the <code>containerInsights</code> account setting is enabled. If a cluster value is
-     * specified, it will override the <code>containerInsights</code> value set with <a>PutAccountSetting</a> or
-     * <a>PutAccountSettingDefault</a>.
+     * it will be off unless the <code>containerInsights</code> account setting is turned on. If a cluster value is
+     * specified, it will override the <code>containerInsights</code> value set with <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">
+     * PutAccountSettingDefault</a>.
      * </p>
      * 
      * @param value
      *        The value to set for the cluster setting. The supported values are <code>enabled</code> and
      *        <code>disabled</code>. If <code>enabled</code> is specified, CloudWatch Container Insights will be enabled
-     *        for the cluster, otherwise it will be disabled unless the <code>containerInsights</code> account setting
-     *        is enabled. If a cluster value is specified, it will override the <code>containerInsights</code> value set
-     *        with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        for the cluster, otherwise it will be off unless the <code>containerInsights</code> account setting is
+     *        turned on. If a cluster value is specified, it will override the <code>containerInsights</code> value set
+     *        with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">
+     *        PutAccountSetting</a> or <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html"
+     *        >PutAccountSettingDefault</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

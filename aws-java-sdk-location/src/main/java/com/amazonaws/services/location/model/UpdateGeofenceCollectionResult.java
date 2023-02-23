@@ -25,7 +25,8 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -53,7 +54,8 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -65,7 +67,7 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across
-     *        AWS.</p>
+     *        Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -80,7 +82,8 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -91,7 +94,7 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across
-     *         AWS.</p>
+     *         Amazon Web Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -106,7 +109,8 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across AWS.
+     * The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across Amazon Web
+     * Services.
      * </p>
      * <ul>
      * <li>
@@ -118,7 +122,7 @@ public class UpdateGeofenceCollectionResult extends com.amazonaws.AmazonWebServi
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) of the updated geofence collection. Used to specify a resource across
-     *        AWS.</p>
+     *        Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>

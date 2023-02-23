@@ -334,7 +334,9 @@ public class ServiceUtils {
             if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
                 throw new SdkClientException("Unable to verify integrity of data download.  " +
                         "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                        "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt.");
+                        "The data stored in '" + dstfile.getAbsolutePath() + "' may be corrupt." +
+                        "\nClient-side hash: " + Arrays.toString(clientSideHash) +
+                        "\nServer-side hash: " + Arrays.toString(serverSideHash));
             }
         }
     }

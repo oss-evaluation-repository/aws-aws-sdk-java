@@ -160,6 +160,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(CreateKeyRequest request) {
+
+        return createKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeyResult> createKeyAsync(CreateKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMapResult> createMapAsync(CreateMapRequest request) {
 
         return createMapAsync(request, null);
@@ -225,6 +238,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteKeyResult> deleteKeyAsync(DeleteKeyRequest request) {
+
+        return deleteKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeyResult> deleteKeyAsync(DeleteKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyRequest, DeleteKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMapResult> deleteMapAsync(DeleteMapRequest request) {
 
         return deleteMapAsync(request, null);
@@ -285,6 +311,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     @Override
     public java.util.concurrent.Future<DescribeGeofenceCollectionResult> describeGeofenceCollectionAsync(DescribeGeofenceCollectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeGeofenceCollectionRequest, DescribeGeofenceCollectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(DescribeKeyRequest request) {
+
+        return describeKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(DescribeKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeKeyRequest, DescribeKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -498,6 +537,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListKeysResult> listKeysAsync(ListKeysRequest request) {
+
+        return listKeysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListKeysResult> listKeysAsync(ListKeysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMapsResult> listMapsAsync(ListMapsRequest request) {
 
         return listMapsAsync(request, null);
@@ -662,6 +714,19 @@ public class AbstractAmazonLocationAsync extends AbstractAmazonLocation implemen
     @Override
     public java.util.concurrent.Future<UpdateGeofenceCollectionResult> updateGeofenceCollectionAsync(UpdateGeofenceCollectionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateGeofenceCollectionRequest, UpdateGeofenceCollectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyResult> updateKeyAsync(UpdateKeyRequest request) {
+
+        return updateKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateKeyResult> updateKeyAsync(UpdateKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateKeyRequest, UpdateKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

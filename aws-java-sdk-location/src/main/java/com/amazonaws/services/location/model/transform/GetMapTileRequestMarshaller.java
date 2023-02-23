@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetMapTileRequestMarshaller {
 
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> MAPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("MapName").build();
     private static final MarshallingInfo<String> X_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -52,6 +54,7 @@ public class GetMapTileRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(getMapTileRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(getMapTileRequest.getMapName(), MAPNAME_BINDING);
             protocolMarshaller.marshall(getMapTileRequest.getX(), X_BINDING);
             protocolMarshaller.marshall(getMapTileRequest.getY(), Y_BINDING);

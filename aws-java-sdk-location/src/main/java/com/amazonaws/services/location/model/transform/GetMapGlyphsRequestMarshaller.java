@@ -31,6 +31,8 @@ public class GetMapGlyphsRequestMarshaller {
             .marshallLocationName("FontStack").build();
     private static final MarshallingInfo<String> FONTUNICODERANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("FontUnicodeRange").build();
+    private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("key").build();
     private static final MarshallingInfo<String> MAPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("MapName").build();
 
@@ -52,6 +54,7 @@ public class GetMapGlyphsRequestMarshaller {
         try {
             protocolMarshaller.marshall(getMapGlyphsRequest.getFontStack(), FONTSTACK_BINDING);
             protocolMarshaller.marshall(getMapGlyphsRequest.getFontUnicodeRange(), FONTUNICODERANGE_BINDING);
+            protocolMarshaller.marshall(getMapGlyphsRequest.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(getMapGlyphsRequest.getMapName(), MAPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

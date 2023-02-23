@@ -127,6 +127,13 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String fontUnicodeRange;
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     */
+    private String key;
+    /**
+     * <p>
      * The map resource associated with the glyph ﬁle.
      * </p>
      */
@@ -746,6 +753,52 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     */
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @return The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *         key</a> to authorize the request.
+     */
+
+    public String getKey() {
+        return this.key;
+    }
+
+    /**
+     * <p>
+     * The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a>
+     * to authorize the request.
+     * </p>
+     * 
+     * @param key
+     *        The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+     *        key</a> to authorize the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMapGlyphsRequest withKey(String key) {
+        setKey(key);
+        return this;
+    }
+
+    /**
+     * <p>
      * The map resource associated with the glyph ﬁle.
      * </p>
      * 
@@ -800,6 +853,8 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("FontStack: ").append(getFontStack()).append(",");
         if (getFontUnicodeRange() != null)
             sb.append("FontUnicodeRange: ").append(getFontUnicodeRange()).append(",");
+        if (getKey() != null)
+            sb.append("Key: ").append("***Sensitive Data Redacted***").append(",");
         if (getMapName() != null)
             sb.append("MapName: ").append(getMapName());
         sb.append("}");
@@ -824,6 +879,10 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getFontUnicodeRange() != null && other.getFontUnicodeRange().equals(this.getFontUnicodeRange()) == false)
             return false;
+        if (other.getKey() == null ^ this.getKey() == null)
+            return false;
+        if (other.getKey() != null && other.getKey().equals(this.getKey()) == false)
+            return false;
         if (other.getMapName() == null ^ this.getMapName() == null)
             return false;
         if (other.getMapName() != null && other.getMapName().equals(this.getMapName()) == false)
@@ -838,6 +897,7 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
         hashCode = prime * hashCode + ((getFontStack() == null) ? 0 : getFontStack().hashCode());
         hashCode = prime * hashCode + ((getFontUnicodeRange() == null) ? 0 : getFontUnicodeRange().hashCode());
+        hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode());
         hashCode = prime * hashCode + ((getMapName() == null) ? 0 : getMapName().hashCode());
         return hashCode;
     }

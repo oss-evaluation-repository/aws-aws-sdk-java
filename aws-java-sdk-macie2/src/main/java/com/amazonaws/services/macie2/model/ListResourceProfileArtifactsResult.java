@@ -25,7 +25,13 @@ public class ListResourceProfileArtifactsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     * An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.
+     * </p>
+     * <p>
+     * If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie
+     * then populates any remaining items in the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * </p>
      */
     private java.util.List<ResourceProfileArtifact> artifacts;
@@ -39,10 +45,21 @@ public class ListResourceProfileArtifactsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     * An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.
+     * </p>
+     * <p>
+     * If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie
+     * then populates any remaining items in the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * </p>
      * 
-     * @return An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     * @return An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+     *         <p>
+     *         If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value
+     *         for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not
+     *         sensitive). Macie then populates any remaining items in the array with information about objects where
+     *         the value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      */
 
     public java.util.List<ResourceProfileArtifact> getArtifacts() {
@@ -51,11 +68,22 @@ public class ListResourceProfileArtifactsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     * An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.
+     * </p>
+     * <p>
+     * If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie
+     * then populates any remaining items in the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * </p>
      * 
      * @param artifacts
-     *        An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     *        An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+     *        <p>
+     *        If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value
+     *        for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not
+     *        sensitive). Macie then populates any remaining items in the array with information about objects where the
+     *        value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      */
 
     public void setArtifacts(java.util.Collection<ResourceProfileArtifact> artifacts) {
@@ -69,7 +97,13 @@ public class ListResourceProfileArtifactsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     * An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.
+     * </p>
+     * <p>
+     * If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie
+     * then populates any remaining items in the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +112,12 @@ public class ListResourceProfileArtifactsResult extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param artifacts
-     *        An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     *        An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+     *        <p>
+     *        If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value
+     *        for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not
+     *        sensitive). Macie then populates any remaining items in the array with information about objects where the
+     *        value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +133,22 @@ public class ListResourceProfileArtifactsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     * An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.
+     * </p>
+     * <p>
+     * If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value for the
+     * ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not sensitive). Macie
+     * then populates any remaining items in the array with information about objects where the value for the
+     * ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * </p>
      * 
      * @param artifacts
-     *        An array of objects, one for each S3 object that Amazon Macie selected for analysis.
+     *        An array of objects, one for each of 1-100 S3 objects that Amazon Macie selected for analysis.</p>
+     *        <p>
+     *        If Macie has analyzed more than 100 objects in the bucket, Macie populates the array based on the value
+     *        for the ResourceProfileArtifact.sensitive field for an object: true (sensitive), followed by false (not
+     *        sensitive). Macie then populates any remaining items in the array with information about objects where the
+     *        value for the ResourceProfileArtifact.classificationResultStatus field is SKIPPED.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,7 +26,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -59,8 +59,8 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     private String description;
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      */
     private String kmsKeyId;
@@ -96,7 +96,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -108,7 +108,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS. </p>
+     *        resource across all Amazon Web Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -124,7 +124,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -135,7 +135,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *         resource across all AWS. </p>
+     *         resource across all Amazon Web Services. </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -151,7 +151,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource
-     * across all AWS.
+     * across all Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -163,7 +163,7 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
      * 
      * @param collectionArn
      *        The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a
-     *        resource across all AWS. </p>
+     *        resource across all Amazon Web Services. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -312,14 +312,14 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a> assigned to the Amazon Location resource
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a> assigned to the Amazon Location resource
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -328,13 +328,13 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      * 
      * @return A key identifier for an <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *         key</a> assigned to the Amazon Location resource
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *         customer managed key</a> assigned to the Amazon Location resource
      */
 
     public String getKmsKeyId() {
@@ -343,14 +343,14 @@ public class DescribeGeofenceCollectionResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a> assigned to the Amazon Location resource
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a> assigned to the Amazon Location resource
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

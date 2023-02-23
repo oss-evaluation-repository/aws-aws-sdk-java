@@ -660,14 +660,61 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
-     * location data providers.
+     * Creates an API key resource in your Amazon Web Services account, which lets you grant <code>geo:GetMap*</code>
+     * actions for Amazon Location Map resources to the API key bearer.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createKeyRequest
+     * @return A Java Future containing the result of the CreateKey operation returned by the service.
+     * @sample AmazonLocationAsync.CreateKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeyResult> createKeyAsync(CreateKeyRequest createKeyRequest);
+
+    /**
+     * <p>
+     * Creates an API key resource in your Amazon Web Services account, which lets you grant <code>geo:GetMap*</code>
+     * actions for Amazon Location Map resources to the API key bearer.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param createKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateKey operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.CreateKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeyResult> createKeyAsync(CreateKeyRequest createKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateKeyRequest, CreateKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a map resource in your Amazon Web Services account, which provides map tiles of different styles sourced
+     * from global location data providers.
      * </p>
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
      * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -681,14 +728,14 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a map resource in your AWS account, which provides map tiles of different styles sourced from global
-     * location data providers.
+     * Creates a map resource in your Amazon Web Services account, which provides map tiles of different styles sourced
+     * from global location data providers.
      * </p>
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
      * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -707,16 +754,16 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a place index resource in your AWS account. Use a place index resource to geocode addresses and other
-     * text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by
-     * using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the
-     * <code>SearchPlaceIndexForSuggestions</code> operation.
+     * Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode
+     * addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode
+     * coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using
+     * the <code>SearchPlaceIndexForSuggestions</code> operation.
      * </p>
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
      * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -730,16 +777,16 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a place index resource in your AWS account. Use a place index resource to geocode addresses and other
-     * text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by
-     * using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the
-     * <code>SearchPlaceIndexForSuggestions</code> operation.
+     * Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode
+     * addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode
+     * coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using
+     * the <code>SearchPlaceIndexForSuggestions</code> operation.
      * </p>
      * <note>
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
      * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -758,7 +805,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a route calculator resource in your AWS account.
+     * Creates a route calculator resource in your Amazon Web Services account.
      * </p>
      * <p>
      * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
@@ -768,7 +815,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
      * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -782,7 +829,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a route calculator resource in your AWS account.
+     * Creates a route calculator resource in your Amazon Web Services account.
      * </p>
      * <p>
      * You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A
@@ -792,7 +839,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <p>
      * If your application is tracking or routing assets you use in your business, such as delivery vehicles or
      * employees, you must not use Esri as your geolocation provider. See section 82 of the <a
-     * href="http://aws.amazon.com/service-terms">AWS service terms</a> for more details.
+     * href="http://aws.amazon.com/service-terms">Amazon Web Services service terms</a> for more details.
      * </p>
      * </note>
      * 
@@ -811,8 +858,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a tracker resource in your AWS account, which lets you retrieve current and historical location of
-     * devices.
+     * Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical
+     * location of devices.
      * </p>
      * 
      * @param createTrackerRequest
@@ -825,8 +872,8 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Creates a tracker resource in your AWS account, which lets you retrieve current and historical location of
-     * devices.
+     * Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical
+     * location of devices.
      * </p>
      * 
      * @param createTrackerRequest
@@ -844,7 +891,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a geofence collection from your AWS account.
+     * Deletes a geofence collection from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -863,7 +910,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a geofence collection from your AWS account.
+     * Deletes a geofence collection from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -887,7 +934,38 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a map resource from your AWS account.
+     * Deletes the specified API key. The API key must have been deactivated more than 90 days previously.
+     * </p>
+     * 
+     * @param deleteKeyRequest
+     * @return A Java Future containing the result of the DeleteKey operation returned by the service.
+     * @sample AmazonLocationAsync.DeleteKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeyResult> deleteKeyAsync(DeleteKeyRequest deleteKeyRequest);
+
+    /**
+     * <p>
+     * Deletes the specified API key. The API key must have been deactivated more than 90 days previously.
+     * </p>
+     * 
+     * @param deleteKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKey operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.DeleteKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeyResult> deleteKeyAsync(DeleteKeyRequest deleteKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeyRequest, DeleteKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a map resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -906,7 +984,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a map resource from your AWS account.
+     * Deletes a map resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -930,7 +1008,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a place index resource from your AWS account.
+     * Deletes a place index resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -948,7 +1026,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a place index resource from your AWS account.
+     * Deletes a place index resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -971,7 +1049,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a route calculator resource from your AWS account.
+     * Deletes a route calculator resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -989,7 +1067,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a route calculator resource from your AWS account.
+     * Deletes a route calculator resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -1012,7 +1090,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a tracker resource from your AWS account.
+     * Deletes a tracker resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -1031,7 +1109,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Deletes a tracker resource from your AWS account.
+     * Deletes a tracker resource from your Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -1085,6 +1163,51 @@ public interface AmazonLocationAsync extends AmazonLocation {
     java.util.concurrent.Future<DescribeGeofenceCollectionResult> describeGeofenceCollectionAsync(
             DescribeGeofenceCollectionRequest describeGeofenceCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeGeofenceCollectionRequest, DescribeGeofenceCollectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the API key resource details.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param describeKeyRequest
+     * @return A Java Future containing the result of the DescribeKey operation returned by the service.
+     * @sample AmazonLocationAsync.DescribeKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(DescribeKeyRequest describeKeyRequest);
+
+    /**
+     * <p>
+     * Retrieves the API key resource details.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param describeKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeKey operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.DescribeKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKeyResult> describeKeyAsync(DescribeKeyRequest describeKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeKeyRequest, DescribeKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1528,12 +1651,12 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <ul>
      * <li>
      * <p>
-     * Customer AWS account
+     * Customer Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Region
+     * Amazon Web Services Region
      * </p>
      * </li>
      * <li>
@@ -1564,12 +1687,12 @@ public interface AmazonLocationAsync extends AmazonLocation {
      * <ul>
      * <li>
      * <p>
-     * Customer AWS account
+     * Customer Amazon Web Services account
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS Region
+     * Amazon Web Services Region
      * </p>
      * </li>
      * <li>
@@ -1626,7 +1749,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists geofence collections in your AWS account.
+     * Lists geofence collections in your Amazon Web Services account.
      * </p>
      * 
      * @param listGeofenceCollectionsRequest
@@ -1639,7 +1762,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists geofence collections in your AWS account.
+     * Lists geofence collections in your Amazon Web Services account.
      * </p>
      * 
      * @param listGeofenceCollectionsRequest
@@ -1688,7 +1811,52 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists map resources in your AWS account.
+     * Lists API key resources in your Amazon Web Services account.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param listKeysRequest
+     * @return A Java Future containing the result of the ListKeys operation returned by the service.
+     * @sample AmazonLocationAsync.ListKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListKeysResult> listKeysAsync(ListKeysRequest listKeysRequest);
+
+    /**
+     * <p>
+     * Lists API key resources in your Amazon Web Services account.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param listKeysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListKeys operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.ListKeys
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListKeysResult> listKeysAsync(ListKeysRequest listKeysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListKeysRequest, ListKeysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists map resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listMapsRequest
@@ -1701,7 +1869,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists map resources in your AWS account.
+     * Lists map resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listMapsRequest
@@ -1719,7 +1887,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists place index resources in your AWS account.
+     * Lists place index resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -1732,7 +1900,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists place index resources in your AWS account.
+     * Lists place index resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listPlaceIndexesRequest
@@ -1750,7 +1918,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists route calculator resources in your AWS account.
+     * Lists route calculator resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listRouteCalculatorsRequest
@@ -1763,7 +1931,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists route calculator resources in your AWS account.
+     * Lists route calculator resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listRouteCalculatorsRequest
@@ -1843,7 +2011,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists tracker resources in your AWS account.
+     * Lists tracker resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listTrackersRequest
@@ -1856,7 +2024,7 @@ public interface AmazonLocationAsync extends AmazonLocation {
 
     /**
      * <p>
-     * Lists tracker resources in your AWS account.
+     * Lists tracker resources in your Amazon Web Services account.
      * </p>
      * 
      * @param listTrackersRequest
@@ -2176,6 +2344,51 @@ public interface AmazonLocationAsync extends AmazonLocation {
      */
     java.util.concurrent.Future<UpdateGeofenceCollectionResult> updateGeofenceCollectionAsync(UpdateGeofenceCollectionRequest updateGeofenceCollectionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateGeofenceCollectionRequest, UpdateGeofenceCollectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified properties of a given API key resource.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param updateKeyRequest
+     * @return A Java Future containing the result of the UpdateKey operation returned by the service.
+     * @sample AmazonLocationAsync.UpdateKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateKeyResult> updateKeyAsync(UpdateKeyRequest updateKeyRequest);
+
+    /**
+     * <p>
+     * Updates the specified properties of a given API key resource.
+     * </p>
+     * <important>
+     * <p>
+     * The API keys feature is in preview. We may add, change, or remove features before announcing general
+     * availability. For more information, see <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using API keys</a>.
+     * </p>
+     * </important>
+     * 
+     * @param updateKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateKey operation returned by the service.
+     * @sample AmazonLocationAsyncHandler.UpdateKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateKeyResult> updateKeyAsync(UpdateKeyRequest updateKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateKeyRequest, UpdateKeyResult> asyncHandler);
 
     /**
      * <p>

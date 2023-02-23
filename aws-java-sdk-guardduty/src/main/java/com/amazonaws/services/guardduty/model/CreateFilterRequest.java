@@ -40,8 +40,10 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String name;
     /**
      * <p>
-     * The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     * whitespace. The new line character is considered to be an invalid input for description.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>, <code>\r</code>,
+     * <code>_</code>, and whitespace.
      * </p>
      */
     private String description;
@@ -74,11 +76,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * region
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * confidence
      * </p>
      * </li>
      * <li>
@@ -328,15 +325,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
-     * </p>
-     * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * service.resourceRole
      * </p>
      * </li>
@@ -463,13 +451,17 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     * whitespace. The new line character is considered to be an invalid input for description.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>, <code>\r</code>,
+     * <code>_</code>, and whitespace.
      * </p>
      * 
      * @param description
-     *        The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     *        whitespace. The new line character is considered to be an invalid input for description.
+     *        The description of the filter. Valid characters include alphanumeric characters, and special characters
+     *        such as <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>,
+     *        <code>( )</code>, <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>,
+     *        <code>\r</code>, <code>_</code>, and whitespace.
      */
 
     public void setDescription(String description) {
@@ -478,12 +470,16 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     * whitespace. The new line character is considered to be an invalid input for description.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>, <code>\r</code>,
+     * <code>_</code>, and whitespace.
      * </p>
      * 
-     * @return The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     *         whitespace. The new line character is considered to be an invalid input for description.
+     * @return The description of the filter. Valid characters include alphanumeric characters, and special characters
+     *         such as <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>,
+     *         <code>( )</code>, <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>,
+     *         <code>\r</code>, <code>_</code>, and whitespace.
      */
 
     public String getDescription() {
@@ -492,13 +488,17 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     * whitespace. The new line character is considered to be an invalid input for description.
+     * The description of the filter. Valid characters include alphanumeric characters, and special characters such as
+     * <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>, <code>( )</code>,
+     * <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>, <code>\r</code>,
+     * <code>_</code>, and whitespace.
      * </p>
      * 
      * @param description
-     *        The description of the filter. Valid special characters include period (.), underscore (_), dash (-), and
-     *        whitespace. The new line character is considered to be an invalid input for description.
+     *        The description of the filter. Valid characters include alphanumeric characters, and special characters
+     *        such as <code>-</code>, <code>.</code>, <code>:</code>, <code>{ }</code>, <code>[ ]</code>,
+     *        <code>( )</code>, <code>/</code>, <code>\t</code>, <code>\n</code>, <code>\x0B</code>, <code>\f</code>,
+     *        <code>\r</code>, <code>_</code>, and whitespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,11 +632,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * confidence
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * id
      * </p>
      * </li>
@@ -882,15 +877,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
-     * </p>
-     * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * service.resourceRole
      * </p>
      * </li>
@@ -929,11 +915,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        region
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        confidence
      *        </p>
      *        </li>
      *        <li>
@@ -1183,15 +1164,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        service.archived
-     *        </p>
-     *        <p>
-     *        When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only
-     *        unarchived findings are listed. When this attribute is not set, all existing findings are listed.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        service.resourceRole
      *        </p>
      *        </li>
@@ -1236,11 +1208,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * region
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * confidence
      * </p>
      * </li>
      * <li>
@@ -1490,15 +1457,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
-     * </p>
-     * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * service.resourceRole
      * </p>
      * </li>
@@ -1536,11 +1494,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         region
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         confidence
      *         </p>
      *         </li>
      *         <li>
@@ -1790,15 +1743,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         service.archived
-     *         </p>
-     *         <p>
-     *         When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only
-     *         unarchived findings are listed. When this attribute is not set, all existing findings are listed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         service.resourceRole
      *         </p>
      *         </li>
@@ -1843,11 +1787,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <li>
      * <p>
      * region
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * confidence
      * </p>
      * </li>
      * <li>
@@ -2097,15 +2036,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * service.archived
-     * </p>
-     * <p>
-     * When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only unarchived
-     * findings are listed. When this attribute is not set, all existing findings are listed.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * service.resourceRole
      * </p>
      * </li>
@@ -2144,11 +2074,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        region
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        confidence
      *        </p>
      *        </li>
      *        <li>
@@ -2394,15 +2319,6 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        resource.s3BucketDetails.type
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        service.archived
-     *        </p>
-     *        <p>
-     *        When this attribute is set to TRUE, only archived findings are listed. When it's set to FALSE, only
-     *        unarchived findings are listed. When this attribute is not set, all existing findings are listed.
      *        </p>
      *        </li>
      *        <li>

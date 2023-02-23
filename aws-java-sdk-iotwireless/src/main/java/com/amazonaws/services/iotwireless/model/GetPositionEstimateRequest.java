@@ -55,7 +55,7 @@ public class GetPositionEstimateRequest extends com.amazonaws.AmazonWebServiceRe
     private Gnss gnss;
     /**
      * <p>
-     * Optional information that specifies the time when the position information will be resolved. It uses the UNIX
+     * Optional information that specifies the time when the position information will be resolved. It uses the Unix
      * timestamp format. If not specified, the time at which the request was received will be used.
      * </p>
      */
@@ -279,13 +279,13 @@ public class GetPositionEstimateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Optional information that specifies the time when the position information will be resolved. It uses the UNIX
+     * Optional information that specifies the time when the position information will be resolved. It uses the Unix
      * timestamp format. If not specified, the time at which the request was received will be used.
      * </p>
      * 
      * @param timestamp
      *        Optional information that specifies the time when the position information will be resolved. It uses the
-     *        UNIX timestamp format. If not specified, the time at which the request was received will be used.
+     *        Unix timestamp format. If not specified, the time at which the request was received will be used.
      */
 
     public void setTimestamp(java.util.Date timestamp) {
@@ -294,12 +294,12 @@ public class GetPositionEstimateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Optional information that specifies the time when the position information will be resolved. It uses the UNIX
+     * Optional information that specifies the time when the position information will be resolved. It uses the Unix
      * timestamp format. If not specified, the time at which the request was received will be used.
      * </p>
      * 
      * @return Optional information that specifies the time when the position information will be resolved. It uses the
-     *         UNIX timestamp format. If not specified, the time at which the request was received will be used.
+     *         Unix timestamp format. If not specified, the time at which the request was received will be used.
      */
 
     public java.util.Date getTimestamp() {
@@ -308,13 +308,13 @@ public class GetPositionEstimateRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Optional information that specifies the time when the position information will be resolved. It uses the UNIX
+     * Optional information that specifies the time when the position information will be resolved. It uses the Unix
      * timestamp format. If not specified, the time at which the request was received will be used.
      * </p>
      * 
      * @param timestamp
      *        Optional information that specifies the time when the position information will be resolved. It uses the
-     *        UNIX timestamp format. If not specified, the time at which the request was received will be used.
+     *        Unix timestamp format. If not specified, the time at which the request was received will be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

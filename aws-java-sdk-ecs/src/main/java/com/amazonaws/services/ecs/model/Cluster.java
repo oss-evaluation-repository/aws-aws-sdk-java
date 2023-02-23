@@ -220,8 +220,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     * disabled for a cluster.
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a
+     * cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterSetting> settings;
@@ -1703,12 +1703,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     * disabled for a cluster.
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a
+     * cluster.
      * </p>
      * 
-     * @return The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled
-     *         or disabled for a cluster.
+     * @return The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off
+     *         for a cluster.
      */
 
     public java.util.List<ClusterSetting> getSettings() {
@@ -1720,13 +1720,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     * disabled for a cluster.
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a
+     * cluster.
      * </p>
      * 
      * @param settings
-     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     *        disabled for a cluster.
+     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off
+     *        for a cluster.
      */
 
     public void setSettings(java.util.Collection<ClusterSetting> settings) {
@@ -1740,8 +1740,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     * disabled for a cluster.
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a
+     * cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1750,8 +1750,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param settings
-     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     *        disabled for a cluster.
+     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off
+     *        for a cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1767,13 +1767,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     * disabled for a cluster.
+     * The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off for a
+     * cluster.
      * </p>
      * 
      * @param settings
-     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is enabled or
-     *        disabled for a cluster.
+     *        The settings for the cluster. This parameter indicates whether CloudWatch Container Insights is on or off
+     *        for a cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

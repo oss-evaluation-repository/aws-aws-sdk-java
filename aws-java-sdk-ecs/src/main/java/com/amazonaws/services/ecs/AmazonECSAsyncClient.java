@@ -590,6 +590,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTaskDefinitionsResult> deleteTaskDefinitionsAsync(DeleteTaskDefinitionsRequest request) {
+
+        return deleteTaskDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskDefinitionsResult> deleteTaskDefinitionsAsync(final DeleteTaskDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTaskDefinitionsRequest, DeleteTaskDefinitionsResult> asyncHandler) {
+        final DeleteTaskDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTaskDefinitionsResult>() {
+            @Override
+            public DeleteTaskDefinitionsResult call() throws Exception {
+                DeleteTaskDefinitionsResult result = null;
+
+                try {
+                    result = executeDeleteTaskDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTaskSetResult> deleteTaskSetAsync(DeleteTaskSetRequest request) {
 
         return deleteTaskSetAsync(request, null);

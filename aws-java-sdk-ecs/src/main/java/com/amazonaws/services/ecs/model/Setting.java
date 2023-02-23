@@ -35,14 +35,14 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      */
     private String principalArn;
@@ -108,11 +108,11 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      * 
      * @param value
-     *        Determines whether the account setting is enabled or disabled for the specified resource.
+     *        Determines whether the account setting is on or off for the specified resource.
      */
 
     public void setValue(String value) {
@@ -121,10 +121,10 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      * 
-     * @return Determines whether the account setting is enabled or disabled for the specified resource.
+     * @return Determines whether the account setting is on or off for the specified resource.
      */
 
     public String getValue() {
@@ -133,11 +133,11 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines whether the account setting is enabled or disabled for the specified resource.
+     * Determines whether the account setting is on or off for the specified resource.
      * </p>
      * 
      * @param value
-     *        Determines whether the account setting is enabled or disabled for the specified resource.
+     *        Determines whether the account setting is on or off for the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,12 +148,12 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
+     *        The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the
      *        authenticated user is assumed.
      */
 
@@ -163,12 +163,12 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      * 
-     * @return The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *         the authenticated user is assumed.
+     * @return The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the
+     *         authenticated user is assumed.
      */
 
     public String getPrincipalArn() {
@@ -177,12 +177,12 @@ public class Setting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
-     * authenticated user is assumed.
+     * The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the authenticated
+     * user is assumed.
      * </p>
      * 
      * @param principalArn
-     *        The ARN of the principal. It can be an IAM user, IAM role, or the root user. If this field is omitted, the
+     *        The ARN of the principal. It can be a user, role, or the root user. If this field is omitted, the
      *        authenticated user is assumed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

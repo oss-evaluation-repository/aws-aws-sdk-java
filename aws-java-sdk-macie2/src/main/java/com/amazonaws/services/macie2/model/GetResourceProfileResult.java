@@ -33,9 +33,9 @@ public class GetResourceProfileResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.Date profileUpdatedAt;
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in
-     * the bucket and the amount of sensitive data that Macie has found in the bucket.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By
+     * default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the
+     * bucket and the amount of sensitive data that Macie has found in the bucket.
      * </p>
      */
     private Integer sensitivityScore;
@@ -108,15 +108,15 @@ public class GetResourceProfileResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in
-     * the bucket and the amount of sensitive data that Macie has found in the bucket.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By
+     * default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the
+     * bucket and the amount of sensitive data that Macie has found in the bucket.
      * </p>
      * 
      * @param sensitivityScore
-     *        The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100
-     *        (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon
-     *        Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.
+     *        The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *        By default, this score is calculated automatically based on the amount of data that Amazon Macie has
+     *        analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.
      */
 
     public void setSensitivityScore(Integer sensitivityScore) {
@@ -125,14 +125,14 @@ public class GetResourceProfileResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in
-     * the bucket and the amount of sensitive data that Macie has found in the bucket.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By
+     * default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the
+     * bucket and the amount of sensitive data that Macie has found in the bucket.
      * </p>
      * 
-     * @return The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100
-     *         (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon
-     *         Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.
+     * @return The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *         By default, this score is calculated automatically based on the amount of data that Amazon Macie has
+     *         analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.
      */
 
     public Integer getSensitivityScore() {
@@ -141,15 +141,15 @@ public class GetResourceProfileResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * By default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in
-     * the bucket and the amount of sensitive data that Macie has found in the bucket.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). By
+     * default, this score is calculated automatically based on the amount of data that Amazon Macie has analyzed in the
+     * bucket and the amount of sensitive data that Macie has found in the bucket.
      * </p>
      * 
      * @param sensitivityScore
-     *        The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100
-     *        (sensitive). By default, this score is calculated automatically based on the amount of data that Amazon
-     *        Macie has analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.
+     *        The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *        By default, this score is calculated automatically based on the amount of data that Amazon Macie has
+     *        analyzed in the bucket and the amount of sensitive data that Macie has found in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

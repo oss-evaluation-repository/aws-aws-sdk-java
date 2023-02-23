@@ -33,8 +33,8 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String description;
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      * </p>
      */
     private String kmsKeyId;
@@ -205,14 +205,14 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -221,13 +221,13 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      * </p>
      * 
      * @return A key identifier for an <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *         key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *         customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      */
 
     public String getKmsKeyId() {
@@ -236,14 +236,14 @@ public class CreateTrackerRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

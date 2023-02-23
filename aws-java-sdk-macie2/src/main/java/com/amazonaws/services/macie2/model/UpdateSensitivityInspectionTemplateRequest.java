@@ -27,7 +27,7 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A custom description of the template.
+     * A custom description of the template. The description can contain as many as 200 characters.
      * </p>
      */
     private String description;
@@ -57,11 +57,11 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A custom description of the template.
+     * A custom description of the template. The description can contain as many as 200 characters.
      * </p>
      * 
      * @param description
-     *        A custom description of the template.
+     *        A custom description of the template. The description can contain as many as 200 characters.
      */
 
     public void setDescription(String description) {
@@ -70,10 +70,10 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A custom description of the template.
+     * A custom description of the template. The description can contain as many as 200 characters.
      * </p>
      * 
-     * @return A custom description of the template.
+     * @return A custom description of the template. The description can contain as many as 200 characters.
      */
 
     public String getDescription() {
@@ -82,11 +82,11 @@ public class UpdateSensitivityInspectionTemplateRequest extends com.amazonaws.Am
 
     /**
      * <p>
-     * A custom description of the template.
+     * A custom description of the template. The description can contain as many as 200 characters.
      * </p>
      * 
      * @param description
-     *        A custom description of the template.
+     *        A custom description of the template. The description can contain as many as 200 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

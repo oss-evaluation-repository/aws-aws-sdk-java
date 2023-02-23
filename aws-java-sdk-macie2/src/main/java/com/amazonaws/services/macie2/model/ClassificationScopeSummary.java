@@ -37,7 +37,7 @@ public class ClassificationScopeSummary implements Serializable, Cloneable, Stru
     private String id;
     /**
      * <p>
-     * The name of the classification scope.
+     * The name of the classification scope: automated-sensitive-data-discovery.
      * </p>
      */
     private String name;
@@ -84,11 +84,11 @@ public class ClassificationScopeSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the classification scope.
+     * The name of the classification scope: automated-sensitive-data-discovery.
      * </p>
      * 
      * @param name
-     *        The name of the classification scope.
+     *        The name of the classification scope: automated-sensitive-data-discovery.
      */
 
     public void setName(String name) {
@@ -97,10 +97,10 @@ public class ClassificationScopeSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the classification scope.
+     * The name of the classification scope: automated-sensitive-data-discovery.
      * </p>
      * 
-     * @return The name of the classification scope.
+     * @return The name of the classification scope: automated-sensitive-data-discovery.
      */
 
     public String getName() {
@@ -109,11 +109,11 @@ public class ClassificationScopeSummary implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the classification scope.
+     * The name of the classification scope: automated-sensitive-data-discovery.
      * </p>
      * 
      * @param name
-     *        The name of the classification scope.
+     *        The name of the classification scope: automated-sensitive-data-discovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

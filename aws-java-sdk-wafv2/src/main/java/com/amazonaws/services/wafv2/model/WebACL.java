@@ -24,7 +24,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a
  * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one
  * or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon
- * API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool.
+ * API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, Amazon Cognito user pool, or an App
+ * Runner service.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL" target="_top">AWS API Documentation</a>

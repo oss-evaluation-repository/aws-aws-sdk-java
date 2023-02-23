@@ -46,10 +46,9 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
     private String value;
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
-     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
-     * authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies
+     * the account setting for all users, roles, and the root user of the account unless a user or role explicitly
+     * overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -219,10 +218,9 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
-     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
-     * authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies
+     * the account setting for all users, roles, and the root user of the account unless a user or role explicitly
+     * overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -232,10 +230,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
-     *        user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account
-     *        unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
-     *        changed only for the authenticated user.</p> <note>
+     *        The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it
+     *        modifies the account setting for all users, roles, and the root user of the account unless a user or role
+     *        explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     *        authenticated user.</p> <note>
      *        <p>
      *        Federated users assume the account setting of the root user and can't have explicit account settings set
      *        for them.
@@ -248,10 +246,9 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
-     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
-     * authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies
+     * the account setting for all users, roles, and the root user of the account unless a user or role explicitly
+     * overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -260,10 +257,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </note>
      * 
-     * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
-     *         user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account
-     *         unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
-     *         changed only for the authenticated user.</p> <note>
+     * @return The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it
+     *         modifies the account setting for all users, roles, and the root user of the account unless a user or role
+     *         explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     *         authenticated user.</p> <note>
      *         <p>
      *         Federated users assume the account setting of the root user and can't have explicit account settings set
      *         for them.
@@ -276,10 +273,9 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
-     * modifies the account setting for all IAM users, IAM roles, and the root user of the account unless an IAM user or
-     * role explicitly overrides these settings. If this field is omitted, the setting is changed only for the
-     * authenticated user.
+     * The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it modifies
+     * the account setting for all users, roles, and the root user of the account unless a user or role explicitly
+     * overrides these settings. If this field is omitted, the setting is changed only for the authenticated user.
      * </p>
      * <note>
      * <p>
@@ -289,10 +285,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param principalArn
-     *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
-     *        user, it modifies the account setting for all IAM users, IAM roles, and the root user of the account
-     *        unless an IAM user or role explicitly overrides these settings. If this field is omitted, the setting is
-     *        changed only for the authenticated user.</p> <note>
+     *        The ARN of the principal, which can be a user, role, or the root user. If you specify the root user, it
+     *        modifies the account setting for all users, roles, and the root user of the account unless a user or role
+     *        explicitly overrides these settings. If this field is omitted, the setting is changed only for the
+     *        authenticated user.</p> <note>
      *        <p>
      *        Federated users assume the account setting of the root user and can't have explicit account settings set
      *        for them.

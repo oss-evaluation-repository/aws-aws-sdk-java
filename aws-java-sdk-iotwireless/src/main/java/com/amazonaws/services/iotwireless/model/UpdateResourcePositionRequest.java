@@ -28,7 +28,7 @@ public class UpdateResourcePositionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The identifier of the resource for which position information is updated. It can be the wireless device ID or the
-     * wireless gateway ID depending on the resource type.
+     * wireless gateway ID, depending on the resource type.
      * </p>
      */
     private String resourceIdentifier;
@@ -51,12 +51,12 @@ public class UpdateResourcePositionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The identifier of the resource for which position information is updated. It can be the wireless device ID or the
-     * wireless gateway ID depending on the resource type.
+     * wireless gateway ID, depending on the resource type.
      * </p>
      * 
      * @param resourceIdentifier
      *        The identifier of the resource for which position information is updated. It can be the wireless device ID
-     *        or the wireless gateway ID depending on the resource type.
+     *        or the wireless gateway ID, depending on the resource type.
      */
 
     public void setResourceIdentifier(String resourceIdentifier) {
@@ -66,11 +66,11 @@ public class UpdateResourcePositionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The identifier of the resource for which position information is updated. It can be the wireless device ID or the
-     * wireless gateway ID depending on the resource type.
+     * wireless gateway ID, depending on the resource type.
      * </p>
      * 
      * @return The identifier of the resource for which position information is updated. It can be the wireless device
-     *         ID or the wireless gateway ID depending on the resource type.
+     *         ID or the wireless gateway ID, depending on the resource type.
      */
 
     public String getResourceIdentifier() {
@@ -80,12 +80,12 @@ public class UpdateResourcePositionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The identifier of the resource for which position information is updated. It can be the wireless device ID or the
-     * wireless gateway ID depending on the resource type.
+     * wireless gateway ID, depending on the resource type.
      * </p>
      * 
      * @param resourceIdentifier
      *        The identifier of the resource for which position information is updated. It can be the wireless device ID
-     *        or the wireless gateway ID depending on the resource type.
+     *        or the wireless gateway ID, depending on the resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

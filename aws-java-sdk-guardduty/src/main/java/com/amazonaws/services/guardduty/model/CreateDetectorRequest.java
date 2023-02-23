@@ -47,6 +47,11 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Describes which data sources will be enabled for the detector.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      */
     private DataSourceConfigurations dataSources;
     /**
@@ -211,9 +216,18 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Describes which data sources will be enabled for the detector.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param dataSources
-     *        Describes which data sources will be enabled for the detector.
+     *        Describes which data sources will be enabled for the detector.</p>
+     *        <p>
+     *        There might be regional differences because some data sources might not be available in all the Amazon Web
+     *        Services Regions where GuardDuty is presently supported. For more information, see <a
+     *        href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      */
 
     public void setDataSources(DataSourceConfigurations dataSources) {
@@ -224,8 +238,17 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Describes which data sources will be enabled for the detector.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
-     * @return Describes which data sources will be enabled for the detector.
+     * @return Describes which data sources will be enabled for the detector.</p>
+     *         <p>
+     *         There might be regional differences because some data sources might not be available in all the Amazon
+     *         Web Services Regions where GuardDuty is presently supported. For more information, see <a
+     *         href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      */
 
     public DataSourceConfigurations getDataSources() {
@@ -236,9 +259,18 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * Describes which data sources will be enabled for the detector.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param dataSources
-     *        Describes which data sources will be enabled for the detector.
+     *        Describes which data sources will be enabled for the detector.</p>
+     *        <p>
+     *        There might be regional differences because some data sources might not be available in all the Amazon Web
+     *        Services Regions where GuardDuty is presently supported. For more information, see <a
+     *        href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -51,7 +51,7 @@ public class Gnss implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional assistance position information, specified using latitude and longitude values in degrees. The
-     * co-ordinates are inside the WGS84 reference frame.
+     * coordinates are inside the WGS84 reference frame.
      * </p>
      */
     private java.util.List<Float> assistPosition;
@@ -205,11 +205,11 @@ public class Gnss implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional assistance position information, specified using latitude and longitude values in degrees. The
-     * co-ordinates are inside the WGS84 reference frame.
+     * coordinates are inside the WGS84 reference frame.
      * </p>
      * 
      * @return Optional assistance position information, specified using latitude and longitude values in degrees. The
-     *         co-ordinates are inside the WGS84 reference frame.
+     *         coordinates are inside the WGS84 reference frame.
      */
 
     public java.util.List<Float> getAssistPosition() {
@@ -219,12 +219,12 @@ public class Gnss implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional assistance position information, specified using latitude and longitude values in degrees. The
-     * co-ordinates are inside the WGS84 reference frame.
+     * coordinates are inside the WGS84 reference frame.
      * </p>
      * 
      * @param assistPosition
      *        Optional assistance position information, specified using latitude and longitude values in degrees. The
-     *        co-ordinates are inside the WGS84 reference frame.
+     *        coordinates are inside the WGS84 reference frame.
      */
 
     public void setAssistPosition(java.util.Collection<Float> assistPosition) {
@@ -239,7 +239,7 @@ public class Gnss implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional assistance position information, specified using latitude and longitude values in degrees. The
-     * co-ordinates are inside the WGS84 reference frame.
+     * coordinates are inside the WGS84 reference frame.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -249,7 +249,7 @@ public class Gnss implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param assistPosition
      *        Optional assistance position information, specified using latitude and longitude values in degrees. The
-     *        co-ordinates are inside the WGS84 reference frame.
+     *        coordinates are inside the WGS84 reference frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,12 +266,12 @@ public class Gnss implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Optional assistance position information, specified using latitude and longitude values in degrees. The
-     * co-ordinates are inside the WGS84 reference frame.
+     * coordinates are inside the WGS84 reference frame.
      * </p>
      * 
      * @param assistPosition
      *        Optional assistance position information, specified using latitude and longitude values in degrees. The
-     *        co-ordinates are inside the WGS84 reference frame.
+     *        coordinates are inside the WGS84 reference frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

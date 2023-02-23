@@ -32,6 +32,10 @@ public class GetMapStyleDescriptorResultJsonUnmarshaller implements Unmarshaller
         GetMapStyleDescriptorResult getMapStyleDescriptorResult = new GetMapStyleDescriptorResult();
 
         if (context.isStartOfDocument()) {
+            if (context.getHeader("Cache-Control") != null) {
+                context.setCurrentHeader("Cache-Control");
+                getMapStyleDescriptorResult.setCacheControl(context.getUnmarshaller(String.class).unmarshall(context));
+            }
             if (context.getHeader("Content-Type") != null) {
                 context.setCurrentHeader("Content-Type");
                 getMapStyleDescriptorResult.setContentType(context.getUnmarshaller(String.class).unmarshall(context));

@@ -26,7 +26,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -124,7 +124,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -136,7 +136,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * 
      * @param calculatorArn
      *        The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource
-     *        across AWS.</p>
+     *        across Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -152,7 +152,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -163,7 +163,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource
-     *         across AWS.</p>
+     *         across Amazon Web Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -179,7 +179,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource across
-     * AWS.
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -191,7 +191,7 @@ public class DescribeRouteCalculatorResult extends com.amazonaws.AmazonWebServic
      * 
      * @param calculatorArn
      *        The Amazon Resource Name (ARN) for the Route calculator resource. Use the ARN when you specify a resource
-     *        across AWS.</p>
+     *        across Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>

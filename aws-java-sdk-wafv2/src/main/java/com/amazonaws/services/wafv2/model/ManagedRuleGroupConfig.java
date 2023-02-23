@@ -96,13 +96,6 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      * ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution
      * responds to login requests.
      * </p>
-     * <note>
-     * <p>
-     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
-     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
-     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
-     * </p>
-     * </note>
      * <p>
      * This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and
      * provides additional feature configuration.
@@ -442,13 +435,6 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      * ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution
      * responds to login requests.
      * </p>
-     * <note>
-     * <p>
-     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
-     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
-     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
-     * </p>
-     * </note>
      * <p>
      * This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and
      * provides additional feature configuration.
@@ -465,14 +451,7 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      *        Additional configuration for using the account takeover prevention (ATP) managed rule group,
      *        <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group.
      *        For web ACLs that protect CloudFront distributions, use this to also provide the information about how
-     *        your distribution responds to login requests. </p> <note>
-     *        <p>
-     *        For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response
-     *        inspection through the APIs, but ATP response inspection will not be enabled. You can only use the
-     *        response inspection capabilities of the ATP managed rule group in web ACLs that protect CloudFront
-     *        distributions.
-     *        </p>
-     *        </note>
+     *        your distribution responds to login requests. </p>
      *        <p>
      *        This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and
      *        provides additional feature configuration.
@@ -496,13 +475,6 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      * ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution
      * responds to login requests.
      * </p>
-     * <note>
-     * <p>
-     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
-     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
-     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
-     * </p>
-     * </note>
      * <p>
      * This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and
      * provides additional feature configuration.
@@ -518,14 +490,7 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      * @return Additional configuration for using the account takeover prevention (ATP) managed rule group,
      *         <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group.
      *         For web ACLs that protect CloudFront distributions, use this to also provide the information about how
-     *         your distribution responds to login requests. </p> <note>
-     *         <p>
-     *         For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response
-     *         inspection through the APIs, but ATP response inspection will not be enabled. You can only use the
-     *         response inspection capabilities of the ATP managed rule group in web ACLs that protect CloudFront
-     *         distributions.
-     *         </p>
-     *         </note>
+     *         your distribution responds to login requests. </p>
      *         <p>
      *         This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code>
      *         and provides additional feature configuration.
@@ -549,13 +514,6 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      * ACLs that protect CloudFront distributions, use this to also provide the information about how your distribution
      * responds to login requests.
      * </p>
-     * <note>
-     * <p>
-     * For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response inspection
-     * through the APIs, but ATP response inspection will not be enabled. You can only use the response inspection
-     * capabilities of the ATP managed rule group in web ACLs that protect CloudFront distributions.
-     * </p>
-     * </note>
      * <p>
      * This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and
      * provides additional feature configuration.
@@ -572,14 +530,7 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      *        Additional configuration for using the account takeover prevention (ATP) managed rule group,
      *        <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information to the rule group.
      *        For web ACLs that protect CloudFront distributions, use this to also provide the information about how
-     *        your distribution responds to login requests. </p> <note>
-     *        <p>
-     *        For regional web ACLs in Region US East (N. Virginia) us-east-1, it's possible to configure response
-     *        inspection through the APIs, but ATP response inspection will not be enabled. You can only use the
-     *        response inspection capabilities of the ATP managed rule group in web ACLs that protect CloudFront
-     *        distributions.
-     *        </p>
-     *        </note>
+     *        your distribution responds to login requests. </p>
      *        <p>
      *        This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code> and
      *        provides additional feature configuration.

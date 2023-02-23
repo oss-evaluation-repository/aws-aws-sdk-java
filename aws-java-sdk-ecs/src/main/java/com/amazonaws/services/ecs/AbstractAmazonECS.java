@@ -89,6 +89,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public DeleteTaskDefinitionsResult deleteTaskDefinitions(DeleteTaskDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTaskSetResult deleteTaskSet(DeleteTaskSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

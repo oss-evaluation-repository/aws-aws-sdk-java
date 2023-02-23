@@ -20,10 +20,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your
- * account. If an error occurs when Macie attempts to retrieve and process metadata from Amazon S3 for the bucket and
- * the bucket's objects, the value for the versioning property is false and the value for most other properties is null.
- * Key exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause
- * of the error, refer to the errorCode and errorMessage values.
+ * account. By default, object count and storage size values include data for object parts that are the result of
+ * incomplete multipart uploads. For more information, see <a
+ * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How Macie monitors Amazon S3
+ * data security</a> in the <i>Amazon Macie User Guide</i>.
+ * </p>
+ * <p>
+ * If an error occurs when Macie attempts to retrieve and process metadata from Amazon S3 for the bucket or the bucket's
+ * objects, the value for the versioning property is false and the value for most other properties is null. Key
+ * exceptions are accountId, bucketArn, bucketCreatedAt, bucketName, lastUpdated, and region. To identify the cause of
+ * the error, refer to the errorCode and errorMessage values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketMetadata" target="_top">AWS API
@@ -77,8 +83,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private String bucketArn;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as edits to
-     * the bucket's policy were most recently made to the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      */
     private java.util.Date bucketCreatedAt;
@@ -109,10 +115,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      */
     private String errorCode;
@@ -133,15 +139,15 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private JobDetails jobDetails;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      */
     private java.util.Date lastAutomatedDiscoveryTime;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      */
@@ -154,8 +160,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private Long objectCount;
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      */
     private ObjectCountByEncryptionType objectCountByEncryptionType;
@@ -181,8 +187,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private ReplicationDetails replicationDetails;
     /**
      * <p>
-     * The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive). This
-     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      */
     private Integer sensitivityScore;
@@ -195,24 +201,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private BucketServerSideEncryption serverSideEncryption;
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an Amazon
+     * Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a CloudFront OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -221,6 +229,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      */
     private String sharedAccess;
     /**
@@ -613,13 +625,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as edits to
-     * the bucket's policy were most recently made to the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      * 
      * @param bucketCreatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as
-     *        edits to the bucket's policy were most recently made to the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *        indicate when changes such as edits to the bucket's policy were most recently made to the bucket.
      */
 
     public void setBucketCreatedAt(java.util.Date bucketCreatedAt) {
@@ -628,12 +640,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as edits to
-     * the bucket's policy were most recently made to the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as
-     *         edits to the bucket's policy were most recently made to the bucket.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *         indicate when changes such as edits to the bucket's policy were most recently made to the bucket.
      */
 
     public java.util.Date getBucketCreatedAt() {
@@ -642,13 +654,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as edits to
-     * the bucket's policy were most recently made to the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also indicate
+     * when changes such as edits to the bucket's policy were most recently made to the bucket.
      * </p>
      * 
      * @param bucketCreatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created, or changes such as
-     *        edits to the bucket's policy were most recently made to the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when the bucket was created. This value can also
+     *        indicate when changes such as edits to the bucket's policy were most recently made to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,17 +833,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -841,17 +853,16 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
-     * @return Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *         information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *         permission to retrieve the information. For example, the bucket has a restrictive bucket policy and
-     *         Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the
-     *         information.
+     * @return The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *         the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *         retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied
+     *         the request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -861,17 +872,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -883,17 +894,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -1003,15 +1014,15 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param lastAutomatedDiscoveryTime
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed
-     *        automated sensitive data discovery for the bucket. This value is null if automated sensitive data
-     *        discovery is currently disabled for your account.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
      */
 
     public void setLastAutomatedDiscoveryTime(java.util.Date lastAutomatedDiscoveryTime) {
@@ -1020,14 +1031,14 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed
-     *         automated sensitive data discovery for the bucket. This value is null if automated sensitive data
-     *         discovery is currently disabled for your account.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *         the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *         automated sensitive data discovery is currently disabled for your account.
      */
 
     public java.util.Date getLastAutomatedDiscoveryTime() {
@@ -1036,15 +1047,15 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param lastAutomatedDiscoveryTime
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed
-     *        automated sensitive data discovery for the bucket. This value is null if automated sensitive data
-     *        discovery is currently disabled for your account.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1055,13 +1066,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *        bucket and object metadata from Amazon S3 for the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *        or object metadata from Amazon S3 for the bucket.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -1070,12 +1081,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *         bucket and object metadata from Amazon S3 for the bucket.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *         or object metadata from Amazon S3 for the bucket.
      */
 
     public java.util.Date getLastUpdated() {
@@ -1084,13 +1095,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket or
      * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
-     *        bucket and object metadata from Amazon S3 for the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved bucket
+     *        or object metadata from Amazon S3 for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1141,13 +1152,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
-     *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     *        The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *        grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public void setObjectCountByEncryptionType(ObjectCountByEncryptionType objectCountByEncryptionType) {
@@ -1156,12 +1167,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
-     * @return The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *         a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * @return The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *         grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public ObjectCountByEncryptionType getObjectCountByEncryptionType() {
@@ -1170,13 +1181,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     * The total number of objects in the bucket, grouped by server-side encryption type. This includes a grouping that
+     * reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
-     *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
+     *        The total number of objects in the bucket, grouped by server-side encryption type. This includes a
+     *        grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1319,13 +1330,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive). This
-     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param sensitivityScore
-     *        The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     *        This value is null if automated sensitive data discovery is currently disabled for your account.
+     *        The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     *        value is null if automated sensitive data discovery is currently disabled for your account.
      */
 
     public void setSensitivityScore(Integer sensitivityScore) {
@@ -1334,12 +1345,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive). This
-     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      * 
-     * @return The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     *         This value is null if automated sensitive data discovery is currently disabled for your account.
+     * @return The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     *         value is null if automated sensitive data discovery is currently disabled for your account.
      */
 
     public Integer getSensitivityScore() {
@@ -1348,13 +1359,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive). This
-     * value is null if automated sensitive data discovery is currently disabled for your account.
+     * The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This value is
+     * null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param sensitivityScore
-     *        The sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     *        This value is null if automated sensitive data discovery is currently disabled for your account.
+     *        The sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     *        value is null if automated sensitive data discovery is currently disabled for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1411,24 +1422,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an Amazon
+     * Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a CloudFront OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1437,27 +1450,32 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
      * @param sharedAccess
-     *        <p>
-     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *        </p>
+     *        Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *        origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *        Macie organization.
+     *        EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an
+     *        Amazon Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     *        organization.
+     *        INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon
+     *        Macie organization. It isn't shared with a CloudFront OAI or OAC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *        NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
@@ -1466,6 +1484,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *        related accounts through Organizations or by Macie invitation.
      * @see SharedAccess
      */
 
@@ -1475,24 +1496,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an Amazon
+     * Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a CloudFront OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1501,26 +1524,31 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
-     * @return <p>
-     *         Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *         </p>
+     * @return Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *         origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *         Macie organization.
+     *         EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an
+     *         Amazon Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a
+     *         CloudFront OAC.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     *         organization.
+     *         INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your
+     *         Amazon Macie organization. It isn't shared with a CloudFront OAI or OAC.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *         NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *         CloudFront OAC.
      *         </p>
      *         </li>
      *         <li>
@@ -1529,6 +1557,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         <p>
+     *         An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *         related accounts through Organizations or by Macie invitation.
      * @see SharedAccess
      */
 
@@ -1538,24 +1569,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an Amazon
+     * Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a CloudFront OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1564,27 +1597,32 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
      * @param sharedAccess
-     *        <p>
-     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *        </p>
+     *        Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *        origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *        Macie organization.
+     *        EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an
+     *        Amazon Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     *        organization.
+     *        INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon
+     *        Macie organization. It isn't shared with a CloudFront OAI or OAC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *        NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
@@ -1593,6 +1631,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *        related accounts through Organizations or by Macie invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -1604,24 +1645,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
+     * Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront origin
+     * access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie
-     * organization.
+     * EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an Amazon
+     * Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a CloudFront OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     * organization.
+     * INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon Macie
+     * organization. It isn't shared with a CloudFront OAI or OAC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     * NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a CloudFront
+     * OAC.
      * </p>
      * </li>
      * <li>
@@ -1630,27 +1673,32 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related
+     * accounts through Organizations or by Macie invitation.
+     * </p>
      * 
      * @param sharedAccess
-     *        <p>
-     *        Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:
-     *        </p>
+     *        Specifies whether the bucket is shared with another Amazon Web Services account, an Amazon CloudFront
+     *        origin access identity (OAI), or a CloudFront origin access control (OAC). Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon
-     *        Macie organization.
+     *        EXTERNAL - The bucket is shared with one or more of the following or any combination of the following: an
+     *        Amazon Web Services account that isn't part of your Amazon Macie organization, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie
-     *        organization.
+     *        INTERNAL - The bucket is shared with one or more Amazon Web Services accounts that are part of your Amazon
+     *        Macie organization. It isn't shared with a CloudFront OAI or OAC.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.
+     *        NOT_SHARED - The bucket isn't shared with another Amazon Web Services account, a CloudFront OAI, or a
+     *        CloudFront OAC.
      *        </p>
      *        </li>
      *        <li>
@@ -1659,6 +1707,9 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        <p>
+     *        An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of
+     *        related accounts through Organizations or by Macie invitation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */

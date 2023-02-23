@@ -44,7 +44,7 @@ public class BucketStatisticsBySensitivity implements Serializable, Cloneable, S
     private SensitivityAggregations notClassified;
     /**
      * <p>
-     * The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     * The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      * </p>
      */
     private SensitivityAggregations notSensitive;
@@ -137,11 +137,11 @@ public class BucketStatisticsBySensitivity implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     * The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      * </p>
      * 
      * @param notSensitive
-     *        The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     *        The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      */
 
     public void setNotSensitive(SensitivityAggregations notSensitive) {
@@ -150,10 +150,10 @@ public class BucketStatisticsBySensitivity implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     * The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      * </p>
      * 
-     * @return The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     * @return The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      */
 
     public SensitivityAggregations getNotSensitive() {
@@ -162,11 +162,11 @@ public class BucketStatisticsBySensitivity implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     * The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      * </p>
      * 
      * @param notSensitive
-     *        The aggregated statistical data for all buckets that have a sensitivity score of 0-49.
+     *        The aggregated statistical data for all buckets that have a sensitivity score of 1-49.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

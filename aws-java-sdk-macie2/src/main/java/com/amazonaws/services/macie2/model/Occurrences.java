@@ -41,9 +41,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Cell> cells;
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT,
-     * or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and
-     * the position of the data on the specified line or lines.
+     * An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such
+     * as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
+     * sensitive data, and the position of the data on the specified line or lines.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
@@ -183,9 +183,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT,
-     * or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and
-     * the position of the data on the specified line or lines.
+     * An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such
+     * as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
+     * sensitive data, and the position of the data on the specified line or lines.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
@@ -194,9 +194,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * that contain sensitive data.
      * </p>
      * 
-     * @return An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an
-     *         HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
-     *         sensitive data, and the position of the data on the specified line or lines.</p>
+     * @return An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text
+     *         file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines
+     *         that contains the sensitive data, and the position of the data on the specified line or lines.</p>
      *         <p>
      *         This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
      *         are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a
@@ -210,9 +210,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT,
-     * or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and
-     * the position of the data on the specified line or lines.
+     * An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such
+     * as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
+     * sensitive data, and the position of the data on the specified line or lines.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
@@ -222,9 +222,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lineRanges
-     *        An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML,
-     *        TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
-     *        sensitive data, and the position of the data on the specified line or lines.</p>
+     *        An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text
+     *        file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines
+     *        that contains the sensitive data, and the position of the data on the specified line or lines.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
      *        are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a
@@ -243,9 +243,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT,
-     * or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and
-     * the position of the data on the specified line or lines.
+     * An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such
+     * as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
+     * sensitive data, and the position of the data on the specified line or lines.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
@@ -260,9 +260,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lineRanges
-     *        An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML,
-     *        TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
-     *        sensitive data, and the position of the data on the specified line or lines.</p>
+     *        An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text
+     *        file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines
+     *        that contains the sensitive data, and the position of the data on the specified line or lines.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
      *        are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a
@@ -283,9 +283,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT,
-     * or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and
-     * the position of the data on the specified line or lines.
+     * An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text file such
+     * as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
+     * sensitive data, and the position of the data on the specified line or lines.
      * </p>
      * <p>
      * This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the
@@ -295,9 +295,9 @@ public class Occurrences implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lineRanges
-     *        An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML,
-     *        TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the
-     *        sensitive data, and the position of the data on the specified line or lines.</p>
+     *        An array of objects, one for each occurrence of sensitive data in an email message or a non-binary text
+     *        file such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines
+     *        that contains the sensitive data, and the position of the data on the specified line or lines.</p>
      *        <p>
      *        This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions
      *        are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a

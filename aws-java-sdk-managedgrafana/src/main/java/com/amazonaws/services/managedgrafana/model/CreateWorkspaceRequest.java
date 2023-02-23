@@ -81,19 +81,24 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String organizationRoleName;
     /**
      * <p>
-     * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
-     * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
-     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
-     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
-     * type when creating a workspace in the CLI.
+     * When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you
+     * must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data
+     * sources and notification channels.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization that is not a delegated administrator account, and
-     * you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must
-     * choose <code>CUSTOMER_MANAGED</code>.
+     * You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use
+     * when accessing those datasources and notification channels.
      * </p>
+     * <p>
+     * The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in
+     * the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon
+     * Web Services CloudFormation.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
@@ -121,13 +126,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private VpcConfiguration vpcConfiguration;
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source in the workspace console later.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      */
     private java.util.List<String> workspaceDataSources;
@@ -163,9 +162,9 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> workspaceOrganizationalUnits;
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. The permission type should
-     * be set to <code>CUSTOMER_MANAGED</code>.
+     * Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view
+     * data from, including both data sources and notification channels. You are responsible for managing the
+     * permissions for this role as new data sources or notification channels are added.
      * </p>
      */
     private String workspaceRoleArn;
@@ -632,19 +631,24 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
-     * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
-     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
-     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
-     * type when creating a workspace in the CLI.
+     * When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you
+     * must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data
+     * sources and notification channels.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization that is not a delegated administrator account, and
-     * you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must
-     * choose <code>CUSTOMER_MANAGED</code>.
+     * You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use
+     * when accessing those datasources and notification channels.
      * </p>
+     * <p>
+     * The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in
+     * the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon
+     * Web Services CloudFormation.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
@@ -652,18 +656,23 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissionType
-     *        If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
-     *        creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *        data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
-     *        will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on
-     *        behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
-     *        <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
+     *        When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation,
+     *        you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web
+     *        Services data sources and notification channels.</p>
      *        <p>
-     *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
-     *        are creating this workspace in a member account of an organization that is not a delegated administrator
-     *        account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     *        organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to
+     *        use when accessing those datasources and notification channels.
      *        </p>
+     *        <p>
+     *        The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported
+     *        only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or
+     *        Amazon Web Services CloudFormation.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
@@ -677,37 +686,47 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
-     * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
-     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
-     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
-     * type when creating a workspace in the CLI.
+     * When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you
+     * must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data
+     * sources and notification channels.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization that is not a delegated administrator account, and
-     * you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must
-     * choose <code>CUSTOMER_MANAGED</code>.
+     * You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use
+     * when accessing those datasources and notification channels.
      * </p>
+     * <p>
+     * The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in
+     * the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon
+     * Web Services CloudFormation.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
      * permissions and policies for Amazon Web Services data sources and notification channels</a>.
      * </p>
      * 
-     * @return If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
-     *         creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *         data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
-     *         will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role
-     *         on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
-     *         <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
+     * @return When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation,
+     *         you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web
+     *         Services data sources and notification channels.</p>
      *         <p>
-     *         If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If
-     *         you are creating this workspace in a member account of an organization that is not a delegated
-     *         administrator account, and you want the workspace to access data sources in other Amazon Web Services
-     *         accounts in the organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *         You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace
+     *         to use when accessing those datasources and notification channels.
      *         </p>
+     *         <p>
+     *         The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported
+     *         only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or
+     *         Amazon Web Services CloudFormation.
+     *         </p>
+     *         </note>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
@@ -721,19 +740,24 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
-     * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
-     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
-     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
-     * type when creating a workspace in the CLI.
+     * When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you
+     * must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data
+     * sources and notification channels.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization that is not a delegated administrator account, and
-     * you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must
-     * choose <code>CUSTOMER_MANAGED</code>.
+     * You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use
+     * when accessing those datasources and notification channels.
      * </p>
+     * <p>
+     * The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in
+     * the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon
+     * Web Services CloudFormation.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
@@ -741,18 +765,23 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissionType
-     *        If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
-     *        creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *        data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
-     *        will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on
-     *        behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
-     *        <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
+     *        When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation,
+     *        you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web
+     *        Services data sources and notification channels.</p>
      *        <p>
-     *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
-     *        are creating this workspace in a member account of an organization that is not a delegated administrator
-     *        account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     *        organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to
+     *        use when accessing those datasources and notification channels.
      *        </p>
+     *        <p>
+     *        The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported
+     *        only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or
+     *        Amazon Web Services CloudFormation.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
@@ -768,19 +797,24 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
-     * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
-     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
-     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
-     * type when creating a workspace in the CLI.
+     * When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation, you
+     * must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web Services data
+     * sources and notification channels.
      * </p>
      * <p>
-     * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
-     * creating this workspace in a member account of an organization that is not a delegated administrator account, and
-     * you want the workspace to access data sources in other Amazon Web Services accounts in the organization, you must
-     * choose <code>CUSTOMER_MANAGED</code>.
+     * You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to use
+     * when accessing those datasources and notification channels.
      * </p>
+     * <p>
+     * The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported only in
+     * the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon
+     * Web Services CloudFormation.
+     * </p>
+     * </note>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana
@@ -788,18 +822,23 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param permissionType
-     *        If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
-     *        creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *        data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
-     *        will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on
-     *        behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
-     *        <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
+     *        When creating a workspace through the Amazon Web Services API, CLI or Amazon Web Services CloudFormation,
+     *        you must manage IAM roles and provision the permissions that the workspace needs to use Amazon Web
+     *        Services data sources and notification channels.</p>
      *        <p>
-     *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
-     *        are creating this workspace in a member account of an organization that is not a delegated administrator
-     *        account, and you want the workspace to access data sources in other Amazon Web Services accounts in the
-     *        organization, you must choose <code>CUSTOMER_MANAGED</code>.
+     *        You must also specify a <code>workspaceRoleArn</code> for a role that you will manage for the workspace to
+     *        use when accessing those datasources and notification channels.
      *        </p>
+     *        <p>
+     *        The ability for Amazon Managed Grafana to create and update IAM roles on behalf of the user is supported
+     *        only in the Amazon Managed Grafana console, where this value may be set to <code>SERVICE_MANAGED</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or
+     *        Amazon Web Services CloudFormation.
+     *        </p>
+     *        </note>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed
@@ -966,22 +1005,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source in the workspace console later.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
-     * @return Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *         these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *         Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *         Grafana console in the workspace.</p>
-     *         <p>
-     *         If you don't specify a data source here, you can still add it as a data source in the workspace console
-     *         later. However, you will then have to manually configure permissions for it.
+     * @return This parameter is for internal use only, and should not be used.
      * @see DataSourceType
      */
 
@@ -991,23 +1018,11 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source in the workspace console later.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source in the workspace console
-     *        later. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @see DataSourceType
      */
 
@@ -1022,13 +1037,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source in the workspace console later.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1037,13 +1046,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source in the workspace console
-     *        later. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -1060,23 +1063,11 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source in the workspace console later.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source in the workspace console
-     *        later. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -1088,23 +1079,11 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
-     * sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana
-     * to read data from these sources. You must still add them as data sources in the Grafana console in the workspace.
-     * </p>
-     * <p>
-     * If you don't specify a data source here, you can still add it as a data source in the workspace console later.
-     * However, you will then have to manually configure permissions for it.
+     * This parameter is for internal use only, and should not be used.
      * </p>
      * 
      * @param workspaceDataSources
-     *        Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying
-     *        these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow
-     *        Amazon Managed Grafana to read data from these sources. You must still add them as data sources in the
-     *        Grafana console in the workspace.</p>
-     *        <p>
-     *        If you don't specify a data source here, you can still add it as a data source in the workspace console
-     *        later. However, you will then have to manually configure permissions for it.
+     *        This parameter is for internal use only, and should not be used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceType
      */
@@ -1415,15 +1394,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. The permission type should
-     * be set to <code>CUSTOMER_MANAGED</code>.
+     * Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view
+     * data from, including both data sources and notification channels. You are responsible for managing the
+     * permissions for this role as new data sources or notification channels are added.
      * </p>
      * 
      * @param workspaceRoleArn
-     *        The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
-     *        workspace will view data from. If you already have a role that you want to use, specify it here. The
-     *        permission type should be set to <code>CUSTOMER_MANAGED</code>.
+     *        Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace
+     *        will view data from, including both data sources and notification channels. You are responsible for
+     *        managing the permissions for this role as new data sources or notification channels are added.
      */
 
     public void setWorkspaceRoleArn(String workspaceRoleArn) {
@@ -1432,14 +1411,14 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. The permission type should
-     * be set to <code>CUSTOMER_MANAGED</code>.
+     * Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view
+     * data from, including both data sources and notification channels. You are responsible for managing the
+     * permissions for this role as new data sources or notification channels are added.
      * </p>
      * 
-     * @return The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
-     *         workspace will view data from. If you already have a role that you want to use, specify it here. The
-     *         permission type should be set to <code>CUSTOMER_MANAGED</code>.
+     * @return Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace
+     *         will view data from, including both data sources and notification channels. You are responsible for
+     *         managing the permissions for this role as new data sources or notification channels are added.
      */
 
     public String getWorkspaceRoleArn() {
@@ -1448,15 +1427,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the workspace
-     * will view data from. If you already have a role that you want to use, specify it here. The permission type should
-     * be set to <code>CUSTOMER_MANAGED</code>.
+     * Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view
+     * data from, including both data sources and notification channels. You are responsible for managing the
+     * permissions for this role as new data sources or notification channels are added.
      * </p>
      * 
      * @param workspaceRoleArn
-     *        The workspace needs an IAM role that grants permissions to the Amazon Web Services resources that the
-     *        workspace will view data from. If you already have a role that you want to use, specify it here. The
-     *        permission type should be set to <code>CUSTOMER_MANAGED</code>.
+     *        Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace
+     *        will view data from, including both data sources and notification channels. You are responsible for
+     *        managing the permissions for this role as new data sources or notification channels are added.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -39,8 +39,8 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
     private String description;
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource.
      * </p>
      */
     private String kmsKeyId;
@@ -72,7 +72,8 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -192,14 +193,14 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource.
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a> assigned to the Amazon Location resource.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a> assigned to the Amazon Location resource.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -208,13 +209,13 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource.
      * </p>
      * 
      * @return A key identifier for an <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *         key</a> assigned to the Amazon Location resource.
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *         customer managed key</a> assigned to the Amazon Location resource.
      */
 
     public String getKmsKeyId() {
@@ -223,14 +224,14 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS
-     * customer managed key</a> assigned to the Amazon Location resource.
+     * A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+     * Web Services KMS customer managed key</a> assigned to the Amazon Location resource.
      * </p>
      * 
      * @param kmsKeyId
      *        A key identifier for an <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS KMS customer managed
-     *        key</a> assigned to the Amazon Location resource.
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS
+     *        customer managed key</a> assigned to the Amazon Location resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,7 +468,8 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -479,7 +481,7 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param trackerArn
      *        The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *        all AWS.</p>
+     *        all Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -494,7 +496,8 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -505,7 +508,7 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *         all AWS.</p>
+     *         all Amazon Web Services.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -520,7 +523,8 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all AWS.
+     * The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all
+     * Amazon Web Services.
      * </p>
      * <ul>
      * <li>
@@ -532,7 +536,7 @@ public class DescribeTrackerResult extends com.amazonaws.AmazonWebServiceResult<
      * 
      * @param trackerArn
      *        The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across
-     *        all AWS.</p>
+     *        all Amazon Web Services.</p>
      *        <ul>
      *        <li>
      *        <p>

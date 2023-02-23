@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the number of S3 buckets that are publicly accessible based on a combination of
- * permissions settings for each bucket.
+ * Provides information about the number of S3 buckets that are publicly accessible due to a combination of permissions
+ * settings for each bucket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEffectivePermission"

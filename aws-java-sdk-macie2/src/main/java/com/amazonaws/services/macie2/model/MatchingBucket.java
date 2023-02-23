@@ -20,9 +20,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides statistical data and other information about an S3 bucket that Amazon Macie monitors and analyzes for your
- * account. If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's
- * objects, the value for most of these properties is null. Key exceptions are accountId and bucketName. To identify the
- * cause of the error, refer to the errorCode and errorMessage values.
+ * account. By default, object count and storage size values include data for object parts that are the result of
+ * incomplete multipart uploads. For more information, see <a
+ * href="https://docs.aws.amazon.com/macie/latest/user/monitoring-s3-how-it-works.html">How Macie monitors Amazon S3
+ * data security</a> in the <i>Amazon Macie User Guide</i>.
+ * </p>
+ * <p>
+ * If an error occurs when Macie attempts to retrieve and process information about the bucket or the bucket's objects,
+ * the value for most of these properties is null. Key exceptions are accountId and bucketName. To identify the cause of
+ * the error, refer to the errorCode and errorMessage values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MatchingBucket" target="_top">AWS API
@@ -64,10 +70,10 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
     private Long classifiableSizeInBytes;
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      */
     private String errorCode;
@@ -88,9 +94,9 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
     private JobDetails jobDetails;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      */
     private java.util.Date lastAutomatedDiscoveryTime;
@@ -109,8 +115,8 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
     private ObjectCountByEncryptionType objectCountByEncryptionType;
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * This value is null if automated sensitive data discovery is currently disabled for your account.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      */
     private Integer sensitivityScore;
@@ -355,17 +361,17 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -375,17 +381,16 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
-     * @return Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *         information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *         permission to retrieve the information. For example, the bucket has a restrictive bucket policy and
-     *         Amazon S3 denied the request. If this value is null, Macie was able to retrieve and process the
-     *         information.
+     * @return The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *         the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *         retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied
+     *         the request. If this value is null, Macie was able to retrieve and process the information.
      * @see BucketMetadataErrorCode
      */
 
@@ -395,17 +400,17 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -417,17 +422,17 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the error code for an error that prevented Amazon Macie from retrieving and processing information
-     * about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
-     * retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
-     * request. If this value is null, Macie was able to retrieve and process the information.
+     * The error code for an error that prevented Amazon Macie from retrieving and processing information about the
+     * bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to retrieve the
+     * information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the request. If this
+     * value is null, Macie was able to retrieve and process the information.
      * </p>
      * 
      * @param errorCode
-     *        Specifies the error code for an error that prevented Amazon Macie from retrieving and processing
-     *        information about the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have
-     *        permission to retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon
-     *        S3 denied the request. If this value is null, Macie was able to retrieve and process the information.
+     *        The error code for an error that prevented Amazon Macie from retrieving and processing information about
+     *        the bucket and the bucket's objects. If this value is ACCESS_DENIED, Macie doesn't have permission to
+     *        retrieve the information. For example, the bucket has a restrictive bucket policy and Amazon S3 denied the
+     *        request. If this value is null, Macie was able to retrieve and process the information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BucketMetadataErrorCode
      */
@@ -537,15 +542,15 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param lastAutomatedDiscoveryTime
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed
-     *        automated sensitive data discovery for the bucket. This value is null if automated sensitive data
-     *        discovery is currently disabled for your account.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
      */
 
     public void setLastAutomatedDiscoveryTime(java.util.Date lastAutomatedDiscoveryTime) {
@@ -554,14 +559,14 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed
-     *         automated sensitive data discovery for the bucket. This value is null if automated sensitive data
-     *         discovery is currently disabled for your account.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *         the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *         automated sensitive data discovery is currently disabled for your account.
      */
 
     public java.util.Date getLastAutomatedDiscoveryTime() {
@@ -570,15 +575,15 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed automated
-     * sensitive data discovery for the bucket. This value is null if automated sensitive data discovery is currently
-     * disabled for your account.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in the
+     * bucket while performing automated sensitive data discovery for your account. This value is null if automated
+     * sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param lastAutomatedDiscoveryTime
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently performed
-     *        automated sensitive data discovery for the bucket. This value is null if automated sensitive data
-     *        discovery is currently disabled for your account.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently analyzed data in
+     *        the bucket while performing automated sensitive data discovery for your account. This value is null if
+     *        automated sensitive data discovery is currently disabled for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,14 +680,13 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * This value is null if automated sensitive data discovery is currently disabled for your account.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param sensitivityScore
-     *        The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100
-     *        (sensitive). This value is null if automated sensitive data discovery is currently disabled for your
-     *        account.
+     *        The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *        This value is null if automated sensitive data discovery is currently disabled for your account.
      */
 
     public void setSensitivityScore(Integer sensitivityScore) {
@@ -691,13 +695,12 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * This value is null if automated sensitive data discovery is currently disabled for your account.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      * 
-     * @return The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100
-     *         (sensitive). This value is null if automated sensitive data discovery is currently disabled for your
-     *         account.
+     * @return The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *         This value is null if automated sensitive data discovery is currently disabled for your account.
      */
 
     public Integer getSensitivityScore() {
@@ -706,14 +709,13 @@ public class MatchingBucket implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100 (sensitive).
-     * This value is null if automated sensitive data discovery is currently disabled for your account.
+     * The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive). This
+     * value is null if automated sensitive data discovery is currently disabled for your account.
      * </p>
      * 
      * @param sensitivityScore
-     *        The current sensitivity score for the bucket, ranging from -1 (no analysis due to an error) to 100
-     *        (sensitive). This value is null if automated sensitive data discovery is currently disabled for your
-     *        account.
+     *        The current sensitivity score for the bucket, ranging from -1 (classification error) to 100 (sensitive).
+     *        This value is null if automated sensitive data discovery is currently disabled for your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

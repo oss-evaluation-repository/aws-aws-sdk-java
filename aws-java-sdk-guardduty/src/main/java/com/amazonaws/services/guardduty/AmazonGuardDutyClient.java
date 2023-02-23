@@ -341,6 +341,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
      * one detector per account per Region. All data sources are enabled in a new detector by default.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param createDetectorRequest
      * @return Result of the CreateDetector operation returned by the service.
@@ -529,10 +534,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * which must enable GuardDuty prior to being added as a member.
      * </p>
      * <p>
-     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
+     * If you are adding accounts by invitation, use this action after GuardDuty has bee enabled in potential member
      * accounts and before using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-     * <code>Invite Members</code> </a>.
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
      * </p>
      * 
      * @param createMembersRequest
@@ -653,8 +657,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
+     * Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for
+     * <code>findingTypes</code>, the API generates sample findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -1253,6 +1257,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An
      * administrator can view the malware scans for all the member accounts.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param describeMalwareScansRequest
      * @return Result of the DescribeMalwareScans operation returned by the service.
@@ -1311,6 +1320,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Returns information about the account selected as the delegated administrator for GuardDuty.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -1803,6 +1817,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getDetectorRequest
      * @return Result of the GetDetector operation returned by the service.
@@ -2159,6 +2178,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Returns the details of the malware scan settings.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getMalwareScanSettingsRequest
      * @return Result of the GetMalwareScanSettings operation returned by the service.
@@ -2279,6 +2303,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Describes which data sources are enabled for the member account's detector.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param getMemberDetectorsRequest
@@ -3541,6 +3570,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Updates the Amazon GuardDuty detector specified by the detectorId.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateDetectorRequest
      * @return Result of the UpdateDetector operation returned by the service.
@@ -3778,6 +3812,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Updates the malware scan settings.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateMalwareScanSettingsRequest
      * @return Result of the UpdateMalwareScanSettings operation returned by the service.
@@ -3839,6 +3878,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Contains information on member accounts to be updated.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateMemberDetectorsRequest
      * @return Result of the UpdateMemberDetectors operation returned by the service.
@@ -3898,6 +3942,11 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Updates the delegated administrator account with the values provided.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

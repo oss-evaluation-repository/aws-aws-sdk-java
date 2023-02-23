@@ -168,6 +168,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
      * one detector per account per Region. All data sources are enabled in a new detector by default.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param createDetectorRequest
      * @return A Java Future containing the result of the CreateDetector operation returned by the service.
@@ -182,6 +187,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
      * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
      * one detector per account per Region. All data sources are enabled in a new detector by default.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param createDetectorRequest
@@ -277,10 +287,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * which must enable GuardDuty prior to being added as a member.
      * </p>
      * <p>
-     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
+     * If you are adding accounts by invitation, use this action after GuardDuty has bee enabled in potential member
      * accounts and before using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-     * <code>Invite Members</code> </a>.
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
      * </p>
      * 
      * @param createMembersRequest
@@ -303,10 +312,9 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * which must enable GuardDuty prior to being added as a member.
      * </p>
      * <p>
-     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
+     * If you are adding accounts by invitation, use this action after GuardDuty has bee enabled in potential member
      * accounts and before using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
-     * <code>Invite Members</code> </a>.
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>.
      * </p>
      * 
      * @param createMembersRequest
@@ -359,8 +367,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
+     * Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for
+     * <code>findingTypes</code>, the API generates sample findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -373,8 +381,8 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Generates example findings of types specified by the list of finding types. If 'NULL' is specified for
-     * <code>findingTypes</code>, the API generates example findings of all supported finding types.
+     * Generates sample findings of types specified by the list of finding types. If 'NULL' is specified for
+     * <code>findingTypes</code>, the API generates sample findings of all supported finding types.
      * </p>
      * 
      * @param createSampleFindingsRequest
@@ -684,6 +692,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An
      * administrator can view the malware scans for all the member accounts.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param describeMalwareScansRequest
      * @return A Java Future containing the result of the DescribeMalwareScans operation returned by the service.
@@ -697,6 +710,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Returns a list of malware scans. Each member account can view the malware scans for their own accounts. An
      * administrator can view the malware scans for all the member accounts.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param describeMalwareScansRequest
@@ -716,6 +734,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Returns information about the account selected as the delegated administrator for GuardDuty.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param describeOrganizationConfigurationRequest
      * @return A Java Future containing the result of the DescribeOrganizationConfiguration operation returned by the
@@ -730,6 +753,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Returns information about the account selected as the delegated administrator for GuardDuty.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -992,6 +1020,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getDetectorRequest
      * @return A Java Future containing the result of the GetDetector operation returned by the service.
@@ -1004,6 +1037,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Retrieves an Amazon GuardDuty detector specified by the detectorId.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param getDetectorRequest
@@ -1180,6 +1218,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Returns the details of the malware scan settings.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getMalwareScanSettingsRequest
      * @return A Java Future containing the result of the GetMalwareScanSettings operation returned by the service.
@@ -1192,6 +1235,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Returns the details of the malware scan settings.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param getMalwareScanSettingsRequest
@@ -1246,6 +1294,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Describes which data sources are enabled for the member account's detector.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param getMemberDetectorsRequest
      * @return A Java Future containing the result of the GetMemberDetectors operation returned by the service.
@@ -1258,6 +1311,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Describes which data sources are enabled for the member account's detector.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param getMemberDetectorsRequest
@@ -1933,6 +1991,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Updates the Amazon GuardDuty detector specified by the detectorId.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateDetectorRequest
      * @return A Java Future containing the result of the UpdateDetector operation returned by the service.
@@ -1945,6 +2008,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Updates the Amazon GuardDuty detector specified by the detectorId.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateDetectorRequest
@@ -2057,6 +2125,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Updates the malware scan settings.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateMalwareScanSettingsRequest
      * @return A Java Future containing the result of the UpdateMalwareScanSettings operation returned by the service.
@@ -2070,6 +2143,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Updates the malware scan settings.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateMalwareScanSettingsRequest
@@ -2090,6 +2168,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Contains information on member accounts to be updated.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateMemberDetectorsRequest
      * @return A Java Future containing the result of the UpdateMemberDetectors operation returned by the service.
@@ -2102,6 +2185,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Contains information on member accounts to be updated.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateMemberDetectorsRequest
@@ -2121,6 +2209,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Updates the delegated administrator account with the values provided.
      * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
+     * </p>
      * 
      * @param updateOrganizationConfigurationRequest
      * @return A Java Future containing the result of the UpdateOrganizationConfiguration operation returned by the
@@ -2135,6 +2228,11 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
     /**
      * <p>
      * Updates the delegated administrator account with the values provided.
+     * </p>
+     * <p>
+     * There might be regional differences because some data sources might not be available in all the Amazon Web
+     * Services Regions where GuardDuty is presently supported. For more information, see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

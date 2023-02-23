@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TaskDefinitionStatus {
 
     ACTIVE("ACTIVE"),
-    INACTIVE("INACTIVE");
+    INACTIVE("INACTIVE"),
+    DELETE_IN_PROGRESS("DELETE_IN_PROGRESS");
 
     private String value;
 

@@ -608,7 +608,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String workingDirectory;
     /**
      * <p>
-     * When this parameter is true, networking is disabled within the container. This parameter maps to
+     * When this parameter is true, networking is off within the container. This parameter maps to
      * <code>NetworkDisabled</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
@@ -774,7 +774,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
      * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
      * resource limit sets a restriction on the number of open files that a container can use. The default
-     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
      * </p>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
@@ -5090,7 +5090,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, networking is disabled within the container. This parameter maps to
+     * When this parameter is true, networking is off within the container. This parameter maps to
      * <code>NetworkDisabled</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
@@ -5102,7 +5102,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param disableNetworking
-     *        When this parameter is true, networking is disabled within the container. This parameter maps to
+     *        When this parameter is true, networking is off within the container. This parameter maps to
      *        <code>NetworkDisabled</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
@@ -5117,7 +5117,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, networking is disabled within the container. This parameter maps to
+     * When this parameter is true, networking is off within the container. This parameter maps to
      * <code>NetworkDisabled</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
@@ -5128,7 +5128,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return When this parameter is true, networking is disabled within the container. This parameter maps to
+     * @return When this parameter is true, networking is off within the container. This parameter maps to
      *         <code>NetworkDisabled</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
@@ -5143,7 +5143,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, networking is disabled within the container. This parameter maps to
+     * When this parameter is true, networking is off within the container. This parameter maps to
      * <code>NetworkDisabled</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
@@ -5155,7 +5155,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @param disableNetworking
-     *        When this parameter is true, networking is disabled within the container. This parameter maps to
+     *        When this parameter is true, networking is off within the container. This parameter maps to
      *        <code>NetworkDisabled</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
@@ -5172,7 +5172,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * When this parameter is true, networking is disabled within the container. This parameter maps to
+     * When this parameter is true, networking is off within the container. This parameter maps to
      * <code>NetworkDisabled</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.
@@ -5183,7 +5183,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * </note>
      * 
-     * @return When this parameter is true, networking is disabled within the container. This parameter maps to
+     * @return When this parameter is true, networking is off within the container. This parameter maps to
      *         <code>NetworkDisabled</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a>.</p> <note>
@@ -6460,7 +6460,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
      * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
      * resource limit sets a restriction on the number of open files that a container can use. The default
-     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
      * </p>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
@@ -6485,7 +6485,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
      *         the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
      *         <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
-     *         use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *         use. The default <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is
+     *         <code>4096</code>.
      *         </p>
      *         <p>
      *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
@@ -6518,7 +6519,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
      * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
      * resource limit sets a restriction on the number of open files that a container can use. The default
-     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
      * </p>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
@@ -6544,7 +6545,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
      *        the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
      *        <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
-     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is
+     *        <code>4096</code>.
      *        </p>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
@@ -6579,7 +6581,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
      * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
      * resource limit sets a restriction on the number of open files that a container can use. The default
-     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
      * </p>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
@@ -6610,7 +6612,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
      *        the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
      *        <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
-     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is
+     *        <code>4096</code>.
      *        </p>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
@@ -6647,7 +6650,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the
      * exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code>
      * resource limit sets a restriction on the number of open files that a container can use. The default
-     * <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     * <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
      * </p>
      * <p>
      * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
@@ -6673,7 +6676,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with
      *        the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The
      *        <code>nofile</code> resource limit sets a restriction on the number of open files that a container can
-     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+     *        use. The default <code>nofile</code> soft limit is <code>1024</code> and the default hard limit is
+     *        <code>4096</code>.
      *        </p>
      *        <p>
      *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To

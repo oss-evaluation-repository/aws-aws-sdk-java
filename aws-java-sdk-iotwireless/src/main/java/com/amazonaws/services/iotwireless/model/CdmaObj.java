@@ -72,7 +72,7 @@ public class CdmaObj implements Serializable, Cloneable, StructuredPojo {
     private Float baseLat;
     /**
      * <p>
-     * CDMA base station longtitude in degrees.
+     * CDMA base station longitude in degrees.
      * </p>
      */
     private Float baseLng;
@@ -365,11 +365,11 @@ public class CdmaObj implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CDMA base station longtitude in degrees.
+     * CDMA base station longitude in degrees.
      * </p>
      * 
      * @param baseLng
-     *        CDMA base station longtitude in degrees.
+     *        CDMA base station longitude in degrees.
      */
 
     public void setBaseLng(Float baseLng) {
@@ -378,10 +378,10 @@ public class CdmaObj implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CDMA base station longtitude in degrees.
+     * CDMA base station longitude in degrees.
      * </p>
      * 
-     * @return CDMA base station longtitude in degrees.
+     * @return CDMA base station longitude in degrees.
      */
 
     public Float getBaseLng() {
@@ -390,11 +390,11 @@ public class CdmaObj implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CDMA base station longtitude in degrees.
+     * CDMA base station longitude in degrees.
      * </p>
      * 
      * @param baseLng
-     *        CDMA base station longtitude in degrees.
+     *        CDMA base station longitude in degrees.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

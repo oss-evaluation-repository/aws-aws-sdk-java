@@ -31,7 +31,7 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      */
     private String arn;
@@ -57,11 +57,11 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the custom data identifier.
+     *        The unique identifier for the custom data identifier.
      */
 
     public void setArn(String arn) {
@@ -70,10 +70,10 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the custom data identifier.
+     * @return The unique identifier for the custom data identifier.
      */
 
     public String getArn() {
@@ -82,11 +82,11 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the custom data identifier.
+     * The unique identifier for the custom data identifier.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the custom data identifier.
+     *        The unique identifier for the custom data identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

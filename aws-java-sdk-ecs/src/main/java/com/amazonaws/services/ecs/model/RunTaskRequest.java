@@ -251,11 +251,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
+     * When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a
+     * specific revision.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
@@ -2044,11 +2044,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
+     * When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a
+     * specific revision.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
@@ -2073,12 +2073,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *        used.</p>
      *        <p>
-     *        When you create an IAM policy for run-task, you can set the resource to be the latest task definition
-     *        revision, or a specific revision.
+     *        When you create a policy for run-task, you can set the resource to be the latest task definition revision,
+     *        or a specific revision.
      *        </p>
      *        <p>
-     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
-     *        principal's permissions policy.
+     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
+     *        permissions policy.
      *        </p>
      *        <p>
      *        When you specify the policy resource as the latest task definition version (by setting the
@@ -2109,11 +2109,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
+     * When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a
+     * specific revision.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
@@ -2137,11 +2137,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *         used.</p>
      *         <p>
-     *         When you create an IAM policy for run-task, you can set the resource to be the latest task definition
+     *         When you create a policy for run-task, you can set the resource to be the latest task definition
      *         revision, or a specific revision.
      *         </p>
      *         <p>
-     *         The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
+     *         The full ARN value must match the value that you specified as the <code>Resource</code> of the
      *         principal's permissions policy.
      *         </p>
      *         <p>
@@ -2173,11 +2173,11 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.
      * </p>
      * <p>
-     * When you create an IAM policy for run-task, you can set the resource to be the latest task definition revision,
-     * or a specific revision.
+     * When you create a policy for run-task, you can set the resource to be the latest task definition revision, or a
+     * specific revision.
      * </p>
      * <p>
-     * The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM principal's
+     * The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
      * permissions policy.
      * </p>
      * <p>
@@ -2202,12 +2202,12 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        definition to run. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is
      *        used.</p>
      *        <p>
-     *        When you create an IAM policy for run-task, you can set the resource to be the latest task definition
-     *        revision, or a specific revision.
+     *        When you create a policy for run-task, you can set the resource to be the latest task definition revision,
+     *        or a specific revision.
      *        </p>
      *        <p>
-     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the IAM
-     *        principal's permissions policy.
+     *        The full ARN value must match the value that you specified as the <code>Resource</code> of the principal's
+     *        permissions policy.
      *        </p>
      *        <p>
      *        When you specify the policy resource as the latest task definition version (by setting the
