@@ -102,6 +102,10 @@ public class ProactiveAnomalyJsonUnmarshaller implements Unmarshaller<ProactiveA
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    proactiveAnomaly.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

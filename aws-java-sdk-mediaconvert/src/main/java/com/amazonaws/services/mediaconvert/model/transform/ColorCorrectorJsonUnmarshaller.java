@@ -68,6 +68,10 @@ public class ColorCorrectorJsonUnmarshaller implements Unmarshaller<ColorCorrect
                     context.nextToken();
                     colorCorrector.setHdr10Metadata(Hdr10MetadataJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("hdrToSdrToneMapper", targetDepth)) {
+                    context.nextToken();
+                    colorCorrector.setHdrToSdrToneMapper(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("hue", targetDepth)) {
                     context.nextToken();
                     colorCorrector.setHue(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -28,6 +28,19 @@ public class AbstractAmazonTimestreamWriteAsync extends AbstractAmazonTimestream
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBatchLoadTaskResult> createBatchLoadTaskAsync(CreateBatchLoadTaskRequest request) {
+
+        return createBatchLoadTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBatchLoadTaskResult> createBatchLoadTaskAsync(CreateBatchLoadTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateBatchLoadTaskRequest, CreateBatchLoadTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDatabaseResult> createDatabaseAsync(CreateDatabaseRequest request) {
 
         return createDatabaseAsync(request, null);
@@ -80,6 +93,19 @@ public class AbstractAmazonTimestreamWriteAsync extends AbstractAmazonTimestream
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeBatchLoadTaskResult> describeBatchLoadTaskAsync(DescribeBatchLoadTaskRequest request) {
+
+        return describeBatchLoadTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBatchLoadTaskResult> describeBatchLoadTaskAsync(DescribeBatchLoadTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBatchLoadTaskRequest, DescribeBatchLoadTaskResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDatabaseResult> describeDatabaseAsync(DescribeDatabaseRequest request) {
 
         return describeDatabaseAsync(request, null);
@@ -119,6 +145,19 @@ public class AbstractAmazonTimestreamWriteAsync extends AbstractAmazonTimestream
     }
 
     @Override
+    public java.util.concurrent.Future<ListBatchLoadTasksResult> listBatchLoadTasksAsync(ListBatchLoadTasksRequest request) {
+
+        return listBatchLoadTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBatchLoadTasksResult> listBatchLoadTasksAsync(ListBatchLoadTasksRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListBatchLoadTasksRequest, ListBatchLoadTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDatabasesResult> listDatabasesAsync(ListDatabasesRequest request) {
 
         return listDatabasesAsync(request, null);
@@ -153,6 +192,19 @@ public class AbstractAmazonTimestreamWriteAsync extends AbstractAmazonTimestream
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeBatchLoadTaskResult> resumeBatchLoadTaskAsync(ResumeBatchLoadTaskRequest request) {
+
+        return resumeBatchLoadTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeBatchLoadTaskResult> resumeBatchLoadTaskAsync(ResumeBatchLoadTaskRequest request,
+            com.amazonaws.handlers.AsyncHandler<ResumeBatchLoadTaskRequest, ResumeBatchLoadTaskResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

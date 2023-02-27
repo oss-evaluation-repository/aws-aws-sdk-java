@@ -52,6 +52,10 @@ public class LifeCycleLastLaunchJsonUnmarshaller implements Unmarshaller<LifeCyc
                     context.nextToken();
                     lifeCycleLastLaunch.setInitiated(LifeCycleLastLaunchInitiatedJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    lifeCycleLastLaunch.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

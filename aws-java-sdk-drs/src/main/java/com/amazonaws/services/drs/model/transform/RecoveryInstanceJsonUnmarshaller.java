@@ -76,6 +76,10 @@ public class RecoveryInstanceJsonUnmarshaller implements Unmarshaller<RecoveryIn
                     context.nextToken();
                     recoveryInstance.setJobID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("originAvailabilityZone", targetDepth)) {
+                    context.nextToken();
+                    recoveryInstance.setOriginAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("originEnvironment", targetDepth)) {
                     context.nextToken();
                     recoveryInstance.setOriginEnvironment(context.getUnmarshaller(String.class).unmarshall(context));

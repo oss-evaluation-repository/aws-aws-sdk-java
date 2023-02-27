@@ -47,8 +47,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
      */
     private ImageInserter imageInserter;
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      */
     private NoiseReducer noiseReducer;
     /**
@@ -251,12 +253,16 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      * 
      * @param noiseReducer
-     *        Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary.
-     *        Enable or disable this feature for each output individually. This setting is disabled by default.
+     *        Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable
+     *        this feature for each output individually. This setting is disabled by default. When you enable Noise
+     *        reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     *        reducer, you cannot include the Bandwidth reduction filter.
      */
 
     public void setNoiseReducer(NoiseReducer noiseReducer) {
@@ -264,11 +270,15 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      * 
-     * @return Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary.
-     *         Enable or disable this feature for each output individually. This setting is disabled by default.
+     * @return Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable
+     *         this feature for each output individually. This setting is disabled by default. When you enable Noise
+     *         reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     *         reducer, you cannot include the Bandwidth reduction filter.
      */
 
     public NoiseReducer getNoiseReducer() {
@@ -276,12 +286,16 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or
-     * disable this feature for each output individually. This setting is disabled by default.
+     * Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable this
+     * feature for each output individually. This setting is disabled by default. When you enable Noise reducer, you
+     * must also select a value for Noise reducer filter. For AVC outputs, when you include Noise reducer, you cannot
+     * include the Bandwidth reduction filter.
      * 
      * @param noiseReducer
-     *        Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary.
-     *        Enable or disable this feature for each output individually. This setting is disabled by default.
+     *        Enable the Noise reducer feature to remove noise from your video output if necessary. Enable or disable
+     *        this feature for each output individually. This setting is disabled by default. When you enable Noise
+     *        reducer, you must also select a value for Noise reducer filter. For AVC outputs, when you include Noise
+     *        reducer, you cannot include the Bandwidth reduction filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

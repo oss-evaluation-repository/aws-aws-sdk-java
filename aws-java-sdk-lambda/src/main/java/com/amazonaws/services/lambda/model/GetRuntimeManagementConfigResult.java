@@ -36,6 +36,12 @@ public class GetRuntimeManagementConfigResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String runtimeVersionArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of your function.
+     * </p>
+     */
+    private String functionArn;
 
     /**
      * <p>
@@ -143,6 +149,46 @@ public class GetRuntimeManagementConfigResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of your function.
+     * </p>
+     * 
+     * @param functionArn
+     *        The Amazon Resource Name (ARN) of your function.
+     */
+
+    public void setFunctionArn(String functionArn) {
+        this.functionArn = functionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of your function.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of your function.
+     */
+
+    public String getFunctionArn() {
+        return this.functionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of your function.
+     * </p>
+     * 
+     * @param functionArn
+     *        The Amazon Resource Name (ARN) of your function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRuntimeManagementConfigResult withFunctionArn(String functionArn) {
+        setFunctionArn(functionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -157,7 +203,9 @@ public class GetRuntimeManagementConfigResult extends com.amazonaws.AmazonWebSer
         if (getUpdateRuntimeOn() != null)
             sb.append("UpdateRuntimeOn: ").append(getUpdateRuntimeOn()).append(",");
         if (getRuntimeVersionArn() != null)
-            sb.append("RuntimeVersionArn: ").append(getRuntimeVersionArn());
+            sb.append("RuntimeVersionArn: ").append(getRuntimeVersionArn()).append(",");
+        if (getFunctionArn() != null)
+            sb.append("FunctionArn: ").append(getFunctionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +228,10 @@ public class GetRuntimeManagementConfigResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getRuntimeVersionArn() != null && other.getRuntimeVersionArn().equals(this.getRuntimeVersionArn()) == false)
             return false;
+        if (other.getFunctionArn() == null ^ this.getFunctionArn() == null)
+            return false;
+        if (other.getFunctionArn() != null && other.getFunctionArn().equals(this.getFunctionArn()) == false)
+            return false;
         return true;
     }
 
@@ -190,6 +242,7 @@ public class GetRuntimeManagementConfigResult extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getUpdateRuntimeOn() == null) ? 0 : getUpdateRuntimeOn().hashCode());
         hashCode = prime * hashCode + ((getRuntimeVersionArn() == null) ? 0 : getRuntimeVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getFunctionArn() == null) ? 0 : getFunctionArn().hashCode());
         return hashCode;
     }
 

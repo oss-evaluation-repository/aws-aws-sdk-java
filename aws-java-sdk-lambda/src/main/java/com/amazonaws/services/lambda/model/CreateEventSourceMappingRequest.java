@@ -270,6 +270,12 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private ScalingConfig scalingConfig;
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     */
+    private DocumentDBEventSourceConfig documentDBEventSourceConfig;
 
     /**
      * <p>
@@ -2053,6 +2059,46 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     * 
+     * @param documentDBEventSourceConfig
+     *        Specific configuration settings for a DocumentDB event source.
+     */
+
+    public void setDocumentDBEventSourceConfig(DocumentDBEventSourceConfig documentDBEventSourceConfig) {
+        this.documentDBEventSourceConfig = documentDBEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     * 
+     * @return Specific configuration settings for a DocumentDB event source.
+     */
+
+    public DocumentDBEventSourceConfig getDocumentDBEventSourceConfig() {
+        return this.documentDBEventSourceConfig;
+    }
+
+    /**
+     * <p>
+     * Specific configuration settings for a DocumentDB event source.
+     * </p>
+     * 
+     * @param documentDBEventSourceConfig
+     *        Specific configuration settings for a DocumentDB event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withDocumentDBEventSourceConfig(DocumentDBEventSourceConfig documentDBEventSourceConfig) {
+        setDocumentDBEventSourceConfig(documentDBEventSourceConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2107,7 +2153,9 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (getSelfManagedKafkaEventSourceConfig() != null)
             sb.append("SelfManagedKafkaEventSourceConfig: ").append(getSelfManagedKafkaEventSourceConfig()).append(",");
         if (getScalingConfig() != null)
-            sb.append("ScalingConfig: ").append(getScalingConfig());
+            sb.append("ScalingConfig: ").append(getScalingConfig()).append(",");
+        if (getDocumentDBEventSourceConfig() != null)
+            sb.append("DocumentDBEventSourceConfig: ").append(getDocumentDBEventSourceConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2213,6 +2261,10 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getScalingConfig() != null && other.getScalingConfig().equals(this.getScalingConfig()) == false)
             return false;
+        if (other.getDocumentDBEventSourceConfig() == null ^ this.getDocumentDBEventSourceConfig() == null)
+            return false;
+        if (other.getDocumentDBEventSourceConfig() != null && other.getDocumentDBEventSourceConfig().equals(this.getDocumentDBEventSourceConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2243,6 +2295,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getAmazonManagedKafkaEventSourceConfig() == null) ? 0 : getAmazonManagedKafkaEventSourceConfig().hashCode());
         hashCode = prime * hashCode + ((getSelfManagedKafkaEventSourceConfig() == null) ? 0 : getSelfManagedKafkaEventSourceConfig().hashCode());
         hashCode = prime * hashCode + ((getScalingConfig() == null) ? 0 : getScalingConfig().hashCode());
+        hashCode = prime * hashCode + ((getDocumentDBEventSourceConfig() == null) ? 0 : getDocumentDBEventSourceConfig().hashCode());
         return hashCode;
     }
 

@@ -1,0 +1,440 @@
+/*
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.internetmonitor;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.services.internetmonitor.model.*;
+import com.amazonaws.client.AwsAsyncClientParams;
+import com.amazonaws.annotation.ThreadSafe;
+
+import java.util.concurrent.ExecutorService;
+
+/**
+ * Client for accessing Amazon CloudWatch Internet Monitor asynchronously. Each asynchronous method will return a Java
+ * Future object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to
+ * receive notification when an asynchronous operation completes.
+ * <p>
+ * <p>
+ * Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact the performance and
+ * availability between your applications hosted on Amazon Web Services and your end users, reducing the time it takes
+ * for you to diagnose these issues, from days to minutes. You can explore internet measurements for different time
+ * frames and at different geographic granularities, and quickly visualize the impact of issues, and then take action to
+ * improve your end users' experience, for example, by switching to other Amazon Web Services services or rerouting
+ * traffic to your workload through differentAmazon Web Services Regions.
+ * </p>
+ * <p>
+ * If the issue is caused by the Amazon Web Services network, you'll automatically receive an Amazon Web Services Health
+ * Dashboard notification with the steps that Amazon Web Services is taking to mitigate the problem. To support
+ * integrating health information for geographies and networks specific to your application, Internet Monitor delivers
+ * measurements to CloudWatch Logs and CloudWatch Metrics. Internet Monitor also sends health events to Amazon
+ * EventBridge, so you can set up notifications. Internet Monitor monitors internet connectivity for your application
+ * through Amazon Virtual Private Clouds (VPCs), Amazon CloudFront distributions, and Amazon WorkSpaces directories.
+ * </p>
+ * <p>
+ * To use Internet Monitor, you create a <i>monitor</i> and add resources to it, Virtual Private Clouds (VPCs), Amazon
+ * CloudFront distributions, or WorkSpaces directories that show where your application's internet traffic is. Internet
+ * Monitor then provides internet measurements from Amazon Web Services that are specific to the locations and networks
+ * that communicate with your application. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html"> Using Amazon
+ * CloudWatch Internet Monitor</a> in the Amazon CloudWatch User Guide.
+ * </p>
+ */
+@ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AmazonInternetMonitorAsyncClient extends AmazonInternetMonitorClient implements AmazonInternetMonitorAsync {
+
+    private static final int DEFAULT_THREAD_POOL_SIZE = 50;
+
+    private final java.util.concurrent.ExecutorService executorService;
+
+    public static AmazonInternetMonitorAsyncClientBuilder asyncBuilder() {
+        return AmazonInternetMonitorAsyncClientBuilder.standard();
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon CloudWatch Internet Monitor using the
+     * specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     */
+    AmazonInternetMonitorAsyncClient(AwsAsyncClientParams asyncClientParams) {
+        this(asyncClientParams, false);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on Amazon CloudWatch Internet Monitor using the
+     * specified parameters.
+     *
+     * @param asyncClientParams
+     *        Object providing client parameters.
+     * @param endpointDiscoveryEnabled
+     *        true will enable endpoint discovery if the service supports it.
+     */
+    AmazonInternetMonitorAsyncClient(AwsAsyncClientParams asyncClientParams, boolean endpointDiscoveryEnabled) {
+        super(asyncClientParams, endpointDiscoveryEnabled);
+        this.executorService = asyncClientParams.getExecutor();
+    }
+
+    /**
+     * Returns the executor service used by this client to execute async requests.
+     *
+     * @return The executor service used by this client to execute async requests.
+     */
+    public ExecutorService getExecutorService() {
+        return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMonitorResult> createMonitorAsync(CreateMonitorRequest request) {
+
+        return createMonitorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMonitorResult> createMonitorAsync(final CreateMonitorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMonitorRequest, CreateMonitorResult> asyncHandler) {
+        final CreateMonitorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMonitorResult>() {
+            @Override
+            public CreateMonitorResult call() throws Exception {
+                CreateMonitorResult result = null;
+
+                try {
+                    result = executeCreateMonitor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMonitorResult> deleteMonitorAsync(DeleteMonitorRequest request) {
+
+        return deleteMonitorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMonitorResult> deleteMonitorAsync(final DeleteMonitorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMonitorRequest, DeleteMonitorResult> asyncHandler) {
+        final DeleteMonitorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMonitorResult>() {
+            @Override
+            public DeleteMonitorResult call() throws Exception {
+                DeleteMonitorResult result = null;
+
+                try {
+                    result = executeDeleteMonitor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHealthEventResult> getHealthEventAsync(GetHealthEventRequest request) {
+
+        return getHealthEventAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHealthEventResult> getHealthEventAsync(final GetHealthEventRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHealthEventRequest, GetHealthEventResult> asyncHandler) {
+        final GetHealthEventRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetHealthEventResult>() {
+            @Override
+            public GetHealthEventResult call() throws Exception {
+                GetHealthEventResult result = null;
+
+                try {
+                    result = executeGetHealthEvent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMonitorResult> getMonitorAsync(GetMonitorRequest request) {
+
+        return getMonitorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMonitorResult> getMonitorAsync(final GetMonitorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMonitorRequest, GetMonitorResult> asyncHandler) {
+        final GetMonitorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMonitorResult>() {
+            @Override
+            public GetMonitorResult call() throws Exception {
+                GetMonitorResult result = null;
+
+                try {
+                    result = executeGetMonitor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHealthEventsResult> listHealthEventsAsync(ListHealthEventsRequest request) {
+
+        return listHealthEventsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHealthEventsResult> listHealthEventsAsync(final ListHealthEventsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHealthEventsRequest, ListHealthEventsResult> asyncHandler) {
+        final ListHealthEventsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHealthEventsResult>() {
+            @Override
+            public ListHealthEventsResult call() throws Exception {
+                ListHealthEventsResult result = null;
+
+                try {
+                    result = executeListHealthEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitorsResult> listMonitorsAsync(ListMonitorsRequest request) {
+
+        return listMonitorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitorsResult> listMonitorsAsync(final ListMonitorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMonitorsRequest, ListMonitorsResult> asyncHandler) {
+        final ListMonitorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMonitorsResult>() {
+            @Override
+            public ListMonitorsResult call() throws Exception {
+                ListMonitorsResult result = null;
+
+                try {
+                    result = executeListMonitors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitorResult> updateMonitorAsync(UpdateMonitorRequest request) {
+
+        return updateMonitorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitorResult> updateMonitorAsync(final UpdateMonitorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMonitorRequest, UpdateMonitorResult> asyncHandler) {
+        final UpdateMonitorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMonitorResult>() {
+            @Override
+            public UpdateMonitorResult call() throws Exception {
+                UpdateMonitorResult result = null;
+
+                try {
+                    result = executeUpdateMonitor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    /**
+     * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
+     * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should
+     * call {@code getExecutorService().shutdown()} followed by {@code getExecutorService().awaitTermination()} prior to
+     * calling this method.
+     */
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        executorService.shutdownNow();
+    }
+}

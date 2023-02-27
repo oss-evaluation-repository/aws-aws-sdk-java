@@ -54,6 +54,8 @@ public class ProactiveAnomalySummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceMetadata").build();
     private static final MarshallingInfo<List> ANOMALYRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnomalyResources").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
     private static final ProactiveAnomalySummaryMarshaller instance = new ProactiveAnomalySummaryMarshaller();
 
@@ -84,6 +86,7 @@ public class ProactiveAnomalySummaryMarshaller {
             protocolMarshaller.marshall(proactiveAnomalySummary.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getSourceMetadata(), SOURCEMETADATA_BINDING);
             protocolMarshaller.marshall(proactiveAnomalySummary.getAnomalyResources(), ANOMALYRESOURCES_BINDING);
+            protocolMarshaller.marshall(proactiveAnomalySummary.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

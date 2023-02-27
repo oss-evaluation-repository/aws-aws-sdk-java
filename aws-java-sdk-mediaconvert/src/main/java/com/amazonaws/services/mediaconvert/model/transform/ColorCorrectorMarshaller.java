@@ -37,6 +37,8 @@ public class ColorCorrectorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contrast").build();
     private static final MarshallingInfo<StructuredPojo> HDR10METADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdr10Metadata").build();
+    private static final MarshallingInfo<String> HDRTOSDRTONEMAPPER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hdrToSdrToneMapper").build();
     private static final MarshallingInfo<Integer> HUE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("hue").build();
     private static final MarshallingInfo<String> SAMPLERANGECONVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class ColorCorrectorMarshaller {
             protocolMarshaller.marshall(colorCorrector.getColorSpaceConversion(), COLORSPACECONVERSION_BINDING);
             protocolMarshaller.marshall(colorCorrector.getContrast(), CONTRAST_BINDING);
             protocolMarshaller.marshall(colorCorrector.getHdr10Metadata(), HDR10METADATA_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getHdrToSdrToneMapper(), HDRTOSDRTONEMAPPER_BINDING);
             protocolMarshaller.marshall(colorCorrector.getHue(), HUE_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSampleRangeConversion(), SAMPLERANGECONVERSION_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSaturation(), SATURATION_BINDING);

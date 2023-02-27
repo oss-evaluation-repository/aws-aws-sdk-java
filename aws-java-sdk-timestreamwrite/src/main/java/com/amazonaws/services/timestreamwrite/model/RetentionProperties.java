@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Retention properties contain the duration for which your time series data must be stored in the magnetic store and
+ * Retention properties contain the duration for which your time-series data must be stored in the magnetic store and
  * the memory store.
  * </p>
  * 

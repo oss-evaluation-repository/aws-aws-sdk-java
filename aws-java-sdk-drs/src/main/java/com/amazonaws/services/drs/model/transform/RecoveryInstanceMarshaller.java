@@ -43,6 +43,8 @@ public class RecoveryInstanceMarshaller {
             .marshallLocationName("isDrill").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobID").build();
+    private static final MarshallingInfo<String> ORIGINAVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("originAvailabilityZone").build();
     private static final MarshallingInfo<String> ORIGINENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("originEnvironment").build();
     private static final MarshallingInfo<String> POINTINTIMESNAPSHOTDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +81,7 @@ public class RecoveryInstanceMarshaller {
             protocolMarshaller.marshall(recoveryInstance.getFailback(), FAILBACK_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getIsDrill(), ISDRILL_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getJobID(), JOBID_BINDING);
+            protocolMarshaller.marshall(recoveryInstance.getOriginAvailabilityZone(), ORIGINAVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getOriginEnvironment(), ORIGINENVIRONMENT_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getPointInTimeSnapshotDateTime(), POINTINTIMESNAPSHOTDATETIME_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getRecoveryInstanceID(), RECOVERYINSTANCEID_BINDING);

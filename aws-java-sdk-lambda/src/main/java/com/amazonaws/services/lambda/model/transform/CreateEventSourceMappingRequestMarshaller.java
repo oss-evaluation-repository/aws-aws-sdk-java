@@ -72,6 +72,8 @@ public class CreateEventSourceMappingRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SelfManagedKafkaEventSourceConfig").build();
     private static final MarshallingInfo<StructuredPojo> SCALINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingConfig").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTDBEVENTSOURCECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentDBEventSourceConfig").build();
 
     private static final CreateEventSourceMappingRequestMarshaller instance = new CreateEventSourceMappingRequestMarshaller();
 
@@ -111,6 +113,7 @@ public class CreateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(createEventSourceMappingRequest.getAmazonManagedKafkaEventSourceConfig(), AMAZONMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getSelfManagedKafkaEventSourceConfig(), SELFMANAGEDKAFKAEVENTSOURCECONFIG_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getScalingConfig(), SCALINGCONFIG_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getDocumentDBEventSourceConfig(), DOCUMENTDBEVENTSOURCECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

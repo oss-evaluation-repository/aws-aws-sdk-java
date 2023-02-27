@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an available endpoint against which to make API calls agaisnt, as well as the TTL for that endpoint.
+ * Represents an available endpoint against which to make API calls against, as well as the TTL for that endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/timestream-write-2018-11-01/Endpoint" target="_top">AWS API

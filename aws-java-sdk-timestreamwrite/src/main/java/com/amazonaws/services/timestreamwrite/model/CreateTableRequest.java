@@ -39,7 +39,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String tableName;
     /**
      * <p>
-     * The duration for which your time series data must be stored in the memory store and the magnetic store.
+     * The duration for which your time-series data must be stored in the memory store and the magnetic store.
      * </p>
      */
     private RetentionProperties retentionProperties;
@@ -138,11 +138,11 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The duration for which your time series data must be stored in the memory store and the magnetic store.
+     * The duration for which your time-series data must be stored in the memory store and the magnetic store.
      * </p>
      * 
      * @param retentionProperties
-     *        The duration for which your time series data must be stored in the memory store and the magnetic store.
+     *        The duration for which your time-series data must be stored in the memory store and the magnetic store.
      */
 
     public void setRetentionProperties(RetentionProperties retentionProperties) {
@@ -151,10 +151,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The duration for which your time series data must be stored in the memory store and the magnetic store.
+     * The duration for which your time-series data must be stored in the memory store and the magnetic store.
      * </p>
      * 
-     * @return The duration for which your time series data must be stored in the memory store and the magnetic store.
+     * @return The duration for which your time-series data must be stored in the memory store and the magnetic store.
      */
 
     public RetentionProperties getRetentionProperties() {
@@ -163,11 +163,11 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The duration for which your time series data must be stored in the memory store and the magnetic store.
+     * The duration for which your time-series data must be stored in the memory store and the magnetic store.
      * </p>
      * 
      * @param retentionProperties
-     *        The duration for which your time series data must be stored in the memory store and the magnetic store.
+     *        The duration for which your time-series data must be stored in the memory store and the magnetic store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

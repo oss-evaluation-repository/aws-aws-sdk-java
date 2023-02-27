@@ -72,6 +72,12 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
     private String jobID;
     /**
      * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     */
+    private String originAvailabilityZone;
+    /**
+     * <p>
      * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
      * </p>
      */
@@ -420,6 +426,46 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     * 
+     * @param originAvailabilityZone
+     *        AWS availability zone associated with the recovery instance.
+     */
+
+    public void setOriginAvailabilityZone(String originAvailabilityZone) {
+        this.originAvailabilityZone = originAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     * 
+     * @return AWS availability zone associated with the recovery instance.
+     */
+
+    public String getOriginAvailabilityZone() {
+        return this.originAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * AWS availability zone associated with the recovery instance.
+     * </p>
+     * 
+     * @param originAvailabilityZone
+     *        AWS availability zone associated with the recovery instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryInstance withOriginAvailabilityZone(String originAvailabilityZone) {
+        setOriginAvailabilityZone(originAvailabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
      * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
      * </p>
      * 
@@ -731,6 +777,8 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
             sb.append("IsDrill: ").append(getIsDrill()).append(",");
         if (getJobID() != null)
             sb.append("JobID: ").append(getJobID()).append(",");
+        if (getOriginAvailabilityZone() != null)
+            sb.append("OriginAvailabilityZone: ").append(getOriginAvailabilityZone()).append(",");
         if (getOriginEnvironment() != null)
             sb.append("OriginEnvironment: ").append(getOriginEnvironment()).append(",");
         if (getPointInTimeSnapshotDateTime() != null)
@@ -785,6 +833,10 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getJobID() != null && other.getJobID().equals(this.getJobID()) == false)
             return false;
+        if (other.getOriginAvailabilityZone() == null ^ this.getOriginAvailabilityZone() == null)
+            return false;
+        if (other.getOriginAvailabilityZone() != null && other.getOriginAvailabilityZone().equals(this.getOriginAvailabilityZone()) == false)
+            return false;
         if (other.getOriginEnvironment() == null ^ this.getOriginEnvironment() == null)
             return false;
         if (other.getOriginEnvironment() != null && other.getOriginEnvironment().equals(this.getOriginEnvironment()) == false)
@@ -824,6 +876,7 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFailback() == null) ? 0 : getFailback().hashCode());
         hashCode = prime * hashCode + ((getIsDrill() == null) ? 0 : getIsDrill().hashCode());
         hashCode = prime * hashCode + ((getJobID() == null) ? 0 : getJobID().hashCode());
+        hashCode = prime * hashCode + ((getOriginAvailabilityZone() == null) ? 0 : getOriginAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getOriginEnvironment() == null) ? 0 : getOriginEnvironment().hashCode());
         hashCode = prime * hashCode + ((getPointInTimeSnapshotDateTime() == null) ? 0 : getPointInTimeSnapshotDateTime().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceID() == null) ? 0 : getRecoveryInstanceID().hashCode());

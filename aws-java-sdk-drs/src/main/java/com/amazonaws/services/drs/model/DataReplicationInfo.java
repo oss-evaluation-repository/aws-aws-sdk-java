@@ -64,6 +64,12 @@ public class DataReplicationInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.List<DataReplicationInfoReplicatedDisk> replicatedDisks;
+    /**
+     * <p>
+     * AWS Availability zone into which data is being replicated.
+     * </p>
+     */
+    private String stagingAvailabilityZone;
 
     /**
      * <p>
@@ -355,6 +361,46 @@ public class DataReplicationInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * AWS Availability zone into which data is being replicated.
+     * </p>
+     * 
+     * @param stagingAvailabilityZone
+     *        AWS Availability zone into which data is being replicated.
+     */
+
+    public void setStagingAvailabilityZone(String stagingAvailabilityZone) {
+        this.stagingAvailabilityZone = stagingAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * AWS Availability zone into which data is being replicated.
+     * </p>
+     * 
+     * @return AWS Availability zone into which data is being replicated.
+     */
+
+    public String getStagingAvailabilityZone() {
+        return this.stagingAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * AWS Availability zone into which data is being replicated.
+     * </p>
+     * 
+     * @param stagingAvailabilityZone
+     *        AWS Availability zone into which data is being replicated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataReplicationInfo withStagingAvailabilityZone(String stagingAvailabilityZone) {
+        setStagingAvailabilityZone(stagingAvailabilityZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -377,7 +423,9 @@ public class DataReplicationInfo implements Serializable, Cloneable, StructuredP
         if (getLagDuration() != null)
             sb.append("LagDuration: ").append(getLagDuration()).append(",");
         if (getReplicatedDisks() != null)
-            sb.append("ReplicatedDisks: ").append(getReplicatedDisks());
+            sb.append("ReplicatedDisks: ").append(getReplicatedDisks()).append(",");
+        if (getStagingAvailabilityZone() != null)
+            sb.append("StagingAvailabilityZone: ").append(getStagingAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }
@@ -416,6 +464,10 @@ public class DataReplicationInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getReplicatedDisks() != null && other.getReplicatedDisks().equals(this.getReplicatedDisks()) == false)
             return false;
+        if (other.getStagingAvailabilityZone() == null ^ this.getStagingAvailabilityZone() == null)
+            return false;
+        if (other.getStagingAvailabilityZone() != null && other.getStagingAvailabilityZone().equals(this.getStagingAvailabilityZone()) == false)
+            return false;
         return true;
     }
 
@@ -430,6 +482,7 @@ public class DataReplicationInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEtaDateTime() == null) ? 0 : getEtaDateTime().hashCode());
         hashCode = prime * hashCode + ((getLagDuration() == null) ? 0 : getLagDuration().hashCode());
         hashCode = prime * hashCode + ((getReplicatedDisks() == null) ? 0 : getReplicatedDisks().hashCode());
+        hashCode = prime * hashCode + ((getStagingAvailabilityZone() == null) ? 0 : getStagingAvailabilityZone().hashCode());
         return hashCode;
     }
 

@@ -34,9 +34,9 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream
-     * managed KMS key located in your account. Refer to <a
+     * managed KMS key located in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
-     * managed KMS keys</a> for more info.
+     * managed keys</a>.
      * </p>
      */
     private String kmsKeyId;
@@ -90,16 +90,16 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream
-     * managed KMS key located in your account. Refer to <a
+     * managed KMS key located in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
-     * managed KMS keys</a> for more info.
+     * managed keys</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a
-     *        Timestream managed KMS key located in your account. Refer to <a
+     *        Timestream managed KMS key located in your account. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web
-     *        Services managed KMS keys</a> for more info.
+     *        Services managed keys</a>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -109,15 +109,15 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream
-     * managed KMS key located in your account. Refer to <a
+     * managed KMS key located in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
-     * managed KMS keys</a> for more info.
+     * managed keys</a>.
      * </p>
      * 
      * @return The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a
-     *         Timestream managed KMS key located in your account. Refer to <a
+     *         Timestream managed KMS key located in your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web
-     *         Services managed KMS keys</a> for more info.
+     *         Services managed keys</a>.
      */
 
     public String getKmsKeyId() {
@@ -127,16 +127,16 @@ public class CreateDatabaseRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream
-     * managed KMS key located in your account. Refer to <a
+     * managed KMS key located in your account. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services
-     * managed KMS keys</a> for more info.
+     * managed keys</a>.
      * </p>
      * 
      * @param kmsKeyId
      *        The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a
-     *        Timestream managed KMS key located in your account. Refer to <a
+     *        Timestream managed KMS key located in your account. For more information, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web
-     *        Services managed KMS keys</a> for more info.
+     *        Services managed keys</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

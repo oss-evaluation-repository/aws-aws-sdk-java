@@ -115,6 +115,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
      * deployment package is a .zip file archive.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      */
     private String runtime;
     /**
@@ -127,8 +132,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private DeadLetterConfig deadLetterConfig;
     /**
      * <p>
-     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
-     * it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
+     * uses a default service key.
      * </p>
      */
     private String kMSKeyArn;
@@ -725,11 +734,20 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
      * deployment package is a .zip file archive.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param runtime
      *        The identifier of the function's <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
-     *        if the deployment package is a .zip file archive.
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -743,10 +761,19 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
      * deployment package is a .zip file archive.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @return The identifier of the function's <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
-     *         if the deployment package is a .zip file archive.
+     *         if the deployment package is a .zip file archive.</p>
+     *         <p>
+     *         The following list includes deprecated runtimes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *         deprecation policy</a>.
      * @see Runtime
      */
 
@@ -760,11 +787,20 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
      * deployment package is a .zip file archive.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param runtime
      *        The identifier of the function's <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
-     *        if the deployment package is a .zip file archive.
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -780,11 +816,20 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
      * deployment package is a .zip file archive.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param runtime
      *        The identifier of the function's <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
-     *        if the deployment package is a .zip file archive.
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @see Runtime
      */
 
@@ -798,11 +843,20 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required if the
      * deployment package is a .zip file archive.
      * </p>
+     * <p>
+     * The following list includes deprecated runtimes. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     * deprecation policy</a>.
+     * </p>
      * 
      * @param runtime
      *        The identifier of the function's <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>. Runtime is required
-     *        if the deployment package is a .zip file archive.
+     *        if the deployment package is a .zip file archive.</p>
+     *        <p>
+     *        The following list includes deprecated runtimes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+     *        deprecation policy</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
      */
@@ -869,13 +923,22 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
-     * it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
+     * uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment
-     *        variables. If it's not provided, Lambda uses a default service key.
+     *        The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a
+     *        href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *        >environment variables</a>. When <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *        activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer
+     *        managed key, Lambda uses a default service key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -884,12 +947,21 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
-     * it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
+     * uses a default service key.
      * </p>
      * 
-     * @return The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment
-     *         variables. If it's not provided, Lambda uses a default service key.
+     * @return The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's
+     *         <a href=
+     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *         >environment variables</a>. When <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *         activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer
+     *         managed key, Lambda uses a default service key.
      */
 
     public String getKMSKeyArn() {
@@ -898,13 +970,22 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
-     * it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt your function's snapshot. If you don't provide a customer managed key, Lambda
+     * uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment
-     *        variables. If it's not provided, Lambda uses a default service key.
+     *        The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt your function's <a
+     *        href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *        >environment variables</a>. When <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *        activated, this key is also used to encrypt your function's snapshot. If you don't provide a customer
+     *        managed key, Lambda uses a default service key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

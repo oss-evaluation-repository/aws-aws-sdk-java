@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Instance quota of resource exceeded for this account.
+ * The instance quota of resource exceeded for this account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

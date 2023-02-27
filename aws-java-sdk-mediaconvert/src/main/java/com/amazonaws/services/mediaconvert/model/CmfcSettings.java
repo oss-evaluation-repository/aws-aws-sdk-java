@@ -134,13 +134,13 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     private String timedMetadataBoxVersion;
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
      * metadata (timedMetadata) to Passthrough.
      */
     private String timedMetadataSchemeIdUri;
     /**
-     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
      * set ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1176,13 +1176,13 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
      * metadata (timedMetadata) to Passthrough.
      * 
      * @param timedMetadataSchemeIdUri
      *        Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
-     *        For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
+     *        For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
      *        default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
      *        must also set ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1193,12 +1193,12 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
      * metadata (timedMetadata) to Passthrough.
      * 
      * @return Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
-     *         For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
+     *         For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
      *         default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
      *         must also set ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1209,13 +1209,13 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
-     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
      * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
      * metadata (timedMetadata) to Passthrough.
      * 
      * @param timedMetadataSchemeIdUri
      *        Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
-     *        For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
+     *        For more information, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
      *        default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
      *        must also set ID3 metadata (timedMetadata) to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1227,12 +1227,12 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
      * set ID3 metadata (timedMetadata) to Passthrough.
      * 
      * @param timedMetadataValue
-     *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton,
+     *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
      *        you must also set ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1242,11 +1242,11 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
      * set ID3 metadata (timedMetadata) to Passthrough.
      * 
-     * @return Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton,
+     * @return Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information,
      *         see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
      *         you must also set ID3 metadata (timedMetadata) to Passthrough.
      */
@@ -1256,12 +1256,12 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information, see
      * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
      * set ID3 metadata (timedMetadata) to Passthrough.
      * 
      * @param timedMetadataValue
-     *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton,
+     *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more information,
      *        see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
      *        you must also set ID3 metadata (timedMetadata) to Passthrough.
      * @return Returns a reference to this object so that method calls can be chained together.

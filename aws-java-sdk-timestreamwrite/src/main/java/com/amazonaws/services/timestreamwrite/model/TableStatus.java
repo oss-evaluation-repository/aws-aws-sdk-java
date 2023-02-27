@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TableStatus {
 
     ACTIVE("ACTIVE"),
-    DELETING("DELETING");
+    DELETING("DELETING"),
+    RESTORING("RESTORING");
 
     private String value;
 

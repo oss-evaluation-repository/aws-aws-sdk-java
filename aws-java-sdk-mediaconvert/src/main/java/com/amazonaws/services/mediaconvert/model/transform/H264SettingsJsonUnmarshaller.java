@@ -52,6 +52,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setAdaptiveQuantization(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("bandwidthReductionFilter", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setBandwidthReductionFilter(BandwidthReductionFilterJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("bitrate", targetDepth)) {
                     context.nextToken();
                     h264Settings.setBitrate(context.getUnmarshaller(Integer.class).unmarshall(context));

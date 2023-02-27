@@ -29,8 +29,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class ExtendedDataServices implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If
-     * you select STRIP, any packets will be removed in output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be
+     * changed. If you select STRIP, any packets will be removed in output captions.
      */
     private String copyProtectionAction;
     /**
@@ -40,12 +40,12 @@ public class ExtendedDataServices implements Serializable, Cloneable, Structured
     private String vchipAction;
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If
-     * you select STRIP, any packets will be removed in output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be
+     * changed. If you select STRIP, any packets will be removed in output captions.
      * 
      * @param copyProtectionAction
-     *        The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be
-     *        changed. If you select STRIP, any packets will be removed in output captions.
+     *        The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will
+     *        not be changed. If you select STRIP, any packets will be removed in output captions.
      * @see CopyProtectionAction
      */
 
@@ -54,11 +54,11 @@ public class ExtendedDataServices implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If
-     * you select STRIP, any packets will be removed in output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be
+     * changed. If you select STRIP, any packets will be removed in output captions.
      * 
-     * @return The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be
-     *         changed. If you select STRIP, any packets will be removed in output captions.
+     * @return The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets
+     *         will not be changed. If you select STRIP, any packets will be removed in output captions.
      * @see CopyProtectionAction
      */
 
@@ -67,12 +67,12 @@ public class ExtendedDataServices implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If
-     * you select STRIP, any packets will be removed in output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be
+     * changed. If you select STRIP, any packets will be removed in output captions.
      * 
      * @param copyProtectionAction
-     *        The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be
-     *        changed. If you select STRIP, any packets will be removed in output captions.
+     *        The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will
+     *        not be changed. If you select STRIP, any packets will be removed in output captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CopyProtectionAction
      */
@@ -83,12 +83,12 @@ public class ExtendedDataServices implements Serializable, Cloneable, Structured
     }
 
     /**
-     * The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If
-     * you select STRIP, any packets will be removed in output captions.
+     * The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be
+     * changed. If you select STRIP, any packets will be removed in output captions.
      * 
      * @param copyProtectionAction
-     *        The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be
-     *        changed. If you select STRIP, any packets will be removed in output captions.
+     *        The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will
+     *        not be changed. If you select STRIP, any packets will be removed in output captions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CopyProtectionAction
      */

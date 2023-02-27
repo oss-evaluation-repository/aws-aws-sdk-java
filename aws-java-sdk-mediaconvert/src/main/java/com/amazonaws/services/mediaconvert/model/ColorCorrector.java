@@ -52,6 +52,17 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
      * more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr.
      */
     private Hdr10Metadata hdr10Metadata;
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you
+     * select represents a creative choice, with different tradeoffs in the details and tones of your output. To
+     * maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR
+     * output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically
+     * applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant.
+     * We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it
+     * is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     */
+    private String hdrToSdrToneMapper;
     /** Hue in degrees. */
     private Integer hue;
     /**
@@ -356,6 +367,113 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you
+     * select represents a creative choice, with different tradeoffs in the details and tones of your output. To
+     * maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR
+     * output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically
+     * applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant.
+     * We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it
+     * is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     * 
+     * @param hdrToSdrToneMapper
+     *        Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that
+     *        you select represents a creative choice, with different tradeoffs in the details and tones of your output.
+     *        To maintain details in bright or saturated areas of your output: Choose Preserve details. For some
+     *        sources, your SDR output may look less bright and less saturated when compared to your HDR source.
+     *        MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and
+     *        saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content
+     *        is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in
+     *        bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+     * @see HDRToSDRToneMapper
+     */
+
+    public void setHdrToSdrToneMapper(String hdrToSdrToneMapper) {
+        this.hdrToSdrToneMapper = hdrToSdrToneMapper;
+    }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you
+     * select represents a creative choice, with different tradeoffs in the details and tones of your output. To
+     * maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR
+     * output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically
+     * applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant.
+     * We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it
+     * is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     * 
+     * @return Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that
+     *         you select represents a creative choice, with different tradeoffs in the details and tones of your
+     *         output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For
+     *         some sources, your SDR output may look less bright and less saturated when compared to your HDR source.
+     *         MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and
+     *         saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content
+     *         is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in
+     *         bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+     * @see HDRToSDRToneMapper
+     */
+
+    public String getHdrToSdrToneMapper() {
+        return this.hdrToSdrToneMapper;
+    }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you
+     * select represents a creative choice, with different tradeoffs in the details and tones of your output. To
+     * maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR
+     * output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically
+     * applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant.
+     * We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it
+     * is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     * 
+     * @param hdrToSdrToneMapper
+     *        Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that
+     *        you select represents a creative choice, with different tradeoffs in the details and tones of your output.
+     *        To maintain details in bright or saturated areas of your output: Choose Preserve details. For some
+     *        sources, your SDR output may look less bright and less saturated when compared to your HDR source.
+     *        MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and
+     *        saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content
+     *        is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in
+     *        bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HDRToSDRToneMapper
+     */
+
+    public ColorCorrector withHdrToSdrToneMapper(String hdrToSdrToneMapper) {
+        setHdrToSdrToneMapper(hdrToSdrToneMapper);
+        return this;
+    }
+
+    /**
+     * Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you
+     * select represents a creative choice, with different tradeoffs in the details and tones of your output. To
+     * maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR
+     * output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically
+     * applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant.
+     * We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it
+     * is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR
+     * tone mapping has no effect when your input is SDR.
+     * 
+     * @param hdrToSdrToneMapper
+     *        Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that
+     *        you select represents a creative choice, with different tradeoffs in the details and tones of your output.
+     *        To maintain details in bright or saturated areas of your output: Choose Preserve details. For some
+     *        sources, your SDR output may look less bright and less saturated when compared to your HDR source.
+     *        MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and
+     *        saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content
+     *        is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in
+     *        bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HDRToSDRToneMapper
+     */
+
+    public ColorCorrector withHdrToSdrToneMapper(HDRToSDRToneMapper hdrToSdrToneMapper) {
+        this.hdrToSdrToneMapper = hdrToSdrToneMapper.toString();
+        return this;
+    }
+
+    /**
      * Hue in degrees.
      * 
      * @param hue
@@ -636,6 +754,8 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
             sb.append("Contrast: ").append(getContrast()).append(",");
         if (getHdr10Metadata() != null)
             sb.append("Hdr10Metadata: ").append(getHdr10Metadata()).append(",");
+        if (getHdrToSdrToneMapper() != null)
+            sb.append("HdrToSdrToneMapper: ").append(getHdrToSdrToneMapper()).append(",");
         if (getHue() != null)
             sb.append("Hue: ").append(getHue()).append(",");
         if (getSampleRangeConversion() != null)
@@ -678,6 +798,10 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHdr10Metadata() != null && other.getHdr10Metadata().equals(this.getHdr10Metadata()) == false)
             return false;
+        if (other.getHdrToSdrToneMapper() == null ^ this.getHdrToSdrToneMapper() == null)
+            return false;
+        if (other.getHdrToSdrToneMapper() != null && other.getHdrToSdrToneMapper().equals(this.getHdrToSdrToneMapper()) == false)
+            return false;
         if (other.getHue() == null ^ this.getHue() == null)
             return false;
         if (other.getHue() != null && other.getHue().equals(this.getHue()) == false)
@@ -707,6 +831,7 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getColorSpaceConversion() == null) ? 0 : getColorSpaceConversion().hashCode());
         hashCode = prime * hashCode + ((getContrast() == null) ? 0 : getContrast().hashCode());
         hashCode = prime * hashCode + ((getHdr10Metadata() == null) ? 0 : getHdr10Metadata().hashCode());
+        hashCode = prime * hashCode + ((getHdrToSdrToneMapper() == null) ? 0 : getHdrToSdrToneMapper().hashCode());
         hashCode = prime * hashCode + ((getHue() == null) ? 0 : getHue().hashCode());
         hashCode = prime * hashCode + ((getSampleRangeConversion() == null) ? 0 : getSampleRangeConversion().hashCode());
         hashCode = prime * hashCode + ((getSaturation() == null) ? 0 : getSaturation().hashCode());

@@ -15,8 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you
- * select STRIP, any packets will be removed in output captions.
+ * The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be
+ * changed. If you select STRIP, any packets will be removed in output captions.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CopyProtectionAction {

@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies one or more severity values and one or more status values that are used to search for insights.
+ * Specifies values used to filter responses when searching for insights. You can use a <code>ResourceCollection</code>,
+ * <code>ServiceCollection</code>, array of severities, and an array of status values. Each filter type contains one or
+ * more values to search for. If you specify multiple filter types, the filter types are joined with an <code>AND</code>
+ * , and the request returns only results that match all of the specified filters.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devops-guru-2020-12-01/SearchInsightsFilters" target="_top">AWS

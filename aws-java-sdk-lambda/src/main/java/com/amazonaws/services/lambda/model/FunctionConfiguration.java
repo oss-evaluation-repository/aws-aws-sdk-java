@@ -122,8 +122,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private EnvironmentResponse environment;
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      */
     private String kMSKeyArn;
@@ -902,13 +906,21 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The KMS key that's used to encrypt the function's environment variables. This key is returned only if
-     *        you've configured a customer managed key.
+     *        The KMS key that's used to encrypt the function's <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *        >environment variables</a>. When <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *        activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've
+     *        configured a customer managed key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -917,12 +929,20 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      * 
-     * @return The KMS key that's used to encrypt the function's environment variables. This key is returned only if
-     *         you've configured a customer managed key.
+     * @return The KMS key that's used to encrypt the function's <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *         >environment variables</a>. When <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *         activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've
+     *         configured a customer managed key.
      */
 
     public String getKMSKeyArn() {
@@ -931,13 +951,21 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KMS key that's used to encrypt the function's environment variables. This key is returned only if you've
-     * configured a customer managed key.
+     * The KMS key that's used to encrypt the function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     * >environment variables</a>. When <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is activated,
+     * this key is also used to encrypt the function's snapshot. This key is returned only if you've configured a
+     * customer managed key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The KMS key that's used to encrypt the function's environment variables. This key is returned only if
-     *        you've configured a customer managed key.
+     *        The KMS key that's used to encrypt the function's <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption"
+     *        >environment variables</a>. When <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda SnapStart</a> is
+     *        activated, this key is also used to encrypt the function's snapshot. This key is returned only if you've
+     *        configured a customer managed key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

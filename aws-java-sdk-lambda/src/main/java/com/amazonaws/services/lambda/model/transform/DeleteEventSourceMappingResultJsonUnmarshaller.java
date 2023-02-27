@@ -163,6 +163,11 @@ public class DeleteEventSourceMappingResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     deleteEventSourceMappingResult.setScalingConfig(ScalingConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("DocumentDBEventSourceConfig", targetDepth)) {
+                    context.nextToken();
+                    deleteEventSourceMappingResult
+                            .setDocumentDBEventSourceConfig(DocumentDBEventSourceConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

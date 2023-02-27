@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * MeasureValue represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or
- * the RPM of a wind turbine are measures. MeasureValue has both name and value.
+ * Represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a
+ * wind turbine are measures. MeasureValue has both name and value.
  * </p>
  * <p>
  * MeasureValue is only allowed for type <code>MULTI</code>. Using <code>MULTI</code> type, you can pass multiple data
@@ -35,44 +35,44 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the MeasureValue.
+     * The name of the MeasureValue.
      * </p>
      * <p>
-     * For constraints on MeasureValue names, refer to <a
+     * For constraints on MeasureValue names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     * Constraints</a> in the Timestream developer guide.
+     * Constraints</a> in the Amazon Timestream Developer Guide.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Value for the MeasureValue.
+     * The value for the MeasureValue.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * Contains the data type of the MeasureValue for the time series data point.
+     * Contains the data type of the MeasureValue for the time-series data point.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * Name of the MeasureValue.
+     * The name of the MeasureValue.
      * </p>
      * <p>
-     * For constraints on MeasureValue names, refer to <a
+     * For constraints on MeasureValue names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     * Constraints</a> in the Timestream developer guide.
+     * Constraints</a> in the Amazon Timestream Developer Guide.
      * </p>
      * 
      * @param name
-     *        Name of the MeasureValue. </p>
+     *        The name of the MeasureValue. </p>
      *        <p>
-     *        For constraints on MeasureValue names, refer to <a
+     *        For constraints on MeasureValue names, see <a
      *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     *        Constraints</a> in the Timestream developer guide.
+     *        Constraints</a> in the Amazon Timestream Developer Guide.
      */
 
     public void setName(String name) {
@@ -81,19 +81,19 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the MeasureValue.
+     * The name of the MeasureValue.
      * </p>
      * <p>
-     * For constraints on MeasureValue names, refer to <a
+     * For constraints on MeasureValue names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     * Constraints</a> in the Timestream developer guide.
+     * Constraints</a> in the Amazon Timestream Developer Guide.
      * </p>
      * 
-     * @return Name of the MeasureValue. </p>
+     * @return The name of the MeasureValue. </p>
      *         <p>
-     *         For constraints on MeasureValue names, refer to <a
+     *         For constraints on MeasureValue names, see <a
      *         href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     *         Constraints</a> in the Timestream developer guide.
+     *         Constraints</a> in the Amazon Timestream Developer Guide.
      */
 
     public String getName() {
@@ -102,20 +102,20 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the MeasureValue.
+     * The name of the MeasureValue.
      * </p>
      * <p>
-     * For constraints on MeasureValue names, refer to <a
+     * For constraints on MeasureValue names, see <a
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     * Constraints</a> in the Timestream developer guide.
+     * Constraints</a> in the Amazon Timestream Developer Guide.
      * </p>
      * 
      * @param name
-     *        Name of the MeasureValue. </p>
+     *        The name of the MeasureValue. </p>
      *        <p>
-     *        For constraints on MeasureValue names, refer to <a
+     *        For constraints on MeasureValue names, see <a
      *        href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming"> Naming
-     *        Constraints</a> in the Timestream developer guide.
+     *        Constraints</a> in the Amazon Timestream Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value for the MeasureValue.
+     * The value for the MeasureValue.
      * </p>
      * 
      * @param value
-     *        Value for the MeasureValue.
+     *        The value for the MeasureValue.
      */
 
     public void setValue(String value) {
@@ -139,10 +139,10 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value for the MeasureValue.
+     * The value for the MeasureValue.
      * </p>
      * 
-     * @return Value for the MeasureValue.
+     * @return The value for the MeasureValue.
      */
 
     public String getValue() {
@@ -151,11 +151,11 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Value for the MeasureValue.
+     * The value for the MeasureValue.
      * </p>
      * 
      * @param value
-     *        Value for the MeasureValue.
+     *        The value for the MeasureValue.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,11 +166,11 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the data type of the MeasureValue for the time series data point.
+     * Contains the data type of the MeasureValue for the time-series data point.
      * </p>
      * 
      * @param type
-     *        Contains the data type of the MeasureValue for the time series data point.
+     *        Contains the data type of the MeasureValue for the time-series data point.
      * @see MeasureValueType
      */
 
@@ -180,10 +180,10 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the data type of the MeasureValue for the time series data point.
+     * Contains the data type of the MeasureValue for the time-series data point.
      * </p>
      * 
-     * @return Contains the data type of the MeasureValue for the time series data point.
+     * @return Contains the data type of the MeasureValue for the time-series data point.
      * @see MeasureValueType
      */
 
@@ -193,11 +193,11 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the data type of the MeasureValue for the time series data point.
+     * Contains the data type of the MeasureValue for the time-series data point.
      * </p>
      * 
      * @param type
-     *        Contains the data type of the MeasureValue for the time series data point.
+     *        Contains the data type of the MeasureValue for the time-series data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MeasureValueType
      */
@@ -209,11 +209,11 @@ public class MeasureValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains the data type of the MeasureValue for the time series data point.
+     * Contains the data type of the MeasureValue for the time-series data point.
      * </p>
      * 
      * @param type
-     *        Contains the data type of the MeasureValue for the time series data point.
+     *        Contains the data type of the MeasureValue for the time-series data point.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MeasureValueType
      */

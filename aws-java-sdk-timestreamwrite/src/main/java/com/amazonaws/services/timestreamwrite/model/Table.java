@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Table represents a database table in Timestream. Tables contain one or more related time series. You can modify the
+ * Represents a database table in Timestream. Tables contain one or more related time series. You can modify the
  * retention duration of the memory store and the magnetic store for a table.
  * </p>
  * 

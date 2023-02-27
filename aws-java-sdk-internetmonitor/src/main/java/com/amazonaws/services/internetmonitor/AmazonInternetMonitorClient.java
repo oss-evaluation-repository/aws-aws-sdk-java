@@ -1,0 +1,943 @@
+/*
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.internetmonitor;
+
+import org.w3c.dom.*;
+
+import java.net.*;
+import java.util.*;
+
+import javax.annotation.Generated;
+
+import org.apache.commons.logging.*;
+
+import com.amazonaws.*;
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.auth.*;
+
+import com.amazonaws.handlers.*;
+import com.amazonaws.http.*;
+import com.amazonaws.internal.*;
+import com.amazonaws.internal.auth.*;
+import com.amazonaws.metrics.*;
+import com.amazonaws.regions.*;
+import com.amazonaws.transform.*;
+import com.amazonaws.util.*;
+import com.amazonaws.protocol.json.*;
+import com.amazonaws.util.AWSRequestMetrics.Field;
+import com.amazonaws.annotation.ThreadSafe;
+import com.amazonaws.client.AwsSyncClientParams;
+import com.amazonaws.client.builder.AdvancedConfig;
+
+import com.amazonaws.services.internetmonitor.AmazonInternetMonitorClientBuilder;
+
+import com.amazonaws.AmazonServiceException;
+
+import com.amazonaws.services.internetmonitor.model.*;
+import com.amazonaws.services.internetmonitor.model.transform.*;
+
+/**
+ * Client for accessing Amazon CloudWatch Internet Monitor. All service calls made using this client are blocking, and
+ * will not return until the service call completes.
+ * <p>
+ * <p>
+ * Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact the performance and
+ * availability between your applications hosted on Amazon Web Services and your end users, reducing the time it takes
+ * for you to diagnose these issues, from days to minutes. You can explore internet measurements for different time
+ * frames and at different geographic granularities, and quickly visualize the impact of issues, and then take action to
+ * improve your end users' experience, for example, by switching to other Amazon Web Services services or rerouting
+ * traffic to your workload through differentAmazon Web Services Regions.
+ * </p>
+ * <p>
+ * If the issue is caused by the Amazon Web Services network, you'll automatically receive an Amazon Web Services Health
+ * Dashboard notification with the steps that Amazon Web Services is taking to mitigate the problem. To support
+ * integrating health information for geographies and networks specific to your application, Internet Monitor delivers
+ * measurements to CloudWatch Logs and CloudWatch Metrics. Internet Monitor also sends health events to Amazon
+ * EventBridge, so you can set up notifications. Internet Monitor monitors internet connectivity for your application
+ * through Amazon Virtual Private Clouds (VPCs), Amazon CloudFront distributions, and Amazon WorkSpaces directories.
+ * </p>
+ * <p>
+ * To use Internet Monitor, you create a <i>monitor</i> and add resources to it, Virtual Private Clouds (VPCs), Amazon
+ * CloudFront distributions, or WorkSpaces directories that show where your application's internet traffic is. Internet
+ * Monitor then provides internet measurements from Amazon Web Services that are specific to the locations and networks
+ * that communicate with your application. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html"> Using Amazon
+ * CloudWatch Internet Monitor</a> in the Amazon CloudWatch User Guide.
+ * </p>
+ */
+@ThreadSafe
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AmazonInternetMonitorClient extends AmazonWebServiceClient implements AmazonInternetMonitor {
+
+    /** Provider for AWS credentials. */
+    private final AWSCredentialsProvider awsCredentialsProvider;
+
+    private static final Log log = LogFactory.getLog(AmazonInternetMonitor.class);
+
+    /** Default signing name for the service. */
+    private static final String DEFAULT_SIGNING_NAME = "internetmonitor";
+
+    /** Client configuration factory providing ClientConfigurations tailored to this client */
+    protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
+
+    private final AdvancedConfig advancedConfig;
+
+    private static final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory = new com.amazonaws.protocol.json.SdkJsonProtocolFactory(
+            new JsonClientMetadata()
+                    .withProtocolVersion("1.1")
+                    .withSupportsCbor(false)
+                    .withSupportsIon(false)
+                    .withContentTypeOverride("application/json")
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.internetmonitor.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .withBaseServiceExceptionClass(com.amazonaws.services.internetmonitor.model.AmazonInternetMonitorException.class));
+
+    public static AmazonInternetMonitorClientBuilder builder() {
+        return AmazonInternetMonitorClientBuilder.standard();
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon CloudWatch Internet Monitor using the specified
+     * parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonInternetMonitorClient(AwsSyncClientParams clientParams) {
+        this(clientParams, false);
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on Amazon CloudWatch Internet Monitor using the specified
+     * parameters.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not return until the service call
+     * completes.
+     *
+     * @param clientParams
+     *        Object providing client parameters.
+     */
+    AmazonInternetMonitorClient(AwsSyncClientParams clientParams, boolean endpointDiscoveryEnabled) {
+        super(clientParams);
+        this.awsCredentialsProvider = clientParams.getCredentialsProvider();
+        this.advancedConfig = clientParams.getAdvancedConfig();
+        init();
+    }
+
+    private void init() {
+        setServiceNameIntern(DEFAULT_SIGNING_NAME);
+        setEndpointPrefix(ENDPOINT_PREFIX);
+        // calling this.setEndPoint(...) will also modify the signer accordingly
+        setEndpoint("internetmonitor.us-east-1.amazonaws.com");
+        HandlerChainFactory chainFactory = new HandlerChainFactory();
+        requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/internetmonitor/request.handlers"));
+        requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/internetmonitor/request.handler2s"));
+        requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates a monitor in Amazon CloudWatch Internet Monitor. A monitor is built based on information from the
+     * application resources that you add: Virtual Private Clouds (VPCs), Amazon CloudFront distributions, and
+     * WorkSpaces directories.
+     * </p>
+     * <p>
+     * After you create a monitor, you can view the internet performance for your application, scoped to a location, as
+     * well as any health events that are impairing traffic. Internet Monitor can also diagnose whether the impairment
+     * is on the Amazon Web Services network or is an issue with an internet service provider (ISP).
+     * </p>
+     * 
+     * @param createMonitorRequest
+     * @return Result of the CreateMonitor operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ConflictException
+     *         The requested resource is in use.
+     * @throws LimitExceededException
+     *         The request exceeded a service quota.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.CreateMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/CreateMonitor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateMonitorResult createMonitor(CreateMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMonitor(request);
+    }
+
+    @SdkInternalApi
+    final CreateMonitorResult executeCreateMonitor(CreateMonitorRequest createMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMonitorRequest> request = null;
+        Response<CreateMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a monitor in Amazon CloudWatch Internet Monitor.
+     * </p>
+     * 
+     * @param deleteMonitorRequest
+     * @return Result of the DeleteMonitor operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.DeleteMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/DeleteMonitor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteMonitorResult deleteMonitor(DeleteMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMonitor(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMonitorResult executeDeleteMonitor(DeleteMonitorRequest deleteMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMonitorRequest> request = null;
+        Response<DeleteMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information the Amazon CloudWatch Internet Monitor has created and stored about a health event for a
+     * specified monitor. This information includes the impacted locations, and all of the information related to the
+     * event by location.
+     * </p>
+     * <p>
+     * The information returned includes the performance, availability, and round-trip time impact, information about
+     * the network providers, the event type, and so on.
+     * </p>
+     * <p>
+     * Information rolled up at the global traffic level is also returned, including the impact type and total traffic
+     * impact.
+     * </p>
+     * 
+     * @param getHealthEventRequest
+     * @return Result of the GetHealthEvent operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.GetHealthEvent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetHealthEvent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetHealthEventResult getHealthEvent(GetHealthEventRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHealthEvent(request);
+    }
+
+    @SdkInternalApi
+    final GetHealthEventResult executeGetHealthEvent(GetHealthEventRequest getHealthEventRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getHealthEventRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHealthEventRequest> request = null;
+        Response<GetHealthEventResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHealthEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHealthEventRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHealthEvent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetHealthEventResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetHealthEventResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a monitor in Amazon CloudWatch Internet Monitor based on a monitor name. The information
+     * returned includes the Amazon Resource Name (ARN), create time, modified time, resources included in the monitor,
+     * and status information.
+     * </p>
+     * 
+     * @param getMonitorRequest
+     * @return Result of the GetMonitor operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.GetMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMonitorResult getMonitor(GetMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMonitor(request);
+    }
+
+    @SdkInternalApi
+    final GetMonitorResult executeGetMonitor(GetMonitorRequest getMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMonitorRequest> request = null;
+        Response<GetMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMonitorResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns all information for health
+     * events including the client location information the network cause and status, event start and end time,
+     * percentage of total traffic impacted, and status.
+     * </p>
+     * <note>
+     * <p>
+     * Health events that have start times during the time frame that is requested are not included in the list of
+     * health events.
+     * </p>
+     * </note>
+     * 
+     * @param listHealthEventsRequest
+     * @return Result of the ListHealthEvents operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.ListHealthEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListHealthEvents"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListHealthEventsResult listHealthEvents(ListHealthEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHealthEvents(request);
+    }
+
+    @SdkInternalApi
+    final ListHealthEventsResult executeListHealthEvents(ListHealthEventsRequest listHealthEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listHealthEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHealthEventsRequest> request = null;
+        Response<ListHealthEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHealthEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHealthEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHealthEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListHealthEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListHealthEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all of your monitors for Amazon CloudWatch Internet Monitor and their statuses, along with the Amazon
+     * Resource Name (ARN) and name of each monitor.
+     * </p>
+     * 
+     * @param listMonitorsRequest
+     * @return Result of the ListMonitors operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.ListMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListMonitors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListMonitorsResult listMonitors(ListMonitorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMonitors(request);
+    }
+
+    @SdkInternalApi
+    final ListMonitorsResult executeListMonitors(ListMonitorsRequest listMonitorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMonitorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMonitorsRequest> request = null;
+        Response<ListMonitorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMonitorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMonitorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMonitorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMonitorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags for a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws TooManyRequestsException
+     *         There were too many requests.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws NotFoundException
+     *         The request specifies something that doesn't exist.
+     * @throws BadRequestException
+     *         A bad request was received.
+     * @throws InternalServerErrorException
+     *         There was an internal server error.
+     * @sample AmazonInternetMonitor.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a tag to a resource. Tags are supported only for monitors in Amazon CloudWatch Internet Monitor. You can add
+     * a maximum of 50 tags in Internet Monitor.
+     * </p>
+     * <p>
+     * A minimum of one tag is required for this call. It returns an error if you use the <code>TagResource</code>
+     * request with 0 tags.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws TooManyRequestsException
+     *         There were too many requests.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws NotFoundException
+     *         The request specifies something that doesn't exist.
+     * @throws BadRequestException
+     *         A bad request was received.
+     * @throws InternalServerErrorException
+     *         There was an internal server error.
+     * @sample AmazonInternetMonitor.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a tag from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws TooManyRequestsException
+     *         There were too many requests.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws NotFoundException
+     *         The request specifies something that doesn't exist.
+     * @throws BadRequestException
+     *         A bad request was received.
+     * @throws InternalServerErrorException
+     *         There was an internal server error.
+     * @sample AmazonInternetMonitor.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a monitor. You can update a monitor to add or remove resources, or to change the status of the monitor.
+     * You can't change the name of a monitor.
+     * </p>
+     * 
+     * @param updateMonitorRequest
+     * @return Result of the UpdateMonitor operation returned by the service.
+     * @throws InternalServerException
+     *         An internal error occurred.
+     * @throws ResourceNotFoundException
+     *         The request specifies a resource that doesn't exist.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeded a service quota.
+     * @throws ValidationException
+     *         Invalid request.
+     * @sample AmazonInternetMonitor.UpdateMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/UpdateMonitor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateMonitorResult updateMonitor(UpdateMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMonitor(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMonitorResult executeUpdateMonitor(UpdateMonitorRequest updateMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMonitorRequest> request = null;
+        Response<UpdateMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "InternetMonitor");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
+     * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
+     * operation, so it's available through this separate, diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you need to access this extra diagnostic
+     * information for an executed request, you should use this method to retrieve it as soon as possible after
+     * executing the request.
+     *
+     * @param request
+     *        The originally executed request
+     *
+     * @return The response metadata for the specified request, or null if none is available.
+     */
+    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+        return client.getResponseMetadataForRequest(request);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext) {
+
+        return invoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Normal invoke with authentication. Credentials are required and may be overriden at the request level.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI cachedEndpoint, URI uriFromEndpointTrait) {
+
+        executionContext.setCredentialsProvider(CredentialUtils.getCredentialsProvider(request.getOriginalRequest(), awsCredentialsProvider));
+
+        return doInvoke(request, responseHandler, executionContext, cachedEndpoint, uriFromEndpointTrait);
+    }
+
+    /**
+     * Invoke with no authentication. Credentials are not required and any credentials set on the client or request will
+     * be ignored for this operation.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> anonymousInvoke(Request<Y> request,
+            HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler, ExecutionContext executionContext) {
+
+        return doInvoke(request, responseHandler, executionContext, null, null);
+    }
+
+    /**
+     * Invoke the request using the http client. Assumes credentials (or lack thereof) have been configured in the
+     * ExecutionContext beforehand.
+     **/
+    private <X, Y extends AmazonWebServiceRequest> Response<X> doInvoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler,
+            ExecutionContext executionContext, URI discoveredEndpoint, URI uriFromEndpointTrait) {
+
+        if (discoveredEndpoint != null) {
+            request.setEndpoint(discoveredEndpoint);
+            request.getOriginalRequest().getRequestClientOptions().appendUserAgent("endpoint-discovery");
+        } else if (uriFromEndpointTrait != null) {
+            request.setEndpoint(uriFromEndpointTrait);
+        } else {
+            request.setEndpoint(endpoint);
+        }
+
+        request.setTimeOffset(timeOffset);
+
+        HttpResponseHandler<AmazonServiceException> errorResponseHandler = protocolFactory.createErrorResponseHandler(new JsonErrorResponseMetadata());
+
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @com.amazonaws.annotation.SdkInternalApi
+    static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
+        return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+    }
+
+}
