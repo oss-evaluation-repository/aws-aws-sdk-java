@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information for filtering a list of dominant language detection jobs. For more information, see the
- * operation.
+ * <code>ListTargetedSentimentDetectionJobs</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/TargetedSentimentDetectionJobFilter"

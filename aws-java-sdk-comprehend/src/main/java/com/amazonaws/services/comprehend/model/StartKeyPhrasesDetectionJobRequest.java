@@ -97,9 +97,9 @@ public class StartKeyPhrasesDetectionJobRequest extends com.amazonaws.AmazonWebS
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -579,13 +579,13 @@ public class StartKeyPhrasesDetectionJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to
-     *         a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * @return Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a
+     *         resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *         resource to indicate its use by the sales department.
      */
 
@@ -595,14 +595,14 @@ public class StartKeyPhrasesDetectionJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to
-     *        a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      */
 
@@ -617,9 +617,9 @@ public class StartKeyPhrasesDetectionJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -628,8 +628,8 @@ public class StartKeyPhrasesDetectionJobRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to
-     *        a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -646,14 +646,14 @@ public class StartKeyPhrasesDetectionJobRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to a
-     * resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to
-     * indicate its use by the sales department.
+     * Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the key phrases detection job. A tag is a key-value pair that adds metadata to
-     *        a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        Tags to associate with the key phrases detection job. A tag is a key-value pair that adds metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

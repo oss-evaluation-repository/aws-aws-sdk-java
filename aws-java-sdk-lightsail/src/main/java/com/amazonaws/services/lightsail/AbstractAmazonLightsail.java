@@ -148,6 +148,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public CreateGUISessionAccessDetailsResult createGUISessionAccessDetails(CreateGUISessionAccessDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateInstanceSnapshotResult createInstanceSnapshot(CreateInstanceSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -429,6 +434,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public GetContainerServicesResult getContainerServices(GetContainerServicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetCostEstimateResult getCostEstimate(GetCostEstimateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -723,12 +733,22 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public StartGUISessionResult startGUISession(StartGUISessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInstanceResult startInstance(StartInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StartRelationalDatabaseResult startRelationalDatabase(StartRelationalDatabaseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopGUISessionResult stopGUISession(StopGUISessionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

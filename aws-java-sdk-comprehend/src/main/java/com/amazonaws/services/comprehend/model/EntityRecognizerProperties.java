@@ -91,8 +91,8 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
     private EntityRecognizerMetadata recognizerMetadata;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
@@ -158,6 +158,18 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
      * </p>
      */
     private String sourceModelArn;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     */
+    private String flywheelArn;
+    /**
+     * <p>
+     * Output data configuration.
+     * </p>
+     */
+    private EntityRecognizerOutputDataConfig outputDataConfig;
 
     /**
      * <p>
@@ -607,13 +619,13 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to your input data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -622,11 +634,11 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon
+     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
      *         Comprehend read access to your input data.
      */
 
@@ -636,13 +648,13 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to your input data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -851,7 +863,7 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
      * 
      * @param modelKmsKeyId
      *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats: </p>
+     *        models. The ModelKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -890,7 +902,7 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
      * </ul>
      * 
      * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *         models. The ModelKmsKeyId can be either of the following formats: </p>
+     *         models. The ModelKmsKeyId can be either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -930,7 +942,7 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
      * 
      * @param modelKmsKeyId
      *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats: </p>
+     *        models. The ModelKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1038,6 +1050,86 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerProperties withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Output data configuration.
+     * </p>
+     * 
+     * @param outputDataConfig
+     *        Output data configuration.
+     */
+
+    public void setOutputDataConfig(EntityRecognizerOutputDataConfig outputDataConfig) {
+        this.outputDataConfig = outputDataConfig;
+    }
+
+    /**
+     * <p>
+     * Output data configuration.
+     * </p>
+     * 
+     * @return Output data configuration.
+     */
+
+    public EntityRecognizerOutputDataConfig getOutputDataConfig() {
+        return this.outputDataConfig;
+    }
+
+    /**
+     * <p>
+     * Output data configuration.
+     * </p>
+     * 
+     * @param outputDataConfig
+     *        Output data configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerProperties withOutputDataConfig(EntityRecognizerOutputDataConfig outputDataConfig) {
+        setOutputDataConfig(outputDataConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1080,7 +1172,11 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getSourceModelArn() != null)
-            sb.append("SourceModelArn: ").append(getSourceModelArn());
+            sb.append("SourceModelArn: ").append(getSourceModelArn()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn()).append(",");
+        if (getOutputDataConfig() != null)
+            sb.append("OutputDataConfig: ").append(getOutputDataConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1159,6 +1255,14 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
             return false;
         if (other.getSourceModelArn() != null && other.getSourceModelArn().equals(this.getSourceModelArn()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
+        if (other.getOutputDataConfig() == null ^ this.getOutputDataConfig() == null)
+            return false;
+        if (other.getOutputDataConfig() != null && other.getOutputDataConfig().equals(this.getOutputDataConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1183,6 +1287,8 @@ public class EntityRecognizerProperties implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getModelKmsKeyId() == null) ? 0 : getModelKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getSourceModelArn() == null) ? 0 : getSourceModelArn().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
+        hashCode = prime * hashCode + ((getOutputDataConfig() == null) ? 0 : getOutputDataConfig().hashCode());
         return hashCode;
     }
 

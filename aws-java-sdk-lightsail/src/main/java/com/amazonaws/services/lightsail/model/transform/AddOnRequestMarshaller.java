@@ -31,6 +31,8 @@ public class AddOnRequestMarshaller {
             .marshallLocationName("addOnType").build();
     private static final MarshallingInfo<StructuredPojo> AUTOSNAPSHOTADDONREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoSnapshotAddOnRequest").build();
+    private static final MarshallingInfo<StructuredPojo> STOPINSTANCEONIDLEREQUEST_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stopInstanceOnIdleRequest").build();
 
     private static final AddOnRequestMarshaller instance = new AddOnRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class AddOnRequestMarshaller {
         try {
             protocolMarshaller.marshall(addOnRequest.getAddOnType(), ADDONTYPE_BINDING);
             protocolMarshaller.marshall(addOnRequest.getAutoSnapshotAddOnRequest(), AUTOSNAPSHOTADDONREQUEST_BINDING);
+            protocolMarshaller.marshall(addOnRequest.getStopInstanceOnIdleRequest(), STOPINSTANCEONIDLEREQUEST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

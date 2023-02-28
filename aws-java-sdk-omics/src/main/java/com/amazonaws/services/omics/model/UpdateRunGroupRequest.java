@@ -39,7 +39,7 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxCpus;
     /**
      * <p>
-     * The maximum amount of time to run.
+     * A maximum run time for the group in minutes.
      * </p>
      */
     private Integer maxDuration;
@@ -138,11 +138,11 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum amount of time to run.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        The maximum amount of time to run.
+     *        A maximum run time for the group in minutes.
      */
 
     public void setMaxDuration(Integer maxDuration) {
@@ -151,10 +151,10 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum amount of time to run.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
-     * @return The maximum amount of time to run.
+     * @return A maximum run time for the group in minutes.
      */
 
     public Integer getMaxDuration() {
@@ -163,11 +163,11 @@ public class UpdateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The maximum amount of time to run.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        The maximum amount of time to run.
+     *        A maximum run time for the group in minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

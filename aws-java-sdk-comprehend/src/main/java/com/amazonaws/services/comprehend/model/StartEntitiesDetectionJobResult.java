@@ -83,6 +83,12 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      */
     private String jobStatus;
+    /**
+     * <p>
+     * The ARN of the custom entity recognition model.
+     * </p>
+     */
+    private String entityRecognizerArn;
 
     /**
      * <p>
@@ -534,6 +540,46 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The ARN of the custom entity recognition model.
+     * </p>
+     * 
+     * @param entityRecognizerArn
+     *        The ARN of the custom entity recognition model.
+     */
+
+    public void setEntityRecognizerArn(String entityRecognizerArn) {
+        this.entityRecognizerArn = entityRecognizerArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom entity recognition model.
+     * </p>
+     * 
+     * @return The ARN of the custom entity recognition model.
+     */
+
+    public String getEntityRecognizerArn() {
+        return this.entityRecognizerArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom entity recognition model.
+     * </p>
+     * 
+     * @param entityRecognizerArn
+     *        The ARN of the custom entity recognition model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartEntitiesDetectionJobResult withEntityRecognizerArn(String entityRecognizerArn) {
+        setEntityRecognizerArn(entityRecognizerArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -550,7 +596,9 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
         if (getJobArn() != null)
             sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getJobStatus() != null)
-            sb.append("JobStatus: ").append(getJobStatus());
+            sb.append("JobStatus: ").append(getJobStatus()).append(",");
+        if (getEntityRecognizerArn() != null)
+            sb.append("EntityRecognizerArn: ").append(getEntityRecognizerArn());
         sb.append("}");
         return sb.toString();
     }
@@ -577,6 +625,10 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
             return false;
+        if (other.getEntityRecognizerArn() == null ^ this.getEntityRecognizerArn() == null)
+            return false;
+        if (other.getEntityRecognizerArn() != null && other.getEntityRecognizerArn().equals(this.getEntityRecognizerArn()) == false)
+            return false;
         return true;
     }
 
@@ -588,6 +640,7 @@ public class StartEntitiesDetectionJobResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getEntityRecognizerArn() == null) ? 0 : getEntityRecognizerArn().hashCode());
         return hashCode;
     }
 

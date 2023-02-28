@@ -52,6 +52,10 @@ public class CreateEndpointResultJsonUnmarshaller implements Unmarshaller<Create
                     context.nextToken();
                     createEndpointResult.setEndpointArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModelArn", targetDepth)) {
+                    context.nextToken();
+                    createEndpointResult.setModelArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

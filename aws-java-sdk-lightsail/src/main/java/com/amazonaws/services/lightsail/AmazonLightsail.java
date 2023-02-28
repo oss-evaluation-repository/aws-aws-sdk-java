@@ -1043,6 +1043,41 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary
+     * URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a
+     * web-based NICE DCV session to the virtual computer's operating session.
+     * </p>
+     * <p>
+     * Use <code>StartGUISession</code> to open the session.
+     * </p>
+     * 
+     * @param createGUISessionAccessDetailsRequest
+     * @return Result of the CreateGUISessionAccessDetails operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateGUISessionAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateGUISessionAccessDetailsResult createGUISessionAccessDetails(CreateGUISessionAccessDetailsRequest createGUISessionAccessDetailsRequest);
+
+    /**
+     * <p>
      * Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a
      * new instance that is based on that snapshot.
      * </p>
@@ -3258,6 +3293,37 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a
+     * resource that has been deleted.
+     * </p>
+     * 
+     * @param getCostEstimateRequest
+     * @return Result of the GetCostEstimate operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetCostEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCostEstimateResult getCostEstimate(GetCostEstimateRequest getCostEstimateRequest);
+
+    /**
+     * <p>
      * Returns information about a specific block storage disk.
      * </p>
      * 
@@ -5359,6 +5425,37 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system
+     * and application. The session will be active for 1 hour. Use this action to resume the session after it expires.
+     * </p>
+     * 
+     * @param startGUISessionRequest
+     * @return Result of the StartGUISession operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.StartGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartGUISessionResult startGUISession(StartGUISessionRequest startGUISessionRequest);
+
+    /**
+     * <p>
      * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
      * <code>reboot instance</code> operation.
      * </p>
@@ -5447,6 +5544,37 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     StartRelationalDatabaseResult startRelationalDatabase(StartRelationalDatabaseRequest startRelationalDatabaseRequest);
+
+    /**
+     * <p>
+     * Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or
+     * application. The session will close and any unsaved data will be lost.
+     * </p>
+     * 
+     * @param stopGUISessionRequest
+     * @return Result of the StopGUISession operation returned by the service.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>) Amazon Web
+     *         Services Region. Please set your Amazon Web Services Region configuration to <code>us-east-1</code> to
+     *         create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.StopGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopGUISessionResult stopGUISession(StopGUISessionRequest stopGUISessionRequest);
 
     /**
      * <p>

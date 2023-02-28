@@ -33,11 +33,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
     private com.amazonaws.internal.SdkInternalList<String> fleetIds;
     /**
      * <p>
-     * Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the
-     * instances.
+     * Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     * terminate the instances.
      * </p>
      * <p>
-     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>.
      * Supported only for fleets of type <code>maintain</code> and <code>request</code>.
      * </p>
      * <p>
@@ -122,11 +122,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the
-     * instances.
+     * Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     * terminate the instances.
      * </p>
      * <p>
-     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>.
      * Supported only for fleets of type <code>maintain</code> and <code>request</code>.
      * </p>
      * <p>
@@ -135,11 +135,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param terminateInstances
-     *        Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate
-     *        the instances.</p>
+     *        Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     *        terminate the instances.</p>
      *        <p>
      *        To let the instances continue to run after the EC2 Fleet is deleted, specify
-     *        <code>NoTerminateInstances</code>. Supported only for fleets of type <code>maintain</code> and
+     *        <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and
      *        <code>request</code>.
      *        </p>
      *        <p>
@@ -153,11 +153,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the
-     * instances.
+     * Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     * terminate the instances.
      * </p>
      * <p>
-     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>.
      * Supported only for fleets of type <code>maintain</code> and <code>request</code>.
      * </p>
      * <p>
@@ -165,11 +165,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
      * <code>instant</code> fleet with running instances is not supported.
      * </p>
      * 
-     * @return Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate
-     *         the instances.</p>
+     * @return Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     *         terminate the instances.</p>
      *         <p>
      *         To let the instances continue to run after the EC2 Fleet is deleted, specify
-     *         <code>NoTerminateInstances</code>. Supported only for fleets of type <code>maintain</code> and
+     *         <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and
      *         <code>request</code>.
      *         </p>
      *         <p>
@@ -183,11 +183,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the
-     * instances.
+     * Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     * terminate the instances.
      * </p>
      * <p>
-     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>.
      * Supported only for fleets of type <code>maintain</code> and <code>request</code>.
      * </p>
      * <p>
@@ -196,11 +196,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @param terminateInstances
-     *        Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate
-     *        the instances.</p>
+     *        Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     *        terminate the instances.</p>
      *        <p>
      *        To let the instances continue to run after the EC2 Fleet is deleted, specify
-     *        <code>NoTerminateInstances</code>. Supported only for fleets of type <code>maintain</code> and
+     *        <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and
      *        <code>request</code>.
      *        </p>
      *        <p>
@@ -216,11 +216,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate the
-     * instances.
+     * Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     * terminate the instances.
      * </p>
      * <p>
-     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>NoTerminateInstances</code>.
+     * To let the instances continue to run after the EC2 Fleet is deleted, specify <code>no-terminate-instances</code>.
      * Supported only for fleets of type <code>maintain</code> and <code>request</code>.
      * </p>
      * <p>
@@ -228,11 +228,11 @@ public class DeleteFleetsRequest extends AmazonWebServiceRequest implements Seri
      * <code>instant</code> fleet with running instances is not supported.
      * </p>
      * 
-     * @return Indicates whether to terminate the instances when the EC2 Fleet is deleted. The default is to terminate
-     *         the instances.</p>
+     * @return Indicates whether to terminate the associated instances when the EC2 Fleet is deleted. The default is to
+     *         terminate the instances.</p>
      *         <p>
      *         To let the instances continue to run after the EC2 Fleet is deleted, specify
-     *         <code>NoTerminateInstances</code>. Supported only for fleets of type <code>maintain</code> and
+     *         <code>no-terminate-instances</code>. Supported only for fleets of type <code>maintain</code> and
      *         <code>request</code>.
      *         </p>
      *         <p>

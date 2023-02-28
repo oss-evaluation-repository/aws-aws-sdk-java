@@ -1182,6 +1182,51 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary
+     * URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a
+     * web-based NICE DCV session to the virtual computer's operating session.
+     * </p>
+     * <p>
+     * Use <code>StartGUISession</code> to open the session.
+     * </p>
+     * 
+     * @param createGUISessionAccessDetailsRequest
+     * @return A Java Future containing the result of the CreateGUISessionAccessDetails operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.CreateGUISessionAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(
+            CreateGUISessionAccessDetailsRequest createGUISessionAccessDetailsRequest);
+
+    /**
+     * <p>
+     * Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary
+     * URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a
+     * web-based NICE DCV session to the virtual computer's operating session.
+     * </p>
+     * <p>
+     * Use <code>StartGUISession</code> to open the session.
+     * </p>
+     * 
+     * @param createGUISessionAccessDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGUISessionAccessDetails operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.CreateGUISessionAccessDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateGUISessionAccessDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(
+            CreateGUISessionAccessDetailsRequest createGUISessionAccessDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGUISessionAccessDetailsRequest, CreateGUISessionAccessDetailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a
      * new instance that is based on that snapshot.
      * </p>
@@ -3745,6 +3790,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a
+     * resource that has been deleted.
+     * </p>
+     * 
+     * @param getCostEstimateRequest
+     * @return A Java Future containing the result of the GetCostEstimate operation returned by the service.
+     * @sample AmazonLightsailAsync.GetCostEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest getCostEstimateRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the cost estimate for a specified resource. A cost estimate will not generate for a
+     * resource that has been deleted.
+     * </p>
+     * 
+     * @param getCostEstimateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCostEstimate operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetCostEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCostEstimate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest getCostEstimateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCostEstimateRequest, GetCostEstimateResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a specific block storage disk.
      * </p>
      * 
@@ -5909,6 +5987,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system
+     * and application. The session will be active for 1 hour. Use this action to resume the session after it expires.
+     * </p>
+     * 
+     * @param startGUISessionRequest
+     * @return A Java Future containing the result of the StartGUISession operation returned by the service.
+     * @sample AmazonLightsailAsync.StartGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest startGUISessionRequest);
+
+    /**
+     * <p>
+     * Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system
+     * and application. The session will be active for 1 hour. Use this action to resume the session after it expires.
+     * </p>
+     * 
+     * @param startGUISessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartGUISession operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StartGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StartGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest startGUISessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartGUISessionRequest, StartGUISessionResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
      * <code>reboot instance</code> operation.
      * </p>
@@ -6014,6 +6125,39 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest startRelationalDatabaseRequest,
             com.amazonaws.handlers.AsyncHandler<StartRelationalDatabaseRequest, StartRelationalDatabaseResult> asyncHandler);
+
+    /**
+     * <p>
+     * Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or
+     * application. The session will close and any unsaved data will be lost.
+     * </p>
+     * 
+     * @param stopGUISessionRequest
+     * @return A Java Future containing the result of the StopGUISession operation returned by the service.
+     * @sample AmazonLightsailAsync.StopGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest stopGUISessionRequest);
+
+    /**
+     * <p>
+     * Terminates a web-based NICE DCV session that’s used to access a virtual computer’s operating system or
+     * application. The session will close and any unsaved data will be lost.
+     * </p>
+     * 
+     * @param stopGUISessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopGUISession operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.StopGUISession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/StopGUISession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest stopGUISessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopGUISessionRequest, StopGUISessionResult> asyncHandler);
 
     /**
      * <p>

@@ -322,6 +322,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(CreateGUISessionAccessDetailsRequest request) {
+
+        return createGUISessionAccessDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(CreateGUISessionAccessDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGUISessionAccessDetailsRequest, CreateGUISessionAccessDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInstanceSnapshotResult> createInstanceSnapshotAsync(CreateInstanceSnapshotRequest request) {
 
         return createInstanceSnapshotAsync(request, null);
@@ -1072,6 +1085,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<GetContainerServicesResult> getContainerServicesAsync(GetContainerServicesRequest request,
             com.amazonaws.handlers.AsyncHandler<GetContainerServicesRequest, GetContainerServicesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest request) {
+
+        return getCostEstimateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCostEstimateRequest, GetCostEstimateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1843,6 +1869,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     }
 
     @Override
+    public java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest request) {
+
+        return startGUISessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartGUISessionRequest, StartGUISessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest request) {
 
         return startInstanceAsync(request, null);
@@ -1864,6 +1903,19 @@ public class AbstractAmazonLightsailAsync extends AbstractAmazonLightsail implem
     @Override
     public java.util.concurrent.Future<StartRelationalDatabaseResult> startRelationalDatabaseAsync(StartRelationalDatabaseRequest request,
             com.amazonaws.handlers.AsyncHandler<StartRelationalDatabaseRequest, StartRelationalDatabaseResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest request) {
+
+        return stopGUISessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopGUISessionRequest, StopGUISessionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

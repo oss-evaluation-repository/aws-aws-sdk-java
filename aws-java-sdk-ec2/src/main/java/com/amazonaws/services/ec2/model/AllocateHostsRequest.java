@@ -110,11 +110,8 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
      * in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * <p>
-     * Default: <code>on</code>
      * </p>
      */
     private String hostMaintenance;
@@ -786,19 +783,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
      * in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * <p>
-     * Default: <code>on</code>
      * </p>
      * 
      * @param hostMaintenance
      *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
-     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>on</code>
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
      * @see HostMaintenance
      */
 
@@ -809,18 +801,13 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
      * in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * <p>
-     * Default: <code>on</code>
      * </p>
      * 
      * @return Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
-     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
-     *         maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     *         <p>
-     *         Default: <code>on</code>
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *         maintenance</a> in the <i>Amazon EC2 User Guide</i>.
      * @see HostMaintenance
      */
 
@@ -831,19 +818,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
      * in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * <p>
-     * Default: <code>on</code>
      * </p>
      * 
      * @param hostMaintenance
      *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
-     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>on</code>
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostMaintenance
      */
@@ -856,19 +838,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
      * in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * <p>
-     * Default: <code>on</code>
      * </p>
      * 
      * @param hostMaintenance
      *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
-     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>on</code>
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
      * @see HostMaintenance
      */
 
@@ -879,19 +856,14 @@ public class AllocateHostsRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host maintenance</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host maintenance</a>
      * in the <i>Amazon EC2 User Guide</i>.
-     * </p>
-     * <p>
-     * Default: <code>on</code>
      * </p>
      * 
      * @param hostMaintenance
      *        Indicates whether to enable or disable host maintenance for the Dedicated Host. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html"> Host
-     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
-     *        <p>
-     *        Default: <code>on</code>
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
+     *        maintenance</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HostMaintenance
      */

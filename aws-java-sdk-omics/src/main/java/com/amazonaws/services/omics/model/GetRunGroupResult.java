@@ -49,7 +49,7 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     private Integer maxCpus;
     /**
      * <p>
-     * The group's maximum run duration.
+     * The group's maximum run time in minutes.
      * </p>
      */
     private Integer maxDuration;
@@ -234,11 +234,11 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group's maximum run duration.
+     * The group's maximum run time in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        The group's maximum run duration.
+     *        The group's maximum run time in minutes.
      */
 
     public void setMaxDuration(Integer maxDuration) {
@@ -247,10 +247,10 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group's maximum run duration.
+     * The group's maximum run time in minutes.
      * </p>
      * 
-     * @return The group's maximum run duration.
+     * @return The group's maximum run time in minutes.
      */
 
     public Integer getMaxDuration() {
@@ -259,11 +259,11 @@ public class GetRunGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The group's maximum run duration.
+     * The group's maximum run time in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        The group's maximum run duration.
+     *        The group's maximum run time in minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

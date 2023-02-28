@@ -62,14 +62,16 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      */
     private String nextToken;
@@ -398,14 +400,16 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned NextToken value. If this parameter is not specified, then all results are
-     *        returned.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -414,13 +418,15 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         request with the returned NextToken value. If this parameter is not specified, then all results are
-     *         returned.
+     * @return The maximum number of items to return for this request. To get the next page of items, make another
+     *         request with the token returned in the output. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *         >Pagination</a>.
      */
 
     public Integer getMaxResults() {
@@ -429,14 +435,16 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another request
-     * with the returned NextToken value. If this parameter is not specified, then all results are returned.
+     * The maximum number of items to return for this request. To get the next page of items, make another request with
+     * the token returned in the output. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        request with the returned NextToken value. If this parameter is not specified, then all results are
-     *        returned.
+     *        The maximum number of items to return for this request. To get the next page of items, make another
+     *        request with the token returned in the output. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination"
+     *        >Pagination</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -447,11 +455,13 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      */
 
     public void setNextToken(String nextToken) {
@@ -460,10 +470,12 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
-     * @return The token for the next set of results.
+     * @return The token returned from a previous paginated request. Pagination continues from the end of the items
+     *         returned by the previous request.
      */
 
     public String getNextToken() {
@@ -472,11 +484,13 @@ public class DescribeFastLaunchImagesRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token returned from a previous paginated request. Pagination continues from the end of the items returned by
+     * the previous request.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token returned from a previous paginated request. Pagination continues from the end of the items
+     *        returned by the previous request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

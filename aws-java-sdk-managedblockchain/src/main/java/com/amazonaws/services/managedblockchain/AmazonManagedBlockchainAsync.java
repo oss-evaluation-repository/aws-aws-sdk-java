@@ -46,15 +46,9 @@ import com.amazonaws.services.managedblockchain.model.*;
 public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
-     * <important>
      * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
-     * <p>
-     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has
-     * the information required for token based access to your Ethereum nodes.
+     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor contains information required
+     * for token based access to your Ethereum nodes.
      * </p>
      * 
      * @param createAccessorRequest
@@ -66,15 +60,9 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
     java.util.concurrent.Future<CreateAccessorResult> createAccessorAsync(CreateAccessorRequest createAccessorRequest);
 
     /**
-     * <important>
      * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
-     * <p>
-     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor object is a container that has
-     * the information required for token based access to your Ethereum nodes.
+     * Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor contains information required
+     * for token based access to your Ethereum nodes.
      * </p>
      * 
      * @param createAccessorRequest
@@ -241,12 +229,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
             com.amazonaws.handlers.AsyncHandler<CreateProposalRequest, CreateProposalResult> asyncHandler);
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the
      * information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
@@ -265,12 +247,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
     java.util.concurrent.Future<DeleteAccessorResult> deleteAccessorAsync(DeleteAccessorRequest deleteAccessorRequest);
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the
      * information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>.
@@ -378,12 +354,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
             com.amazonaws.handlers.AsyncHandler<DeleteNodeRequest, DeleteNodeResult> asyncHandler);
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Returns detailed information about an accessor. An accessor object is a container that has the information
      * required for token based access to your Ethereum nodes.
@@ -398,12 +368,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
     java.util.concurrent.Future<GetAccessorResult> getAccessorAsync(GetAccessorRequest getAccessorRequest);
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Returns detailed information about an accessor. An accessor object is a container that has the information
      * required for token based access to your Ethereum nodes.
@@ -571,12 +535,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
             com.amazonaws.handlers.AsyncHandler<GetProposalRequest, GetProposalResult> asyncHandler);
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Returns a list of the accessors and their properties. Accessor objects are containers that have the information
      * required for token based access to your Ethereum nodes.
@@ -591,12 +549,6 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
     java.util.concurrent.Future<ListAccessorsResult> listAccessorsAsync(ListAccessorsRequest listAccessorsRequest);
 
     /**
-     * <important>
-     * <p>
-     * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
-     * change. We recommend that you use this feature only with test scenarios, and not in production environments.
-     * </p>
-     * </important>
      * <p>
      * Returns a list of the accessors and their properties. Accessor objects are containers that have the information
      * required for token based access to your Ethereum nodes.

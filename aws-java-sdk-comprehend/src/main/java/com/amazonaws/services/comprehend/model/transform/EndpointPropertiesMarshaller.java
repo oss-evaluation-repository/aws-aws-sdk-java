@@ -49,6 +49,8 @@ public class EndpointPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataAccessRoleArn").build();
     private static final MarshallingInfo<String> DESIREDDATAACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredDataAccessRoleArn").build();
+    private static final MarshallingInfo<String> FLYWHEELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlywheelArn").build();
 
     private static final EndpointPropertiesMarshaller instance = new EndpointPropertiesMarshaller();
 
@@ -77,6 +79,7 @@ public class EndpointPropertiesMarshaller {
             protocolMarshaller.marshall(endpointProperties.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(endpointProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(endpointProperties.getDesiredDataAccessRoleArn(), DESIREDDATAACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(endpointProperties.getFlywheelArn(), FLYWHEELARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

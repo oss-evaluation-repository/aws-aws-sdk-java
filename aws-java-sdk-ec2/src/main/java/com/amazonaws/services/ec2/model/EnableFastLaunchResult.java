@@ -37,9 +37,8 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
     private String resourceType;
     /**
      * <p>
-     * The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster
-     * launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.
+     * Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the
+     * Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.
      * </p>
      */
     private FastLaunchSnapshotConfigurationResponse snapshotConfiguration;
@@ -51,7 +50,8 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
     private FastLaunchLaunchTemplateSpecificationResponse launchTemplate;
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      */
     private Integer maxParallelLaunches;
@@ -181,15 +181,14 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster
-     * launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.
+     * Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the
+     * Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.
      * </p>
      * 
      * @param snapshotConfiguration
-     *        The configuration settings that were defined for creating and managing the pre-provisioned snapshots for
-     *        faster launching of the Windows AMI. This property is returned when the associated
-     *        <code>resourceType</code> is <code>snapshot</code>.
+     *        Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from
+     *        the Windows AMI. This property is returned when the associated <code>resourceType</code> is
+     *        <code>snapshot</code>.
      */
 
     public void setSnapshotConfiguration(FastLaunchSnapshotConfigurationResponse snapshotConfiguration) {
@@ -198,14 +197,13 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster
-     * launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.
+     * Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the
+     * Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.
      * </p>
      * 
-     * @return The configuration settings that were defined for creating and managing the pre-provisioned snapshots for
-     *         faster launching of the Windows AMI. This property is returned when the associated
-     *         <code>resourceType</code> is <code>snapshot</code>.
+     * @return Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from
+     *         the Windows AMI. This property is returned when the associated <code>resourceType</code> is
+     *         <code>snapshot</code>.
      */
 
     public FastLaunchSnapshotConfigurationResponse getSnapshotConfiguration() {
@@ -214,15 +212,14 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The configuration settings that were defined for creating and managing the pre-provisioned snapshots for faster
-     * launching of the Windows AMI. This property is returned when the associated <code>resourceType</code> is
-     * <code>snapshot</code>.
+     * Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from the
+     * Windows AMI. This property is returned when the associated <code>resourceType</code> is <code>snapshot</code>.
      * </p>
      * 
      * @param snapshotConfiguration
-     *        The configuration settings that were defined for creating and managing the pre-provisioned snapshots for
-     *        faster launching of the Windows AMI. This property is returned when the associated
-     *        <code>resourceType</code> is <code>snapshot</code>.
+     *        Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for faster launches from
+     *        the Windows AMI. This property is returned when the associated <code>resourceType</code> is
+     *        <code>snapshot</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +270,13 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows faster launching.
      */
 
     public void setMaxParallelLaunches(Integer maxParallelLaunches) {
@@ -286,10 +285,12 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      * 
-     * @return The maximum number of parallel instances to launch for creating resources.
+     * @return The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *         snapshots for Windows faster launching.
      */
 
     public Integer getMaxParallelLaunches() {
@@ -298,11 +299,13 @@ public class EnableFastLaunchResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows faster launching.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,18 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String diskPath;
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private Boolean autoMounting;
 
     /**
      * <p>
@@ -165,6 +177,98 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMounting
+     *        A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *        default value is <code>False</code>.</p> <important>
+     *        <p>
+     *        This value only applies to Lightsail for Research resources.
+     *        </p>
+     */
+
+    public void setAutoMounting(Boolean autoMounting) {
+        this.autoMounting = autoMounting;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *         default value is <code>False</code>.</p> <important>
+     *         <p>
+     *         This value only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public Boolean getAutoMounting() {
+        return this.autoMounting;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMounting
+     *        A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *        default value is <code>False</code>.</p> <important>
+     *        <p>
+     *        This value only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AttachDiskRequest withAutoMounting(Boolean autoMounting) {
+        setAutoMounting(autoMounting);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The default
+     * value is <code>False</code>.
+     * </p>
+     * <important>
+     * <p>
+     * This value only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return A Boolean value used to determine the automatic mounting of a storage volume to a virtual computer. The
+     *         default value is <code>False</code>.</p> <important>
+     *         <p>
+     *         This value only applies to Lightsail for Research resources.
+     *         </p>
+     */
+
+    public Boolean isAutoMounting() {
+        return this.autoMounting;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +285,9 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getInstanceName() != null)
             sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getDiskPath() != null)
-            sb.append("DiskPath: ").append(getDiskPath());
+            sb.append("DiskPath: ").append(getDiskPath()).append(",");
+        if (getAutoMounting() != null)
+            sb.append("AutoMounting: ").append(getAutoMounting());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +314,10 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDiskPath() != null && other.getDiskPath().equals(this.getDiskPath()) == false)
             return false;
+        if (other.getAutoMounting() == null ^ this.getAutoMounting() == null)
+            return false;
+        if (other.getAutoMounting() != null && other.getAutoMounting().equals(this.getAutoMounting()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +329,7 @@ public class AttachDiskRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getDiskName() == null) ? 0 : getDiskName().hashCode());
         hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getDiskPath() == null) ? 0 : getDiskPath().hashCode());
+        hashCode = prime * hashCode + ((getAutoMounting() == null) ? 0 : getAutoMounting().hashCode());
         return hashCode;
     }
 

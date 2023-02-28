@@ -49,7 +49,7 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
     private String sequenceStoreId;
     /**
      * <p>
-     * The job's sources.
+     * The job's source files.
      * </p>
      */
     private java.util.List<ActivateReadSetSourceItem> sources;
@@ -228,10 +228,10 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The job's sources.
+     * The job's source files.
      * </p>
      * 
-     * @return The job's sources.
+     * @return The job's source files.
      */
 
     public java.util.List<ActivateReadSetSourceItem> getSources() {
@@ -240,11 +240,11 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The job's sources.
+     * The job's source files.
      * </p>
      * 
      * @param sources
-     *        The job's sources.
+     *        The job's source files.
      */
 
     public void setSources(java.util.Collection<ActivateReadSetSourceItem> sources) {
@@ -258,7 +258,7 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The job's sources.
+     * The job's source files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -267,7 +267,7 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param sources
-     *        The job's sources.
+     *        The job's source files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class GetReadSetActivationJobResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The job's sources.
+     * The job's source files.
      * </p>
      * 
      * @param sources
-     *        The job's sources.
+     *        The job's source files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

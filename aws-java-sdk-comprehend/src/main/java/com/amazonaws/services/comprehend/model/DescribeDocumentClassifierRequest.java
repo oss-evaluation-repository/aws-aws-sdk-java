@@ -27,21 +27,21 @@ public class DescribeDocumentClassifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in
-     * its response.
+     * The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code>
+     * operation returns this identifier in its response.
      * </p>
      */
     private String documentClassifierArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in
-     * its response.
+     * The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
      * @param documentClassifierArn
-     *        The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this
-     *        identifier in its response.
+     *        The Amazon Resource Name (ARN) that identifies the document classifier. The
+     *        <code>CreateDocumentClassifier</code> operation returns this identifier in its response.
      */
 
     public void setDocumentClassifierArn(String documentClassifierArn) {
@@ -50,12 +50,12 @@ public class DescribeDocumentClassifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in
-     * its response.
+     * The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this
-     *         identifier in its response.
+     * @return The Amazon Resource Name (ARN) that identifies the document classifier. The
+     *         <code>CreateDocumentClassifier</code> operation returns this identifier in its response.
      */
 
     public String getDocumentClassifierArn() {
@@ -64,13 +64,13 @@ public class DescribeDocumentClassifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this identifier in
-     * its response.
+     * The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
      * @param documentClassifierArn
-     *        The Amazon Resource Name (ARN) that identifies the document classifier. The operation returns this
-     *        identifier in its response.
+     *        The Amazon Resource Name (ARN) that identifies the document classifier. The
+     *        <code>CreateDocumentClassifier</code> operation returns this identifier in its response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

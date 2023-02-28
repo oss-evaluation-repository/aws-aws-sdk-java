@@ -53,6 +53,8 @@ public class DocumentClassificationJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
+    private static final MarshallingInfo<String> FLYWHEELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlywheelArn").build();
 
     private static final DocumentClassificationJobPropertiesMarshaller instance = new DocumentClassificationJobPropertiesMarshaller();
 
@@ -83,6 +85,7 @@ public class DocumentClassificationJobPropertiesMarshaller {
             protocolMarshaller.marshall(documentClassificationJobProperties.getDataAccessRoleArn(), DATAACCESSROLEARN_BINDING);
             protocolMarshaller.marshall(documentClassificationJobProperties.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
             protocolMarshaller.marshall(documentClassificationJobProperties.getVpcConfig(), VPCCONFIG_BINDING);
+            protocolMarshaller.marshall(documentClassificationJobProperties.getFlywheelArn(), FLYWHEELARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

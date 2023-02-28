@@ -99,7 +99,9 @@ public enum OperationType {
     UpdateBucketBundle("UpdateBucketBundle"),
     UpdateBucket("UpdateBucket"),
     SetResourceAccessForBucket("SetResourceAccessForBucket"),
-    UpdateInstanceMetadataOptions("UpdateInstanceMetadataOptions");
+    UpdateInstanceMetadataOptions("UpdateInstanceMetadataOptions"),
+    StartGUISession("StartGUISession"),
+    StopGUISession("StopGUISession");
 
     private String value;
 

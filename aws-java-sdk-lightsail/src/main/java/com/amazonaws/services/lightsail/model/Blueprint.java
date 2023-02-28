@@ -104,6 +104,17 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String platform;
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private String appCategory;
 
     /**
      * <p>
@@ -699,6 +710,119 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Virtual computer blueprints that are supported by Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @see AppCategory
+     */
+
+    public void setAppCategory(String appCategory) {
+        this.appCategory = appCategory;
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+     *         <p>
+     *         This parameter only applies to Lightsail for Research resources.
+     *         </p>
+     * @see AppCategory
+     */
+
+    public String getAppCategory() {
+        return this.appCategory;
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public Blueprint withAppCategory(String appCategory) {
+        setAppCategory(appCategory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @see AppCategory
+     */
+
+    public void setAppCategory(AppCategory appCategory) {
+        withAppCategory(appCategory);
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by Lightsail for Research.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param appCategory
+     *        Virtual computer blueprints that are supported by Lightsail for Research.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public Blueprint withAppCategory(AppCategory appCategory) {
+        this.appCategory = appCategory.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -733,7 +857,9 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
         if (getLicenseUrl() != null)
             sb.append("LicenseUrl: ").append(getLicenseUrl()).append(",");
         if (getPlatform() != null)
-            sb.append("Platform: ").append(getPlatform());
+            sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getAppCategory() != null)
+            sb.append("AppCategory: ").append(getAppCategory());
         sb.append("}");
         return sb.toString();
     }
@@ -796,6 +922,10 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
+        if (other.getAppCategory() == null ^ this.getAppCategory() == null)
+            return false;
+        if (other.getAppCategory() != null && other.getAppCategory().equals(this.getAppCategory()) == false)
+            return false;
         return true;
     }
 
@@ -816,6 +946,7 @@ public class Blueprint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProductUrl() == null) ? 0 : getProductUrl().hashCode());
         hashCode = prime * hashCode + ((getLicenseUrl() == null) ? 0 : getLicenseUrl().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getAppCategory() == null) ? 0 : getAppCategory().hashCode());
         return hashCode;
     }
 

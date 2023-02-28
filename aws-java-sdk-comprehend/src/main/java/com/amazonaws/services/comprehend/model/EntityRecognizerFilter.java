@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information for filtering a list of entity recognizers. You can only specify one filtering parameter in a
- * request. For more information, see the operation./&gt;
+ * request. For more information, see the <code>ListEntityRecognizers</code> operation./&gt;
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityRecognizerFilter" target="_top">AWS

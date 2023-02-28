@@ -51,7 +51,7 @@ public class StartReadSetExportJobRequest extends com.amazonaws.AmazonWebService
     private String sequenceStoreId;
     /**
      * <p>
-     * Sources for the job.
+     * The job's source files.
      * </p>
      */
     private java.util.List<ExportReadSet> sources;
@@ -218,10 +218,10 @@ public class StartReadSetExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Sources for the job.
+     * The job's source files.
      * </p>
      * 
-     * @return Sources for the job.
+     * @return The job's source files.
      */
 
     public java.util.List<ExportReadSet> getSources() {
@@ -230,11 +230,11 @@ public class StartReadSetExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Sources for the job.
+     * The job's source files.
      * </p>
      * 
      * @param sources
-     *        Sources for the job.
+     *        The job's source files.
      */
 
     public void setSources(java.util.Collection<ExportReadSet> sources) {
@@ -248,7 +248,7 @@ public class StartReadSetExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Sources for the job.
+     * The job's source files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -257,7 +257,7 @@ public class StartReadSetExportJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param sources
-     *        Sources for the job.
+     *        The job's source files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class StartReadSetExportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Sources for the job.
+     * The job's source files.
      * </p>
      * 
      * @param sources
-     *        Sources for the job.
+     *        The job's source files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

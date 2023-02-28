@@ -69,13 +69,13 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Map<String, WorkflowParameter> parameterTemplate;
     /**
      * <p>
-     * A request ID for the workflow.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      */
     private String requestId;
     /**
      * <p>
-     * A storage capacity for the workflow.
+     * A storage capacity for the workflow in gigabytes.
      * </p>
      */
     private Integer storageCapacity;
@@ -442,11 +442,11 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A request ID for the workflow.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
      * @param requestId
-     *        A request ID for the workflow.
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
     public void setRequestId(String requestId) {
@@ -455,10 +455,10 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A request ID for the workflow.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
-     * @return A request ID for the workflow.
+     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
     public String getRequestId() {
@@ -467,11 +467,11 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A request ID for the workflow.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
      * @param requestId
-     *        A request ID for the workflow.
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -482,11 +482,11 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A storage capacity for the workflow.
+     * A storage capacity for the workflow in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the workflow.
+     *        A storage capacity for the workflow in gigabytes.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -495,10 +495,10 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A storage capacity for the workflow.
+     * A storage capacity for the workflow in gigabytes.
      * </p>
      * 
-     * @return A storage capacity for the workflow.
+     * @return A storage capacity for the workflow in gigabytes.
      */
 
     public Integer getStorageCapacity() {
@@ -507,11 +507,11 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A storage capacity for the workflow.
+     * A storage capacity for the workflow in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the workflow.
+     *        A storage capacity for the workflow in gigabytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

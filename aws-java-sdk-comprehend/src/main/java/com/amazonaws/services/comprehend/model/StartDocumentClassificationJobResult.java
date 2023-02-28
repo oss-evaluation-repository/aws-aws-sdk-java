@@ -26,7 +26,8 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of the job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of the job, use this identifier with the
+     * <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      */
     private String jobId;
@@ -68,7 +69,7 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. For details, use the operation.
+     * FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * </li>
      * <li>
@@ -84,15 +85,22 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      * </ul>
      */
     private String jobStatus;
+    /**
+     * <p>
+     * The ARN of the custom classification model.
+     * </p>
+     */
+    private String documentClassifierArn;
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of the job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of the job, use this identifier with the
+     * <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * 
      * @param jobId
      *        The identifier generated for the job. To get the status of the job, use this identifier with the
-     *        operation.
+     *        <code>DescribeDocumentClassificationJob</code> operation.
      */
 
     public void setJobId(String jobId) {
@@ -101,11 +109,12 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of the job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of the job, use this identifier with the
+     * <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * 
      * @return The identifier generated for the job. To get the status of the job, use this identifier with the
-     *         operation.
+     *         <code>DescribeDocumentClassificationJob</code> operation.
      */
 
     public String getJobId() {
@@ -114,12 +123,13 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of the job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of the job, use this identifier with the
+     * <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * 
      * @param jobId
      *        The identifier generated for the job. To get the status of the job, use this identifier with the
-     *        operation.
+     *        <code>DescribeDocumentClassificationJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,7 +260,7 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. For details, use the operation.
+     * FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * </li>
      * <li>
@@ -285,7 +295,8 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. For details, use the operation.
+     *        FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code>
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
@@ -327,7 +338,7 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. For details, use the operation.
+     * FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * </li>
      * <li>
@@ -361,7 +372,8 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      *         </li>
      *         <li>
      *         <p>
-     *         FAILED - The job did not complete. For details, use the operation.
+     *         FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code>
+     *         operation.
      *         </p>
      *         </li>
      *         <li>
@@ -403,7 +415,7 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. For details, use the operation.
+     * FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * </li>
      * <li>
@@ -438,7 +450,8 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. For details, use the operation.
+     *        FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code>
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
@@ -482,7 +495,7 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. For details, use the operation.
+     * FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code> operation.
      * </p>
      * </li>
      * <li>
@@ -517,7 +530,8 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. For details, use the operation.
+     *        FAILED - The job did not complete. For details, use the <code>DescribeDocumentClassificationJob</code>
+     *        operation.
      *        </p>
      *        </li>
      *        <li>
@@ -540,6 +554,46 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The ARN of the custom classification model.
+     * </p>
+     * 
+     * @param documentClassifierArn
+     *        The ARN of the custom classification model.
+     */
+
+    public void setDocumentClassifierArn(String documentClassifierArn) {
+        this.documentClassifierArn = documentClassifierArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom classification model.
+     * </p>
+     * 
+     * @return The ARN of the custom classification model.
+     */
+
+    public String getDocumentClassifierArn() {
+        return this.documentClassifierArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the custom classification model.
+     * </p>
+     * 
+     * @param documentClassifierArn
+     *        The ARN of the custom classification model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDocumentClassificationJobResult withDocumentClassifierArn(String documentClassifierArn) {
+        setDocumentClassifierArn(documentClassifierArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -556,7 +610,9 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
         if (getJobArn() != null)
             sb.append("JobArn: ").append(getJobArn()).append(",");
         if (getJobStatus() != null)
-            sb.append("JobStatus: ").append(getJobStatus());
+            sb.append("JobStatus: ").append(getJobStatus()).append(",");
+        if (getDocumentClassifierArn() != null)
+            sb.append("DocumentClassifierArn: ").append(getDocumentClassifierArn());
         sb.append("}");
         return sb.toString();
     }
@@ -583,6 +639,10 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
             return false;
         if (other.getJobStatus() != null && other.getJobStatus().equals(this.getJobStatus()) == false)
             return false;
+        if (other.getDocumentClassifierArn() == null ^ this.getDocumentClassifierArn() == null)
+            return false;
+        if (other.getDocumentClassifierArn() != null && other.getDocumentClassifierArn().equals(this.getDocumentClassifierArn()) == false)
+            return false;
         return true;
     }
 
@@ -594,6 +654,7 @@ public class StartDocumentClassificationJobResult extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobArn() == null) ? 0 : getJobArn().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
+        hashCode = prime * hashCode + ((getDocumentClassifierArn() == null) ? 0 : getDocumentClassifierArn().hashCode());
         return hashCode;
     }
 

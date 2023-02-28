@@ -62,6 +62,8 @@ public class DiskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("attachmentState").build();
     private static final MarshallingInfo<Integer> GBINUSE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("gbInUse").build();
+    private static final MarshallingInfo<String> AUTOMOUNTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoMountStatus").build();
 
     private static final DiskMarshaller instance = new DiskMarshaller();
 
@@ -96,6 +98,7 @@ public class DiskMarshaller {
             protocolMarshaller.marshall(disk.getIsAttached(), ISATTACHED_BINDING);
             protocolMarshaller.marshall(disk.getAttachmentState(), ATTACHMENTSTATE_BINDING);
             protocolMarshaller.marshall(disk.getGbInUse(), GBINUSE_BINDING);
+            protocolMarshaller.marshall(disk.getAutoMountStatus(), AUTOMOUNTSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

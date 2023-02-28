@@ -67,16 +67,16 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String modelKmsKeyId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use
-     * Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds
-     * as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added
-     * to a resource to indicate its use by the sales department.
+     * Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -336,13 +336,13 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use
-     * Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend
-     *        to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -351,12 +351,12 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use
-     * Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon
-     *         Comprehend to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *         Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      */
 
     public String getDataAccessRoleArn() {
@@ -365,13 +365,13 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend to use
-     * Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that allows Amazon Comprehend
-     *        to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend permission to use Amazon Key Management Service (KMS) to encrypt or decrypt the custom model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,14 +382,14 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds
-     * as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added
-     * to a resource to indicate its use by the sales department.
+     * Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the custom model that is created by this import. A tag is a key-value pair
-     *         that adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the
-     *         key might be added to a resource to indicate its use by the sales department.
+     * @return Tags to associate with the custom model that is created by this import. A tag is a key-value pair that
+     *         adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
+     *         might be added to a resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -398,13 +398,13 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds
-     * as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added
-     * to a resource to indicate its use by the sales department.
+     * Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that
+     *        Tags to associate with the custom model that is created by this import. A tag is a key-value pair that
      *        adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
      *        might be added to a resource to indicate its use by the sales department.
      */
@@ -420,9 +420,9 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds
-     * as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added
-     * to a resource to indicate its use by the sales department.
+     * Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -431,7 +431,7 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that
+     *        Tags to associate with the custom model that is created by this import. A tag is a key-value pair that
      *        adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
      *        might be added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -449,13 +449,13 @@ public class ImportModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that adds
-     * as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added
-     * to a resource to indicate its use by the sales department.
+     * Tags to associate with the custom model that is created by this import. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the custom model that is created by this import. A tag is a key-value pair that
+     *        Tags to associate with the custom model that is created by this import. A tag is a key-value pair that
      *        adds as a metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key
      *        might be added to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.

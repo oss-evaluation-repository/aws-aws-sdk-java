@@ -26,7 +26,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      */
     private String jobId;
@@ -68,7 +69,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -77,11 +79,13 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      * 
      * @param jobId
-     *        The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     *        The identifier generated for the job. To get the status of a job, use this identifier with the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      */
 
     public void setJobId(String jobId) {
@@ -90,10 +94,12 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      * 
-     * @return The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * @return The identifier generated for the job. To get the status of a job, use this identifier with the
+     *         <code>DescribeTargetedSentimentDetectionJob</code> operation.
      */
 
     public String getJobId() {
@@ -102,11 +108,13 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     * The identifier generated for the job. To get the status of a job, use this identifier with the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * </p>
      * 
      * @param jobId
-     *        The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+     *        The identifier generated for the job. To get the status of a job, use this identifier with the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,7 +245,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -262,7 +271,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. To get details, use the operation.
+     *        FAILED - The job did not complete. To get details, use the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -294,7 +304,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -318,7 +329,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *         </li>
      *         <li>
      *         <p>
-     *         FAILED - The job did not complete. To get details, use the operation.
+     *         FAILED - The job did not complete. To get details, use the
+     *         <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -350,7 +362,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -375,7 +388,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. To get details, use the operation.
+     *        FAILED - The job did not complete. To get details, use the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,7 +423,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      * </li>
      * <li>
      * <p>
-     * FAILED - The job did not complete. To get details, use the operation.
+     * FAILED - The job did not complete. To get details, use the <code>DescribeTargetedSentimentDetectionJob</code>
+     * operation.
      * </p>
      * </li>
      * </ul>
@@ -434,7 +449,8 @@ public class StartTargetedSentimentDetectionJobResult extends com.amazonaws.Amaz
      *        </li>
      *        <li>
      *        <p>
-     *        FAILED - The job did not complete. To get details, use the operation.
+     *        FAILED - The job did not complete. To get details, use the
+     *        <code>DescribeTargetedSentimentDetectionJob</code> operation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -50,7 +50,8 @@ public class GetSpotPlacementScoresResult extends com.amazonaws.AmazonWebService
     private com.amazonaws.internal.SdkInternalList<SpotPlacementScore> spotPlacementScores;
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      */
     private String nextToken;
@@ -282,11 +283,13 @@ public class GetSpotPlacementScoresResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -295,10 +298,12 @@ public class GetSpotPlacementScoresResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
-     * @return The token for the next set of results.
+     * @return The token to include in another request to get the next page of items. This value is <code>null</code>
+     *         when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -307,11 +312,13 @@ public class GetSpotPlacementScoresResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The token for the next set of results.
+     * The token to include in another request to get the next page of items. This value is <code>null</code> when there
+     * are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of results.
+     *        The token to include in another request to get the next page of items. This value is <code>null</code>
+     *        when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

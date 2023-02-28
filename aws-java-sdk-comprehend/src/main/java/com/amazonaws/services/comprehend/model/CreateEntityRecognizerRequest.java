@@ -42,16 +42,16 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     private String versionName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
-     * to indicate its use by the sales department.
+     * Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -108,7 +108,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats
+     * ModelKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -251,13 +251,13 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to your input data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -266,11 +266,11 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon
+     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
      *         Comprehend read access to your input data.
      */
 
@@ -280,13 +280,13 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend read
-     * access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that grants Amazon Comprehend
-     *        read access to your input data.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to your input data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,14 +297,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
-     * to indicate its use by the sales department.
+     * Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *         metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *         added to a resource to indicate its use by the sales department.
+     * @return Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a
+     *         resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *         resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -313,15 +313,15 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
-     * to indicate its use by the sales department.
+     * Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -335,9 +335,9 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
-     * to indicate its use by the sales department.
+     * Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -346,9 +346,9 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -364,15 +364,15 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a metadata
-     * to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource
-     * to indicate its use by the sales department.
+     * Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a resource
+     * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
+     * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the entity recognizer being created. A tag is a key-value pair that adds as a
-     *        metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be
-     *        added to a resource to indicate its use by the sales department.
+     *        Tags to associate with the entity recognizer. A tag is a key-value pair that adds as a metadata to a
+     *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
+     *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -731,7 +731,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats
+     * ModelKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -749,7 +749,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param modelKmsKeyId
      *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats</p>
+     *        models. The ModelKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -771,7 +771,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats
+     * ModelKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -788,7 +788,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *         models. The ModelKmsKeyId can be either of the following formats</p>
+     *         models. The ModelKmsKeyId can be either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -810,7 +810,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom models. The
-     * ModelKmsKeyId can be either of the following formats
+     * ModelKmsKeyId can be either of the following formats:
      * </p>
      * <ul>
      * <li>
@@ -828,7 +828,7 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param modelKmsKeyId
      *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt trained custom
-     *        models. The ModelKmsKeyId can be either of the following formats</p>
+     *        models. The ModelKmsKeyId can be either of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>

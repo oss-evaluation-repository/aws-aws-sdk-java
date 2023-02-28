@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.managedblockchain.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +41,8 @@ public class AccessorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final AccessorMarshaller instance = new AccessorMarshaller();
 
@@ -62,6 +66,7 @@ public class AccessorMarshaller {
             protocolMarshaller.marshall(accessor.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(accessor.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(accessor.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(accessor.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

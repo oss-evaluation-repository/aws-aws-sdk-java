@@ -49,6 +49,8 @@ public class StartDocumentClassificationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> FLYWHEELARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlywheelArn").build();
 
     private static final StartDocumentClassificationJobRequestMarshaller instance = new StartDocumentClassificationJobRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class StartDocumentClassificationJobRequestMarshaller {
             protocolMarshaller.marshall(startDocumentClassificationJobRequest.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
             protocolMarshaller.marshall(startDocumentClassificationJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(startDocumentClassificationJobRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(startDocumentClassificationJobRequest.getFlywheelArn(), FLYWHEELARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

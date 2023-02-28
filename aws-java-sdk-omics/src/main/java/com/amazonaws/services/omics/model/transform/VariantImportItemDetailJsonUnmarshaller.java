@@ -56,6 +56,10 @@ public class VariantImportItemDetailJsonUnmarshaller implements Unmarshaller<Var
                     context.nextToken();
                     variantImportItemDetail.setSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    context.nextToken();
+                    variantImportItemDetail.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -1714,7 +1714,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Starts a read set activation job.
+     * Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.
      * </p>
      * 
      * @param startReadSetActivationJobRequest
@@ -1728,7 +1728,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Starts a read set activation job.
+     * Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.
      * </p>
      * 
      * @param startReadSetActivationJobRequest
@@ -1747,7 +1747,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Starts a read set export job.
+     * Exports a read set to Amazon S3.
      * </p>
      * 
      * @param startReadSetExportJobRequest
@@ -1760,7 +1760,7 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
-     * Starts a read set export job.
+     * Exports a read set to Amazon S3.
      * </p>
      * 
      * @param startReadSetExportJobRequest

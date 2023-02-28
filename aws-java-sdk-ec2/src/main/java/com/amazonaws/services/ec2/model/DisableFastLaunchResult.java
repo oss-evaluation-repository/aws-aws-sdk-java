@@ -51,7 +51,8 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
     private FastLaunchLaunchTemplateSpecificationResponse launchTemplate;
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      */
     private Integer maxParallelLaunches;
@@ -275,11 +276,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows faster launching.
      */
 
     public void setMaxParallelLaunches(Integer maxParallelLaunches) {
@@ -288,10 +291,12 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      * 
-     * @return The maximum number of parallel instances to launch for creating resources.
+     * @return The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *         snapshots for Windows faster launching.
      */
 
     public Integer getMaxParallelLaunches() {
@@ -300,11 +305,13 @@ public class DisableFastLaunchResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The maximum number of parallel instances to launch for creating resources.
+     * The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned snapshots
+     * for Windows faster launching.
      * </p>
      * 
      * @param maxParallelLaunches
-     *        The maximum number of parallel instances to launch for creating resources.
+     *        The maximum number of instances that Amazon EC2 can launch at the same time to create pre-provisioned
+     *        snapshots for Windows faster launching.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

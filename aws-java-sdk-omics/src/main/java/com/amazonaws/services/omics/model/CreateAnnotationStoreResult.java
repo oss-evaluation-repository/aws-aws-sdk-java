@@ -43,7 +43,7 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
-     * The store's genome reference.
+     * The store's genome reference. Required for all stores except TSV format with generic annotations.
      * </p>
      */
     private ReferenceItem reference;
@@ -188,11 +188,11 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The store's genome reference.
+     * The store's genome reference. Required for all stores except TSV format with generic annotations.
      * </p>
      * 
      * @param reference
-     *        The store's genome reference.
+     *        The store's genome reference. Required for all stores except TSV format with generic annotations.
      */
 
     public void setReference(ReferenceItem reference) {
@@ -201,10 +201,10 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The store's genome reference.
+     * The store's genome reference. Required for all stores except TSV format with generic annotations.
      * </p>
      * 
-     * @return The store's genome reference.
+     * @return The store's genome reference. Required for all stores except TSV format with generic annotations.
      */
 
     public ReferenceItem getReference() {
@@ -213,11 +213,11 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The store's genome reference.
+     * The store's genome reference. Required for all stores except TSV format with generic annotations.
      * </p>
      * 
      * @param reference
-     *        The store's genome reference.
+     *        The store's genome reference. Required for all stores except TSV format with generic annotations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

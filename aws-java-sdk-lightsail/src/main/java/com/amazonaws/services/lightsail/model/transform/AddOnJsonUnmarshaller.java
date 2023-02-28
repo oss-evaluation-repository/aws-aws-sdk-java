@@ -64,6 +64,14 @@ public class AddOnJsonUnmarshaller implements Unmarshaller<AddOn, JsonUnmarshall
                     context.nextToken();
                     addOn.setNextSnapshotTimeOfDay(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("threshold", targetDepth)) {
+                    context.nextToken();
+                    addOn.setThreshold(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("duration", targetDepth)) {
+                    context.nextToken();
+                    addOn.setDuration(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

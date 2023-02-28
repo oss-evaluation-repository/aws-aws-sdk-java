@@ -93,15 +93,16 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
     private String languageCode;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can
-     * be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the ML
+     * compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -601,11 +602,13 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to your input data.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -614,10 +617,12 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * @return The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *         Comprehend read access to your input data.
      */
 
     public String getDataAccessRoleArn() {
@@ -626,11 +631,13 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     * The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend
+     * read access to your input data.
      * </p>
      * 
      * @param dataAccessRoleArn
-     *        The Amazon Resource Name (ARN) that gives Amazon Comprehend read access to your input data.
+     *        The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon
+     *        Comprehend read access to your input data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,9 +648,9 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can
-     * be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the ML
+     * compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -660,9 +667,9 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The
-     *        VolumeKmsKeyId can be either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the
+     *        ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either
+     *        of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -683,9 +690,9 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can
-     * be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the ML
+     * compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -701,9 +708,9 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
      * </li>
      * </ul>
      * 
-     * @return ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the
-     *         storage volume attached to the ML compute instance(s) that process the targeted sentiment detection job.
-     *         The VolumeKmsKeyId can be either of the following formats:</p>
+     * @return ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the
+     *         ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be
+     *         either of the following formats:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -724,9 +731,9 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
 
     /**
      * <p>
-     * ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage volume
-     * attached to the ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can
-     * be either of the following formats:
+     * ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the ML
+     * compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either of the
+     * following formats:
      * </p>
      * <ul>
      * <li>
@@ -743,9 +750,9 @@ public class TargetedSentimentDetectionJobProperties implements Serializable, Cl
      * </ul>
      * 
      * @param volumeKmsKeyId
-     *        ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt data on the storage
-     *        volume attached to the ML compute instance(s) that process the targeted sentiment detection job. The
-     *        VolumeKmsKeyId can be either of the following formats:</p>
+     *        ID for the KMS key that Amazon Comprehend uses to encrypt the data on the storage volume attached to the
+     *        ML compute instance(s) that process the targeted sentiment detection job. The VolumeKmsKeyId can be either
+     *        of the following formats:</p>
      *        <ul>
      *        <li>
      *        <p>

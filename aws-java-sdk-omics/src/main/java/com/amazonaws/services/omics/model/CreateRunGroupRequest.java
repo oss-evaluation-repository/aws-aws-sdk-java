@@ -33,7 +33,7 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxCpus;
     /**
      * <p>
-     * A max duration for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      */
     private Integer maxDuration;
@@ -51,7 +51,7 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * A request ID for the group.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      */
     private String requestId;
@@ -104,11 +104,11 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A max duration for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        A max duration for the group.
+     *        A maximum run time for the group in minutes.
      */
 
     public void setMaxDuration(Integer maxDuration) {
@@ -117,10 +117,10 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A max duration for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
-     * @return A max duration for the group.
+     * @return A maximum run time for the group in minutes.
      */
 
     public Integer getMaxDuration() {
@@ -129,11 +129,11 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A max duration for the group.
+     * A maximum run time for the group in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        A max duration for the group.
+     *        A maximum run time for the group in minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,11 +224,11 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A request ID for the group.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
      * @param requestId
-     *        A request ID for the group.
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
     public void setRequestId(String requestId) {
@@ -237,10 +237,10 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A request ID for the group.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
-     * @return A request ID for the group.
+     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
     public String getRequestId() {
@@ -249,11 +249,11 @@ public class CreateRunGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A request ID for the group.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
      * @param requestId
-     *        A request ID for the group.
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

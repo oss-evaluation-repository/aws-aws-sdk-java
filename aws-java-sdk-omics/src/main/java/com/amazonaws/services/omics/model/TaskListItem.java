@@ -42,7 +42,7 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationTime;
     /**
      * <p>
-     * The task's memory.
+     * The task's memory use in gigabyes.
      * </p>
      */
     private Integer memory;
@@ -159,11 +159,11 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task's memory.
+     * The task's memory use in gigabyes.
      * </p>
      * 
      * @param memory
-     *        The task's memory.
+     *        The task's memory use in gigabyes.
      */
 
     public void setMemory(Integer memory) {
@@ -172,10 +172,10 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task's memory.
+     * The task's memory use in gigabyes.
      * </p>
      * 
-     * @return The task's memory.
+     * @return The task's memory use in gigabyes.
      */
 
     public Integer getMemory() {
@@ -184,11 +184,11 @@ public class TaskListItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The task's memory.
+     * The task's memory use in gigabyes.
      * </p>
      * 
      * @param memory
-     *        The task's memory.
+     *        The task's memory use in gigabyes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

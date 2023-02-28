@@ -50,6 +50,8 @@ public class BundleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transferPerMonthInGb").build();
     private static final MarshallingInfo<List> SUPPORTEDPLATFORMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedPlatforms").build();
+    private static final MarshallingInfo<List> SUPPORTEDAPPCATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("supportedAppCategories").build();
 
     private static final BundleMarshaller instance = new BundleMarshaller();
 
@@ -78,6 +80,7 @@ public class BundleMarshaller {
             protocolMarshaller.marshall(bundle.getRamSizeInGb(), RAMSIZEINGB_BINDING);
             protocolMarshaller.marshall(bundle.getTransferPerMonthInGb(), TRANSFERPERMONTHINGB_BINDING);
             protocolMarshaller.marshall(bundle.getSupportedPlatforms(), SUPPORTEDPLATFORMS_BINDING);
+            protocolMarshaller.marshall(bundle.getSupportedAppCategories(), SUPPORTEDAPPCATEGORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

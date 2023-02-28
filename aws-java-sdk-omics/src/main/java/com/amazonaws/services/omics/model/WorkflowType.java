@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum WorkflowType {
 
-    PRIVATE("PRIVATE");
+    PRIVATE("PRIVATE"),
+    SERVICE("SERVICE");
 
     private String value;
 

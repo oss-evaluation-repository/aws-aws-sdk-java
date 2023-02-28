@@ -147,6 +147,17 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
      */
     @Deprecated
     private Integer gbInUse;
+    /**
+     * <p>
+     * The status of automatically mounting a storage disk to a virtual computer.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private String autoMountStatus;
 
     /**
      * <p>
@@ -1067,6 +1078,119 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of automatically mounting a storage disk to a virtual computer.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMountStatus
+     *        The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @see AutoMountStatus
+     */
+
+    public void setAutoMountStatus(String autoMountStatus) {
+        this.autoMountStatus = autoMountStatus;
+    }
+
+    /**
+     * <p>
+     * The status of automatically mounting a storage disk to a virtual computer.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+     *         <p>
+     *         This parameter only applies to Lightsail for Research resources.
+     *         </p>
+     * @see AutoMountStatus
+     */
+
+    public String getAutoMountStatus() {
+        return this.autoMountStatus;
+    }
+
+    /**
+     * <p>
+     * The status of automatically mounting a storage disk to a virtual computer.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMountStatus
+     *        The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMountStatus
+     */
+
+    public Disk withAutoMountStatus(String autoMountStatus) {
+        setAutoMountStatus(autoMountStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of automatically mounting a storage disk to a virtual computer.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMountStatus
+     *        The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @see AutoMountStatus
+     */
+
+    public void setAutoMountStatus(AutoMountStatus autoMountStatus) {
+        withAutoMountStatus(autoMountStatus);
+    }
+
+    /**
+     * <p>
+     * The status of automatically mounting a storage disk to a virtual computer.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param autoMountStatus
+     *        The status of automatically mounting a storage disk to a virtual computer.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoMountStatus
+     */
+
+    public Disk withAutoMountStatus(AutoMountStatus autoMountStatus) {
+        this.autoMountStatus = autoMountStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1111,7 +1235,9 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
         if (getAttachmentState() != null)
             sb.append("AttachmentState: ").append(getAttachmentState()).append(",");
         if (getGbInUse() != null)
-            sb.append("GbInUse: ").append(getGbInUse());
+            sb.append("GbInUse: ").append(getGbInUse()).append(",");
+        if (getAutoMountStatus() != null)
+            sb.append("AutoMountStatus: ").append(getAutoMountStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1194,6 +1320,10 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGbInUse() != null && other.getGbInUse().equals(this.getGbInUse()) == false)
             return false;
+        if (other.getAutoMountStatus() == null ^ this.getAutoMountStatus() == null)
+            return false;
+        if (other.getAutoMountStatus() != null && other.getAutoMountStatus().equals(this.getAutoMountStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1219,6 +1349,7 @@ public class Disk implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIsAttached() == null) ? 0 : getIsAttached().hashCode());
         hashCode = prime * hashCode + ((getAttachmentState() == null) ? 0 : getAttachmentState().hashCode());
         hashCode = prime * hashCode + ((getGbInUse() == null) ? 0 : getGbInUse().hashCode());
+        hashCode = prime * hashCode + ((getAutoMountStatus() == null) ? 0 : getAutoMountStatus().hashCode());
         return hashCode;
     }
 

@@ -148,7 +148,7 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
     private String subnetId;
     /**
      * <p>
-     * The Base64-encoded user data that instances use when starting up.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      */
     private String userData;
@@ -1117,11 +1117,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data that instances use when starting up.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data that instances use when starting up.
+     *        The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      */
 
     public void setUserData(String userData) {
@@ -1130,10 +1130,10 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data that instances use when starting up.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      * 
-     * @return The Base64-encoded user data that instances use when starting up.
+     * @return The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      */
 
     public String getUserData() {
@@ -1142,11 +1142,11 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Base64-encoded user data that instances use when starting up.
+     * The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * </p>
      * 
      * @param userData
-     *        The Base64-encoded user data that instances use when starting up.
+     *        The base64-encoded user data that instances use when starting up. User data is limited to 16 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -99,6 +99,17 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> supportedPlatforms;
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     */
+    private java.util.List<String> supportedAppCategories;
 
     /**
      * <p>
@@ -649,6 +660,144 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @return Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+     *         <p>
+     *         This parameter only applies to Lightsail for Research resources.
+     *         </p>
+     * @see AppCategory
+     */
+
+    public java.util.List<String> getSupportedAppCategories() {
+        return supportedAppCategories;
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param supportedAppCategories
+     *        Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @see AppCategory
+     */
+
+    public void setSupportedAppCategories(java.util.Collection<String> supportedAppCategories) {
+        if (supportedAppCategories == null) {
+            this.supportedAppCategories = null;
+            return;
+        }
+
+        this.supportedAppCategories = new java.util.ArrayList<String>(supportedAppCategories);
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedAppCategories(java.util.Collection)} or
+     * {@link #withSupportedAppCategories(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedAppCategories
+     *        Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public Bundle withSupportedAppCategories(String... supportedAppCategories) {
+        if (this.supportedAppCategories == null) {
+            setSupportedAppCategories(new java.util.ArrayList<String>(supportedAppCategories.length));
+        }
+        for (String ele : supportedAppCategories) {
+            this.supportedAppCategories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param supportedAppCategories
+     *        Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public Bundle withSupportedAppCategories(java.util.Collection<String> supportedAppCategories) {
+        setSupportedAppCategories(supportedAppCategories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+     * </p>
+     * <important>
+     * <p>
+     * This parameter only applies to Lightsail for Research resources.
+     * </p>
+     * </important>
+     * 
+     * @param supportedAppCategories
+     *        Virtual computer blueprints that are supported by a Lightsail for Research bundle.</p> <important>
+     *        <p>
+     *        This parameter only applies to Lightsail for Research resources.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppCategory
+     */
+
+    public Bundle withSupportedAppCategories(AppCategory... supportedAppCategories) {
+        java.util.ArrayList<String> supportedAppCategoriesCopy = new java.util.ArrayList<String>(supportedAppCategories.length);
+        for (AppCategory value : supportedAppCategories) {
+            supportedAppCategoriesCopy.add(value.toString());
+        }
+        if (getSupportedAppCategories() == null) {
+            setSupportedAppCategories(supportedAppCategoriesCopy);
+        } else {
+            getSupportedAppCategories().addAll(supportedAppCategoriesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -681,7 +830,9 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
         if (getTransferPerMonthInGb() != null)
             sb.append("TransferPerMonthInGb: ").append(getTransferPerMonthInGb()).append(",");
         if (getSupportedPlatforms() != null)
-            sb.append("SupportedPlatforms: ").append(getSupportedPlatforms());
+            sb.append("SupportedPlatforms: ").append(getSupportedPlatforms()).append(",");
+        if (getSupportedAppCategories() != null)
+            sb.append("SupportedAppCategories: ").append(getSupportedAppCategories());
         sb.append("}");
         return sb.toString();
     }
@@ -740,6 +891,10 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSupportedPlatforms() != null && other.getSupportedPlatforms().equals(this.getSupportedPlatforms()) == false)
             return false;
+        if (other.getSupportedAppCategories() == null ^ this.getSupportedAppCategories() == null)
+            return false;
+        if (other.getSupportedAppCategories() != null && other.getSupportedAppCategories().equals(this.getSupportedAppCategories()) == false)
+            return false;
         return true;
     }
 
@@ -759,6 +914,7 @@ public class Bundle implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRamSizeInGb() == null) ? 0 : getRamSizeInGb().hashCode());
         hashCode = prime * hashCode + ((getTransferPerMonthInGb() == null) ? 0 : getTransferPerMonthInGb().hashCode());
         hashCode = prime * hashCode + ((getSupportedPlatforms() == null) ? 0 : getSupportedPlatforms().hashCode());
+        hashCode = prime * hashCode + ((getSupportedAppCategories() == null) ? 0 : getSupportedAppCategories().hashCode());
         return hashCode;
     }
 

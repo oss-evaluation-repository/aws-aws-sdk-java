@@ -71,6 +71,12 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </ul>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     */
+    private String flywheelStatsS3Prefix;
 
     /**
      * <p>
@@ -336,6 +342,46 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     * 
+     * @param flywheelStatsS3Prefix
+     *        The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     */
+
+    public void setFlywheelStatsS3Prefix(String flywheelStatsS3Prefix) {
+        this.flywheelStatsS3Prefix = flywheelStatsS3Prefix;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     * 
+     * @return The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     */
+
+    public String getFlywheelStatsS3Prefix() {
+        return this.flywheelStatsS3Prefix;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * </p>
+     * 
+     * @param flywheelStatsS3Prefix
+     *        The Amazon S3 prefix for the data lake location of the flywheel statistics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierOutputDataConfig withFlywheelStatsS3Prefix(String flywheelStatsS3Prefix) {
+        setFlywheelStatsS3Prefix(flywheelStatsS3Prefix);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -350,7 +396,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
         if (getS3Uri() != null)
             sb.append("S3Uri: ").append(getS3Uri()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getFlywheelStatsS3Prefix() != null)
+            sb.append("FlywheelStatsS3Prefix: ").append(getFlywheelStatsS3Prefix());
         sb.append("}");
         return sb.toString();
     }
@@ -373,6 +421,10 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getFlywheelStatsS3Prefix() == null ^ this.getFlywheelStatsS3Prefix() == null)
+            return false;
+        if (other.getFlywheelStatsS3Prefix() != null && other.getFlywheelStatsS3Prefix().equals(this.getFlywheelStatsS3Prefix()) == false)
+            return false;
         return true;
     }
 
@@ -383,6 +435,7 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
 
         hashCode = prime * hashCode + ((getS3Uri() == null) ? 0 : getS3Uri().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelStatsS3Prefix() == null) ? 0 : getFlywheelStatsS3Prefix().hashCode());
         return hashCode;
     }
 

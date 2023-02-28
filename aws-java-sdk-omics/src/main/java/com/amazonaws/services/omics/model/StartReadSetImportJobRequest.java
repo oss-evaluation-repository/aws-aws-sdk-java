@@ -45,7 +45,7 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
     private String sequenceStoreId;
     /**
      * <p>
-     * Source files to import.
+     * The job's source files.
      * </p>
      */
     private java.util.List<StartReadSetImportJobSourceItem> sources;
@@ -172,10 +172,10 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Source files to import.
+     * The job's source files.
      * </p>
      * 
-     * @return Source files to import.
+     * @return The job's source files.
      */
 
     public java.util.List<StartReadSetImportJobSourceItem> getSources() {
@@ -184,11 +184,11 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Source files to import.
+     * The job's source files.
      * </p>
      * 
      * @param sources
-     *        Source files to import.
+     *        The job's source files.
      */
 
     public void setSources(java.util.Collection<StartReadSetImportJobSourceItem> sources) {
@@ -202,7 +202,7 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Source files to import.
+     * The job's source files.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -211,7 +211,7 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param sources
-     *        Source files to import.
+     *        The job's source files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class StartReadSetImportJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Source files to import.
+     * The job's source files.
      * </p>
      * 
      * @param sources
-     *        Source files to import.
+     *        The job's source files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

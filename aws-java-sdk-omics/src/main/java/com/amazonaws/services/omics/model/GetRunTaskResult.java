@@ -43,7 +43,7 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String logStream;
     /**
      * <p>
-     * The task's memory setting.
+     * The task's memory use in gigabytes.
      * </p>
      */
     private Integer memory;
@@ -206,11 +206,11 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The task's memory setting.
+     * The task's memory use in gigabytes.
      * </p>
      * 
      * @param memory
-     *        The task's memory setting.
+     *        The task's memory use in gigabytes.
      */
 
     public void setMemory(Integer memory) {
@@ -219,10 +219,10 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The task's memory setting.
+     * The task's memory use in gigabytes.
      * </p>
      * 
-     * @return The task's memory setting.
+     * @return The task's memory use in gigabytes.
      */
 
     public Integer getMemory() {
@@ -231,11 +231,11 @@ public class GetRunTaskResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The task's memory setting.
+     * The task's memory use in gigabytes.
      * </p>
      * 
      * @param memory
-     *        The task's memory setting.
+     *        The task's memory use in gigabytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

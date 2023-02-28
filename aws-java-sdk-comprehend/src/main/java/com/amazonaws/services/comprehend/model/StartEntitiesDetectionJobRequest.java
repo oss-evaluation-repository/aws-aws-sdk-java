@@ -106,12 +106,18 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource
      * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
      * its use by the sales department.
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     * </p>
+     */
+    private String flywheelArn;
 
     /**
      * <p>
@@ -648,12 +654,12 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource
      * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
      * its use by the sales department.
      * </p>
      * 
-     * @return Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a
+     * @return Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a
      *         resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *         resource to indicate its use by the sales department.
      */
@@ -664,13 +670,13 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource
      * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
      * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a
+     *        Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a
      *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      */
@@ -686,7 +692,7 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource
      * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
      * its use by the sales department.
      * </p>
@@ -697,7 +703,7 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a
+     *        Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a
      *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -715,13 +721,13 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a resource
+     * Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a resource
      * used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate
      * its use by the sales department.
      * </p>
      * 
      * @param tags
-     *        Tags to be associated with the entities detection job. A tag is a key-value pair that adds metadata to a
+     *        Tags to associate with the entities detection job. A tag is a key-value pair that adds metadata to a
      *        resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a
      *        resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -729,6 +735,46 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
 
     public StartEntitiesDetectionJobRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     */
+
+    public void setFlywheelArn(String flywheelArn) {
+        this.flywheelArn = flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     */
+
+    public String getFlywheelArn() {
+        return this.flywheelArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     * </p>
+     * 
+     * @param flywheelArn
+     *        The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartEntitiesDetectionJobRequest withFlywheelArn(String flywheelArn) {
+        setFlywheelArn(flywheelArn);
         return this;
     }
 
@@ -763,7 +809,9 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFlywheelArn() != null)
+            sb.append("FlywheelArn: ").append(getFlywheelArn());
         sb.append("}");
         return sb.toString();
     }
@@ -818,6 +866,10 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFlywheelArn() == null ^ this.getFlywheelArn() == null)
+            return false;
+        if (other.getFlywheelArn() != null && other.getFlywheelArn().equals(this.getFlywheelArn()) == false)
+            return false;
         return true;
     }
 
@@ -836,6 +888,7 @@ public class StartEntitiesDetectionJobRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVolumeKmsKeyId() == null) ? 0 : getVolumeKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFlywheelArn() == null) ? 0 : getFlywheelArn().hashCode());
         return hashCode;
     }
 

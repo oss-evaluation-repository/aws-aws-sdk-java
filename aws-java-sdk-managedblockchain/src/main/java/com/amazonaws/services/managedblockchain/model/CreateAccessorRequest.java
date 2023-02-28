@@ -45,6 +45,23 @@ public class CreateAccessorRequest extends com.amazonaws.AmazonWebServiceRequest
      * </note>
      */
     private String accessorType;
+    /**
+     * <p>
+     * Tags to assign to the Accessor.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -196,6 +213,137 @@ public class CreateAccessorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Tags to assign to the Accessor.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @return Tags to assign to the Accessor.</p>
+     *         <p>
+     *         Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *         request with an overall maximum of 50 tags allowed per resource.
+     *         </p>
+     *         <p>
+     *         For more information about tags, see <a
+     *         href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     *         Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href=
+     *         "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     *         >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the Accessor.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to assign to the Accessor.</p>
+     *        <p>
+     *        Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *        request with an overall maximum of 50 tags allowed per resource.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     *        Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     *        >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags to assign to the Accessor.
+     * </p>
+     * <p>
+     * Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single request
+     * with an overall maximum of 50 tags allowed per resource.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags to assign to the Accessor.</p>
+     *        <p>
+     *        Each tag consists of a key and an optional value. You can specify multiple key-value pairs in a single
+     *        request with an overall maximum of 50 tags allowed per resource.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     *        Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     *        >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccessorRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateAccessorRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccessorRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccessorRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -210,7 +358,9 @@ public class CreateAccessorRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getAccessorType() != null)
-            sb.append("AccessorType: ").append(getAccessorType());
+            sb.append("AccessorType: ").append(getAccessorType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -233,6 +383,10 @@ public class CreateAccessorRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAccessorType() != null && other.getAccessorType().equals(this.getAccessorType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +397,7 @@ public class CreateAccessorRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getAccessorType() == null) ? 0 : getAccessorType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

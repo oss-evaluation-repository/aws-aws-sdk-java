@@ -60,6 +60,10 @@ public class StartEntitiesDetectionJobResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     startEntitiesDetectionJobResult.setJobStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EntityRecognizerArn", targetDepth)) {
+                    context.nextToken();
+                    startEntitiesDetectionJobResult.setEntityRecognizerArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -30,6 +30,9 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -121,6 +124,9 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -128,7 +134,11 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * </note>
      * 
      * @param instanceType
-     *        The instance type.</p> <note>
+     *        The instance type.</p>
+     *        <p>
+     *        <code>mac1.metal</code> is not supported as a launch template override.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
@@ -143,13 +153,20 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      * </p>
      * </note>
      * 
-     * @return The instance type.</p> <note>
+     * @return The instance type.</p>
+     *         <p>
+     *         <code>mac1.metal</code> is not supported as a launch template override.
+     *         </p>
+     *         <note>
      *         <p>
      *         If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *         </p>
@@ -164,6 +181,9 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -171,7 +191,11 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * </note>
      * 
      * @param instanceType
-     *        The instance type.</p> <note>
+     *        The instance type.</p>
+     *        <p>
+     *        <code>mac1.metal</code> is not supported as a launch template override.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>
@@ -188,6 +212,9 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * <p>
      * The instance type.
      * </p>
+     * <p>
+     * <code>mac1.metal</code> is not supported as a launch template override.
+     * </p>
      * <note>
      * <p>
      * If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
@@ -195,7 +222,11 @@ public class FleetLaunchTemplateOverridesRequest implements Serializable, Clonea
      * </note>
      * 
      * @param instanceType
-     *        The instance type.</p> <note>
+     *        The instance type.</p>
+     *        <p>
+     *        <code>mac1.metal</code> is not supported as a launch template override.
+     *        </p>
+     *        <note>
      *        <p>
      *        If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
      *        </p>

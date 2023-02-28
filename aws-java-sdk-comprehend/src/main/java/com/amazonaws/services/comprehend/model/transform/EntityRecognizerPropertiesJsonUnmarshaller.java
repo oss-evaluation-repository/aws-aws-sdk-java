@@ -112,6 +112,14 @@ public class EntityRecognizerPropertiesJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     entityRecognizerProperties.setSourceModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FlywheelArn", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerProperties.setFlywheelArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("OutputDataConfig", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerProperties.setOutputDataConfig(EntityRecognizerOutputDataConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

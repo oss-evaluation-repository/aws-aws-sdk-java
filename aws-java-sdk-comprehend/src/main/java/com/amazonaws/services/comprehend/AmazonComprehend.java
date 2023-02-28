@@ -275,6 +275,37 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Creates a dataset to upload training or test data for a model associated with a flywheel. For more information
+     * about datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel
+     * overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param createDatasetRequest
+     * @return Result of the CreateDataset operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateDataset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDatasetResult createDataset(CreateDatasetRequest createDatasetRequest);
+
+    /**
+     * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see <a
@@ -347,7 +378,7 @@ public interface AmazonComprehend {
     /**
      * <p>
      * Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is
-     * submitted, you can check job status using the API.
+     * submitted, you can check job status using the <code>DescribeEntityRecognizer</code> API.
      * </p>
      * 
      * @param createEntityRecognizerRequest
@@ -378,6 +409,63 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     CreateEntityRecognizerResult createEntityRecognizer(CreateEntityRecognizerRequest createEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * A flywheel is an AWS resource that orchestrates the ongoing training of a model for custom classification or
+     * custom entity recognition. You can create a flywheel to start with an existing trained model, or Comprehend can
+     * create and train a new model.
+     * </p>
+     * <p>
+     * When you create the flywheel, Comprehend creates a data lake in your account. The data lake holds the training
+     * data and test data for all versions of the model.
+     * </p>
+     * <p>
+     * To use a flywheel with an existing trained model, you specify the active model version. Comprehend copies the
+     * model's training data and test data into the flywheel's data lake.
+     * </p>
+     * <p>
+     * To use the flywheel with a new model, you need to provide a dataset for training data (and optional test data)
+     * when you create the flywheel.
+     * </p>
+     * <p>
+     * For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param createFlywheelRequest
+     * @return Result of the CreateFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws TooManyTagsException
+     *         The request contains more tags than can be associated with a resource (50 tags per resource). The maximum
+     *         number of tags includes both existing tags and those included in your current request.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceLimitExceededException
+     *         The maximum number of resources per account has been exceeded. Review the resources, and then try your
+     *         request again.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only
+     *         English, Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages,
+     *         <a href="https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html">Supported
+     *         languages</a> in the Comprehend Developer Guide.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check the resource and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.CreateFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/CreateFlywheel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateFlywheelResult createFlywheel(CreateFlywheelRequest createFlywheelRequest);
 
     /**
      * <p>
@@ -472,6 +560,37 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does not delete the data lake or the model
+     * associated with the flywheel.
+     * </p>
+     * <p>
+     * For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteFlywheelRequest
+     * @return Result of the DeleteFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available. Check the resource and try your request again.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DeleteFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DeleteFlywheel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteFlywheelResult deleteFlywheel(DeleteFlywheelRequest deleteFlywheelRequest);
+
+    /**
+     * <p>
      * Deletes a resource-based policy that is attached to a custom model.
      * </p>
      * 
@@ -488,6 +607,29 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Returns information about the dataset that you specify. For more information about datasets, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeDatasetRequest
+     * @return Result of the DescribeDataset operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeDataset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeDatasetResult describeDataset(DescribeDatasetRequest describeDatasetRequest);
 
     /**
      * <p>
@@ -642,6 +784,52 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeEventsDetectionJobResult describeEventsDetectionJob(DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Provides configuration information about the flywheel. For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeFlywheelRequest
+     * @return Result of the DescribeFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeFlywheelResult describeFlywheel(DescribeFlywheelRequest describeFlywheelRequest);
+
+    /**
+     * <p>
+     * Retrieve the configuration properties of a flywheel iteration. For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeFlywheelIterationRequest
+     * @return Result of the DescribeFlywheelIteration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribeFlywheelIteration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeFlywheelIteration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFlywheelIterationResult describeFlywheelIteration(DescribeFlywheelIterationRequest describeFlywheelIterationRequest);
 
     /**
      * <p>
@@ -1014,6 +1202,31 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * List the datasets that you have configured in this region. For more information about datasets, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param listDatasetsRequest
+     * @return Result of the ListDatasets operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListDatasets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListDatasets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDatasetsResult listDatasets(ListDatasetsRequest listDatasetsRequest);
+
+    /**
+     * <p>
      * Gets a list of the documentation classification jobs that you have submitted.
      * </p>
      * 
@@ -1203,6 +1416,52 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Information about the history of a flywheel iteration. For more information about flywheels, see <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the
+     * <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param listFlywheelIterationHistoryRequest
+     * @return Result of the ListFlywheelIterationHistory operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListFlywheelIterationHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheelIterationHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFlywheelIterationHistoryResult listFlywheelIterationHistory(ListFlywheelIterationHistoryRequest listFlywheelIterationHistoryRequest);
+
+    /**
+     * <p>
+     * Gets a list of the flywheels that you have created.
+     * </p>
+     * 
+     * @param listFlywheelsRequest
+     * @return Result of the ListFlywheels operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListFlywheels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListFlywheels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListFlywheelsResult listFlywheels(ListFlywheelsRequest listFlywheelsRequest);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -1348,7 +1607,8 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Starts an asynchronous document classification job. Use the operation to track the progress of the job.
+     * Starts an asynchronous document classification job. Use the <code>DescribeDocumentClassificationJob</code>
+     * operation to track the progress of the job.
      * </p>
      * 
      * @param startDocumentClassificationJobRequest
@@ -1459,6 +1719,31 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Start the flywheel iteration.This operation uses any new datasets to train a new model version. For more
+     * information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
+     * Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
+     * </p>
+     * 
+     * @param startFlywheelIterationRequest
+     * @return Result of the StartFlywheelIteration operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceInUseException
+     *         The specified resource name is already in use. Use a different name and try your request again.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartFlywheelIteration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartFlywheelIteration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartFlywheelIterationResult startFlywheelIteration(StartFlywheelIterationRequest startFlywheelIterationRequest);
+
+    /**
+     * <p>
      * Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the
      * status of a job.
      * </p>
@@ -1533,8 +1818,8 @@ public interface AmazonComprehend {
 
     /**
      * <p>
-     * Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the operation to track
-     * the status of a job.
+     * Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the
+     * <code>DescribeTargetedSentimentDetectionJob</code> operation to track the status of a job.
      * </p>
      * 
      * @param startTargetedSentimentDetectionJobRequest
@@ -1906,6 +2191,29 @@ public interface AmazonComprehend {
      *      Documentation</a>
      */
     UpdateEndpointResult updateEndpoint(UpdateEndpointRequest updateEndpointRequest);
+
+    /**
+     * <p>
+     * Update the configuration information for an existing flywheel.
+     * </p>
+     * 
+     * @param updateFlywheelRequest
+     * @return Result of the UpdateFlywheel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.UpdateFlywheel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/UpdateFlywheel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateFlywheelResult updateFlywheel(UpdateFlywheelRequest updateFlywheelRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

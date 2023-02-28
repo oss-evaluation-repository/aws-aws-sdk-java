@@ -191,6 +191,10 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
             }
         }
 
+        if (modifyImageAttributeRequest.getImdsSupport() != null) {
+            request.addParameter("ImdsSupport.Value", StringUtils.fromString(modifyImageAttributeRequest.getImdsSupport()));
+        }
+
         return request;
     }
 

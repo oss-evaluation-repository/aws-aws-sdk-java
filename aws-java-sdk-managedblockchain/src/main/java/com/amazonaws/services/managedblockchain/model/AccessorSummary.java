@@ -18,12 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <important>
- * <p>
- * The token based access feature is in preview release for Ethereum on Amazon Managed Blockchain and is subject to
- * change. We recommend that you use this feature only with test scenarios, and not in production environments.
- * </p>
- * </important>
  * <p>
  * A summary of accessor properties.
  * </p>

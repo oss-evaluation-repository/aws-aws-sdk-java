@@ -31,6 +31,8 @@ public class GetBlueprintsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeInactive").build();
     private static final MarshallingInfo<String> PAGETOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("pageToken").build();
+    private static final MarshallingInfo<String> APPCATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appCategory").build();
 
     private static final GetBlueprintsRequestMarshaller instance = new GetBlueprintsRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetBlueprintsRequestMarshaller {
         try {
             protocolMarshaller.marshall(getBlueprintsRequest.getIncludeInactive(), INCLUDEINACTIVE_BINDING);
             protocolMarshaller.marshall(getBlueprintsRequest.getPageToken(), PAGETOKEN_BINDING);
+            protocolMarshaller.marshall(getBlueprintsRequest.getAppCategory(), APPCATEGORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -32,7 +32,7 @@ public class ListEntityRecognizerSummariesResult extends com.amazonaws.AmazonWeb
     private java.util.List<EntityRecognizerSummary> entityRecognizerSummariesList;
     /**
      * <p>
-     * The list entity recognizer summaries.
+     * Identifies the next page of results to return.
      * </p>
      */
     private String nextToken;
@@ -109,11 +109,11 @@ public class ListEntityRecognizerSummariesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list entity recognizer summaries.
+     * Identifies the next page of results to return.
      * </p>
      * 
      * @param nextToken
-     *        The list entity recognizer summaries.
+     *        Identifies the next page of results to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,10 +122,10 @@ public class ListEntityRecognizerSummariesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list entity recognizer summaries.
+     * Identifies the next page of results to return.
      * </p>
      * 
-     * @return The list entity recognizer summaries.
+     * @return Identifies the next page of results to return.
      */
 
     public String getNextToken() {
@@ -134,11 +134,11 @@ public class ListEntityRecognizerSummariesResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The list entity recognizer summaries.
+     * Identifies the next page of results to return.
      * </p>
      * 
      * @param nextToken
-     *        The list entity recognizer summaries.
+     *        Identifies the next page of results to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

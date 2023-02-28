@@ -54,7 +54,7 @@ public class RunGroupListItem implements Serializable, Cloneable, StructuredPojo
     private Integer maxCpus;
     /**
      * <p>
-     * The group's maximum duration setting.
+     * The group's maximum duration setting in minutes.
      * </p>
      */
     private Integer maxDuration;
@@ -233,11 +233,11 @@ public class RunGroupListItem implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The group's maximum duration setting.
+     * The group's maximum duration setting in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        The group's maximum duration setting.
+     *        The group's maximum duration setting in minutes.
      */
 
     public void setMaxDuration(Integer maxDuration) {
@@ -246,10 +246,10 @@ public class RunGroupListItem implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The group's maximum duration setting.
+     * The group's maximum duration setting in minutes.
      * </p>
      * 
-     * @return The group's maximum duration setting.
+     * @return The group's maximum duration setting in minutes.
      */
 
     public Integer getMaxDuration() {
@@ -258,11 +258,11 @@ public class RunGroupListItem implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The group's maximum duration setting.
+     * The group's maximum duration setting in minutes.
      * </p>
      * 
      * @param maxDuration
-     *        The group's maximum duration setting.
+     *        The group's maximum duration setting in minutes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

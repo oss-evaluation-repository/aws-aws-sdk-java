@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.managedblockchain.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -34,6 +36,8 @@ public class CreateAccessorRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> ACCESSORTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessorType").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateAccessorRequestMarshaller instance = new CreateAccessorRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class CreateAccessorRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAccessorRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createAccessorRequest.getAccessorType(), ACCESSORTYPE_BINDING);
+            protocolMarshaller.marshall(createAccessorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -120,6 +120,10 @@ public class DocumentClassifierPropertiesJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     documentClassifierProperties.setSourceModelArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FlywheelArn", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierProperties.setFlywheelArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

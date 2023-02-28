@@ -56,6 +56,10 @@ public class AddOnRequestJsonUnmarshaller implements Unmarshaller<AddOnRequest, 
                     context.nextToken();
                     addOnRequest.setAutoSnapshotAddOnRequest(AutoSnapshotAddOnRequestJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("stopInstanceOnIdleRequest", targetDepth)) {
+                    context.nextToken();
+                    addOnRequest.setStopInstanceOnIdleRequest(StopInstanceOnIdleRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

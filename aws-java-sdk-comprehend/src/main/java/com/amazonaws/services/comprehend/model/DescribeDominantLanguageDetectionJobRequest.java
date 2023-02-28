@@ -27,21 +27,21 @@ public class DescribeDominantLanguageDetectionJobRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     * response.
+     * The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     * response.
+     * The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
      * @param jobId
-     *        The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     *        response.
+     *        The identifier that Amazon Comprehend generated for the job. The
+     *        <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.
      */
 
     public void setJobId(String jobId) {
@@ -50,12 +50,12 @@ public class DescribeDominantLanguageDetectionJobRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     * response.
+     * The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
-     * @return The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     *         response.
+     * @return The identifier that Amazon Comprehend generated for the job. The
+     *         <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.
      */
 
     public String getJobId() {
@@ -64,13 +64,13 @@ public class DescribeDominantLanguageDetectionJobRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     * response.
+     * The identifier that Amazon Comprehend generated for the job. The <code>StartDominantLanguageDetectionJob</code>
+     * operation returns this identifier in its response.
      * </p>
      * 
      * @param jobId
-     *        The identifier that Amazon Comprehend generated for the job. The operation returns this identifier in its
-     *        response.
+     *        The identifier that Amazon Comprehend generated for the job. The
+     *        <code>StartDominantLanguageDetectionJob</code> operation returns this identifier in its response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

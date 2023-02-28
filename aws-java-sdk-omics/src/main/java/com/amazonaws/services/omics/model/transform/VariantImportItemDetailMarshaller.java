@@ -31,6 +31,8 @@ public class VariantImportItemDetailMarshaller {
             .marshallLocationName("jobStatus").build();
     private static final MarshallingInfo<String> SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("source").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
 
     private static final VariantImportItemDetailMarshaller instance = new VariantImportItemDetailMarshaller();
 
@@ -50,6 +52,7 @@ public class VariantImportItemDetailMarshaller {
         try {
             protocolMarshaller.marshall(variantImportItemDetail.getJobStatus(), JOBSTATUS_BINDING);
             protocolMarshaller.marshall(variantImportItemDetail.getSource(), SOURCE_BINDING);
+            protocolMarshaller.marshall(variantImportItemDetail.getStatusMessage(), STATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

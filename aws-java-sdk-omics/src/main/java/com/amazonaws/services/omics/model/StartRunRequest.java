@@ -51,7 +51,7 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer priority;
     /**
      * <p>
-     * A request ID for the run.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      */
     private String requestId;
@@ -75,7 +75,7 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String runId;
     /**
      * <p>
-     * A storage capacity for the run.
+     * A storage capacity for the run in gigabytes.
      * </p>
      */
     private Integer storageCapacity;
@@ -279,11 +279,11 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A request ID for the run.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
      * @param requestId
-     *        A request ID for the run.
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
     public void setRequestId(String requestId) {
@@ -292,10 +292,10 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A request ID for the run.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
-     * @return A request ID for the run.
+     * @return To ensure that requests don't run multiple times, specify a unique ID for each request.
      */
 
     public String getRequestId() {
@@ -304,11 +304,11 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A request ID for the run.
+     * To ensure that requests don't run multiple times, specify a unique ID for each request.
      * </p>
      * 
      * @param requestId
-     *        A request ID for the run.
+     *        To ensure that requests don't run multiple times, specify a unique ID for each request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -439,11 +439,11 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A storage capacity for the run.
+     * A storage capacity for the run in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the run.
+     *        A storage capacity for the run in gigabytes.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -452,10 +452,10 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A storage capacity for the run.
+     * A storage capacity for the run in gigabytes.
      * </p>
      * 
-     * @return A storage capacity for the run.
+     * @return A storage capacity for the run in gigabytes.
      */
 
     public Integer getStorageCapacity() {
@@ -464,11 +464,11 @@ public class StartRunRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A storage capacity for the run.
+     * A storage capacity for the run in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        A storage capacity for the run.
+     *        A storage capacity for the run in gigabytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

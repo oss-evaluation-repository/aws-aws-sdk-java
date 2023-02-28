@@ -1009,6 +1009,40 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(CreateGUISessionAccessDetailsRequest request) {
+
+        return createGUISessionAccessDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGUISessionAccessDetailsResult> createGUISessionAccessDetailsAsync(
+            final CreateGUISessionAccessDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGUISessionAccessDetailsRequest, CreateGUISessionAccessDetailsResult> asyncHandler) {
+        final CreateGUISessionAccessDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGUISessionAccessDetailsResult>() {
+            @Override
+            public CreateGUISessionAccessDetailsResult call() throws Exception {
+                CreateGUISessionAccessDetailsResult result = null;
+
+                try {
+                    result = executeCreateGUISessionAccessDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateInstanceSnapshotResult> createInstanceSnapshotAsync(CreateInstanceSnapshotRequest request) {
 
         return createInstanceSnapshotAsync(request, null);
@@ -2891,6 +2925,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeGetContainerServices(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(GetCostEstimateRequest request) {
+
+        return getCostEstimateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCostEstimateResult> getCostEstimateAsync(final GetCostEstimateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCostEstimateRequest, GetCostEstimateResult> asyncHandler) {
+        final GetCostEstimateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCostEstimateResult>() {
+            @Override
+            public GetCostEstimateResult call() throws Exception {
+                GetCostEstimateResult result = null;
+
+                try {
+                    result = executeGetCostEstimate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4838,6 +4905,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(StartGUISessionRequest request) {
+
+        return startGUISessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartGUISessionResult> startGUISessionAsync(final StartGUISessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartGUISessionRequest, StartGUISessionResult> asyncHandler) {
+        final StartGUISessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartGUISessionResult>() {
+            @Override
+            public StartGUISessionResult call() throws Exception {
+                StartGUISessionResult result = null;
+
+                try {
+                    result = executeStartGUISession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartInstanceResult> startInstanceAsync(StartInstanceRequest request) {
 
         return startInstanceAsync(request, null);
@@ -4888,6 +4988,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeStartRelationalDatabase(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(StopGUISessionRequest request) {
+
+        return stopGUISessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopGUISessionResult> stopGUISessionAsync(final StopGUISessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopGUISessionRequest, StopGUISessionResult> asyncHandler) {
+        final StopGUISessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopGUISessionResult>() {
+            @Override
+            public StopGUISessionResult call() throws Exception {
+                StopGUISessionResult result = null;
+
+                try {
+                    result = executeStopGUISession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -97,7 +97,7 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String statusMessage;
     /**
      * <p>
-     * The workflow's storage capacity.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      */
     private Integer storageCapacity;
@@ -662,11 +662,11 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's storage capacity.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        The workflow's storage capacity.
+     *        The workflow's storage capacity in gigabytes.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -675,10 +675,10 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's storage capacity.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      * 
-     * @return The workflow's storage capacity.
+     * @return The workflow's storage capacity in gigabytes.
      */
 
     public Integer getStorageCapacity() {
@@ -687,11 +687,11 @@ public class GetWorkflowResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The workflow's storage capacity.
+     * The workflow's storage capacity in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        The workflow's storage capacity.
+     *        The workflow's storage capacity in gigabytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

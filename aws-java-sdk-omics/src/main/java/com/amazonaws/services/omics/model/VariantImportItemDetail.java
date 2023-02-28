@@ -40,6 +40,12 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
      * </p>
      */
     private String source;
+    /**
+     * <p>
+     * A message that provides additional context about a job
+     * </p>
+     */
+    private String statusMessage;
 
     /**
      * <p>
@@ -141,6 +147,46 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A message that provides additional context about a job
+     * </p>
+     * 
+     * @param statusMessage
+     *        A message that provides additional context about a job
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * A message that provides additional context about a job
+     * </p>
+     * 
+     * @return A message that provides additional context about a job
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * A message that provides additional context about a job
+     * </p>
+     * 
+     * @param statusMessage
+     *        A message that provides additional context about a job
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VariantImportItemDetail withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +201,9 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
         if (getJobStatus() != null)
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getSource() != null)
-            sb.append("Source: ").append(getSource());
+            sb.append("Source: ").append(getSource()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +226,10 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
             return false;
         if (other.getSource() != null && other.getSource().equals(this.getSource()) == false)
             return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +240,7 @@ public class VariantImportItemDetail implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         return hashCode;
     }
 

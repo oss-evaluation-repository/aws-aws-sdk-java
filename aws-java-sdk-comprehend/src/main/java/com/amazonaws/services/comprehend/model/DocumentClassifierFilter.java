@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information for filtering a list of document classifiers. You can only specify one filtering parameter in a
- * request. For more information, see the operation.
+ * request. For more information, see the <code>ListDocumentClassifiers</code> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierFilter"

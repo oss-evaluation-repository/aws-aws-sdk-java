@@ -132,7 +132,7 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private java.util.Date stopTime;
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gigabytes.
      * </p>
      */
     private Integer storageCapacity;
@@ -943,11 +943,11 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        The run's storage capacity.
+     *        The run's storage capacity in gigabytes.
      */
 
     public void setStorageCapacity(Integer storageCapacity) {
@@ -956,10 +956,10 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gigabytes.
      * </p>
      * 
-     * @return The run's storage capacity.
+     * @return The run's storage capacity in gigabytes.
      */
 
     public Integer getStorageCapacity() {
@@ -968,11 +968,11 @@ public class GetRunResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The run's storage capacity.
+     * The run's storage capacity in gigabytes.
      * </p>
      * 
      * @param storageCapacity
-     *        The run's storage capacity.
+     *        The run's storage capacity in gigabytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
