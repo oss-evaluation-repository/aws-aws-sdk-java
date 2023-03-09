@@ -1357,8 +1357,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the Amazon QuickSight user that is associated with the identity of the Identity and Access Management
-     * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
+     * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the
+     * call. The IAM user isn't deleted as a result of this call.
      * </p>
      * 
      * @param deleteUserRequest
@@ -1371,8 +1371,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the Amazon QuickSight user that is associated with the identity of the Identity and Access Management
-     * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
+     * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the
+     * call. The IAM user isn't deleted as a result of this call.
      * </p>
      * 
      * @param deleteUserRequest

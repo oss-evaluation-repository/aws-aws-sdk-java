@@ -30,8 +30,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
@@ -110,8 +110,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
@@ -187,8 +187,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker
-     *        Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+     *        The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt
+     *        the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
      *        <p>
      *        The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
      *        the <code>OnlineStore</code> <code>KmsKeyId</code>:
@@ -269,8 +269,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
@@ -345,8 +345,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </li>
      * </ul>
      * 
-     * @return The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker
-     *         Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+     * @return The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt
+     *         the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
      *         <p>
      *         The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions
      *         to the <code>OnlineStore</code> <code>KmsKeyId</code>:
@@ -427,8 +427,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker Feature
-     * Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.
+     * The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt the
+     * Amazon S3 objects at rest using Amazon S3 server-side encryption.
      * </p>
      * <p>
      * The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to the
@@ -504,8 +504,8 @@ public class OnlineStoreSecurityConfig implements Serializable, Cloneable, Struc
      * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) key that SageMaker
-     *        Feature Store uses to encrypt the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
+     *        The Amazon Web Services Key Management Service (KMS) key ARN that SageMaker Feature Store uses to encrypt
+     *        the Amazon S3 objects at rest using Amazon S3 server-side encryption.</p>
      *        <p>
      *        The caller (either IAM user or IAM role) of <code>CreateFeatureGroup</code> must have below permissions to
      *        the <code>OnlineStore</code> <code>KmsKeyId</code>:

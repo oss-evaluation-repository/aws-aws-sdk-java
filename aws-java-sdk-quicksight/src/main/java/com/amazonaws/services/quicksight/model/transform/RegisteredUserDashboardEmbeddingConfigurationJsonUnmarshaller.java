@@ -53,6 +53,11 @@ public class RegisteredUserDashboardEmbeddingConfigurationJsonUnmarshaller imple
                     context.nextToken();
                     registeredUserDashboardEmbeddingConfiguration.setInitialDashboardId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FeatureConfigurations", targetDepth)) {
+                    context.nextToken();
+                    registeredUserDashboardEmbeddingConfiguration.setFeatureConfigurations(RegisteredUserDashboardFeatureConfigurationsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

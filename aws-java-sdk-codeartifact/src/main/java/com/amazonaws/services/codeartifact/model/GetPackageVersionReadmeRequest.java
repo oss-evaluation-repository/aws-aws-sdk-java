@@ -49,12 +49,6 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <note>
-     * <p>
-     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
-     * Maven packages.
-     * </p>
-     * </note>
      */
     private String format;
     /**
@@ -231,19 +225,9 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <note>
-     * <p>
-     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
-     * Maven packages.
-     * </p>
-     * </note>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested readme file. </p> <note>
-     *        <p>
-     *        Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
-     *        files for Maven packages.
-     *        </p>
+     *        A format that specifies the type of the package version with the requested readme file.
      * @see PackageFormat
      */
 
@@ -255,18 +239,8 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <note>
-     * <p>
-     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
-     * Maven packages.
-     * </p>
-     * </note>
      * 
-     * @return A format that specifies the type of the package version with the requested readme file. </p> <note>
-     *         <p>
-     *         Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
-     *         files for Maven packages.
-     *         </p>
+     * @return A format that specifies the type of the package version with the requested readme file.
      * @see PackageFormat
      */
 
@@ -278,19 +252,9 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <note>
-     * <p>
-     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
-     * Maven packages.
-     * </p>
-     * </note>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested readme file. </p> <note>
-     *        <p>
-     *        Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
-     *        files for Maven packages.
-     *        </p>
+     *        A format that specifies the type of the package version with the requested readme file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -304,19 +268,9 @@ public class GetPackageVersionReadmeRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * A format that specifies the type of the package version with the requested readme file.
      * </p>
-     * <note>
-     * <p>
-     * Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme files for
-     * Maven packages.
-     * </p>
-     * </note>
      * 
      * @param format
-     *        A format that specifies the type of the package version with the requested readme file. </p> <note>
-     *        <p>
-     *        Although <code>maven</code> is listed as a valid value, CodeArtifact does not support displaying readme
-     *        files for Maven packages.
-     *        </p>
+     *        A format that specifies the type of the package version with the requested readme file.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */

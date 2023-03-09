@@ -52,8 +52,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String format;
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
@@ -70,6 +74,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
      * namespace.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
      * </p>
      * </li>
      * </ul>
@@ -301,8 +310,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
@@ -321,11 +334,20 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace used to filter requested packages. Only packages with the provided namespace will be
-     *        returned. The package component that specifies its namespace depends on its type. For example:</p>
+     *        The namespace prefix used to filter requested packages. Only packages with a namespace that starts with
+     *        the provided string value are returned. Note that although this option is called <code>--namespace</code>
+     *        and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+     *        <p>
+     *        Each package format uses namespace as follows:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -343,6 +365,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        a namespace.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setNamespace(String namespace) {
@@ -351,8 +378,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
@@ -371,10 +402,19 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The namespace used to filter requested packages. Only packages with the provided namespace will be
-     *         returned. The package component that specifies its namespace depends on its type. For example:</p>
+     * @return The namespace prefix used to filter requested packages. Only packages with a namespace that starts with
+     *         the provided string value are returned. Note that although this option is called <code>--namespace</code>
+     *         and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+     *         <p>
+     *         Each package format uses namespace as follows:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -392,6 +432,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         a namespace.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getNamespace() {
@@ -400,8 +445,12 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The namespace used to filter requested packages. Only packages with the provided namespace will be returned. The
-     * package component that specifies its namespace depends on its type. For example:
+     * The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the
+     * provided string value are returned. Note that although this option is called <code>--namespace</code> and not
+     * <code>--namespace-prefix</code>, it has prefix-matching behavior.
+     * </p>
+     * <p>
+     * Each package format uses namespace as follows:
      * </p>
      * <ul>
      * <li>
@@ -420,11 +469,20 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
-     *        The namespace used to filter requested packages. Only packages with the provided namespace will be
-     *        returned. The package component that specifies its namespace depends on its type. For example:</p>
+     *        The namespace prefix used to filter requested packages. Only packages with a namespace that starts with
+     *        the provided string value are returned. Note that although this option is called <code>--namespace</code>
+     *        and not <code>--namespace-prefix</code>, it has prefix-matching behavior.</p>
+     *        <p>
+     *        Each package format uses namespace as follows:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -440,6 +498,11 @@ public class ListPackagesRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

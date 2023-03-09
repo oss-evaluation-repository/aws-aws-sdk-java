@@ -72,6 +72,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -302,6 +307,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -322,6 +332,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -352,6 +367,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package to be updated. The package component that specifies its namespace depends on
@@ -371,6 +391,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      *         <p>
      *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *         a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -401,6 +426,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -421,6 +451,11 @@ public class PutPackageOriginConfigurationRequest extends com.amazonaws.AmazonWe
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

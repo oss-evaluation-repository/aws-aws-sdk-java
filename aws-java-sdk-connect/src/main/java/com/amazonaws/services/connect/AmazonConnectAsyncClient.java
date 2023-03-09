@@ -2615,6 +2615,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetricDataV2Result> getMetricDataV2Async(GetMetricDataV2Request request) {
+
+        return getMetricDataV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricDataV2Result> getMetricDataV2Async(final GetMetricDataV2Request request,
+            final com.amazonaws.handlers.AsyncHandler<GetMetricDataV2Request, GetMetricDataV2Result> asyncHandler) {
+        final GetMetricDataV2Request finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMetricDataV2Result>() {
+            @Override
+            public GetMetricDataV2Result call() throws Exception {
+                GetMetricDataV2Result result = null;
+
+                try {
+                    result = executeGetMetricDataV2(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTaskTemplateResult> getTaskTemplateAsync(GetTaskTemplateRequest request) {
 
         return getTaskTemplateAsync(request, null);

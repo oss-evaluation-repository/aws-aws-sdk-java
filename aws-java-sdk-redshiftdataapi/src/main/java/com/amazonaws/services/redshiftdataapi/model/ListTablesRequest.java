@@ -97,8 +97,8 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String tablePattern;
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      */
     private String workgroupName;
@@ -564,13 +564,13 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *        authenticating using either Secrets Manager or temporary credentials.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to
+     *        a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      */
 
     public void setWorkgroupName(String workgroupName) {
@@ -579,12 +579,12 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
-     * @return The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *         authenticating using either Secrets Manager or temporary credentials.
+     * @return The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting
+     *         to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      */
 
     public String getWorkgroupName() {
@@ -593,13 +593,13 @@ public class ListTablesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *        authenticating using either Secrets Manager or temporary credentials.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to
+     *        a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

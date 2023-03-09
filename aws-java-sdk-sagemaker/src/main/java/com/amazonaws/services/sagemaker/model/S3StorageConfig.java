@@ -39,7 +39,7 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
     private String s3Uri;
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into
+     * The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into
      * the <code>OfflineStore</code> S3 location.
      * </p>
      * <p>
@@ -119,7 +119,7 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into
+     * The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into
      * the <code>OfflineStore</code> S3 location.
      * </p>
      * <p>
@@ -135,8 +135,8 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written
-     *        into the <code>OfflineStore</code> S3 location.</p>
+     *        The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects
+     *        written into the <code>OfflineStore</code> S3 location.</p>
      *        <p>
      *        The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have
      *        below permissions to the <code>KmsKeyId</code>:
@@ -155,7 +155,7 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into
+     * The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into
      * the <code>OfflineStore</code> S3 location.
      * </p>
      * <p>
@@ -170,7 +170,7 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * </ul>
      * 
-     * @return The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects
+     * @return The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects
      *         written into the <code>OfflineStore</code> S3 location.</p>
      *         <p>
      *         The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have
@@ -190,7 +190,7 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written into
+     * The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects written into
      * the <code>OfflineStore</code> S3 location.
      * </p>
      * <p>
@@ -206,8 +206,8 @@ public class S3StorageConfig implements Serializable, Cloneable, StructuredPojo 
      * </ul>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services Key Management Service (KMS) key ID of the key used to encrypt any objects written
-     *        into the <code>OfflineStore</code> S3 location.</p>
+     *        The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt any objects
+     *        written into the <code>OfflineStore</code> S3 location.</p>
      *        <p>
      *        The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code> must have
      *        below permissions to the <code>KmsKeyId</code>:

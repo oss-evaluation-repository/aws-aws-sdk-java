@@ -73,6 +73,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -291,6 +296,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -312,6 +322,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -343,6 +358,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the requested package. The package component that specifies its namespace depends on its
@@ -363,6 +383,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *         a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -394,6 +419,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -415,6 +445,11 @@ public class DescribePackageRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

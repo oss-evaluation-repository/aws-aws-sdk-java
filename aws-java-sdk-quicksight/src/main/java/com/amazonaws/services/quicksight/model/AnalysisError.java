@@ -40,7 +40,11 @@ public class AnalysisError implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String message;
-    /** <p/> */
+    /**
+     * <p>
+     * Lists the violated entities that caused the analysis error
+     * </p>
+     */
     private java.util.List<Entity> violatedEntities;
 
     /**
@@ -143,9 +147,11 @@ public class AnalysisError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Lists the violated entities that caused the analysis error
+     * </p>
      * 
-     * @return
+     * @return Lists the violated entities that caused the analysis error
      */
 
     public java.util.List<Entity> getViolatedEntities() {
@@ -153,9 +159,12 @@ public class AnalysisError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Lists the violated entities that caused the analysis error
+     * </p>
      * 
      * @param violatedEntities
+     *        Lists the violated entities that caused the analysis error
      */
 
     public void setViolatedEntities(java.util.Collection<Entity> violatedEntities) {
@@ -168,7 +177,9 @@ public class AnalysisError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Lists the violated entities that caused the analysis error
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setViolatedEntities(java.util.Collection)} or {@link #withViolatedEntities(java.util.Collection)} if you
@@ -176,6 +187,7 @@ public class AnalysisError implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param violatedEntities
+     *        Lists the violated entities that caused the analysis error
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,9 +202,12 @@ public class AnalysisError implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Lists the violated entities that caused the analysis error
+     * </p>
      * 
      * @param violatedEntities
+     *        Lists the violated entities that caused the analysis error
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

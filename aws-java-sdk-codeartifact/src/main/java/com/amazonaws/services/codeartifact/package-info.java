@@ -150,6 +150,11 @@
  * </li>
  * <li>
  * <p>
+ * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeletePackageVersions</code>: Deletes versions of a package. After a package has been deleted, it can be
  * republished, but its assets and metadata cannot be restored because they have been permanently removed from storage.
  * </p>
@@ -291,6 +296,11 @@
  * <li>
  * <p>
  * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
  * <li>

@@ -22,7 +22,8 @@ public enum RecommendationType {
 
     DKIM("DKIM"),
     DMARC("DMARC"),
-    SPF("SPF");
+    SPF("SPF"),
+    BIMI("BIMI");
 
     private String value;
 

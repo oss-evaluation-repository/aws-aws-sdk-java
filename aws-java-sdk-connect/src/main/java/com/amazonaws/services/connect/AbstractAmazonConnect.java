@@ -408,6 +408,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public GetMetricDataV2Result getMetricDataV2(GetMetricDataV2Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTaskTemplateResult getTaskTemplate(GetTaskTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

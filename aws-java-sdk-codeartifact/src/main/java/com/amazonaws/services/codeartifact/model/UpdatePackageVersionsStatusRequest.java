@@ -73,6 +73,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -323,6 +328,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -343,6 +353,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -373,6 +388,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package version to be updated. The package version component that specifies its
@@ -392,6 +412,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         Python and NuGet package versions do not contain a corresponding component, package versions of those
      *         formats do not have a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -422,6 +447,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -442,6 +472,11 @@ public class UpdatePackageVersionsStatusRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

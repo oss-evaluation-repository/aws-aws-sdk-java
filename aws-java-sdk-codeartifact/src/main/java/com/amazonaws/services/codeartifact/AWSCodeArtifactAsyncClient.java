@@ -163,6 +163,11 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeletePackageVersions</code>: Deletes versions of a package. After a package has been deleted, it can be
  * republished, but its assets and metadata cannot be restored because they have been permanently removed from storage.
  * </p>
@@ -304,6 +309,11 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
  * <li>
@@ -1360,6 +1370,39 @@ public class AWSCodeArtifactAsyncClient extends AWSCodeArtifactClient implements
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishPackageVersionResult> publishPackageVersionAsync(PublishPackageVersionRequest request) {
+
+        return publishPackageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishPackageVersionResult> publishPackageVersionAsync(final PublishPackageVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PublishPackageVersionRequest, PublishPackageVersionResult> asyncHandler) {
+        final PublishPackageVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PublishPackageVersionResult>() {
+            @Override
+            public PublishPackageVersionResult call() throws Exception {
+                PublishPackageVersionResult result = null;
+
+                try {
+                    result = executePublishPackageVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

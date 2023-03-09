@@ -1026,6 +1026,19 @@ public class AbstractAmazonConnectAsync extends AbstractAmazonConnect implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetMetricDataV2Result> getMetricDataV2Async(GetMetricDataV2Request request) {
+
+        return getMetricDataV2Async(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMetricDataV2Result> getMetricDataV2Async(GetMetricDataV2Request request,
+            com.amazonaws.handlers.AsyncHandler<GetMetricDataV2Request, GetMetricDataV2Result> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTaskTemplateResult> getTaskTemplateAsync(GetTaskTemplateRequest request) {
 
         return getTaskTemplateAsync(request, null);

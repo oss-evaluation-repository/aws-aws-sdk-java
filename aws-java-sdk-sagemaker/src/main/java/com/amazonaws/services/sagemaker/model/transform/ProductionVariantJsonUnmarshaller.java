@@ -92,6 +92,10 @@ public class ProductionVariantJsonUnmarshaller implements Unmarshaller<Productio
                     context.nextToken();
                     productionVariant.setContainerStartupHealthCheckTimeoutInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableSSMAccess", targetDepth)) {
+                    context.nextToken();
+                    productionVariant.setEnableSSMAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

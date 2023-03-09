@@ -72,6 +72,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -310,6 +315,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -330,6 +340,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -360,6 +375,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package version with the requested asset file. The package version component that
@@ -379,6 +399,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         Python and NuGet package versions do not contain a corresponding component, package versions of those
      *         formats do not have a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -409,6 +434,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -429,6 +459,11 @@ public class GetPackageVersionAssetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

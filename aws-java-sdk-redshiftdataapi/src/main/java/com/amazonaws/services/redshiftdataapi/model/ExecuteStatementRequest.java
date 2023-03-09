@@ -85,8 +85,8 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean withEvent;
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      */
     private String workgroupName;
@@ -523,13 +523,13 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *        authenticating using either Secrets Manager or temporary credentials.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to
+     *        a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      */
 
     public void setWorkgroupName(String workgroupName) {
@@ -538,12 +538,12 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
-     * @return The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *         authenticating using either Secrets Manager or temporary credentials.
+     * @return The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting
+     *         to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      */
 
     public String getWorkgroupName() {
@@ -552,13 +552,13 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     * authenticating using either Secrets Manager or temporary credentials.
+     * The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a
+     * serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name. This parameter is required when connecting to a serverless workgroup and
-     *        authenticating using either Secrets Manager or temporary credentials.
+     *        The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to
+     *        a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

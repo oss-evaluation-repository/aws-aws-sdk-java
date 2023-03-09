@@ -82,6 +82,14 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private RowAlternateColorOptions rowAlternateColorOptions;
+    /**
+     * <p>
+     * The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is
+     * <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.
+     * </p>
+     */
+    private String collapsedRowDimensionsVisibility;
 
     /**
      * <p>
@@ -520,6 +528,81 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is
+     * <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.
+     * </p>
+     * 
+     * @param collapsedRowDimensionsVisibility
+     *        The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure
+     *        is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value
+     *        is <code>VISIBLE</code>.
+     * @see Visibility
+     */
+
+    public void setCollapsedRowDimensionsVisibility(String collapsedRowDimensionsVisibility) {
+        this.collapsedRowDimensionsVisibility = collapsedRowDimensionsVisibility;
+    }
+
+    /**
+     * <p>
+     * The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is
+     * <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.
+     * </p>
+     * 
+     * @return The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure
+     *         is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default
+     *         value is <code>VISIBLE</code>.
+     * @see Visibility
+     */
+
+    public String getCollapsedRowDimensionsVisibility() {
+        return this.collapsedRowDimensionsVisibility;
+    }
+
+    /**
+     * <p>
+     * The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is
+     * <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.
+     * </p>
+     * 
+     * @param collapsedRowDimensionsVisibility
+     *        The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure
+     *        is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value
+     *        is <code>VISIBLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public PivotTableOptions withCollapsedRowDimensionsVisibility(String collapsedRowDimensionsVisibility) {
+        setCollapsedRowDimensionsVisibility(collapsedRowDimensionsVisibility);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure is
+     * <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value is
+     * <code>VISIBLE</code>.
+     * </p>
+     * 
+     * @param collapsedRowDimensionsVisibility
+     *        The visibility setting of a pivot table's collapsed row dimension fields. If the value of this structure
+     *        is <code>HIDDEN</code>, all collapsed columns in a pivot table are automatically hidden. The default value
+     *        is <code>VISIBLE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Visibility
+     */
+
+    public PivotTableOptions withCollapsedRowDimensionsVisibility(Visibility collapsedRowDimensionsVisibility) {
+        this.collapsedRowDimensionsVisibility = collapsedRowDimensionsVisibility.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -548,7 +631,9 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
         if (getRowFieldNamesStyle() != null)
             sb.append("RowFieldNamesStyle: ").append(getRowFieldNamesStyle()).append(",");
         if (getRowAlternateColorOptions() != null)
-            sb.append("RowAlternateColorOptions: ").append(getRowAlternateColorOptions());
+            sb.append("RowAlternateColorOptions: ").append(getRowAlternateColorOptions()).append(",");
+        if (getCollapsedRowDimensionsVisibility() != null)
+            sb.append("CollapsedRowDimensionsVisibility: ").append(getCollapsedRowDimensionsVisibility());
         sb.append("}");
         return sb.toString();
     }
@@ -599,6 +684,11 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRowAlternateColorOptions() != null && other.getRowAlternateColorOptions().equals(this.getRowAlternateColorOptions()) == false)
             return false;
+        if (other.getCollapsedRowDimensionsVisibility() == null ^ this.getCollapsedRowDimensionsVisibility() == null)
+            return false;
+        if (other.getCollapsedRowDimensionsVisibility() != null
+                && other.getCollapsedRowDimensionsVisibility().equals(this.getCollapsedRowDimensionsVisibility()) == false)
+            return false;
         return true;
     }
 
@@ -616,6 +706,7 @@ public class PivotTableOptions implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCellStyle() == null) ? 0 : getCellStyle().hashCode());
         hashCode = prime * hashCode + ((getRowFieldNamesStyle() == null) ? 0 : getRowFieldNamesStyle().hashCode());
         hashCode = prime * hashCode + ((getRowAlternateColorOptions() == null) ? 0 : getRowAlternateColorOptions().hashCode());
+        hashCode = prime * hashCode + ((getCollapsedRowDimensionsVisibility() == null) ? 0 : getCollapsedRowDimensionsVisibility().hashCode());
         return hashCode;
     }
 

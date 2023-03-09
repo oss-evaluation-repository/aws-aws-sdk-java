@@ -118,6 +118,10 @@
         "exceptionName" : "TooManyTagsException",
         "documentation" : "<p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -170,6 +174,10 @@
       }, {
         "exceptionName" : "TooManyTagsException",
         "documentation" : "<p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -224,6 +232,10 @@
         "exceptionName" : "TooManyTagsException",
         "documentation" : "<p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -277,6 +289,10 @@
         "exceptionName" : "TooManyTagsException",
         "documentation" : "<p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -326,6 +342,10 @@
         "exceptionName" : "DuplicateRequestException",
         "documentation" : "<p>The operation is already in progress.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -370,6 +390,10 @@
       }, {
         "exceptionName" : "ResourceInUseException",
         "documentation" : "<p>The specified resource can't be deleted because it contains other resources. For example, you can't delete a service that contains any instances.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -423,6 +447,10 @@
       }, {
         "exceptionName" : "ServiceNotFoundException",
         "documentation" : "<p>No service exists with the specified ID.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -523,6 +551,10 @@
         "exceptionName" : "ServiceNotFoundException",
         "documentation" : "<p>No service exists with the specified ID.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -567,6 +599,10 @@
       }, {
         "exceptionName" : "ServiceNotFoundException",
         "documentation" : "<p>No service exists with the specified ID.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -650,6 +686,10 @@
         "exceptionName" : "OperationNotFoundException",
         "documentation" : "<p>No operation exists with the specified ID.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -690,6 +730,10 @@
       }, {
         "exceptionName" : "ServiceNotFoundException",
         "documentation" : "<p>No service exists with the specified ID.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -732,6 +776,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -768,6 +816,10 @@
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -806,6 +858,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -842,6 +898,10 @@
       "exceptions" : [ {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -883,6 +943,10 @@
       }, {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -937,6 +1001,10 @@
         "exceptionName" : "ServiceNotFoundException",
         "documentation" : "<p>No service exists with the specified ID.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -982,6 +1050,10 @@
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1022,6 +1094,10 @@
       }, {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1072,6 +1148,10 @@
         "exceptionName" : "DuplicateRequestException",
         "documentation" : "<p>The operation is already in progress.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1120,6 +1200,10 @@
       }, {
         "exceptionName" : "InvalidInputException",
         "documentation" : "<p>One or more specified values aren't valid. For example, a required value might be missing, a numeric value might be outside the allowed range, or a string value might exceed length constraints.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1170,6 +1254,10 @@
         "exceptionName" : "DuplicateRequestException",
         "documentation" : "<p>The operation is already in progress.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1219,6 +1307,10 @@
         "exceptionName" : "DuplicateRequestException",
         "documentation" : "<p>The operation is already in progress.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1263,6 +1355,10 @@
       }, {
         "exceptionName" : "ServiceNotFoundException",
         "documentation" : "<p>No service exists with the specified ID.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "RequestLimitExceededException",
+        "documentation" : "<p>The operation can't be completed because you've reached the quota for the number of requests. For more information, see <a href=\"https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html\">Cloud Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,

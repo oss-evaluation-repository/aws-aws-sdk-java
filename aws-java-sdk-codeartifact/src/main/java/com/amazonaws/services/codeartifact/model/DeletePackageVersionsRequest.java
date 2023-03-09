@@ -73,6 +73,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -303,6 +308,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -324,6 +334,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -355,6 +370,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package versions to be deleted. The package version component that specifies its
@@ -375,6 +395,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      *         <p>
      *         Python and NuGet package versions do not contain a corresponding component, package versions of those
      *         formats do not have a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -406,6 +431,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      * not have a namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -427,6 +457,11 @@ public class DeletePackageVersionsRequest extends com.amazonaws.AmazonWebService
      *        <p>
      *        Python and NuGet package versions do not contain a corresponding component, package versions of those
      *        formats do not have a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

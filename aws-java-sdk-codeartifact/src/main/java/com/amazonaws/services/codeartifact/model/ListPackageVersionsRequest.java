@@ -46,7 +46,7 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
     private String repository;
     /**
      * <p>
-     * The format of the returned package versions.
+     * The format of the package versions you want to list.
      * </p>
      */
     private String format;
@@ -70,6 +70,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a
      * namespace.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
      * </p>
      * </li>
      * </ul>
@@ -242,11 +247,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the returned package versions.
+     * The format of the package versions you want to list.
      * </p>
      * 
      * @param format
-     *        The format of the returned package versions.
+     *        The format of the package versions you want to list.
      * @see PackageFormat
      */
 
@@ -256,10 +261,10 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the returned package versions.
+     * The format of the package versions you want to list.
      * </p>
      * 
-     * @return The format of the returned package versions.
+     * @return The format of the package versions you want to list.
      * @see PackageFormat
      */
 
@@ -269,11 +274,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the returned package versions.
+     * The format of the package versions you want to list.
      * </p>
      * 
      * @param format
-     *        The format of the returned package versions.
+     *        The format of the package versions you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -285,11 +290,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The format of the returned package versions.
+     * The format of the package versions you want to list.
      * </p>
      * 
      * @param format
-     *        The format of the returned package versions.
+     *        The format of the package versions you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageFormat
      */
@@ -321,6 +326,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -341,6 +351,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -371,6 +386,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package that contains the requested package versions. The package component that
@@ -390,6 +410,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      *         <p>
      *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *         a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -420,6 +445,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -440,6 +470,11 @@ public class ListPackageVersionsRequest extends com.amazonaws.AmazonWebServiceRe
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -20,7 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying
- * multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights.
+ * multiple models, tell SageMaker how to distribute traffic among the models by specifying variant weights. For more
+ * information on production variants, check <a
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html"> Production variants</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProductionVariant" target="_top">AWS API
@@ -105,6 +107,15 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Integer containerStartupHealthCheckTimeoutInSeconds;
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoints.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     */
+    private Boolean enableSSMAccess;
 
     /**
      * <p>
@@ -656,6 +667,82 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoints.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @param enableSSMAccess
+     *        You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *        production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *        behind an endpoints. You can turn on or turn off SSM access for a production variant behind an existing
+     *        endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     */
+
+    public void setEnableSSMAccess(Boolean enableSSMAccess) {
+        this.enableSSMAccess = enableSSMAccess;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoints.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @return You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *         production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *         behind an endpoints. You can turn on or turn off SSM access for a production variant behind an existing
+     *         endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     */
+
+    public Boolean getEnableSSMAccess() {
+        return this.enableSSMAccess;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoints.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @param enableSSMAccess
+     *        You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *        production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *        behind an endpoints. You can turn on or turn off SSM access for a production variant behind an existing
+     *        endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductionVariant withEnableSSMAccess(Boolean enableSSMAccess) {
+        setEnableSSMAccess(enableSSMAccess);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a production
+     * variant behind an endpoint. By default, SSM access is disabled for all production variants behind an endpoints.
+     * You can turn on or turn off SSM access for a production variant behind an existing endpoint by creating a new
+     * endpoint configuration and calling <code>UpdateEndpoint</code>.
+     * </p>
+     * 
+     * @return You can use this parameter to turn on native Amazon Web Services Systems Manager (SSM) access for a
+     *         production variant behind an endpoint. By default, SSM access is disabled for all production variants
+     *         behind an endpoints. You can turn on or turn off SSM access for a production variant behind an existing
+     *         endpoint by creating a new endpoint configuration and calling <code>UpdateEndpoint</code>.
+     */
+
+    public Boolean isEnableSSMAccess() {
+        return this.enableSSMAccess;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -688,7 +775,9 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (getModelDataDownloadTimeoutInSeconds() != null)
             sb.append("ModelDataDownloadTimeoutInSeconds: ").append(getModelDataDownloadTimeoutInSeconds()).append(",");
         if (getContainerStartupHealthCheckTimeoutInSeconds() != null)
-            sb.append("ContainerStartupHealthCheckTimeoutInSeconds: ").append(getContainerStartupHealthCheckTimeoutInSeconds());
+            sb.append("ContainerStartupHealthCheckTimeoutInSeconds: ").append(getContainerStartupHealthCheckTimeoutInSeconds()).append(",");
+        if (getEnableSSMAccess() != null)
+            sb.append("EnableSSMAccess: ").append(getEnableSSMAccess());
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +838,10 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         if (other.getContainerStartupHealthCheckTimeoutInSeconds() != null
                 && other.getContainerStartupHealthCheckTimeoutInSeconds().equals(this.getContainerStartupHealthCheckTimeoutInSeconds()) == false)
             return false;
+        if (other.getEnableSSMAccess() == null ^ this.getEnableSSMAccess() == null)
+            return false;
+        if (other.getEnableSSMAccess() != null && other.getEnableSSMAccess().equals(this.getEnableSSMAccess()) == false)
+            return false;
         return true;
     }
 
@@ -769,6 +862,7 @@ public class ProductionVariant implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getModelDataDownloadTimeoutInSeconds() == null) ? 0 : getModelDataDownloadTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode
                 + ((getContainerStartupHealthCheckTimeoutInSeconds() == null) ? 0 : getContainerStartupHealthCheckTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getEnableSSMAccess() == null) ? 0 : getEnableSSMAccess().hashCode());
         return hashCode;
     }
 

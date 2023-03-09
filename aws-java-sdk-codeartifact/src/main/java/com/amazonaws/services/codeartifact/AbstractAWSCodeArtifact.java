@@ -178,6 +178,11 @@ public class AbstractAWSCodeArtifact implements AWSCodeArtifact {
     }
 
     @Override
+    public PublishPackageVersionResult publishPackageVersion(PublishPackageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDomainPermissionsPolicyResult putDomainPermissionsPolicy(PutDomainPermissionsPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

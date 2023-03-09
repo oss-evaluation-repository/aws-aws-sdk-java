@@ -45,6 +45,8 @@ public class PivotTableOptionsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowFieldNamesStyle").build();
     private static final MarshallingInfo<StructuredPojo> ROWALTERNATECOLOROPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowAlternateColorOptions").build();
+    private static final MarshallingInfo<String> COLLAPSEDROWDIMENSIONSVISIBILITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CollapsedRowDimensionsVisibility").build();
 
     private static final PivotTableOptionsMarshaller instance = new PivotTableOptionsMarshaller();
 
@@ -71,6 +73,7 @@ public class PivotTableOptionsMarshaller {
             protocolMarshaller.marshall(pivotTableOptions.getCellStyle(), CELLSTYLE_BINDING);
             protocolMarshaller.marshall(pivotTableOptions.getRowFieldNamesStyle(), ROWFIELDNAMESSTYLE_BINDING);
             protocolMarshaller.marshall(pivotTableOptions.getRowAlternateColorOptions(), ROWALTERNATECOLOROPTIONS_BINDING);
+            protocolMarshaller.marshall(pivotTableOptions.getCollapsedRowDimensionsVisibility(), COLLAPSEDROWDIMENSIONSVISIBILITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

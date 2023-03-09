@@ -420,6 +420,19 @@ public class AbstractAWSCodeArtifactAsync extends AbstractAWSCodeArtifact implem
     }
 
     @Override
+    public java.util.concurrent.Future<PublishPackageVersionResult> publishPackageVersionAsync(PublishPackageVersionRequest request) {
+
+        return publishPackageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishPackageVersionResult> publishPackageVersionAsync(PublishPackageVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PublishPackageVersionRequest, PublishPackageVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutDomainPermissionsPolicyResult> putDomainPermissionsPolicyAsync(PutDomainPermissionsPolicyRequest request) {
 
         return putDomainPermissionsPolicyAsync(request, null);

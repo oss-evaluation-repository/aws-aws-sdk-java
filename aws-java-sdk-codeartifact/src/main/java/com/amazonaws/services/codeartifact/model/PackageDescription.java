@@ -56,6 +56,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String namespace;
@@ -153,6 +158,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -173,6 +183,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      */
@@ -203,6 +218,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The namespace of the package. The package component that specifies its namespace depends on its type. For
@@ -222,6 +242,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      *         <p>
      *         Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *         a namespace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The namespace of a generic package is it’s <code>namespace</code>.
      *         </p>
      *         </li>
      */
@@ -252,6 +277,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      * namespace.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * The namespace of a generic package is it’s <code>namespace</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param namespace
@@ -272,6 +302,11 @@ public class PackageDescription implements Serializable, Cloneable, StructuredPo
      *        <p>
      *        Python and NuGet packages do not contain a corresponding component, packages of those formats do not have
      *        a namespace.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The namespace of a generic package is it’s <code>namespace</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -96,8 +96,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -450,8 +450,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -476,8 +476,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
-     *        Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *        Connect, or IAM federation
      *        </p>
      *        </li>
      *        </ol>
@@ -508,8 +508,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -533,8 +533,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
-     *         Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
-     *         Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *         IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *         Connect, or IAM federation
      *         </p>
      *         </li>
      *         </ol>
@@ -565,8 +565,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
-     * Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated Single
-     * Sign-On using SAML, OpenID Connect, or IAM federation
+     * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
+     * or IAM federation
      * </p>
      * </li>
      * </ol>
@@ -591,8 +591,8 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
-     *        Identity and Access Management (IAM) users and IAM role-based sessions authenticated through Federated
-     *        Single Sign-On using SAML, OpenID Connect, or IAM federation
+     *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
+     *        Connect, or IAM federation
      *        </p>
      *        </li>
      *        </ol>

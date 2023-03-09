@@ -53,6 +53,11 @@ public class RegisteredUserQuickSightConsoleEmbeddingConfigurationJsonUnmarshall
                     context.nextToken();
                     registeredUserQuickSightConsoleEmbeddingConfiguration.setInitialPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FeatureConfigurations", targetDepth)) {
+                    context.nextToken();
+                    registeredUserQuickSightConsoleEmbeddingConfiguration.setFeatureConfigurations(RegisteredUserConsoleFeatureConfigurationsJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

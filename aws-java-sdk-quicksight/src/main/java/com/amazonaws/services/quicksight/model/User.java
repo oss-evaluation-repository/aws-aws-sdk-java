@@ -89,7 +89,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     private String identityType;
     /**
      * <p>
-     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      */
@@ -602,12 +602,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
      * @param active
-     *        The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     *        The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      *        Directory user, that user is inactive until they sign in and provide a password.
      */
 
@@ -617,11 +617,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
-     * @return The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * @return The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      *         Directory user, that user is inactive until they sign in and provide a password.
      */
 
@@ -631,12 +631,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
      * @param active
-     *        The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     *        The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      *        Directory user, that user is inactive until they sign in and provide a password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -648,11 +648,11 @@ public class User implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      * Directory user, that user is inactive until they sign in and provide a password.
      * </p>
      * 
-     * @return The active status of user. When you create an Amazon QuickSight user that’s not an IAM user or an Active
+     * @return The active status of user. When you create an Amazon QuickSight user that's not an IAM user or an Active
      *         Directory user, that user is inactive until they sign in and provide a password.
      */
 

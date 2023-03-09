@@ -176,7 +176,7 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date updatedAt;
     /**
      * <p>
-     * The serverless workgroup name.
+     * The serverless workgroup name or Amazon Resource Name (ARN).
      * </p>
      */
     private String workgroupName;
@@ -1324,11 +1324,11 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The serverless workgroup name.
+     * The serverless workgroup name or Amazon Resource Name (ARN).
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name.
+     *        The serverless workgroup name or Amazon Resource Name (ARN).
      */
 
     public void setWorkgroupName(String workgroupName) {
@@ -1337,10 +1337,10 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The serverless workgroup name.
+     * The serverless workgroup name or Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The serverless workgroup name.
+     * @return The serverless workgroup name or Amazon Resource Name (ARN).
      */
 
     public String getWorkgroupName() {
@@ -1349,11 +1349,11 @@ public class DescribeStatementResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The serverless workgroup name.
+     * The serverless workgroup name or Amazon Resource Name (ARN).
      * </p>
      * 
      * @param workgroupName
-     *        The serverless workgroup name.
+     *        The serverless workgroup name or Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

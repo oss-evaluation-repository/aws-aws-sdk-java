@@ -2980,6 +2980,69 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Gets metric data from the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * <code>GetMetricDataV2</code> offers more features than <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the
+     * previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to
+     * filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
+     * historical data for last the 14 days, in 24-hour intervals.
+     * </p>
+     * <p>
+     * For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and
+     * <code>GetMetricData</code>, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
+     * </p>
+     * <p>
+     * This API is not available in the Amazon Web Services GovCloud (US) Regions.
+     * </p>
+     * 
+     * @param getMetricDataV2Request
+     * @return A Java Future containing the result of the GetMetricDataV2 operation returned by the service.
+     * @sample AmazonConnectAsync.GetMetricDataV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricDataV2Result> getMetricDataV2Async(GetMetricDataV2Request getMetricDataV2Request);
+
+    /**
+     * <p>
+     * Gets metric data from the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * <code>GetMetricDataV2</code> offers more features than <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the
+     * previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to
+     * filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
+     * historical data for last the 14 days, in 24-hour intervals.
+     * </p>
+     * <p>
+     * For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and
+     * <code>GetMetricData</code>, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
+     * </p>
+     * <p>
+     * This API is not available in the Amazon Web Services GovCloud (US) Regions.
+     * </p>
+     * 
+     * @param getMetricDataV2Request
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMetricDataV2 operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.GetMetricDataV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetMetricDataV2Result> getMetricDataV2Async(GetMetricDataV2Request getMetricDataV2Request,
+            com.amazonaws.handlers.AsyncHandler<GetMetricDataV2Request, GetMetricDataV2Result> asyncHandler);
+
+    /**
+     * <p>
      * Gets details about a specific task template in the specified Amazon Connect instance.
      * </p>
      * 

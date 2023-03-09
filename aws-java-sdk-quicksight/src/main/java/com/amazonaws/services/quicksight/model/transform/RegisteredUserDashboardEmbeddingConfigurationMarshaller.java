@@ -29,6 +29,8 @@ public class RegisteredUserDashboardEmbeddingConfigurationMarshaller {
 
     private static final MarshallingInfo<String> INITIALDASHBOARDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialDashboardId").build();
+    private static final MarshallingInfo<StructuredPojo> FEATURECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeatureConfigurations").build();
 
     private static final RegisteredUserDashboardEmbeddingConfigurationMarshaller instance = new RegisteredUserDashboardEmbeddingConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class RegisteredUserDashboardEmbeddingConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(registeredUserDashboardEmbeddingConfiguration.getInitialDashboardId(), INITIALDASHBOARDID_BINDING);
+            protocolMarshaller.marshall(registeredUserDashboardEmbeddingConfiguration.getFeatureConfigurations(), FEATURECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

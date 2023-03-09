@@ -188,6 +188,11 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * </li>
  * <li>
  * <p>
+ * <code>DeletePackage</code>: Deletes a package and all associated package versions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>DeletePackageVersions</code>: Deletes versions of a package. After a package has been deleted, it can be
  * republished, but its assets and metadata cannot be restored because they have been permanently removed from storage.
  * </p>
@@ -329,6 +334,11 @@ import com.amazonaws.services.codeartifact.model.transform.*;
  * <li>
  * <p>
  * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>PublishPackageVersion</code>: Creates a new package version containing one or more assets.
  * </p>
  * </li>
  * <li>
@@ -959,7 +969,7 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
      * <code>Archived</code>. Archived packages cannot be downloaded from a repository and don't show up with list
      * package APIs (for example, <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html"
-     * >ListackageVersions</a>), but you can restore them using <a
+     * >ListPackageVersions</a>), but you can restore them using <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html"
      * >UpdatePackageVersionsStatus</a>.
      * </p>
@@ -2586,6 +2596,94 @@ public class AWSCodeArtifactClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new package version containing one or more assets (or files).
+     * </p>
+     * <p>
+     * The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code> state
+     * until all of it’s assets have been uploaded (see <a href=
+     * "https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status"
+     * >Package version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s status to
+     * <code>Published</code>, omit the <code>unfinished</code> flag when uploading the final asset, or set the status
+     * using <a
+     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">
+     * UpdatePackageVersionStatus</a>. Once a package version’s status is set to <code>Published</code>, it cannot
+     * change back to <code>Unfinished</code>.
+     * </p>
+     * <note>
+     * <p>
+     * Only generic packages can be published using this API.
+     * </p>
+     * </note>
+     * 
+     * @param publishPackageVersionRequest
+     * @return Result of the PublishPackageVersion operation returned by the service.
+     * @throws AccessDeniedException
+     *         The operation did not succeed because of an unauthorized access attempt.
+     * @throws ConflictException
+     *         The operation did not succeed because prerequisites are not met.
+     * @throws InternalServerException
+     *         The operation did not succeed because of an error that occurred inside CodeArtifact.
+     * @throws ResourceNotFoundException
+     *         The operation did not succeed because the resource requested is not found in the service.
+     * @throws ServiceQuotaExceededException
+     *         The operation did not succeed because it would have exceeded a service limit for your account.
+     * @throws ThrottlingException
+     *         The operation did not succeed because too many requests are sent to the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a parameter in the request was sent with an invalid value.
+     * @sample AWSCodeArtifact.PublishPackageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PublishPackageVersionResult publishPackageVersion(PublishPackageVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executePublishPackageVersion(request);
+    }
+
+    @SdkInternalApi
+    final PublishPackageVersionResult executePublishPackageVersion(PublishPackageVersionRequest publishPackageVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(publishPackageVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PublishPackageVersionRequest> request = null;
+        Response<PublishPackageVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PublishPackageVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishPackageVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codeartifact");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PublishPackageVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+                request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PublishPackageVersionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PublishPackageVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

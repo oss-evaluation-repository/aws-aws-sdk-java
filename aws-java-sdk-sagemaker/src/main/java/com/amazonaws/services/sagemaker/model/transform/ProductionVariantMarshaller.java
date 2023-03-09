@@ -49,6 +49,8 @@ public class ProductionVariantMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModelDataDownloadTimeoutInSeconds").build();
     private static final MarshallingInfo<Integer> CONTAINERSTARTUPHEALTHCHECKTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerStartupHealthCheckTimeoutInSeconds").build();
+    private static final MarshallingInfo<Boolean> ENABLESSMACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableSSMAccess").build();
 
     private static final ProductionVariantMarshaller instance = new ProductionVariantMarshaller();
 
@@ -78,6 +80,7 @@ public class ProductionVariantMarshaller {
             protocolMarshaller.marshall(productionVariant.getModelDataDownloadTimeoutInSeconds(), MODELDATADOWNLOADTIMEOUTINSECONDS_BINDING);
             protocolMarshaller
                     .marshall(productionVariant.getContainerStartupHealthCheckTimeoutInSeconds(), CONTAINERSTARTUPHEALTHCHECKTIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(productionVariant.getEnableSSMAccess(), ENABLESSMACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

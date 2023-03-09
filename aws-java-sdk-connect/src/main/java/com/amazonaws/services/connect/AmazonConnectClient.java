@@ -5560,6 +5560,87 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Gets metric data from the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * <code>GetMetricDataV2</code> offers more features than <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>, the
+     * previous version of this API. It has new metrics, offers filtering at a metric level, and offers the ability to
+     * filter and group data by channels, queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
+     * historical data for last the 14 days, in 24-hour intervals.
+     * </p>
+     * <p>
+     * For a description of the historical metrics that are supported by <code>GetMetricDataV2</code> and
+     * <code>GetMetricData</code>, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
+     * </p>
+     * <p>
+     * This API is not available in the Amazon Web Services GovCloud (US) Regions.
+     * </p>
+     * 
+     * @param getMetricDataV2Request
+     * @return Result of the GetMetricDataV2 operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.GetMetricDataV2
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMetricDataV2Result getMetricDataV2(GetMetricDataV2Request request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricDataV2(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricDataV2Result executeGetMetricDataV2(GetMetricDataV2Request getMetricDataV2Request) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricDataV2Request);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricDataV2Request> request = null;
+        Response<GetMetricDataV2Result> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricDataV2RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetricDataV2Request));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricDataV2");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMetricDataV2Result>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMetricDataV2ResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets details about a specific task template in the specified Amazon Connect instance.
      * </p>
      * 

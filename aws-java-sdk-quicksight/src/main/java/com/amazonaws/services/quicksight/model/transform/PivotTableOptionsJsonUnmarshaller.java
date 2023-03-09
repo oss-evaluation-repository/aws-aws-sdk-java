@@ -84,6 +84,10 @@ public class PivotTableOptionsJsonUnmarshaller implements Unmarshaller<PivotTabl
                     context.nextToken();
                     pivotTableOptions.setRowAlternateColorOptions(RowAlternateColorOptionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("CollapsedRowDimensionsVisibility", targetDepth)) {
+                    context.nextToken();
+                    pivotTableOptions.setCollapsedRowDimensionsVisibility(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
