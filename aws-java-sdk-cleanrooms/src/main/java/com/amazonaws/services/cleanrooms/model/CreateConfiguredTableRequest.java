@@ -55,6 +55,14 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String analysisMethod;
+    /**
+     * <p>
+     * An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     * optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM
+     * policies to control access to this resource.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -306,6 +314,86 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     * optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM
+     * policies to control access to this resource.
+     * </p>
+     * 
+     * @return An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     *         optional value, both of which you define. When you use tagging, you can also use tag-based access control
+     *         in IAM policies to control access to this resource.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     * optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM
+     * policies to control access to this resource.
+     * </p>
+     * 
+     * @param tags
+     *        An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     *        optional value, both of which you define. When you use tagging, you can also use tag-based access control
+     *        in IAM policies to control access to this resource.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     * optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM
+     * policies to control access to this resource.
+     * </p>
+     * 
+     * @param tags
+     *        An optional label that you can assign to a resource when you create it. Each tag consists of a key and an
+     *        optional value, both of which you define. When you use tagging, you can also use tag-based access control
+     *        in IAM policies to control access to this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfiguredTableRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateConfiguredTableRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfiguredTableRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateConfiguredTableRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -326,7 +414,9 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
         if (getAllowedColumns() != null)
             sb.append("AllowedColumns: ").append(getAllowedColumns()).append(",");
         if (getAnalysisMethod() != null)
-            sb.append("AnalysisMethod: ").append(getAnalysisMethod());
+            sb.append("AnalysisMethod: ").append(getAnalysisMethod()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -361,6 +451,10 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAnalysisMethod() != null && other.getAnalysisMethod().equals(this.getAnalysisMethod()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -374,6 +468,7 @@ public class CreateConfiguredTableRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getTableReference() == null) ? 0 : getTableReference().hashCode());
         hashCode = prime * hashCode + ((getAllowedColumns() == null) ? 0 : getAllowedColumns().hashCode());
         hashCode = prime * hashCode + ((getAnalysisMethod() == null) ? 0 : getAnalysisMethod().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

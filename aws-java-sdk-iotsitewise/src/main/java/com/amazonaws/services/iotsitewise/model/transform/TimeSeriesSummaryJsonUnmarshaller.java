@@ -80,6 +80,10 @@ public class TimeSeriesSummaryJsonUnmarshaller implements Unmarshaller<TimeSerie
                     context.nextToken();
                     timeSeriesSummary.setTimeSeriesLastUpdateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("timeSeriesArn", targetDepth)) {
+                    context.nextToken();
+                    timeSeriesSummary.setTimeSeriesArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

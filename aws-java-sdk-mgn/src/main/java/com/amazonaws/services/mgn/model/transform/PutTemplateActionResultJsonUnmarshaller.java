@@ -60,6 +60,14 @@ public class PutTemplateActionResultJsonUnmarshaller implements Unmarshaller<Put
                     context.nextToken();
                     putTemplateActionResult.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("category", targetDepth)) {
+                    context.nextToken();
+                    putTemplateActionResult.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    putTemplateActionResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("documentIdentifier", targetDepth)) {
                     context.nextToken();
                     putTemplateActionResult.setDocumentIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +75,11 @@ public class PutTemplateActionResultJsonUnmarshaller implements Unmarshaller<Put
                 if (context.testExpression("documentVersion", targetDepth)) {
                     context.nextToken();
                     putTemplateActionResult.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("externalParameters", targetDepth)) {
+                    context.nextToken();
+                    putTemplateActionResult.setExternalParameters(new MapUnmarshaller<String, SsmExternalParameter>(context.getUnmarshaller(String.class),
+                            SsmExternalParameterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("mustSucceedForCutover", targetDepth)) {
                     context.nextToken();

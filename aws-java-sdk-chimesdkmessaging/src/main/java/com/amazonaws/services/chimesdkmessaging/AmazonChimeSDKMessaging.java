@@ -633,6 +633,33 @@ public interface AmazonChimeSDKMessaging {
 
     /**
      * <p>
+     * Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMessagingStreamingConfigurationsRequest
+     * @return Result of the DeleteMessagingStreamingConfigurations operation returned by the service.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMessaging.DeleteMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMessagingStreamingConfigurationsResult deleteMessagingStreamingConfigurations(
+            DeleteMessagingStreamingConfigurationsRequest deleteMessagingStreamingConfigurationsRequest);
+
+    /**
+     * <p>
      * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
      * </p>
      * <note>
@@ -1054,6 +1081,37 @@ public interface AmazonChimeSDKMessaging {
 
     /**
      * <p>
+     * Retrieves the data streaming configuration for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMessagingStreamingConfigurationsRequest
+     * @return Result of the GetMessagingStreamingConfigurations operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMessaging.GetMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMessagingStreamingConfigurationsResult getMessagingStreamingConfigurations(
+            GetMessagingStreamingConfigurationsRequest getMessagingStreamingConfigurationsRequest);
+
+    /**
+     * <p>
      * Lists all the users banned from a particular channel.
      * </p>
      * <note>
@@ -1436,6 +1494,39 @@ public interface AmazonChimeSDKMessaging {
      *      target="_top">AWS API Documentation</a>
      */
     PutChannelMembershipPreferencesResult putChannelMembershipPreferences(PutChannelMembershipPreferencesRequest putChannelMembershipPreferencesRequest);
+
+    /**
+     * <p>
+     * Sets the data streaming configuration for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param putMessagingStreamingConfigurationsRequest
+     * @return Result of the PutMessagingStreamingConfigurations operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChimeSDKMessaging.PutMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutMessagingStreamingConfigurationsResult putMessagingStreamingConfigurations(
+            PutMessagingStreamingConfigurationsRequest putMessagingStreamingConfigurationsRequest);
 
     /**
      * <p>

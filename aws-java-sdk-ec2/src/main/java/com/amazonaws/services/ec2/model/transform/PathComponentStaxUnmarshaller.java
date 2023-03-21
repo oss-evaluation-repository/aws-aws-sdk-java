@@ -139,6 +139,21 @@ public class PathComponentStaxUnmarshaller implements Unmarshaller<PathComponent
                     pathComponent.setElasticLoadBalancerListener(AnalysisComponentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("firewallStatelessRule", targetDepth)) {
+                    pathComponent.setFirewallStatelessRule(FirewallStatelessRuleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("firewallStatefulRule", targetDepth)) {
+                    pathComponent.setFirewallStatefulRule(FirewallStatefulRuleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("serviceName", targetDepth)) {
+                    pathComponent.setServiceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return pathComponent;

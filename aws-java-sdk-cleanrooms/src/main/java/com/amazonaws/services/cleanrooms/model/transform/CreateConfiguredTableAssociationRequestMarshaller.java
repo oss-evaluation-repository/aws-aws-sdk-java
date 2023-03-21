@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.cleanrooms.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +39,8 @@ public class CreateConfiguredTableAssociationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuredTableIdentifier").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateConfiguredTableAssociationRequestMarshaller instance = new CreateConfiguredTableAssociationRequestMarshaller();
 
@@ -59,6 +63,7 @@ public class CreateConfiguredTableAssociationRequestMarshaller {
             protocolMarshaller.marshall(createConfiguredTableAssociationRequest.getMembershipIdentifier(), MEMBERSHIPIDENTIFIER_BINDING);
             protocolMarshaller.marshall(createConfiguredTableAssociationRequest.getConfiguredTableIdentifier(), CONFIGUREDTABLEIDENTIFIER_BINDING);
             protocolMarshaller.marshall(createConfiguredTableAssociationRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createConfiguredTableAssociationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

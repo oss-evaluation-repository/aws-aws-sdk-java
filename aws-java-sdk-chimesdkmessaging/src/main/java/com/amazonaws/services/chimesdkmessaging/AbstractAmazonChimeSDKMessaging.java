@@ -98,6 +98,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
     }
 
     @Override
+    public DeleteMessagingStreamingConfigurationsResult deleteMessagingStreamingConfigurations(DeleteMessagingStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
     }
 
     @Override
+    public GetMessagingStreamingConfigurationsResult getMessagingStreamingConfigurations(GetMessagingStreamingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListChannelBansResult listChannelBans(ListChannelBansRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -215,6 +225,11 @@ public class AbstractAmazonChimeSDKMessaging implements AmazonChimeSDKMessaging 
 
     @Override
     public PutChannelMembershipPreferencesResult putChannelMembershipPreferences(PutChannelMembershipPreferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutMessagingStreamingConfigurationsResult putMessagingStreamingConfigurations(PutMessagingStreamingConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1032,6 +1032,138 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
+     * List export errors.
+     * </p>
+     * 
+     * @param listExportErrorsRequest
+     *        List export errors request.
+     * @return A Java Future containing the result of the ListExportErrors operation returned by the service.
+     * @sample AWSmgnAsync.ListExportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportErrorsResult> listExportErrorsAsync(ListExportErrorsRequest listExportErrorsRequest);
+
+    /**
+     * <p>
+     * List export errors.
+     * </p>
+     * 
+     * @param listExportErrorsRequest
+     *        List export errors request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExportErrors operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListExportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportErrorsResult> listExportErrorsAsync(ListExportErrorsRequest listExportErrorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExportErrorsRequest, ListExportErrorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List exports.
+     * </p>
+     * 
+     * @param listExportsRequest
+     *        List export request.
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AWSmgnAsync.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * List exports.
+     * </p>
+     * 
+     * @param listExportsRequest
+     *        List export request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List import errors.
+     * </p>
+     * 
+     * @param listImportErrorsRequest
+     *        List import errors request.
+     * @return A Java Future containing the result of the ListImportErrors operation returned by the service.
+     * @sample AWSmgnAsync.ListImportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportErrorsResult> listImportErrorsAsync(ListImportErrorsRequest listImportErrorsRequest);
+
+    /**
+     * <p>
+     * List import errors.
+     * </p>
+     * 
+     * @param listImportErrorsRequest
+     *        List import errors request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImportErrors operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListImportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportErrorsResult> listImportErrorsAsync(ListImportErrorsRequest listImportErrorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportErrorsRequest, ListImportErrorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List imports.
+     * </p>
+     * 
+     * @param listImportsRequest
+     *        List imports request.
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AWSmgnAsync.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
+     * List imports.
+     * </p>
+     * 
+     * @param listImportsRequest
+     *        List imports request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImports operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest listImportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler);
+
+    /**
+     * <p>
      * List source server post migration custom actions.
      * </p>
      * 
@@ -1380,6 +1512,72 @@ public interface AWSmgnAsync extends AWSmgn {
      */
     java.util.concurrent.Future<StartCutoverResult> startCutoverAsync(StartCutoverRequest startCutoverRequest,
             com.amazonaws.handlers.AsyncHandler<StartCutoverRequest, StartCutoverResult> asyncHandler);
+
+    /**
+     * <p>
+     * Start export.
+     * </p>
+     * 
+     * @param startExportRequest
+     *        Start export request.
+     * @return A Java Future containing the result of the StartExport operation returned by the service.
+     * @sample AWSmgnAsync.StartExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartExportResult> startExportAsync(StartExportRequest startExportRequest);
+
+    /**
+     * <p>
+     * Start export.
+     * </p>
+     * 
+     * @param startExportRequest
+     *        Start export request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartExport operation returned by the service.
+     * @sample AWSmgnAsyncHandler.StartExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartExportResult> startExportAsync(StartExportRequest startExportRequest,
+            com.amazonaws.handlers.AsyncHandler<StartExportRequest, StartExportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Start import.
+     * </p>
+     * 
+     * @param startImportRequest
+     *        Start import request.
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AWSmgnAsync.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest);
+
+    /**
+     * <p>
+     * Start import.
+     * </p>
+     * 
+     * @param startImportRequest
+     *        Start import request.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartImport operation returned by the service.
+     * @sample AWSmgnAsyncHandler.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest startImportRequest,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler);
 
     /**
      * <p>

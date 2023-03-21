@@ -36,6 +36,12 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
     private String actionName;
     /**
      * <p>
+     * AWS Systems Manager Document external parameters.
+     * </p>
+     */
+    private java.util.Map<String, SsmExternalParameter> externalParameters;
+    /**
+     * <p>
      * If true, Cutover will not be enabled if the document has failed.
      * </p>
      */
@@ -96,6 +102,74 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     public SsmDocument withActionName(String actionName) {
         setActionName(actionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * AWS Systems Manager Document external parameters.
+     * </p>
+     * 
+     * @return AWS Systems Manager Document external parameters.
+     */
+
+    public java.util.Map<String, SsmExternalParameter> getExternalParameters() {
+        return externalParameters;
+    }
+
+    /**
+     * <p>
+     * AWS Systems Manager Document external parameters.
+     * </p>
+     * 
+     * @param externalParameters
+     *        AWS Systems Manager Document external parameters.
+     */
+
+    public void setExternalParameters(java.util.Map<String, SsmExternalParameter> externalParameters) {
+        this.externalParameters = externalParameters;
+    }
+
+    /**
+     * <p>
+     * AWS Systems Manager Document external parameters.
+     * </p>
+     * 
+     * @param externalParameters
+     *        AWS Systems Manager Document external parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SsmDocument withExternalParameters(java.util.Map<String, SsmExternalParameter> externalParameters) {
+        setExternalParameters(externalParameters);
+        return this;
+    }
+
+    /**
+     * Add a single ExternalParameters entry
+     *
+     * @see SsmDocument#withExternalParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SsmDocument addExternalParametersEntry(String key, SsmExternalParameter value) {
+        if (null == this.externalParameters) {
+            this.externalParameters = new java.util.HashMap<String, SsmExternalParameter>();
+        }
+        if (this.externalParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.externalParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ExternalParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SsmDocument clearExternalParametersEntries() {
+        this.externalParameters = null;
         return this;
     }
 
@@ -313,6 +387,8 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getActionName() != null)
             sb.append("ActionName: ").append(getActionName()).append(",");
+        if (getExternalParameters() != null)
+            sb.append("ExternalParameters: ").append(getExternalParameters()).append(",");
         if (getMustSucceedForCutover() != null)
             sb.append("MustSucceedForCutover: ").append(getMustSucceedForCutover()).append(",");
         if (getParameters() != null)
@@ -339,6 +415,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getActionName() != null && other.getActionName().equals(this.getActionName()) == false)
             return false;
+        if (other.getExternalParameters() == null ^ this.getExternalParameters() == null)
+            return false;
+        if (other.getExternalParameters() != null && other.getExternalParameters().equals(this.getExternalParameters()) == false)
+            return false;
         if (other.getMustSucceedForCutover() == null ^ this.getMustSucceedForCutover() == null)
             return false;
         if (other.getMustSucceedForCutover() != null && other.getMustSucceedForCutover().equals(this.getMustSucceedForCutover()) == false)
@@ -364,6 +444,7 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getActionName() == null) ? 0 : getActionName().hashCode());
+        hashCode = prime * hashCode + ((getExternalParameters() == null) ? 0 : getExternalParameters().hashCode());
         hashCode = prime * hashCode + ((getMustSucceedForCutover() == null) ? 0 : getMustSucceedForCutover().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getSsmDocumentName() == null) ? 0 : getSsmDocumentName().hashCode());

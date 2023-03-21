@@ -12,18 +12,13 @@
  */
 
 /**
- * <note>
- * <p>
- * AWS Clean Rooms is in preview release and is subject to change.
- * </p>
- * </note>
  * <p>
  * Welcome to the <i>AWS Clean Rooms API Reference</i>.
  * </p>
  * <p>
  * AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration
- * workspace. In the collaboration, members who can query and receive results can get insights into the combined data
- * without either party getting access to the other party's raw data.
+ * workspace. In the collaboration, members who can query and receive results can get insights into the collective
+ * datasets without either party getting access to the other party's raw data.
  * </p>
  * <p>
  * To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the <a

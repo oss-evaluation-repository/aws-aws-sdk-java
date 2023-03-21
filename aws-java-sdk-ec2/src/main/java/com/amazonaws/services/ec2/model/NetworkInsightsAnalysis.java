@@ -52,7 +52,7 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> additionalAccounts;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     * The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> filterInArns;
@@ -320,10 +320,10 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     * The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     * @return The Amazon Resource Names (ARN) of the resources that the path must traverse.
      */
 
     public java.util.List<String> getFilterInArns() {
@@ -335,11 +335,11 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     * The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * </p>
      * 
      * @param filterInArns
-     *        The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     *        The Amazon Resource Names (ARN) of the resources that the path must traverse.
      */
 
     public void setFilterInArns(java.util.Collection<String> filterInArns) {
@@ -353,7 +353,7 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     * The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -362,7 +362,7 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
      * </p>
      * 
      * @param filterInArns
-     *        The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     *        The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,11 +378,11 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     * The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * </p>
      * 
      * @param filterInArns
-     *        The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
+     *        The Amazon Resource Names (ARN) of the resources that the path must traverse.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

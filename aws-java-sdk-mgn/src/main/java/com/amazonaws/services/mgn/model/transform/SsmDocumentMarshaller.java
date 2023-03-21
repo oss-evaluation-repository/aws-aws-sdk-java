@@ -31,6 +31,8 @@ public class SsmDocumentMarshaller {
 
     private static final MarshallingInfo<String> ACTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionName").build();
+    private static final MarshallingInfo<Map> EXTERNALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalParameters").build();
     private static final MarshallingInfo<Boolean> MUSTSUCCEEDFORCUTOVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mustSucceedForCutover").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -57,6 +59,7 @@ public class SsmDocumentMarshaller {
 
         try {
             protocolMarshaller.marshall(ssmDocument.getActionName(), ACTIONNAME_BINDING);
+            protocolMarshaller.marshall(ssmDocument.getExternalParameters(), EXTERNALPARAMETERS_BINDING);
             protocolMarshaller.marshall(ssmDocument.getMustSucceedForCutover(), MUSTSUCCEEDFORCUTOVER_BINDING);
             protocolMarshaller.marshall(ssmDocument.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(ssmDocument.getSsmDocumentName(), SSMDOCUMENTNAME_BINDING);

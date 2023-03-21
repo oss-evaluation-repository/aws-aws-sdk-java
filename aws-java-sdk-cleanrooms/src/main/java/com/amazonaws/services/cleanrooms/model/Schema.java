@@ -36,7 +36,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Column> columns;
     /**
      * <p>
-     * The partition keys for the data set underlying this schema.
+     * The partition keys for the dataset underlying this schema.
      * </p>
      */
     private java.util.List<Column> partitionKeys;
@@ -174,10 +174,10 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The partition keys for the data set underlying this schema.
+     * The partition keys for the dataset underlying this schema.
      * </p>
      * 
-     * @return The partition keys for the data set underlying this schema.
+     * @return The partition keys for the dataset underlying this schema.
      */
 
     public java.util.List<Column> getPartitionKeys() {
@@ -186,11 +186,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The partition keys for the data set underlying this schema.
+     * The partition keys for the dataset underlying this schema.
      * </p>
      * 
      * @param partitionKeys
-     *        The partition keys for the data set underlying this schema.
+     *        The partition keys for the dataset underlying this schema.
      */
 
     public void setPartitionKeys(java.util.Collection<Column> partitionKeys) {
@@ -204,7 +204,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The partition keys for the data set underlying this schema.
+     * The partition keys for the dataset underlying this schema.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -213,7 +213,7 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param partitionKeys
-     *        The partition keys for the data set underlying this schema.
+     *        The partition keys for the dataset underlying this schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,11 +229,11 @@ public class Schema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The partition keys for the data set underlying this schema.
+     * The partition keys for the dataset underlying this schema.
      * </p>
      * 
      * @param partitionKeys
-     *        The partition keys for the data set underlying this schema.
+     *        The partition keys for the dataset underlying this schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

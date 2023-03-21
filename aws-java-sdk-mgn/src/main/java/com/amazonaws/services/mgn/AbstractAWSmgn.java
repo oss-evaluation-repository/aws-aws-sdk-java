@@ -178,6 +178,26 @@ public class AbstractAWSmgn implements AWSmgn {
     }
 
     @Override
+    public ListExportErrorsResult listExportErrors(ListExportErrorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportErrorsResult listImportErrors(ListImportErrorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportsResult listImports(ListImportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSourceServerActionsResult listSourceServerActions(ListSourceServerActionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +249,16 @@ public class AbstractAWSmgn implements AWSmgn {
 
     @Override
     public StartCutoverResult startCutover(StartCutoverRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartExportResult startExport(StartExportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartImportResult startImport(StartImportRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

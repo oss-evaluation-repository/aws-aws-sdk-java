@@ -52,6 +52,11 @@ public class SsmDocumentJsonUnmarshaller implements Unmarshaller<SsmDocument, Js
                     context.nextToken();
                     ssmDocument.setActionName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("externalParameters", targetDepth)) {
+                    context.nextToken();
+                    ssmDocument.setExternalParameters(new MapUnmarshaller<String, SsmExternalParameter>(context.getUnmarshaller(String.class),
+                            SsmExternalParameterJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("mustSucceedForCutover", targetDepth)) {
                     context.nextToken();
                     ssmDocument.setMustSucceedForCutover(context.getUnmarshaller(Boolean.class).unmarshall(context));

@@ -980,6 +980,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate CIDRs</a> in the <i>Amazon
      * VPC IPAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * This action creates an allocation with strong consistency. The returned CIDR will not overlap with any other
+     * allocations from the same pool.
+     * </p>
+     * </note>
      * 
      * @param allocateIpamPoolCidrRequest
      * @return Result of the AllocateIpamPoolCidr operation returned by the service.
@@ -6188,8 +6194,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual
-     * private cloud (VPC). For more information, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">What is Reachability Analyzer</a>.
+     * private cloud (VPC). For more information, see the <a
+     * href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer Guide</a>.
      * </p>
      * 
      * @param createNetworkInsightsPathRequest
@@ -6970,8 +6976,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * status is <code>pending</code>.
      * </p>
      * <p>
-     * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before
-     * taking the snapshot.
+     * When you create a snapshot for an EBS volume that serves as a root device, we recommend that you stop the
+     * instance before taking the snapshot.
      * </p>
      * <p>
      * Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes that are created from
@@ -27288,6 +27294,17 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Get a list of all the CIDR allocations in an IPAM pool.
      * </p>
+     * <note>
+     * <p>
+     * If you use this action after <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html"
+     * >AllocateIpamPoolCidr</a> or <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html"
+     * >ReleaseIpamPoolAllocation</a>, note that all EC2 API actions follow an <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency"
+     * >eventual consistency</a> model.
+     * </p>
+     * </note>
      * 
      * @param getIpamPoolAllocationsRequest
      * @return Result of the GetIpamPoolAllocations operation returned by the service.
@@ -34802,6 +34819,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release an allocation</a> in the
      * <i>Amazon VPC IPAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * All EC2 API actions follow an <a href=
+     * "https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency"
+     * >eventual consistency</a> model.
+     * </p>
+     * </note>
      * 
      * @param releaseIpamPoolAllocationRequest
      * @return Result of the ReleaseIpamPoolAllocation operation returned by the service.

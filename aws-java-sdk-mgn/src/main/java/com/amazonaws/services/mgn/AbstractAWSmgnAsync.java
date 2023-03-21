@@ -429,6 +429,58 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListExportErrorsResult> listExportErrorsAsync(ListExportErrorsRequest request) {
+
+        return listExportErrorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportErrorsResult> listExportErrorsAsync(ListExportErrorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExportErrorsRequest, ListExportErrorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request) {
+
+        return listExportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportErrorsResult> listImportErrorsAsync(ListImportErrorsRequest request) {
+
+        return listImportErrorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportErrorsResult> listImportErrorsAsync(ListImportErrorsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImportErrorsRequest, ListImportErrorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request) {
+
+        return listImportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportsResult> listImportsAsync(ListImportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImportsRequest, ListImportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSourceServerActionsResult> listSourceServerActionsAsync(ListSourceServerActionsRequest request) {
 
         return listSourceServerActionsAsync(request, null);
@@ -567,6 +619,32 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<StartCutoverResult> startCutoverAsync(StartCutoverRequest request,
             com.amazonaws.handlers.AsyncHandler<StartCutoverRequest, StartCutoverResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartExportResult> startExportAsync(StartExportRequest request) {
+
+        return startExportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartExportResult> startExportAsync(StartExportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartExportRequest, StartExportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request) {
+
+        return startImportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportResult> startImportAsync(StartImportRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartImportRequest, StartImportResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

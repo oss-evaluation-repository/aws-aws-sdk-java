@@ -27,7 +27,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
@@ -90,7 +90,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      *        <p>
      *        Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * @param description
-     *        A description for the security group. This is informational only.
+     *        A description for the security group.
      *        </p>
      *        <p>
      *        Constraints: Up to 255 characters in length
@@ -108,7 +108,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
@@ -121,7 +121,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param description
-     *        A description for the security group. This is informational only.</p>
+     *        A description for the security group.</p>
      *        <p>
      *        Constraints: Up to 255 characters in length
      *        </p>
@@ -138,7 +138,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
@@ -150,7 +150,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * Constraints for EC2-VPC: a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=&amp;;{}!$*
      * </p>
      * 
-     * @return A description for the security group. This is informational only.</p>
+     * @return A description for the security group.</p>
      *         <p>
      *         Constraints: Up to 255 characters in length
      *         </p>
@@ -167,7 +167,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * A description for the security group. This is informational only.
+     * A description for the security group.
      * </p>
      * <p>
      * Constraints: Up to 255 characters in length
@@ -180,7 +180,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest implemen
      * </p>
      * 
      * @param description
-     *        A description for the security group. This is informational only.</p>
+     *        A description for the security group.</p>
      *        <p>
      *        Constraints: Up to 255 characters in length
      *        </p>

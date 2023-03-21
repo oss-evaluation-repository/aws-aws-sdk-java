@@ -876,6 +876,47 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
+     * Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMessagingStreamingConfigurationsRequest
+     * @return A Java Future containing the result of the DeleteMessagingStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeSDKMessagingAsync.DeleteMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMessagingStreamingConfigurationsResult> deleteMessagingStreamingConfigurationsAsync(
+            DeleteMessagingStreamingConfigurationsRequest deleteMessagingStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteMessagingStreamingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMessagingStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeSDKMessagingAsyncHandler.DeleteMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/DeleteMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMessagingStreamingConfigurationsResult> deleteMessagingStreamingConfigurationsAsync(
+            DeleteMessagingStreamingConfigurationsRequest deleteMessagingStreamingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMessagingStreamingConfigurationsRequest, DeleteMessagingStreamingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
      * </p>
      * <note>
@@ -1482,6 +1523,47 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
 
     /**
      * <p>
+     * Retrieves the data streaming configuration for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMessagingStreamingConfigurationsRequest
+     * @return A Java Future containing the result of the GetMessagingStreamingConfigurations operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMessagingAsync.GetMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMessagingStreamingConfigurationsResult> getMessagingStreamingConfigurationsAsync(
+            GetMessagingStreamingConfigurationsRequest getMessagingStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Retrieves the data streaming configuration for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param getMessagingStreamingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMessagingStreamingConfigurations operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMessagingAsyncHandler.GetMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/GetMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMessagingStreamingConfigurationsResult> getMessagingStreamingConfigurationsAsync(
+            GetMessagingStreamingConfigurationsRequest getMessagingStreamingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMessagingStreamingConfigurationsRequest, GetMessagingStreamingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all the users banned from a particular channel.
      * </p>
      * <note>
@@ -2027,6 +2109,47 @@ public interface AmazonChimeSDKMessagingAsync extends AmazonChimeSDKMessaging {
     java.util.concurrent.Future<PutChannelMembershipPreferencesResult> putChannelMembershipPreferencesAsync(
             PutChannelMembershipPreferencesRequest putChannelMembershipPreferencesRequest,
             com.amazonaws.handlers.AsyncHandler<PutChannelMembershipPreferencesRequest, PutChannelMembershipPreferencesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the data streaming configuration for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param putMessagingStreamingConfigurationsRequest
+     * @return A Java Future containing the result of the PutMessagingStreamingConfigurations operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMessagingAsync.PutMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutMessagingStreamingConfigurationsResult> putMessagingStreamingConfigurationsAsync(
+            PutMessagingStreamingConfigurationsRequest putMessagingStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Sets the data streaming configuration for an <code>AppInstance</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the
+     * <i>Amazon Chime SDK Developer Guide</i>.
+     * </p>
+     * 
+     * @param putMessagingStreamingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutMessagingStreamingConfigurations operation returned by the
+     *         service.
+     * @sample AmazonChimeSDKMessagingAsyncHandler.PutMessagingStreamingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-messaging-2021-05-15/PutMessagingStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutMessagingStreamingConfigurationsResult> putMessagingStreamingConfigurationsAsync(
+            PutMessagingStreamingConfigurationsRequest putMessagingStreamingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutMessagingStreamingConfigurationsRequest, PutMessagingStreamingConfigurationsResult> asyncHandler);
 
     /**
      * <p>

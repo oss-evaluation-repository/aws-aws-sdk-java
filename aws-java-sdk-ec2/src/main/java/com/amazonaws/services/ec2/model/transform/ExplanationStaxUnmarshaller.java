@@ -334,6 +334,16 @@ public class ExplanationStaxUnmarshaller implements Unmarshaller<Explanation, St
                     explanation.setComponentRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("firewallStatelessRule", targetDepth)) {
+                    explanation.setFirewallStatelessRule(FirewallStatelessRuleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("firewallStatefulRule", targetDepth)) {
+                    explanation.setFirewallStatefulRule(FirewallStatefulRuleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return explanation;

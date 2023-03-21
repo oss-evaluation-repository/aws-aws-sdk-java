@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cleanrooms.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -42,6 +43,8 @@ public class CreateCollaborationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataEncryptionMetadata").build();
     private static final MarshallingInfo<String> QUERYLOGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("queryLogStatus").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateCollaborationRequestMarshaller instance = new CreateCollaborationRequestMarshaller();
 
@@ -66,6 +69,7 @@ public class CreateCollaborationRequestMarshaller {
             protocolMarshaller.marshall(createCollaborationRequest.getCreatorDisplayName(), CREATORDISPLAYNAME_BINDING);
             protocolMarshaller.marshall(createCollaborationRequest.getDataEncryptionMetadata(), DATAENCRYPTIONMETADATA_BINDING);
             protocolMarshaller.marshall(createCollaborationRequest.getQueryLogStatus(), QUERYLOGSTATUS_BINDING);
+            protocolMarshaller.marshall(createCollaborationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -60,6 +60,10 @@ public class RetryDataReplicationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     retryDataReplicationResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    context.nextToken();
+                    retryDataReplicationResult.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("isArchived", targetDepth)) {
                     context.nextToken();
                     retryDataReplicationResult.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -88,6 +92,10 @@ public class RetryDataReplicationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     retryDataReplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("userProvidedID", targetDepth)) {
+                    context.nextToken();
+                    retryDataReplicationResult.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
                     context.nextToken();

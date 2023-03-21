@@ -210,6 +210,21 @@ public class AbstractAmazonChimeSDKMessagingAsync extends AbstractAmazonChimeSDK
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMessagingStreamingConfigurationsResult> deleteMessagingStreamingConfigurationsAsync(
+            DeleteMessagingStreamingConfigurationsRequest request) {
+
+        return deleteMessagingStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMessagingStreamingConfigurationsResult> deleteMessagingStreamingConfigurationsAsync(
+            DeleteMessagingStreamingConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMessagingStreamingConfigurationsRequest, DeleteMessagingStreamingConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest request) {
 
         return describeChannelAsync(request, null);
@@ -367,6 +382,21 @@ public class AbstractAmazonChimeSDKMessagingAsync extends AbstractAmazonChimeSDK
     @Override
     public java.util.concurrent.Future<GetMessagingSessionEndpointResult> getMessagingSessionEndpointAsync(GetMessagingSessionEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<GetMessagingSessionEndpointRequest, GetMessagingSessionEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagingStreamingConfigurationsResult> getMessagingStreamingConfigurationsAsync(
+            GetMessagingStreamingConfigurationsRequest request) {
+
+        return getMessagingStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagingStreamingConfigurationsResult> getMessagingStreamingConfigurationsAsync(
+            GetMessagingStreamingConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMessagingStreamingConfigurationsRequest, GetMessagingStreamingConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -531,6 +561,21 @@ public class AbstractAmazonChimeSDKMessagingAsync extends AbstractAmazonChimeSDK
     public java.util.concurrent.Future<PutChannelMembershipPreferencesResult> putChannelMembershipPreferencesAsync(
             PutChannelMembershipPreferencesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutChannelMembershipPreferencesRequest, PutChannelMembershipPreferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMessagingStreamingConfigurationsResult> putMessagingStreamingConfigurationsAsync(
+            PutMessagingStreamingConfigurationsRequest request) {
+
+        return putMessagingStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMessagingStreamingConfigurationsResult> putMessagingStreamingConfigurationsAsync(
+            PutMessagingStreamingConfigurationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutMessagingStreamingConfigurationsRequest, PutMessagingStreamingConfigurationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

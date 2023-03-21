@@ -60,6 +60,10 @@ public class StartReplicationResultJsonUnmarshaller implements Unmarshaller<Star
                     context.nextToken();
                     startReplicationResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    context.nextToken();
+                    startReplicationResult.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("isArchived", targetDepth)) {
                     context.nextToken();
                     startReplicationResult.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -88,6 +92,10 @@ public class StartReplicationResultJsonUnmarshaller implements Unmarshaller<Star
                     context.nextToken();
                     startReplicationResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("userProvidedID", targetDepth)) {
+                    context.nextToken();
+                    startReplicationResult.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
                     context.nextToken();

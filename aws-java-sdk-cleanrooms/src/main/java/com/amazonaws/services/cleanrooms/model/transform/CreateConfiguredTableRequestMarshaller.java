@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.cleanrooms.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -38,6 +39,8 @@ public class CreateConfiguredTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowedColumns").build();
     private static final MarshallingInfo<String> ANALYSISMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("analysisMethod").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateConfiguredTableRequestMarshaller instance = new CreateConfiguredTableRequestMarshaller();
 
@@ -60,6 +63,7 @@ public class CreateConfiguredTableRequestMarshaller {
             protocolMarshaller.marshall(createConfiguredTableRequest.getTableReference(), TABLEREFERENCE_BINDING);
             protocolMarshaller.marshall(createConfiguredTableRequest.getAllowedColumns(), ALLOWEDCOLUMNS_BINDING);
             protocolMarshaller.marshall(createConfiguredTableRequest.getAnalysisMethod(), ANALYSISMETHOD_BINDING);
+            protocolMarshaller.marshall(createConfiguredTableRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

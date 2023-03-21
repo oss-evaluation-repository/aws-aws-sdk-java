@@ -43,6 +43,12 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
     private DataReplicationInfo dataReplicationInfo;
     /**
      * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     */
+    private String fqdnForActionFramework;
+    /**
+     * <p>
      * Source server archived status.
      * </p>
      */
@@ -83,6 +89,12 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Source server user provided ID.
+     * </p>
+     */
+    private String userProvidedID;
     /**
      * <p>
      * Source server vCenter client id.
@@ -207,6 +219,46 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
 
     public RetryDataReplicationResult withDataReplicationInfo(DataReplicationInfo dataReplicationInfo) {
         setDataReplicationInfo(dataReplicationInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     * 
+     * @param fqdnForActionFramework
+     *        Source server fqdn for action framework.
+     */
+
+    public void setFqdnForActionFramework(String fqdnForActionFramework) {
+        this.fqdnForActionFramework = fqdnForActionFramework;
+    }
+
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     * 
+     * @return Source server fqdn for action framework.
+     */
+
+    public String getFqdnForActionFramework() {
+        return this.fqdnForActionFramework;
+    }
+
+    /**
+     * <p>
+     * Source server fqdn for action framework.
+     * </p>
+     * 
+     * @param fqdnForActionFramework
+     *        Source server fqdn for action framework.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withFqdnForActionFramework(String fqdnForActionFramework) {
+        setFqdnForActionFramework(fqdnForActionFramework);
         return this;
     }
 
@@ -551,6 +603,46 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * Source server user provided ID.
+     * </p>
+     * 
+     * @param userProvidedID
+     *        Source server user provided ID.
+     */
+
+    public void setUserProvidedID(String userProvidedID) {
+        this.userProvidedID = userProvidedID;
+    }
+
+    /**
+     * <p>
+     * Source server user provided ID.
+     * </p>
+     * 
+     * @return Source server user provided ID.
+     */
+
+    public String getUserProvidedID() {
+        return this.userProvidedID;
+    }
+
+    /**
+     * <p>
+     * Source server user provided ID.
+     * </p>
+     * 
+     * @param userProvidedID
+     *        Source server user provided ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryDataReplicationResult withUserProvidedID(String userProvidedID) {
+        setUserProvidedID(userProvidedID);
+        return this;
+    }
+
+    /**
+     * <p>
      * Source server vCenter client id.
      * </p>
      * 
@@ -607,6 +699,8 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("Arn: ").append(getArn()).append(",");
         if (getDataReplicationInfo() != null)
             sb.append("DataReplicationInfo: ").append(getDataReplicationInfo()).append(",");
+        if (getFqdnForActionFramework() != null)
+            sb.append("FqdnForActionFramework: ").append(getFqdnForActionFramework()).append(",");
         if (getIsArchived() != null)
             sb.append("IsArchived: ").append(getIsArchived()).append(",");
         if (getLaunchedInstance() != null)
@@ -621,6 +715,8 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("SourceServerID: ").append(getSourceServerID()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append("***Sensitive Data Redacted***").append(",");
+        if (getUserProvidedID() != null)
+            sb.append("UserProvidedID: ").append(getUserProvidedID()).append(",");
         if (getVcenterClientID() != null)
             sb.append("VcenterClientID: ").append(getVcenterClientID());
         sb.append("}");
@@ -648,6 +744,10 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         if (other.getDataReplicationInfo() == null ^ this.getDataReplicationInfo() == null)
             return false;
         if (other.getDataReplicationInfo() != null && other.getDataReplicationInfo().equals(this.getDataReplicationInfo()) == false)
+            return false;
+        if (other.getFqdnForActionFramework() == null ^ this.getFqdnForActionFramework() == null)
+            return false;
+        if (other.getFqdnForActionFramework() != null && other.getFqdnForActionFramework().equals(this.getFqdnForActionFramework()) == false)
             return false;
         if (other.getIsArchived() == null ^ this.getIsArchived() == null)
             return false;
@@ -677,6 +777,10 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUserProvidedID() == null ^ this.getUserProvidedID() == null)
+            return false;
+        if (other.getUserProvidedID() != null && other.getUserProvidedID().equals(this.getUserProvidedID()) == false)
+            return false;
         if (other.getVcenterClientID() == null ^ this.getVcenterClientID() == null)
             return false;
         if (other.getVcenterClientID() != null && other.getVcenterClientID().equals(this.getVcenterClientID()) == false)
@@ -692,6 +796,7 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getApplicationID() == null) ? 0 : getApplicationID().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDataReplicationInfo() == null) ? 0 : getDataReplicationInfo().hashCode());
+        hashCode = prime * hashCode + ((getFqdnForActionFramework() == null) ? 0 : getFqdnForActionFramework().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLaunchedInstance() == null) ? 0 : getLaunchedInstance().hashCode());
         hashCode = prime * hashCode + ((getLifeCycle() == null) ? 0 : getLifeCycle().hashCode());
@@ -699,6 +804,7 @@ public class RetryDataReplicationResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getSourceProperties() == null) ? 0 : getSourceProperties().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUserProvidedID() == null) ? 0 : getUserProvidedID().hashCode());
         hashCode = prime * hashCode + ((getVcenterClientID() == null) ? 0 : getVcenterClientID().hashCode());
         return hashCode;
     }

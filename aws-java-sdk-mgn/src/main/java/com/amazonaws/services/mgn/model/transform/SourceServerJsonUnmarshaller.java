@@ -60,6 +60,10 @@ public class SourceServerJsonUnmarshaller implements Unmarshaller<SourceServer, 
                     context.nextToken();
                     sourceServer.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    context.nextToken();
+                    sourceServer.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("isArchived", targetDepth)) {
                     context.nextToken();
                     sourceServer.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -88,6 +92,10 @@ public class SourceServerJsonUnmarshaller implements Unmarshaller<SourceServer, 
                     context.nextToken();
                     sourceServer.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("userProvidedID", targetDepth)) {
+                    context.nextToken();
+                    sourceServer.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
                     context.nextToken();

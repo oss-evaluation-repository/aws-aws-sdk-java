@@ -60,6 +60,10 @@ public class UpdateSourceServerReplicationTypeResultJsonUnmarshaller implements 
                     context.nextToken();
                     updateSourceServerReplicationTypeResult.setDataReplicationInfo(DataReplicationInfoJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("fqdnForActionFramework", targetDepth)) {
+                    context.nextToken();
+                    updateSourceServerReplicationTypeResult.setFqdnForActionFramework(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("isArchived", targetDepth)) {
                     context.nextToken();
                     updateSourceServerReplicationTypeResult.setIsArchived(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -88,6 +92,10 @@ public class UpdateSourceServerReplicationTypeResultJsonUnmarshaller implements 
                     context.nextToken();
                     updateSourceServerReplicationTypeResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("userProvidedID", targetDepth)) {
+                    context.nextToken();
+                    updateSourceServerReplicationTypeResult.setUserProvidedID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("vcenterClientID", targetDepth)) {
                     context.nextToken();

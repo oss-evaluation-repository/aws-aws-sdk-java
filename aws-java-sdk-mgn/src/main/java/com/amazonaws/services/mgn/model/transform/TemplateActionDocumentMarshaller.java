@@ -35,10 +35,16 @@ public class TemplateActionDocumentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("actionName").build();
     private static final MarshallingInfo<Boolean> ACTIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("active").build();
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("category").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> DOCUMENTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentIdentifier").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("documentVersion").build();
+    private static final MarshallingInfo<Map> EXTERNALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalParameters").build();
     private static final MarshallingInfo<Boolean> MUSTSUCCEEDFORCUTOVER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mustSucceedForCutover").build();
     private static final MarshallingInfo<String> OPERATINGSYSTEM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,8 +75,11 @@ public class TemplateActionDocumentMarshaller {
             protocolMarshaller.marshall(templateActionDocument.getActionID(), ACTIONID_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getActionName(), ACTIONNAME_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getActive(), ACTIVE_BINDING);
+            protocolMarshaller.marshall(templateActionDocument.getCategory(), CATEGORY_BINDING);
+            protocolMarshaller.marshall(templateActionDocument.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getDocumentIdentifier(), DOCUMENTIDENTIFIER_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(templateActionDocument.getExternalParameters(), EXTERNALPARAMETERS_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getMustSucceedForCutover(), MUSTSUCCEEDFORCUTOVER_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getOperatingSystem(), OPERATINGSYSTEM_BINDING);
             protocolMarshaller.marshall(templateActionDocument.getOrder(), ORDER_BINDING);

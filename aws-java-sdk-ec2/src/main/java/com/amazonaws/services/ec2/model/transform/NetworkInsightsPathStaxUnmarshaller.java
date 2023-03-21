@@ -110,6 +110,15 @@ public class NetworkInsightsPathStaxUnmarshaller implements Unmarshaller<Network
                     continue;
                 }
 
+                if (context.testExpression("filterAtSource", targetDepth)) {
+                    networkInsightsPath.setFilterAtSource(PathFilterStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("filterAtDestination", targetDepth)) {
+                    networkInsightsPath.setFilterAtDestination(PathFilterStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return networkInsightsPath;

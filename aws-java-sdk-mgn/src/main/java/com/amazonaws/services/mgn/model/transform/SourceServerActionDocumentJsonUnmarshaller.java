@@ -60,6 +60,14 @@ public class SourceServerActionDocumentJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     sourceServerActionDocument.setActive(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("category", targetDepth)) {
+                    context.nextToken();
+                    sourceServerActionDocument.setCategory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    sourceServerActionDocument.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("documentIdentifier", targetDepth)) {
                     context.nextToken();
                     sourceServerActionDocument.setDocumentIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +75,11 @@ public class SourceServerActionDocumentJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("documentVersion", targetDepth)) {
                     context.nextToken();
                     sourceServerActionDocument.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("externalParameters", targetDepth)) {
+                    context.nextToken();
+                    sourceServerActionDocument.setExternalParameters(new MapUnmarshaller<String, SsmExternalParameter>(context.getUnmarshaller(String.class),
+                            SsmExternalParameterJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("mustSucceedForCutover", targetDepth)) {
                     context.nextToken();

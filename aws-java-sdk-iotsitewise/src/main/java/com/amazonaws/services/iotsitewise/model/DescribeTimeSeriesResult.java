@@ -81,6 +81,16 @@ public class DescribeTimeSeriesResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.Date timeSeriesLastUpdateDate;
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time
+     * series, which has the following format.
+     * </p>
+     * <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     */
+    private String timeSeriesArn;
 
     /**
      * <p>
@@ -483,6 +493,67 @@ public class DescribeTimeSeriesResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time
+     * series, which has the following format.
+     * </p>
+     * <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     * 
+     * @param timeSeriesArn
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     *        time series, which has the following format.</p>
+     *        <p>
+     *        <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     */
+
+    public void setTimeSeriesArn(String timeSeriesArn) {
+        this.timeSeriesArn = timeSeriesArn;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time
+     * series, which has the following format.
+     * </p>
+     * <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     * 
+     * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     *         time series, which has the following format.</p>
+     *         <p>
+     *         <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     */
+
+    public String getTimeSeriesArn() {
+        return this.timeSeriesArn;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the time
+     * series, which has the following format.
+     * </p>
+     * <p>
+     * <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * </p>
+     * 
+     * @param timeSeriesArn
+     *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
+     *        time series, which has the following format.</p>
+     *        <p>
+     *        <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTimeSeriesResult withTimeSeriesArn(String timeSeriesArn) {
+        setTimeSeriesArn(timeSeriesArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -509,7 +580,9 @@ public class DescribeTimeSeriesResult extends com.amazonaws.AmazonWebServiceResu
         if (getTimeSeriesCreationDate() != null)
             sb.append("TimeSeriesCreationDate: ").append(getTimeSeriesCreationDate()).append(",");
         if (getTimeSeriesLastUpdateDate() != null)
-            sb.append("TimeSeriesLastUpdateDate: ").append(getTimeSeriesLastUpdateDate());
+            sb.append("TimeSeriesLastUpdateDate: ").append(getTimeSeriesLastUpdateDate()).append(",");
+        if (getTimeSeriesArn() != null)
+            sb.append("TimeSeriesArn: ").append(getTimeSeriesArn());
         sb.append("}");
         return sb.toString();
     }
@@ -556,6 +629,10 @@ public class DescribeTimeSeriesResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getTimeSeriesLastUpdateDate() != null && other.getTimeSeriesLastUpdateDate().equals(this.getTimeSeriesLastUpdateDate()) == false)
             return false;
+        if (other.getTimeSeriesArn() == null ^ this.getTimeSeriesArn() == null)
+            return false;
+        if (other.getTimeSeriesArn() != null && other.getTimeSeriesArn().equals(this.getTimeSeriesArn()) == false)
+            return false;
         return true;
     }
 
@@ -572,6 +649,7 @@ public class DescribeTimeSeriesResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getDataTypeSpec() == null) ? 0 : getDataTypeSpec().hashCode());
         hashCode = prime * hashCode + ((getTimeSeriesCreationDate() == null) ? 0 : getTimeSeriesCreationDate().hashCode());
         hashCode = prime * hashCode + ((getTimeSeriesLastUpdateDate() == null) ? 0 : getTimeSeriesLastUpdateDate().hashCode());
+        hashCode = prime * hashCode + ((getTimeSeriesArn() == null) ? 0 : getTimeSeriesArn().hashCode());
         return hashCode;
     }
 

@@ -26,18 +26,13 @@ import com.amazonaws.services.cleanrooms.model.*;
  * {@link com.amazonaws.services.cleanrooms.AbstractAWSCleanRooms} instead.
  * </p>
  * <p>
- * <note>
- * <p>
- * AWS Clean Rooms is in preview release and is subject to change.
- * </p>
- * </note>
  * <p>
  * Welcome to the <i>AWS Clean Rooms API Reference</i>.
  * </p>
  * <p>
  * AWS Clean Rooms is an AWS service that helps multiple parties to join their data together in a secure collaboration
- * workspace. In the collaboration, members who can query and receive results can get insights into the combined data
- * without either party getting access to the other party's raw data.
+ * workspace. In the collaboration, members who can query and receive results can get insights into the collective
+ * datasets without either party getting access to the other party's raw data.
  * </p>
  * <p>
  * To learn more about AWS Clean Rooms concepts, procedures, and best practices, see the <a
@@ -567,6 +562,8 @@ public interface AWSCleanRooms {
      * 
      * @param listConfiguredTableAssociationsRequest
      * @return Result of the ListConfiguredTableAssociations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
      * @throws InternalServerException
      *         Unexpected error during processing of request.
      * @throws ValidationException
@@ -653,6 +650,8 @@ public interface AWSCleanRooms {
      * 
      * @param listProtectedQueriesRequest
      * @return Result of the ListProtectedQueries operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
      * @throws InternalServerException
      *         Unexpected error during processing of request.
      * @throws ValidationException
@@ -692,6 +691,23 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Lists all of the tags that have been added to a resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @sample AWSCleanRooms.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Creates a protected query that is started by AWS Clean Rooms.
      * </p>
      * 
@@ -714,6 +730,40 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     StartProtectedQueryResult startProtectedQuery(StartProtectedQueryRequest startProtectedQueryRequest);
+
+    /**
+     * <p>
+     * Tags a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @sample AWSCleanRooms.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag or list of tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @sample AWSCleanRooms.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

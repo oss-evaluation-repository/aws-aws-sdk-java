@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ValidationExceptionReason {
 
     FIELD_VALIDATION_FAILED("FIELD_VALIDATION_FAILED"),
-    INVALID_CONFIGURATION("INVALID_CONFIGURATION");
+    INVALID_CONFIGURATION("INVALID_CONFIGURATION"),
+    INVALID_QUERY("INVALID_QUERY");
 
     private String value;
 

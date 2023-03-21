@@ -43,6 +43,18 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
     private Boolean active;
     /**
      * <p>
+     * Template post migration custom action category.
+     * </p>
+     */
+    private String category;
+    /**
+     * <p>
+     * Template post migration custom action description.
+     * </p>
+     */
+    private String description;
+    /**
+     * <p>
      * Template post migration custom action document identifier.
      * </p>
      */
@@ -53,6 +65,12 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private String documentVersion;
+    /**
+     * <p>
+     * Template post migration custom action external parameters.
+     * </p>
+     */
+    private java.util.Map<String, SsmExternalParameter> externalParameters;
     /**
      * <p>
      * Template post migration custom action must succeed for cutover.
@@ -218,6 +236,105 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * Template post migration custom action category.
+     * </p>
+     * 
+     * @param category
+     *        Template post migration custom action category.
+     * @see ActionCategory
+     */
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action category.
+     * </p>
+     * 
+     * @return Template post migration custom action category.
+     * @see ActionCategory
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action category.
+     * </p>
+     * 
+     * @param category
+     *        Template post migration custom action category.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActionCategory
+     */
+
+    public PutTemplateActionResult withCategory(String category) {
+        setCategory(category);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action category.
+     * </p>
+     * 
+     * @param category
+     *        Template post migration custom action category.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ActionCategory
+     */
+
+    public PutTemplateActionResult withCategory(ActionCategory category) {
+        this.category = category.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action description.
+     * </p>
+     * 
+     * @param description
+     *        Template post migration custom action description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action description.
+     * </p>
+     * 
+     * @return Template post migration custom action description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action description.
+     * </p>
+     * 
+     * @param description
+     *        Template post migration custom action description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutTemplateActionResult withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
      * Template post migration custom action document identifier.
      * </p>
      * 
@@ -293,6 +410,74 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
 
     public PutTemplateActionResult withDocumentVersion(String documentVersion) {
         setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action external parameters.
+     * </p>
+     * 
+     * @return Template post migration custom action external parameters.
+     */
+
+    public java.util.Map<String, SsmExternalParameter> getExternalParameters() {
+        return externalParameters;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action external parameters.
+     * </p>
+     * 
+     * @param externalParameters
+     *        Template post migration custom action external parameters.
+     */
+
+    public void setExternalParameters(java.util.Map<String, SsmExternalParameter> externalParameters) {
+        this.externalParameters = externalParameters;
+    }
+
+    /**
+     * <p>
+     * Template post migration custom action external parameters.
+     * </p>
+     * 
+     * @param externalParameters
+     *        Template post migration custom action external parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutTemplateActionResult withExternalParameters(java.util.Map<String, SsmExternalParameter> externalParameters) {
+        setExternalParameters(externalParameters);
+        return this;
+    }
+
+    /**
+     * Add a single ExternalParameters entry
+     *
+     * @see PutTemplateActionResult#withExternalParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutTemplateActionResult addExternalParametersEntry(String key, SsmExternalParameter value) {
+        if (null == this.externalParameters) {
+            this.externalParameters = new java.util.HashMap<String, SsmExternalParameter>();
+        }
+        if (this.externalParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.externalParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ExternalParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutTemplateActionResult clearExternalParametersEntries() {
+        this.externalParameters = null;
         return this;
     }
 
@@ -554,10 +739,16 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("ActionName: ").append(getActionName()).append(",");
         if (getActive() != null)
             sb.append("Active: ").append(getActive()).append(",");
+        if (getCategory() != null)
+            sb.append("Category: ").append(getCategory()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription()).append(",");
         if (getDocumentIdentifier() != null)
             sb.append("DocumentIdentifier: ").append(getDocumentIdentifier()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getExternalParameters() != null)
+            sb.append("ExternalParameters: ").append(getExternalParameters()).append(",");
         if (getMustSucceedForCutover() != null)
             sb.append("MustSucceedForCutover: ").append(getMustSucceedForCutover()).append(",");
         if (getOperatingSystem() != null)
@@ -594,6 +785,14 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getActive() != null && other.getActive().equals(this.getActive()) == false)
             return false;
+        if (other.getCategory() == null ^ this.getCategory() == null)
+            return false;
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         if (other.getDocumentIdentifier() == null ^ this.getDocumentIdentifier() == null)
             return false;
         if (other.getDocumentIdentifier() != null && other.getDocumentIdentifier().equals(this.getDocumentIdentifier()) == false)
@@ -601,6 +800,10 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
+            return false;
+        if (other.getExternalParameters() == null ^ this.getExternalParameters() == null)
+            return false;
+        if (other.getExternalParameters() != null && other.getExternalParameters().equals(this.getExternalParameters()) == false)
             return false;
         if (other.getMustSucceedForCutover() == null ^ this.getMustSucceedForCutover() == null)
             return false;
@@ -633,8 +836,11 @@ public class PutTemplateActionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getActionID() == null) ? 0 : getActionID().hashCode());
         hashCode = prime * hashCode + ((getActionName() == null) ? 0 : getActionName().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDocumentIdentifier() == null) ? 0 : getDocumentIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getExternalParameters() == null) ? 0 : getExternalParameters().hashCode());
         hashCode = prime * hashCode + ((getMustSucceedForCutover() == null) ? 0 : getMustSucceedForCutover().hashCode());
         hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getOrder() == null) ? 0 : getOrder().hashCode());

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -52,6 +54,57 @@ public class AdditionalDetailStaxUnmarshaller implements Unmarshaller<Additional
                     additionalDetail.setComponent(AnalysisComponentStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("vpcEndpointService", targetDepth)) {
+                    additionalDetail.setVpcEndpointService(AnalysisComponentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ruleOptionSet", targetDepth)) {
+                    additionalDetail.withRuleOptions(new ArrayList<RuleOption>());
+                    continue;
+                }
+
+                if (context.testExpression("ruleOptionSet/item", targetDepth)) {
+                    additionalDetail.withRuleOptions(RuleOptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ruleGroupTypePairSet", targetDepth)) {
+                    additionalDetail.withRuleGroupTypePairs(new ArrayList<RuleGroupTypePair>());
+                    continue;
+                }
+
+                if (context.testExpression("ruleGroupTypePairSet/item", targetDepth)) {
+                    additionalDetail.withRuleGroupTypePairs(RuleGroupTypePairStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ruleGroupRuleOptionsPairSet", targetDepth)) {
+                    additionalDetail.withRuleGroupRuleOptionsPairs(new ArrayList<RuleGroupRuleOptionsPair>());
+                    continue;
+                }
+
+                if (context.testExpression("ruleGroupRuleOptionsPairSet/item", targetDepth)) {
+                    additionalDetail.withRuleGroupRuleOptionsPairs(RuleGroupRuleOptionsPairStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("serviceName", targetDepth)) {
+                    additionalDetail.setServiceName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("loadBalancerSet", targetDepth)) {
+                    additionalDetail.withLoadBalancers(new ArrayList<AnalysisComponent>());
+                    continue;
+                }
+
+                if (context.testExpression("loadBalancerSet/item", targetDepth)) {
+                    additionalDetail.withLoadBalancers(AnalysisComponentStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return additionalDetail;

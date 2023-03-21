@@ -632,6 +632,76 @@ public interface AWSmgn {
 
     /**
      * <p>
+     * List export errors.
+     * </p>
+     * 
+     * @param listExportErrorsRequest
+     *        List export errors request.
+     * @return Result of the ListExportErrors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListExportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportErrorsResult listExportErrors(ListExportErrorsRequest listExportErrorsRequest);
+
+    /**
+     * <p>
+     * List exports.
+     * </p>
+     * 
+     * @param listExportsRequest
+     *        List export request.
+     * @return Result of the ListExports operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @sample AWSmgn.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListExportsResult listExports(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * List import errors.
+     * </p>
+     * 
+     * @param listImportErrorsRequest
+     *        List import errors request.
+     * @return Result of the ListImportErrors operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListImportErrors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportErrorsResult listImportErrors(ListImportErrorsRequest listImportErrorsRequest);
+
+    /**
+     * <p>
+     * List imports.
+     * </p>
+     * 
+     * @param listImportsRequest
+     *        List imports request.
+     * @return Result of the ListImports operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @sample AWSmgn.ListImports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportsResult listImports(ListImportsRequest listImportsRequest);
+
+    /**
+     * <p>
      * List source server post migration custom actions.
      * </p>
      * 
@@ -843,6 +913,50 @@ public interface AWSmgn {
      *      Documentation</a>
      */
     StartCutoverResult startCutover(StartCutoverRequest startCutoverRequest);
+
+    /**
+     * <p>
+     * Start export.
+     * </p>
+     * 
+     * @param startExportRequest
+     *        Start export request.
+     * @return Result of the StartExport operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @sample AWSmgn.StartExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartExportResult startExport(StartExportRequest startExportRequest);
+
+    /**
+     * <p>
+     * Start import.
+     * </p>
+     * 
+     * @param startImportRequest
+     *        Start import request.
+     * @return Result of the StartImport operation returned by the service.
+     * @throws UninitializedAccountException
+     *         Uninitialized account exception.
+     * @throws ResourceNotFoundException
+     *         Resource not found exception.
+     * @throws ValidationException
+     *         Validate exception.
+     * @throws ServiceQuotaExceededException
+     *         The request could not be completed because its exceeded the service quota.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @sample AWSmgn.StartImport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartImportResult startImport(StartImportRequest startImportRequest);
 
     /**
      * <p>

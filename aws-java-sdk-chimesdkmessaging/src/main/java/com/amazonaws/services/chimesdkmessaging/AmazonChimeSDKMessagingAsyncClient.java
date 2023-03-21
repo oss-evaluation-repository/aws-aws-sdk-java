@@ -542,6 +542,41 @@ public class AmazonChimeSDKMessagingAsyncClient extends AmazonChimeSDKMessagingC
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteMessagingStreamingConfigurationsResult> deleteMessagingStreamingConfigurationsAsync(
+            DeleteMessagingStreamingConfigurationsRequest request) {
+
+        return deleteMessagingStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMessagingStreamingConfigurationsResult> deleteMessagingStreamingConfigurationsAsync(
+            final DeleteMessagingStreamingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMessagingStreamingConfigurationsRequest, DeleteMessagingStreamingConfigurationsResult> asyncHandler) {
+        final DeleteMessagingStreamingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMessagingStreamingConfigurationsResult>() {
+            @Override
+            public DeleteMessagingStreamingConfigurationsResult call() throws Exception {
+                DeleteMessagingStreamingConfigurationsResult result = null;
+
+                try {
+                    result = executeDeleteMessagingStreamingConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest request) {
 
         return describeChannelAsync(request, null);
@@ -928,6 +963,41 @@ public class AmazonChimeSDKMessagingAsyncClient extends AmazonChimeSDKMessagingC
 
                 try {
                     result = executeGetMessagingSessionEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagingStreamingConfigurationsResult> getMessagingStreamingConfigurationsAsync(
+            GetMessagingStreamingConfigurationsRequest request) {
+
+        return getMessagingStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMessagingStreamingConfigurationsResult> getMessagingStreamingConfigurationsAsync(
+            final GetMessagingStreamingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMessagingStreamingConfigurationsRequest, GetMessagingStreamingConfigurationsResult> asyncHandler) {
+        final GetMessagingStreamingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMessagingStreamingConfigurationsResult>() {
+            @Override
+            public GetMessagingStreamingConfigurationsResult call() throws Exception {
+                GetMessagingStreamingConfigurationsResult result = null;
+
+                try {
+                    result = executeGetMessagingStreamingConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1332,6 +1402,41 @@ public class AmazonChimeSDKMessagingAsyncClient extends AmazonChimeSDKMessagingC
 
                 try {
                     result = executePutChannelMembershipPreferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMessagingStreamingConfigurationsResult> putMessagingStreamingConfigurationsAsync(
+            PutMessagingStreamingConfigurationsRequest request) {
+
+        return putMessagingStreamingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutMessagingStreamingConfigurationsResult> putMessagingStreamingConfigurationsAsync(
+            final PutMessagingStreamingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutMessagingStreamingConfigurationsRequest, PutMessagingStreamingConfigurationsResult> asyncHandler) {
+        final PutMessagingStreamingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutMessagingStreamingConfigurationsResult>() {
+            @Override
+            public PutMessagingStreamingConfigurationsResult call() throws Exception {
+                PutMessagingStreamingConfigurationsResult result = null;
+
+                try {
+                    result = executePutMessagingStreamingConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -97,6 +97,21 @@ public class AnalysisRouteTableRouteStaxUnmarshaller implements Unmarshaller<Ana
                     analysisRouteTableRoute.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("carrierGatewayId", targetDepth)) {
+                    analysisRouteTableRoute.setCarrierGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("coreNetworkArn", targetDepth)) {
+                    analysisRouteTableRoute.setCoreNetworkArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("localGatewayId", targetDepth)) {
+                    analysisRouteTableRoute.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return analysisRouteTableRoute;

@@ -46,13 +46,13 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     private java.util.Date createdDate;
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID of the source.
      * </p>
      */
     private String source;
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID of the destination.
      * </p>
      */
     private String destination;
@@ -70,13 +70,13 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     private String destinationArn;
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      */
     private String sourceIp;
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      */
     private String destinationIp;
@@ -98,6 +98,18 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source.
+     * </p>
+     */
+    private PathFilter filterAtSource;
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination.
+     * </p>
+     */
+    private PathFilter filterAtDestination;
 
     /**
      * <p>
@@ -221,11 +233,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID of the source.
      * </p>
      * 
      * @param source
-     *        The Amazon Web Services resource that is the source of the path.
+     *        The ID of the source.
      */
 
     public void setSource(String source) {
@@ -234,10 +246,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID of the source.
      * </p>
      * 
-     * @return The Amazon Web Services resource that is the source of the path.
+     * @return The ID of the source.
      */
 
     public String getSource() {
@@ -246,11 +258,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the source of the path.
+     * The ID of the source.
      * </p>
      * 
      * @param source
-     *        The Amazon Web Services resource that is the source of the path.
+     *        The ID of the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,11 +273,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID of the destination.
      * </p>
      * 
      * @param destination
-     *        The Amazon Web Services resource that is the destination of the path.
+     *        The ID of the destination.
      */
 
     public void setDestination(String destination) {
@@ -274,10 +286,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID of the destination.
      * </p>
      * 
-     * @return The Amazon Web Services resource that is the destination of the path.
+     * @return The ID of the destination.
      */
 
     public String getDestination() {
@@ -286,11 +298,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Web Services resource that is the destination of the path.
+     * The ID of the destination.
      * </p>
      * 
      * @param destination
-     *        The Amazon Web Services resource that is the destination of the path.
+     *        The ID of the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,11 +393,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the Amazon Web Services resource that is the source of the path.
+     *        The IP address of the source.
      */
 
     public void setSourceIp(String sourceIp) {
@@ -394,10 +406,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      * 
-     * @return The IP address of the Amazon Web Services resource that is the source of the path.
+     * @return The IP address of the source.
      */
 
     public String getSourceIp() {
@@ -406,11 +418,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the source of the path.
+     * The IP address of the source.
      * </p>
      * 
      * @param sourceIp
-     *        The IP address of the Amazon Web Services resource that is the source of the path.
+     *        The IP address of the source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +433,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the Amazon Web Services resource that is the destination of the path.
+     *        The IP address of the destination.
      */
 
     public void setDestinationIp(String destinationIp) {
@@ -434,10 +446,10 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      * 
-     * @return The IP address of the Amazon Web Services resource that is the destination of the path.
+     * @return The IP address of the destination.
      */
 
     public String getDestinationIp() {
@@ -446,11 +458,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IP address of the Amazon Web Services resource that is the destination of the path.
+     * The IP address of the destination.
      * </p>
      * 
      * @param destinationIp
-     *        The IP address of the Amazon Web Services resource that is the destination of the path.
+     *        The IP address of the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -632,6 +644,86 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source.
+     * </p>
+     * 
+     * @param filterAtSource
+     *        Scopes the analysis to network paths that match specific filters at the source.
+     */
+
+    public void setFilterAtSource(PathFilter filterAtSource) {
+        this.filterAtSource = filterAtSource;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source.
+     * </p>
+     * 
+     * @return Scopes the analysis to network paths that match specific filters at the source.
+     */
+
+    public PathFilter getFilterAtSource() {
+        return this.filterAtSource;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the source.
+     * </p>
+     * 
+     * @param filterAtSource
+     *        Scopes the analysis to network paths that match specific filters at the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInsightsPath withFilterAtSource(PathFilter filterAtSource) {
+        setFilterAtSource(filterAtSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination.
+     * </p>
+     * 
+     * @param filterAtDestination
+     *        Scopes the analysis to network paths that match specific filters at the destination.
+     */
+
+    public void setFilterAtDestination(PathFilter filterAtDestination) {
+        this.filterAtDestination = filterAtDestination;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination.
+     * </p>
+     * 
+     * @return Scopes the analysis to network paths that match specific filters at the destination.
+     */
+
+    public PathFilter getFilterAtDestination() {
+        return this.filterAtDestination;
+    }
+
+    /**
+     * <p>
+     * Scopes the analysis to network paths that match specific filters at the destination.
+     * </p>
+     * 
+     * @param filterAtDestination
+     *        Scopes the analysis to network paths that match specific filters at the destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInsightsPath withFilterAtDestination(PathFilter filterAtDestination) {
+        setFilterAtDestination(filterAtDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -666,7 +758,11 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
         if (getDestinationPort() != null)
             sb.append("DestinationPort: ").append(getDestinationPort()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFilterAtSource() != null)
+            sb.append("FilterAtSource: ").append(getFilterAtSource()).append(",");
+        if (getFilterAtDestination() != null)
+            sb.append("FilterAtDestination: ").append(getFilterAtDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -729,6 +825,14 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFilterAtSource() == null ^ this.getFilterAtSource() == null)
+            return false;
+        if (other.getFilterAtSource() != null && other.getFilterAtSource().equals(this.getFilterAtSource()) == false)
+            return false;
+        if (other.getFilterAtDestination() == null ^ this.getFilterAtDestination() == null)
+            return false;
+        if (other.getFilterAtDestination() != null && other.getFilterAtDestination().equals(this.getFilterAtDestination()) == false)
+            return false;
         return true;
     }
 
@@ -749,6 +853,8 @@ public class NetworkInsightsPath implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getDestinationPort() == null) ? 0 : getDestinationPort().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFilterAtSource() == null) ? 0 : getFilterAtSource().hashCode());
+        hashCode = prime * hashCode + ((getFilterAtDestination() == null) ? 0 : getFilterAtDestination().hashCode());
         return hashCode;
     }
 
