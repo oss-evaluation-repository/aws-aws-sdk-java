@@ -25,7 +25,7 @@ public class GetColumnStatisticsForTableResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of ColumnStatistics that failed to be retrieved.
+     * List of ColumnStatistics.
      * </p>
      */
     private java.util.List<ColumnStatistics> columnStatisticsList;
@@ -38,10 +38,10 @@ public class GetColumnStatisticsForTableResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of ColumnStatistics that failed to be retrieved.
+     * List of ColumnStatistics.
      * </p>
      * 
-     * @return List of ColumnStatistics that failed to be retrieved.
+     * @return List of ColumnStatistics.
      */
 
     public java.util.List<ColumnStatistics> getColumnStatisticsList() {
@@ -50,11 +50,11 @@ public class GetColumnStatisticsForTableResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of ColumnStatistics that failed to be retrieved.
+     * List of ColumnStatistics.
      * </p>
      * 
      * @param columnStatisticsList
-     *        List of ColumnStatistics that failed to be retrieved.
+     *        List of ColumnStatistics.
      */
 
     public void setColumnStatisticsList(java.util.Collection<ColumnStatistics> columnStatisticsList) {
@@ -68,7 +68,7 @@ public class GetColumnStatisticsForTableResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of ColumnStatistics that failed to be retrieved.
+     * List of ColumnStatistics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class GetColumnStatisticsForTableResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param columnStatisticsList
-     *        List of ColumnStatistics that failed to be retrieved.
+     *        List of ColumnStatistics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class GetColumnStatisticsForTableResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of ColumnStatistics that failed to be retrieved.
+     * List of ColumnStatistics.
      * </p>
      * 
      * @param columnStatisticsList
-     *        List of ColumnStatistics that failed to be retrieved.
+     *        List of ColumnStatistics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

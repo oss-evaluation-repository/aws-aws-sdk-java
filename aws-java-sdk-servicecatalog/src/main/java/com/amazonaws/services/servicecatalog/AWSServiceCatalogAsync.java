@@ -2930,6 +2930,117 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
+     * Notifies the result of the provisioning engine execution.
+     * </p>
+     * 
+     * @param notifyProvisionProductEngineWorkflowResultRequest
+     * @return A Java Future containing the result of the NotifyProvisionProductEngineWorkflowResult operation returned
+     *         by the service.
+     * @sample AWSServiceCatalogAsync.NotifyProvisionProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest notifyProvisionProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the provisioning engine execution.
+     * </p>
+     * 
+     * @param notifyProvisionProductEngineWorkflowResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyProvisionProductEngineWorkflowResult operation returned
+     *         by the service.
+     * @sample AWSServiceCatalogAsyncHandler.NotifyProvisionProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest notifyProvisionProductEngineWorkflowResultRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyProvisionProductEngineWorkflowResultRequest, NotifyProvisionProductEngineWorkflowResultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Notifies the result of the terminate engine execution.
+     * </p>
+     * 
+     * @param notifyTerminateProvisionedProductEngineWorkflowResultRequest
+     * @return A Java Future containing the result of the NotifyTerminateProvisionedProductEngineWorkflowResult
+     *         operation returned by the service.
+     * @sample AWSServiceCatalogAsync.NotifyTerminateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest notifyTerminateProvisionedProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the terminate engine execution.
+     * </p>
+     * 
+     * @param notifyTerminateProvisionedProductEngineWorkflowResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyTerminateProvisionedProductEngineWorkflowResult
+     *         operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.NotifyTerminateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest notifyTerminateProvisionedProductEngineWorkflowResultRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyTerminateProvisionedProductEngineWorkflowResultRequest, NotifyTerminateProvisionedProductEngineWorkflowResultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Notifies the result of the update engine execution.
+     * </p>
+     * 
+     * @param notifyUpdateProvisionedProductEngineWorkflowResultRequest
+     * @return A Java Future containing the result of the NotifyUpdateProvisionedProductEngineWorkflowResult operation
+     *         returned by the service.
+     * @sample AWSServiceCatalogAsync.NotifyUpdateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest notifyUpdateProvisionedProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the update engine execution.
+     * </p>
+     * 
+     * @param notifyUpdateProvisionedProductEngineWorkflowResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the NotifyUpdateProvisionedProductEngineWorkflowResult operation
+     *         returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.NotifyUpdateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest notifyUpdateProvisionedProductEngineWorkflowResultRequest,
+            com.amazonaws.handlers.AsyncHandler<NotifyUpdateProvisionedProductEngineWorkflowResultRequest, NotifyUpdateProvisionedProductEngineWorkflowResultResult> asyncHandler);
+
+    /**
+     * <p>
      * Provisions the specified product.
      * </p>
      * <p>

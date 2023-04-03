@@ -188,7 +188,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param addLFTagsToResourceRequest
      * @return Result of the AddLFTagsToResource operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -271,7 +271,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws AccessDeniedException
      *         Access to a resource was denied.
      * @sample AWSLakeFormation.AssumeDecoratedRoleWithSAML
@@ -454,7 +454,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -525,7 +525,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -594,7 +594,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
      * @throws InternalServiceException
@@ -660,7 +660,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param createLFTagRequest
      * @return Result of the CreateLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws ResourceNumberLimitExceededException
@@ -729,7 +729,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -796,7 +796,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param deleteLFTagRequest
      * @return Result of the DeleteLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -875,7 +875,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws TransactionCommittedException
      *         Contains details about an error where the specified transaction has already been committed and cannot be
      *         used for <code>UpdateTableObjects</code>.
@@ -952,7 +952,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.DeregisterResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeregisterResource"
      *      target="_top">AWS API Documentation</a>
@@ -1015,7 +1015,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.DescribeResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DescribeResource" target="_top">AWS
      *      API Documentation</a>
@@ -1072,7 +1072,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param describeTransactionRequest
      * @return Result of the DescribeTransaction operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -1141,7 +1141,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -1209,7 +1209,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getDataCellsFilterRequest
      * @return Result of the GetDataCellsFilter operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws OperationTimeoutException
@@ -1278,7 +1278,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.GetDataLakeSettings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetDataLakeSettings"
      *      target="_top">AWS API Documentation</a>
@@ -1338,7 +1338,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws InternalServiceException
@@ -1401,7 +1401,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getLFTagRequest
      * @return Result of the GetLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -1614,7 +1614,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getResourceLFTagsRequest
      * @return Result of the GetResourceLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -1682,7 +1682,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param getTableObjectsRequest
      * @return Result of the GetTableObjects operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws InvalidInputException
@@ -1760,7 +1760,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws AccessDeniedException
      *         Access to a resource was denied.
      * @throws PermissionTypeMismatchException
@@ -1836,7 +1836,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws AccessDeniedException
      *         Access to a resource was denied.
      * @throws PermissionTypeMismatchException
@@ -2061,7 +2061,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @sample AWSLakeFormation.GrantPermissions
@@ -2183,7 +2183,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param listLFTagsRequest
      * @return Result of the ListLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -2379,7 +2379,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param listTableStorageOptimizersRequest
      * @return Result of the ListTableStorageOptimizers operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws AccessDeniedException
@@ -2603,7 +2603,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws AlreadyExistsException
      *         A resource to be created or added already exists.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws ResourceNumberLimitExceededException
      *         A resource numerical limit was exceeded.
      * @throws AccessDeniedException
@@ -2665,7 +2665,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param removeLFTagsFromResourceRequest
      * @return Result of the RemoveLFTagsFromResource operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -2739,7 +2739,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @sample AWSLakeFormation.RevokePermissions
@@ -2801,7 +2801,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param searchDatabasesByLFTagsRequest
      * @return Result of the SearchDatabasesByLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws InvalidInputException
@@ -2873,7 +2873,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param searchTablesByLFTagsRequest
      * @return Result of the SearchTablesByLFTags operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws InvalidInputException
@@ -3080,7 +3080,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InternalServiceException
      *         An internal service error occurred.
      * @throws OperationTimeoutException
@@ -3147,7 +3147,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param updateLFTagRequest
      * @return Result of the UpdateLFTag operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws InternalServiceException
@@ -3220,7 +3220,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @sample AWSLakeFormation.UpdateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateResource" target="_top">AWS
      *      API Documentation</a>
@@ -3283,7 +3283,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @throws OperationTimeoutException
      *         The operation timed out.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws TransactionCommittedException
      *         Contains details about an error where the specified transaction has already been committed and cannot be
      *         used for <code>UpdateTableObjects</code>.
@@ -3351,7 +3351,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * @param updateTableStorageOptimizerRequest
      * @return Result of the UpdateTableStorageOptimizer operation returned by the service.
      * @throws EntityNotFoundException
-     *         A specified entity does not exist
+     *         A specified entity does not exist.
      * @throws InvalidInputException
      *         The input provided was not valid.
      * @throws AccessDeniedException

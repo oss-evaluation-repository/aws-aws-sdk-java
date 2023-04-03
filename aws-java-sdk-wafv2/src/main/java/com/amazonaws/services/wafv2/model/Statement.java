@@ -62,9 +62,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
-     * that have a request body greater than 8192 bytes.
+     * If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the
+     * limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront
+     * web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web
+     * ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests
+     * should never exceed the inspection limit, you could use a size constraint statement to block requests that have a
+     * larger request body size.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -427,9 +430,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
-     * that have a request body greater than 8192 bytes.
+     * If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the
+     * limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront
+     * web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web
+     * ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests
+     * should never exceed the inspection limit, you could use a size constraint statement to block requests that have a
+     * larger request body size.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -441,9 +447,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size
      *        constraint statement to look for query strings that are longer than 100 bytes. </p>
      *        <p>
-     *        If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
-     *        request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to
-     *        block requests that have a request body greater than 8192 bytes.
+     *        If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to
+     *        the limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for
+     *        CloudFront web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the
+     *        limit in the web ACL <code>AssociationConfig</code>, for additional fees. If you know that the request
+     *        body for your web requests should never exceed the inspection limit, you could use a size constraint
+     *        statement to block requests that have a larger request body size.
      *        </p>
      *        <p>
      *        If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -461,9 +470,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
-     * that have a request body greater than 8192 bytes.
+     * If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the
+     * limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront
+     * web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web
+     * ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests
+     * should never exceed the inspection limit, you could use a size constraint statement to block requests that have a
+     * larger request body size.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -474,9 +486,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *         comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size
      *         constraint statement to look for query strings that are longer than 100 bytes. </p>
      *         <p>
-     *         If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
-     *         request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to
-     *         block requests that have a request body greater than 8192 bytes.
+     *         If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to
+     *         the limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and
+     *         for CloudFront web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can
+     *         increase the limit in the web ACL <code>AssociationConfig</code>, for additional fees. If you know that
+     *         the request body for your web requests should never exceed the inspection limit, you could use a size
+     *         constraint statement to block requests that have a larger request body size.
      *         </p>
      *         <p>
      *         If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as
@@ -494,9 +509,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      * to look for query strings that are longer than 100 bytes.
      * </p>
      * <p>
-     * If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request
-     * body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to block requests
-     * that have a request body greater than 8192 bytes.
+     * If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to the
+     * limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for CloudFront
+     * web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the limit in the web
+     * ACL <code>AssociationConfig</code>, for additional fees. If you know that the request body for your web requests
+     * should never exceed the inspection limit, you could use a size constraint statement to block requests that have a
+     * larger request body size.
      * </p>
      * <p>
      * If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one
@@ -508,9 +526,12 @@ public class Statement implements Serializable, Cloneable, StructuredPojo {
      *        comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size
      *        constraint statement to look for query strings that are longer than 100 bytes. </p>
      *        <p>
-     *        If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the
-     *        request body for your web requests never exceeds 8192 bytes, you could use a size constraint statement to
-     *        block requests that have a request body greater than 8192 bytes.
+     *        If you configure WAF to inspect the request body, WAF inspects only the number of bytes of the body up to
+     *        the limit for the web ACL. By default, for regional web ACLs, this limit is 8 KB (8,192 kilobytes) and for
+     *        CloudFront web ACLs, this limit is 16 KB (16,384 kilobytes). For CloudFront web ACLs, you can increase the
+     *        limit in the web ACL <code>AssociationConfig</code>, for additional fees. If you know that the request
+     *        body for your web requests should never exceed the inspection limit, you could use a size constraint
+     *        statement to block requests that have a larger request body size.
      *        </p>
      *        <p>
      *        If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as

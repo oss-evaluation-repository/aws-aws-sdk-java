@@ -32,11 +32,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -94,11 +89,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -112,11 +102,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -140,11 +125,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -157,11 +137,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -185,11 +160,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -203,11 +173,6 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

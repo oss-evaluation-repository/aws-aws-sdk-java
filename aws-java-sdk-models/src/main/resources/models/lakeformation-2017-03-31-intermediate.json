@@ -100,7 +100,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -169,7 +169,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -296,7 +296,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -357,7 +357,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -418,7 +418,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNumberLimitExceededException",
@@ -471,7 +471,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -532,7 +532,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -581,7 +581,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -646,7 +646,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "TransactionCommittedException",
@@ -711,7 +711,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -760,7 +760,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -797,7 +797,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -850,7 +850,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -907,7 +907,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -968,7 +968,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1009,7 +1009,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "OperationTimeoutException",
@@ -1054,7 +1054,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -1219,7 +1219,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -1276,7 +1276,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -1349,7 +1349,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -1406,7 +1406,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -1571,7 +1571,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -1661,7 +1661,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -1804,7 +1804,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -1955,7 +1955,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ResourceNumberLimitExceededException",
@@ -2000,7 +2000,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -2065,7 +2065,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -2106,7 +2106,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -2163,7 +2163,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -2323,7 +2323,7 @@
         "httpStatusCode" : 400
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalServiceException",
@@ -2372,7 +2372,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -2441,7 +2441,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -2490,7 +2490,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "TransactionCommittedException",
@@ -2547,7 +2547,7 @@
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "EntityNotFoundException",
-        "documentation" : "<p>A specified entity does not exist</p>",
+        "documentation" : "<p>A specified entity does not exist.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidInputException",
@@ -20567,7 +20567,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A specified entity does not exist</p>",
+      "documentation" : "<p>A specified entity does not exist.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "EntityNotFoundException",
@@ -51174,6 +51174,75 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "WithFederation",
+        "c2jShape" : "NullableBoolean",
+        "deprecated" : false,
+        "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withWithFederation",
+        "getterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@return Whether or not the resource is a federated resource.*/",
+        "getterMethodName" : "getWithFederation",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "WithFederation",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "WithFederation",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "WithFederation",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.*/",
+        "setterMethodName" : "setWithFederation",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "withFederation",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "withFederation",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ResourceArn" : {
@@ -51381,6 +51450,76 @@
             "variableName" : "useServiceLinkedRole",
             "variableType" : "Boolean",
             "documentation" : "<p>Designates an Identity and Access Management (IAM) service-linked role by registering this role with the Data Catalog. A service-linked role is a unique type of IAM role that is linked directly to Lake Formation.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html\">Using Service-Linked Roles for Lake Formation</a>.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "WithFederation" : {
+          "c2jName" : "WithFederation",
+          "c2jShape" : "NullableBoolean",
+          "deprecated" : false,
+          "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withWithFederation",
+          "getterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@return Whether or not the resource is a federated resource.*/",
+          "getterMethodName" : "getWithFederation",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "WithFederation",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "WithFederation",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "WithFederation",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.*/",
+          "setterMethodName" : "setWithFederation",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "withFederation",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "withFederation",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -53820,6 +53959,75 @@
           "variableSetterType" : "java.util.Date"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "WithFederation",
+        "c2jShape" : "NullableBoolean",
+        "deprecated" : false,
+        "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withWithFederation",
+        "getterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@return Whether or not the resource is a federated resource.*/",
+        "getterMethodName" : "getWithFederation",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "WithFederation",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "WithFederation",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "WithFederation",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.*/",
+        "setterMethodName" : "setWithFederation",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "withFederation",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "withFederation",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "LastModified" : {
@@ -54029,6 +54237,76 @@
             "documentation" : "<p>The IAM role that registered a resource.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "WithFederation" : {
+          "c2jName" : "WithFederation",
+          "c2jShape" : "NullableBoolean",
+          "deprecated" : false,
+          "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withWithFederation",
+          "getterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@return Whether or not the resource is a federated resource.*/",
+          "getterMethodName" : "getWithFederation",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "WithFederation",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "WithFederation",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "WithFederation",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.*/",
+          "setterMethodName" : "setWithFederation",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "withFederation",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "withFederation",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         }
@@ -65967,6 +66245,75 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "WithFederation",
+        "c2jShape" : "NullableBoolean",
+        "deprecated" : false,
+        "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withWithFederation",
+        "getterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@return Whether or not the resource is a federated resource.*/",
+        "getterMethodName" : "getWithFederation",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "WithFederation",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "WithFederation",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "WithFederation",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.*/",
+        "setterMethodName" : "setWithFederation",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "withFederation",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "withFederation",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ResourceArn" : {
@@ -66106,6 +66453,76 @@
             "documentation" : "<p>The new role to use for the given resource registered in Lake Formation.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "WithFederation" : {
+          "c2jName" : "WithFederation",
+          "c2jShape" : "NullableBoolean",
+          "deprecated" : false,
+          "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withWithFederation",
+          "getterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@return Whether or not the resource is a federated resource.*/",
+          "getterMethodName" : "getWithFederation",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "WithFederation",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "WithFederation",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "WithFederation",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.*/",
+          "setterMethodName" : "setWithFederation",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "withFederation",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Whether or not the resource is a federated resource.</p>\n@param withFederation Whether or not the resource is a federated resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "withFederation",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Whether or not the resource is a federated resource.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
           },
           "xmlNameSpaceUri" : null
         }

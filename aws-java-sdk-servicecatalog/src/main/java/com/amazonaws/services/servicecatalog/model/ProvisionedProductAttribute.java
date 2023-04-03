@@ -212,13 +212,13 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
     private String provisioningArtifactName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      */
     private String userArn;
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      */
     private String userArnSession;
@@ -1502,11 +1502,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
      * @param userArn
-     *        The Amazon Resource Name (ARN) of the IAM user.
+     *        The Amazon Resource Name (ARN) of the user.
      */
 
     public void setUserArn(String userArn) {
@@ -1515,10 +1515,10 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM user.
+     * @return The Amazon Resource Name (ARN) of the user.
      */
 
     public String getUserArn() {
@@ -1527,11 +1527,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM user.
+     * The Amazon Resource Name (ARN) of the user.
      * </p>
      * 
      * @param userArn
-     *        The Amazon Resource Name (ARN) of the IAM user.
+     *        The Amazon Resource Name (ARN) of the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1542,11 +1542,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      * 
      * @param userArnSession
-     *        The ARN of the IAM user in the session. This ARN might contain a session ID.
+     *        The ARN of the user in the session. This ARN might contain a session ID.
      */
 
     public void setUserArnSession(String userArnSession) {
@@ -1555,10 +1555,10 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      * 
-     * @return The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * @return The ARN of the user in the session. This ARN might contain a session ID.
      */
 
     public String getUserArnSession() {
@@ -1567,11 +1567,11 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM user in the session. This ARN might contain a session ID.
+     * The ARN of the user in the session. This ARN might contain a session ID.
      * </p>
      * 
      * @param userArnSession
-     *        The ARN of the IAM user in the session. This ARN might contain a session ID.
+     *        The ARN of the user in the session. This ARN might contain a session ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

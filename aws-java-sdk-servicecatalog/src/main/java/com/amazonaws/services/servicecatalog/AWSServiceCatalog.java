@@ -220,6 +220,8 @@ public interface AWSServiceCatalog {
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
      *         or increase your service limits and retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.AssociateServiceActionWithProvisioningArtifact
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact"
@@ -1687,6 +1689,63 @@ public interface AWSServiceCatalog {
      *      API Documentation</a>
      */
     ListTagOptionsResult listTagOptions(ListTagOptionsRequest listTagOptionsRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the provisioning engine execution.
+     * </p>
+     * 
+     * @param notifyProvisionProductEngineWorkflowResultRequest
+     * @return Result of the NotifyProvisionProductEngineWorkflowResult operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.NotifyProvisionProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    NotifyProvisionProductEngineWorkflowResultResult notifyProvisionProductEngineWorkflowResult(
+            NotifyProvisionProductEngineWorkflowResultRequest notifyProvisionProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the terminate engine execution.
+     * </p>
+     * 
+     * @param notifyTerminateProvisionedProductEngineWorkflowResultRequest
+     * @return Result of the NotifyTerminateProvisionedProductEngineWorkflowResult operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.NotifyTerminateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    NotifyTerminateProvisionedProductEngineWorkflowResultResult notifyTerminateProvisionedProductEngineWorkflowResult(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest notifyTerminateProvisionedProductEngineWorkflowResultRequest);
+
+    /**
+     * <p>
+     * Notifies the result of the update engine execution.
+     * </p>
+     * 
+     * @param notifyUpdateProvisionedProductEngineWorkflowResultRequest
+     * @return Result of the NotifyUpdateProvisionedProductEngineWorkflowResult operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.NotifyUpdateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    NotifyUpdateProvisionedProductEngineWorkflowResultResult notifyUpdateProvisionedProductEngineWorkflowResult(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest notifyUpdateProvisionedProductEngineWorkflowResultRequest);
 
     /**
      * <p>

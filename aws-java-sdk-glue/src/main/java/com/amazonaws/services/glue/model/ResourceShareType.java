@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ResourceShareType {
 
     FOREIGN("FOREIGN"),
-    ALL("ALL");
+    ALL("ALL"),
+    FEDERATED("FEDERATED");
 
     private String value;
 

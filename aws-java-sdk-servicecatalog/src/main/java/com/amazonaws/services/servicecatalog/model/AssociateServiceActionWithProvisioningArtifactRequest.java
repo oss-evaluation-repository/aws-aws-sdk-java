@@ -51,11 +51,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -195,11 +190,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -213,11 +203,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -241,11 +226,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -258,11 +238,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -286,11 +261,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -304,11 +274,6 @@ public class AssociateServiceActionWithProvisioningArtifactRequest extends com.a
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

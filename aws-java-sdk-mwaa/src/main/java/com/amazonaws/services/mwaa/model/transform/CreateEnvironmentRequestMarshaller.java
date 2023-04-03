@@ -63,6 +63,10 @@ public class CreateEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Schedulers").build();
     private static final MarshallingInfo<String> SOURCEBUCKETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBucketArn").build();
+    private static final MarshallingInfo<String> STARTUPSCRIPTS3OBJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartupScriptS3ObjectVersion").build();
+    private static final MarshallingInfo<String> STARTUPSCRIPTS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartupScriptS3Path").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> WEBSERVERACCESSMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -103,6 +107,8 @@ public class CreateEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(createEnvironmentRequest.getRequirementsS3Path(), REQUIREMENTSS3PATH_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getSchedulers(), SCHEDULERS_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getSourceBucketArn(), SOURCEBUCKETARN_BINDING);
+            protocolMarshaller.marshall(createEnvironmentRequest.getStartupScriptS3ObjectVersion(), STARTUPSCRIPTS3OBJECTVERSION_BINDING);
+            protocolMarshaller.marshall(createEnvironmentRequest.getStartupScriptS3Path(), STARTUPSCRIPTS3PATH_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getWebserverAccessMode(), WEBSERVERACCESSMODE_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getWeeklyMaintenanceWindowStart(), WEEKLYMAINTENANCEWINDOWSTART_BINDING);

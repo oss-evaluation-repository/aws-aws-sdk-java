@@ -32,11 +32,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -93,11 +88,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -111,11 +101,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -139,11 +124,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -156,11 +136,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -184,11 +159,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -202,11 +172,6 @@ public class ListAcceptedPortfolioSharesRequest extends com.amazonaws.AmazonWebS
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

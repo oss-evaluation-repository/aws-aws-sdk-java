@@ -32,11 +32,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -56,7 +51,7 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
     private String portfolioId;
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      */
@@ -76,11 +71,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -94,11 +84,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -122,11 +107,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -139,11 +119,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -167,11 +142,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -185,11 +155,6 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -250,13 +215,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
-     *        <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *        if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -265,12 +230,12 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
-     * @return The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
-     *         <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * @return The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *         if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      */
 
     public String getPrincipalARN() {
@@ -279,13 +244,13 @@ public class DisassociatePrincipalFromPortfolioRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
-     *        <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *        if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

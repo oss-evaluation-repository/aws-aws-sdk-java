@@ -173,6 +173,12 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String versionId;
+    /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     */
+    private FederatedTable federatedTable;
 
     /**
      * <p>
@@ -1215,6 +1221,46 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedTable
+     *        A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public void setFederatedTable(FederatedTable federatedTable) {
+        this.federatedTable = federatedTable;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @return A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public FederatedTable getFederatedTable() {
+        return this.federatedTable;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedTable
+     *        A <code>FederatedTable</code> structure that references an entity outside the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Table withFederatedTable(FederatedTable federatedTable) {
+        setFederatedTable(federatedTable);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1265,7 +1311,9 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         if (getCatalogId() != null)
             sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: ").append(getVersionId());
+            sb.append("VersionId: ").append(getVersionId()).append(",");
+        if (getFederatedTable() != null)
+            sb.append("FederatedTable: ").append(getFederatedTable());
         sb.append("}");
         return sb.toString();
     }
@@ -1361,6 +1409,10 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
             return false;
+        if (other.getFederatedTable() == null ^ this.getFederatedTable() == null)
+            return false;
+        if (other.getFederatedTable() != null && other.getFederatedTable().equals(this.getFederatedTable()) == false)
+            return false;
         return true;
     }
 
@@ -1389,6 +1441,7 @@ public class Table implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetTable() == null) ? 0 : getTargetTable().hashCode());
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime * hashCode + ((getFederatedTable() == null) ? 0 : getFederatedTable().hashCode());
         return hashCode;
     }
 

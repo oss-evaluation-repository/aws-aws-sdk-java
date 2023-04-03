@@ -94,11 +94,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -560,11 +555,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -578,11 +568,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -606,11 +591,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -623,11 +603,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -651,11 +626,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -669,11 +639,6 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

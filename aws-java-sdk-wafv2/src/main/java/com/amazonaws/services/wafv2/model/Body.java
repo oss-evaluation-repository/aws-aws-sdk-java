@@ -33,8 +33,13 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     * contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request
-     * body are forwarded to WAF by the underlying host service.
+     * contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than
+     * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
+     * </p>
+     * <p>
+     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -59,7 +64,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and
-     * web ACL action settings, so that you block any request whose body is over 8 KB.
+     * web ACL action settings, so that you block any request whose body is over the limit.
      * </p>
      * <p>
      * Default: <code>CONTINUE</code>
@@ -70,8 +75,13 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     * contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request
-     * body are forwarded to WAF by the underlying host service.
+     * contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than
+     * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
+     * </p>
+     * <p>
+     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -96,7 +106,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and
-     * web ACL action settings, so that you block any request whose body is over 8 KB.
+     * web ACL action settings, so that you block any request whose body is over the limit.
      * </p>
      * <p>
      * Default: <code>CONTINUE</code>
@@ -104,8 +114,14 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param oversizeHandling
      *        What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     *        contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the
-     *        request body are forwarded to WAF by the underlying host service. </p>
+     *        contents of the web request body if the body exceeds the limit for the resource type. If the body is
+     *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
+     *        WAF for inspection. </p>
+     *        <p>
+     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
+     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
      *        <p>
      *        The options for oversize handling are the following:
      *        </p>
@@ -129,7 +145,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your
-     *        rule and web ACL action settings, so that you block any request whose body is over 8 KB.
+     *        rule and web ACL action settings, so that you block any request whose body is over the limit.
      *        </p>
      *        <p>
      *        Default: <code>CONTINUE</code>
@@ -143,8 +159,13 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     * contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request
-     * body are forwarded to WAF by the underlying host service.
+     * contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than
+     * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
+     * </p>
+     * <p>
+     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -169,15 +190,21 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and
-     * web ACL action settings, so that you block any request whose body is over 8 KB.
+     * web ACL action settings, so that you block any request whose body is over the limit.
      * </p>
      * <p>
      * Default: <code>CONTINUE</code>
      * </p>
      * 
      * @return What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     *         contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the
-     *         request body are forwarded to WAF by the underlying host service. </p>
+     *         contents of the web request body if the body exceeds the limit for the resource type. If the body is
+     *         larger than the limit, the underlying host service only forwards the contents that are below the limit to
+     *         WAF for inspection. </p>
+     *         <p>
+     *         The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
+     *         CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *         <code>AssociationConfig</code>, for additional processing fees.
+     *         </p>
      *         <p>
      *         The options for oversize handling are the following:
      *         </p>
@@ -201,7 +228,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *         </ul>
      *         <p>
      *         You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your
-     *         rule and web ACL action settings, so that you block any request whose body is over 8 KB.
+     *         rule and web ACL action settings, so that you block any request whose body is over the limit.
      *         </p>
      *         <p>
      *         Default: <code>CONTINUE</code>
@@ -215,8 +242,13 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     * contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request
-     * body are forwarded to WAF by the underlying host service.
+     * contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than
+     * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
+     * </p>
+     * <p>
+     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -241,7 +273,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and
-     * web ACL action settings, so that you block any request whose body is over 8 KB.
+     * web ACL action settings, so that you block any request whose body is over the limit.
      * </p>
      * <p>
      * Default: <code>CONTINUE</code>
@@ -249,8 +281,14 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param oversizeHandling
      *        What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     *        contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the
-     *        request body are forwarded to WAF by the underlying host service. </p>
+     *        contents of the web request body if the body exceeds the limit for the resource type. If the body is
+     *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
+     *        WAF for inspection. </p>
+     *        <p>
+     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
+     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
      *        <p>
      *        The options for oversize handling are the following:
      *        </p>
@@ -274,7 +312,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your
-     *        rule and web ACL action settings, so that you block any request whose body is over 8 KB.
+     *        rule and web ACL action settings, so that you block any request whose body is over the limit.
      *        </p>
      *        <p>
      *        Default: <code>CONTINUE</code>
@@ -290,8 +328,13 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     * contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the request
-     * body are forwarded to WAF by the underlying host service.
+     * contents of the web request body if the body exceeds the limit for the resource type. If the body is larger than
+     * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
+     * </p>
+     * <p>
+     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
      * <p>
      * The options for oversize handling are the following:
@@ -316,7 +359,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * <p>
      * You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your rule and
-     * web ACL action settings, so that you block any request whose body is over 8 KB.
+     * web ACL action settings, so that you block any request whose body is over the limit.
      * </p>
      * <p>
      * Default: <code>CONTINUE</code>
@@ -324,8 +367,14 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param oversizeHandling
      *        What WAF should do if the body is larger than WAF can inspect. WAF does not support inspecting the entire
-     *        contents of the body of a web request when the body exceeds 8 KB (8192 bytes). Only the first 8 KB of the
-     *        request body are forwarded to WAF by the underlying host service. </p>
+     *        contents of the web request body if the body exceeds the limit for the resource type. If the body is
+     *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
+     *        WAF for inspection. </p>
+     *        <p>
+     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
+     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        <code>AssociationConfig</code>, for additional processing fees.
+     *        </p>
      *        <p>
      *        The options for oversize handling are the following:
      *        </p>
@@ -349,7 +398,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *        </ul>
      *        <p>
      *        You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize handling with your
-     *        rule and web ACL action settings, so that you block any request whose body is over 8 KB.
+     *        rule and web ACL action settings, so that you block any request whose body is over the limit.
      *        </p>
      *        <p>
      *        Default: <code>CONTINUE</code>

@@ -32,11 +32,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -69,11 +64,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -87,11 +77,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -115,11 +100,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -132,11 +112,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -160,11 +135,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -178,11 +148,6 @@ public class ExecuteProvisionedProductPlanRequest extends com.amazonaws.AmazonWe
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

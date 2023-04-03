@@ -32,11 +32,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -56,7 +51,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
     private String portfolioId;
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * <p>
@@ -81,11 +76,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -99,11 +89,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -127,11 +112,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -144,11 +124,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -172,11 +147,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -190,11 +160,6 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -255,7 +220,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * <p>
@@ -265,8 +230,8 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
-     *        <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+     *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *        if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
      *        <p>
      *        You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name.
      *        This is useful in Principal Name Sharing if you want to share a principal without creating it in the
@@ -279,7 +244,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * <p>
@@ -288,8 +253,8 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * the portfolio.
      * </p>
      * 
-     * @return The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
-     *         <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+     * @return The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *         if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
      *         <p>
      *         You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name.
      *         This is useful in Principal Name Sharing if you want to share a principal without creating it in the
@@ -302,7 +267,7 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code> if
      * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
      * </p>
      * <p>
@@ -312,8 +277,8 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
-     *        <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+     *        The ARN of the principal (user, role, or group). This field allows an ARN with no <code>accountID</code>
+     *        if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
      *        <p>
      *        You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name.
      *        This is useful in Principal Name Sharing if you want to share a principal without creating it in the

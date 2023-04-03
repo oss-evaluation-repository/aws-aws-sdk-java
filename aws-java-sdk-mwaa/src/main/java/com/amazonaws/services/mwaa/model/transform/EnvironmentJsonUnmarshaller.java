@@ -133,6 +133,14 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setSourceBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("StartupScriptS3ObjectVersion", targetDepth)) {
+                    context.nextToken();
+                    environment.setStartupScriptS3ObjectVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartupScriptS3Path", targetDepth)) {
+                    context.nextToken();
+                    environment.setStartupScriptS3Path(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     environment.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

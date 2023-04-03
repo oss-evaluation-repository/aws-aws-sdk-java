@@ -48,6 +48,8 @@ public class GrantMarshaller {
             .marshallLocationName("Version").build();
     private static final MarshallingInfo<List> GRANTEDOPERATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GrantedOperations").build();
+    private static final MarshallingInfo<StructuredPojo> OPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Options").build();
 
     private static final GrantMarshaller instance = new GrantMarshaller();
 
@@ -75,6 +77,7 @@ public class GrantMarshaller {
             protocolMarshaller.marshall(grant.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(grant.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(grant.getGrantedOperations(), GRANTEDOPERATIONS_BINDING);
+            protocolMarshaller.marshall(grant.getOptions(), OPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

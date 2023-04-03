@@ -76,6 +76,10 @@ public class DatabaseInputJsonUnmarshaller implements Unmarshaller<DatabaseInput
                     context.nextToken();
                     databaseInput.setTargetDatabase(DatabaseIdentifierJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FederatedDatabase", targetDepth)) {
+                    context.nextToken();
+                    databaseInput.setFederatedDatabase(FederatedDatabaseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

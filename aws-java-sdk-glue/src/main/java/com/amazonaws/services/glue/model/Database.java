@@ -78,6 +78,12 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String catalogId;
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     */
+    private FederatedDatabase federatedDatabase;
 
     /**
      * <p>
@@ -466,6 +472,46 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedDatabase
+     *        A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public void setFederatedDatabase(FederatedDatabase federatedDatabase) {
+        this.federatedDatabase = federatedDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @return A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public FederatedDatabase getFederatedDatabase() {
+        return this.federatedDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedDatabase
+     *        A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Database withFederatedDatabase(FederatedDatabase federatedDatabase) {
+        setFederatedDatabase(federatedDatabase);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -492,7 +538,9 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
         if (getTargetDatabase() != null)
             sb.append("TargetDatabase: ").append(getTargetDatabase()).append(",");
         if (getCatalogId() != null)
-            sb.append("CatalogId: ").append(getCatalogId());
+            sb.append("CatalogId: ").append(getCatalogId()).append(",");
+        if (getFederatedDatabase() != null)
+            sb.append("FederatedDatabase: ").append(getFederatedDatabase());
         sb.append("}");
         return sb.toString();
     }
@@ -540,6 +588,10 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
             return false;
+        if (other.getFederatedDatabase() == null ^ this.getFederatedDatabase() == null)
+            return false;
+        if (other.getFederatedDatabase() != null && other.getFederatedDatabase().equals(this.getFederatedDatabase()) == false)
+            return false;
         return true;
     }
 
@@ -556,6 +608,7 @@ public class Database implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
         hashCode = prime * hashCode + ((getTargetDatabase() == null) ? 0 : getTargetDatabase().hashCode());
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
+        hashCode = prime * hashCode + ((getFederatedDatabase() == null) ? 0 : getFederatedDatabase().hashCode());
         return hashCode;
     }
 

@@ -49,7 +49,8 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
     private DateColumnStatisticsData dateColumnStatisticsData;
     /**
      * <p>
-     * Decimal column statistics data.
+     * Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's
+     * complement representations of the decimal's unscaled value.
      * </p>
      */
     private DecimalColumnStatisticsData decimalColumnStatisticsData;
@@ -219,11 +220,13 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Decimal column statistics data.
+     * Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's
+     * complement representations of the decimal's unscaled value.
      * </p>
      * 
      * @param decimalColumnStatisticsData
-     *        Decimal column statistics data.
+     *        Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing
+     *        big-endian, two's complement representations of the decimal's unscaled value.
      */
 
     public void setDecimalColumnStatisticsData(DecimalColumnStatisticsData decimalColumnStatisticsData) {
@@ -232,10 +235,12 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Decimal column statistics data.
+     * Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's
+     * complement representations of the decimal's unscaled value.
      * </p>
      * 
-     * @return Decimal column statistics data.
+     * @return Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing
+     *         big-endian, two's complement representations of the decimal's unscaled value.
      */
 
     public DecimalColumnStatisticsData getDecimalColumnStatisticsData() {
@@ -244,11 +249,13 @@ public class ColumnStatisticsData implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Decimal column statistics data.
+     * Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing big-endian, two's
+     * complement representations of the decimal's unscaled value.
      * </p>
      * 
      * @param decimalColumnStatisticsData
-     *        Decimal column statistics data.
+     *        Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects storing
+     *        big-endian, two's complement representations of the decimal's unscaled value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

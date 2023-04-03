@@ -24,6 +24,13 @@ public class EntityNotFoundException extends com.amazonaws.services.glue.model.A
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * Indicates whether or not the exception relates to a federated source.
+     * </p>
+     */
+    private Boolean fromFederationSource;
+
+    /**
      * Constructs a new EntityNotFoundException with the specified error message.
      *
      * @param message
@@ -31,6 +38,60 @@ public class EntityNotFoundException extends com.amazonaws.services.glue.model.A
      */
     public EntityNotFoundException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the exception relates to a federated source.
+     * </p>
+     * 
+     * @param fromFederationSource
+     *        Indicates whether or not the exception relates to a federated source.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("FromFederationSource")
+    public void setFromFederationSource(Boolean fromFederationSource) {
+        this.fromFederationSource = fromFederationSource;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the exception relates to a federated source.
+     * </p>
+     * 
+     * @return Indicates whether or not the exception relates to a federated source.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("FromFederationSource")
+    public Boolean getFromFederationSource() {
+        return this.fromFederationSource;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the exception relates to a federated source.
+     * </p>
+     * 
+     * @param fromFederationSource
+     *        Indicates whether or not the exception relates to a federated source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityNotFoundException withFromFederationSource(Boolean fromFederationSource) {
+        setFromFederationSource(fromFederationSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether or not the exception relates to a federated source.
+     * </p>
+     * 
+     * @return Indicates whether or not the exception relates to a federated source.
+     */
+
+    public Boolean isFromFederationSource() {
+        return this.fromFederationSource;
     }
 
 }

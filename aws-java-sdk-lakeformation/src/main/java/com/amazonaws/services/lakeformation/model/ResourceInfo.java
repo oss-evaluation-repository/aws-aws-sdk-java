@@ -46,6 +46,12 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastModified;
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     */
+    private Boolean withFederation;
 
     /**
      * <p>
@@ -168,6 +174,58 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @param withFederation
+     *        Whether or not the resource is a federated resource.
+     */
+
+    public void setWithFederation(Boolean withFederation) {
+        this.withFederation = withFederation;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @return Whether or not the resource is a federated resource.
+     */
+
+    public Boolean getWithFederation() {
+        return this.withFederation;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @param withFederation
+     *        Whether or not the resource is a federated resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceInfo withWithFederation(Boolean withFederation) {
+        setWithFederation(withFederation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @return Whether or not the resource is a federated resource.
+     */
+
+    public Boolean isWithFederation() {
+        return this.withFederation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +242,9 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getLastModified() != null)
-            sb.append("LastModified: ").append(getLastModified());
+            sb.append("LastModified: ").append(getLastModified()).append(",");
+        if (getWithFederation() != null)
+            sb.append("WithFederation: ").append(getWithFederation());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +271,10 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLastModified() != null && other.getLastModified().equals(this.getLastModified()) == false)
             return false;
+        if (other.getWithFederation() == null ^ this.getWithFederation() == null)
+            return false;
+        if (other.getWithFederation() != null && other.getWithFederation().equals(this.getWithFederation()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +286,7 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
+        hashCode = prime * hashCode + ((getWithFederation() == null) ? 0 : getWithFederation().hashCode());
         return hashCode;
     }
 

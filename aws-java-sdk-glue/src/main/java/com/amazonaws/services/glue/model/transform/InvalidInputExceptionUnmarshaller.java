@@ -52,6 +52,10 @@ public class InvalidInputExceptionUnmarshaller extends EnhancedJsonErrorUnmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FromFederationSource", targetDepth)) {
+                    context.nextToken();
+                    invalidInputException.setFromFederationSource(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

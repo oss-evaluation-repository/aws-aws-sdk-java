@@ -32,11 +32,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -97,11 +92,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -115,11 +105,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -143,11 +128,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -160,11 +140,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -188,11 +163,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -206,11 +176,6 @@ public class ListOrganizationPortfolioAccessRequest extends com.amazonaws.Amazon
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

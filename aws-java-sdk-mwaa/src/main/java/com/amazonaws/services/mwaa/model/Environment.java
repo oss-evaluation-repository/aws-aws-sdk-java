@@ -30,9 +30,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
-     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
-     * Airflow configuration options</a>.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     * configuration options</a>.
      * </p>
      */
     private java.util.Map<String, String> airflowConfigurationOptions;
@@ -57,26 +58,27 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date createdAt;
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
      * </p>
      */
     private String dagS3Path;
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      */
     private String environmentClass;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services
-     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn
-     * more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
-     * role</a>.
+     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     * Execution role</a>.
      * </p>
      */
     private String executionRoleArn;
@@ -119,7 +121,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     * resources for your environment. To learn more, see <a
+     * resources for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
@@ -127,7 +129,19 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
@@ -135,8 +149,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String pluginsS3ObjectVersion;
     /**
      * <p>
-     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. To learn more, see <a
+     * The relative path to the file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
@@ -144,7 +158,19 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String pluginsS3Path;
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
@@ -152,8 +178,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String requirementsS3ObjectVersion;
     /**
      * <p>
-     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. To learn more, see <a
+     * The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
@@ -167,7 +193,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private Integer schedulers;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      */
@@ -175,12 +201,44 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      */
     private String sourceBucketArn;
+    /**
+     * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     */
+    private String startupScriptS3ObjectVersion;
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     */
+    private String startupScriptS3Path;
     /**
      * <p>
      * The status of the Amazon MWAA environment. Valid values:
@@ -232,23 +290,23 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
-     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
      * troubleshooting</a>.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
-     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
      * Services resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
@@ -256,7 +314,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String webserverAccessMode;
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
      * UI</a>.
      * </p>
@@ -272,13 +330,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
-     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
-     * Airflow configuration options</a>.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     * configuration options</a>.
      * </p>
      * 
      * @return A list of key-value pairs containing the Apache Airflow configuration options attached to your
-     *         environment. To learn more, see <a
+     *         environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      *         configuration options</a>.
      */
@@ -289,14 +348,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
-     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
-     * Airflow configuration options</a>.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     * configuration options</a>.
      * </p>
      * 
      * @param airflowConfigurationOptions
      *        A list of key-value pairs containing the Apache Airflow configuration options attached to your
-     *        environment. To learn more, see <a
+     *        environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      *        configuration options</a>.
      */
@@ -307,14 +367,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. To
-     * learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
-     * Airflow configuration options</a>.
+     * A list of key-value pairs containing the Apache Airflow configuration options attached to your environment. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
+     * configuration options</a>.
      * </p>
      * 
      * @param airflowConfigurationOptions
      *        A list of key-value pairs containing the Apache Airflow configuration options attached to your
-     *        environment. To learn more, see <a
+     *        environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      *        configuration options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -481,15 +542,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
      * </p>
      * 
      * @param dagS3Path
-     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
-     *        or updating DAGs</a>.
+     *        The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     *        DAGs</a>.
      */
 
     public void setDagS3Path(String dagS3Path) {
@@ -498,14 +560,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
      * </p>
      * 
-     * @return The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
-     *         more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
-     *         or updating DAGs</a>.
+     * @return The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     *         <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     *         DAGs</a>.
      */
 
     public String getDagS3Path() {
@@ -514,15 +577,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
      * </p>
      * 
      * @param dagS3Path
-     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
-     *        or updating DAGs</a>.
+     *        The relative path to the DAGs folder in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/dags</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     *        DAGs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -534,13 +598,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      * 
      * @param environmentClass
      *        The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-     *        <code>mw1.large</code>. To learn more, see <a
+     *        <code>mw1.large</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
      *        class</a>.
      */
@@ -552,12 +617,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      * 
      * @return The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-     *         <code>mw1.large</code>. To learn more, see <a
+     *         <code>mw1.large</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
      *         class</a>.
      */
@@ -569,13 +635,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      * 
      * @param environmentClass
      *        The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-     *        <code>mw1.large</code>. To learn more, see <a
+     *        <code>mw1.large</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
      *        class</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -589,16 +656,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services
-     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn
-     * more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
-     * role</a>.
+     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     * Execution role</a>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services
-     *        resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To
-     *        learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
-     *        MWAA Execution role</a>.
+     *        resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
+     *        role</a>.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -608,14 +676,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services
-     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn
-     * more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
-     * role</a>.
+     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     * Execution role</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web
      *         Services resources in your environment. For example,
-     *         <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     *         <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
      *         role</a>.
      */
@@ -627,16 +695,17 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services
-     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn
-     * more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
-     * role</a>.
+     * resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA
+     * Execution role</a>.
      * </p>
      * 
      * @param executionRoleArn
      *        The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services
-     *        resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. To
-     *        learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
-     *        MWAA Execution role</a>.
+     *        resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
+     *        role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -891,14 +960,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     * resources for your environment. To learn more, see <a
+     * resources for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param networkConfiguration
      *        Describes the VPC networking components used to secure and enable network traffic between the Amazon Web
-     *        Services resources for your environment. To learn more, see <a
+     *        Services resources for your environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      */
@@ -910,13 +979,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     * resources for your environment. To learn more, see <a
+     * resources for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @return Describes the VPC networking components used to secure and enable network traffic between the Amazon Web
-     *         Services resources for your environment. To learn more, see <a
+     *         Services resources for your environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *         MWAA</a>.
      */
@@ -928,14 +997,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     * resources for your environment. To learn more, see <a
+     * resources for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param networkConfiguration
      *        Describes the VPC networking components used to secure and enable network traffic between the Amazon Web
-     *        Services resources for your environment. To learn more, see <a
+     *        Services resources for your environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -948,13 +1017,36 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @param pluginsS3ObjectVersion
-     *        The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     *        The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file.</p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *        custom plugins</a>.
      */
@@ -965,12 +1057,35 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
-     * @return The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * @return The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a>
+     *         that Amazon S3 assigns to the file.</p>
+     *         <p>
+     *         Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *         The following is an example:
+     *         </p>
+     *         <p>
+     *         <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *         </p>
+     *         <p>
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *         custom plugins</a>.
      */
@@ -981,13 +1096,36 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @param pluginsS3ObjectVersion
-     *        The version of the plugins.zip file on your Amazon S3 bucket. To learn more, see <a
+     *        The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file.</p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *        custom plugins</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1000,15 +1138,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. To learn more, see <a
+     * The relative path to the file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @param pluginsS3Path
-     *        The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     *        <code>plugins.zip</code>. To learn more, see <a
+     *        The relative path to the file in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *        custom plugins</a>.
      */
@@ -1019,14 +1157,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. To learn more, see <a
+     * The relative path to the file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
-     * @return The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     *         <code>plugins.zip</code>. To learn more, see <a
+     * @return The relative path to the file in your Amazon S3 bucket. For example,
+     *         <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *         custom plugins</a>.
      */
@@ -1037,15 +1175,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. To learn more, see <a
+     * The relative path to the file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @param pluginsS3Path
-     *        The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     *        <code>plugins.zip</code>. To learn more, see <a
+     *        The relative path to the file in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/plugins.zip</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *        custom plugins</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1058,13 +1196,36 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3ObjectVersion
-     *        The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     *        The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file.</p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *        dependencies</a>.
      */
@@ -1075,12 +1236,35 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
-     * @return The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * @return The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a>
+     *         that Amazon S3 assigns to the file.</p>
+     *         <p>
+     *         Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *         The following is an example:
+     *         </p>
+     *         <p>
+     *         <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *         </p>
+     *         <p>
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *         dependencies</a>.
      */
@@ -1091,13 +1275,36 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     * The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3ObjectVersion
-     *        The version of the requirements.txt file on your Amazon S3 bucket. To learn more, see <a
+     *        The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file.</p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *        dependencies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1110,15 +1317,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. To learn more, see <a
+     * The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3Path
-     *        The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     *        <code>requirements.txt</code>. To learn more, see <a
+     *        The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *        dependencies</a>.
      */
@@ -1129,14 +1336,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. To learn more, see <a
+     * The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
-     * @return The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     *         <code>requirements.txt</code>. To learn more, see <a
+     * @return The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     *         <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *         dependencies</a>.
      */
@@ -1147,15 +1354,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. To learn more, see <a
+     * The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3Path
-     *        The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     *        <code>requirements.txt</code>. To learn more, see <a
+     *        The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/requirements.txt</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *        dependencies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1208,13 +1415,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
+     *        The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
      *        role</a>.
      */
 
@@ -1224,12 +1431,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
-     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
+     * @return The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see
+     *         <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
      *         role</a>.
      */
 
@@ -1239,13 +1446,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
+     * The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked role</a>.
      * </p>
      * 
      * @param serviceRoleArn
-     *        The Amazon Resource Name (ARN) for the service-linked role of the environment. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
+     *        The Amazon Resource Name (ARN) for the service-linked role of the environment. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-slr.html">Amazon MWAA Service-linked
      *        role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1258,14 +1465,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      * 
      * @param sourceBucketArn
      *        The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
-     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
      *        for Amazon MWAA</a>.
      */
@@ -1277,15 +1484,15 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
-     *         stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
-     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
-     *         for Amazon MWAA</a>.
+     *         stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see
+     *         <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3
+     *         bucket for Amazon MWAA</a>.
      */
 
     public String getSourceBucketArn() {
@@ -1295,14 +1502,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      * 
      * @param sourceBucketArn
      *        The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
-     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
      *        for Amazon MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1310,6 +1517,206 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     public Environment withSourceBucketArn(String sourceBucketArn) {
         setSourceBucketArn(sourceBucketArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3ObjectVersion
+     *        The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file.</p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     */
+
+    public void setStartupScriptS3ObjectVersion(String startupScriptS3ObjectVersion) {
+        this.startupScriptS3ObjectVersion = startupScriptS3ObjectVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @return The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a>
+     *         that Amazon S3 assigns to the file.</p>
+     *         <p>
+     *         Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *         The following is an example:
+     *         </p>
+     *         <p>
+     *         <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *         script</a>.
+     */
+
+    public String getStartupScriptS3ObjectVersion() {
+        return this.startupScriptS3ObjectVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3ObjectVersion
+     *        The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file.</p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withStartupScriptS3ObjectVersion(String startupScriptS3ObjectVersion) {
+        setStartupScriptS3ObjectVersion(startupScriptS3ObjectVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3Path
+     *        The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/startup.sh</code>.</p>
+     *        <p>
+     *        Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You
+     *        can use this script to install dependencies, modify Apache Airflow configuration options, and set
+     *        environment variables. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     */
+
+    public void setStartupScriptS3Path(String startupScriptS3Path) {
+        this.startupScriptS3Path = startupScriptS3Path;
+    }
+
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @return The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     *         <code>s3://mwaa-environment/startup.sh</code>.</p>
+     *         <p>
+     *         Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process.
+     *         You can use this script to install dependencies, modify Apache Airflow configuration options, and set
+     *         environment variables. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *         script</a>.
+     */
+
+    public String getStartupScriptS3Path() {
+        return this.startupScriptS3Path;
+    }
+
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3Path
+     *        The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/startup.sh</code>.</p>
+     *        <p>
+     *        Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You
+     *        can use this script to install dependencies, modify Apache Airflow configuration options, and set
+     *        environment variables. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Environment withStartupScriptS3Path(String startupScriptS3Path) {
+        setStartupScriptS3Path(startupScriptS3Path);
         return this;
     }
 
@@ -1364,8 +1771,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
-     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
      * troubleshooting</a>.
      * </p>
      * 
@@ -1418,9 +1825,9 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
-     *        troubleshooting</a>.
+     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
+     *        MWAA troubleshooting</a>.
      * @see EnvironmentStatus
      */
 
@@ -1479,8 +1886,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
-     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
      * troubleshooting</a>.
      * </p>
      * 
@@ -1532,9 +1939,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To
-     *         learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
-     *         MWAA troubleshooting</a>.
+     *         We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     *         troubleshooting</a>.
      * @see EnvironmentStatus
      */
 
@@ -1593,8 +2001,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
-     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
      * troubleshooting</a>.
      * </p>
      * 
@@ -1647,9 +2055,9 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
-     *        troubleshooting</a>.
+     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
+     *        MWAA troubleshooting</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentStatus
      */
@@ -1710,8 +2118,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn more,
-     * see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
+     * We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
      * troubleshooting</a>.
      * </p>
      * 
@@ -1764,9 +2172,9 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon MWAA
-     *        troubleshooting</a>.
+     *        We recommend reviewing our troubleshooting guide for a list of common errors and their solutions. For more
+     *        information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
+     *        MWAA troubleshooting</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentStatus
      */
@@ -1778,13 +2186,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
-     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
      * Services resources</a>.
      * </p>
      * 
      * @return The key-value tag pairs associated to your environment. For example,
-     *         <code>"Environment": "Staging"</code>. To learn more, see <a
+     *         <code>"Environment": "Staging"</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         resources</a>.
      */
@@ -1795,15 +2203,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
-     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
      * Services resources</a>.
      * </p>
      * 
      * @param tags
      *        The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>
-     *        . To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     *        Amazon Web Services resources</a>.
+     *        . For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1812,15 +2221,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. To
-     * learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
+     * The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>. For
+     * more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web
      * Services resources</a>.
      * </p>
      * 
      * @param tags
      *        The key-value tag pairs associated to your environment. For example, <code>"Environment": "Staging"</code>
-     *        . To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-     *        Amazon Web Services resources</a>.
+     *        . For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1859,13 +2269,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      *        modes</a>.
      * @see WebserverAccessMode
@@ -1877,12 +2287,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
-     * @return The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * @return The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow
      *         access modes</a>.
      * @see WebserverAccessMode
@@ -1894,13 +2304,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      *        modes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1914,13 +2324,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      *        modes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1934,14 +2344,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
      * UI</a>.
      * </p>
      * 
      * @param webserverUrl
-     *        The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
+     *        The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
      *        Airflow UI</a>.
      */
 
@@ -1951,13 +2361,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
      * UI</a>.
      * </p>
      * 
-     * @return The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
-     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
+     * @return The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see
+     *         <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
      *         Airflow UI</a>.
      */
 
@@ -1967,14 +2377,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache Airflow
      * UI</a>.
      * </p>
      * 
      * @param webserverUrl
-     *        The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. To learn more, see <a
-     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
+     *        The Apache Airflow <i>Web server</i> host name for the Amazon MWAA environment. For more information, see
+     *        <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing the Apache
      *        Airflow UI</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2084,6 +2494,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             sb.append("ServiceRoleArn: ").append(getServiceRoleArn()).append(",");
         if (getSourceBucketArn() != null)
             sb.append("SourceBucketArn: ").append(getSourceBucketArn()).append(",");
+        if (getStartupScriptS3ObjectVersion() != null)
+            sb.append("StartupScriptS3ObjectVersion: ").append(getStartupScriptS3ObjectVersion()).append(",");
+        if (getStartupScriptS3Path() != null)
+            sb.append("StartupScriptS3Path: ").append(getStartupScriptS3Path()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
@@ -2192,6 +2606,14 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSourceBucketArn() != null && other.getSourceBucketArn().equals(this.getSourceBucketArn()) == false)
             return false;
+        if (other.getStartupScriptS3ObjectVersion() == null ^ this.getStartupScriptS3ObjectVersion() == null)
+            return false;
+        if (other.getStartupScriptS3ObjectVersion() != null && other.getStartupScriptS3ObjectVersion().equals(this.getStartupScriptS3ObjectVersion()) == false)
+            return false;
+        if (other.getStartupScriptS3Path() == null ^ this.getStartupScriptS3Path() == null)
+            return false;
+        if (other.getStartupScriptS3Path() != null && other.getStartupScriptS3Path().equals(this.getStartupScriptS3Path()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -2241,6 +2663,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSchedulers() == null) ? 0 : getSchedulers().hashCode());
         hashCode = prime * hashCode + ((getServiceRoleArn() == null) ? 0 : getServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSourceBucketArn() == null) ? 0 : getSourceBucketArn().hashCode());
+        hashCode = prime * hashCode + ((getStartupScriptS3ObjectVersion() == null) ? 0 : getStartupScriptS3ObjectVersion().hashCode());
+        hashCode = prime * hashCode + ((getStartupScriptS3Path() == null) ? 0 : getStartupScriptS3Path().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWebserverAccessMode() == null) ? 0 : getWebserverAccessMode().hashCode());

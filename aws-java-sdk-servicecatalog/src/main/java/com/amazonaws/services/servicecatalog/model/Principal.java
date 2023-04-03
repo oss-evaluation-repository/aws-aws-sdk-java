@@ -30,8 +30,8 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
-     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
+     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      */
     private String principalARN;
@@ -45,12 +45,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
-     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
+     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no
+     *        The ARN of the principal (user, role, or group). This field allows for an ARN with no
      *        <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      */
 
@@ -60,11 +60,11 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
-     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
+     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      * 
-     * @return The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no
+     * @return The ARN of the principal (user, role, or group). This field allows for an ARN with no
      *         <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      */
 
@@ -74,12 +74,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
-     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+     * The ARN of the principal (user, role, or group). This field allows for an ARN with no <code>accountID</code> if
+     * the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no
+     *        The ARN of the principal (user, role, or group). This field allows for an ARN with no
      *        <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

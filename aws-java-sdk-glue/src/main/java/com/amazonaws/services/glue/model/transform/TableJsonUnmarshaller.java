@@ -131,6 +131,10 @@ public class TableJsonUnmarshaller implements Unmarshaller<Table, JsonUnmarshall
                     context.nextToken();
                     table.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("FederatedTable", targetDepth)) {
+                    context.nextToken();
+                    table.setFederatedTable(FederatedTableJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

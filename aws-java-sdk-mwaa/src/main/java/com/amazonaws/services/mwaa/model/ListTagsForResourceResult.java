@@ -25,7 +25,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * The key-value tag pairs associated to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      */
@@ -33,11 +33,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * The key-value tag pairs associated to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
-     * @return The key-value tag pairs associated to your environment. To learn more, see <a
+     * @return The key-value tag pairs associated to your environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         resources</a>.
      */
@@ -48,12 +48,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * The key-value tag pairs associated to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @param tags
-     *        The key-value tag pairs associated to your environment. To learn more, see <a
+     *        The key-value tag pairs associated to your environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        resources</a>.
      */
@@ -64,12 +64,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The key-value tag pairs associated to your environment. To learn more, see <a
+     * The key-value tag pairs associated to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @param tags
-     *        The key-value tag pairs associated to your environment. To learn more, see <a
+     *        The key-value tag pairs associated to your environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

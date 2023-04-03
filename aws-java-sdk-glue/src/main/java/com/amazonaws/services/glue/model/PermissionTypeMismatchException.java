@@ -15,7 +15,9 @@ package com.amazonaws.services.glue.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The operation timed out.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PermissionTypeMismatchException extends com.amazonaws.services.glue.model.AWSGlueException {

@@ -397,6 +397,23 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public NotifyProvisionProductEngineWorkflowResultResult notifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public NotifyTerminateProvisionedProductEngineWorkflowResultResult notifyTerminateProvisionedProductEngineWorkflowResult(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public NotifyUpdateProvisionedProductEngineWorkflowResultResult notifyUpdateProvisionedProductEngineWorkflowResult(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ProvisionProductResult provisionProduct(ProvisionProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

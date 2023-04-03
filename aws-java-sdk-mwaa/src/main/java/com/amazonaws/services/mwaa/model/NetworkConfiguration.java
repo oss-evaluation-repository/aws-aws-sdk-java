@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the VPC networking components used to secure and enable network traffic between the Amazon Web Services
- * resources for your environment. To learn more, see <a
+ * resources for your environment. For more information, see <a
  * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon MWAA</a>.
  * </p>
  * 
@@ -32,7 +32,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of security group IDs. To learn more, see <a
+     * A list of security group IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      * MWAA</a>.
      * </p>
@@ -40,7 +40,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * A list of subnet IDs. To learn more, see <a
+     * A list of subnet IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
@@ -49,12 +49,12 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of security group IDs. To learn more, see <a
+     * A list of security group IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      * MWAA</a>.
      * </p>
      * 
-     * @return A list of security group IDs. To learn more, see <a
+     * @return A list of security group IDs. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      *         MWAA</a>.
      */
@@ -65,13 +65,13 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of security group IDs. To learn more, see <a
+     * A list of security group IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of security group IDs. To learn more, see <a
+     *        A list of security group IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      *        MWAA</a>.
      */
@@ -87,7 +87,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of security group IDs. To learn more, see <a
+     * A list of security group IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      * MWAA</a>.
      * </p>
@@ -98,7 +98,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of security group IDs. To learn more, see <a
+     *        A list of security group IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -116,13 +116,13 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of security group IDs. To learn more, see <a
+     * A list of security group IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of security group IDs. To learn more, see <a
+     *        A list of security group IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/vpc-security.html">Security in your VPC on Amazon
      *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -135,12 +135,12 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of subnet IDs. To learn more, see <a
+     * A list of subnet IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
-     * @return A list of subnet IDs. To learn more, see <a
+     * @return A list of subnet IDs. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *         MWAA</a>.
      */
@@ -151,13 +151,13 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of subnet IDs. To learn more, see <a
+     * A list of subnet IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs. To learn more, see <a
+     *        A list of subnet IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      */
@@ -173,7 +173,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of subnet IDs. To learn more, see <a
+     * A list of subnet IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
@@ -184,7 +184,7 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs. To learn more, see <a
+     *        A list of subnet IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -202,13 +202,13 @@ public class NetworkConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of subnet IDs. To learn more, see <a
+     * A list of subnet IDs. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param subnetIds
-     *        A list of subnet IDs. To learn more, see <a
+     *        A list of subnet IDs. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

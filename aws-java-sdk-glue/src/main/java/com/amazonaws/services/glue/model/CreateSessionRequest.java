@@ -54,13 +54,15 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private SessionCommand command;
     /**
      * <p>
-     * The number of seconds before request times out.
+     * The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the
+     * maximum session lifetime for this job type. Consult the documentation for other job types.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The number of seconds when idle before request times out.
+     * The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult
+     * the documentation for other job types.
      * </p>
      */
     private Integer idleTimeout;
@@ -311,11 +313,13 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds before request times out.
+     * The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the
+     * maximum session lifetime for this job type. Consult the documentation for other job types.
      * </p>
      * 
      * @param timeout
-     *        The number of seconds before request times out.
+     *        The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the
+     *        maximum session lifetime for this job type. Consult the documentation for other job types.
      */
 
     public void setTimeout(Integer timeout) {
@@ -324,10 +328,12 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds before request times out.
+     * The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the
+     * maximum session lifetime for this job type. Consult the documentation for other job types.
      * </p>
      * 
-     * @return The number of seconds before request times out.
+     * @return The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes),
+     *         the maximum session lifetime for this job type. Consult the documentation for other job types.
      */
 
     public Integer getTimeout() {
@@ -336,11 +342,13 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds before request times out.
+     * The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the
+     * maximum session lifetime for this job type. Consult the documentation for other job types.
      * </p>
      * 
      * @param timeout
-     *        The number of seconds before request times out.
+     *        The number of minutes before session times out. Default for Spark ETL jobs is 48 hours (2880 minutes), the
+     *        maximum session lifetime for this job type. Consult the documentation for other job types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,11 +359,13 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds when idle before request times out.
+     * The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult
+     * the documentation for other job types.
      * </p>
      * 
      * @param idleTimeout
-     *        The number of seconds when idle before request times out.
+     *        The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout.
+     *        Consult the documentation for other job types.
      */
 
     public void setIdleTimeout(Integer idleTimeout) {
@@ -364,10 +374,12 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds when idle before request times out.
+     * The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult
+     * the documentation for other job types.
      * </p>
      * 
-     * @return The number of seconds when idle before request times out.
+     * @return The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout.
+     *         Consult the documentation for other job types.
      */
 
     public Integer getIdleTimeout() {
@@ -376,11 +388,13 @@ public class CreateSessionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The number of seconds when idle before request times out.
+     * The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout. Consult
+     * the documentation for other job types.
      * </p>
      * 
      * @param idleTimeout
-     *        The number of seconds when idle before request times out.
+     *        The number of minutes when idle before session times out. Default for Spark ETL jobs is value of Timeout.
+     *        Consult the documentation for other job types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

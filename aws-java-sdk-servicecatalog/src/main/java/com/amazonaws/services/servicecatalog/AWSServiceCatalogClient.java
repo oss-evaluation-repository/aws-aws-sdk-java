@@ -604,6 +604,8 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * @throws LimitExceededException
      *         The current limits of the service would have been exceeded by this operation. Decrease your resource use
      *         or increase your service limits and retry the operation.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.AssociateServiceActionWithProvisioningArtifact
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/AssociateServiceActionWithProvisioningArtifact"
@@ -4965,6 +4967,197 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Notifies the result of the provisioning engine execution.
+     * </p>
+     * 
+     * @param notifyProvisionProductEngineWorkflowResultRequest
+     * @return Result of the NotifyProvisionProductEngineWorkflowResult operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.NotifyProvisionProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public NotifyProvisionProductEngineWorkflowResultResult notifyProvisionProductEngineWorkflowResult(NotifyProvisionProductEngineWorkflowResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeNotifyProvisionProductEngineWorkflowResult(request);
+    }
+
+    @SdkInternalApi
+    final NotifyProvisionProductEngineWorkflowResultResult executeNotifyProvisionProductEngineWorkflowResult(
+            NotifyProvisionProductEngineWorkflowResultRequest notifyProvisionProductEngineWorkflowResultRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(notifyProvisionProductEngineWorkflowResultRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<NotifyProvisionProductEngineWorkflowResultRequest> request = null;
+        Response<NotifyProvisionProductEngineWorkflowResultResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new NotifyProvisionProductEngineWorkflowResultRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(notifyProvisionProductEngineWorkflowResultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyProvisionProductEngineWorkflowResult");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<NotifyProvisionProductEngineWorkflowResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new NotifyProvisionProductEngineWorkflowResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Notifies the result of the terminate engine execution.
+     * </p>
+     * 
+     * @param notifyTerminateProvisionedProductEngineWorkflowResultRequest
+     * @return Result of the NotifyTerminateProvisionedProductEngineWorkflowResult operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.NotifyTerminateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public NotifyTerminateProvisionedProductEngineWorkflowResultResult notifyTerminateProvisionedProductEngineWorkflowResult(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeNotifyTerminateProvisionedProductEngineWorkflowResult(request);
+    }
+
+    @SdkInternalApi
+    final NotifyTerminateProvisionedProductEngineWorkflowResultResult executeNotifyTerminateProvisionedProductEngineWorkflowResult(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest notifyTerminateProvisionedProductEngineWorkflowResultRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(notifyTerminateProvisionedProductEngineWorkflowResultRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<NotifyTerminateProvisionedProductEngineWorkflowResultRequest> request = null;
+        Response<NotifyTerminateProvisionedProductEngineWorkflowResultResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new NotifyTerminateProvisionedProductEngineWorkflowResultRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(notifyTerminateProvisionedProductEngineWorkflowResultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyTerminateProvisionedProductEngineWorkflowResult");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<NotifyTerminateProvisionedProductEngineWorkflowResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new NotifyTerminateProvisionedProductEngineWorkflowResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Notifies the result of the update engine execution.
+     * </p>
+     * 
+     * @param notifyUpdateProvisionedProductEngineWorkflowResultRequest
+     * @return Result of the NotifyUpdateProvisionedProductEngineWorkflowResult operation returned by the service.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AWSServiceCatalog.NotifyUpdateProvisionedProductEngineWorkflowResult
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public NotifyUpdateProvisionedProductEngineWorkflowResultResult notifyUpdateProvisionedProductEngineWorkflowResult(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeNotifyUpdateProvisionedProductEngineWorkflowResult(request);
+    }
+
+    @SdkInternalApi
+    final NotifyUpdateProvisionedProductEngineWorkflowResultResult executeNotifyUpdateProvisionedProductEngineWorkflowResult(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest notifyUpdateProvisionedProductEngineWorkflowResultRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(notifyUpdateProvisionedProductEngineWorkflowResultRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<NotifyUpdateProvisionedProductEngineWorkflowResultRequest> request = null;
+        Response<NotifyUpdateProvisionedProductEngineWorkflowResultResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new NotifyUpdateProvisionedProductEngineWorkflowResultRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(notifyUpdateProvisionedProductEngineWorkflowResultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyUpdateProvisionedProductEngineWorkflowResult");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<NotifyUpdateProvisionedProductEngineWorkflowResultResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new NotifyUpdateProvisionedProductEngineWorkflowResultResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

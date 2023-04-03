@@ -34,7 +34,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     * environment. To learn more, see <a
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      * configuration options</a>.
      * </p>
@@ -51,17 +51,18 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String airflowVersion;
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     * or updating DAGs</a>.
      * </p>
      */
     private String dagS3Path;
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      */
     private String environmentClass;
@@ -70,7 +71,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web
      * Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services
      * services and resources used by your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      */
@@ -78,7 +79,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an
-     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      * environment</a>.
      * </p>
@@ -117,7 +118,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources
-     * for your environment. To learn more, see <a
+     * for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
@@ -125,8 +126,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip
-     * file is updated. To learn more, see <a
+     * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip
+     * file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
@@ -135,7 +136,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     * <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
@@ -143,8 +145,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String pluginsS3Path;
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a
-     * requirements.txt file is updated. To learn more, see <a
+     * The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each
+     * time a requirements.txt file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
@@ -153,7 +155,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     * <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
@@ -180,7 +182,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
@@ -188,15 +190,47 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String sourceBucketArn;
     /**
      * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file every time you update the script.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     */
+    private String startupScriptS3ObjectVersion;
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     */
+    private String startupScriptS3Path;
+    /**
+     * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
@@ -214,13 +248,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     * environment. To learn more, see <a
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      * configuration options</a>.
      * </p>
      * 
      * @return A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     *         environment. To learn more, see <a
+     *         environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      *         configuration options</a>.
      */
@@ -232,14 +266,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     * environment. To learn more, see <a
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      * configuration options</a>.
      * </p>
      * 
      * @param airflowConfigurationOptions
      *        A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     *        environment. To learn more, see <a
+     *        environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      *        configuration options</a>.
      */
@@ -251,14 +285,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     * environment. To learn more, see <a
+     * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      * configuration options</a>.
      * </p>
      * 
      * @param airflowConfigurationOptions
      *        A list of key-value pairs containing the Apache Airflow configuration options you want to attach to your
-     *        environment. To learn more, see <a
+     *        environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache Airflow
      *        configuration options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -360,15 +394,16 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     * or updating DAGs</a>.
      * </p>
      * 
      * @param dagS3Path
-     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
-     *        or updating DAGs</a>.
+     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     *        DAGs</a>.
      */
 
     public void setDagS3Path(String dagS3Path) {
@@ -377,14 +412,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     * or updating DAGs</a>.
      * </p>
      * 
-     * @return The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
-     *         more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
-     *         or updating DAGs</a>.
+     * @return The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     *         DAGs</a>.
      */
 
     public String getDagS3Path() {
@@ -393,15 +429,16 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn more, see
-     * <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
-     * DAGs</a>.
+     * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     * information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
+     * or updating DAGs</a>.
      * </p>
      * 
      * @param dagS3Path
-     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. To learn
-     *        more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
-     *        or updating DAGs</a>.
+     *        The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating
+     *        DAGs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,13 +450,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      * 
      * @param environmentClass
      *        The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-     *        <code>mw1.large</code>. To learn more, see <a
+     *        <code>mw1.large</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
      *        class</a>.
      */
@@ -431,12 +469,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      * 
      * @return The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-     *         <code>mw1.large</code>. To learn more, see <a
+     *         <code>mw1.large</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
      *         class</a>.
      */
@@ -448,13 +487,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>
-     * . To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
-     * MWAA environment class</a>.
+     * . For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
+     * class</a>.
      * </p>
      * 
      * @param environmentClass
      *        The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-     *        <code>mw1.large</code>. To learn more, see <a
+     *        <code>mw1.large</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment
      *        class</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -470,7 +510,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web
      * Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services
      * services and resources used by your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      * 
@@ -478,7 +518,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon
      *        Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web
      *        Services services and resources used by your environment. For example,
-     *        <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     *        <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
      *        role</a>.
      */
@@ -492,14 +532,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web
      * Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services
      * services and resources used by your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon
      *         Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web
      *         Services services and resources used by your environment. For example,
-     *         <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     *         <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
      *         role</a>.
      */
@@ -513,7 +553,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web
      * Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services
      * services and resources used by your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
      * </p>
      * 
@@ -521,7 +561,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon
      *        Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web
      *        Services services and resources used by your environment. For example,
-     *        <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see <a
+     *        <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution
      *        role</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -535,14 +575,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an
-     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      * environment</a>.
      * </p>
      * 
      * @param kmsKey
      *        The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can
-     *        use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     *        use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      *        environment</a>.
      */
@@ -554,13 +594,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an
-     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      * environment</a>.
      * </p>
      * 
      * @return The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can
-     *         use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     *         use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      *         environment</a>.
      */
@@ -572,14 +612,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an
-     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     * Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      * environment</a>.
      * </p>
      * 
      * @param kmsKey
      *        The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can
-     *        use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). To learn more, see <a
+     *        use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA
      *        environment</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -792,14 +832,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources
-     * for your environment. To learn more, see <a
+     * for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param networkConfiguration
      *        The VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     *        resources for your environment. To learn more, see <a
+     *        resources for your environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      */
@@ -811,13 +851,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources
-     * for your environment. To learn more, see <a
+     * for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @return The VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     *         resources for your environment. To learn more, see <a
+     *         resources for your environment. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *         MWAA</a>.
      */
@@ -829,14 +869,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The VPC networking components used to secure and enable network traffic between the Amazon Web Services resources
-     * for your environment. To learn more, see <a
+     * for your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      * MWAA</a>.
      * </p>
      * 
      * @param networkConfiguration
      *        The VPC networking components used to secure and enable network traffic between the Amazon Web Services
-     *        resources for your environment. To learn more, see <a
+     *        resources for your environment. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About networking on Amazon
      *        MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -849,15 +889,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip
-     * file is updated. To learn more, see <a
+     * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip
+     * file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
      * 
      * @param pluginsS3ObjectVersion
-     *        The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a
-     *        plugins.zip file is updated. To learn more, see <a
+     *        The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a
+     *        plugins.zip file is updated. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      *        works</a>.
      */
@@ -868,14 +908,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip
-     * file is updated. To learn more, see <a
+     * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip
+     * file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
      * 
-     * @return The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a
-     *         plugins.zip file is updated. To learn more, see <a
+     * @return The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a
+     *         plugins.zip file is updated. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      *         works</a>.
      */
@@ -886,15 +926,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a plugins.zip
-     * file is updated. To learn more, see <a
+     * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip
+     * file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
      * 
      * @param pluginsS3ObjectVersion
-     *        The version of the plugins.zip file on your Amazon S3 bucket. A version must be specified each time a
-     *        plugins.zip file is updated. To learn more, see <a
+     *        The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a
+     *        plugins.zip file is updated. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      *        works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -908,14 +948,16 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     * <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @param pluginsS3Path
      *        The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     *        <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     *        <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *        custom plugins</a>.
      */
@@ -927,13 +969,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     * <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @return The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     *         <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     *         <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *         custom plugins</a>.
      */
@@ -945,14 +989,16 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     * <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     * <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom
      * plugins</a>.
      * </p>
      * 
      * @param pluginsS3Path
      *        The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example,
-     *        <code>plugins.zip</code>. If specified, then the plugins.zip version is required. To learn more, see <a
+     *        <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      *        custom plugins</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -965,15 +1011,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a
-     * requirements.txt file is updated. To learn more, see <a
+     * The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each
+     * time a requirements.txt file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
      * 
      * @param requirementsS3ObjectVersion
-     *        The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a
-     *        requirements.txt file is updated. To learn more, see <a
+     *        The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version
+     *        each time a requirements.txt file is updated. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      *        works</a>.
      */
@@ -984,14 +1030,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a
-     * requirements.txt file is updated. To learn more, see <a
+     * The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each
+     * time a requirements.txt file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
      * 
-     * @return The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time
-     *         a requirements.txt file is updated. To learn more, see <a
+     * @return The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a
+     *         version each time a requirements.txt file is updated. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      *         works</a>.
      */
@@ -1002,15 +1048,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a
-     * requirements.txt file is updated. To learn more, see <a
+     * The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each
+     * time a requirements.txt file is updated. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      * works</a>.
      * </p>
      * 
      * @param requirementsS3ObjectVersion
-     *        The version of the requirements.txt file on your Amazon S3 bucket. A version must be specified each time a
-     *        requirements.txt file is updated. To learn more, see <a
+     *        The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version
+     *        each time a requirements.txt file is updated. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning
      *        works</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1024,14 +1070,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     * <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3Path
      *        The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     *        <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     *        <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *        dependencies</a>.
      */
@@ -1043,13 +1089,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     * <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @return The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     *         <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     *         <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *         dependencies</a>.
      */
@@ -1061,14 +1107,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     * <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     * <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      * dependencies</a>.
      * </p>
      * 
      * @param requirementsS3Path
      *        The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example,
-     *        <code>requirements.txt</code>. If specified, then a file version is required. To learn more, see <a
+     *        <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python
      *        dependencies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1191,14 +1237,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      * 
      * @param sourceBucketArn
      *        The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
-     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
      *        for Amazon MWAA</a>.
      */
@@ -1210,15 +1256,15 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
-     *         stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
-     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
-     *         for Amazon MWAA</a>.
+     *         stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see
+     *         <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3
+     *         bucket for Amazon MWAA</a>.
      */
 
     public String getSourceBucketArn() {
@@ -1228,14 +1274,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For
-     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for
      * Amazon MWAA</a>.
      * </p>
      * 
      * @param sourceBucketArn
      *        The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are
-     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     *        stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket
      *        for Amazon MWAA</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1248,13 +1294,213 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file every time you update the script.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3ObjectVersion
+     *        The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file every time you update the script. </p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     */
+
+    public void setStartupScriptS3ObjectVersion(String startupScriptS3ObjectVersion) {
+        this.startupScriptS3ObjectVersion = startupScriptS3ObjectVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file every time you update the script.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @return The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a>
+     *         that Amazon S3 assigns to the file every time you update the script. </p>
+     *         <p>
+     *         Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *         The following is an example:
+     *         </p>
+     *         <p>
+     *         <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *         script</a>.
+     */
+
+    public String getStartupScriptS3ObjectVersion() {
+        return this.startupScriptS3ObjectVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon
+     * S3 assigns to the file every time you update the script.
+     * </p>
+     * <p>
+     * Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The
+     * following is an example:
+     * </p>
+     * <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3ObjectVersion
+     *        The version of the startup shell script in your Amazon S3 bucket. You must specify the <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that
+     *        Amazon S3 assigns to the file every time you update the script. </p>
+     *        <p>
+     *        Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long.
+     *        The following is an example:
+     *        </p>
+     *        <p>
+     *        <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentRequest withStartupScriptS3ObjectVersion(String startupScriptS3ObjectVersion) {
+        setStartupScriptS3ObjectVersion(startupScriptS3ObjectVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3Path
+     *        The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/startup.sh</code>.</p>
+     *        <p>
+     *        Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You
+     *        can use this script to install dependencies, modify Apache Airflow configuration options, and set
+     *        environment variables. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     */
+
+    public void setStartupScriptS3Path(String startupScriptS3Path) {
+        this.startupScriptS3Path = startupScriptS3Path;
+    }
+
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @return The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     *         <code>s3://mwaa-environment/startup.sh</code>.</p>
+     *         <p>
+     *         Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process.
+     *         You can use this script to install dependencies, modify Apache Airflow configuration options, and set
+     *         environment variables. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *         script</a>.
+     */
+
+    public String getStartupScriptS3Path() {
+        return this.startupScriptS3Path;
+    }
+
+    /**
+     * <p>
+     * The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     * <code>s3://mwaa-environment/startup.sh</code>.
+     * </p>
+     * <p>
+     * Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can
+     * use this script to install dependencies, modify Apache Airflow configuration options, and set environment
+     * variables. For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>.
+     * </p>
+     * 
+     * @param startupScriptS3Path
+     *        The relative path to the startup shell script in your Amazon S3 bucket. For example,
+     *        <code>s3://mwaa-environment/startup.sh</code>.</p>
+     *        <p>
+     *        Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You
+     *        can use this script to install dependencies, modify Apache Airflow configuration options, and set
+     *        environment variables. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup
+     *        script</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentRequest withStartupScriptS3Path(String startupScriptS3Path) {
+        setStartupScriptS3Path(startupScriptS3Path);
+        return this;
+    }
+
+    /**
+     * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @return The key-value tag pairs you want to associate to your environment. For example,
-     *         <code>"Environment": "Staging"</code>. To learn more, see <a
+     *         <code>"Environment": "Staging"</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *         resources</a>.
      */
@@ -1266,13 +1512,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @param tags
      *        The key-value tag pairs you want to associate to your environment. For example,
-     *        <code>"Environment": "Staging"</code>. To learn more, see <a
+     *        <code>"Environment": "Staging"</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        resources</a>.
      */
@@ -1284,13 +1530,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The key-value tag pairs you want to associate to your environment. For example,
-     * <code>"Environment": "Staging"</code>. To learn more, see <a
+     * <code>"Environment": "Staging"</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.
      * </p>
      * 
      * @param tags
      *        The key-value tag pairs you want to associate to your environment. For example,
-     *        <code>"Environment": "Staging"</code>. To learn more, see <a
+     *        <code>"Environment": "Staging"</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
      *        resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1331,13 +1577,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      *        modes</a>.
      * @see WebserverAccessMode
@@ -1349,12 +1595,12 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
-     * @return The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * @return The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *         href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow
      *         access modes</a>.
      * @see WebserverAccessMode
@@ -1366,13 +1612,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      *        modes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1386,13 +1632,13 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      * modes</a>.
      * </p>
      * 
      * @param webserverAccessMode
-     *        The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     *        The Apache Airflow <i>Web server</i> access mode. For more information, see <a
      *        href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache Airflow access
      *        modes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1502,6 +1748,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Schedulers: ").append(getSchedulers()).append(",");
         if (getSourceBucketArn() != null)
             sb.append("SourceBucketArn: ").append(getSourceBucketArn()).append(",");
+        if (getStartupScriptS3ObjectVersion() != null)
+            sb.append("StartupScriptS3ObjectVersion: ").append(getStartupScriptS3ObjectVersion()).append(",");
+        if (getStartupScriptS3Path() != null)
+            sb.append("StartupScriptS3Path: ").append(getStartupScriptS3Path()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getWebserverAccessMode() != null)
@@ -1590,6 +1840,14 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSourceBucketArn() != null && other.getSourceBucketArn().equals(this.getSourceBucketArn()) == false)
             return false;
+        if (other.getStartupScriptS3ObjectVersion() == null ^ this.getStartupScriptS3ObjectVersion() == null)
+            return false;
+        if (other.getStartupScriptS3ObjectVersion() != null && other.getStartupScriptS3ObjectVersion().equals(this.getStartupScriptS3ObjectVersion()) == false)
+            return false;
+        if (other.getStartupScriptS3Path() == null ^ this.getStartupScriptS3Path() == null)
+            return false;
+        if (other.getStartupScriptS3Path() != null && other.getStartupScriptS3Path().equals(this.getStartupScriptS3Path()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1627,6 +1885,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRequirementsS3Path() == null) ? 0 : getRequirementsS3Path().hashCode());
         hashCode = prime * hashCode + ((getSchedulers() == null) ? 0 : getSchedulers().hashCode());
         hashCode = prime * hashCode + ((getSourceBucketArn() == null) ? 0 : getSourceBucketArn().hashCode());
+        hashCode = prime * hashCode + ((getStartupScriptS3ObjectVersion() == null) ? 0 : getStartupScriptS3ObjectVersion().hashCode());
+        hashCode = prime * hashCode + ((getStartupScriptS3Path() == null) ? 0 : getStartupScriptS3Path().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWebserverAccessMode() == null) ? 0 : getWebserverAccessMode().hashCode());
         hashCode = prime * hashCode + ((getWeeklyMaintenanceWindowStart() == null) ? 0 : getWeeklyMaintenanceWindowStart().hashCode());

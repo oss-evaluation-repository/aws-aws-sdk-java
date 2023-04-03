@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A specified entity does not exist
+ * A specified entity does not exist.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

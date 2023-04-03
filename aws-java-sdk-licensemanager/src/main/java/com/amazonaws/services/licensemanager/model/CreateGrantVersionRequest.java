@@ -67,6 +67,12 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String sourceVersion;
+    /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     */
+    private Options options;
 
     /**
      * <p>
@@ -426,6 +432,46 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     * 
+     * @param options
+     *        The options specified for the grant.
+     */
+
+    public void setOptions(Options options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     * 
+     * @return The options specified for the grant.
+     */
+
+    public Options getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * The options specified for the grant.
+     * </p>
+     * 
+     * @param options
+     *        The options specified for the grant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGrantVersionRequest withOptions(Options options) {
+        setOptions(options);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -450,7 +496,9 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getSourceVersion() != null)
-            sb.append("SourceVersion: ").append(getSourceVersion());
+            sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +541,10 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         return true;
     }
 
@@ -508,6 +560,7 @@ public class CreateGrantVersionRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         return hashCode;
     }
 

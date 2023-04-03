@@ -32,11 +32,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -104,11 +99,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -122,11 +112,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -150,11 +135,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -167,11 +147,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -195,11 +170,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -213,11 +183,6 @@ public class SearchProvisionedProductsRequest extends com.amazonaws.AmazonWebSer
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

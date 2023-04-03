@@ -2643,6 +2643,111 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest request) {
+
+        return notifyProvisionProductEngineWorkflowResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            final NotifyProvisionProductEngineWorkflowResultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<NotifyProvisionProductEngineWorkflowResultRequest, NotifyProvisionProductEngineWorkflowResultResult> asyncHandler) {
+        final NotifyProvisionProductEngineWorkflowResultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<NotifyProvisionProductEngineWorkflowResultResult>() {
+            @Override
+            public NotifyProvisionProductEngineWorkflowResultResult call() throws Exception {
+                NotifyProvisionProductEngineWorkflowResultResult result = null;
+
+                try {
+                    result = executeNotifyProvisionProductEngineWorkflowResult(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest request) {
+
+        return notifyTerminateProvisionedProductEngineWorkflowResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            final NotifyTerminateProvisionedProductEngineWorkflowResultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<NotifyTerminateProvisionedProductEngineWorkflowResultRequest, NotifyTerminateProvisionedProductEngineWorkflowResultResult> asyncHandler) {
+        final NotifyTerminateProvisionedProductEngineWorkflowResultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<NotifyTerminateProvisionedProductEngineWorkflowResultResult>() {
+            @Override
+            public NotifyTerminateProvisionedProductEngineWorkflowResultResult call() throws Exception {
+                NotifyTerminateProvisionedProductEngineWorkflowResultResult result = null;
+
+                try {
+                    result = executeNotifyTerminateProvisionedProductEngineWorkflowResult(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest request) {
+
+        return notifyUpdateProvisionedProductEngineWorkflowResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            final NotifyUpdateProvisionedProductEngineWorkflowResultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<NotifyUpdateProvisionedProductEngineWorkflowResultRequest, NotifyUpdateProvisionedProductEngineWorkflowResultResult> asyncHandler) {
+        final NotifyUpdateProvisionedProductEngineWorkflowResultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<NotifyUpdateProvisionedProductEngineWorkflowResultResult>() {
+            @Override
+            public NotifyUpdateProvisionedProductEngineWorkflowResultResult call() throws Exception {
+                NotifyUpdateProvisionedProductEngineWorkflowResultResult result = null;
+
+                try {
+                    result = executeNotifyUpdateProvisionedProductEngineWorkflowResult(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ProvisionProductResult> provisionProductAsync(ProvisionProductRequest request) {
 
         return provisionProductAsync(request, null);

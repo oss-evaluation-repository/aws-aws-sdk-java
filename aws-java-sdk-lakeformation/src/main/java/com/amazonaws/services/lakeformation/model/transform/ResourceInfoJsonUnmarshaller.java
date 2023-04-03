@@ -60,6 +60,10 @@ public class ResourceInfoJsonUnmarshaller implements Unmarshaller<ResourceInfo, 
                     context.nextToken();
                     resourceInfo.setLastModified(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("WithFederation", targetDepth)) {
+                    context.nextToken();
+                    resourceInfo.setWithFederation(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

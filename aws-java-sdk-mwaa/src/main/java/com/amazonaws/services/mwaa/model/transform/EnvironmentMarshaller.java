@@ -71,6 +71,10 @@ public class EnvironmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceRoleArn").build();
     private static final MarshallingInfo<String> SOURCEBUCKETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceBucketArn").build();
+    private static final MarshallingInfo<String> STARTUPSCRIPTS3OBJECTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartupScriptS3ObjectVersion").build();
+    private static final MarshallingInfo<String> STARTUPSCRIPTS3PATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartupScriptS3Path").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -119,6 +123,8 @@ public class EnvironmentMarshaller {
             protocolMarshaller.marshall(environment.getSchedulers(), SCHEDULERS_BINDING);
             protocolMarshaller.marshall(environment.getServiceRoleArn(), SERVICEROLEARN_BINDING);
             protocolMarshaller.marshall(environment.getSourceBucketArn(), SOURCEBUCKETARN_BINDING);
+            protocolMarshaller.marshall(environment.getStartupScriptS3ObjectVersion(), STARTUPSCRIPTS3OBJECTVERSION_BINDING);
+            protocolMarshaller.marshall(environment.getStartupScriptS3Path(), STARTUPSCRIPTS3PATH_BINDING);
             protocolMarshaller.marshall(environment.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(environment.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(environment.getWebserverAccessMode(), WEBSERVERACCESSMODE_BINDING);

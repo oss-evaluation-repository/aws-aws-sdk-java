@@ -158,7 +158,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1033,7 +1033,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1065,8 +1065,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
-     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
+     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      *        </ul>
@@ -1103,7 +1103,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1134,7 +1134,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
+     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
      *         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *         </p>
      *         </li>
@@ -1172,7 +1172,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
-     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs. The default is 10 DPUs.
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
      * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
@@ -1204,8 +1204,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
-     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a minimum of 2 DPUs.
-     *        The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
+     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      *        </ul>

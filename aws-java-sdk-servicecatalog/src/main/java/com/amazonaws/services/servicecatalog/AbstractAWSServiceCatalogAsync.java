@@ -981,6 +981,51 @@ public class AbstractAWSServiceCatalogAsync extends AbstractAWSServiceCatalog im
     }
 
     @Override
+    public java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest request) {
+
+        return notifyProvisionProductEngineWorkflowResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyProvisionProductEngineWorkflowResultResult> notifyProvisionProductEngineWorkflowResultAsync(
+            NotifyProvisionProductEngineWorkflowResultRequest request,
+            com.amazonaws.handlers.AsyncHandler<NotifyProvisionProductEngineWorkflowResultRequest, NotifyProvisionProductEngineWorkflowResultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest request) {
+
+        return notifyTerminateProvisionedProductEngineWorkflowResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyTerminateProvisionedProductEngineWorkflowResultResult> notifyTerminateProvisionedProductEngineWorkflowResultAsync(
+            NotifyTerminateProvisionedProductEngineWorkflowResultRequest request,
+            com.amazonaws.handlers.AsyncHandler<NotifyTerminateProvisionedProductEngineWorkflowResultRequest, NotifyTerminateProvisionedProductEngineWorkflowResultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest request) {
+
+        return notifyUpdateProvisionedProductEngineWorkflowResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<NotifyUpdateProvisionedProductEngineWorkflowResultResult> notifyUpdateProvisionedProductEngineWorkflowResultAsync(
+            NotifyUpdateProvisionedProductEngineWorkflowResultRequest request,
+            com.amazonaws.handlers.AsyncHandler<NotifyUpdateProvisionedProductEngineWorkflowResultRequest, NotifyUpdateProvisionedProductEngineWorkflowResultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ProvisionProductResult> provisionProductAsync(ProvisionProductRequest request) {
 
         return provisionProductAsync(request, null);

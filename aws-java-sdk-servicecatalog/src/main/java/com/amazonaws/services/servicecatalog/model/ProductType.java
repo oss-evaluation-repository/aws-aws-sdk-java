@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum ProductType {
 
     CLOUD_FORMATION_TEMPLATE("CLOUD_FORMATION_TEMPLATE"),
-    MARKETPLACE("MARKETPLACE");
+    MARKETPLACE("MARKETPLACE"),
+    DEFAULT_CUSTOM("DEFAULT_CUSTOM"),
+    TERRAFORM_OPEN_SOURCE("TERRAFORM_OPEN_SOURCE");
 
     private String value;
 

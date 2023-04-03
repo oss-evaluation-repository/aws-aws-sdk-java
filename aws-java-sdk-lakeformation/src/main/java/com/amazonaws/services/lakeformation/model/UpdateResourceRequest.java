@@ -37,6 +37,12 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     */
+    private Boolean withFederation;
 
     /**
      * <p>
@@ -119,6 +125,58 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @param withFederation
+     *        Whether or not the resource is a federated resource.
+     */
+
+    public void setWithFederation(Boolean withFederation) {
+        this.withFederation = withFederation;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @return Whether or not the resource is a federated resource.
+     */
+
+    public Boolean getWithFederation() {
+        return this.withFederation;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @param withFederation
+     *        Whether or not the resource is a federated resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateResourceRequest withWithFederation(Boolean withFederation) {
+        setWithFederation(withFederation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the resource is a federated resource.
+     * </p>
+     * 
+     * @return Whether or not the resource is a federated resource.
+     */
+
+    public Boolean isWithFederation() {
+        return this.withFederation;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +191,9 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getWithFederation() != null)
+            sb.append("WithFederation: ").append(getWithFederation());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +216,10 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getWithFederation() == null ^ this.getWithFederation() == null)
+            return false;
+        if (other.getWithFederation() != null && other.getWithFederation().equals(this.getWithFederation()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +230,7 @@ public class UpdateResourceRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getWithFederation() == null) ? 0 : getWithFederation().hashCode());
         return hashCode;
     }
 

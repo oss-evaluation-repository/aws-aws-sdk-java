@@ -32,11 +32,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -95,11 +90,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -113,11 +103,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese
@@ -141,11 +126,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -158,11 +138,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The language code.</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>en</code> - English (default)
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>jp</code> - Japanese
@@ -186,11 +161,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * <code>en</code> - English (default)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>jp</code> - Japanese
      * </p>
      * </li>
@@ -204,11 +174,6 @@ public class CopyProductRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param acceptLanguage
      *        The language code.</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>en</code> - English (default)
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>jp</code> - Japanese

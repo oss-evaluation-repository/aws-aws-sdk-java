@@ -68,6 +68,12 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DatabaseIdentifier targetDatabase;
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     */
+    private FederatedDatabase federatedDatabase;
 
     /**
      * <p>
@@ -391,6 +397,46 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedDatabase
+     *        A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public void setFederatedDatabase(FederatedDatabase federatedDatabase) {
+        this.federatedDatabase = federatedDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @return A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     */
+
+    public FederatedDatabase getFederatedDatabase() {
+        return this.federatedDatabase;
+    }
+
+    /**
+     * <p>
+     * A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * </p>
+     * 
+     * @param federatedDatabase
+     *        A <code>FederatedDatabase</code> structure that references an entity outside the Glue Data Catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatabaseInput withFederatedDatabase(FederatedDatabase federatedDatabase) {
+        setFederatedDatabase(federatedDatabase);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -413,7 +459,9 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
         if (getCreateTableDefaultPermissions() != null)
             sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions()).append(",");
         if (getTargetDatabase() != null)
-            sb.append("TargetDatabase: ").append(getTargetDatabase());
+            sb.append("TargetDatabase: ").append(getTargetDatabase()).append(",");
+        if (getFederatedDatabase() != null)
+            sb.append("FederatedDatabase: ").append(getFederatedDatabase());
         sb.append("}");
         return sb.toString();
     }
@@ -453,6 +501,10 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTargetDatabase() != null && other.getTargetDatabase().equals(this.getTargetDatabase()) == false)
             return false;
+        if (other.getFederatedDatabase() == null ^ this.getFederatedDatabase() == null)
+            return false;
+        if (other.getFederatedDatabase() != null && other.getFederatedDatabase().equals(this.getFederatedDatabase()) == false)
+            return false;
         return true;
     }
 
@@ -467,6 +519,7 @@ public class DatabaseInput implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
         hashCode = prime * hashCode + ((getTargetDatabase() == null) ? 0 : getTargetDatabase().hashCode());
+        hashCode = prime * hashCode + ((getFederatedDatabase() == null) ? 0 : getFederatedDatabase().hashCode());
         return hashCode;
     }
 

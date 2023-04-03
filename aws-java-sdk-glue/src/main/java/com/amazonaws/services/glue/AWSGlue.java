@@ -304,6 +304,9 @@ public interface AWSGlue {
      *         An encryption operation failed.
      * @throws InvalidStateException
      *         An error that indicates your data is in an invalid state.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.BatchGetPartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetPartition" target="_top">AWS API
      *      Documentation</a>
@@ -678,6 +681,8 @@ public interface AWSGlue {
      *         An encryption operation failed.
      * @throws ConcurrentModificationException
      *         Two processes are trying to modify a resource simultaneously.
+     * @throws FederatedResourceAlreadyExistsException
+     *         A federated resource already exists.
      * @sample AWSGlue.CreateDatabase
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDatabase" target="_top">AWS API
      *      Documentation</a>
@@ -2074,6 +2079,8 @@ public interface AWSGlue {
      *         The operation timed out.
      * @throws GlueEncryptionException
      *         An encryption operation failed.
+     * @throws FederationSourceException
+     *         A federation source failed.
      * @sample AWSGlue.GetDatabase
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDatabase" target="_top">AWS API
      *      Documentation</a>
@@ -2443,6 +2450,9 @@ public interface AWSGlue {
      *         The operation timed out.
      * @throws GlueEncryptionException
      *         An encryption operation failed.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetPartition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartition" target="_top">AWS API
      *      Documentation</a>
@@ -2493,6 +2503,9 @@ public interface AWSGlue {
      *         An error that indicates your data is in an invalid state.
      * @throws ResourceNotReadyException
      *         A resource was not ready for a transaction.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetPartitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions" target="_top">AWS API
      *      Documentation</a>
@@ -2787,6 +2800,9 @@ public interface AWSGlue {
      *         An encryption operation failed.
      * @throws ResourceNotReadyException
      *         A resource was not ready for a transaction.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetTable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable" target="_top">AWS API
      *      Documentation</a>
@@ -2856,6 +2872,9 @@ public interface AWSGlue {
      *         An internal service error occurred.
      * @throws GlueEncryptionException
      *         An encryption operation failed.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetTables
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTables" target="_top">AWS API
      *      Documentation</a>
@@ -2946,6 +2965,10 @@ public interface AWSGlue {
      * @throws GlueEncryptionException
      *         An encryption operation failed.
      * @throws PermissionTypeMismatchException
+     *         The operation timed out.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetUnfilteredPartitionMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionMetadata"
      *      target="_top">AWS API Documentation</a>
@@ -2973,6 +2996,10 @@ public interface AWSGlue {
      * @throws GlueEncryptionException
      *         An encryption operation failed.
      * @throws PermissionTypeMismatchException
+     *         The operation timed out.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetUnfilteredPartitionsMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredPartitionsMetadata"
      *      target="_top">AWS API Documentation</a>
@@ -3000,6 +3027,10 @@ public interface AWSGlue {
      * @throws GlueEncryptionException
      *         An encryption operation failed.
      * @throws PermissionTypeMismatchException
+     *         The operation timed out.
+     * @throws FederationSourceException
+     *         A federation source failed.
+     * @throws FederationSourceRetryableException
      * @sample AWSGlue.GetUnfilteredTableMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetUnfilteredTableMetadata"
      *      target="_top">AWS API Documentation</a>

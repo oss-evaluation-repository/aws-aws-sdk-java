@@ -41,11 +41,16 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
     private String snsTopicArn;
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private Long capacity;
@@ -198,19 +203,28 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param capacity
-     *        The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     *        calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
-     *        WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
-     *        capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
-     *        WCU limit for web ACLs is 1,500.
+     *        The web ACL capacity units (WCUs) required for this rule group.</p>
+     *        <p>
+     *        WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *        groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost
+     *        of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more
+     *        processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+     *        when they use a rule group. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL
+     *        capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
      */
 
     public void setCapacity(Long capacity) {
@@ -219,18 +233,27 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
-     * @return The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     *         calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
-     *         WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
-     *         capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
-     *         WCU limit for web ACLs is 1,500.
+     * @return The web ACL capacity units (WCUs) required for this rule group.</p>
+     *         <p>
+     *         WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *         groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative
+     *         cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use
+     *         more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU
+     *         usage when they use a rule group. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL
+     *         capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
      */
 
     public Long getCapacity() {
@@ -239,19 +262,28 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     * calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF
-     * calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group capacity is
-     * fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The WCU limit for web
-     * ACLs is 1,500.
+     * The web ACL capacity units (WCUs) required for this rule group.
+     * </p>
+     * <p>
+     * WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and
+     * web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule.
+     * Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule
+     * group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity
+     * units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param capacity
-     *        The web ACL capacity units (WCUs) required for this rule group. WAF uses web ACL capacity units (WCU) to
-     *        calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs.
-     *        WAF calculates capacity differently for each rule type, to reflect each rule's relative cost. Rule group
-     *        capacity is fixed at creation, so users can plan their web ACL WCU usage when they use a rule group. The
-     *        WCU limit for web ACLs is 1,500.
+     *        The web ACL capacity units (WCUs) required for this rule group.</p>
+     *        <p>
+     *        WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule
+     *        groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost
+     *        of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more
+     *        processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage
+     *        when they use a rule group. For more information, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL
+     *        capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
