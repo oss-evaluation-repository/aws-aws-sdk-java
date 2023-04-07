@@ -210,6 +210,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRefreshScheduleResult> createRefreshScheduleAsync(CreateRefreshScheduleRequest request) {
+
+        return createRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRefreshScheduleResult> createRefreshScheduleAsync(CreateRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateRefreshScheduleRequest, CreateRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request) {
 
         return createTemplateAsync(request, null);
@@ -327,6 +340,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteDataSetRefreshPropertiesResult> deleteDataSetRefreshPropertiesAsync(DeleteDataSetRefreshPropertiesRequest request) {
+
+        return deleteDataSetRefreshPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataSetRefreshPropertiesResult> deleteDataSetRefreshPropertiesAsync(DeleteDataSetRefreshPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataSetRefreshPropertiesRequest, DeleteDataSetRefreshPropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDataSourceResult> deleteDataSourceAsync(DeleteDataSourceRequest request) {
 
         return deleteDataSourceAsync(request, null);
@@ -413,6 +439,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest request) {
+
+        return deleteRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRefreshScheduleRequest, DeleteRefreshScheduleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -639,6 +678,21 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDataSetRefreshPropertiesResult> describeDataSetRefreshPropertiesAsync(
+            DescribeDataSetRefreshPropertiesRequest request) {
+
+        return describeDataSetRefreshPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDataSetRefreshPropertiesResult> describeDataSetRefreshPropertiesAsync(
+            DescribeDataSetRefreshPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDataSetRefreshPropertiesRequest, DescribeDataSetRefreshPropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataSourceResult> describeDataSourceAsync(DescribeDataSourceRequest request) {
 
         return describeDataSourceAsync(request, null);
@@ -779,6 +833,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeNamespaceRequest, DescribeNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRefreshScheduleResult> describeRefreshScheduleAsync(DescribeRefreshScheduleRequest request) {
+
+        return describeRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRefreshScheduleResult> describeRefreshScheduleAsync(DescribeRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRefreshScheduleRequest, DescribeRefreshScheduleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1115,6 +1182,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest request) {
+
+        return listRefreshSchedulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRefreshSchedulesRequest, ListRefreshSchedulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1227,6 +1307,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataSetRefreshPropertiesResult> putDataSetRefreshPropertiesAsync(PutDataSetRefreshPropertiesRequest request) {
+
+        return putDataSetRefreshPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDataSetRefreshPropertiesResult> putDataSetRefreshPropertiesAsync(PutDataSetRefreshPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDataSetRefreshPropertiesRequest, PutDataSetRefreshPropertiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1580,6 +1673,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(UpdatePublicSharingSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest request) {
+
+        return updateRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateRefreshScheduleRequest, UpdateRefreshScheduleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -179,6 +179,21 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * <i>Type:</i> String.       <i>Required:</i> No.
+     * </p>
+     * <p>
+     * If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of
+     * an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or
+     * hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive
+     * hyphens.
+     * </p>
+     */
+    private String dBClusterParameterGroupName;
 
     /**
      * <p>
@@ -1263,6 +1278,97 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * <i>Type:</i> String.       <i>Required:</i> No.
+     * </p>
+     * <p>
+     * If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of
+     * an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or
+     * hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive
+     * hyphens.
+     * </p>
+     * 
+     * @param dBClusterParameterGroupName
+     *        The name of the DB cluster parameter group to associate with this DB cluster.</p>
+     *        <p>
+     *        <i>Type:</i> String.       <i>Required:</i> No.
+     *        </p>
+     *        <p>
+     *        If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the
+     *        name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters,
+     *        numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two
+     *        consecutive hyphens.
+     */
+
+    public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
+        this.dBClusterParameterGroupName = dBClusterParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * <i>Type:</i> String.       <i>Required:</i> No.
+     * </p>
+     * <p>
+     * If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of
+     * an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or
+     * hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive
+     * hyphens.
+     * </p>
+     * 
+     * @return The name of the DB cluster parameter group to associate with this DB cluster.</p>
+     *         <p>
+     *         <i>Type:</i> String.       <i>Required:</i> No.
+     *         </p>
+     *         <p>
+     *         If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the
+     *         name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters,
+     *         numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two
+     *         consecutive hyphens.
+     */
+
+    public String getDBClusterParameterGroupName() {
+        return this.dBClusterParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB cluster parameter group to associate with this DB cluster.
+     * </p>
+     * <p>
+     * <i>Type:</i> String.       <i>Required:</i> No.
+     * </p>
+     * <p>
+     * If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of
+     * an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or
+     * hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive
+     * hyphens.
+     * </p>
+     * 
+     * @param dBClusterParameterGroupName
+     *        The name of the DB cluster parameter group to associate with this DB cluster.</p>
+     *        <p>
+     *        <i>Type:</i> String.       <i>Required:</i> No.
+     *        </p>
+     *        <p>
+     *        If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the
+     *        name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters,
+     *        numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two
+     *        consecutive hyphens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterFromSnapshotRequest withDBClusterParameterGroupName(String dBClusterParameterGroupName) {
+        setDBClusterParameterGroupName(dBClusterParameterGroupName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1297,7 +1403,9 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getDBClusterParameterGroupName() != null)
+            sb.append("DBClusterParameterGroupName: ").append(getDBClusterParameterGroupName());
         sb.append("}");
         return sb.toString();
     }
@@ -1360,6 +1468,10 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getDBClusterParameterGroupName() == null ^ this.getDBClusterParameterGroupName() == null)
+            return false;
+        if (other.getDBClusterParameterGroupName() != null && other.getDBClusterParameterGroupName().equals(this.getDBClusterParameterGroupName()) == false)
+            return false;
         return true;
     }
 
@@ -1380,6 +1492,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
         return hashCode;
     }
 

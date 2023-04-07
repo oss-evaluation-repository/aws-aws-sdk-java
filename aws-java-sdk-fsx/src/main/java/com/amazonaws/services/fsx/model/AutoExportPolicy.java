@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * your application finishes modifying the file.
  * </p>
  * <p>
- * This <code>AutoExportPolicy</code> is supported only for Amazon FSx for Lustre file systems with the
- * <code>Persistent_2</code> deployment type.
+ * The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file systems with a data repository
+ * association.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AutoExportPolicy" target="_top">AWS API

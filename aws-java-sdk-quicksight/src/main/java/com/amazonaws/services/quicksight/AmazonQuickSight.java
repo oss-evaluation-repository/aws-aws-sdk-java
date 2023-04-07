@@ -593,6 +593,38 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @return Result of the CreateRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRefreshScheduleResult createRefreshSchedule(CreateRefreshScheduleRequest createRefreshScheduleRequest);
+
+    /**
+     * <p>
      * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
      * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
@@ -895,6 +927,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @return Result of the DeleteDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteDataSetRefreshPropertiesResult deleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
      * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
      * source.
      * </p>
@@ -1106,6 +1168,34 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest deleteNamespaceRequest);
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @return Result of the DeleteRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRefreshScheduleResult deleteRefreshSchedule(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest);
 
     /**
      * <p>
@@ -1688,6 +1778,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @return Result of the DescribeDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDataSetRefreshPropertiesResult describeDataSetRefreshProperties(DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
      * Describes a data source.
      * </p>
      * 
@@ -2000,6 +2120,34 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest describeNamespaceRequest);
+
+    /**
+     * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @return Result of the DescribeRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeRefreshScheduleResult describeRefreshSchedule(DescribeRefreshScheduleRequest describeRefreshScheduleRequest);
 
     /**
      * <p>
@@ -2953,6 +3101,34 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @return Result of the ListRefreshSchedules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRefreshSchedulesResult listRefreshSchedules(ListRefreshSchedulesRequest listRefreshSchedulesRequest);
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -3210,6 +3386,38 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @return Result of the PutDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutDataSetRefreshPropertiesResult putDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest);
 
     /**
      * <p>
@@ -4093,6 +4301,36 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     UpdatePublicSharingSettingsResult updatePublicSharingSettings(UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest);
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @return Result of the UpdateRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRefreshScheduleResult updateRefreshSchedule(UpdateRefreshScheduleRequest updateRefreshScheduleRequest);
 
     /**
      * <p>

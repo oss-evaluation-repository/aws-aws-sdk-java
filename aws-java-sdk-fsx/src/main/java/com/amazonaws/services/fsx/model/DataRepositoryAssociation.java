@@ -41,8 +41,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * Data repository associations are supported only for an Amazon FSx for Lustre file system with the
- * <code>Persistent_2</code> deployment type and for an Amazon File Cache resource.
+ * Data repository associations are supported on Amazon File Cache resources and all Amazon FSx for Lustre file systems
+ * excluding <code>Scratch_1</code> deployment types.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryAssociation" target="_top">AWS API

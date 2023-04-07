@@ -1330,6 +1330,81 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @return Result of the CreateRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRefreshScheduleResult createRefreshSchedule(CreateRefreshScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRefreshSchedule(request);
+    }
+
+    @SdkInternalApi
+    final CreateRefreshScheduleResult executeCreateRefreshSchedule(CreateRefreshScheduleRequest createRefreshScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRefreshScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRefreshScheduleRequest> request = null;
+        Response<CreateRefreshScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRefreshScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRefreshScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRefreshSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRefreshScheduleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateRefreshScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
      * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
@@ -2014,6 +2089,80 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @return Result of the DeleteDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteDataSetRefreshPropertiesResult deleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataSetRefreshProperties(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDataSetRefreshPropertiesResult executeDeleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDataSetRefreshPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDataSetRefreshPropertiesRequest> request = null;
+        Response<DeleteDataSetRefreshPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDataSetRefreshPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDataSetRefreshPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSetRefreshProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataSetRefreshPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDataSetRefreshPropertiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
      * source.
      * </p>
@@ -2514,6 +2663,77 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteNamespaceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNamespaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @return Result of the DeleteRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRefreshScheduleResult deleteRefreshSchedule(DeleteRefreshScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRefreshSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRefreshScheduleResult executeDeleteRefreshSchedule(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRefreshScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRefreshScheduleRequest> request = null;
+        Response<DeleteRefreshScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRefreshScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRefreshScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRefreshSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRefreshScheduleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteRefreshScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3837,6 +4057,81 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @return Result of the DescribeDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDataSetRefreshPropertiesResult describeDataSetRefreshProperties(DescribeDataSetRefreshPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDataSetRefreshProperties(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDataSetRefreshPropertiesResult executeDescribeDataSetRefreshProperties(
+            DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDataSetRefreshPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDataSetRefreshPropertiesRequest> request = null;
+        Response<DescribeDataSetRefreshPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDataSetRefreshPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeDataSetRefreshPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSetRefreshProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDataSetRefreshPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeDataSetRefreshPropertiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a data source.
      * </p>
      * 
@@ -4614,6 +4909,78 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeNamespaceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeNamespaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @return Result of the DescribeRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeRefreshScheduleResult describeRefreshSchedule(DescribeRefreshScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRefreshSchedule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRefreshScheduleResult executeDescribeRefreshSchedule(DescribeRefreshScheduleRequest describeRefreshScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRefreshScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRefreshScheduleRequest> request = null;
+        Response<DescribeRefreshScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRefreshScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeRefreshScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRefreshSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRefreshScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeRefreshScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6645,6 +7012,76 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @return Result of the ListRefreshSchedules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRefreshSchedulesResult listRefreshSchedules(ListRefreshSchedulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRefreshSchedules(request);
+    }
+
+    @SdkInternalApi
+    final ListRefreshSchedulesResult executeListRefreshSchedules(ListRefreshSchedulesRequest listRefreshSchedulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRefreshSchedulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRefreshSchedulesRequest> request = null;
+        Response<ListRefreshSchedulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRefreshSchedulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRefreshSchedulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRefreshSchedules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRefreshSchedulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRefreshSchedulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -7271,6 +7708,82 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListUsersResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @return Result of the PutDataSetRefreshProperties operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutDataSetRefreshPropertiesResult putDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDataSetRefreshProperties(request);
+    }
+
+    @SdkInternalApi
+    final PutDataSetRefreshPropertiesResult executePutDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDataSetRefreshPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDataSetRefreshPropertiesRequest> request = null;
+        Response<PutDataSetRefreshPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDataSetRefreshPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putDataSetRefreshPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDataSetRefreshProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutDataSetRefreshPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutDataSetRefreshPropertiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9308,6 +9821,79 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<UpdatePublicSharingSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdatePublicSharingSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @return Result of the UpdateRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateRefreshScheduleResult updateRefreshSchedule(UpdateRefreshScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRefreshSchedule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRefreshScheduleResult executeUpdateRefreshSchedule(UpdateRefreshScheduleRequest updateRefreshScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRefreshScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRefreshScheduleRequest> request = null;
+        Response<UpdateRefreshScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRefreshScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRefreshScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRefreshSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRefreshScheduleResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateRefreshScheduleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -64,12 +64,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -256,12 +256,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -284,12 +284,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Queue</b> - The ARN of an SQS queue.
+     *        <b>Queue</b> - The ARN of a standard SQS queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Topic</b> - The ARN of an SNS topic.
+     *        <b>Topic</b> - The ARN of a standard SNS topic.
      *        </p>
      *        </li>
      *        <li>
@@ -318,12 +318,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -345,12 +345,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Queue</b> - The ARN of an SQS queue.
+     *         <b>Queue</b> - The ARN of a standard SQS queue.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Topic</b> - The ARN of an SNS topic.
+     *         <b>Topic</b> - The ARN of a standard SNS topic.
      *         </p>
      *         </li>
      *         <li>
@@ -379,12 +379,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      * </li>
      * <li>
      * <p>
-     * <b>Queue</b> - The ARN of an SQS queue.
+     * <b>Queue</b> - The ARN of a standard SQS queue.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Topic</b> - The ARN of an SNS topic.
+     * <b>Topic</b> - The ARN of a standard SNS topic.
      * </p>
      * </li>
      * <li>
@@ -407,12 +407,12 @@ public class FunctionEventInvokeConfig implements Serializable, Cloneable, Struc
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Queue</b> - The ARN of an SQS queue.
+     *        <b>Queue</b> - The ARN of a standard SQS queue.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Topic</b> - The ARN of an SNS topic.
+     *        <b>Topic</b> - The ARN of a standard SNS topic.
      *        </p>
      *        </li>
      *        <li>

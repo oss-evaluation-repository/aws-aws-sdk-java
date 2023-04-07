@@ -30,8 +30,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      */
     private String ownerId;
@@ -238,14 +238,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        The Amazon Web Services account that created the file system. If the file system was created by an
-     *        Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs
-     *        is the owner.
+     *        The Amazon Web Services account that created the file system. If the file system was created by a user in
+     *        IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      */
 
     public void setOwnerId(String ownerId) {
@@ -254,13 +253,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      * 
-     * @return The Amazon Web Services account that created the file system. If the file system was created by an
-     *         Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs
-     *         is the owner.
+     * @return The Amazon Web Services account that created the file system. If the file system was created by a user in
+     *         IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      */
 
     public String getOwnerId() {
@@ -269,14 +267,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Web Services account that created the file system. If the file system was created by an Identity and
-     * Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs is the owner.
+     * The Amazon Web Services account that created the file system. If the file system was created by a user in IAM
+     * Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        The Amazon Web Services account that created the file system. If the file system was created by an
-     *        Identity and Access Management (IAM) user, the Amazon Web Services account to which the IAM user belongs
-     *        is the owner.
+     *        The Amazon Web Services account that created the file system. If the file system was created by a user in
+     *        IAM Identity Center, the Amazon Web Services account to which the IAM user belongs is the owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

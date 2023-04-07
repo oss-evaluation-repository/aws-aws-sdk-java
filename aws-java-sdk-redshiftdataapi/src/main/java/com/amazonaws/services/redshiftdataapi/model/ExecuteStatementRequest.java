@@ -47,8 +47,8 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     private String database;
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      */
     private String dbUser;
@@ -225,13 +225,13 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      * 
      * @param dbUser
-     *        The database user name. This parameter is required when connecting to a cluster and authenticating using
-     *        temporary credentials.
+     *        The database user name. This parameter is required when connecting to a cluster as a database user and
+     *        authenticating using temporary credentials.
      */
 
     public void setDbUser(String dbUser) {
@@ -240,12 +240,12 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      * 
-     * @return The database user name. This parameter is required when connecting to a cluster and authenticating using
-     *         temporary credentials.
+     * @return The database user name. This parameter is required when connecting to a cluster as a database user and
+     *         authenticating using temporary credentials.
      */
 
     public String getDbUser() {
@@ -254,13 +254,13 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The database user name. This parameter is required when connecting to a cluster and authenticating using
-     * temporary credentials.
+     * The database user name. This parameter is required when connecting to a cluster as a database user and
+     * authenticating using temporary credentials.
      * </p>
      * 
      * @param dbUser
-     *        The database user name. This parameter is required when connecting to a cluster and authenticating using
-     *        temporary credentials.
+     *        The database user name. This parameter is required when connecting to a cluster as a database user and
+     *        authenticating using temporary credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -59,6 +59,29 @@ public class CreateFunctionUrlConfigResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String creationTime;
+    /**
+     * <p>
+     * Use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code>
+     * API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes
+     * your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is
+     * 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota
+     * increase</a>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String invokeMode;
 
     /**
      * <p>
@@ -324,6 +347,201 @@ public class CreateFunctionUrlConfigResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code>
+     * API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes
+     * your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is
+     * 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota
+     * increase</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param invokeMode
+     *        Use one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the
+     *        <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The
+     *        maximum payload size is 6 MB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda
+     *        invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response
+     *        payload size is 20 MB, however, you can <a
+     *        href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a
+     *        quota increase</a>.
+     *        </p>
+     *        </li>
+     * @see InvokeMode
+     */
+
+    public void setInvokeMode(String invokeMode) {
+        this.invokeMode = invokeMode;
+    }
+
+    /**
+     * <p>
+     * Use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code>
+     * API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes
+     * your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is
+     * 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota
+     * increase</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Use one of the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the
+     *         <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The
+     *         maximum payload size is 6 MB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda
+     *         invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response
+     *         payload size is 20 MB, however, you can <a
+     *         href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a
+     *         quota increase</a>.
+     *         </p>
+     *         </li>
+     * @see InvokeMode
+     */
+
+    public String getInvokeMode() {
+        return this.invokeMode;
+    }
+
+    /**
+     * <p>
+     * Use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code>
+     * API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes
+     * your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is
+     * 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota
+     * increase</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param invokeMode
+     *        Use one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the
+     *        <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The
+     *        maximum payload size is 6 MB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda
+     *        invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response
+     *        payload size is 20 MB, however, you can <a
+     *        href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a
+     *        quota increase</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InvokeMode
+     */
+
+    public CreateFunctionUrlConfigResult withInvokeMode(String invokeMode) {
+        setInvokeMode(invokeMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the <code>Invoke</code>
+     * API operation. Invocation results are available when the payload is complete. The maximum payload size is 6 MB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda invokes
+     * your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response payload size is
+     * 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a quota
+     * increase</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param invokeMode
+     *        Use one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BUFFERED</code> – This is the default option. Lambda invokes your function using the
+     *        <code>Invoke</code> API operation. Invocation results are available when the payload is complete. The
+     *        maximum payload size is 6 MB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RESPONSE_STREAM</code> – Your function streams payload results as they become available. Lambda
+     *        invokes your function using the <code>InvokeWithResponseStream</code> API operation. The maximum response
+     *        payload size is 20 MB, however, you can <a
+     *        href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request a
+     *        quota increase</a>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InvokeMode
+     */
+
+    public CreateFunctionUrlConfigResult withInvokeMode(InvokeMode invokeMode) {
+        this.invokeMode = invokeMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -344,7 +562,9 @@ public class CreateFunctionUrlConfigResult extends com.amazonaws.AmazonWebServic
         if (getCors() != null)
             sb.append("Cors: ").append(getCors()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getInvokeMode() != null)
+            sb.append("InvokeMode: ").append(getInvokeMode());
         sb.append("}");
         return sb.toString();
     }
@@ -379,6 +599,10 @@ public class CreateFunctionUrlConfigResult extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getInvokeMode() == null ^ this.getInvokeMode() == null)
+            return false;
+        if (other.getInvokeMode() != null && other.getInvokeMode().equals(this.getInvokeMode()) == false)
+            return false;
         return true;
     }
 
@@ -392,6 +616,7 @@ public class CreateFunctionUrlConfigResult extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAuthType() == null) ? 0 : getAuthType().hashCode());
         hashCode = prime * hashCode + ((getCors() == null) ? 0 : getCors().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getInvokeMode() == null) ? 0 : getInvokeMode().hashCode());
         return hashCode;
     }
 

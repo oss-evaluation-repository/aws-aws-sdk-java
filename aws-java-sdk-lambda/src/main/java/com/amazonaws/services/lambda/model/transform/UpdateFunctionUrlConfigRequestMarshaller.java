@@ -35,6 +35,8 @@ public class UpdateFunctionUrlConfigRequestMarshaller {
             .marshallLocationName("AuthType").build();
     private static final MarshallingInfo<StructuredPojo> CORS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Cors").build();
+    private static final MarshallingInfo<String> INVOKEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InvokeMode").build();
 
     private static final UpdateFunctionUrlConfigRequestMarshaller instance = new UpdateFunctionUrlConfigRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateFunctionUrlConfigRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionUrlConfigRequest.getQualifier(), QUALIFIER_BINDING);
             protocolMarshaller.marshall(updateFunctionUrlConfigRequest.getAuthType(), AUTHTYPE_BINDING);
             protocolMarshaller.marshall(updateFunctionUrlConfigRequest.getCors(), CORS_BINDING);
+            protocolMarshaller.marshall(updateFunctionUrlConfigRequest.getInvokeMode(), INVOKEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

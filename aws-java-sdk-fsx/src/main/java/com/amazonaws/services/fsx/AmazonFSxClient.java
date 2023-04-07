@@ -663,8 +663,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * <p>
      * Creates an Amazon FSx for Lustre data repository association (DRA). A data repository association is a link
      * between a directory on the file system and an Amazon S3 bucket or prefix. You can have a maximum of 8 data
-     * repository associations on a file system. Data repository associations are supported only for file systems with
-     * the <code>Persistent_2</code> deployment type.
+     * repository associations on a file system. Data repository associations are supported for all file systems except
+     * for <code>Scratch_1</code> deployment type.
      * </p>
      * <p>
      * Each data repository association must have a unique Amazon FSx file system directory and a unique S3 bucket or
@@ -1589,7 +1589,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository
      * association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you
      * have the option of deleting the data in the file system that corresponds to the data repository association. Data
-     * repository associations are supported only for file systems with the <code>Persistent_2</code> deployment type.
+     * repository associations are supported for all file systems except for <code>Scratch_1</code> deployment type.
      * </p>
      * 
      * @param deleteDataRepositoryAssociationRequest
@@ -2129,8 +2129,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * <p>
      * Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository associations, if
      * one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the
-     * request. Data repository associations are supported only for Amazon FSx for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type and for Amazon File Cache resources.
+     * request. Data repository associations are supported on Amazon File Cache resources and all Amazon FSx for Lustre
+     * file systems excluding <code>Scratch_1</code> deployment types.
      * </p>
      * <p>
      * You can use filters to narrow the response to include just data repository associations for specific file systems
@@ -3191,7 +3191,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
     /**
      * <p>
      * Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system.
-     * Data repository associations are supported only for file systems with the <code>Persistent_2</code> deployment
+     * Data repository associations are supported for all file systems except for <code>Scratch_1</code> deployment
      * type.
      * </p>
      * 
@@ -3338,7 +3338,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * properties in a single request.
      * </p>
      * <p>
-     * For Amazon FSx for Windows File Server file systems, you can update the following properties:
+     * For FSx for Windows File Server file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -3378,7 +3378,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * </li>
      * </ul>
      * <p>
-     * For Amazon FSx for Lustre file systems, you can update the following properties:
+     * For FSx for Lustre file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -3418,9 +3418,14 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * </li>
      * </ul>
      * <p>
-     * For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+     * For FSx for ONTAP file systems, you can update the following properties:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>AddRouteTableIds</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>AutomaticBackupRetentionDays</code>
@@ -3443,6 +3448,11 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * </li>
      * <li>
      * <p>
+     * <code>RemoveRouteTableIds</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>StorageCapacity</code>
      * </p>
      * </li>
@@ -3458,7 +3468,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * </li>
      * </ul>
      * <p>
-     * For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+     * For FSx for OpenZFS file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -3479,6 +3489,16 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * <li>
      * <p>
      * <code>DailyAutomaticBackupStartTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DiskIopsConfiguration</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StorageCapacity</code>
      * </p>
      * </li>
      * <li>

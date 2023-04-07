@@ -1,3 +1,32 @@
+# __1.12.445__ __2023-04-07__
+## __AWS Lambda__
+  - ### Features
+    - This release adds a new Lambda InvokeWithResponseStream API to support streaming Lambda function responses. The release also adds a new InvokeMode parameter to Function Url APIs to control whether the response will be streamed or buffered.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Updates description for property
+
+## __Amazon Data Lifecycle Manager__
+  - ### Features
+    - Updated timestamp format for GetLifecyclePolicy API
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - This release adds a new parameter 'DBClusterParameterGroupName' to 'RestoreDBClusterFromSnapshot' API to associate the name of the DB cluster parameter group while performing restore.
+
+## __Amazon FSx__
+  - ### Features
+    - Amazon FSx for Lustre now supports creating data repository associations on Persistent_1 and Scratch_2 file systems.
+
+## __Amazon QuickSight__
+  - ### Features
+    - This release has two changes: adding the OR condition to tag-based RLS rules in CreateDataSet and UpdateDataSet; adding RefreshSchedule and Incremental RefreshProperties operations for users to programmatically configure SPICE dataset ingestions.
+
+## __Redshift Data API Service__
+  - ### Features
+    - Update documentation of API descriptions as needed in support of temporary credentials with IAM identity.
+
 # __1.12.444__ __2023-04-06__
 ## __AWS CloudFormation__
   - ### Features

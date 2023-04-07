@@ -661,6 +661,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @return A Java Future containing the result of the CreateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRefreshScheduleResult> createRefreshScheduleAsync(CreateRefreshScheduleRequest createRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.
+     * </p>
+     * 
+     * @param createRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRefreshScheduleResult> createRefreshScheduleAsync(CreateRefreshScheduleRequest createRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRefreshScheduleRequest, CreateRefreshScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a template either from a <code>TemplateDefinition</code> or from an existing Amazon QuickSight analysis
      * or template. You can use the resulting template to create additional dashboards, templates, or analyses.
      * </p>
@@ -1004,6 +1035,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @return A Java Future containing the result of the DeleteDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataSetRefreshPropertiesResult> deleteDataSetRefreshPropertiesAsync(
+            DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Deletes the dataset refresh properties of the dataset.
+     * </p>
+     * 
+     * @param deleteDataSetRefreshPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataSetRefreshPropertiesResult> deleteDataSetRefreshPropertiesAsync(
+            DeleteDataSetRefreshPropertiesRequest deleteDataSetRefreshPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataSetRefreshPropertiesRequest, DeleteDataSetRefreshPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
      * source.
      * </p>
@@ -1226,6 +1292,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest deleteNamespaceRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @return A Java Future containing the result of the DeleteRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Deletes a refresh schedule from a dataset.
+     * </p>
+     * 
+     * @param deleteRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRefreshScheduleResult> deleteRefreshScheduleAsync(DeleteRefreshScheduleRequest deleteRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRefreshScheduleRequest, DeleteRefreshScheduleResult> asyncHandler);
 
     /**
      * <p>
@@ -1958,6 +2055,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @return A Java Future containing the result of the DescribeDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataSetRefreshPropertiesResult> describeDataSetRefreshPropertiesAsync(
+            DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Describes the refresh properties of a dataset.
+     * </p>
+     * 
+     * @param describeDataSetRefreshPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDataSetRefreshProperties operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDataSetRefreshPropertiesResult> describeDataSetRefreshPropertiesAsync(
+            DescribeDataSetRefreshPropertiesRequest describeDataSetRefreshPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDataSetRefreshPropertiesRequest, DescribeDataSetRefreshPropertiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a data source.
      * </p>
      * 
@@ -2314,6 +2446,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest describeNamespaceRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeNamespaceRequest, DescribeNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @return A Java Future containing the result of the DescribeRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRefreshScheduleResult> describeRefreshScheduleAsync(DescribeRefreshScheduleRequest describeRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Provides a summary of a refresh schedule.
+     * </p>
+     * 
+     * @param describeRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRefreshScheduleResult> describeRefreshScheduleAsync(DescribeRefreshScheduleRequest describeRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRefreshScheduleRequest, DescribeRefreshScheduleResult> asyncHandler);
 
     /**
      * <p>
@@ -3424,6 +3587,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @return A Java Future containing the result of the ListRefreshSchedules operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest listRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+     * </p>
+     * 
+     * @param listRefreshSchedulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRefreshSchedules operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRefreshSchedulesResult> listRefreshSchedulesAsync(ListRefreshSchedulesRequest listRefreshSchedulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRefreshSchedulesRequest, ListRefreshSchedulesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -3700,6 +3894,39 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @return A Java Future containing the result of the PutDataSetRefreshProperties operation returned by the service.
+     * @sample AmazonQuickSightAsync.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataSetRefreshPropertiesResult> putDataSetRefreshPropertiesAsync(
+            PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest);
+
+    /**
+     * <p>
+     * Creates or updates the dataset refresh properties for the dataset.
+     * </p>
+     * 
+     * @param putDataSetRefreshPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDataSetRefreshProperties operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.PutDataSetRefreshProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataSetRefreshPropertiesResult> putDataSetRefreshPropertiesAsync(
+            PutDataSetRefreshPropertiesRequest putDataSetRefreshPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDataSetRefreshPropertiesRequest, PutDataSetRefreshPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -4717,6 +4944,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<UpdatePublicSharingSettingsResult> updatePublicSharingSettingsAsync(
             UpdatePublicSharingSettingsRequest updatePublicSharingSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePublicSharingSettingsRequest, UpdatePublicSharingSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @return A Java Future containing the result of the UpdateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest updateRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Updates a refresh schedule for a dataset.
+     * </p>
+     * 
+     * @param updateRefreshScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRefreshSchedule operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRefreshScheduleResult> updateRefreshScheduleAsync(UpdateRefreshScheduleRequest updateRefreshScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRefreshScheduleRequest, UpdateRefreshScheduleResult> asyncHandler);
 
     /**
      * <p>

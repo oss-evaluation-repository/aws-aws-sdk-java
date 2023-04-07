@@ -361,6 +361,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -429,6 +434,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
      * </p>
      * </li>
      * </ul>
@@ -483,6 +494,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -551,6 +567,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
      * </p>
      * </li>
      * </ul>
@@ -2877,6 +2899,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -2945,6 +2972,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
      * </p>
      * </li>
      * </ul>
@@ -2999,6 +3032,11 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon DocumentDB</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are available only for stream sources (DynamoDB and Kinesis):
@@ -3067,6 +3105,12 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <li>
      * <p>
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms"> Apache Kafka</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration"> Amazon
+     * DocumentDB</a>
      * </p>
      * </li>
      * </ul>

@@ -68,6 +68,10 @@ public class CreateFunctionUrlConfigResultJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     createFunctionUrlConfigResult.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InvokeMode", targetDepth)) {
+                    context.nextToken();
+                    createFunctionUrlConfigResult.setInvokeMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

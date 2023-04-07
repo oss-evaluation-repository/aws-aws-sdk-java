@@ -23,9 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * The following parameters are not supported for file systems with the <code>Persistent_2</code> deployment type.
- * Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre
- * file system to a data repository.
+ * The following parameters are not supported for file systems with a data repository association created with .
  * </p>
  * <ul>
  * <li>
@@ -74,21 +72,19 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      */
     private String importPath;
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies the path
-     * in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must use the same
-     * Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new and changed data is
-     * to be exported from your Amazon FSx for Lustre file system. If an <code>ExportPath</code> value is not provided,
-     * Amazon FSx sets a default export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
-     * timestamp is in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
+     * (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported.
+     * The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to
+     * which new and changed data is to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
      * </p>
      * <p>
      * The Amazon S3 export bucket must be the same as the import bucket specified by <code>ImportPath</code>. If you
@@ -99,9 +95,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      */
@@ -116,11 +110,11 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
      * maximum size of 5 TB.
      * </p>
+     * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
+     * </note>
      */
     private Integer importedFileChunkSize;
     /**
@@ -151,10 +145,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </note>
      * <p>
      * Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic encryption</a>
-     * in the Amazon Web Services Regions where they are available. For more information about encryption in transit for
-     * FSx for Lustre file systems, see <a
+     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support
+     * automatic encryption in the Amazon Web Services Regions where they are available. For more information about
+     * encryption in transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in
      * transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
@@ -165,10 +158,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
     private String deploymentType;
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you create
-     * your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how
-     * Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3
-     * bucket. <code>AutoImportPolicy</code> can have the following values:
+     * (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use
+     * this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify
+     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
@@ -206,9 +198,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      */
@@ -375,9 +365,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
@@ -388,9 +376,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name,
      *        only object keys with that prefix are loaded into the file system.</p> <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      */
 
@@ -408,9 +394,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
@@ -420,9 +404,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *         <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name,
      *         only object keys with that prefix are loaded into the file system.</p> <note>
      *         <p>
-     *         This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *         Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *         your Lustre file system to a data repository.
+     *         This parameter is not supported for file systems with a data repository association.
      *         </p>
      */
 
@@ -440,9 +422,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
@@ -453,9 +433,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after the Amazon S3 bucket name,
      *        only object keys with that prefix are loaded into the file system.</p> <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -467,12 +445,12 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies the path
-     * in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must use the same
-     * Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new and changed data is
-     * to be exported from your Amazon FSx for Lustre file system. If an <code>ExportPath</code> value is not provided,
-     * Amazon FSx sets a default export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
-     * timestamp is in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
+     * (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported.
+     * The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to
+     * which new and changed data is to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
      * </p>
      * <p>
      * The Amazon S3 export bucket must be the same as the import bucket specified by <code>ImportPath</code>. If you
@@ -483,18 +461,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
      * @param exportPath
-     *        (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies
-     *        the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must
-     *        use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new
-     *        and changed data is to be exported from your Amazon FSx for Lustre file system. If an
-     *        <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     *        (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is
+     *        exported. The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an
+     *        optional prefix to which new and changed data is to be exported from your Amazon FSx for Lustre file
+     *        system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
      *        <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example
      *        <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
      *        <p>
@@ -507,9 +482,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      */
 
@@ -519,12 +492,12 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies the path
-     * in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must use the same
-     * Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new and changed data is
-     * to be exported from your Amazon FSx for Lustre file system. If an <code>ExportPath</code> value is not provided,
-     * Amazon FSx sets a default export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
-     * timestamp is in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
+     * (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported.
+     * The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to
+     * which new and changed data is to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
      * </p>
      * <p>
      * The Amazon S3 export bucket must be the same as the import bucket specified by <code>ImportPath</code>. If you
@@ -535,17 +508,14 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
-     * @return (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies
-     *         the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must
-     *         use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new
-     *         and changed data is to be exported from your Amazon FSx for Lustre file system. If an
-     *         <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     * @return (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is
+     *         exported. The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an
+     *         optional prefix to which new and changed data is to be exported from your Amazon FSx for Lustre file
+     *         system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
      *         <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for
      *         example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
      *         <p>
@@ -558,9 +528,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *         Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *         your Lustre file system to a data repository.
+     *         This parameter is not supported for file systems with a data repository association.
      *         </p>
      */
 
@@ -570,12 +538,12 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies the path
-     * in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must use the same
-     * Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new and changed data is
-     * to be exported from your Amazon FSx for Lustre file system. If an <code>ExportPath</code> value is not provided,
-     * Amazon FSx sets a default export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
-     * timestamp is in UTC format, for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
+     * (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported.
+     * The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to
+     * which new and changed data is to be exported from your Amazon FSx for Lustre file system. If an
+     * <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example
+     * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.
      * </p>
      * <p>
      * The Amazon S3 export bucket must be the same as the import bucket specified by <code>ImportPath</code>. If you
@@ -586,18 +554,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
      * @param exportPath
-     *        (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. Specifies
-     *        the path in the Amazon S3 bucket where the root of your Amazon FSx file system is exported. The path must
-     *        use the same Amazon S3 bucket as specified in ImportPath. You can provide an optional prefix to which new
-     *        and changed data is to be exported from your Amazon FSx for Lustre file system. If an
-     *        <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
+     *        (Optional) Specifies the path in the Amazon S3 bucket where the root of your Amazon FSx file system is
+     *        exported. The path must use the same Amazon S3 bucket as specified in ImportPath. You can provide an
+     *        optional prefix to which new and changed data is to be exported from your Amazon FSx for Lustre file
+     *        system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a default export path,
      *        <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is in UTC format, for example
      *        <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p>
      *        <p>
@@ -610,9 +575,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -632,11 +595,11 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
      * maximum size of 5 TB.
      * </p>
+     * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
+     * </note>
      * 
      * @param importedFileChunkSize
      *        (Optional) For files imported from a data repository, this value determines the stripe count and maximum
@@ -647,10 +610,10 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects
      *        have a maximum size of 5 TB.
      *        </p>
+     *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
+     *        </p>
      */
 
     public void setImportedFileChunkSize(Integer importedFileChunkSize) {
@@ -667,11 +630,11 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
      * maximum size of 5 TB.
      * </p>
+     * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
+     * </note>
      * 
      * @return (Optional) For files imported from a data repository, this value determines the stripe count and maximum
      *         amount of data per file (in MiB) stored on a single physical disk. The maximum number of disks that a
@@ -681,10 +644,10 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *         The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3
      *         objects have a maximum size of 5 TB.
      *         </p>
+     *         <note>
      *         <p>
-     *         This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *         Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *         your Lustre file system to a data repository.
+     *         This parameter is not supported for file systems with a data repository association.
+     *         </p>
      */
 
     public Integer getImportedFileChunkSize() {
@@ -701,11 +664,11 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects have a
      * maximum size of 5 TB.
      * </p>
+     * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
+     * </note>
      * 
      * @param importedFileChunkSize
      *        (Optional) For files imported from a data repository, this value determines the stripe count and maximum
@@ -716,10 +679,10 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB (500 GiB). Amazon S3 objects
      *        have a maximum size of 5 TB.
      *        </p>
+     *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -756,10 +719,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </note>
      * <p>
      * Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic encryption</a>
-     * in the Amazon Web Services Regions where they are available. For more information about encryption in transit for
-     * FSx for Lustre file systems, see <a
+     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support
+     * automatic encryption in the Amazon Web Services Regions where they are available. For more information about
+     * encryption in transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in
      * transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
@@ -793,10 +755,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </note>
      *        <p>
      *        Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     *        <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic
-     *        encryption</a> in the Amazon Web Services Regions where they are available. For more information about
-     *        encryption in transit for FSx for Lustre file systems, see <a
+     *        <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that
+     *        support automatic encryption in the Amazon Web Services Regions where they are available. For more
+     *        information about encryption in transit for FSx for Lustre file systems, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data
      *        in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *        </p>
@@ -837,10 +798,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </note>
      * <p>
      * Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic encryption</a>
-     * in the Amazon Web Services Regions where they are available. For more information about encryption in transit for
-     * FSx for Lustre file systems, see <a
+     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support
+     * automatic encryption in the Amazon Web Services Regions where they are available. For more information about
+     * encryption in transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in
      * transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
@@ -874,10 +834,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *         </note>
      *         <p>
      *         Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     *         <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic
-     *         encryption</a> in the Amazon Web Services Regions where they are available. For more information about
-     *         encryption in transit for FSx for Lustre file systems, see <a
+     *         <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that
+     *         support automatic encryption in the Amazon Web Services Regions where they are available. For more
+     *         information about encryption in transit for FSx for Lustre file systems, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data
      *         in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *         </p>
@@ -918,10 +877,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </note>
      * <p>
      * Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic encryption</a>
-     * in the Amazon Web Services Regions where they are available. For more information about encryption in transit for
-     * FSx for Lustre file systems, see <a
+     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support
+     * automatic encryption in the Amazon Web Services Regions where they are available. For more information about
+     * encryption in transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in
      * transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
@@ -955,10 +913,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </note>
      *        <p>
      *        Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     *        <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic
-     *        encryption</a> in the Amazon Web Services Regions where they are available. For more information about
-     *        encryption in transit for FSx for Lustre file systems, see <a
+     *        <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that
+     *        support automatic encryption in the Amazon Web Services Regions where they are available. For more
+     *        information about encryption in transit for FSx for Lustre file systems, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data
      *        in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *        </p>
@@ -1001,10 +958,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </note>
      * <p>
      * Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic encryption</a>
-     * in the Amazon Web Services Regions where they are available. For more information about encryption in transit for
-     * FSx for Lustre file systems, see <a
+     * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that support
+     * automatic encryption in the Amazon Web Services Regions where they are available. For more information about
+     * encryption in transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data in
      * transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
@@ -1038,10 +994,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </note>
      *        <p>
      *        Encryption of data in transit is automatically turned on when you access <code>SCRATCH_2</code>,
-     *        <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data- protection.html">support automatic
-     *        encryption</a> in the Amazon Web Services Regions where they are available. For more information about
-     *        encryption in transit for FSx for Lustre file systems, see <a
+     *        <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon EC2 instances that
+     *        support automatic encryption in the Amazon Web Services Regions where they are available. For more
+     *        information about encryption in transit for FSx for Lustre file systems, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting data
      *        in transit</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      *        </p>
@@ -1058,10 +1013,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you create
-     * your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how
-     * Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3
-     * bucket. <code>AutoImportPolicy</code> can have the following values:
+     * (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use
+     * this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify
+     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
@@ -1099,17 +1053,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
      * @param autoImportPolicy
-     *        (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you
-     *        create your file system, your existing S3 objects appear as file and directory listings. Use this property
-     *        to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in
-     *        your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+     *        (Optional) When you create your file system, your existing S3 objects appear as file and directory
+     *        listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as
+     *        you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1146,9 +1098,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      * @see AutoImportPolicyType
      */
@@ -1159,10 +1109,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you create
-     * your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how
-     * Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3
-     * bucket. <code>AutoImportPolicy</code> can have the following values:
+     * (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use
+     * this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify
+     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
@@ -1200,16 +1149,14 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
-     * @return (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you
-     *         create your file system, your existing S3 objects appear as file and directory listings. Use this
-     *         property to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify
-     *         objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+     * @return (Optional) When you create your file system, your existing S3 objects appear as file and directory
+     *         listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date
+     *         as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
+     *         following values:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1246,9 +1193,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *         </p>
      *         <note>
      *         <p>
-     *         This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *         Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *         your Lustre file system to a data repository.
+     *         This parameter is not supported for file systems with a data repository association.
      *         </p>
      * @see AutoImportPolicyType
      */
@@ -1259,10 +1204,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you create
-     * your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how
-     * Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3
-     * bucket. <code>AutoImportPolicy</code> can have the following values:
+     * (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use
+     * this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify
+     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
@@ -1300,17 +1244,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
      * @param autoImportPolicy
-     *        (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you
-     *        create your file system, your existing S3 objects appear as file and directory listings. Use this property
-     *        to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in
-     *        your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+     *        (Optional) When you create your file system, your existing S3 objects appear as file and directory
+     *        listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as
+     *        you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1347,9 +1289,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
@@ -1362,10 +1302,9 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you create
-     * your file system, your existing S3 objects appear as file and directory listings. Use this property to choose how
-     * Amazon FSx keeps your file and directory listings up to date as you add or modify objects in your linked S3
-     * bucket. <code>AutoImportPolicy</code> can have the following values:
+     * (Optional) When you create your file system, your existing S3 objects appear as file and directory listings. Use
+     * this parameter to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify
+     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
@@ -1403,17 +1342,15 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * </p>
      * <note>
      * <p>
-     * This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository association to link your Lustre file
-     * system to a data repository.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * </note>
      * 
      * @param autoImportPolicy
-     *        (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code> deployment types. When you
-     *        create your file system, your existing S3 objects appear as file and directory listings. Use this property
-     *        to choose how Amazon FSx keeps your file and directory listings up to date as you add or modify objects in
-     *        your linked S3 bucket. <code>AutoImportPolicy</code> can have the following values:</p>
+     *        (Optional) When you create your file system, your existing S3 objects appear as file and directory
+     *        listings. Use this parameter to choose how Amazon FSx keeps your file and directory listings up to date as
+     *        you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1450,9 +1387,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </p>
      *        <note>
      *        <p>
-     *        This parameter is not supported for file systems with the <code>Persistent_2</code> deployment type.
-     *        Instead, use <code>CreateDataRepositoryAssociation</code> to create a data repository association to link
-     *        your Lustre file system to a data repository.
+     *        This parameter is not supported for file systems with a data repository association.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType

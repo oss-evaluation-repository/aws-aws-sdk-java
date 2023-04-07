@@ -106,6 +106,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -629,6 +634,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -649,6 +659,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
      *        </p>
      *        </li>
      * @see DataRepositoryTaskType
@@ -680,6 +695,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of data repository task.</p>
@@ -699,6 +719,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *         <li>
      *         <p>
      *         <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
      *         </p>
      *         </li>
      * @see DataRepositoryTaskType
@@ -730,6 +755,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -750,6 +780,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -783,6 +818,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -803,6 +843,11 @@ public class DataRepositoryTask implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File Cache resource.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

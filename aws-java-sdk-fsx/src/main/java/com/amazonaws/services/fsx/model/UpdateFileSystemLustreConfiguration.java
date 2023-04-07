@@ -75,9 +75,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      */
     private String autoImportPolicy;
@@ -258,9 +256,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @param autoImportPolicy
@@ -298,9 +294,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *        <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *        <code>Persistent_2</code> file system.
+     *        This parameter is not supported for file systems with a data repository association.
      * @see AutoImportPolicyType
      */
 
@@ -344,9 +338,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @return (Optional) When you create your file system, your existing S3 objects appear as file and directory
@@ -383,9 +375,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *         </li>
      *         </ul>
      *         <p>
-     *         The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *         <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *         <code>Persistent_2</code> file system.
+     *         This parameter is not supported for file systems with a data repository association.
      * @see AutoImportPolicyType
      */
 
@@ -429,9 +419,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @param autoImportPolicy
@@ -469,9 +457,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *        <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *        <code>Persistent_2</code> file system.
+     *        This parameter is not supported for file systems with a data repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */
@@ -517,9 +503,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      * </li>
      * </ul>
      * <p>
-     * The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     * <code>Persistent_2</code> file system.
+     * This parameter is not supported for file systems with a data repository association.
      * </p>
      * 
      * @param autoImportPolicy
@@ -557,9 +541,7 @@ public class UpdateFileSystemLustreConfiguration implements Serializable, Clonea
      *        </li>
      *        </ul>
      *        <p>
-     *        The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems with the
-     *        <code>Persistent_2</code> deployment type. Instead, use to update a data repository association on your
-     *        <code>Persistent_2</code> file system.
+     *        This parameter is not supported for file systems with a data repository association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */

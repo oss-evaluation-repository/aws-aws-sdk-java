@@ -55,6 +55,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon MQ</b> – The ARN of the broker.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
+     * </p>
+     * </li>
      * </ul>
      */
     private String eventSourceArn;
@@ -137,6 +142,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon MQ</b> – The ARN of the broker.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -165,6 +175,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <b>Amazon MQ</b> – The ARN of the broker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      *        </p>
      *        </li>
      */
@@ -203,6 +218,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon MQ</b> – The ARN of the broker.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the event source.</p>
@@ -230,6 +250,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         <li>
      *         <p>
      *         <b>Amazon MQ</b> – The ARN of the broker.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      *         </p>
      *         </li>
      */
@@ -268,6 +293,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon MQ</b> – The ARN of the broker.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -296,6 +326,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <b>Amazon MQ</b> – The ARN of the broker.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

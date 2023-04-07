@@ -30,8 +30,8 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must
-     * have a leading forward slash, such as <code>/vol3</code>.
+     * Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The
+     * <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      * </p>
      */
     private String junctionPath;
@@ -67,13 +67,15 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
     private String securityStyle;
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
+     * of 20–104857600 to specify the size of the volume.
      * </p>
      */
     private Integer sizeInMegabytes;
     /**
      * <p>
-     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.
+     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or
+     * set to false to disable them. This parameter is required.
      * </p>
      */
     private Boolean storageEfficiencyEnabled;
@@ -156,13 +158,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must
-     * have a leading forward slash, such as <code>/vol3</code>.
+     * Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The
+     * <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      * </p>
      * 
      * @param junctionPath
-     *        Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code>
-     *        must have a leading forward slash, such as <code>/vol3</code>.
+     *        Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The
+     *        <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      */
 
     public void setJunctionPath(String junctionPath) {
@@ -171,12 +173,12 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must
-     * have a leading forward slash, such as <code>/vol3</code>.
+     * Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The
+     * <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      * </p>
      * 
-     * @return Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code>
-     *         must have a leading forward slash, such as <code>/vol3</code>.
+     * @return Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required.
+     *         The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      */
 
     public String getJunctionPath() {
@@ -185,13 +187,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must
-     * have a leading forward slash, such as <code>/vol3</code>.
+     * Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The
+     * <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      * </p>
      * 
      * @param junctionPath
-     *        Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code>
-     *        must have a leading forward slash, such as <code>/vol3</code>.
+     *        Specifies the location in the SVM's namespace where the volume is mounted. This parameter is required. The
+     *        <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,11 +455,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
+     * of 20–104857600 to specify the size of the volume.
      * </p>
      * 
      * @param sizeInMegabytes
-     *        Specifies the size of the volume, in megabytes (MB), that you are creating.
+     *        Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in
+     *        the range of 20–104857600 to specify the size of the volume.
      */
 
     public void setSizeInMegabytes(Integer sizeInMegabytes) {
@@ -466,10 +470,12 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
+     * of 20–104857600 to specify the size of the volume.
      * </p>
      * 
-     * @return Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * @return Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in
+     *         the range of 20–104857600 to specify the size of the volume.
      */
 
     public Integer getSizeInMegabytes() {
@@ -478,11 +484,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in the range
+     * of 20–104857600 to specify the size of the volume.
      * </p>
      * 
      * @param sizeInMegabytes
-     *        Specifies the size of the volume, in megabytes (MB), that you are creating.
+     *        Specifies the size of the volume, in megabytes (MB), that you are creating. Provide any whole number in
+     *        the range of 20–104857600 to specify the size of the volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,12 +501,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.
+     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or
+     * set to false to disable them. This parameter is required.
      * </p>
      * 
      * @param storageEfficiencyEnabled
      *        Set to true to enable deduplication, compression, and compaction storage efficiency features on the
-     *        volume.
+     *        volume, or set to false to disable them. This parameter is required.
      */
 
     public void setStorageEfficiencyEnabled(Boolean storageEfficiencyEnabled) {
@@ -507,11 +516,12 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.
+     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or
+     * set to false to disable them. This parameter is required.
      * </p>
      * 
      * @return Set to true to enable deduplication, compression, and compaction storage efficiency features on the
-     *         volume.
+     *         volume, or set to false to disable them. This parameter is required.
      */
 
     public Boolean getStorageEfficiencyEnabled() {
@@ -520,12 +530,13 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.
+     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or
+     * set to false to disable them. This parameter is required.
      * </p>
      * 
      * @param storageEfficiencyEnabled
      *        Set to true to enable deduplication, compression, and compaction storage efficiency features on the
-     *        volume.
+     *        volume, or set to false to disable them. This parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -536,11 +547,12 @@ public class CreateOntapVolumeConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume.
+     * Set to true to enable deduplication, compression, and compaction storage efficiency features on the volume, or
+     * set to false to disable them. This parameter is required.
      * </p>
      * 
      * @return Set to true to enable deduplication, compression, and compaction storage efficiency features on the
-     *         volume.
+     *         volume, or set to false to disable them. This parameter is required.
      */
 
     public Boolean isStorageEfficiencyEnabled() {

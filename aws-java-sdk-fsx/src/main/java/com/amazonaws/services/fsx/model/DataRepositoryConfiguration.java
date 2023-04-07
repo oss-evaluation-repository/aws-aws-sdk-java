@@ -23,7 +23,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>CreateFileSystem</code> operation.
  * </p>
  * <p>
- * This data type is not supported for file systems with the <code>Persistent_2</code> deployment type. Instead, use .
+ * This data type is not supported on file systems with a data repository association. For file systems with a data
+ * repository association, see .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DataRepositoryConfiguration" target="_top">AWS

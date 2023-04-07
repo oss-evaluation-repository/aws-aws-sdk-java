@@ -72,6 +72,10 @@ public class FunctionUrlConfigJsonUnmarshaller implements Unmarshaller<FunctionU
                     context.nextToken();
                     functionUrlConfig.setAuthType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InvokeMode", targetDepth)) {
+                    context.nextToken();
+                    functionUrlConfig.setInvokeMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

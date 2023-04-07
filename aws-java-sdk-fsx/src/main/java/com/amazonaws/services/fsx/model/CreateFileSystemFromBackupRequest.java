@@ -31,7 +31,7 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     private String backupId;
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      */
@@ -167,12 +167,12 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.
      */
@@ -183,11 +183,11 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
-     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * @return A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *         automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *         Services SDK.
      */
@@ -198,12 +198,12 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      * automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
      *        automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web
      *        Services SDK.
      * @return Returns a reference to this object so that method calls can be chained together.

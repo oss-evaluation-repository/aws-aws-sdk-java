@@ -98,6 +98,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateRefreshScheduleResult createRefreshSchedule(CreateRefreshScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTemplateResult createTemplate(CreateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -143,6 +148,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public DeleteDataSetRefreshPropertiesResult deleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDataSourceResult deleteDataSource(DeleteDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +184,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRefreshScheduleResult deleteRefreshSchedule(DeleteRefreshScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -263,6 +278,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public DescribeDataSetRefreshPropertiesResult describeDataSetRefreshProperties(DescribeDataSetRefreshPropertiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDataSourceResult describeDataSource(DescribeDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +334,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRefreshScheduleResult describeRefreshSchedule(DescribeRefreshScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -443,6 +468,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public ListRefreshSchedulesResult listRefreshSchedules(ListRefreshSchedulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -484,6 +514,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public ListUsersResult listUsers(ListUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDataSetRefreshPropertiesResult putDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -619,6 +654,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UpdatePublicSharingSettingsResult updatePublicSharingSettings(UpdatePublicSharingSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRefreshScheduleResult updateRefreshSchedule(UpdateRefreshScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

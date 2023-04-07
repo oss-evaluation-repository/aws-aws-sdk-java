@@ -79,6 +79,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * </p>
+     * </li>
      * </ul>
      */
     private String type;
@@ -335,6 +340,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -353,6 +363,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -382,6 +397,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The type of provisioning artifact.</p>
@@ -399,6 +419,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *         <li>
      *         <p>
      *         <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
      *         </p>
      *         </li>
      * @see ProvisioningArtifactType
@@ -428,6 +453,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -446,6 +476,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -477,6 +512,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -495,6 +535,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
      *        </p>
      *        </li>
      * @see ProvisioningArtifactType
@@ -524,6 +569,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param type
@@ -542,6 +592,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

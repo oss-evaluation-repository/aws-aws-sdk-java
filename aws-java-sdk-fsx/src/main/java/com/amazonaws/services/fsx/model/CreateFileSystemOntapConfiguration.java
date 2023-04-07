@@ -61,7 +61,7 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
      * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
-     * for file systems deployed in the same VPC/route tables.
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
      */
     private String endpointIpAddressRange;
@@ -360,7 +360,7 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
      * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
-     * for file systems deployed in the same VPC/route tables.
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
      * 
      * @param endpointIpAddressRange
@@ -368,7 +368,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the
      *        198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the
      *        VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have
-     *        overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.
+     *        overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they
+     *        don't overlap with any subnet.
      */
 
     public void setEndpointIpAddressRange(String endpointIpAddressRange) {
@@ -381,14 +382,15 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
      * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
-     * for file systems deployed in the same VPC/route tables.
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
      * 
      * @return (Multi-AZ only) Specifies the IP address range in which the endpoints to access your file system will be
      *         created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the
      *         198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from
      *         the VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have
-     *         overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.
+     *         overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they
+     *         don't overlap with any subnet.
      */
 
     public String getEndpointIpAddressRange() {
@@ -401,7 +403,7 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      * By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the 198.19.* range.
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
      * range to use as the endpoint IP address range for the file system. You can have overlapping endpoint IP addresses
-     * for file systems deployed in the same VPC/route tables.
+     * for file systems deployed in the same VPC/route tables, as long as they don't overlap with any subnet.
      * </p>
      * 
      * @param endpointIpAddressRange
@@ -409,7 +411,8 @@ public class CreateFileSystemOntapConfiguration implements Serializable, Cloneab
      *        created. By default in the Amazon FSx API, Amazon FSx selects an unused IP address range for you from the
      *        198.19.* range. By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP addresses from the
      *        VPC’s primary CIDR range to use as the endpoint IP address range for the file system. You can have
-     *        overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables.
+     *        overlapping endpoint IP addresses for file systems deployed in the same VPC/route tables, as long as they
+     *        don't overlap with any subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
