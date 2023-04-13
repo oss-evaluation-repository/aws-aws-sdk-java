@@ -31,7 +31,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * Boolean that enables sending SIP message logs to Amazon CloudWatch.
      * </p>
      */
     private Boolean enableSIPLogs;
@@ -44,11 +44,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * Boolean that enables sending SIP message logs to Amazon CloudWatch.
      * </p>
      * 
      * @param enableSIPLogs
-     *        Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     *        Boolean that enables sending SIP message logs to Amazon CloudWatch.
      */
 
     public void setEnableSIPLogs(Boolean enableSIPLogs) {
@@ -57,10 +57,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * Boolean that enables sending SIP message logs to Amazon CloudWatch.
      * </p>
      * 
-     * @return Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * @return Boolean that enables sending SIP message logs to Amazon CloudWatch.
      */
 
     public Boolean getEnableSIPLogs() {
@@ -69,11 +69,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * Boolean that enables sending SIP message logs to Amazon CloudWatch.
      * </p>
      * 
      * @param enableSIPLogs
-     *        Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     *        Boolean that enables sending SIP message logs to Amazon CloudWatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * Boolean that enables sending SIP message logs to Amazon CloudWatch.
      * </p>
      * 
-     * @return Boolean that enables sending SIP message logs to Amazon CloudWatch logs.
+     * @return Boolean that enables sending SIP message logs to Amazon CloudWatch.
      */
 
     public Boolean isEnableSIPLogs() {

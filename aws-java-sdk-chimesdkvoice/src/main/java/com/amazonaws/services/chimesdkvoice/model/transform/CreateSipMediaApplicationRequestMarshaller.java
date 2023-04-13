@@ -34,6 +34,8 @@ public class CreateSipMediaApplicationRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<List> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Endpoints").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateSipMediaApplicationRequestMarshaller instance = new CreateSipMediaApplicationRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class CreateSipMediaApplicationRequestMarshaller {
             protocolMarshaller.marshall(createSipMediaApplicationRequest.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(createSipMediaApplicationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createSipMediaApplicationRequest.getEndpoints(), ENDPOINTS_BINDING);
+            protocolMarshaller.marshall(createSipMediaApplicationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

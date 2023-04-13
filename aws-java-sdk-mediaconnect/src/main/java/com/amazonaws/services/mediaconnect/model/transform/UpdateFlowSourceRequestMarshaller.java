@@ -66,6 +66,8 @@ public class UpdateFlowSourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcInterfaceName").build();
     private static final MarshallingInfo<String> WHITELISTCIDR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("whitelistCidr").build();
+    private static final MarshallingInfo<StructuredPojo> GATEWAYBRIDGESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gatewayBridgeSource").build();
 
     private static final UpdateFlowSourceRequestMarshaller instance = new UpdateFlowSourceRequestMarshaller();
 
@@ -102,6 +104,7 @@ public class UpdateFlowSourceRequestMarshaller {
             protocolMarshaller.marshall(updateFlowSourceRequest.getStreamId(), STREAMID_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getVpcInterfaceName(), VPCINTERFACENAME_BINDING);
             protocolMarshaller.marshall(updateFlowSourceRequest.getWhitelistCidr(), WHITELISTCIDR_BINDING);
+            protocolMarshaller.marshall(updateFlowSourceRequest.getGatewayBridgeSource(), GATEWAYBRIDGESOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

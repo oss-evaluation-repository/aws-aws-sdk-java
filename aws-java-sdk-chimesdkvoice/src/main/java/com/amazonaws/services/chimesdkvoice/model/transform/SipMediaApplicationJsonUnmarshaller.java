@@ -75,6 +75,10 @@ public class SipMediaApplicationJsonUnmarshaller implements Unmarshaller<SipMedi
                     context.nextToken();
                     sipMediaApplication.setUpdatedTimestamp(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                 }
+                if (context.testExpression("SipMediaApplicationArn", targetDepth)) {
+                    context.nextToken();
+                    sipMediaApplication.setSipMediaApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

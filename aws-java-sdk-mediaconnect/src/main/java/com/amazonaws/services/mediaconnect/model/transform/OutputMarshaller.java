@@ -54,6 +54,10 @@ public class OutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("transport").build();
     private static final MarshallingInfo<StructuredPojo> VPCINTERFACEATTACHMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcInterfaceAttachment").build();
+    private static final MarshallingInfo<String> BRIDGEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bridgeArn").build();
+    private static final MarshallingInfo<List> BRIDGEPORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("bridgePorts").build();
 
     private static final OutputMarshaller instance = new OutputMarshaller();
 
@@ -84,6 +88,8 @@ public class OutputMarshaller {
             protocolMarshaller.marshall(output.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(output.getTransport(), TRANSPORT_BINDING);
             protocolMarshaller.marshall(output.getVpcInterfaceAttachment(), VPCINTERFACEATTACHMENT_BINDING);
+            protocolMarshaller.marshall(output.getBridgeArn(), BRIDGEARN_BINDING);
+            protocolMarshaller.marshall(output.getBridgePorts(), BRIDGEPORTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -43,6 +43,12 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private java.util.List<SipMediaApplicationEndpoint> endpoints;
+    /**
+     * <p>
+     * The tags assigned to the SIP media application.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -195,6 +201,76 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The tags assigned to the SIP media application.
+     * </p>
+     * 
+     * @return The tags assigned to the SIP media application.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the SIP media application.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the SIP media application.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the SIP media application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the SIP media application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSipMediaApplicationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the SIP media application.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the SIP media application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSipMediaApplicationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -211,7 +287,9 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getEndpoints() != null)
-            sb.append("Endpoints: ").append(getEndpoints());
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -238,6 +316,10 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -249,6 +331,7 @@ public class CreateSipMediaApplicationRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

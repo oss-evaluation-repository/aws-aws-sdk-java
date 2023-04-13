@@ -49,7 +49,8 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
     private String name;
     /**
      * <p>
-     * List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.
+     * List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
+     * permitted.
      * </p>
      */
     private java.util.List<SipMediaApplicationEndpoint> endpoints;
@@ -65,6 +66,12 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Date updatedTimestamp;
+    /**
+     * <p>
+     * The ARN of the SIP media application.
+     * </p>
+     */
+    private String sipMediaApplicationArn;
 
     /**
      * <p>
@@ -188,10 +195,11 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.
+     * List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
+     * permitted.
      * </p>
      * 
-     * @return List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is
+     * @return List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
      *         permitted.
      */
 
@@ -201,11 +209,12 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.
+     * List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
+     * permitted.
      * </p>
      * 
      * @param endpoints
-     *        List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is
+     *        List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
      *        permitted.
      */
 
@@ -220,7 +229,8 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.
+     * List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
+     * permitted.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -229,7 +239,7 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param endpoints
-     *        List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is
+     *        List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
      *        permitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -246,11 +256,12 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is permitted.
+     * List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
+     * permitted.
      * </p>
      * 
      * @param endpoints
-     *        List of endpoints for SIP media application. Currently, only one endpoint per SIP media application is
+     *        List of endpoints for a SIP media application. Currently, only one endpoint per SIP media application is
      *        permitted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -341,6 +352,46 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The ARN of the SIP media application.
+     * </p>
+     * 
+     * @param sipMediaApplicationArn
+     *        The ARN of the SIP media application.
+     */
+
+    public void setSipMediaApplicationArn(String sipMediaApplicationArn) {
+        this.sipMediaApplicationArn = sipMediaApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the SIP media application.
+     * </p>
+     * 
+     * @return The ARN of the SIP media application.
+     */
+
+    public String getSipMediaApplicationArn() {
+        return this.sipMediaApplicationArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the SIP media application.
+     * </p>
+     * 
+     * @param sipMediaApplicationArn
+     *        The ARN of the SIP media application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SipMediaApplication withSipMediaApplicationArn(String sipMediaApplicationArn) {
+        setSipMediaApplicationArn(sipMediaApplicationArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -363,7 +414,9 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
         if (getCreatedTimestamp() != null)
             sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
         if (getUpdatedTimestamp() != null)
-            sb.append("UpdatedTimestamp: ").append(getUpdatedTimestamp());
+            sb.append("UpdatedTimestamp: ").append(getUpdatedTimestamp()).append(",");
+        if (getSipMediaApplicationArn() != null)
+            sb.append("SipMediaApplicationArn: ").append(getSipMediaApplicationArn());
         sb.append("}");
         return sb.toString();
     }
@@ -402,6 +455,10 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getUpdatedTimestamp() != null && other.getUpdatedTimestamp().equals(this.getUpdatedTimestamp()) == false)
             return false;
+        if (other.getSipMediaApplicationArn() == null ^ this.getSipMediaApplicationArn() == null)
+            return false;
+        if (other.getSipMediaApplicationArn() != null && other.getSipMediaApplicationArn().equals(this.getSipMediaApplicationArn()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +473,7 @@ public class SipMediaApplication implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getUpdatedTimestamp() == null) ? 0 : getUpdatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getSipMediaApplicationArn() == null) ? 0 : getSipMediaApplicationArn().hashCode());
         return hashCode;
     }
 

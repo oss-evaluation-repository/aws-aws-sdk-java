@@ -31,7 +31,10 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
      * will not be seen by the subscriber or end user.
      */
     private String description;
-    /** The type of encryption that will be used on the output associated with this entitlement. */
+    /**
+     * The type of encryption that will be used on the output associated with this entitlement. Allowable encryption
+     * types: static-key, speke.
+     */
     private UpdateEncryption encryption;
     /** The ARN of the entitlement that you want to update. */
     private String entitlementArn;
@@ -90,10 +93,12 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * The type of encryption that will be used on the output associated with this entitlement.
+     * The type of encryption that will be used on the output associated with this entitlement. Allowable encryption
+     * types: static-key, speke.
      * 
      * @param encryption
-     *        The type of encryption that will be used on the output associated with this entitlement.
+     *        The type of encryption that will be used on the output associated with this entitlement. Allowable
+     *        encryption types: static-key, speke.
      */
 
     public void setEncryption(UpdateEncryption encryption) {
@@ -101,9 +106,11 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * The type of encryption that will be used on the output associated with this entitlement.
+     * The type of encryption that will be used on the output associated with this entitlement. Allowable encryption
+     * types: static-key, speke.
      * 
-     * @return The type of encryption that will be used on the output associated with this entitlement.
+     * @return The type of encryption that will be used on the output associated with this entitlement. Allowable
+     *         encryption types: static-key, speke.
      */
 
     public UpdateEncryption getEncryption() {
@@ -111,10 +118,12 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * The type of encryption that will be used on the output associated with this entitlement.
+     * The type of encryption that will be used on the output associated with this entitlement. Allowable encryption
+     * types: static-key, speke.
      * 
      * @param encryption
-     *        The type of encryption that will be used on the output associated with this entitlement.
+     *        The type of encryption that will be used on the output associated with this entitlement. Allowable
+     *        encryption types: static-key, speke.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

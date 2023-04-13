@@ -33,7 +33,10 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
      * will not be seen by the subscriber or end user.
      */
     private String description;
-    /** The type of encryption that will be used on the output that is associated with this entitlement. */
+    /**
+     * The type of encryption that will be used on the output that is associated with this entitlement. Allowable
+     * encryption types: static-key, speke.
+     */
     private Encryption encryption;
     /**
      * An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t
@@ -123,10 +126,12 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The type of encryption that will be used on the output that is associated with this entitlement.
+     * The type of encryption that will be used on the output that is associated with this entitlement. Allowable
+     * encryption types: static-key, speke.
      * 
      * @param encryption
-     *        The type of encryption that will be used on the output that is associated with this entitlement.
+     *        The type of encryption that will be used on the output that is associated with this entitlement. Allowable
+     *        encryption types: static-key, speke.
      */
 
     public void setEncryption(Encryption encryption) {
@@ -134,9 +139,11 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The type of encryption that will be used on the output that is associated with this entitlement.
+     * The type of encryption that will be used on the output that is associated with this entitlement. Allowable
+     * encryption types: static-key, speke.
      * 
      * @return The type of encryption that will be used on the output that is associated with this entitlement.
+     *         Allowable encryption types: static-key, speke.
      */
 
     public Encryption getEncryption() {
@@ -144,10 +151,12 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
     }
 
     /**
-     * The type of encryption that will be used on the output that is associated with this entitlement.
+     * The type of encryption that will be used on the output that is associated with this entitlement. Allowable
+     * encryption types: static-key, speke.
      * 
      * @param encryption
-     *        The type of encryption that will be used on the output that is associated with this entitlement.
+     *        The type of encryption that will be used on the output that is associated with this entitlement. Allowable
+     *        encryption types: static-key, speke.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

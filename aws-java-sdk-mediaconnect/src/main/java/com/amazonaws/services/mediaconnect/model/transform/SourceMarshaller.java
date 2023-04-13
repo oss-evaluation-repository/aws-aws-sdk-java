@@ -56,6 +56,8 @@ public class SourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcInterfaceName").build();
     private static final MarshallingInfo<String> WHITELISTCIDR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("whitelistCidr").build();
+    private static final MarshallingInfo<StructuredPojo> GATEWAYBRIDGESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gatewayBridgeSource").build();
 
     private static final SourceMarshaller instance = new SourceMarshaller();
 
@@ -87,6 +89,7 @@ public class SourceMarshaller {
             protocolMarshaller.marshall(source.getTransport(), TRANSPORT_BINDING);
             protocolMarshaller.marshall(source.getVpcInterfaceName(), VPCINTERFACENAME_BINDING);
             protocolMarshaller.marshall(source.getWhitelistCidr(), WHITELISTCIDR_BINDING);
+            protocolMarshaller.marshall(source.getGatewayBridgeSource(), GATEWAYBRIDGESOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

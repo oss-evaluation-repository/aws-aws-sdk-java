@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.chimesdkvoice.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateVoiceConnectorRequestMarshaller {
             .marshallLocationName("AwsRegion").build();
     private static final MarshallingInfo<Boolean> REQUIREENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireEncryption").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateVoiceConnectorRequestMarshaller instance = new CreateVoiceConnectorRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateVoiceConnectorRequestMarshaller {
             protocolMarshaller.marshall(createVoiceConnectorRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createVoiceConnectorRequest.getAwsRegion(), AWSREGION_BINDING);
             protocolMarshaller.marshall(createVoiceConnectorRequest.getRequireEncryption(), REQUIREENCRYPTION_BINDING);
+            protocolMarshaller.marshall(createVoiceConnectorRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

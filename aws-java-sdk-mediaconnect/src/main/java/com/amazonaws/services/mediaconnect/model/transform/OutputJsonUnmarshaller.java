@@ -103,6 +103,16 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
                     context.nextToken();
                     output.setVpcInterfaceAttachment(VpcInterfaceAttachmentJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("bridgeArn", targetDepth)) {
+                    context.nextToken();
+                    output.setBridgeArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("bridgePorts", targetDepth)) {
+                    context.nextToken();
+                    output.setBridgePorts(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

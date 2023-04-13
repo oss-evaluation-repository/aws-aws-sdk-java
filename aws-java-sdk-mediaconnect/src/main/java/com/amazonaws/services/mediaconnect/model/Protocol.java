@@ -29,7 +29,8 @@ public enum Protocol {
     Cdi("cdi"),
     SrtListener("srt-listener"),
     SrtCaller("srt-caller"),
-    FujitsuQos("fujitsu-qos");
+    FujitsuQos("fujitsu-qos"),
+    Udp("udp");
 
     private String value;
 

@@ -107,6 +107,10 @@ public class SourceJsonUnmarshaller implements Unmarshaller<Source, JsonUnmarsha
                     context.nextToken();
                     source.setWhitelistCidr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("gatewayBridgeSource", targetDepth)) {
+                    context.nextToken();
+                    source.setGatewayBridgeSource(GatewayBridgeSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

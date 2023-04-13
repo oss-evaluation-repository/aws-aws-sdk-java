@@ -43,6 +43,12 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Boolean requireEncryption;
+    /**
+     * <p>
+     * The tags assigned to the Voice Connector.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -200,6 +206,76 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The tags assigned to the Voice Connector.
+     * </p>
+     * 
+     * @return The tags assigned to the Voice Connector.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the Voice Connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the Voice Connector.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the Voice Connector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the Voice Connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVoiceConnectorRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the Voice Connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the Voice Connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVoiceConnectorRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -216,7 +292,9 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
         if (getAwsRegion() != null)
             sb.append("AwsRegion: ").append(getAwsRegion()).append(",");
         if (getRequireEncryption() != null)
-            sb.append("RequireEncryption: ").append(getRequireEncryption());
+            sb.append("RequireEncryption: ").append(getRequireEncryption()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +321,10 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getRequireEncryption() != null && other.getRequireEncryption().equals(this.getRequireEncryption()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -254,6 +336,7 @@ public class CreateVoiceConnectorRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getAwsRegion() == null) ? 0 : getAwsRegion().hashCode());
         hashCode = prime * hashCode + ((getRequireEncryption() == null) ? 0 : getRequireEncryption().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

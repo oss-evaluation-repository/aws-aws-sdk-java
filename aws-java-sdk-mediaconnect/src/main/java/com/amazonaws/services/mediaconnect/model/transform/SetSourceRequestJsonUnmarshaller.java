@@ -123,6 +123,10 @@ public class SetSourceRequestJsonUnmarshaller implements Unmarshaller<SetSourceR
                     context.nextToken();
                     setSourceRequest.setWhitelistCidr(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("gatewayBridgeSource", targetDepth)) {
+                    context.nextToken();
+                    setSourceRequest.setGatewayBridgeSource(SetGatewayBridgeSourceRequestJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

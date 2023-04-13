@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * The settings for attaching a VPC interface to an output.
+ * The settings for attaching a VPC interface to an resource.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/VpcInterfaceAttachment"
  *      target="_top">AWS API Documentation</a>
@@ -26,14 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VpcInterfaceAttachment implements Serializable, Cloneable, StructuredPojo {
 
-    /** The name of the VPC interface to use for this output. */
+    /** The name of the VPC interface to use for this resource. */
     private String vpcInterfaceName;
 
     /**
-     * The name of the VPC interface to use for this output.
+     * The name of the VPC interface to use for this resource.
      * 
      * @param vpcInterfaceName
-     *        The name of the VPC interface to use for this output.
+     *        The name of the VPC interface to use for this resource.
      */
 
     public void setVpcInterfaceName(String vpcInterfaceName) {
@@ -41,9 +41,9 @@ public class VpcInterfaceAttachment implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The name of the VPC interface to use for this output.
+     * The name of the VPC interface to use for this resource.
      * 
-     * @return The name of the VPC interface to use for this output.
+     * @return The name of the VPC interface to use for this resource.
      */
 
     public String getVpcInterfaceName() {
@@ -51,10 +51,10 @@ public class VpcInterfaceAttachment implements Serializable, Cloneable, Structur
     }
 
     /**
-     * The name of the VPC interface to use for this output.
+     * The name of the VPC interface to use for this resource.
      * 
      * @param vpcInterfaceName
-     *        The name of the VPC interface to use for this output.
+     *        The name of the VPC interface to use for this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

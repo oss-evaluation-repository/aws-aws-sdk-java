@@ -40,6 +40,8 @@ public class SipMediaApplicationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimestamp").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdatedTimestamp").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> SIPMEDIAAPPLICATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SipMediaApplicationArn").build();
 
     private static final SipMediaApplicationMarshaller instance = new SipMediaApplicationMarshaller();
 
@@ -63,6 +65,7 @@ public class SipMediaApplicationMarshaller {
             protocolMarshaller.marshall(sipMediaApplication.getEndpoints(), ENDPOINTS_BINDING);
             protocolMarshaller.marshall(sipMediaApplication.getCreatedTimestamp(), CREATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(sipMediaApplication.getUpdatedTimestamp(), UPDATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(sipMediaApplication.getSipMediaApplicationArn(), SIPMEDIAAPPLICATIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
