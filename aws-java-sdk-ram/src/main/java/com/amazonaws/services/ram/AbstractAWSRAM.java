@@ -43,7 +43,27 @@ public class AbstractAWSRAM implements AWSRAM {
     }
 
     @Override
+    public CreatePermissionResult createPermission(CreatePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreatePermissionVersionResult createPermissionVersion(CreatePermissionVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateResourceShareResult createResourceShare(CreateResourceShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePermissionResult deletePermission(DeletePermissionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePermissionVersionResult deletePermissionVersion(DeletePermissionVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +118,11 @@ public class AbstractAWSRAM implements AWSRAM {
     }
 
     @Override
+    public ListPermissionAssociationsResult listPermissionAssociations(ListPermissionAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPermissionVersionsResult listPermissionVersions(ListPermissionVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +134,11 @@ public class AbstractAWSRAM implements AWSRAM {
 
     @Override
     public ListPrincipalsResult listPrincipals(ListPrincipalsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReplacePermissionAssociationsWorkResult listReplacePermissionAssociationsWork(ListReplacePermissionAssociationsWorkRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,12 +158,27 @@ public class AbstractAWSRAM implements AWSRAM {
     }
 
     @Override
+    public PromotePermissionCreatedFromPolicyResult promotePermissionCreatedFromPolicy(PromotePermissionCreatedFromPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PromoteResourceShareCreatedFromPolicyResult promoteResourceShareCreatedFromPolicy(PromoteResourceShareCreatedFromPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public RejectResourceShareInvitationResult rejectResourceShareInvitation(RejectResourceShareInvitationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReplacePermissionAssociationsResult replacePermissionAssociations(ReplacePermissionAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SetDefaultPermissionVersionResult setDefaultPermissionVersion(SetDefaultPermissionVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

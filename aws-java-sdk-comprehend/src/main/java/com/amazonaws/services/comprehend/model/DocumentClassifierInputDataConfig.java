@@ -103,6 +103,22 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
      * </p>
      */
     private java.util.List<AugmentedManifestsListItem> augmentedManifests;
+    /**
+     * <p>
+     * The type of input documents for training the model. Provide plain-text documents to create a plain-text model,
+     * and provide semi-structured documents to create a native model.
+     * </p>
+     */
+    private String documentType;
+    /**
+     * <p>
+     * The S3 location of the training documents. This parameter is required in a request to create a native classifier
+     * model.
+     * </p>
+     */
+    private DocumentClassifierDocuments documents;
+
+    private DocumentReaderConfig documentReaderConfig;
 
     /**
      * <p>
@@ -638,6 +654,145 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The type of input documents for training the model. Provide plain-text documents to create a plain-text model,
+     * and provide semi-structured documents to create a native model.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of input documents for training the model. Provide plain-text documents to create a plain-text
+     *        model, and provide semi-structured documents to create a native model.
+     * @see DocumentClassifierDocumentTypeFormat
+     */
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    /**
+     * <p>
+     * The type of input documents for training the model. Provide plain-text documents to create a plain-text model,
+     * and provide semi-structured documents to create a native model.
+     * </p>
+     * 
+     * @return The type of input documents for training the model. Provide plain-text documents to create a plain-text
+     *         model, and provide semi-structured documents to create a native model.
+     * @see DocumentClassifierDocumentTypeFormat
+     */
+
+    public String getDocumentType() {
+        return this.documentType;
+    }
+
+    /**
+     * <p>
+     * The type of input documents for training the model. Provide plain-text documents to create a plain-text model,
+     * and provide semi-structured documents to create a native model.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of input documents for training the model. Provide plain-text documents to create a plain-text
+     *        model, and provide semi-structured documents to create a native model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentClassifierDocumentTypeFormat
+     */
+
+    public DocumentClassifierInputDataConfig withDocumentType(String documentType) {
+        setDocumentType(documentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of input documents for training the model. Provide plain-text documents to create a plain-text model,
+     * and provide semi-structured documents to create a native model.
+     * </p>
+     * 
+     * @param documentType
+     *        The type of input documents for training the model. Provide plain-text documents to create a plain-text
+     *        model, and provide semi-structured documents to create a native model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentClassifierDocumentTypeFormat
+     */
+
+    public DocumentClassifierInputDataConfig withDocumentType(DocumentClassifierDocumentTypeFormat documentType) {
+        this.documentType = documentType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The S3 location of the training documents. This parameter is required in a request to create a native classifier
+     * model.
+     * </p>
+     * 
+     * @param documents
+     *        The S3 location of the training documents. This parameter is required in a request to create a native
+     *        classifier model.
+     */
+
+    public void setDocuments(DocumentClassifierDocuments documents) {
+        this.documents = documents;
+    }
+
+    /**
+     * <p>
+     * The S3 location of the training documents. This parameter is required in a request to create a native classifier
+     * model.
+     * </p>
+     * 
+     * @return The S3 location of the training documents. This parameter is required in a request to create a native
+     *         classifier model.
+     */
+
+    public DocumentClassifierDocuments getDocuments() {
+        return this.documents;
+    }
+
+    /**
+     * <p>
+     * The S3 location of the training documents. This parameter is required in a request to create a native classifier
+     * model.
+     * </p>
+     * 
+     * @param documents
+     *        The S3 location of the training documents. This parameter is required in a request to create a native
+     *        classifier model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierInputDataConfig withDocuments(DocumentClassifierDocuments documents) {
+        setDocuments(documents);
+        return this;
+    }
+
+    /**
+     * @param documentReaderConfig
+     */
+
+    public void setDocumentReaderConfig(DocumentReaderConfig documentReaderConfig) {
+        this.documentReaderConfig = documentReaderConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public DocumentReaderConfig getDocumentReaderConfig() {
+        return this.documentReaderConfig;
+    }
+
+    /**
+     * @param documentReaderConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClassifierInputDataConfig withDocumentReaderConfig(DocumentReaderConfig documentReaderConfig) {
+        setDocumentReaderConfig(documentReaderConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -658,7 +813,13 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
         if (getLabelDelimiter() != null)
             sb.append("LabelDelimiter: ").append(getLabelDelimiter()).append(",");
         if (getAugmentedManifests() != null)
-            sb.append("AugmentedManifests: ").append(getAugmentedManifests());
+            sb.append("AugmentedManifests: ").append(getAugmentedManifests()).append(",");
+        if (getDocumentType() != null)
+            sb.append("DocumentType: ").append(getDocumentType()).append(",");
+        if (getDocuments() != null)
+            sb.append("Documents: ").append(getDocuments()).append(",");
+        if (getDocumentReaderConfig() != null)
+            sb.append("DocumentReaderConfig: ").append(getDocumentReaderConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +854,18 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
             return false;
         if (other.getAugmentedManifests() != null && other.getAugmentedManifests().equals(this.getAugmentedManifests()) == false)
             return false;
+        if (other.getDocumentType() == null ^ this.getDocumentType() == null)
+            return false;
+        if (other.getDocumentType() != null && other.getDocumentType().equals(this.getDocumentType()) == false)
+            return false;
+        if (other.getDocuments() == null ^ this.getDocuments() == null)
+            return false;
+        if (other.getDocuments() != null && other.getDocuments().equals(this.getDocuments()) == false)
+            return false;
+        if (other.getDocumentReaderConfig() == null ^ this.getDocumentReaderConfig() == null)
+            return false;
+        if (other.getDocumentReaderConfig() != null && other.getDocumentReaderConfig().equals(this.getDocumentReaderConfig()) == false)
+            return false;
         return true;
     }
 
@@ -706,6 +879,9 @@ public class DocumentClassifierInputDataConfig implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getTestS3Uri() == null) ? 0 : getTestS3Uri().hashCode());
         hashCode = prime * hashCode + ((getLabelDelimiter() == null) ? 0 : getLabelDelimiter().hashCode());
         hashCode = prime * hashCode + ((getAugmentedManifests() == null) ? 0 : getAugmentedManifests().hashCode());
+        hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
+        hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
+        hashCode = prime * hashCode + ((getDocumentReaderConfig() == null) ? 0 : getDocumentReaderConfig().hashCode());
         return hashCode;
     }
 

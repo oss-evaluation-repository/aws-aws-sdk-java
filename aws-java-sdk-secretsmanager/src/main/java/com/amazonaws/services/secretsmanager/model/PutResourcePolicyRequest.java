@@ -47,7 +47,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
      */
     private Boolean blockPublicPolicy;
@@ -177,12 +177,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
      * 
      * @param blockPublicPolicy
      *        Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *        those that use a wildcard for the principal.
+     *        those that use a wildcard for the principal. By default, public policies aren't blocked.
      */
 
     public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
@@ -192,11 +192,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
      * 
      * @return Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *         those that use a wildcard for the principal.
+     *         those that use a wildcard for the principal. By default, public policies aren't blocked.
      */
 
     public Boolean getBlockPublicPolicy() {
@@ -206,12 +206,12 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
      * 
      * @param blockPublicPolicy
      *        Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *        those that use a wildcard for the principal.
+     *        those that use a wildcard for the principal. By default, public policies aren't blocked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +223,11 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Specifies whether to block resource-based policies that allow broad access to the secret, for example those that
-     * use a wildcard for the principal.
+     * use a wildcard for the principal. By default, public policies aren't blocked.
      * </p>
      * 
      * @return Specifies whether to block resource-based policies that allow broad access to the secret, for example
-     *         those that use a wildcard for the principal.
+     *         those that use a wildcard for the principal. By default, public policies aren't blocked.
      */
 
     public Boolean isBlockPublicPolicy() {

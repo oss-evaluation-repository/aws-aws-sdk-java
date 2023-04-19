@@ -33,7 +33,10 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is
-     * affected.
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on
+     * creation is affected. For information about the opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     * >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * <p>
      * When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
@@ -61,7 +64,10 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is
-     * affected.
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on
+     * creation is affected. For information about the opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     * >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * <p>
      * When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
@@ -79,7 +85,11 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *        Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *        setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. </p>
+     *        setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If
+     *        <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is
+     *        affected. For information about the opt-in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *        >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      *        <p>
      *        When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
      *        <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more
@@ -102,7 +112,10 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is
-     * affected.
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on
+     * creation is affected. For information about the opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     * >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * <p>
      * When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
@@ -119,7 +132,11 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *         <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *         container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *         Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *         setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. </p>
+     *         setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If
+     *         <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation
+     *         is affected. For information about the opt-in timeline, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *         >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      *         <p>
      *         When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
      *         <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more
@@ -142,7 +159,10 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is
-     * affected.
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on
+     * creation is affected. For information about the opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     * >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * <p>
      * When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
@@ -160,7 +180,11 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *        Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *        setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. </p>
+     *        setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If
+     *        <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is
+     *        affected. For information about the opt-in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *        >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      *        <p>
      *        When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
      *        <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more
@@ -185,7 +209,10 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * the ARN and resource ID for your Amazon ECS container instances is affected. If <code>awsvpcTrunking</code> is
      * specified, the ENI limit for your Amazon ECS container instances is affected. If <code>containerInsights</code>
      * is specified, the default setting for Amazon Web Services CloudWatch Container Insights for your clusters is
-     * affected.
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on
+     * creation is affected. For information about the opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     * >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * <p>
      * When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
@@ -203,7 +230,11 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <code>containerInstanceLongArnFormat</code> is specified, the ARN and resource ID for your Amazon ECS
      *        container instances is affected. If <code>awsvpcTrunking</code> is specified, the ENI limit for your
      *        Amazon ECS container instances is affected. If <code>containerInsights</code> is specified, the default
-     *        setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. </p>
+     *        setting for Amazon Web Services CloudWatch Container Insights for your clusters is affected. If
+     *        <code>tagResourceAuthorization</code> is specified, the opt-in option for tagging resources on creation is
+     *        affected. For information about the opt-in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *        >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      *        <p>
      *        When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code> for the
      *        <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms on your tasks. For more

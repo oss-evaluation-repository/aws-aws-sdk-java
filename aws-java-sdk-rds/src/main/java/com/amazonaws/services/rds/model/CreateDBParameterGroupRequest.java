@@ -87,12 +87,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -236,12 +231,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -530,12 +520,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -628,12 +613,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -732,12 +712,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -829,12 +804,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *         <code>aurora-mysql</code>
      *         </p>
      *         </li>
      *         <li>
@@ -933,12 +903,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -1031,12 +996,7 @@ public class CreateDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>

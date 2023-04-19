@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The client token input parameter was matched one used with a previous call to the operation, but at least one of the
- * other input parameters is different from the previous call.
+ * The operation failed because the client token input parameter matched one that was used with a previous call to the
+ * operation, but at least one of the other input parameters is different from the previous call.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

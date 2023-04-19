@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You exceeded the rate at which you are allowed to perform this operation. Please try again later.
+ * The operation failed because it exceeded the rate at which you are allowed to perform this operation. Please try
+ * again later.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides output results configuration parameters for custom classifier jobs.
+ * Provide the location for output data from a custom classifier job. This field is mandatory if you are training a
+ * native classifier model.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierOutputDataConfig"
@@ -31,8 +32,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same Region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -81,8 +83,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same Region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -92,9 +95,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * 
      * @param s3Uri
      *        When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the
-     *        Amazon S3 location where you want to write the confusion matrix. The URI must be in the same Region as the
-     *        API endpoint that you are calling. The location is used as the prefix for the actual location of this
-     *        output file.</p>
+     *        Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in
+     *        the same Region as the API endpoint that you are calling. The location is used as the prefix for the
+     *        actual location of this output file.</p>
      *        <p>
      *        When the custom classifier job is finished, the service creates the output file in a directory specific to
      *        the job. The <code>S3Uri</code> field contains the location of the output file, called
@@ -108,8 +111,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same Region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -118,9 +122,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * </p>
      * 
      * @return When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the
-     *         Amazon S3 location where you want to write the confusion matrix. The URI must be in the same Region as
-     *         the API endpoint that you are calling. The location is used as the prefix for the actual location of this
-     *         output file.</p>
+     *         Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be
+     *         in the same Region as the API endpoint that you are calling. The location is used as the prefix for the
+     *         actual location of this output file.</p>
      *         <p>
      *         When the custom classifier job is finished, the service creates the output file in a directory specific
      *         to the job. The <code>S3Uri</code> field contains the location of the output file, called
@@ -134,8 +138,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
     /**
      * <p>
      * When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the Amazon
-     * S3 location where you want to write the confusion matrix. The URI must be in the same Region as the API endpoint
-     * that you are calling. The location is used as the prefix for the actual location of this output file.
+     * S3 location where you want to write the confusion matrix and other output files. The URI must be in the same
+     * Region as the API endpoint that you are calling. The location is used as the prefix for the actual location of
+     * this output file.
      * </p>
      * <p>
      * When the custom classifier job is finished, the service creates the output file in a directory specific to the
@@ -145,9 +150,9 @@ public class DocumentClassifierOutputDataConfig implements Serializable, Cloneab
      * 
      * @param s3Uri
      *        When you use the <code>OutputDataConfig</code> object while creating a custom classifier, you specify the
-     *        Amazon S3 location where you want to write the confusion matrix. The URI must be in the same Region as the
-     *        API endpoint that you are calling. The location is used as the prefix for the actual location of this
-     *        output file.</p>
+     *        Amazon S3 location where you want to write the confusion matrix and other output files. The URI must be in
+     *        the same Region as the API endpoint that you are calling. The location is used as the prefix for the
+     *        actual location of this output file.</p>
      *        <p>
      *        When the custom classifier job is finished, the service creates the output file in a directory specific to
      *        the job. The <code>S3Uri</code> field contains the location of the output file, called

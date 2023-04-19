@@ -40,15 +40,15 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use
      * both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then
-     * Secrets Manager defaults to a 30 day recovery window.
+     * by default Secrets Manager uses a 30 day recovery window.
      * </p>
      */
     private Long recoveryWindowInDays;
     /**
      * <p>
      * Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a
-     * 30 day recovery window.
+     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets Manager uses
+     * a 30 day recovery window.
      * </p>
      * <p>
      * Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short
@@ -137,13 +137,13 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use
      * both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then
-     * Secrets Manager defaults to a 30 day recovery window.
+     * by default Secrets Manager uses a 30 day recovery window.
      * </p>
      * 
      * @param recoveryWindowInDays
      *        The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You
      *        can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't
-     *        use either, then Secrets Manager defaults to a 30 day recovery window.
+     *        use either, then by default Secrets Manager uses a 30 day recovery window.
      */
 
     public void setRecoveryWindowInDays(Long recoveryWindowInDays) {
@@ -154,12 +154,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use
      * both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then
-     * Secrets Manager defaults to a 30 day recovery window.
+     * by default Secrets Manager uses a 30 day recovery window.
      * </p>
      * 
      * @return The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You
      *         can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't
-     *         use either, then Secrets Manager defaults to a 30 day recovery window.
+     *         use either, then by default Secrets Manager uses a 30 day recovery window.
      */
 
     public Long getRecoveryWindowInDays() {
@@ -170,13 +170,13 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You can't use
      * both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't use either, then
-     * Secrets Manager defaults to a 30 day recovery window.
+     * by default Secrets Manager uses a 30 day recovery window.
      * </p>
      * 
      * @param recoveryWindowInDays
      *        The number of days from 7 to 30 that Secrets Manager waits before permanently deleting the secret. You
      *        can't use both this parameter and <code>ForceDeleteWithoutRecovery</code> in the same call. If you don't
-     *        use either, then Secrets Manager defaults to a 30 day recovery window.
+     *        use either, then by default Secrets Manager uses a 30 day recovery window.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,8 +188,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a
-     * 30 day recovery window.
+     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets Manager uses
+     * a 30 day recovery window.
      * </p>
      * <p>
      * Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short
@@ -207,8 +207,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param forceDeleteWithoutRecovery
      *        Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     *        <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults
-     *        to a 30 day recovery window.</p>
+     *        <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets
+     *        Manager uses a 30 day recovery window.</p>
      *        <p>
      *        Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *        short delay before the secret is permanently deleted. If you delete a secret and then immediately create a
@@ -231,8 +231,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a
-     * 30 day recovery window.
+     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets Manager uses
+     * a 30 day recovery window.
      * </p>
      * <p>
      * Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short
@@ -249,8 +249,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @return Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     *         <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager
-     *         defaults to a 30 day recovery window.</p>
+     *         <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets
+     *         Manager uses a 30 day recovery window.</p>
      *         <p>
      *         Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *         short delay before the secret is permanently deleted. If you delete a secret and then immediately create
@@ -273,8 +273,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a
-     * 30 day recovery window.
+     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets Manager uses
+     * a 30 day recovery window.
      * </p>
      * <p>
      * Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short
@@ -292,8 +292,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param forceDeleteWithoutRecovery
      *        Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     *        <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults
-     *        to a 30 day recovery window.</p>
+     *        <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets
+     *        Manager uses a 30 day recovery window.</p>
      *        <p>
      *        Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *        short delay before the secret is permanently deleted. If you delete a secret and then immediately create a
@@ -318,8 +318,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager defaults to a
-     * 30 day recovery window.
+     * <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets Manager uses
+     * a 30 day recovery window.
      * </p>
      * <p>
      * Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a short
@@ -336,8 +336,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </important>
      * 
      * @return Specifies whether to delete the secret without any recovery window. You can't use both this parameter and
-     *         <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then Secrets Manager
-     *         defaults to a 30 day recovery window.</p>
+     *         <code>RecoveryWindowInDays</code> in the same call. If you don't use either, then by default Secrets
+     *         Manager uses a 30 day recovery window.</p>
      *         <p>
      *         Secrets Manager performs the actual deletion with an asynchronous background process, so there might be a
      *         short delay before the secret is permanently deleted. If you delete a secret and then immediately create

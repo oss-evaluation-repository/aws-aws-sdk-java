@@ -218,7 +218,8 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<ReplicaRegionType> addReplicaRegions;
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      */
     private Boolean forceOverwriteReplicaSecret;
@@ -1598,11 +1599,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
      * @param forceOverwriteReplicaSecret
-     *        Specifies whether to overwrite a secret with the same name in the destination Region.
+     *        Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *        aren't overwritten.
      */
 
     public void setForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
@@ -1611,10 +1614,12 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
-     * @return Specifies whether to overwrite a secret with the same name in the destination Region.
+     * @return Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *         aren't overwritten.
      */
 
     public Boolean getForceOverwriteReplicaSecret() {
@@ -1623,11 +1628,13 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
      * @param forceOverwriteReplicaSecret
-     *        Specifies whether to overwrite a secret with the same name in the destination Region.
+     *        Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *        aren't overwritten.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1638,10 +1645,12 @@ public class CreateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
-     * @return Specifies whether to overwrite a secret with the same name in the destination Region.
+     * @return Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *         aren't overwritten.
      */
 
     public Boolean isForceOverwriteReplicaSecret() {

@@ -16,7 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This request would exceed the limit for resource shares for your account.
+ * The operation failed because it would exceed the limit for resource shares for your account. To view the limits for
+ * your Amazon Web Services account, see the <a
+ * href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM page in the Service Quotas
+ * console</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

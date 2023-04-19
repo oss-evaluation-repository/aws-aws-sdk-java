@@ -94,7 +94,10 @@ public enum StorageClass {
      * that is immediately accessible (less than a second for first byte latency). The target customers for this
      * storage class are those who access an object less than once a quarter but require immediate access.
      */
-    GlacierInstantRetrieval("GLACIER_IR")
+    GlacierInstantRetrieval("GLACIER_IR"),
+
+
+    Snow("SNOW")
     ;
 
     /**

@@ -84,6 +84,20 @@ public class ResourceSharePermissionSummaryJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     resourceSharePermissionSummary.setIsResourceTypeDefault(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("permissionType", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setPermissionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("featureSet", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setFeatureSet(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    resourceSharePermissionSummary.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

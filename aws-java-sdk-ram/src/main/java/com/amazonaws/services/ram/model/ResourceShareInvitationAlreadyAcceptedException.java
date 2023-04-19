@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified invitation was already accepted.
+ * The operation failed because the specified invitation was already accepted.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -433,22 +433,17 @@ public class DBInstance implements Serializable, Cloneable {
      * enabled, and otherwise false.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines
+     * IAM database authentication can be enabled for the following database engines:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
+     * For MySQL 5.7, minor version 5.7.16 or higher.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -3723,22 +3718,17 @@ public class DBInstance implements Serializable, Cloneable {
      * enabled, and otherwise false.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines
+     * IAM database authentication can be enabled for the following database engines:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
+     * For MySQL 5.7, minor version 5.7.16 or higher.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -3747,22 +3737,17 @@ public class DBInstance implements Serializable, Cloneable {
      *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
      *        is enabled, and otherwise false.</p>
      *        <p>
-     *        IAM database authentication can be enabled for the following database engines
+     *        IAM database authentication can be enabled for the following database engines:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        For MySQL 5.7, minor version 5.7.16 or higher.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *        For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      */
@@ -3777,22 +3762,17 @@ public class DBInstance implements Serializable, Cloneable {
      * enabled, and otherwise false.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines
+     * IAM database authentication can be enabled for the following database engines:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
+     * For MySQL 5.7, minor version 5.7.16 or higher.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -3800,22 +3780,17 @@ public class DBInstance implements Serializable, Cloneable {
      * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
      *         is enabled, and otherwise false.</p>
      *         <p>
-     *         IAM database authentication can be enabled for the following database engines
+     *         IAM database authentication can be enabled for the following database engines:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         For MySQL 5.7, minor version 5.7.16 or higher.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *         For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      *         </p>
      *         </li>
      */
@@ -3830,22 +3805,17 @@ public class DBInstance implements Serializable, Cloneable {
      * enabled, and otherwise false.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines
+     * IAM database authentication can be enabled for the following database engines:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
+     * For MySQL 5.7, minor version 5.7.16 or higher.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -3854,22 +3824,17 @@ public class DBInstance implements Serializable, Cloneable {
      *        True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
      *        is enabled, and otherwise false.</p>
      *        <p>
-     *        IAM database authentication can be enabled for the following database engines
+     *        IAM database authentication can be enabled for the following database engines:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        For MySQL 5.6, minor version 5.6.34 or higher
+     *        For MySQL 5.7, minor version 5.7.16 or higher.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *        For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3886,22 +3851,17 @@ public class DBInstance implements Serializable, Cloneable {
      * enabled, and otherwise false.
      * </p>
      * <p>
-     * IAM database authentication can be enabled for the following database engines
+     * IAM database authentication can be enabled for the following database engines:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
+     * For MySQL 5.7, minor version 5.7.16 or higher.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     * For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      * </p>
      * </li>
      * </ul>
@@ -3909,22 +3869,17 @@ public class DBInstance implements Serializable, Cloneable {
      * @return True if mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts
      *         is enabled, and otherwise false.</p>
      *         <p>
-     *         IAM database authentication can be enabled for the following database engines
+     *         IAM database authentication can be enabled for the following database engines:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         For MySQL 5.6, minor version 5.6.34 or higher
+     *         For MySQL 5.7, minor version 5.7.16 or higher.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster Type.
+     *         For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
      *         </p>
      *         </li>
      */

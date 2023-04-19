@@ -87,7 +87,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * version of the secret and then removes it.
      * </p>
      * <p>
-     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * By default, Secrets Manager rotates the secret immediately.
      * </p>
      */
     private Boolean rotateImmediately;
@@ -406,7 +406,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * version of the secret and then removes it.
      * </p>
      * <p>
-     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * By default, Secrets Manager rotates the secret immediately.
      * </p>
      * 
      * @param rotateImmediately
@@ -420,7 +420,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>AWSPENDING</code> version of the secret and then removes it.
      *        </p>
      *        <p>
-     *        If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     *        By default, Secrets Manager rotates the secret immediately.
      */
 
     public void setRotateImmediately(Boolean rotateImmediately) {
@@ -440,7 +440,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * version of the secret and then removes it.
      * </p>
      * <p>
-     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * By default, Secrets Manager rotates the secret immediately.
      * </p>
      * 
      * @return Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The
@@ -453,7 +453,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <code>AWSPENDING</code> version of the secret and then removes it.
      *         </p>
      *         <p>
-     *         If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     *         By default, Secrets Manager rotates the secret immediately.
      */
 
     public Boolean getRotateImmediately() {
@@ -473,7 +473,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * version of the secret and then removes it.
      * </p>
      * <p>
-     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * By default, Secrets Manager rotates the secret immediately.
      * </p>
      * 
      * @param rotateImmediately
@@ -487,7 +487,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <code>AWSPENDING</code> version of the secret and then removes it.
      *        </p>
      *        <p>
-     *        If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     *        By default, Secrets Manager rotates the secret immediately.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,7 +509,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * version of the secret and then removes it.
      * </p>
      * <p>
-     * If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     * By default, Secrets Manager rotates the secret immediately.
      * </p>
      * 
      * @return Specifies whether to rotate the secret immediately or wait until the next scheduled rotation window. The
@@ -522,7 +522,7 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <code>AWSPENDING</code> version of the secret and then removes it.
      *         </p>
      *         <p>
-     *         If you don't specify this value, then by default, Secrets Manager rotates the secret immediately.
+     *         By default, Secrets Manager rotates the secret immediately.
      */
 
     public Boolean isRotateImmediately() {

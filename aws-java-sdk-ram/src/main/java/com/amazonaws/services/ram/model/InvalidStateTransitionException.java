@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested state transition is not valid.
+ * The operation failed because the requested operation isn't valid for the resource share in its current state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

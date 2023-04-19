@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified tag key is a reserved word and can't be used.
+ * The operation failed because the specified tag key is a reserved word and can't be used.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

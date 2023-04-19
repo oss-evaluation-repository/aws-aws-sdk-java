@@ -36,11 +36,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -320,11 +315,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora5.6</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>aurora-mysql5.7</code>
      *        </p>
      *        </li>
@@ -568,11 +558,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -809,11 +794,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        Valid Values:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>aurora5.6</code>
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>aurora-mysql5.7</code>
@@ -1060,11 +1040,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -1300,11 +1275,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *         Valid Values:
      *         </p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>aurora5.6</code>
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>aurora-mysql5.7</code>
@@ -1551,11 +1521,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      * <ul>
      * <li>
      * <p>
-     * <code>aurora5.6</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>aurora-mysql5.7</code>
      * </p>
      * </li>
@@ -1792,11 +1757,6 @@ public class DescribeEngineDefaultParametersRequest extends com.amazonaws.Amazon
      *        Valid Values:
      *        </p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>aurora5.6</code>
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>aurora-mysql5.7</code>

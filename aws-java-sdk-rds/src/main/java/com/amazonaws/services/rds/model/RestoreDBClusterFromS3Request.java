@@ -96,7 +96,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -133,7 +133,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      */
     private String engine;
@@ -142,8 +142,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -974,7 +974,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -989,7 +989,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *        omitted, <code>default.aurora5.6</code> is used.</p>
+     *        omitted, the default parameter group for the engine version is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1008,7 +1008,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -1022,7 +1022,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @return The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *         omitted, <code>default.aurora5.6</code> is used.</p>
+     *         omitted, the default parameter group for the engine version is used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -1041,7 +1041,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     * omitted, <code>default.aurora5.6</code> is used.
+     * omitted, the default parameter group for the engine version is used.
      * </p>
      * <p>
      * Constraints:
@@ -1056,7 +1056,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @param dBClusterParameterGroupName
      *        The name of the DB cluster parameter group to associate with the restored DB cluster. If this argument is
-     *        omitted, <code>default.aurora5.6</code> is used.</p>
+     *        omitted, the default parameter group for the engine version is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -1225,13 +1225,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      */
 
     public void setEngine(String engine) {
@@ -1243,12 +1243,12 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      * 
      * @return The name of the database engine to be used for this DB cluster.</p>
      *         <p>
-     *         Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *         Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      */
 
     public String getEngine() {
@@ -1260,13 +1260,13 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * </p>
      * 
      * @param engine
      *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1280,8 +1280,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1296,8 +1296,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL
-     *        8.0-compatible Aurora), use the following command:
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     *        following command:
      *        </p>
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1318,8 +1318,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1333,8 +1333,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * 
      * @return The version number of the database engine to use.</p>
      *         <p>
-     *         To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and
-     *         MySQL 8.0-compatible Aurora), use the following command:
+     *         To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     *         following command:
      *         </p>
      *         <p>
      *         <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1355,8 +1355,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * The version number of the database engine to use.
      * </p>
      * <p>
-     * To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora), use the following command:
+     * To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the following
+     * command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1371,8 +1371,8 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
-     *        To list all of the available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible and MySQL
-     *        8.0-compatible Aurora), use the following command:
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     *        following command:
      *        </p>
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>

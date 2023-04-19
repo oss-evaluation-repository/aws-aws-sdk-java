@@ -38,6 +38,12 @@ public class DocumentClassifierInputDataConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelDelimiter").build();
     private static final MarshallingInfo<List> AUGMENTEDMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AugmentedManifests").build();
+    private static final MarshallingInfo<String> DOCUMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentType").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Documents").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTREADERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentReaderConfig").build();
 
     private static final DocumentClassifierInputDataConfigMarshaller instance = new DocumentClassifierInputDataConfigMarshaller();
 
@@ -60,6 +66,9 @@ public class DocumentClassifierInputDataConfigMarshaller {
             protocolMarshaller.marshall(documentClassifierInputDataConfig.getTestS3Uri(), TESTS3URI_BINDING);
             protocolMarshaller.marshall(documentClassifierInputDataConfig.getLabelDelimiter(), LABELDELIMITER_BINDING);
             protocolMarshaller.marshall(documentClassifierInputDataConfig.getAugmentedManifests(), AUGMENTEDMANIFESTS_BINDING);
+            protocolMarshaller.marshall(documentClassifierInputDataConfig.getDocumentType(), DOCUMENTTYPE_BINDING);
+            protocolMarshaller.marshall(documentClassifierInputDataConfig.getDocuments(), DOCUMENTS_BINDING);
+            protocolMarshaller.marshall(documentClassifierInputDataConfig.getDocumentReaderConfig(), DOCUMENTREADERCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

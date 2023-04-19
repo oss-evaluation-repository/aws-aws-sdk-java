@@ -27,21 +27,21 @@ public class PromoteResourceShareCreatedFromPolicyRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share to promote.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share to promote.
      * </p>
      */
     private String resourceShareArn;
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share to promote.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share to promote.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share to promote.
+     *        Resource Name (ARN)</a> of the resource share to promote.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -50,12 +50,12 @@ public class PromoteResourceShareCreatedFromPolicyRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share to promote.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share to promote.
      * </p>
      * 
      * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the resource share to promote.
+     *         Resource Name (ARN)</a> of the resource share to promote.
      */
 
     public String getResourceShareArn() {
@@ -64,13 +64,13 @@ public class PromoteResourceShareCreatedFromPolicyRequest extends com.amazonaws.
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share to promote.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share to promote.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share to promote.
+     *        Resource Name (ARN)</a> of the resource share to promote.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

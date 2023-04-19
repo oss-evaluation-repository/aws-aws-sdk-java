@@ -1,3 +1,36 @@
+# __1.12.452__ __2023-04-19__
+## __AWS Resource Access Manager__
+  - ### Features
+    - This release adds support for customer managed permissions. Customer managed permissions enable customers to author and manage tailored permissions for resources shared using RAM.
+
+## __AWS S3 Control__
+  - ### Features
+    - Provides support for overriding endpoint when region is "snow". This will enable bucket APIs for Amazon S3 Compatible storage on Snow Family devices.
+
+## __AWS Secrets Manager__
+  - ### Features
+    - Documentation updates for Secrets Manager
+
+## __AWS SecurityHub__
+  - ### Features
+    - Update that adds SDK code examples for Security Hub
+
+## __Amazon Comprehend__
+  - ### Features
+    - This release supports native document models for custom classification, in addition to plain-text models. You train native document models using documents (PDF, Word, images) in their native format.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release supports the Account Setting "TagResourceAuthorization" that allows for enhanced Tagging security controls.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds support for the ImageId parameter of CreateCustomDBEngineVersion to RDS Custom for Oracle
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Provides support for "Snow" Storage class.
+
 # __1.12.451__ __2023-04-17__
 ## __AWS IoT Wireless__
   - ### Features

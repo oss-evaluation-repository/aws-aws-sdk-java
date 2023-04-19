@@ -49,8 +49,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private Boolean enableECSManagedTags;
     /**
      * <p>
-     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables
-     * execute command functionality on all containers in the task.
+     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on
+     * the execute command functionality on all containers in the task.
      * </p>
      */
     private Boolean enableExecuteCommand;
@@ -367,13 +367,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables
-     * execute command functionality on all containers in the task.
+     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on
+     * the execute command functionality on all containers in the task.
      * </p>
      * 
      * @param enableExecuteCommand
      *        Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this
-     *        enables execute command functionality on all containers in the task.
+     *        turns on the execute command functionality on all containers in the task.
      */
 
     public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
@@ -382,12 +382,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables
-     * execute command functionality on all containers in the task.
+     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on
+     * the execute command functionality on all containers in the task.
      * </p>
      * 
      * @return Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this
-     *         enables execute command functionality on all containers in the task.
+     *         turns on the execute command functionality on all containers in the task.
      */
 
     public Boolean getEnableExecuteCommand() {
@@ -396,13 +396,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables
-     * execute command functionality on all containers in the task.
+     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on
+     * the execute command functionality on all containers in the task.
      * </p>
      * 
      * @param enableExecuteCommand
      *        Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this
-     *        enables execute command functionality on all containers in the task.
+     *        turns on the execute command functionality on all containers in the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,12 +413,12 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this enables
-     * execute command functionality on all containers in the task.
+     * Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on
+     * the execute command functionality on all containers in the task.
      * </p>
      * 
      * @return Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this
-     *         enables execute command functionality on all containers in the task.
+     *         turns on the execute command functionality on all containers in the task.
      */
 
     public Boolean isEnableExecuteCommand() {

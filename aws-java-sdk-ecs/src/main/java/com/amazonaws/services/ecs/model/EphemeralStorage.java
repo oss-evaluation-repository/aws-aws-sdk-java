@@ -34,6 +34,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Linux platform version <code>1.4.0</code> or later.
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Windows platform version <code>1.0.0</code> or later.
+ * </p>
+ * </li>
  * </ul>
  * </note>
  * 

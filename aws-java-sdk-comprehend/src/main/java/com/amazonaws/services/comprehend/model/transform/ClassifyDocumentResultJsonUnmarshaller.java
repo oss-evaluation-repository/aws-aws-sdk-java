@@ -76,6 +76,12 @@ public class ClassifyDocumentResultJsonUnmarshaller implements Unmarshaller<Clas
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("Warnings", targetDepth)) {
+                    context.nextToken();
+                    classifyDocumentResult.setWarnings(new ListUnmarshaller<WarningsListItem>(WarningsListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

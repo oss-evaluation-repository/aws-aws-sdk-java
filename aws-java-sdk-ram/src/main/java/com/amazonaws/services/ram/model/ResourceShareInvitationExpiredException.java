@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified invitation is expired.
+ * The operation failed because the specified invitation is past its expiration date and time.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

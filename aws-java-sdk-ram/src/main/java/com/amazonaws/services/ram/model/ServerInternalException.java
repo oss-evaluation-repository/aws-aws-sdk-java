@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The service could not respond to the request due to an internal problem.
+ * The operation failed because the service could not respond to the request due to an internal problem. Try again
+ * later.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

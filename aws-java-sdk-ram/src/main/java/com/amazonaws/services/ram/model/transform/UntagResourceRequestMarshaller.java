@@ -32,6 +32,8 @@ public class UntagResourceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceShareArn").build();
     private static final MarshallingInfo<List> TAGKEYS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tagKeys").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceArn").build();
 
     private static final UntagResourceRequestMarshaller instance = new UntagResourceRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class UntagResourceRequestMarshaller {
         try {
             protocolMarshaller.marshall(untagResourceRequest.getResourceShareArn(), RESOURCESHAREARN_BINDING);
             protocolMarshaller.marshall(untagResourceRequest.getTagKeys(), TAGKEYS_BINDING);
+            protocolMarshaller.marshall(untagResourceRequest.getResourceArn(), RESOURCEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

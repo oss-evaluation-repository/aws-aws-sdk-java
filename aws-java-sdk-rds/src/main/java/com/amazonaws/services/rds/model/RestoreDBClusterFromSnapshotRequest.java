@@ -112,8 +112,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * default version for the database engine in the Amazon Web Services Region is used.
      * </p>
      * <p>
-     * To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the
-     * following command:
+     * To list all of the available engine versions for Aurora MySQL, use the following command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -357,8 +356,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -1133,8 +1131,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * default version for the database engine in the Amazon Web Services Region is used.
      * </p>
      * <p>
-     * To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the
-     * following command:
+     * To list all of the available engine versions for Aurora MySQL, use the following command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1196,8 +1193,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        The version of the database engine to use for the new DB cluster. If you don't specify an engine version,
      *        the default version for the database engine in the Amazon Web Services Region is used.</p>
      *        <p>
-     *        To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use
-     *        the following command:
+     *        To list all of the available engine versions for Aurora MySQL, use the following command:
      *        </p>
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1266,8 +1262,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * default version for the database engine in the Amazon Web Services Region is used.
      * </p>
      * <p>
-     * To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the
-     * following command:
+     * To list all of the available engine versions for Aurora MySQL, use the following command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1328,8 +1323,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * @return The version of the database engine to use for the new DB cluster. If you don't specify an engine version,
      *         the default version for the database engine in the Amazon Web Services Region is used.</p>
      *         <p>
-     *         To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora,
-     *         use the following command:
+     *         To list all of the available engine versions for Aurora MySQL, use the following command:
      *         </p>
      *         <p>
      *         <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1398,8 +1392,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * default version for the database engine in the Amazon Web Services Region is used.
      * </p>
      * <p>
-     * To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use the
-     * following command:
+     * To list all of the available engine versions for Aurora MySQL, use the following command:
      * </p>
      * <p>
      * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -1461,8 +1454,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      *        The version of the database engine to use for the new DB cluster. If you don't specify an engine version,
      *        the default version for the database engine in the Amazon Web Services Region is used.</p>
      *        <p>
-     *        To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora, use
-     *        the following command:
+     *        To list all of the available engine versions for Aurora MySQL, use the following command:
      *        </p>
      *        <p>
      *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
@@ -2854,8 +2846,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -2866,8 +2857,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
@@ -2883,8 +2873,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -2894,8 +2883,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * Valid for: Aurora DB clusters only
      * </p>
      * 
-     * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+     * @return The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
@@ -2911,8 +2899,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+     * The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -2923,8 +2910,7 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param engineMode
-     *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
+     *        The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">

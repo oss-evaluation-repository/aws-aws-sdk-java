@@ -34,7 +34,11 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container
      * instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is
-     * specified, Fargate FIPS 140 compliance is affected.
+     * specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the
+     * opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      */
     private String name;
@@ -69,7 +73,11 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container
      * instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is
-     * specified, Fargate FIPS 140 compliance is affected.
+     * specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the
+     * opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param name
@@ -81,7 +89,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        interface (ENI) limit for your Amazon ECS container instances is affected. If
      *        <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch
      *        Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate
-     *        FIPS 140 compliance is affected.
+     *        FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option
+     *        for tagging resources on creation is affected. For information about the opt-in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *        >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @see SettingName
      */
 
@@ -98,7 +109,11 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container
      * instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is
-     * specified, Fargate FIPS 140 compliance is affected.
+     * specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the
+     * opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @return The Amazon ECS resource name for which to modify the account setting. If
@@ -109,7 +124,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *         network interface (ENI) limit for your Amazon ECS container instances is affected. If
      *         <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch
      *         Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate
-     *         FIPS 140 compliance is affected.
+     *         FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option
+     *         for tagging resources on creation is affected. For information about the opt-in timeline, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *         >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @see SettingName
      */
 
@@ -126,7 +144,11 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container
      * instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is
-     * specified, Fargate FIPS 140 compliance is affected.
+     * specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the
+     * opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param name
@@ -138,7 +160,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        interface (ENI) limit for your Amazon ECS container instances is affected. If
      *        <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch
      *        Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate
-     *        FIPS 140 compliance is affected.
+     *        FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option
+     *        for tagging resources on creation is affected. For information about the opt-in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *        >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -157,7 +182,11 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for your Amazon ECS container
      * instances is affected. If <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is
-     * specified, Fargate FIPS 140 compliance is affected.
+     * specified, Fargate FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the
+     * opt-in option for tagging resources on creation is affected. For information about the opt-in timeline, see <a
+     * href
+     * ="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param name
@@ -169,7 +198,10 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        interface (ENI) limit for your Amazon ECS container instances is affected. If
      *        <code>containerInsights</code> is specified, the default setting for Amazon Web Services CloudWatch
      *        Container Insights for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate
-     *        FIPS 140 compliance is affected.
+     *        FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option
+     *        for tagging resources on creation is affected. For information about the opt-in timeline, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources"
+     *        >Tagging authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */

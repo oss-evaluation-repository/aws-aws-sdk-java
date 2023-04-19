@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The format of an Amazon Resource Name (ARN) is not valid.
+ * The operation failed because the specified <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> has
+ * a format that isn't valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

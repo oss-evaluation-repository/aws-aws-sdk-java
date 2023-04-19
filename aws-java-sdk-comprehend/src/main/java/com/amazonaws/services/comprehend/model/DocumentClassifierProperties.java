@@ -43,8 +43,12 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      */
     private String status;
@@ -285,14 +289,21 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @param status
      *        The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *        use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *        wasn't trained in the <code>Message</code> field.
+     *        use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should
+     *        review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *        <p>
+     *        If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *        trained in the <code>Message</code> field.
      * @see ModelStatus
      */
 
@@ -303,13 +314,20 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @return The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *         use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *         wasn't trained in the <code>Message</code> field.
+     *         use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     *         should review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *         <p>
+     *         If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *         trained in the <code>Message</code> field.
      * @see ModelStatus
      */
 
@@ -320,14 +338,21 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @param status
      *        The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *        use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *        wasn't trained in the <code>Message</code> field.
+     *        use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should
+     *        review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *        <p>
+     *        If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *        trained in the <code>Message</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */
@@ -340,14 +365,21 @@ public class DocumentClassifierProperties implements Serializable, Cloneable, St
     /**
      * <p>
      * The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If
-     * the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in
-     * the <code>Message</code> field.
+     * the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should review the
+     * warnings returned in the <code>CreateDocumentClassifier</code> response.
+     * </p>
+     * <p>
+     * If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained
+     * in the <code>Message</code> field.
      * </p>
      * 
      * @param status
      *        The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to
-     *        use. If the status is <code>FAILED</code> you can see additional information about why the classifier
-     *        wasn't trained in the <code>Message</code> field.
+     *        use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you should
+     *        review the warnings returned in the <code>CreateDocumentClassifier</code> response.</p>
+     *        <p>
+     *        If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't
+     *        trained in the <code>Message</code> field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ModelStatus
      */

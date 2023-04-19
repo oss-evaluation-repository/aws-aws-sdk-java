@@ -39,7 +39,8 @@ public class ReplicateSecretToRegionsRequest extends com.amazonaws.AmazonWebServ
     private java.util.List<ReplicaRegionType> addReplicaRegions;
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      */
     private Boolean forceOverwriteReplicaSecret;
@@ -156,11 +157,13 @@ public class ReplicateSecretToRegionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
      * @param forceOverwriteReplicaSecret
-     *        Specifies whether to overwrite a secret with the same name in the destination Region.
+     *        Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *        aren't overwritten.
      */
 
     public void setForceOverwriteReplicaSecret(Boolean forceOverwriteReplicaSecret) {
@@ -169,10 +172,12 @@ public class ReplicateSecretToRegionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
-     * @return Specifies whether to overwrite a secret with the same name in the destination Region.
+     * @return Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *         aren't overwritten.
      */
 
     public Boolean getForceOverwriteReplicaSecret() {
@@ -181,11 +186,13 @@ public class ReplicateSecretToRegionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
      * @param forceOverwriteReplicaSecret
-     *        Specifies whether to overwrite a secret with the same name in the destination Region.
+     *        Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *        aren't overwritten.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,10 +203,12 @@ public class ReplicateSecretToRegionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether to overwrite a secret with the same name in the destination Region.
+     * Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets aren't
+     * overwritten.
      * </p>
      * 
-     * @return Specifies whether to overwrite a secret with the same name in the destination Region.
+     * @return Specifies whether to overwrite a secret with the same name in the destination Region. By default, secrets
+     *         aren't overwritten.
      */
 
     public Boolean isForceOverwriteReplicaSecret() {

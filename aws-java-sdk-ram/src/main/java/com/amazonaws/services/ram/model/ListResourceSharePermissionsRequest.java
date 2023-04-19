@@ -27,8 +27,8 @@ public class ListResourceSharePermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      * </p>
      */
     private String resourceShareArn;
@@ -55,13 +55,13 @@ public class ListResourceSharePermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     *        Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -70,12 +70,12 @@ public class ListResourceSharePermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      * </p>
      * 
      * @return Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     *         Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      */
 
     public String getResourceShareArn() {
@@ -84,13 +84,13 @@ public class ListResourceSharePermissionsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
+     *        Resource Name (ARN)</a> of the resource share for which you want to retrieve the associated permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

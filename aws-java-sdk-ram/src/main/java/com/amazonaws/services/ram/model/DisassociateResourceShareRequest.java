@@ -27,8 +27,8 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove resources from.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      * </p>
      */
     private String resourceShareArn;
@@ -36,8 +36,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
-     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
-     * that created the resources.
+     * operation runs, these resources are no longer shared with principals associated with the resource share.
      * </p>
      */
     private java.util.List<String> resourceArns;
@@ -57,7 +56,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -99,18 +98,22 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      */
     private String clientToken;
 
     /**
      * <p>
-     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove resources from.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
+     *        Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      */
 
     public void setResourceShareArn(String resourceShareArn) {
@@ -119,12 +122,12 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove resources from.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      * </p>
      * 
      * @return Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *         Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
+     *         Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      */
 
     public String getResourceShareArn() {
@@ -133,13 +136,13 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
-     * Name (ARN)</a> of the resource share that you want to remove resources from.
+     * Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     * Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      * </p>
      * 
      * @param resourceShareArn
      *        Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     *        Resoure Name (ARN)</a> of the resource share that you want to remove resources from.
+     *        Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,15 +155,13 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
-     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
-     * that created the resources.
+     * operation runs, these resources are no longer shared with principals associated with the resource share.
      * </p>
      * 
      * @return Specifies a list of <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
-     *         runs, these resources are no longer shared with principals outside of the Amazon Web Services account
-     *         that created the resources.
+     *         runs, these resources are no longer shared with principals associated with the resource share.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -171,16 +172,14 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
-     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
-     * that created the resources.
+     * operation runs, these resources are no longer shared with principals associated with the resource share.
      * </p>
      * 
      * @param resourceArns
      *        Specifies a list of <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
-     *        runs, these resources are no longer shared with principals outside of the Amazon Web Services account that
-     *        created the resources.
+     *        runs, these resources are no longer shared with principals associated with the resource share.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -196,8 +195,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
-     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
-     * that created the resources.
+     * operation runs, these resources are no longer shared with principals associated with the resource share.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -209,8 +207,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *        Specifies a list of <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
-     *        runs, these resources are no longer shared with principals outside of the Amazon Web Services account that
-     *        created the resources.
+     *        runs, these resources are no longer shared with principals associated with the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,16 +225,14 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the
-     * operation runs, these resources are no longer shared with principals outside of the Amazon Web Services account
-     * that created the resources.
+     * operation runs, these resources are no longer shared with principals associated with the resource share.
      * </p>
      * 
      * @param resourceArns
      *        Specifies a list of <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation
-     *        runs, these resources are no longer shared with principals outside of the Amazon Web Services account that
-     *        created the resources.
+     *        runs, these resources are no longer shared with principals associated with the resource share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,7 +257,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -305,7 +300,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *         </li>
      *         <li>
      *         <p>
-     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *         An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *         Name (ARN)</a> of an organization in Organizations, for example:
      *         <code>organizations::123456789012:organization/o-exampleorgid</code>
      *         </p>
@@ -355,7 +350,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -399,7 +394,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations, for example:
      *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
@@ -454,7 +449,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -503,7 +498,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations, for example:
      *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
@@ -560,7 +555,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure Name
+     * An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
      * (ARN)</a> of an organization in Organizations, for example:
      * <code>organizations::123456789012:organization/o-exampleorgid</code>
      * </p>
@@ -604,7 +599,7 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resoure
+     *        An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
      *        Name (ARN)</a> of an organization in Organizations, for example:
      *        <code>organizations::123456789012:organization/o-exampleorgid</code>
      *        </p>
@@ -651,6 +646,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @param clientToken
      *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -660,6 +659,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *        <p>
      *        If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *        </p>
+     *        <p>
+     *        If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *        retry fails with an <code>IdempotentParameterMismatch</code> error.
      */
 
     public void setClientToken(String clientToken) {
@@ -677,6 +680,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @return Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      *         This lets you safely retry the request without accidentally performing the same operation a second time.
@@ -685,6 +692,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *         <p>
      *         If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *         </p>
+     *         <p>
+     *         If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *         retry fails with an <code>IdempotentParameterMismatch</code> error.
      */
 
     public String getClientToken() {
@@ -702,6 +713,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * If you don't provide this value, then Amazon Web Services generates a random one for you.
      * </p>
+     * <p>
+     * If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails
+     * with an <code>IdempotentParameterMismatch</code> error.
+     * </p>
      * 
      * @param clientToken
      *        Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
@@ -711,6 +726,10 @@ public class DisassociateResourceShareRequest extends com.amazonaws.AmazonWebSer
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
      *        <p>
      *        If you don't provide this value, then Amazon Web Services generates a random one for you.
+     *        </p>
+     *        <p>
+     *        If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the
+     *        retry fails with an <code>IdempotentParameterMismatch</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

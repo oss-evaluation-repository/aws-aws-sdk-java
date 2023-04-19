@@ -57,13 +57,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -101,12 +101,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -277,13 +272,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -321,12 +316,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -354,13 +344,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     *        Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      *        </p>
      *        <p>
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora-postgresql9.6</code>
+     *        Example: <code>aurora-postgresql14</code>
      *        </p>
      *        <p>
      *        <b>RDS for MySQL</b>
@@ -398,12 +388,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>
@@ -437,13 +422,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -481,12 +466,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -513,13 +493,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     *         Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      *         </p>
      *         <p>
      *         <b>Aurora PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>aurora-postgresql9.6</code>
+     *         Example: <code>aurora-postgresql14</code>
      *         </p>
      *         <p>
      *         <b>RDS for MySQL</b>
@@ -557,12 +537,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *         <code>aurora-mysql</code>
      *         </p>
      *         </li>
      *         <li>
@@ -596,13 +571,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     * Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>aurora-postgresql9.6</code>
+     * Example: <code>aurora-postgresql14</code>
      * </p>
      * <p>
      * <b>RDS for MySQL</b>
@@ -640,12 +615,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <ul>
      * <li>
      * <p>
-     * <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
@@ -673,13 +643,13 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora5.6</code>, <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
+     *        Example: <code>aurora-mysql5.7</code>, <code>aurora-mysql8.0</code>
      *        </p>
      *        <p>
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>aurora-postgresql9.6</code>
+     *        Example: <code>aurora-postgresql14</code>
      *        </p>
      *        <p>
      *        <b>RDS for MySQL</b>
@@ -717,12 +687,7 @@ public class CreateDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>

@@ -25,7 +25,8 @@ public enum SettingName {
     ContainerInstanceLongArnFormat("containerInstanceLongArnFormat"),
     AwsvpcTrunking("awsvpcTrunking"),
     ContainerInsights("containerInsights"),
-    FargateFIPSMode("fargateFIPSMode");
+    FargateFIPSMode("fargateFIPSMode"),
+    TagResourceAuthorization("tagResourceAuthorization");
 
     private String value;
 

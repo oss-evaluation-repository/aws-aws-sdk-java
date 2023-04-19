@@ -15,10 +15,9 @@
  * <p>
  * This is the <i>Resource Access Manager API Reference</i>. This documentation provides descriptions and syntax for
  * each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services
- * resources across Amazon Web Services accounts. If you have multiple Amazon Web Services accounts, you can use RAM to
- * share those resources with other accounts. If you use Organizations to manage your accounts, then you share your
- * resources with your organization or organizational units (OUs). For supported resource types, you can also share
- * resources with individual Identity and Access Management (IAM) roles an users.
+ * resources to other Amazon Web Services accounts. If you use Organizations to manage your accounts, then you can share
+ * your resources with your entire organization or to organizational units (OUs). For supported resource types, you can
+ * also share resources with individual Identity and Access Management (IAM) roles and users.
  * </p>
  * <p>
  * To learn more about RAM, see the following resources:

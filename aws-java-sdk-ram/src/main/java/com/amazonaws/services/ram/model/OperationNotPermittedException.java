@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The requested operation is not permitted.
+ * The operation failed because the requested operation isn't permitted.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

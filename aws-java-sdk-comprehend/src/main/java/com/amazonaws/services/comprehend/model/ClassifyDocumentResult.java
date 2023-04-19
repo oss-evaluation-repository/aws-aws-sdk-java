@@ -61,6 +61,17 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.List<ErrorsListItem> errors;
+    /**
+     * <p>
+     * Warnings detected while processing the input document. The response includes a warning if there is a mismatch
+     * between the input document type and the model type associated with the endpoint that you specified. The response
+     * can also include warnings for individual pages that have a mismatch.
+     * </p>
+     * <p>
+     * The field is empty if the system generated no warnings.
+     * </p>
+     */
+    private java.util.List<WarningsListItem> warnings;
 
     /**
      * <p>
@@ -445,6 +456,112 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Warnings detected while processing the input document. The response includes a warning if there is a mismatch
+     * between the input document type and the model type associated with the endpoint that you specified. The response
+     * can also include warnings for individual pages that have a mismatch.
+     * </p>
+     * <p>
+     * The field is empty if the system generated no warnings.
+     * </p>
+     * 
+     * @return Warnings detected while processing the input document. The response includes a warning if there is a
+     *         mismatch between the input document type and the model type associated with the endpoint that you
+     *         specified. The response can also include warnings for individual pages that have a mismatch. </p>
+     *         <p>
+     *         The field is empty if the system generated no warnings.
+     */
+
+    public java.util.List<WarningsListItem> getWarnings() {
+        return warnings;
+    }
+
+    /**
+     * <p>
+     * Warnings detected while processing the input document. The response includes a warning if there is a mismatch
+     * between the input document type and the model type associated with the endpoint that you specified. The response
+     * can also include warnings for individual pages that have a mismatch.
+     * </p>
+     * <p>
+     * The field is empty if the system generated no warnings.
+     * </p>
+     * 
+     * @param warnings
+     *        Warnings detected while processing the input document. The response includes a warning if there is a
+     *        mismatch between the input document type and the model type associated with the endpoint that you
+     *        specified. The response can also include warnings for individual pages that have a mismatch. </p>
+     *        <p>
+     *        The field is empty if the system generated no warnings.
+     */
+
+    public void setWarnings(java.util.Collection<WarningsListItem> warnings) {
+        if (warnings == null) {
+            this.warnings = null;
+            return;
+        }
+
+        this.warnings = new java.util.ArrayList<WarningsListItem>(warnings);
+    }
+
+    /**
+     * <p>
+     * Warnings detected while processing the input document. The response includes a warning if there is a mismatch
+     * between the input document type and the model type associated with the endpoint that you specified. The response
+     * can also include warnings for individual pages that have a mismatch.
+     * </p>
+     * <p>
+     * The field is empty if the system generated no warnings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWarnings(java.util.Collection)} or {@link #withWarnings(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param warnings
+     *        Warnings detected while processing the input document. The response includes a warning if there is a
+     *        mismatch between the input document type and the model type associated with the endpoint that you
+     *        specified. The response can also include warnings for individual pages that have a mismatch. </p>
+     *        <p>
+     *        The field is empty if the system generated no warnings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClassifyDocumentResult withWarnings(WarningsListItem... warnings) {
+        if (this.warnings == null) {
+            setWarnings(new java.util.ArrayList<WarningsListItem>(warnings.length));
+        }
+        for (WarningsListItem ele : warnings) {
+            this.warnings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Warnings detected while processing the input document. The response includes a warning if there is a mismatch
+     * between the input document type and the model type associated with the endpoint that you specified. The response
+     * can also include warnings for individual pages that have a mismatch.
+     * </p>
+     * <p>
+     * The field is empty if the system generated no warnings.
+     * </p>
+     * 
+     * @param warnings
+     *        Warnings detected while processing the input document. The response includes a warning if there is a
+     *        mismatch between the input document type and the model type associated with the endpoint that you
+     *        specified. The response can also include warnings for individual pages that have a mismatch. </p>
+     *        <p>
+     *        The field is empty if the system generated no warnings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClassifyDocumentResult withWarnings(java.util.Collection<WarningsListItem> warnings) {
+        setWarnings(warnings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -465,7 +582,9 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
         if (getDocumentType() != null)
             sb.append("DocumentType: ").append(getDocumentType()).append(",");
         if (getErrors() != null)
-            sb.append("Errors: ").append(getErrors());
+            sb.append("Errors: ").append(getErrors()).append(",");
+        if (getWarnings() != null)
+            sb.append("Warnings: ").append(getWarnings());
         sb.append("}");
         return sb.toString();
     }
@@ -500,6 +619,10 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getErrors() != null && other.getErrors().equals(this.getErrors()) == false)
             return false;
+        if (other.getWarnings() == null ^ this.getWarnings() == null)
+            return false;
+        if (other.getWarnings() != null && other.getWarnings().equals(this.getWarnings()) == false)
+            return false;
         return true;
     }
 
@@ -513,6 +636,7 @@ public class ClassifyDocumentResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getDocumentMetadata() == null) ? 0 : getDocumentMetadata().hashCode());
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         hashCode = prime * hashCode + ((getErrors() == null) ? 0 : getErrors().hashCode());
+        hashCode = prime * hashCode + ((getWarnings() == null) ? 0 : getWarnings().hashCode());
         return hashCode;
     }
 

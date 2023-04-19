@@ -27,7 +27,8 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to include secrets scheduled for deletion.
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
      * </p>
      */
     private Boolean includePlannedDeletion;
@@ -63,11 +64,13 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to include secrets scheduled for deletion.
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
      * </p>
      * 
      * @param includePlannedDeletion
-     *        Specifies whether to include secrets scheduled for deletion.
+     *        Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *        aren't included.
      */
 
     public void setIncludePlannedDeletion(Boolean includePlannedDeletion) {
@@ -76,10 +79,12 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to include secrets scheduled for deletion.
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
      * </p>
      * 
-     * @return Specifies whether to include secrets scheduled for deletion.
+     * @return Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *         aren't included.
      */
 
     public Boolean getIncludePlannedDeletion() {
@@ -88,11 +93,13 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to include secrets scheduled for deletion.
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
      * </p>
      * 
      * @param includePlannedDeletion
-     *        Specifies whether to include secrets scheduled for deletion.
+     *        Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *        aren't included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,10 +110,12 @@ public class ListSecretsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to include secrets scheduled for deletion.
+     * Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion aren't
+     * included.
      * </p>
      * 
-     * @return Specifies whether to include secrets scheduled for deletion.
+     * @return Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled for deletion
+     *         aren't included.
      */
 
     public Boolean isIncludePlannedDeletion() {

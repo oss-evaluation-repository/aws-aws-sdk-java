@@ -36,12 +36,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
      * </p>
      * </li>
      * <li>
@@ -188,12 +193,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
      * </p>
      * </li>
      * <li>
@@ -261,12 +271,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>aurora-postgresql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee</code>
      *        </p>
      *        </li>
      *        <li>
@@ -340,12 +355,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
      * </p>
      * </li>
      * <li>
@@ -412,12 +432,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *         <code>aurora-mysql</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>aurora-postgresql</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>custom-oracle-ee</code>
      *         </p>
      *         </li>
      *         <li>
@@ -491,12 +516,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      * <ul>
      * <li>
      * <p>
-     * <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     * <code>aurora-mysql</code>
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>aurora-postgresql</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>custom-oracle-ee</code>
      * </p>
      * </li>
      * <li>
@@ -564,12 +594,17 @@ public class DescribeOrderableDBInstanceOptionsRequest extends com.amazonaws.Ama
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+     *        <code>aurora-mysql</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>aurora-postgresql</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>custom-oracle-ee</code>
      *        </p>
      *        </li>
      *        <li>
