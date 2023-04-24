@@ -28,20 +28,19 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      */
     private String verifiedAccessEndpointId;
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      */
     private String verifiedAccessGroupId;
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      * </p>
      */
     private ModifyVerifiedAccessEndpointLoadBalancerOptions loadBalancerOptions;
@@ -53,7 +52,7 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
     private ModifyVerifiedAccessEndpointEniOptions networkInterfaceOptions;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      */
     private String description;
@@ -69,11 +68,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpointId
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      */
 
     public void setVerifiedAccessEndpointId(String verifiedAccessEndpointId) {
@@ -82,10 +81,10 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access endpoint.
+     * @return The ID of the Verified Access endpoint.
      */
 
     public String getVerifiedAccessEndpointId() {
@@ -94,11 +93,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpointId
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,11 +108,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      */
 
     public void setVerifiedAccessGroupId(String verifiedAccessGroupId) {
@@ -122,10 +121,10 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access group.
+     * @return The ID of the Verified Access group.
      */
 
     public String getVerifiedAccessGroupId() {
@@ -134,11 +133,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,13 +148,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      * </p>
      * 
      * @param loadBalancerOptions
-     *        The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     *        <code>load-balancer</code>type.
+     *        The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      */
 
     public void setLoadBalancerOptions(ModifyVerifiedAccessEndpointLoadBalancerOptions loadBalancerOptions) {
@@ -164,12 +161,10 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      * </p>
      * 
-     * @return The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     *         <code>load-balancer</code>type.
+     * @return The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      */
 
     public ModifyVerifiedAccessEndpointLoadBalancerOptions getLoadBalancerOptions() {
@@ -178,13 +173,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      * </p>
      * 
      * @param loadBalancerOptions
-     *        The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     *        <code>load-balancer</code>type.
+     *        The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +228,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access endpoint.
+     *        A description for the Verified Access endpoint.
      */
 
     public void setDescription(String description) {
@@ -248,10 +241,10 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access endpoint.
+     * @return A description for the Verified Access endpoint.
      */
 
     public String getDescription() {
@@ -260,11 +253,11 @@ public class ModifyVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access endpoint.
+     *        A description for the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

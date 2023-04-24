@@ -35,6 +35,12 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
      */
     private String convert608To708;
     /**
+     * Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep
+     * the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you
+     * choose Enabled if you notice additional repeated lines in your output captions.
+     */
+    private String convertPaintToPop;
+    /**
      * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame
      * rates between your input captions and input video, specify the frame rate of the captions file. Specify this
      * value as a fraction. When you work directly in your JSON job specification, use the settings framerateNumerator
@@ -134,6 +140,73 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     public FileSourceSettings withConvert608To708(FileSourceConvert608To708 convert608To708) {
         this.convert608To708 = convert608To708.toString();
+        return this;
+    }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep
+     * the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you
+     * choose Enabled if you notice additional repeated lines in your output captions.
+     * 
+     * @param convertPaintToPop
+     *        Choose the presentation style of your input SCC captions. To use the same presentation style as your
+     *        input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also
+     *        recommend that you choose Enabled if you notice additional repeated lines in your output captions.
+     * @see CaptionSourceConvertPaintOnToPopOn
+     */
+
+    public void setConvertPaintToPop(String convertPaintToPop) {
+        this.convertPaintToPop = convertPaintToPop;
+    }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep
+     * the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you
+     * choose Enabled if you notice additional repeated lines in your output captions.
+     * 
+     * @return Choose the presentation style of your input SCC captions. To use the same presentation style as your
+     *         input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also
+     *         recommend that you choose Enabled if you notice additional repeated lines in your output captions.
+     * @see CaptionSourceConvertPaintOnToPopOn
+     */
+
+    public String getConvertPaintToPop() {
+        return this.convertPaintToPop;
+    }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep
+     * the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you
+     * choose Enabled if you notice additional repeated lines in your output captions.
+     * 
+     * @param convertPaintToPop
+     *        Choose the presentation style of your input SCC captions. To use the same presentation style as your
+     *        input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also
+     *        recommend that you choose Enabled if you notice additional repeated lines in your output captions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CaptionSourceConvertPaintOnToPopOn
+     */
+
+    public FileSourceSettings withConvertPaintToPop(String convertPaintToPop) {
+        setConvertPaintToPop(convertPaintToPop);
+        return this;
+    }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same presentation style as your input: Keep
+     * the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend that you
+     * choose Enabled if you notice additional repeated lines in your output captions.
+     * 
+     * @param convertPaintToPop
+     *        Choose the presentation style of your input SCC captions. To use the same presentation style as your
+     *        input: Keep the default value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also
+     *        recommend that you choose Enabled if you notice additional repeated lines in your output captions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CaptionSourceConvertPaintOnToPopOn
+     */
+
+    public FileSourceSettings withConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn convertPaintToPop) {
+        this.convertPaintToPop = convertPaintToPop.toString();
         return this;
     }
 
@@ -401,6 +474,8 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getConvert608To708() != null)
             sb.append("Convert608To708: ").append(getConvert608To708()).append(",");
+        if (getConvertPaintToPop() != null)
+            sb.append("ConvertPaintToPop: ").append(getConvertPaintToPop()).append(",");
         if (getFramerate() != null)
             sb.append("Framerate: ").append(getFramerate()).append(",");
         if (getSourceFile() != null)
@@ -427,6 +502,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getConvert608To708() != null && other.getConvert608To708().equals(this.getConvert608To708()) == false)
             return false;
+        if (other.getConvertPaintToPop() == null ^ this.getConvertPaintToPop() == null)
+            return false;
+        if (other.getConvertPaintToPop() != null && other.getConvertPaintToPop().equals(this.getConvertPaintToPop()) == false)
+            return false;
         if (other.getFramerate() == null ^ this.getFramerate() == null)
             return false;
         if (other.getFramerate() != null && other.getFramerate().equals(this.getFramerate()) == false)
@@ -452,6 +531,7 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConvert608To708() == null) ? 0 : getConvert608To708().hashCode());
+        hashCode = prime * hashCode + ((getConvertPaintToPop() == null) ? 0 : getConvertPaintToPop().hashCode());
         hashCode = prime * hashCode + ((getFramerate() == null) ? 0 : getFramerate().hashCode());
         hashCode = prime * hashCode + ((getSourceFile() == null) ? 0 : getSourceFile().hashCode());
         hashCode = prime * hashCode + ((getTimeDelta() == null) ? 0 : getTimeDelta().hashCode());

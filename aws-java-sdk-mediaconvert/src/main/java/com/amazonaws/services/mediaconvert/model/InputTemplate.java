@@ -27,6 +27,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
 
     /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature
+     * incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    private String advancedInputFilter;
+    /** Optional settings for Advanced input filter when you set Advanced input filter to Enabled. */
+    private AdvancedInputFilterSettings advancedInputFilterSettings;
+    /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
      * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
      * input tracks into a single audio selector rather than use an audio selector group.
@@ -69,16 +82,17 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      */
     private String dolbyVisionMetadataXml;
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      */
     private String filterEnable;
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      */
     private Integer filterStrength;
     /**
@@ -143,6 +157,147 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      * selector.
      */
     private VideoSelector videoSelector;
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature
+     * incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     * 
+     * @param advancedInputFilter
+     *        Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *        encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when
+     *        compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and
+     *        improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality
+     *        of your output relative to its bitrate, since noisy inputs are more complex and require more bits to
+     *        encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *        sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *        input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @see AdvancedInputFilter
+     */
+
+    public void setAdvancedInputFilter(String advancedInputFilter) {
+        this.advancedInputFilter = advancedInputFilter;
+    }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature
+     * incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     * 
+     * @return Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *         encoding. The Advanced input filter removes more types of compression artifacts and is an improvement
+     *         when compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input
+     *         and improve the video quality: Choose Enabled. Additionally, this filter can help increase the video
+     *         quality of your output relative to its bitrate, since noisy inputs are more complex and require more bits
+     *         to encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *         sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *         input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @see AdvancedInputFilter
+     */
+
+    public String getAdvancedInputFilter() {
+        return this.advancedInputFilter;
+    }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature
+     * incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     * 
+     * @param advancedInputFilter
+     *        Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *        encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when
+     *        compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and
+     *        improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality
+     *        of your output relative to its bitrate, since noisy inputs are more complex and require more bits to
+     *        encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *        sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *        input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdvancedInputFilter
+     */
+
+    public InputTemplate withAdvancedInputFilter(String advancedInputFilter) {
+        setAdvancedInputFilter(advancedInputFilter);
+        return this;
+    }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before encoding. The
+     * Advanced input filter removes more types of compression artifacts and is an improvement when compared to basic
+     * Deblock and Denoise filters. To remove video compression artifacts from your input and improve the video quality:
+     * Choose Enabled. Additionally, this filter can help increase the video quality of your output relative to its
+     * bitrate, since noisy inputs are more complex and require more bits to encode. To help restore loss of detail after
+     * applying the filter, you can optionally add texture or sharpening as an additional step.Jobs that use this feature
+     * incur pro-tier pricing. To not apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     * 
+     * @param advancedInputFilter
+     *        Use to remove noise, blocking, blurriness, or ringing from your input as a pre-filter step before
+     *        encoding. The Advanced input filter removes more types of compression artifacts and is an improvement when
+     *        compared to basic Deblock and Denoise filters. To remove video compression artifacts from your input and
+     *        improve the video quality: Choose Enabled. Additionally, this filter can help increase the video quality
+     *        of your output relative to its bitrate, since noisy inputs are more complex and require more bits to
+     *        encode. To help restore loss of detail after applying the filter, you can optionally add texture or
+     *        sharpening as an additional step.Jobs that use this feature incur pro-tier pricing. To not apply advanced
+     *        input filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock and Denoise.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AdvancedInputFilter
+     */
+
+    public InputTemplate withAdvancedInputFilter(AdvancedInputFilter advancedInputFilter) {
+        this.advancedInputFilter = advancedInputFilter.toString();
+        return this;
+    }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * 
+     * @param advancedInputFilterSettings
+     *        Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     */
+
+    public void setAdvancedInputFilterSettings(AdvancedInputFilterSettings advancedInputFilterSettings) {
+        this.advancedInputFilterSettings = advancedInputFilterSettings;
+    }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * 
+     * @return Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     */
+
+    public AdvancedInputFilterSettings getAdvancedInputFilterSettings() {
+        return this.advancedInputFilterSettings;
+    }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * 
+     * @param advancedInputFilterSettings
+     *        Optional settings for Advanced input filter when you set Advanced input filter to Enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputTemplate withAdvancedInputFilterSettings(AdvancedInputFilterSettings advancedInputFilterSettings) {
+        setAdvancedInputFilterSettings(advancedInputFilterSettings);
+        return this;
+    }
 
     /**
      * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
@@ -590,18 +745,15 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
      * @param filterEnable
-     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     *        Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *        depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *        filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *        value for Filter strength.
      * @see InputFilterEnable
      */
 
@@ -610,17 +762,14 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
-     * @return Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *         filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *         transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *         - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *         and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     * @return Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *         depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *         filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *         value for Filter strength.
      * @see InputFilterEnable
      */
 
@@ -629,18 +778,15 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
      * @param filterEnable
-     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     *        Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *        depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *        filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *        value for Filter strength.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -651,18 +797,15 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
-     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
-     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
-     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
-     * The input is filtered regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your input. To apply filtering depending
+     * on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering regardless
+     * of your input type and quality: Choose Force. When you do, you must also specify a value for Filter strength.
      * 
      * @param filterEnable
-     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
-     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
-     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
-     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
-     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
+     *        Specify whether to apply input filtering to improve the video quality of your input. To apply filtering
+     *        depending on your input type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply
+     *        filtering regardless of your input type and quality: Choose Force. When you do, you must also specify a
+     *        value for Filter strength.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -673,12 +816,18 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      * 
      * @param filterStrength
-     *        Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and
-     *        Denoise). The range is 0 to 5. Default is 0.
+     *        Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     *        artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable
+     *        to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering
+     *        and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or
+     *        to the strength of the Advanced input filter.
      */
 
     public void setFilterStrength(Integer filterStrength) {
@@ -686,11 +835,17 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      * 
-     * @return Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and
-     *         Denoise). The range is 0 to 5. Default is 0.
+     * @return Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     *         artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable
+     *         to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering
+     *         and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or
+     *         to the strength of the Advanced input filter.
      */
 
     public Integer getFilterStrength() {
@@ -698,12 +853,18 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and Denoise). The
-     * range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     * artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable to
+     * Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering and 5 is
+     * the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or to the strength
+     * of the Advanced input filter.
      * 
      * @param filterStrength
-     *        Use Filter strength (FilterStrength) to adjust the magnitude the input filter settings (Deblock and
-     *        Denoise). The range is 0 to 5. Default is 0.
+     *        Specify the strength of the input filter. To apply an automatic amount of filtering based the compression
+     *        artifacts measured in your input: We recommend that you leave Filter strength blank and set Filter enable
+     *        to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least amount of filtering
+     *        and 5 is the most. The value that you enter applies to the strength of the Deblock or Denoise filters, or
+     *        to the strength of the Advanced input filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1302,6 +1463,10 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAdvancedInputFilter() != null)
+            sb.append("AdvancedInputFilter: ").append(getAdvancedInputFilter()).append(",");
+        if (getAdvancedInputFilterSettings() != null)
+            sb.append("AdvancedInputFilterSettings: ").append(getAdvancedInputFilterSettings()).append(",");
         if (getAudioSelectorGroups() != null)
             sb.append("AudioSelectorGroups: ").append(getAudioSelectorGroups()).append(",");
         if (getAudioSelectors() != null)
@@ -1352,6 +1517,14 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof InputTemplate == false)
             return false;
         InputTemplate other = (InputTemplate) obj;
+        if (other.getAdvancedInputFilter() == null ^ this.getAdvancedInputFilter() == null)
+            return false;
+        if (other.getAdvancedInputFilter() != null && other.getAdvancedInputFilter().equals(this.getAdvancedInputFilter()) == false)
+            return false;
+        if (other.getAdvancedInputFilterSettings() == null ^ this.getAdvancedInputFilterSettings() == null)
+            return false;
+        if (other.getAdvancedInputFilterSettings() != null && other.getAdvancedInputFilterSettings().equals(this.getAdvancedInputFilterSettings()) == false)
+            return false;
         if (other.getAudioSelectorGroups() == null ^ this.getAudioSelectorGroups() == null)
             return false;
         if (other.getAudioSelectorGroups() != null && other.getAudioSelectorGroups().equals(this.getAudioSelectorGroups()) == false)
@@ -1432,6 +1605,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAdvancedInputFilter() == null) ? 0 : getAdvancedInputFilter().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedInputFilterSettings() == null) ? 0 : getAdvancedInputFilterSettings().hashCode());
         hashCode = prime * hashCode + ((getAudioSelectorGroups() == null) ? 0 : getAudioSelectorGroups().hashCode());
         hashCode = prime * hashCode + ((getAudioSelectors() == null) ? 0 : getAudioSelectors().hashCode());
         hashCode = prime * hashCode + ((getCaptionSelectors() == null) ? 0 : getCaptionSelectors().hashCode());

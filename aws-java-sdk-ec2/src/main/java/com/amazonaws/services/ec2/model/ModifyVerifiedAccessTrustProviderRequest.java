@@ -28,19 +28,19 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      */
     private String verifiedAccessTrustProviderId;
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      */
     private ModifyVerifiedAccessTrustProviderOidcOptions oidcOptions;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      */
     private String description;
@@ -56,11 +56,11 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProviderId
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      */
 
     public void setVerifiedAccessTrustProviderId(String verifiedAccessTrustProviderId) {
@@ -69,10 +69,10 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access trust provider.
+     * @return The ID of the Verified Access trust provider.
      */
 
     public String getVerifiedAccessTrustProviderId() {
@@ -81,11 +81,11 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProviderId
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      * 
      * @param oidcOptions
-     *        The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     *        The options for an OpenID Connect-compatible user-identity trust provider.
      */
 
     public void setOidcOptions(ModifyVerifiedAccessTrustProviderOidcOptions oidcOptions) {
@@ -109,10 +109,10 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      * 
-     * @return The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * @return The options for an OpenID Connect-compatible user-identity trust provider.
      */
 
     public ModifyVerifiedAccessTrustProviderOidcOptions getOidcOptions() {
@@ -121,11 +121,11 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      * 
      * @param oidcOptions
-     *        The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     *        The options for an OpenID Connect-compatible user-identity trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access trust provider.
+     *        A description for the Verified Access trust provider.
      */
 
     public void setDescription(String description) {
@@ -149,10 +149,10 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access trust provider.
+     * @return A description for the Verified Access trust provider.
      */
 
     public String getDescription() {
@@ -161,11 +161,11 @@ public class ModifyVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access trust provider.
+     *        A description for the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

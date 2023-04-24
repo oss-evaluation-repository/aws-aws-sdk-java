@@ -28,13 +28,13 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access groups.
+     * The ID of the Verified Access groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> verifiedAccessGroupIds;
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
@@ -60,10 +60,10 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access groups.
+     * The ID of the Verified Access groups.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access groups.
+     * @return The ID of the Verified Access groups.
      */
 
     public java.util.List<String> getVerifiedAccessGroupIds() {
@@ -75,11 +75,11 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access groups.
+     * The ID of the Verified Access groups.
      * </p>
      * 
      * @param verifiedAccessGroupIds
-     *        The ID of the Amazon Web Services Verified Access groups.
+     *        The ID of the Verified Access groups.
      */
 
     public void setVerifiedAccessGroupIds(java.util.Collection<String> verifiedAccessGroupIds) {
@@ -93,7 +93,7 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access groups.
+     * The ID of the Verified Access groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -102,7 +102,7 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param verifiedAccessGroupIds
-     *        The ID of the Amazon Web Services Verified Access groups.
+     *        The ID of the Verified Access groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +118,11 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access groups.
+     * The ID of the Verified Access groups.
      * </p>
      * 
      * @param verifiedAccessGroupIds
-     *        The ID of the Amazon Web Services Verified Access groups.
+     *        The ID of the Verified Access groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -146,10 +146,10 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -158,11 +158,11 @@ public class DescribeVerifiedAccessGroupsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -34,13 +34,13 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
     private String verifiedAccessGroupId;
     /**
      * <p>
-     * The type of Amazon Web Services Verified Access endpoint to create.
+     * The type of Verified Access endpoint to create.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The Amazon Web Services network component Verified Access attaches to.
+     * The type of attachment.
      * </p>
      */
     private String attachmentType;
@@ -59,45 +59,43 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
     private String applicationDomain;
     /**
      * <p>
-     * A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     * A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      * </p>
      */
     private String endpointDomainPrefix;
     /**
      * <p>
-     * The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     * The IDs of the security groups to associate with the Verified Access endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      * </p>
      */
     private CreateVerifiedAccessEndpointLoadBalancerOptions loadBalancerOptions;
     /**
      * <p>
-     * The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>network-interface</code>type.
+     * The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.
      * </p>
      */
     private CreateVerifiedAccessEndpointEniOptions networkInterfaceOptions;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      */
     private String policyDocument;
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access endpoint.
+     * The tags to assign to the Verified Access endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -153,11 +151,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of Amazon Web Services Verified Access endpoint to create.
+     * The type of Verified Access endpoint to create.
      * </p>
      * 
      * @param endpointType
-     *        The type of Amazon Web Services Verified Access endpoint to create.
+     *        The type of Verified Access endpoint to create.
      * @see VerifiedAccessEndpointType
      */
 
@@ -167,10 +165,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of Amazon Web Services Verified Access endpoint to create.
+     * The type of Verified Access endpoint to create.
      * </p>
      * 
-     * @return The type of Amazon Web Services Verified Access endpoint to create.
+     * @return The type of Verified Access endpoint to create.
      * @see VerifiedAccessEndpointType
      */
 
@@ -180,11 +178,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of Amazon Web Services Verified Access endpoint to create.
+     * The type of Verified Access endpoint to create.
      * </p>
      * 
      * @param endpointType
-     *        The type of Amazon Web Services Verified Access endpoint to create.
+     *        The type of Verified Access endpoint to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAccessEndpointType
      */
@@ -196,11 +194,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of Amazon Web Services Verified Access endpoint to create.
+     * The type of Verified Access endpoint to create.
      * </p>
      * 
      * @param endpointType
-     *        The type of Amazon Web Services Verified Access endpoint to create.
+     *        The type of Verified Access endpoint to create.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAccessEndpointType
      */
@@ -212,11 +210,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services network component Verified Access attaches to.
+     * The type of attachment.
      * </p>
      * 
      * @param attachmentType
-     *        The Amazon Web Services network component Verified Access attaches to.
+     *        The type of attachment.
      * @see VerifiedAccessEndpointAttachmentType
      */
 
@@ -226,10 +224,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services network component Verified Access attaches to.
+     * The type of attachment.
      * </p>
      * 
-     * @return The Amazon Web Services network component Verified Access attaches to.
+     * @return The type of attachment.
      * @see VerifiedAccessEndpointAttachmentType
      */
 
@@ -239,11 +237,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services network component Verified Access attaches to.
+     * The type of attachment.
      * </p>
      * 
      * @param attachmentType
-     *        The Amazon Web Services network component Verified Access attaches to.
+     *        The type of attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAccessEndpointAttachmentType
      */
@@ -255,11 +253,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services network component Verified Access attaches to.
+     * The type of attachment.
      * </p>
      * 
      * @param attachmentType
-     *        The Amazon Web Services network component Verified Access attaches to.
+     *        The type of attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifiedAccessEndpointAttachmentType
      */
@@ -360,11 +358,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     * A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      * </p>
      * 
      * @param endpointDomainPrefix
-     *        A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     *        A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      */
 
     public void setEndpointDomainPrefix(String endpointDomainPrefix) {
@@ -373,10 +371,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     * A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      * </p>
      * 
-     * @return A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     * @return A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      */
 
     public String getEndpointDomainPrefix() {
@@ -385,11 +383,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     * A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      * </p>
      * 
      * @param endpointDomainPrefix
-     *        A custom identifier that gets prepended to a DNS name that is generated for the endpoint.
+     *        A custom identifier that is prepended to the DNS name that is generated for the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,10 +398,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     * The IDs of the security groups to associate with the Verified Access endpoint.
      * </p>
      * 
-     * @return The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     * @return The IDs of the security groups to associate with the Verified Access endpoint.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -415,11 +413,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     * The IDs of the security groups to associate with the Verified Access endpoint.
      * </p>
      * 
      * @param securityGroupIds
-     *        The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     *        The IDs of the security groups to associate with the Verified Access endpoint.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -433,7 +431,7 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     * The IDs of the security groups to associate with the Verified Access endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -442,7 +440,7 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param securityGroupIds
-     *        The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     *        The IDs of the security groups to associate with the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,11 +456,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     * The IDs of the security groups to associate with the Verified Access endpoint.
      * </p>
      * 
      * @param securityGroupIds
-     *        The Amazon EC2 security groups to associate with the Amazon Web Services Verified Access endpoint.
+     *        The IDs of the security groups to associate with the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,13 +471,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      * </p>
      * 
      * @param loadBalancerOptions
-     *        The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     *        <code>load-balancer</code>type.
+     *        The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      */
 
     public void setLoadBalancerOptions(CreateVerifiedAccessEndpointLoadBalancerOptions loadBalancerOptions) {
@@ -488,12 +484,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      * </p>
      * 
-     * @return The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     *         <code>load-balancer</code>type.
+     * @return The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      */
 
     public CreateVerifiedAccessEndpointLoadBalancerOptions getLoadBalancerOptions() {
@@ -502,13 +496,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>load-balancer</code>type.
+     * The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      * </p>
      * 
      * @param loadBalancerOptions
-     *        The load balancer details if creating the Amazon Web Services Verified Access endpoint as
-     *        <code>load-balancer</code>type.
+     *        The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,13 +511,12 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>network-interface</code>type.
+     * The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.
      * </p>
      * 
      * @param networkInterfaceOptions
-     *        The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     *        <code>network-interface</code>type.
+     *        The network interface details. This parameter is required if the endpoint type is
+     *        <code>network-interface</code>.
      */
 
     public void setNetworkInterfaceOptions(CreateVerifiedAccessEndpointEniOptions networkInterfaceOptions) {
@@ -534,12 +525,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>network-interface</code>type.
+     * The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.
      * </p>
      * 
-     * @return The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     *         <code>network-interface</code>type.
+     * @return The network interface details. This parameter is required if the endpoint type is
+     *         <code>network-interface</code>.
      */
 
     public CreateVerifiedAccessEndpointEniOptions getNetworkInterfaceOptions() {
@@ -548,13 +538,12 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     * <code>network-interface</code>type.
+     * The network interface details. This parameter is required if the endpoint type is <code>network-interface</code>.
      * </p>
      * 
      * @param networkInterfaceOptions
-     *        The network interface details if creating the Amazon Web Services Verified Access endpoint as
-     *        <code>network-interface</code>type.
+     *        The network interface details. This parameter is required if the endpoint type is
+     *        <code>network-interface</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,11 +554,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access endpoint.
+     *        A description for the Verified Access endpoint.
      */
 
     public void setDescription(String description) {
@@ -578,10 +567,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access endpoint.
+     * @return A description for the Verified Access endpoint.
      */
 
     public String getDescription() {
@@ -590,11 +579,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access endpoint.
+     * A description for the Verified Access endpoint.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access endpoint.
+     *        A description for the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -605,11 +594,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -618,10 +607,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
-     * @return The Amazon Web Services Verified Access policy document.
+     * @return The Verified Access policy document.
      */
 
     public String getPolicyDocument() {
@@ -630,11 +619,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -645,10 +634,10 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access endpoint.
+     * The tags to assign to the Verified Access endpoint.
      * </p>
      * 
-     * @return The tags to assign to the Amazon Web Services Verified Access endpoint.
+     * @return The tags to assign to the Verified Access endpoint.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -660,11 +649,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access endpoint.
+     * The tags to assign to the Verified Access endpoint.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access endpoint.
+     *        The tags to assign to the Verified Access endpoint.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -678,7 +667,7 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access endpoint.
+     * The tags to assign to the Verified Access endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -687,7 +676,7 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access endpoint.
+     *        The tags to assign to the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -703,11 +692,11 @@ public class CreateVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access endpoint.
+     * The tags to assign to the Verified Access endpoint.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access endpoint.
+     *        The tags to assign to the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

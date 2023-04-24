@@ -28,31 +28,34 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of trust provider can be either user or device-based.
+     * The type of trust provider.
      * </p>
      */
     private String trustProviderType;
     /**
      * <p>
-     * The type of user-based trust provider.
+     * The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.
      * </p>
      */
     private String userTrustProviderType;
     /**
      * <p>
-     * The type of device-based trust provider.
+     * The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>
+     * .
      * </p>
      */
     private String deviceTrustProviderType;
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the
+     * provider type is <code>user</code>.
      * </p>
      */
     private CreateVerifiedAccessTrustProviderOidcOptions oidcOptions;
     /**
      * <p>
-     * The options for device identity based trust providers.
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
      * </p>
      */
     private CreateVerifiedAccessTrustProviderDeviceOptions deviceOptions;
@@ -64,13 +67,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
     private String policyReferenceName;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access trust provider.
+     * The tags to assign to the Verified Access trust provider.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -86,11 +89,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of trust provider can be either user or device-based.
+     * The type of trust provider.
      * </p>
      * 
      * @param trustProviderType
-     *        The type of trust provider can be either user or device-based.
+     *        The type of trust provider.
      * @see TrustProviderType
      */
 
@@ -100,10 +103,10 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of trust provider can be either user or device-based.
+     * The type of trust provider.
      * </p>
      * 
-     * @return The type of trust provider can be either user or device-based.
+     * @return The type of trust provider.
      * @see TrustProviderType
      */
 
@@ -113,11 +116,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of trust provider can be either user or device-based.
+     * The type of trust provider.
      * </p>
      * 
      * @param trustProviderType
-     *        The type of trust provider can be either user or device-based.
+     *        The type of trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustProviderType
      */
@@ -129,11 +132,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of trust provider can be either user or device-based.
+     * The type of trust provider.
      * </p>
      * 
      * @param trustProviderType
-     *        The type of trust provider can be either user or device-based.
+     *        The type of trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrustProviderType
      */
@@ -145,11 +148,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of user-based trust provider.
+     * The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.
      * </p>
      * 
      * @param userTrustProviderType
-     *        The type of user-based trust provider.
+     *        The type of user-based trust provider. This parameter is required when the provider type is
+     *        <code>user</code>.
      * @see UserTrustProviderType
      */
 
@@ -159,10 +163,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of user-based trust provider.
+     * The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.
      * </p>
      * 
-     * @return The type of user-based trust provider.
+     * @return The type of user-based trust provider. This parameter is required when the provider type is
+     *         <code>user</code>.
      * @see UserTrustProviderType
      */
 
@@ -172,11 +177,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of user-based trust provider.
+     * The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.
      * </p>
      * 
      * @param userTrustProviderType
-     *        The type of user-based trust provider.
+     *        The type of user-based trust provider. This parameter is required when the provider type is
+     *        <code>user</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserTrustProviderType
      */
@@ -188,11 +194,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of user-based trust provider.
+     * The type of user-based trust provider. This parameter is required when the provider type is <code>user</code>.
      * </p>
      * 
      * @param userTrustProviderType
-     *        The type of user-based trust provider.
+     *        The type of user-based trust provider. This parameter is required when the provider type is
+     *        <code>user</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UserTrustProviderType
      */
@@ -204,11 +211,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of device-based trust provider.
+     * The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>
+     * .
      * </p>
      * 
      * @param deviceTrustProviderType
-     *        The type of device-based trust provider.
+     *        The type of device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
      * @see DeviceTrustProviderType
      */
 
@@ -218,10 +227,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of device-based trust provider.
+     * The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>
+     * .
      * </p>
      * 
-     * @return The type of device-based trust provider.
+     * @return The type of device-based trust provider. This parameter is required when the provider type is
+     *         <code>device</code>.
      * @see DeviceTrustProviderType
      */
 
@@ -231,11 +242,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of device-based trust provider.
+     * The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>
+     * .
      * </p>
      * 
      * @param deviceTrustProviderType
-     *        The type of device-based trust provider.
+     *        The type of device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceTrustProviderType
      */
@@ -247,11 +260,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The type of device-based trust provider.
+     * The type of device-based trust provider. This parameter is required when the provider type is <code>device</code>
+     * .
      * </p>
      * 
      * @param deviceTrustProviderType
-     *        The type of device-based trust provider.
+     *        The type of device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceTrustProviderType
      */
@@ -263,11 +278,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the
+     * provider type is <code>user</code>.
      * </p>
      * 
      * @param oidcOptions
-     *        The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     *        The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when
+     *        the provider type is <code>user</code>.
      */
 
     public void setOidcOptions(CreateVerifiedAccessTrustProviderOidcOptions oidcOptions) {
@@ -276,10 +293,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the
+     * provider type is <code>user</code>.
      * </p>
      * 
-     * @return The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * @return The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when
+     *         the provider type is <code>user</code>.
      */
 
     public CreateVerifiedAccessTrustProviderOidcOptions getOidcOptions() {
@@ -288,11 +307,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when the
+     * provider type is <code>user</code>.
      * </p>
      * 
      * @param oidcOptions
-     *        The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     *        The options for a OpenID Connect-compatible user-identity trust provider. This parameter is required when
+     *        the provider type is <code>user</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,11 +324,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The options for device identity based trust providers.
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
      * </p>
      * 
      * @param deviceOptions
-     *        The options for device identity based trust providers.
+     *        The options for a device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
      */
 
     public void setDeviceOptions(CreateVerifiedAccessTrustProviderDeviceOptions deviceOptions) {
@@ -316,10 +339,12 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The options for device identity based trust providers.
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
      * </p>
      * 
-     * @return The options for device identity based trust providers.
+     * @return The options for a device-based trust provider. This parameter is required when the provider type is
+     *         <code>device</code>.
      */
 
     public CreateVerifiedAccessTrustProviderDeviceOptions getDeviceOptions() {
@@ -328,11 +353,13 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The options for device identity based trust providers.
+     * The options for a device-based trust provider. This parameter is required when the provider type is
+     * <code>device</code>.
      * </p>
      * 
      * @param deviceOptions
-     *        The options for device identity based trust providers.
+     *        The options for a device-based trust provider. This parameter is required when the provider type is
+     *        <code>device</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,11 +410,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access trust provider.
+     *        A description for the Verified Access trust provider.
      */
 
     public void setDescription(String description) {
@@ -396,10 +423,10 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access trust provider.
+     * @return A description for the Verified Access trust provider.
      */
 
     public String getDescription() {
@@ -408,11 +435,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access trust provider.
+     * A description for the Verified Access trust provider.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access trust provider.
+     *        A description for the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,10 +450,10 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access trust provider.
+     * The tags to assign to the Verified Access trust provider.
      * </p>
      * 
-     * @return The tags to assign to the Amazon Web Services Verified Access trust provider.
+     * @return The tags to assign to the Verified Access trust provider.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -438,11 +465,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access trust provider.
+     * The tags to assign to the Verified Access trust provider.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access trust provider.
+     *        The tags to assign to the Verified Access trust provider.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -456,7 +483,7 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access trust provider.
+     * The tags to assign to the Verified Access trust provider.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -465,7 +492,7 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access trust provider.
+     *        The tags to assign to the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,11 +508,11 @@ public class CreateVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access trust provider.
+     * The tags to assign to the Verified Access trust provider.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access trust provider.
+     *        The tags to assign to the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

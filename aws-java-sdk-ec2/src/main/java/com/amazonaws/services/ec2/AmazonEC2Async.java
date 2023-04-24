@@ -1739,8 +1739,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
-     * devices. One or more trust providers can be attached to an Amazon Web Services Verified Access instance.
+     * Attaches the specified Amazon Web Services Verified Access trust provider to the specified Amazon Web Services
+     * Verified Access instance.
      * </p>
      * 
      * @param attachVerifiedAccessTrustProviderRequest
@@ -1755,8 +1755,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
-     * devices. One or more trust providers can be attached to an Amazon Web Services Verified Access instance.
+     * Attaches the specified Amazon Web Services Verified Access trust provider to the specified Amazon Web Services
+     * Verified Access instance.
      * </p>
      * 
      * @param attachVerifiedAccessTrustProviderRequest
@@ -6512,10 +6512,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
-     * who's associated applications have similar security requirements. Each instance within an Amazon Web Services
-     * Verified Access group shares an Amazon Web Services Verified Access policy. For example, you can group all Amazon
-     * Web Services Verified Access instances associated with “sales” applications together and use one common Amazon
-     * Web Services Verified Access policy.
+     * who's associated applications have similar security requirements. Each instance within a Verified Access group
+     * shares an Verified Access policy. For example, you can group all Verified Access instances associated with
+     * "sales" applications together and use one common Verified Access policy.
      * </p>
      * 
      * @param createVerifiedAccessGroupRequest
@@ -6530,10 +6529,9 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
-     * who's associated applications have similar security requirements. Each instance within an Amazon Web Services
-     * Verified Access group shares an Amazon Web Services Verified Access policy. For example, you can group all Amazon
-     * Web Services Verified Access instances associated with “sales” applications together and use one common Amazon
-     * Web Services Verified Access policy.
+     * who's associated applications have similar security requirements. Each instance within a Verified Access group
+     * shares an Verified Access policy. For example, you can group all Verified Access instances associated with
+     * "sales" applications together and use one common Verified Access policy.
      * </p>
      * 
      * @param createVerifiedAccessGroupRequest
@@ -6590,8 +6588,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
-     * devices. When an application request is made, the identity information sent by the trust provider will be
-     * evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.
+     * devices. When an application request is made, the identity information sent by the trust provider is evaluated by
+     * Verified Access before allowing or denying the application request.
      * </p>
      * 
      * @param createVerifiedAccessTrustProviderRequest
@@ -6607,8 +6605,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
-     * devices. When an application request is made, the identity information sent by the trust provider will be
-     * evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.
+     * devices. When an application request is made, the identity information sent by the trust provider is evaluated by
+     * Verified Access before allowing or denying the application request.
      * </p>
      * 
      * @param createVerifiedAccessTrustProviderRequest
@@ -16051,7 +16049,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe Amazon Web Services Verified Access endpoints.
+     * Describes the specified Amazon Web Services Verified Access endpoints.
      * </p>
      * 
      * @param describeVerifiedAccessEndpointsRequest
@@ -16066,7 +16064,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe Amazon Web Services Verified Access endpoints.
+     * Describes the specified Amazon Web Services Verified Access endpoints.
      * </p>
      * 
      * @param describeVerifiedAccessEndpointsRequest
@@ -16086,7 +16084,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe details of existing Verified Access groups.
+     * Describes the specified Verified Access groups.
      * </p>
      * 
      * @param describeVerifiedAccessGroupsRequest
@@ -16101,7 +16099,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe details of existing Verified Access groups.
+     * Describes the specified Verified Access groups.
      * </p>
      * 
      * @param describeVerifiedAccessGroupsRequest
@@ -16121,7 +16119,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the current logging configuration for the Amazon Web Services Verified Access instances.
+     * Describes the specified Amazon Web Services Verified Access instances.
      * </p>
      * 
      * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
@@ -16137,7 +16135,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the current logging configuration for the Amazon Web Services Verified Access instances.
+     * Describes the specified Amazon Web Services Verified Access instances.
      * </p>
      * 
      * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
@@ -16158,7 +16156,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe Verified Access instances.
+     * Describes the specified Amazon Web Services Verified Access instances.
      * </p>
      * 
      * @param describeVerifiedAccessInstancesRequest
@@ -16173,7 +16171,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe Verified Access instances.
+     * Describes the specified Amazon Web Services Verified Access instances.
      * </p>
      * 
      * @param describeVerifiedAccessInstancesRequest
@@ -16193,7 +16191,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe details of existing Verified Access trust providers.
+     * Describes the specified Amazon Web Services Verified Access trust providers.
      * </p>
      * 
      * @param describeVerifiedAccessTrustProvidersRequest
@@ -16208,7 +16206,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describe details of existing Verified Access trust providers.
+     * Describes the specified Amazon Web Services Verified Access trust providers.
      * </p>
      * 
      * @param describeVerifiedAccessTrustProvidersRequest
@@ -17229,7 +17227,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Detach a trust provider from an Amazon Web Services Verified Access instance.
+     * Detaches the specified Amazon Web Services Verified Access trust provider from the specified Amazon Web Services
+     * Verified Access instance.
      * </p>
      * 
      * @param detachVerifiedAccessTrustProviderRequest
@@ -17244,7 +17243,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Detach a trust provider from an Amazon Web Services Verified Access instance.
+     * Detaches the specified Amazon Web Services Verified Access trust provider from the specified Amazon Web Services
+     * Verified Access instance.
      * </p>
      * 
      * @param detachVerifiedAccessTrustProviderRequest
@@ -23601,7 +23601,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+     * Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
      * </p>
      * 
      * @param modifyVerifiedAccessEndpointRequest
@@ -23616,7 +23616,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+     * Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
      * </p>
      * 
      * @param modifyVerifiedAccessEndpointRequest
@@ -23636,7 +23636,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Verified Access endpoint policy.
+     * Modifies the specified Amazon Web Services Verified Access endpoint policy.
      * </p>
      * 
      * @param modifyVerifiedAccessEndpointPolicyRequest
@@ -23651,7 +23651,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Verified Access endpoint policy.
+     * Modifies the specified Amazon Web Services Verified Access endpoint policy.
      * </p>
      * 
      * @param modifyVerifiedAccessEndpointPolicyRequest
@@ -23671,7 +23671,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Verified Access group configuration.
+     * Modifies the specified Amazon Web Services Verified Access group configuration.
      * </p>
      * 
      * @param modifyVerifiedAccessGroupRequest
@@ -23685,7 +23685,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Verified Access group configuration.
+     * Modifies the specified Amazon Web Services Verified Access group configuration.
      * </p>
      * 
      * @param modifyVerifiedAccessGroupRequest
@@ -23704,7 +23704,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Verified Access group policy.
+     * Modifies the specified Amazon Web Services Verified Access group policy.
      * </p>
      * 
      * @param modifyVerifiedAccessGroupPolicyRequest
@@ -23719,7 +23719,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the specified Verified Access group policy.
+     * Modifies the specified Amazon Web Services Verified Access group policy.
      * </p>
      * 
      * @param modifyVerifiedAccessGroupPolicyRequest
@@ -23739,7 +23739,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the configuration of the specified Verified Access instance.
+     * Modifies the configuration of the specified Amazon Web Services Verified Access instance.
      * </p>
      * 
      * @param modifyVerifiedAccessInstanceRequest
@@ -23754,7 +23754,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the configuration of the specified Verified Access instance.
+     * Modifies the configuration of the specified Amazon Web Services Verified Access instance.
      * </p>
      * 
      * @param modifyVerifiedAccessInstanceRequest

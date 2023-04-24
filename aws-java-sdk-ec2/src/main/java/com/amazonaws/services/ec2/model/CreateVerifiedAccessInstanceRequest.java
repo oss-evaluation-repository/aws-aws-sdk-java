@@ -28,13 +28,13 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access instance.
+     * The tags to assign to the Verified Access instance.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -50,11 +50,11 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access instance.
+     *        A description for the Verified Access instance.
      */
 
     public void setDescription(String description) {
@@ -63,10 +63,10 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access instance.
+     * @return A description for the Verified Access instance.
      */
 
     public String getDescription() {
@@ -75,11 +75,11 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access instance.
+     *        A description for the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,10 +90,10 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access instance.
+     * The tags to assign to the Verified Access instance.
      * </p>
      * 
-     * @return The tags to assign to the Amazon Web Services Verified Access instance.
+     * @return The tags to assign to the Verified Access instance.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -105,11 +105,11 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access instance.
+     * The tags to assign to the Verified Access instance.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access instance.
+     *        The tags to assign to the Verified Access instance.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -123,7 +123,7 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access instance.
+     * The tags to assign to the Verified Access instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -132,7 +132,7 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access instance.
+     *        The tags to assign to the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class CreateVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access instance.
+     * The tags to assign to the Verified Access instance.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access instance.
+     *        The tags to assign to the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

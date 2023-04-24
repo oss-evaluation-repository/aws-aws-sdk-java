@@ -26,7 +26,7 @@ public class DescribeVerifiedAccessInstancesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VerifiedAccessInstance> verifiedAccessInstances;
@@ -40,10 +40,10 @@ public class DescribeVerifiedAccessInstancesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * 
-     * @return The IDs of the Amazon Web Services Verified Access instances.
+     * @return The IDs of the Verified Access instances.
      */
 
     public java.util.List<VerifiedAccessInstance> getVerifiedAccessInstances() {
@@ -55,11 +55,11 @@ public class DescribeVerifiedAccessInstancesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * 
      * @param verifiedAccessInstances
-     *        The IDs of the Amazon Web Services Verified Access instances.
+     *        The IDs of the Verified Access instances.
      */
 
     public void setVerifiedAccessInstances(java.util.Collection<VerifiedAccessInstance> verifiedAccessInstances) {
@@ -73,7 +73,7 @@ public class DescribeVerifiedAccessInstancesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVerifiedAccessInstancesResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param verifiedAccessInstances
-     *        The IDs of the Amazon Web Services Verified Access instances.
+     *        The IDs of the Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeVerifiedAccessInstancesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * 
      * @param verifiedAccessInstances
-     *        The IDs of the Amazon Web Services Verified Access instances.
+     *        The IDs of the Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

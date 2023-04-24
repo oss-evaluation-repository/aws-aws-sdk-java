@@ -55,10 +55,11 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private String codecProfile;
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use
-     * fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more
-     * B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the
-     * setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your
+     * input video content. To improve the subjective video quality of your output that has high-motion content: Leave
+     * blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than
+     * low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between
+     * reference frames. To use the same number B-frames for all types of content: Choose Static.
      */
     private String dynamicSubGop;
     /**
@@ -81,13 +82,14 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private String framerateControl;
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      */
     private String framerateConversionAlgorithm;
     /**
@@ -104,7 +106,12 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      */
     private Integer framerateNumerator;
-    /** If enable, use reference B frames for GOP structures that have B frames > 1. */
+    /**
+     * Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP
+     * structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose
+     * Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames:
+     * Choose Disabled.
+     */
     private String gopBReference;
     /**
      * Specify the relative frequency of open to closed GOPs in this output. For example, if you want to allow four open
@@ -174,8 +181,9 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer minIInterval;
     /**
-     * Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are
-     * whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     * Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank.
+     * MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input
+     * video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
      */
     private Integer numberBFramesBetweenReferenceFrames;
     /**
@@ -632,16 +640,19 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use
-     * fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more
-     * B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the
-     * setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your
+     * input video content. To improve the subjective video quality of your output that has high-motion content: Leave
+     * blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than
+     * low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between
+     * reference frames. To use the same number B-frames for all types of content: Choose Static.
      * 
      * @param dynamicSubGop
-     *        Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service
-     *        to use fewer B-frames (which infer information based on other frames) for high-motion portions of the
-     *        video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value
-     *        you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     *        Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on
+     *        your input video content. To improve the subjective video quality of your output that has high-motion
+     *        content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for
+     *        high-motion video content than low-motion content. The maximum number of B- frames is limited by the value
+     *        that you choose for B-frames between reference frames. To use the same number B-frames for all types of
+     *        content: Choose Static.
      * @see H265DynamicSubGop
      */
 
@@ -650,15 +661,18 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use
-     * fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more
-     * B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the
-     * setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your
+     * input video content. To improve the subjective video quality of your output that has high-motion content: Leave
+     * blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than
+     * low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between
+     * reference frames. To use the same number B-frames for all types of content: Choose Static.
      * 
-     * @return Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service
-     *         to use fewer B-frames (which infer information based on other frames) for high-motion portions of the
-     *         video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value
-     *         you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     * @return Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on
+     *         your input video content. To improve the subjective video quality of your output that has high-motion
+     *         content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for
+     *         high-motion video content than low-motion content. The maximum number of B- frames is limited by the
+     *         value that you choose for B-frames between reference frames. To use the same number B-frames for all
+     *         types of content: Choose Static.
      * @see H265DynamicSubGop
      */
 
@@ -667,16 +681,19 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use
-     * fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more
-     * B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the
-     * setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your
+     * input video content. To improve the subjective video quality of your output that has high-motion content: Leave
+     * blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than
+     * low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between
+     * reference frames. To use the same number B-frames for all types of content: Choose Static.
      * 
      * @param dynamicSubGop
-     *        Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service
-     *        to use fewer B-frames (which infer information based on other frames) for high-motion portions of the
-     *        video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value
-     *        you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     *        Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on
+     *        your input video content. To improve the subjective video quality of your output that has high-motion
+     *        content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for
+     *        high-motion video content than low-motion content. The maximum number of B- frames is limited by the value
+     *        that you choose for B-frames between reference frames. To use the same number B-frames for all types of
+     *        content: Choose Static.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265DynamicSubGop
      */
@@ -687,16 +704,19 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use
-     * fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more
-     * B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the
-     * setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on your
+     * input video content. To improve the subjective video quality of your output that has high-motion content: Leave
+     * blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for high-motion video content than
+     * low-motion content. The maximum number of B- frames is limited by the value that you choose for B-frames between
+     * reference frames. To use the same number B-frames for all types of content: Choose Static.
      * 
      * @param dynamicSubGop
-     *        Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service
-     *        to use fewer B-frames (which infer information based on other frames) for high-motion portions of the
-     *        video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value
-     *        you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames).
+     *        Specify whether to allow the number of B-frames in your output GOP structure to vary or not depending on
+     *        your input video content. To improve the subjective video quality of your output that has high-motion
+     *        content: Leave blank or keep the default value Adaptive. MediaConvert will use fewer B-frames for
+     *        high-motion video content than low-motion content. The maximum number of B- frames is limited by the value
+     *        that you choose for B-frames between reference frames. To use the same number B-frames for all types of
+     *        content: Choose Static.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265DynamicSubGop
      */
@@ -902,23 +922,24 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @see H265FramerateConversionAlgorithm
      */
 
@@ -927,22 +948,23 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
-     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *         conversions, especially if your source video has already been converted from its original cadence, use
-     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
-     *         significant add-on cost.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *         numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *         Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results
+     *         in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *         especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *         to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *         that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *         choose FrameFormer, your input video resolution must be at least 128x96.
      * @see H265FramerateConversionAlgorithm
      */
 
@@ -951,23 +973,24 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265FramerateConversionAlgorithm
      */
@@ -978,23 +1001,24 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
-     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
-     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
-     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
-     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
-     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
-     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically
+     * simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might
+     * introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has
+     * already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation.
+     * FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding
+     * time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at
+     * least 128x96.
      * 
      * @param framerateConversionAlgorithm
-     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
-     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
-     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
-     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
-     *        conversions, especially if your source video has already been converted from its original cadence, use
-     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
-     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
-     *        add-on cost.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For
+     *        numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value,
+     *        Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in
+     *        a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions,
+     *        especially if your source video has already been converted from its original cadence: Choose FrameFormer
+     *        to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note
+     *        that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you
+     *        choose FrameFormer, your input video resolution must be at least 128x96.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265FramerateConversionAlgorithm
      */
@@ -1115,10 +1139,16 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP
+     * structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose
+     * Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames:
+     * Choose Disabled.
      * 
      * @param gopBReference
-     *        If enable, use reference B frames for GOP structures that have B frames > 1.
+     *        Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when
+     *        your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend
+     *        that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not
+     *        use reference B-frames: Choose Disabled.
      * @see H265GopBReference
      */
 
@@ -1127,9 +1157,15 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP
+     * structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose
+     * Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames:
+     * Choose Disabled.
      * 
-     * @return If enable, use reference B frames for GOP structures that have B frames > 1.
+     * @return Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when
+     *         your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend
+     *         that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not
+     *         use reference B-frames: Choose Disabled.
      * @see H265GopBReference
      */
 
@@ -1138,10 +1174,16 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP
+     * structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose
+     * Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames:
+     * Choose Disabled.
      * 
      * @param gopBReference
-     *        If enable, use reference B frames for GOP structures that have B frames > 1.
+     *        Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when
+     *        your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend
+     *        that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not
+     *        use reference B-frames: Choose Disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265GopBReference
      */
@@ -1152,10 +1194,16 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when your GOP
+     * structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend that you choose
+     * Enabled to help improve the video quality of your output relative to its bitrate. To not use reference B-frames:
+     * Choose Disabled.
      * 
      * @param gopBReference
-     *        If enable, use reference B frames for GOP structures that have B frames > 1.
+     *        Specify whether to allow B-frames to be referenced by other frame types. To use reference B-frames when
+     *        your GOP structure has 1 or more B-frames: Leave blank or keep the default value Enabled. We recommend
+     *        that you choose Enabled to help improve the video quality of your output relative to its bitrate. To not
+     *        use reference B-frames: Choose Disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265GopBReference
      */
@@ -1752,12 +1800,15 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are
-     * whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     * Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank.
+     * MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input
+     * video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
      * 
      * @param numberBFramesBetweenReferenceFrames
-     *        Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid
-     *        values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     *        Specify the number of B-frames between reference frames in this output. For the best video quality: Leave
+     *        blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of
+     *        your input video. To manually specify the number of B-frames between reference frames: Enter an integer
+     *        from 0 to 7.
      */
 
     public void setNumberBFramesBetweenReferenceFrames(Integer numberBFramesBetweenReferenceFrames) {
@@ -1765,11 +1816,14 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are
-     * whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     * Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank.
+     * MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input
+     * video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
      * 
-     * @return Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid
-     *         values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     * @return Specify the number of B-frames between reference frames in this output. For the best video quality: Leave
+     *         blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics
+     *         of your input video. To manually specify the number of B-frames between reference frames: Enter an
+     *         integer from 0 to 7.
      */
 
     public Integer getNumberBFramesBetweenReferenceFrames() {
@@ -1777,12 +1831,15 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are
-     * whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     * Specify the number of B-frames between reference frames in this output. For the best video quality: Leave blank.
+     * MediaConvert automatically determines the number of B-frames to use based on the characteristics of your input
+     * video. To manually specify the number of B-frames between reference frames: Enter an integer from 0 to 7.
      * 
      * @param numberBFramesBetweenReferenceFrames
-     *        Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid
-     *        values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
+     *        Specify the number of B-frames between reference frames in this output. For the best video quality: Leave
+     *        blank. MediaConvert automatically determines the number of B-frames to use based on the characteristics of
+     *        your input video. To manually specify the number of B-frames between reference frames: Enter an integer
+     *        from 0 to 7.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

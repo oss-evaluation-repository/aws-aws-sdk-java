@@ -25,18 +25,18 @@ public class DeleteVerifiedAccessEndpointResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      */
     private VerifiedAccessEndpoint verifiedAccessEndpoint;
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpoint
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      */
 
     public void setVerifiedAccessEndpoint(VerifiedAccessEndpoint verifiedAccessEndpoint) {
@@ -45,10 +45,10 @@ public class DeleteVerifiedAccessEndpointResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access endpoint.
+     * @return The ID of the Verified Access endpoint.
      */
 
     public VerifiedAccessEndpoint getVerifiedAccessEndpoint() {
@@ -57,11 +57,11 @@ public class DeleteVerifiedAccessEndpointResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpoint
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

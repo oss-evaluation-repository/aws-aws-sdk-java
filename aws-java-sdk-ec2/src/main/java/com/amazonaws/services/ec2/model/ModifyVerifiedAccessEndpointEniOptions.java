@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Options for a network-interface type Verified Access endpoint.
+ * Describes the options when modifying a Verified Access endpoint with the <code>network-interface</code> type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointEniOptions"

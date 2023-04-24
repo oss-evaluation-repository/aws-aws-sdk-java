@@ -52,6 +52,10 @@ public class FileSourceSettingsJsonUnmarshaller implements Unmarshaller<FileSour
                     context.nextToken();
                     fileSourceSettings.setConvert608To708(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("convertPaintToPop", targetDepth)) {
+                    context.nextToken();
+                    fileSourceSettings.setConvertPaintToPop(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("framerate", targetDepth)) {
                     context.nextToken();
                     fileSourceSettings.setFramerate(CaptionSourceFramerateJsonUnmarshaller.getInstance().unmarshall(context));

@@ -28,13 +28,13 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      */
     private String description;
@@ -50,11 +50,11 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -63,10 +63,10 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -75,11 +75,11 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access instance.
+     *        A description for the Verified Access instance.
      */
 
     public void setDescription(String description) {
@@ -103,10 +103,10 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access instance.
+     * @return A description for the Verified Access instance.
      */
 
     public String getDescription() {
@@ -115,11 +115,11 @@ public class ModifyVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access instance.
+     * A description for the Verified Access instance.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access instance.
+     *        A description for the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,6 +26,7 @@ public enum VideoCodec {
     H_264("H_264"),
     H_265("H_265"),
     MPEG2("MPEG2"),
+    PASSTHROUGH("PASSTHROUGH"),
     PRORES("PRORES"),
     VC3("VC3"),
     VP8("VP8"),

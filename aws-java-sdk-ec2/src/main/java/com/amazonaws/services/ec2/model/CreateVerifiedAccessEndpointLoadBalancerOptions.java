@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a load balancer when creating an Amazon Web Services Verified Access endpoint using the
+ * Describes the load balancer options when creating an Amazon Web Services Verified Access endpoint using the
  * <code>load-balancer</code> type.
  * </p>
  * 

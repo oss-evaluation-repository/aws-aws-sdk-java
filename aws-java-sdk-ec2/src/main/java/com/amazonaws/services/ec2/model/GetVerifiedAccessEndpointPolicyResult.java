@@ -32,7 +32,7 @@ public class GetVerifiedAccessEndpointPolicyResult extends com.amazonaws.AmazonW
     private Boolean policyEnabled;
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      */
     private String policyDocument;
@@ -91,11 +91,11 @@ public class GetVerifiedAccessEndpointPolicyResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -104,10 +104,10 @@ public class GetVerifiedAccessEndpointPolicyResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
-     * @return The Amazon Web Services Verified Access policy document.
+     * @return The Verified Access policy document.
      */
 
     public String getPolicyDocument() {
@@ -116,11 +116,11 @@ public class GetVerifiedAccessEndpointPolicyResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

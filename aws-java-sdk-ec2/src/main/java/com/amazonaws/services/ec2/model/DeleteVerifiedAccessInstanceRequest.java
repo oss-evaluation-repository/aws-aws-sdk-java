@@ -28,7 +28,7 @@ public class DeleteVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
@@ -44,11 +44,11 @@ public class DeleteVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -57,10 +57,10 @@ public class DeleteVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -69,11 +69,11 @@ public class DeleteVerifiedAccessInstanceRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Options for OIDC-based, user-identity type trust provider.
+ * Describes the options for an OpenID Connect-compatible user-identity trust provider.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OidcOptions" target="_top">AWS API
@@ -372,7 +372,7 @@ public class OidcOptions implements Serializable, Cloneable {
         if (getClientId() != null)
             sb.append("ClientId: ").append(getClientId()).append(",");
         if (getClientSecret() != null)
-            sb.append("ClientSecret: ").append(getClientSecret()).append(",");
+            sb.append("ClientSecret: ").append("***Sensitive Data Redacted***").append(",");
         if (getScope() != null)
             sb.append("Scope: ").append(getScope());
         sb.append("}");

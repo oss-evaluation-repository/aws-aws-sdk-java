@@ -25,18 +25,18 @@ public class ModifyVerifiedAccessInstanceResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private VerifiedAccessInstance verifiedAccessInstance;
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstance
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstance(VerifiedAccessInstance verifiedAccessInstance) {
@@ -45,10 +45,10 @@ public class ModifyVerifiedAccessInstanceResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public VerifiedAccessInstance getVerifiedAccessInstance() {
@@ -57,11 +57,11 @@ public class ModifyVerifiedAccessInstanceResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstance
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

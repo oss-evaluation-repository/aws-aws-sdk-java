@@ -40,7 +40,12 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
      * https://pro-av.panasonic.net/en/avc-ultra/AVC-ULTRAoverview.pdf.
      */
     private AvcIntraSettings avcIntraSettings;
-    /** Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. */
+    /**
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
+     */
     private String codec;
     /** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE. */
     private FrameCaptureSettings frameCaptureSettings;
@@ -148,10 +153,16 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @param codec
      *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *        To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *        video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *        encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @see VideoCodec
      */
 
@@ -160,9 +171,15 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @return Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *         To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *         video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *         encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @see VideoCodec
      */
 
@@ -171,10 +188,16 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @param codec
      *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *        To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *        video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *        encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VideoCodec
      */
@@ -185,10 +208,16 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     * Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec. To
+     * passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any video
+     * encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical encoding
+     * attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * 
      * @param codec
      *        Specifies the video codec. This must be equal to one of the enum values defined by the object VideoCodec.
+     *        To passthrough the video stream of your input JPEG2000, VC-3, AVC-INTRA or Apple ProRes video without any
+     *        video encoding: Choose Passthrough. If you have multiple input videos, note that they must have identical
+     *        encoding attributes. When you choose Passthrough, your output container must be MXF or QuickTime MOV.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VideoCodec
      */

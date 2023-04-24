@@ -28,7 +28,7 @@ public class DeleteVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      */
     private String verifiedAccessTrustProviderId;
@@ -44,11 +44,11 @@ public class DeleteVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProviderId
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      */
 
     public void setVerifiedAccessTrustProviderId(String verifiedAccessTrustProviderId) {
@@ -57,10 +57,10 @@ public class DeleteVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access trust provider.
+     * @return The ID of the Verified Access trust provider.
      */
 
     public String getVerifiedAccessTrustProviderId() {
@@ -69,11 +69,11 @@ public class DeleteVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProviderId
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Options for an Amazon Web Services Verified Access device-identity based trust provider.
+ * Describes the options for an Amazon Web Services Verified Access device-identity based trust provider.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeviceOptions" target="_top">AWS API

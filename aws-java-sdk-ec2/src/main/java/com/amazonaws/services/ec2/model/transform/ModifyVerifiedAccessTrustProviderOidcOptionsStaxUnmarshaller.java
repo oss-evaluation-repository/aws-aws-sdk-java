@@ -44,6 +44,36 @@ public class ModifyVerifiedAccessTrustProviderOidcOptionsStaxUnmarshaller implem
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("Issuer", targetDepth)) {
+                    modifyVerifiedAccessTrustProviderOidcOptions.setIssuer(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AuthorizationEndpoint", targetDepth)) {
+                    modifyVerifiedAccessTrustProviderOidcOptions.setAuthorizationEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("TokenEndpoint", targetDepth)) {
+                    modifyVerifiedAccessTrustProviderOidcOptions.setTokenEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("UserInfoEndpoint", targetDepth)) {
+                    modifyVerifiedAccessTrustProviderOidcOptions.setUserInfoEndpoint(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ClientId", targetDepth)) {
+                    modifyVerifiedAccessTrustProviderOidcOptions.setClientId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ClientSecret", targetDepth)) {
+                    modifyVerifiedAccessTrustProviderOidcOptions.setClientSecret(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Scope", targetDepth)) {
                     modifyVerifiedAccessTrustProviderOidcOptions.setScope(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -29,6 +29,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class InputMarshaller {
 
+    private static final MarshallingInfo<String> ADVANCEDINPUTFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("advancedInputFilter").build();
+    private static final MarshallingInfo<StructuredPojo> ADVANCEDINPUTFILTERSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("advancedInputFilterSettings").build();
     private static final MarshallingInfo<Map> AUDIOSELECTORGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioSelectorGroups").build();
     private static final MarshallingInfo<Map> AUDIOSELECTORS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -90,6 +94,8 @@ public class InputMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(input.getAdvancedInputFilter(), ADVANCEDINPUTFILTER_BINDING);
+            protocolMarshaller.marshall(input.getAdvancedInputFilterSettings(), ADVANCEDINPUTFILTERSETTINGS_BINDING);
             protocolMarshaller.marshall(input.getAudioSelectorGroups(), AUDIOSELECTORGROUPS_BINDING);
             protocolMarshaller.marshall(input.getAudioSelectors(), AUDIOSELECTORS_BINDING);
             protocolMarshaller.marshall(input.getCaptionSelectors(), CAPTIONSELECTORS_BINDING);

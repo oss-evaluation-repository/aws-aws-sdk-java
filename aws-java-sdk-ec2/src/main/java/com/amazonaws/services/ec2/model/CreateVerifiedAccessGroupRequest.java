@@ -28,25 +28,25 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      */
     private String policyDocument;
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access group.
+     * The tags to assign to the Verified Access group.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
@@ -62,11 +62,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -75,10 +75,10 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -87,11 +87,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access group.
+     *        A description for the Verified Access group.
      */
 
     public void setDescription(String description) {
@@ -115,10 +115,10 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access group.
+     * @return A description for the Verified Access group.
      */
 
     public String getDescription() {
@@ -127,11 +127,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access group.
+     *        A description for the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -155,10 +155,10 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
-     * @return The Amazon Web Services Verified Access policy document.
+     * @return The Verified Access policy document.
      */
 
     public String getPolicyDocument() {
@@ -167,11 +167,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,10 +182,10 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access group.
+     * The tags to assign to the Verified Access group.
      * </p>
      * 
-     * @return The tags to assign to the Amazon Web Services Verified Access group.
+     * @return The tags to assign to the Verified Access group.
      */
 
     public java.util.List<TagSpecification> getTagSpecifications() {
@@ -197,11 +197,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access group.
+     * The tags to assign to the Verified Access group.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access group.
+     *        The tags to assign to the Verified Access group.
      */
 
     public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
@@ -215,7 +215,7 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access group.
+     * The tags to assign to the Verified Access group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -224,7 +224,7 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access group.
+     *        The tags to assign to the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +240,11 @@ public class CreateVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to assign to the Amazon Web Services Verified Access group.
+     * The tags to assign to the Verified Access group.
      * </p>
      * 
      * @param tagSpecifications
-     *        The tags to assign to the Amazon Web Services Verified Access group.
+     *        The tags to assign to the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

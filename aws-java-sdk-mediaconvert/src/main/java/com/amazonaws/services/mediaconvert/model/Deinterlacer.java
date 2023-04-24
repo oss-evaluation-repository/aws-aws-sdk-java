@@ -27,10 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
-     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
-     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
-     * headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures,
+     * while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the
+     * bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear
+     * interpolation. Note that Linear interpolation may introduce video artifacts into your output.
      */
     private String algorithm;
     /**
@@ -50,16 +50,17 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     private String mode;
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
-     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
-     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
-     * headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures,
+     * while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the
+     * bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear
+     * interpolation. Note that Linear interpolation may introduce video artifacts into your output.
      * 
      * @param algorithm
-     *        Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
-     *        (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
-     *        produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
-     *        ticker, such as a scrolling headline at the bottom of the frame.
+     *        Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper
+     *        pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling
+     *        headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling:
+     *        Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your
+     *        output.
      * @see DeinterlaceAlgorithm
      */
 
@@ -68,15 +69,16 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
-     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
-     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
-     * headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures,
+     * while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the
+     * bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear
+     * interpolation. Note that Linear interpolation may introduce video artifacts into your output.
      * 
-     * @return Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
-     *         (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
-     *         produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
-     *         ticker, such as a scrolling headline at the bottom of the frame.
+     * @return Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper
+     *         pictures, while blend produces smoother motion. If your source file includes a ticker, such as a
+     *         scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     *         doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into
+     *         your output.
      * @see DeinterlaceAlgorithm
      */
 
@@ -85,16 +87,17 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
-     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
-     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
-     * headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures,
+     * while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the
+     * bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear
+     * interpolation. Note that Linear interpolation may introduce video artifacts into your output.
      * 
      * @param algorithm
-     *        Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
-     *        (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
-     *        produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
-     *        ticker, such as a scrolling headline at the bottom of the frame.
+     *        Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper
+     *        pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling
+     *        headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling:
+     *        Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your
+     *        output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlaceAlgorithm
      */
@@ -105,16 +108,17 @@ public class Deinterlacer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE).
-     * Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother
-     * motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling
-     * headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures,
+     * while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the
+     * bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear
+     * interpolation. Note that Linear interpolation may introduce video artifacts into your output.
      * 
      * @param algorithm
-     *        Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive
-     *        (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND)
-     *        produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a
-     *        ticker, such as a scrolling headline at the bottom of the frame.
+     *        Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper
+     *        pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling
+     *        headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling:
+     *        Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your
+     *        output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeinterlaceAlgorithm
      */

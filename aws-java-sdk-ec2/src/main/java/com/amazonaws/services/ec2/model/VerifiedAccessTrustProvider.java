@@ -58,13 +58,13 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
     private String deviceTrustProviderType;
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      */
     private OidcOptions oidcOptions;
     /**
      * <p>
-     * The options for device-identity type trust provider.
+     * The options for device-identity trust provider.
      * </p>
      */
     private DeviceOptions deviceOptions;
@@ -352,11 +352,11 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      * 
      * @param oidcOptions
-     *        The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     *        The options for an OpenID Connect-compatible user-identity trust provider.
      */
 
     public void setOidcOptions(OidcOptions oidcOptions) {
@@ -365,10 +365,10 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      * 
-     * @return The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * @return The options for an OpenID Connect-compatible user-identity trust provider.
      */
 
     public OidcOptions getOidcOptions() {
@@ -377,11 +377,11 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     * The options for an OpenID Connect-compatible user-identity trust provider.
      * </p>
      * 
      * @param oidcOptions
-     *        The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust provider.
+     *        The options for an OpenID Connect-compatible user-identity trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,11 +392,11 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The options for device-identity type trust provider.
+     * The options for device-identity trust provider.
      * </p>
      * 
      * @param deviceOptions
-     *        The options for device-identity type trust provider.
+     *        The options for device-identity trust provider.
      */
 
     public void setDeviceOptions(DeviceOptions deviceOptions) {
@@ -405,10 +405,10 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The options for device-identity type trust provider.
+     * The options for device-identity trust provider.
      * </p>
      * 
-     * @return The options for device-identity type trust provider.
+     * @return The options for device-identity trust provider.
      */
 
     public DeviceOptions getDeviceOptions() {
@@ -417,11 +417,11 @@ public class VerifiedAccessTrustProvider implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The options for device-identity type trust provider.
+     * The options for device-identity trust provider.
      * </p>
      * 
      * @param deviceOptions
-     *        The options for device-identity type trust provider.
+     *        The options for device-identity trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -35,7 +35,7 @@ public class LivenessOutputConfig implements Serializable, Cloneable, Structured
     private String s3Bucket;
     /**
      * <p>
-     * The prefix appended to the output files for the Face Liveness session results.
+     * The prefix prepended to the output files for the Face Liveness session results.
      * </p>
      */
     private String s3KeyPrefix;
@@ -82,11 +82,11 @@ public class LivenessOutputConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The prefix appended to the output files for the Face Liveness session results.
+     * The prefix prepended to the output files for the Face Liveness session results.
      * </p>
      * 
      * @param s3KeyPrefix
-     *        The prefix appended to the output files for the Face Liveness session results.
+     *        The prefix prepended to the output files for the Face Liveness session results.
      */
 
     public void setS3KeyPrefix(String s3KeyPrefix) {
@@ -95,10 +95,10 @@ public class LivenessOutputConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The prefix appended to the output files for the Face Liveness session results.
+     * The prefix prepended to the output files for the Face Liveness session results.
      * </p>
      * 
-     * @return The prefix appended to the output files for the Face Liveness session results.
+     * @return The prefix prepended to the output files for the Face Liveness session results.
      */
 
     public String getS3KeyPrefix() {
@@ -107,11 +107,11 @@ public class LivenessOutputConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The prefix appended to the output files for the Face Liveness session results.
+     * The prefix prepended to the output files for the Face Liveness session results.
      * </p>
      * 
      * @param s3KeyPrefix
-     *        The prefix appended to the output files for the Face Liveness session results.
+     *        The prefix prepended to the output files for the Face Liveness session results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -26,18 +26,18 @@ public class ModifyVerifiedAccessTrustProviderResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      */
     private VerifiedAccessTrustProvider verifiedAccessTrustProvider;
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProvider
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      */
 
     public void setVerifiedAccessTrustProvider(VerifiedAccessTrustProvider verifiedAccessTrustProvider) {
@@ -46,10 +46,10 @@ public class ModifyVerifiedAccessTrustProviderResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access trust provider.
+     * @return The ID of the Verified Access trust provider.
      */
 
     public VerifiedAccessTrustProvider getVerifiedAccessTrustProvider() {
@@ -58,11 +58,11 @@ public class ModifyVerifiedAccessTrustProviderResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProvider
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

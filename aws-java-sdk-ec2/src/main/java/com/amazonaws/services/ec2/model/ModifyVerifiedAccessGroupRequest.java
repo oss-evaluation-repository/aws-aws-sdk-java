@@ -28,19 +28,19 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      */
     private String verifiedAccessGroupId;
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      */
     private String description;
@@ -56,11 +56,11 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      */
 
     public void setVerifiedAccessGroupId(String verifiedAccessGroupId) {
@@ -69,10 +69,10 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access group.
+     * @return The ID of the Verified Access group.
      */
 
     public String getVerifiedAccessGroupId() {
@@ -81,11 +81,11 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -109,10 +109,10 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -121,11 +121,11 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access group.
+     *        A description for the Verified Access group.
      */
 
     public void setDescription(String description) {
@@ -149,10 +149,10 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      * 
-     * @return A description for the Amazon Web Services Verified Access group.
+     * @return A description for the Verified Access group.
      */
 
     public String getDescription() {
@@ -161,11 +161,11 @@ public class ModifyVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A description for the Amazon Web Services Verified Access group.
+     * A description for the Verified Access group.
      * </p>
      * 
      * @param description
-     *        A description for the Amazon Web Services Verified Access group.
+     *        A description for the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

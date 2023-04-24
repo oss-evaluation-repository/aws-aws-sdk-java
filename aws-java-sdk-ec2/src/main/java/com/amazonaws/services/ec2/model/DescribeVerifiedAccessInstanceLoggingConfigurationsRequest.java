@@ -28,7 +28,7 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsRequest extends 
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> verifiedAccessInstanceIds;
@@ -54,10 +54,10 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsRequest extends 
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * 
-     * @return The IDs of the Amazon Web Services Verified Access instances.
+     * @return The IDs of the Verified Access instances.
      */
 
     public java.util.List<String> getVerifiedAccessInstanceIds() {
@@ -69,11 +69,11 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsRequest extends 
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * 
      * @param verifiedAccessInstanceIds
-     *        The IDs of the Amazon Web Services Verified Access instances.
+     *        The IDs of the Verified Access instances.
      */
 
     public void setVerifiedAccessInstanceIds(java.util.Collection<String> verifiedAccessInstanceIds) {
@@ -87,7 +87,7 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsRequest extends 
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,7 +96,7 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsRequest extends 
      * </p>
      * 
      * @param verifiedAccessInstanceIds
-     *        The IDs of the Amazon Web Services Verified Access instances.
+     *        The IDs of the Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +112,11 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsRequest extends 
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access instances.
+     * The IDs of the Verified Access instances.
      * </p>
      * 
      * @param verifiedAccessInstanceIds
-     *        The IDs of the Amazon Web Services Verified Access instances.
+     *        The IDs of the Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

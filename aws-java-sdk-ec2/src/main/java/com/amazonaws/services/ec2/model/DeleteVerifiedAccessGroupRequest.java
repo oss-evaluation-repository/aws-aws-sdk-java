@@ -28,7 +28,7 @@ public class DeleteVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      */
     private String verifiedAccessGroupId;
@@ -44,11 +44,11 @@ public class DeleteVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      */
 
     public void setVerifiedAccessGroupId(String verifiedAccessGroupId) {
@@ -57,10 +57,10 @@ public class DeleteVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access group.
+     * @return The ID of the Verified Access group.
      */
 
     public String getVerifiedAccessGroupId() {
@@ -69,11 +69,11 @@ public class DeleteVerifiedAccessGroupRequest extends AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

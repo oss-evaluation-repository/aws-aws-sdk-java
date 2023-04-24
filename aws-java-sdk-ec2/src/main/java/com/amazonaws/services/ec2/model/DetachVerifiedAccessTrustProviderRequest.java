@@ -28,13 +28,13 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      */
     private String verifiedAccessTrustProviderId;
@@ -50,11 +50,11 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -63,10 +63,10 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -75,11 +75,11 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProviderId
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      */
 
     public void setVerifiedAccessTrustProviderId(String verifiedAccessTrustProviderId) {
@@ -103,10 +103,10 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access trust provider.
+     * @return The ID of the Verified Access trust provider.
      */
 
     public String getVerifiedAccessTrustProviderId() {
@@ -115,11 +115,11 @@ public class DetachVerifiedAccessTrustProviderRequest extends AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access trust provider.
+     * The ID of the Verified Access trust provider.
      * </p>
      * 
      * @param verifiedAccessTrustProviderId
-     *        The ID of the Amazon Web Services Verified Access trust provider.
+     *        The ID of the Verified Access trust provider.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

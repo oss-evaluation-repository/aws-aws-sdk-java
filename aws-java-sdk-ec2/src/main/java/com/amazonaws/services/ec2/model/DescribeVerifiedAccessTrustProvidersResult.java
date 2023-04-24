@@ -26,7 +26,7 @@ public class DescribeVerifiedAccessTrustProvidersResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access trust providers.
+     * The IDs of the Verified Access trust providers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VerifiedAccessTrustProvider> verifiedAccessTrustProviders;
@@ -40,10 +40,10 @@ public class DescribeVerifiedAccessTrustProvidersResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access trust providers.
+     * The IDs of the Verified Access trust providers.
      * </p>
      * 
-     * @return The IDs of the Amazon Web Services Verified Access trust providers.
+     * @return The IDs of the Verified Access trust providers.
      */
 
     public java.util.List<VerifiedAccessTrustProvider> getVerifiedAccessTrustProviders() {
@@ -55,11 +55,11 @@ public class DescribeVerifiedAccessTrustProvidersResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access trust providers.
+     * The IDs of the Verified Access trust providers.
      * </p>
      * 
      * @param verifiedAccessTrustProviders
-     *        The IDs of the Amazon Web Services Verified Access trust providers.
+     *        The IDs of the Verified Access trust providers.
      */
 
     public void setVerifiedAccessTrustProviders(java.util.Collection<VerifiedAccessTrustProvider> verifiedAccessTrustProviders) {
@@ -73,7 +73,7 @@ public class DescribeVerifiedAccessTrustProvidersResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access trust providers.
+     * The IDs of the Verified Access trust providers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVerifiedAccessTrustProvidersResult extends com.amazonaws.Am
      * </p>
      * 
      * @param verifiedAccessTrustProviders
-     *        The IDs of the Amazon Web Services Verified Access trust providers.
+     *        The IDs of the Verified Access trust providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeVerifiedAccessTrustProvidersResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The IDs of the Amazon Web Services Verified Access trust providers.
+     * The IDs of the Verified Access trust providers.
      * </p>
      * 
      * @param verifiedAccessTrustProviders
-     *        The IDs of the Amazon Web Services Verified Access trust providers.
+     *        The IDs of the Verified Access trust providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

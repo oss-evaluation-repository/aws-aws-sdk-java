@@ -28,7 +28,7 @@ public class DeleteVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      */
     private String verifiedAccessEndpointId;
@@ -44,11 +44,11 @@ public class DeleteVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpointId
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      */
 
     public void setVerifiedAccessEndpointId(String verifiedAccessEndpointId) {
@@ -57,10 +57,10 @@ public class DeleteVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access endpoint.
+     * @return The ID of the Verified Access endpoint.
      */
 
     public String getVerifiedAccessEndpointId() {
@@ -69,11 +69,11 @@ public class DeleteVerifiedAccessEndpointRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpointId
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * OpenID Connect options for an <code>oidc</code>-type, user-identity based trust provider.
+ * Options for an OpenID Connect-compatible user-identity trust provider.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProviderOidcOptions"
@@ -28,11 +28,287 @@ public class ModifyVerifiedAccessTrustProviderOidcOptions implements Serializabl
 
     /**
      * <p>
+     * The OIDC issuer.
+     * </p>
+     */
+    private String issuer;
+    /**
+     * <p>
+     * The OIDC authorization endpoint.
+     * </p>
+     */
+    private String authorizationEndpoint;
+    /**
+     * <p>
+     * The OIDC token endpoint.
+     * </p>
+     */
+    private String tokenEndpoint;
+    /**
+     * <p>
+     * The OIDC user info endpoint.
+     * </p>
+     */
+    private String userInfoEndpoint;
+    /**
+     * <p>
+     * The client identifier.
+     * </p>
+     */
+    private String clientId;
+    /**
+     * <p>
+     * The client secret.
+     * </p>
+     */
+    private String clientSecret;
+    /**
+     * <p>
      * OpenID Connect (OIDC) scopes are used by an application during authentication to authorize access to a user's
      * details. Each scope returns a specific set of user attributes.
      * </p>
      */
     private String scope;
+
+    /**
+     * <p>
+     * The OIDC issuer.
+     * </p>
+     * 
+     * @param issuer
+     *        The OIDC issuer.
+     */
+
+    public void setIssuer(String issuer) {
+        this.issuer = issuer;
+    }
+
+    /**
+     * <p>
+     * The OIDC issuer.
+     * </p>
+     * 
+     * @return The OIDC issuer.
+     */
+
+    public String getIssuer() {
+        return this.issuer;
+    }
+
+    /**
+     * <p>
+     * The OIDC issuer.
+     * </p>
+     * 
+     * @param issuer
+     *        The OIDC issuer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderOidcOptions withIssuer(String issuer) {
+        setIssuer(issuer);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The OIDC authorization endpoint.
+     * </p>
+     * 
+     * @param authorizationEndpoint
+     *        The OIDC authorization endpoint.
+     */
+
+    public void setAuthorizationEndpoint(String authorizationEndpoint) {
+        this.authorizationEndpoint = authorizationEndpoint;
+    }
+
+    /**
+     * <p>
+     * The OIDC authorization endpoint.
+     * </p>
+     * 
+     * @return The OIDC authorization endpoint.
+     */
+
+    public String getAuthorizationEndpoint() {
+        return this.authorizationEndpoint;
+    }
+
+    /**
+     * <p>
+     * The OIDC authorization endpoint.
+     * </p>
+     * 
+     * @param authorizationEndpoint
+     *        The OIDC authorization endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderOidcOptions withAuthorizationEndpoint(String authorizationEndpoint) {
+        setAuthorizationEndpoint(authorizationEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The OIDC token endpoint.
+     * </p>
+     * 
+     * @param tokenEndpoint
+     *        The OIDC token endpoint.
+     */
+
+    public void setTokenEndpoint(String tokenEndpoint) {
+        this.tokenEndpoint = tokenEndpoint;
+    }
+
+    /**
+     * <p>
+     * The OIDC token endpoint.
+     * </p>
+     * 
+     * @return The OIDC token endpoint.
+     */
+
+    public String getTokenEndpoint() {
+        return this.tokenEndpoint;
+    }
+
+    /**
+     * <p>
+     * The OIDC token endpoint.
+     * </p>
+     * 
+     * @param tokenEndpoint
+     *        The OIDC token endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderOidcOptions withTokenEndpoint(String tokenEndpoint) {
+        setTokenEndpoint(tokenEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The OIDC user info endpoint.
+     * </p>
+     * 
+     * @param userInfoEndpoint
+     *        The OIDC user info endpoint.
+     */
+
+    public void setUserInfoEndpoint(String userInfoEndpoint) {
+        this.userInfoEndpoint = userInfoEndpoint;
+    }
+
+    /**
+     * <p>
+     * The OIDC user info endpoint.
+     * </p>
+     * 
+     * @return The OIDC user info endpoint.
+     */
+
+    public String getUserInfoEndpoint() {
+        return this.userInfoEndpoint;
+    }
+
+    /**
+     * <p>
+     * The OIDC user info endpoint.
+     * </p>
+     * 
+     * @param userInfoEndpoint
+     *        The OIDC user info endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderOidcOptions withUserInfoEndpoint(String userInfoEndpoint) {
+        setUserInfoEndpoint(userInfoEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client identifier.
+     * </p>
+     * 
+     * @param clientId
+     *        The client identifier.
+     */
+
+    public void setClientId(String clientId) {
+        this.clientId = clientId;
+    }
+
+    /**
+     * <p>
+     * The client identifier.
+     * </p>
+     * 
+     * @return The client identifier.
+     */
+
+    public String getClientId() {
+        return this.clientId;
+    }
+
+    /**
+     * <p>
+     * The client identifier.
+     * </p>
+     * 
+     * @param clientId
+     *        The client identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderOidcOptions withClientId(String clientId) {
+        setClientId(clientId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client secret.
+     * </p>
+     * 
+     * @param clientSecret
+     *        The client secret.
+     */
+
+    public void setClientSecret(String clientSecret) {
+        this.clientSecret = clientSecret;
+    }
+
+    /**
+     * <p>
+     * The client secret.
+     * </p>
+     * 
+     * @return The client secret.
+     */
+
+    public String getClientSecret() {
+        return this.clientSecret;
+    }
+
+    /**
+     * <p>
+     * The client secret.
+     * </p>
+     * 
+     * @param clientSecret
+     *        The client secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVerifiedAccessTrustProviderOidcOptions withClientSecret(String clientSecret) {
+        setClientSecret(clientSecret);
+        return this;
+    }
 
     /**
      * <p>
@@ -92,6 +368,18 @@ public class ModifyVerifiedAccessTrustProviderOidcOptions implements Serializabl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getIssuer() != null)
+            sb.append("Issuer: ").append(getIssuer()).append(",");
+        if (getAuthorizationEndpoint() != null)
+            sb.append("AuthorizationEndpoint: ").append(getAuthorizationEndpoint()).append(",");
+        if (getTokenEndpoint() != null)
+            sb.append("TokenEndpoint: ").append(getTokenEndpoint()).append(",");
+        if (getUserInfoEndpoint() != null)
+            sb.append("UserInfoEndpoint: ").append(getUserInfoEndpoint()).append(",");
+        if (getClientId() != null)
+            sb.append("ClientId: ").append(getClientId()).append(",");
+        if (getClientSecret() != null)
+            sb.append("ClientSecret: ").append("***Sensitive Data Redacted***").append(",");
         if (getScope() != null)
             sb.append("Scope: ").append(getScope());
         sb.append("}");
@@ -108,6 +396,30 @@ public class ModifyVerifiedAccessTrustProviderOidcOptions implements Serializabl
         if (obj instanceof ModifyVerifiedAccessTrustProviderOidcOptions == false)
             return false;
         ModifyVerifiedAccessTrustProviderOidcOptions other = (ModifyVerifiedAccessTrustProviderOidcOptions) obj;
+        if (other.getIssuer() == null ^ this.getIssuer() == null)
+            return false;
+        if (other.getIssuer() != null && other.getIssuer().equals(this.getIssuer()) == false)
+            return false;
+        if (other.getAuthorizationEndpoint() == null ^ this.getAuthorizationEndpoint() == null)
+            return false;
+        if (other.getAuthorizationEndpoint() != null && other.getAuthorizationEndpoint().equals(this.getAuthorizationEndpoint()) == false)
+            return false;
+        if (other.getTokenEndpoint() == null ^ this.getTokenEndpoint() == null)
+            return false;
+        if (other.getTokenEndpoint() != null && other.getTokenEndpoint().equals(this.getTokenEndpoint()) == false)
+            return false;
+        if (other.getUserInfoEndpoint() == null ^ this.getUserInfoEndpoint() == null)
+            return false;
+        if (other.getUserInfoEndpoint() != null && other.getUserInfoEndpoint().equals(this.getUserInfoEndpoint()) == false)
+            return false;
+        if (other.getClientId() == null ^ this.getClientId() == null)
+            return false;
+        if (other.getClientId() != null && other.getClientId().equals(this.getClientId()) == false)
+            return false;
+        if (other.getClientSecret() == null ^ this.getClientSecret() == null)
+            return false;
+        if (other.getClientSecret() != null && other.getClientSecret().equals(this.getClientSecret()) == false)
+            return false;
         if (other.getScope() == null ^ this.getScope() == null)
             return false;
         if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
@@ -120,6 +432,12 @@ public class ModifyVerifiedAccessTrustProviderOidcOptions implements Serializabl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getIssuer() == null) ? 0 : getIssuer().hashCode());
+        hashCode = prime * hashCode + ((getAuthorizationEndpoint() == null) ? 0 : getAuthorizationEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getTokenEndpoint() == null) ? 0 : getTokenEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getUserInfoEndpoint() == null) ? 0 : getUserInfoEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
+        hashCode = prime * hashCode + ((getClientSecret() == null) ? 0 : getClientSecret().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         return hashCode;
     }

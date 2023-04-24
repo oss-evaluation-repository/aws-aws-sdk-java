@@ -307,7 +307,7 @@ public class DiskImageDescription implements Serializable, Cloneable {
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
         if (getImportManifestUrl() != null)
-            sb.append("ImportManifestUrl: ").append(getImportManifestUrl()).append(",");
+            sb.append("ImportManifestUrl: ").append("***Sensitive Data Redacted***").append(",");
         if (getSize() != null)
             sb.append("Size: ").append(getSize());
         sb.append("}");

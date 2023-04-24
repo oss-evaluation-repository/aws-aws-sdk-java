@@ -28,13 +28,13 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      */
     private String verifiedAccessInstanceId;
     /**
      * <p>
-     * The configuration options for Amazon Web Services Verified Access instances.
+     * The configuration options for Verified Access instances.
      * </p>
      */
     private VerifiedAccessLogOptions accessLogs;
@@ -50,11 +50,11 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      */
 
     public void setVerifiedAccessInstanceId(String verifiedAccessInstanceId) {
@@ -63,10 +63,10 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access instance.
+     * @return The ID of the Verified Access instance.
      */
 
     public String getVerifiedAccessInstanceId() {
@@ -75,11 +75,11 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access instance.
+     * The ID of the Verified Access instance.
      * </p>
      * 
      * @param verifiedAccessInstanceId
-     *        The ID of the Amazon Web Services Verified Access instance.
+     *        The ID of the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The configuration options for Amazon Web Services Verified Access instances.
+     * The configuration options for Verified Access instances.
      * </p>
      * 
      * @param accessLogs
-     *        The configuration options for Amazon Web Services Verified Access instances.
+     *        The configuration options for Verified Access instances.
      */
 
     public void setAccessLogs(VerifiedAccessLogOptions accessLogs) {
@@ -103,10 +103,10 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The configuration options for Amazon Web Services Verified Access instances.
+     * The configuration options for Verified Access instances.
      * </p>
      * 
-     * @return The configuration options for Amazon Web Services Verified Access instances.
+     * @return The configuration options for Verified Access instances.
      */
 
     public VerifiedAccessLogOptions getAccessLogs() {
@@ -115,11 +115,11 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationRequest extends Ama
 
     /**
      * <p>
-     * The configuration options for Amazon Web Services Verified Access instances.
+     * The configuration options for Verified Access instances.
      * </p>
      * 
      * @param accessLogs
-     *        The configuration options for Amazon Web Services Verified Access instances.
+     *        The configuration options for Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

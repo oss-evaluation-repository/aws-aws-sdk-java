@@ -25,18 +25,18 @@ public class ModifyVerifiedAccessEndpointResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access endpoint details.
+     * The Verified Access endpoint details.
      * </p>
      */
     private VerifiedAccessEndpoint verifiedAccessEndpoint;
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access endpoint details.
+     * The Verified Access endpoint details.
      * </p>
      * 
      * @param verifiedAccessEndpoint
-     *        The Amazon Web Services Verified Access endpoint details.
+     *        The Verified Access endpoint details.
      */
 
     public void setVerifiedAccessEndpoint(VerifiedAccessEndpoint verifiedAccessEndpoint) {
@@ -45,10 +45,10 @@ public class ModifyVerifiedAccessEndpointResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access endpoint details.
+     * The Verified Access endpoint details.
      * </p>
      * 
-     * @return The Amazon Web Services Verified Access endpoint details.
+     * @return The Verified Access endpoint details.
      */
 
     public VerifiedAccessEndpoint getVerifiedAccessEndpoint() {
@@ -57,11 +57,11 @@ public class ModifyVerifiedAccessEndpointResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access endpoint details.
+     * The Verified Access endpoint details.
      * </p>
      * 
      * @param verifiedAccessEndpoint
-     *        The Amazon Web Services Verified Access endpoint details.
+     *        The Verified Access endpoint details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

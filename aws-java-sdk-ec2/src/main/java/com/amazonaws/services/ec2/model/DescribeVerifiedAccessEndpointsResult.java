@@ -26,7 +26,7 @@ public class DescribeVerifiedAccessEndpointsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VerifiedAccessEndpoint> verifiedAccessEndpoints;
@@ -40,10 +40,10 @@ public class DescribeVerifiedAccessEndpointsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access endpoint.
+     * @return The ID of the Verified Access endpoint.
      */
 
     public java.util.List<VerifiedAccessEndpoint> getVerifiedAccessEndpoints() {
@@ -55,11 +55,11 @@ public class DescribeVerifiedAccessEndpointsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpoints
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      */
 
     public void setVerifiedAccessEndpoints(java.util.Collection<VerifiedAccessEndpoint> verifiedAccessEndpoints) {
@@ -73,7 +73,7 @@ public class DescribeVerifiedAccessEndpointsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVerifiedAccessEndpointsResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param verifiedAccessEndpoints
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class DescribeVerifiedAccessEndpointsResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpoints
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

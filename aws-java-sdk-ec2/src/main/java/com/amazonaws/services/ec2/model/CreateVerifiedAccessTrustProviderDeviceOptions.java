@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Options for a device-identity type trust provider.
+ * Describes the options when creating an Amazon Web Services Verified Access trust provider using the
+ * <code>device</code> type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProviderDeviceOptions"

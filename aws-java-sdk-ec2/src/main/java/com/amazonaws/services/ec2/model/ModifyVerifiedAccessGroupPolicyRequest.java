@@ -28,7 +28,7 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      */
     private String verifiedAccessGroupId;
@@ -40,7 +40,7 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
     private Boolean policyEnabled;
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      */
     private String policyDocument;
@@ -56,11 +56,11 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      */
 
     public void setVerifiedAccessGroupId(String verifiedAccessGroupId) {
@@ -69,10 +69,10 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access group.
+     * @return The ID of the Verified Access group.
      */
 
     public String getVerifiedAccessGroupId() {
@@ -81,11 +81,11 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access group.
+     * The ID of the Verified Access group.
      * </p>
      * 
      * @param verifiedAccessGroupId
-     *        The ID of the Amazon Web Services Verified Access group.
+     *        The ID of the Verified Access group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -161,10 +161,10 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
-     * @return The Amazon Web Services Verified Access policy document.
+     * @return The Verified Access policy document.
      */
 
     public String getPolicyDocument() {
@@ -173,11 +173,11 @@ public class ModifyVerifiedAccessGroupPolicyRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

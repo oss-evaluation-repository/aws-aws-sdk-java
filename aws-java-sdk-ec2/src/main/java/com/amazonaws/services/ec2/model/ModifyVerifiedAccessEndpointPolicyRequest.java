@@ -28,7 +28,7 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      */
     private String verifiedAccessEndpointId;
@@ -40,7 +40,7 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
     private Boolean policyEnabled;
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      */
     private String policyDocument;
@@ -56,11 +56,11 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpointId
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      */
 
     public void setVerifiedAccessEndpointId(String verifiedAccessEndpointId) {
@@ -69,10 +69,10 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services Verified Access endpoint.
+     * @return The ID of the Verified Access endpoint.
      */
 
     public String getVerifiedAccessEndpointId() {
@@ -81,11 +81,11 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the Amazon Web Services Verified Access endpoint.
+     * The ID of the Verified Access endpoint.
      * </p>
      * 
      * @param verifiedAccessEndpointId
-     *        The ID of the Amazon Web Services Verified Access endpoint.
+     *        The ID of the Verified Access endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -161,10 +161,10 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
-     * @return The Amazon Web Services Verified Access policy document.
+     * @return The Verified Access policy document.
      */
 
     public String getPolicyDocument() {
@@ -173,11 +173,11 @@ public class ModifyVerifiedAccessEndpointPolicyRequest extends AmazonWebServiceR
 
     /**
      * <p>
-     * The Amazon Web Services Verified Access policy document.
+     * The Verified Access policy document.
      * </p>
      * 
      * @param policyDocument
-     *        The Amazon Web Services Verified Access policy document.
+     *        The Verified Access policy document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

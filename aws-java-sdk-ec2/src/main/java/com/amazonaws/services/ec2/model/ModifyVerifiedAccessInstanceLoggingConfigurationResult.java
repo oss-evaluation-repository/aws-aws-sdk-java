@@ -26,18 +26,18 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationResult extends com.
 
     /**
      * <p>
-     * The logging configuration for Amazon Web Services Verified Access instance.
+     * The logging configuration for the Verified Access instance.
      * </p>
      */
     private VerifiedAccessInstanceLoggingConfiguration loggingConfiguration;
 
     /**
      * <p>
-     * The logging configuration for Amazon Web Services Verified Access instance.
+     * The logging configuration for the Verified Access instance.
      * </p>
      * 
      * @param loggingConfiguration
-     *        The logging configuration for Amazon Web Services Verified Access instance.
+     *        The logging configuration for the Verified Access instance.
      */
 
     public void setLoggingConfiguration(VerifiedAccessInstanceLoggingConfiguration loggingConfiguration) {
@@ -46,10 +46,10 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationResult extends com.
 
     /**
      * <p>
-     * The logging configuration for Amazon Web Services Verified Access instance.
+     * The logging configuration for the Verified Access instance.
      * </p>
      * 
-     * @return The logging configuration for Amazon Web Services Verified Access instance.
+     * @return The logging configuration for the Verified Access instance.
      */
 
     public VerifiedAccessInstanceLoggingConfiguration getLoggingConfiguration() {
@@ -58,11 +58,11 @@ public class ModifyVerifiedAccessInstanceLoggingConfigurationResult extends com.
 
     /**
      * <p>
-     * The logging configuration for Amazon Web Services Verified Access instance.
+     * The logging configuration for the Verified Access instance.
      * </p>
      * 
      * @param loggingConfiguration
-     *        The logging configuration for Amazon Web Services Verified Access instance.
+     *        The logging configuration for the Verified Access instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

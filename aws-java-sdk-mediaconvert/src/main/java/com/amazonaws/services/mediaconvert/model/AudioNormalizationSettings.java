@@ -60,7 +60,7 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /**
      * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
      * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
-     * Enter a value from 0 to -20. Leave blank to use the default value 0.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
      */
     private Double truePeakLimiterThreshold;
 
@@ -419,12 +419,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /**
      * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
      * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
-     * Enter a value from 0 to -20. Leave blank to use the default value 0.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
      * 
      * @param truePeakLimiterThreshold
      *        Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio
      *        sample loudness in your output will be limited to the value that you specify, without affecting the
-     *        overall target LKFS. Enter a value from 0 to -20. Leave blank to use the default value 0.
+     *        overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
      */
 
     public void setTruePeakLimiterThreshold(Double truePeakLimiterThreshold) {
@@ -434,11 +434,11 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /**
      * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
      * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
-     * Enter a value from 0 to -20. Leave blank to use the default value 0.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
      * 
      * @return Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio
      *         sample loudness in your output will be limited to the value that you specify, without affecting the
-     *         overall target LKFS. Enter a value from 0 to -20. Leave blank to use the default value 0.
+     *         overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
      */
 
     public Double getTruePeakLimiterThreshold() {
@@ -448,12 +448,12 @@ public class AudioNormalizationSettings implements Serializable, Cloneable, Stru
     /**
      * Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio sample
      * loudness in your output will be limited to the value that you specify, without affecting the overall target LKFS.
-     * Enter a value from 0 to -20. Leave blank to use the default value 0.
+     * Enter a value from 0 to -8. Leave blank to use the default value 0.
      * 
      * @param truePeakLimiterThreshold
      *        Specify the True-peak limiter threshold in decibels relative to full scale (dBFS). The peak inter-audio
      *        sample loudness in your output will be limited to the value that you specify, without affecting the
-     *        overall target LKFS. Enter a value from 0 to -20. Leave blank to use the default value 0.
+     *        overall target LKFS. Enter a value from 0 to -8. Leave blank to use the default value 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

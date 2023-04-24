@@ -51,6 +51,30 @@ public class ModifyVerifiedAccessTrustProviderRequestMarshaller implements
         ModifyVerifiedAccessTrustProviderOidcOptions oidcOptions = modifyVerifiedAccessTrustProviderRequest.getOidcOptions();
         if (oidcOptions != null) {
 
+            if (oidcOptions.getIssuer() != null) {
+                request.addParameter("OidcOptions.Issuer", StringUtils.fromString(oidcOptions.getIssuer()));
+            }
+
+            if (oidcOptions.getAuthorizationEndpoint() != null) {
+                request.addParameter("OidcOptions.AuthorizationEndpoint", StringUtils.fromString(oidcOptions.getAuthorizationEndpoint()));
+            }
+
+            if (oidcOptions.getTokenEndpoint() != null) {
+                request.addParameter("OidcOptions.TokenEndpoint", StringUtils.fromString(oidcOptions.getTokenEndpoint()));
+            }
+
+            if (oidcOptions.getUserInfoEndpoint() != null) {
+                request.addParameter("OidcOptions.UserInfoEndpoint", StringUtils.fromString(oidcOptions.getUserInfoEndpoint()));
+            }
+
+            if (oidcOptions.getClientId() != null) {
+                request.addParameter("OidcOptions.ClientId", StringUtils.fromString(oidcOptions.getClientId()));
+            }
+
+            if (oidcOptions.getClientSecret() != null) {
+                request.addParameter("OidcOptions.ClientSecret", StringUtils.fromString(oidcOptions.getClientSecret()));
+            }
+
             if (oidcOptions.getScope() != null) {
                 request.addParameter("OidcOptions.Scope", StringUtils.fromString(oidcOptions.getScope()));
             }

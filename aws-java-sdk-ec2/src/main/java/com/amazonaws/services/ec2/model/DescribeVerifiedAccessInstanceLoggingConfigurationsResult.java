@@ -26,7 +26,7 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsResult extends c
 
     /**
      * <p>
-     * The current logging configuration for the Amazon Web Services Verified Access instances.
+     * The current logging configuration for the Verified Access instances.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VerifiedAccessInstanceLoggingConfiguration> loggingConfigurations;
@@ -40,10 +40,10 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsResult extends c
 
     /**
      * <p>
-     * The current logging configuration for the Amazon Web Services Verified Access instances.
+     * The current logging configuration for the Verified Access instances.
      * </p>
      * 
-     * @return The current logging configuration for the Amazon Web Services Verified Access instances.
+     * @return The current logging configuration for the Verified Access instances.
      */
 
     public java.util.List<VerifiedAccessInstanceLoggingConfiguration> getLoggingConfigurations() {
@@ -55,11 +55,11 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsResult extends c
 
     /**
      * <p>
-     * The current logging configuration for the Amazon Web Services Verified Access instances.
+     * The current logging configuration for the Verified Access instances.
      * </p>
      * 
      * @param loggingConfigurations
-     *        The current logging configuration for the Amazon Web Services Verified Access instances.
+     *        The current logging configuration for the Verified Access instances.
      */
 
     public void setLoggingConfigurations(java.util.Collection<VerifiedAccessInstanceLoggingConfiguration> loggingConfigurations) {
@@ -73,7 +73,7 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsResult extends c
 
     /**
      * <p>
-     * The current logging configuration for the Amazon Web Services Verified Access instances.
+     * The current logging configuration for the Verified Access instances.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsResult extends c
      * </p>
      * 
      * @param loggingConfigurations
-     *        The current logging configuration for the Amazon Web Services Verified Access instances.
+     *        The current logging configuration for the Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class DescribeVerifiedAccessInstanceLoggingConfigurationsResult extends c
 
     /**
      * <p>
-     * The current logging configuration for the Amazon Web Services Verified Access instances.
+     * The current logging configuration for the Verified Access instances.
      * </p>
      * 
      * @param loggingConfigurations
-     *        The current logging configuration for the Amazon Web Services Verified Access instances.
+     *        The current logging configuration for the Verified Access instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

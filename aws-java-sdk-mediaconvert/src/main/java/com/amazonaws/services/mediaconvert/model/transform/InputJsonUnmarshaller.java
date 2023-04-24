@@ -48,6 +48,14 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("advancedInputFilter", targetDepth)) {
+                    context.nextToken();
+                    input.setAdvancedInputFilter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("advancedInputFilterSettings", targetDepth)) {
+                    context.nextToken();
+                    input.setAdvancedInputFilterSettings(AdvancedInputFilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("audioSelectorGroups", targetDepth)) {
                     context.nextToken();
                     input.setAudioSelectorGroups(new MapUnmarshaller<String, AudioSelectorGroup>(context.getUnmarshaller(String.class),

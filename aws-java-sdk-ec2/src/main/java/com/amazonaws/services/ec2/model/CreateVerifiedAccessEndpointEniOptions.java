@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Options for a network interface-type endpoint.
+ * Describes the network interface options when creating an Amazon Web Services Verified Access endpoint using the
+ * <code>network-interface</code> type.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpointEniOptions"

@@ -23,7 +23,8 @@ public enum LivenessSessionStatus {
     CREATED("CREATED"),
     IN_PROGRESS("IN_PROGRESS"),
     SUCCEEDED("SUCCEEDED"),
-    FAILED("FAILED");
+    FAILED("FAILED"),
+    EXPIRED("EXPIRED");
 
     private String value;
 
