@@ -74,6 +74,22 @@ public class GetLabelDetectionResultJsonUnmarshaller implements Unmarshaller<Get
                     context.nextToken();
                     getLabelDetectionResult.setLabelModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Video", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobTag", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("GetRequestMetadata", targetDepth)) {
+                    context.nextToken();
+                    getLabelDetectionResult.setGetRequestMetadata(GetLabelDetectionRequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

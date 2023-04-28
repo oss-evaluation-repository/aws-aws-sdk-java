@@ -188,6 +188,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(CancelCapacityReservationRequest request) {
+
+        return cancelCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(final CancelCapacityReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelCapacityReservationRequest, CancelCapacityReservationResult> asyncHandler) {
+        final CancelCapacityReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelCapacityReservationResult>() {
+            @Override
+            public CancelCapacityReservationResult call() throws Exception {
+                CancelCapacityReservationResult result = null;
+
+                try {
+                    result = executeCancelCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(CreateCapacityReservationRequest request) {
+
+        return createCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(final CreateCapacityReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationRequest, CreateCapacityReservationResult> asyncHandler) {
+        final CreateCapacityReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCapacityReservationResult>() {
+            @Override
+            public CreateCapacityReservationResult call() throws Exception {
+                CreateCapacityReservationResult result = null;
+
+                try {
+                    result = executeCreateCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataCatalogResult> createDataCatalogAsync(CreateDataCatalogRequest request) {
 
         return createDataCatalogAsync(request, null);
@@ -668,6 +734,74 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeGetCalculationExecutionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityAssignmentConfigurationResult> getCapacityAssignmentConfigurationAsync(
+            GetCapacityAssignmentConfigurationRequest request) {
+
+        return getCapacityAssignmentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityAssignmentConfigurationResult> getCapacityAssignmentConfigurationAsync(
+            final GetCapacityAssignmentConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCapacityAssignmentConfigurationRequest, GetCapacityAssignmentConfigurationResult> asyncHandler) {
+        final GetCapacityAssignmentConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCapacityAssignmentConfigurationResult>() {
+            @Override
+            public GetCapacityAssignmentConfigurationResult call() throws Exception {
+                GetCapacityAssignmentConfigurationResult result = null;
+
+                try {
+                    result = executeGetCapacityAssignmentConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityReservationResult> getCapacityReservationAsync(GetCapacityReservationRequest request) {
+
+        return getCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityReservationResult> getCapacityReservationAsync(final GetCapacityReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCapacityReservationRequest, GetCapacityReservationResult> asyncHandler) {
+        final GetCapacityReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCapacityReservationResult>() {
+            @Override
+            public GetCapacityReservationResult call() throws Exception {
+                GetCapacityReservationResult result = null;
+
+                try {
+                    result = executeGetCapacityReservation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1179,6 +1313,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<ListCapacityReservationsResult> listCapacityReservationsAsync(ListCapacityReservationsRequest request) {
+
+        return listCapacityReservationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCapacityReservationsResult> listCapacityReservationsAsync(final ListCapacityReservationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCapacityReservationsRequest, ListCapacityReservationsResult> asyncHandler) {
+        final ListCapacityReservationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCapacityReservationsResult>() {
+            @Override
+            public ListCapacityReservationsResult call() throws Exception {
+                ListCapacityReservationsResult result = null;
+
+                try {
+                    result = executeListCapacityReservations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDataCatalogsResult> listDataCatalogsAsync(ListDataCatalogsRequest request) {
 
         return listDataCatalogsAsync(request, null);
@@ -1608,6 +1775,41 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<PutCapacityAssignmentConfigurationResult> putCapacityAssignmentConfigurationAsync(
+            PutCapacityAssignmentConfigurationRequest request) {
+
+        return putCapacityAssignmentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCapacityAssignmentConfigurationResult> putCapacityAssignmentConfigurationAsync(
+            final PutCapacityAssignmentConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutCapacityAssignmentConfigurationRequest, PutCapacityAssignmentConfigurationResult> asyncHandler) {
+        final PutCapacityAssignmentConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutCapacityAssignmentConfigurationResult>() {
+            @Override
+            public PutCapacityAssignmentConfigurationResult call() throws Exception {
+                PutCapacityAssignmentConfigurationResult result = null;
+
+                try {
+                    result = executePutCapacityAssignmentConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartCalculationExecutionResult> startCalculationExecutionAsync(StartCalculationExecutionRequest request) {
 
         return startCalculationExecutionAsync(request, null);
@@ -1856,6 +2058,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCapacityReservationResult> updateCapacityReservationAsync(UpdateCapacityReservationRequest request) {
+
+        return updateCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCapacityReservationResult> updateCapacityReservationAsync(final UpdateCapacityReservationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCapacityReservationRequest, UpdateCapacityReservationResult> asyncHandler) {
+        final UpdateCapacityReservationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCapacityReservationResult>() {
+            @Override
+            public UpdateCapacityReservationResult call() throws Exception {
+                UpdateCapacityReservationResult result = null;
+
+                try {
+                    result = executeUpdateCapacityReservation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

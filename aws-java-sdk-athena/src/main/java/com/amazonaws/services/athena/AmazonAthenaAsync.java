@@ -172,6 +172,72 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Cancels the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @return A Java Future containing the result of the CancelCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsync.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(
+            CancelCapacityReservationRequest cancelCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Cancels the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(
+            CancelCapacityReservationRequest cancelCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelCapacityReservationRequest, CancelCapacityReservationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a capacity reservation with the specified name and number of requested data processing units.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @return A Java Future containing the result of the CreateCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsync.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(
+            CreateCapacityReservationRequest createCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Creates a capacity reservation with the specified name and number of requested data processing units.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(
+            CreateCapacityReservationRequest createCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationRequest, CreateCapacityReservationResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
      * users of the same Amazon Web Services account.
      * </p>
@@ -676,6 +742,72 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     java.util.concurrent.Future<GetCalculationExecutionStatusResult> getCalculationExecutionStatusAsync(
             GetCalculationExecutionStatusRequest getCalculationExecutionStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionStatusRequest, GetCalculationExecutionStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the capacity assignment configuration for a capacity reservation, if one exists.
+     * </p>
+     * 
+     * @param getCapacityAssignmentConfigurationRequest
+     * @return A Java Future containing the result of the GetCapacityAssignmentConfiguration operation returned by the
+     *         service.
+     * @sample AmazonAthenaAsync.GetCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityAssignmentConfigurationResult> getCapacityAssignmentConfigurationAsync(
+            GetCapacityAssignmentConfigurationRequest getCapacityAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the capacity assignment configuration for a capacity reservation, if one exists.
+     * </p>
+     * 
+     * @param getCapacityAssignmentConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCapacityAssignmentConfiguration operation returned by the
+     *         service.
+     * @sample AmazonAthenaAsyncHandler.GetCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityAssignmentConfigurationResult> getCapacityAssignmentConfigurationAsync(
+            GetCapacityAssignmentConfigurationRequest getCapacityAssignmentConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityAssignmentConfigurationRequest, GetCapacityAssignmentConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param getCapacityReservationRequest
+     * @return A Java Future containing the result of the GetCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsync.GetCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityReservationResult> getCapacityReservationAsync(GetCapacityReservationRequest getCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Returns information about the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param getCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCapacityReservationResult> getCapacityReservationAsync(GetCapacityReservationRequest getCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityReservationRequest, GetCapacityReservationResult> asyncHandler);
 
     /**
      * <p>
@@ -1198,6 +1330,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Lists the capacity reservations for the current account.
+     * </p>
+     * 
+     * @param listCapacityReservationsRequest
+     * @return A Java Future containing the result of the ListCapacityReservations operation returned by the service.
+     * @sample AmazonAthenaAsync.ListCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCapacityReservationsResult> listCapacityReservationsAsync(ListCapacityReservationsRequest listCapacityReservationsRequest);
+
+    /**
+     * <p>
+     * Lists the capacity reservations for the current account.
+     * </p>
+     * 
+     * @param listCapacityReservationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCapacityReservations operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCapacityReservationsResult> listCapacityReservationsAsync(ListCapacityReservationsRequest listCapacityReservationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCapacityReservationsRequest, ListCapacityReservationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the data catalogs in the current Amazon Web Services account.
      * </p>
      * <note>
@@ -1587,7 +1750,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Lists the tags associated with an Athena workgroup or data catalog resource.
+     * Lists the tags associated with an Athena resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1600,7 +1763,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Lists the tags associated with an Athena workgroup or data catalog resource.
+     * Lists the tags associated with an Athena resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1646,6 +1809,45 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<ListWorkGroupsResult> listWorkGroupsAsync(ListWorkGroupsRequest listWorkGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<ListWorkGroupsRequest, ListWorkGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment
+     * configuration already exists for the capacity reservation, replaces the existing capacity assignment
+     * configuration.
+     * </p>
+     * 
+     * @param putCapacityAssignmentConfigurationRequest
+     * @return A Java Future containing the result of the PutCapacityAssignmentConfiguration operation returned by the
+     *         service.
+     * @sample AmazonAthenaAsync.PutCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutCapacityAssignmentConfigurationResult> putCapacityAssignmentConfigurationAsync(
+            PutCapacityAssignmentConfigurationRequest putCapacityAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment
+     * configuration already exists for the capacity reservation, replaces the existing capacity assignment
+     * configuration.
+     * </p>
+     * 
+     * @param putCapacityAssignmentConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutCapacityAssignmentConfiguration operation returned by the
+     *         service.
+     * @sample AmazonAthenaAsyncHandler.PutCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutCapacityAssignmentConfigurationResult> putCapacityAssignmentConfigurationAsync(
+            PutCapacityAssignmentConfigurationRequest putCapacityAssignmentConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutCapacityAssignmentConfigurationRequest, PutCapacityAssignmentConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1846,11 +2048,10 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
-     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
-     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
-     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
-     * in your account. For best practices, see <a
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of
+     * a key and an optional value, both of which you define. For example, you can use tags to categorize Athena
+     * workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of
+     * tag keys to make it easier to search and filter the resources in your account. For best practices, see <a
      * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256
      * UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters:
@@ -1868,11 +2069,10 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
-     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
-     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
-     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
-     * in your account. For best practices, see <a
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of
+     * a key and an optional value, both of which you define. For example, you can use tags to categorize Athena
+     * workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of
+     * tag keys to make it easier to search and filter the resources in your account. For best practices, see <a
      * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256
      * UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters:
@@ -1932,7 +2132,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Removes one or more tags from a data catalog or workgroup resource.
+     * Removes one or more tags from an Athena resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1945,7 +2145,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Removes one or more tags from a data catalog or workgroup resource.
+     * Removes one or more tags from an Athena resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1960,6 +2160,39 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the number of requested data processing units for the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param updateCapacityReservationRequest
+     * @return A Java Future containing the result of the UpdateCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsync.UpdateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCapacityReservationResult> updateCapacityReservationAsync(
+            UpdateCapacityReservationRequest updateCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Updates the number of requested data processing units for the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param updateCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCapacityReservation operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UpdateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCapacityReservationResult> updateCapacityReservationAsync(
+            UpdateCapacityReservationRequest updateCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCapacityReservationRequest, UpdateCapacityReservationResult> asyncHandler);
 
     /**
      * <p>

@@ -69,6 +69,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceArn;
@@ -151,6 +157,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceArn
@@ -187,6 +199,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For an App Runner service:
      *        <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services Verified Access instance:
+     *        <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      *        </p>
      *        </li>
      */
@@ -233,6 +251,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
@@ -268,6 +292,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         For an App Runner service:
      *         <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an Amazon Web Services Verified Access instance:
+     *         <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      *         </p>
      *         </li>
      */
@@ -314,6 +344,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceArn
@@ -350,6 +386,12 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        For an App Runner service:
      *        <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an Amazon Web Services Verified Access instance:
+     *        <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i> </code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

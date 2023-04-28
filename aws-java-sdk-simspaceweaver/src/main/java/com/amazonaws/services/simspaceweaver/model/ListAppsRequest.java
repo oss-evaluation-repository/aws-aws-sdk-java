@@ -39,11 +39,11 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private Integer maxResults;
     /**
      * <p>
-     * If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     * If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      * <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation
-     * again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code>
-     * is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't
-     * valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     * again using the returned token. Keep all other arguments unchanged. If no results remain, then
+     * <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide
+     * a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      * </p>
      */
     private String nextToken;
@@ -136,19 +136,19 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     * If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      * <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation
-     * again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code>
-     * is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't
-     * valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     * again using the returned token. Keep all other arguments unchanged. If no results remain, then
+     * <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide
+     * a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      * </p>
      * 
      * @param nextToken
-     *        If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     *        If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      *        <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the
-     *        operation again using the returned token. Keep all other arguments unchanged. If no results remain,
+     *        operation again using the returned token. Keep all other arguments unchanged. If no results remain, then
      *        <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you
-     *        provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     *        provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      */
 
     public void setNextToken(String nextToken) {
@@ -157,18 +157,18 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     * If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      * <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation
-     * again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code>
-     * is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't
-     * valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     * again using the returned token. Keep all other arguments unchanged. If no results remain, then
+     * <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide
+     * a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      * </p>
      * 
-     * @return If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     * @return If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      *         <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the
-     *         operation again using the returned token. Keep all other arguments unchanged. If no results remain,
+     *         operation again using the returned token. Keep all other arguments unchanged. If no results remain, then
      *         <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you
-     *         provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     *         provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      */
 
     public String getNextToken() {
@@ -177,19 +177,19 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     * If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      * <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the operation
-     * again using the returned token. Keep all other arguments unchanged. If no results remain, <code>nextToken</code>
-     * is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide a token that isn't
-     * valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     * again using the returned token. Keep all other arguments unchanged. If no results remain, then
+     * <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you provide
+     * a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      * </p>
      * 
      * @param nextToken
-     *        If SimSpace Weaver returns <code>nextToken</code>, there are more results available. The value of
+     *        If SimSpace Weaver returns <code>nextToken</code>, then there are more results available. The value of
      *        <code>nextToken</code> is a unique pagination token for each page. To retrieve the next page, call the
-     *        operation again using the returned token. Keep all other arguments unchanged. If no results remain,
+     *        operation again using the returned token. Keep all other arguments unchanged. If no results remain, then
      *        <code>nextToken</code> is set to <code>null</code>. Each pagination token expires after 24 hours. If you
-     *        provide a token that isn't valid, you receive an <i>HTTP 400 ValidationException</i> error.
+     *        provide a token that isn't valid, then you receive an <i>HTTP 400 ValidationException</i> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -84,6 +84,18 @@ public class GetSegmentDetectionResultJsonUnmarshaller implements Unmarshaller<G
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    getSegmentDetectionResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Video", targetDepth)) {
+                    context.nextToken();
+                    getSegmentDetectionResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobTag", targetDepth)) {
+                    context.nextToken();
+                    getSegmentDetectionResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

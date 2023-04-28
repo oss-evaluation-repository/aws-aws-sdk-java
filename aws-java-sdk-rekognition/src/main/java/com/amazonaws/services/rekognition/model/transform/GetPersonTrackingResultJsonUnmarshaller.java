@@ -70,6 +70,18 @@ public class GetPersonTrackingResultJsonUnmarshaller implements Unmarshaller<Get
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    getPersonTrackingResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Video", targetDepth)) {
+                    context.nextToken();
+                    getPersonTrackingResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobTag", targetDepth)) {
+                    context.nextToken();
+                    getPersonTrackingResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

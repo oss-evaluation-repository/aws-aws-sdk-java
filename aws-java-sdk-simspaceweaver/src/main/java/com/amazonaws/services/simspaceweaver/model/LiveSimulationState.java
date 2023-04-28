@@ -41,9 +41,9 @@ public class LiveSimulationState implements Serializable, Cloneable, StructuredP
     private java.util.List<SimulationClock> clocks;
     /**
      * <p>
-     * A list of domains for the simulation. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * A list of domains for the simulation. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      */
     private java.util.List<Domain> domains;
@@ -152,14 +152,14 @@ public class LiveSimulationState implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of domains for the simulation. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * A list of domains for the simulation. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * 
-     * @return A list of domains for the simulation. For more information about domains, see <a
-     *         href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *         concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * @return A list of domains for the simulation. For more information about domains, see <a href=
+     *         "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *         >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      */
 
     public java.util.List<Domain> getDomains() {
@@ -168,15 +168,15 @@ public class LiveSimulationState implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of domains for the simulation. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * A list of domains for the simulation. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * 
      * @param domains
-     *        A list of domains for the simulation. For more information about domains, see <a
-     *        href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *        concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     *        A list of domains for the simulation. For more information about domains, see <a href=
+     *        "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *        >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      */
 
     public void setDomains(java.util.Collection<Domain> domains) {
@@ -190,9 +190,9 @@ public class LiveSimulationState implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of domains for the simulation. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * A list of domains for the simulation. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -201,9 +201,9 @@ public class LiveSimulationState implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param domains
-     *        A list of domains for the simulation. For more information about domains, see <a
-     *        href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *        concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     *        A list of domains for the simulation. For more information about domains, see <a href=
+     *        "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *        >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,15 +219,15 @@ public class LiveSimulationState implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A list of domains for the simulation. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * A list of domains for the simulation. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * 
      * @param domains
-     *        A list of domains for the simulation. For more information about domains, see <a
-     *        href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *        concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     *        A list of domains for the simulation. For more information about domains, see <a href=
+     *        "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *        >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

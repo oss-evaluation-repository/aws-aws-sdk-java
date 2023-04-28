@@ -28,6 +28,19 @@ public class AbstractAWSSimSpaceWeaverAsync extends AbstractAWSSimSpaceWeaver im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request) {
+
+        return createSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSnapshotResult> createSnapshotAsync(CreateSnapshotRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSnapshotRequest, CreateSnapshotResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAppResult> deleteAppAsync(DeleteAppRequest request) {
 
         return deleteAppAsync(request, null);

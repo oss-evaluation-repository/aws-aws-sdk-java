@@ -64,8 +64,10 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
     private LoggingConfiguration loggingConfiguration;
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      */
     private String maximumDuration;
@@ -91,6 +93,7 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
      * An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.
      * </p>
      */
+    @Deprecated
     private String schemaError;
     /**
      * <p>
@@ -100,6 +103,15 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private S3Location schemaS3Location;
+
+    private S3Location snapshotS3Location;
+    /**
+     * <p>
+     * An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     * <code>STARTING</code> state.
+     * </p>
+     */
+    private String startError;
     /**
      * <p>
      * The current lifecycle state of the simulation.
@@ -373,13 +385,18 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      * 
      * @param maximumDuration
-     *        The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or
-     *        days (d or D). The simulation stops when it reaches this limit.
+     *        The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or
+     *        days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or
+     *        its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to
+     *        <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches
+     *        <code>Started</code>.
      */
 
     public void setMaximumDuration(String maximumDuration) {
@@ -388,12 +405,17 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      * 
-     * @return The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or
-     *         days (d or D). The simulation stops when it reaches this limit.
+     * @return The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or
+     *         days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or
+     *         its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to
+     *         <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches
+     *         <code>Started</code>.
      */
 
     public String getMaximumDuration() {
@@ -402,13 +424,18 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      * 
      * @param maximumDuration
-     *        The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or
-     *        days (d or D). The simulation stops when it reaches this limit.
+     *        The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or
+     *        days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or
+     *        its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to
+     *        <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches
+     *        <code>Started</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,7 +562,7 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
      * @param schemaError
      *        An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.
      */
-
+    @Deprecated
     public void setSchemaError(String schemaError) {
         this.schemaError = schemaError;
     }
@@ -547,7 +574,7 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @return An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.
      */
-
+    @Deprecated
     public String getSchemaError() {
         return this.schemaError;
     }
@@ -561,7 +588,7 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
      *        An error message that SimSpace Weaver returns only if there is a problem with the simulation schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeSimulationResult withSchemaError(String schemaError) {
         setSchemaError(schemaError);
         return this;
@@ -616,6 +643,78 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
 
     public DescribeSimulationResult withSchemaS3Location(S3Location schemaS3Location) {
         setSchemaS3Location(schemaS3Location);
+        return this;
+    }
+
+    /**
+     * @param snapshotS3Location
+     */
+
+    public void setSnapshotS3Location(S3Location snapshotS3Location) {
+        this.snapshotS3Location = snapshotS3Location;
+    }
+
+    /**
+     * @return
+     */
+
+    public S3Location getSnapshotS3Location() {
+        return this.snapshotS3Location;
+    }
+
+    /**
+     * @param snapshotS3Location
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSimulationResult withSnapshotS3Location(S3Location snapshotS3Location) {
+        setSnapshotS3Location(snapshotS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     * <code>STARTING</code> state.
+     * </p>
+     * 
+     * @param startError
+     *        An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     *        <code>STARTING</code> state.
+     */
+
+    public void setStartError(String startError) {
+        this.startError = startError;
+    }
+
+    /**
+     * <p>
+     * An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     * <code>STARTING</code> state.
+     * </p>
+     * 
+     * @return An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     *         <code>STARTING</code> state.
+     */
+
+    public String getStartError() {
+        return this.startError;
+    }
+
+    /**
+     * <p>
+     * An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     * <code>STARTING</code> state.
+     * </p>
+     * 
+     * @param startError
+     *        An error message that SimSpace Weaver returns only if a problem occurs when the simulation is in the
+     *        <code>STARTING</code> state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSimulationResult withStartError(String startError) {
+        setStartError(startError);
         return this;
     }
 
@@ -771,6 +870,10 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
             sb.append("SchemaError: ").append(getSchemaError()).append(",");
         if (getSchemaS3Location() != null)
             sb.append("SchemaS3Location: ").append(getSchemaS3Location()).append(",");
+        if (getSnapshotS3Location() != null)
+            sb.append("SnapshotS3Location: ").append(getSnapshotS3Location()).append(",");
+        if (getStartError() != null)
+            sb.append("StartError: ").append(getStartError()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTargetStatus() != null)
@@ -833,6 +936,14 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getSchemaS3Location() != null && other.getSchemaS3Location().equals(this.getSchemaS3Location()) == false)
             return false;
+        if (other.getSnapshotS3Location() == null ^ this.getSnapshotS3Location() == null)
+            return false;
+        if (other.getSnapshotS3Location() != null && other.getSnapshotS3Location().equals(this.getSnapshotS3Location()) == false)
+            return false;
+        if (other.getStartError() == null ^ this.getStartError() == null)
+            return false;
+        if (other.getStartError() != null && other.getStartError().equals(this.getStartError()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -860,6 +971,8 @@ public class DescribeSimulationResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSchemaError() == null) ? 0 : getSchemaError().hashCode());
         hashCode = prime * hashCode + ((getSchemaS3Location() == null) ? 0 : getSchemaS3Location().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotS3Location() == null) ? 0 : getSnapshotS3Location().hashCode());
+        hashCode = prime * hashCode + ((getStartError() == null) ? 0 : getStartError().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTargetStatus() == null) ? 0 : getTargetStatus().hashCode());
         return hashCode;

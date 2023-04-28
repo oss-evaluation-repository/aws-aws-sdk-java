@@ -126,6 +126,42 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Cancels the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @return Result of the CancelCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelCapacityReservationResult cancelCapacityReservation(CancelCapacityReservationRequest cancelCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Creates a capacity reservation with the specified name and number of requested data processing units.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @return Result of the CreateCapacityReservation operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest createCapacityReservationRequest);
+
+    /**
+     * <p>
      * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
      * users of the same Amazon Web Services account.
      * </p>
@@ -426,6 +462,43 @@ public interface AmazonAthena {
      *      target="_top">AWS API Documentation</a>
      */
     GetCalculationExecutionStatusResult getCalculationExecutionStatus(GetCalculationExecutionStatusRequest getCalculationExecutionStatusRequest);
+
+    /**
+     * <p>
+     * Gets the capacity assignment configuration for a capacity reservation, if one exists.
+     * </p>
+     * 
+     * @param getCapacityAssignmentConfigurationRequest
+     * @return Result of the GetCapacityAssignmentConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.GetCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCapacityAssignmentConfigurationResult getCapacityAssignmentConfiguration(
+            GetCapacityAssignmentConfigurationRequest getCapacityAssignmentConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns information about the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param getCapacityReservationRequest
+     * @return Result of the GetCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.GetCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCapacityReservationResult getCapacityReservation(GetCapacityReservationRequest getCapacityReservationRequest);
 
     /**
      * <p>
@@ -750,6 +823,24 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Lists the capacity reservations for the current account.
+     * </p>
+     * 
+     * @param listCapacityReservationsRequest
+     * @return Result of the ListCapacityReservations operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCapacityReservationsResult listCapacityReservations(ListCapacityReservationsRequest listCapacityReservationsRequest);
+
+    /**
+     * <p>
      * Lists the data catalogs in the current Amazon Web Services account.
      * </p>
      * <note>
@@ -990,7 +1081,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Lists the tags associated with an Athena workgroup or data catalog resource.
+     * Lists the tags associated with an Athena resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1025,6 +1116,27 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     ListWorkGroupsResult listWorkGroups(ListWorkGroupsRequest listWorkGroupsRequest);
+
+    /**
+     * <p>
+     * Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment
+     * configuration already exists for the capacity reservation, replaces the existing capacity assignment
+     * configuration.
+     * </p>
+     * 
+     * @param putCapacityAssignmentConfigurationRequest
+     * @return Result of the PutCapacityAssignmentConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.PutCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutCapacityAssignmentConfigurationResult putCapacityAssignmentConfiguration(
+            PutCapacityAssignmentConfigurationRequest putCapacityAssignmentConfigurationRequest);
 
     /**
      * <p>
@@ -1150,11 +1262,10 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
-     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
-     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
-     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
-     * in your account. For best practices, see <a
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of
+     * a key and an optional value, both of which you define. For example, you can use tags to categorize Athena
+     * workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of
+     * tag keys to make it easier to search and filter the resources in your account. For best practices, see <a
      * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256
      * UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters:
@@ -1202,7 +1313,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Removes one or more tags from a data catalog or workgroup resource.
+     * Removes one or more tags from an Athena resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1219,6 +1330,24 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the number of requested data processing units for the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param updateCapacityReservationRequest
+     * @return Result of the UpdateCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.UpdateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCapacityReservationResult updateCapacityReservation(UpdateCapacityReservationRequest updateCapacityReservationRequest);
 
     /**
      * <p>

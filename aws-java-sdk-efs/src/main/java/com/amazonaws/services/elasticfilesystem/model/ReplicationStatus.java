@@ -23,7 +23,9 @@ public enum ReplicationStatus {
     ENABLED("ENABLED"),
     ENABLING("ENABLING"),
     DELETING("DELETING"),
-    ERROR("ERROR");
+    ERROR("ERROR"),
+    PAUSED("PAUSED"),
+    PAUSING("PAUSING");
 
     private String value;
 

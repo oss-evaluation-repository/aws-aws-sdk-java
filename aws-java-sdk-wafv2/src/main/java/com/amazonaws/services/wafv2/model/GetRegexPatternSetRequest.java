@@ -35,7 +35,7 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -106,7 +106,7 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -127,7 +127,8 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -154,7 +155,7 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -174,7 +175,8 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *         API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *         API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *         instance. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -201,7 +203,7 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -222,7 +224,8 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -251,7 +254,7 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -272,7 +275,8 @@ public class GetRegexPatternSetRequest extends com.amazonaws.AmazonWebServiceReq
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>

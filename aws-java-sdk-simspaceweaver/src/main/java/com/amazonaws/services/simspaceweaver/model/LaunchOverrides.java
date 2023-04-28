@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options that apply when the app starts. These optiAons override default behavior.
+ * Options that apply when the app starts. These options override default behavior.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/LaunchOverrides" target="_top">AWS API

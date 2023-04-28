@@ -45,10 +45,11 @@ import com.amazonaws.services.wafv2.model.*;
  * <p>
  * WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to an Amazon
  * CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
- * user pool, or App Runner service. WAF also lets you control access to your content, to protect the Amazon Web
- * Services resource that WAF is monitoring. Based on conditions that you specify, such as the IP addresses that
- * requests originate from or the values of query strings, the protected resource responds to requests with either the
- * requested content, an HTTP 403 status code (Forbidden), or with a custom response.
+ * user pool, App Runner service, or Amazon Web Services Verified Access instance. WAF also lets you control access to
+ * your content, to protect the Amazon Web Services resource that WAF is monitoring. Based on conditions that you
+ * specify, such as the IP addresses that requests originate from or the values of query strings, the protected resource
+ * responds to requests with either the requested content, an HTTP 403 status code (Forbidden), or with a custom
+ * response.
  * </p>
  * <p>
  * This API guide is for developers who need detailed information about WAF API actions, data types, and errors. For
@@ -63,8 +64,8 @@ import com.amazonaws.services.wafv2.model.*;
  * <li>
  * <p>
  * For regional applications, you can use any of the endpoints in the list. A regional application can be an Application
- * Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App
- * Runner service.
+ * Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+ * Runner service, or an Amazon Web Services Verified Access instance.
  * </p>
  * </li>
  * <li>
@@ -110,7 +111,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Associates a web ACL with a regional application resource, to protect the resource. A regional application can be
      * an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service.
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate
@@ -142,7 +143,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Associates a web ACL with a regional application resource, to protect the resource. A regional application can be
      * an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service.
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate
@@ -228,15 +229,18 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
 
     /**
      * <p>
-     * Creates an API key for use in the integration of the CAPTCHA API in your JavaScript client applications. The
-     * integration lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For
-     * more information about the CAPTCHA JavaScript integration, see <a
+     * Creates an API key that contains a set of token domains.
+     * </p>
+     * <p>
+     * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets
+     * you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information
+     * about the CAPTCHA JavaScript integration, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * <p>
-     * The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application domain. You can use a
-     * single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration.
+     * You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your
+     * JavaScript integration.
      * </p>
      * 
      * @param createAPIKeyRequest
@@ -249,15 +253,18 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
 
     /**
      * <p>
-     * Creates an API key for use in the integration of the CAPTCHA API in your JavaScript client applications. The
-     * integration lets you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For
-     * more information about the CAPTCHA JavaScript integration, see <a
+     * Creates an API key that contains a set of token domains.
+     * </p>
+     * <p>
+     * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets
+     * you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information
+     * about the CAPTCHA JavaScript integration, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * <p>
-     * The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application domain. You can use a
-     * single key for up to 5 domains. After you generate a key, you can copy it for use in your JavaScript integration.
+     * You can use a single key for up to 5 domains. After you generate a key, you can copy it for use in your
+     * JavaScript integration.
      * </p>
      * 
      * @param createAPIKeyRequest
@@ -395,7 +402,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
      * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, or an App Runner service.
+     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * 
      * @param createWebACLRequest
@@ -417,7 +424,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
      * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, or an App Runner service.
+     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * 
      * @param createWebACLRequest
@@ -803,7 +810,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Disassociates the specified regional application resource from any existing web ACL association. A resource can
      * have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon
-     * API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
+     * API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon
+     * Web Services Verified Access instance.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
@@ -825,7 +833,8 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Disassociates the specified regional application resource from any existing web ACL association. A resource can
      * have at most one web ACL association. A regional application can be an Application Load Balancer (ALB), an Amazon
-     * API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
+     * API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon
+     * Web Services Verified Access instance.
      * </p>
      * <p>
      * For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To
@@ -897,6 +906,13 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Returns your API key in decrypted form. Use this to check the token domains that you have defined for the key.
      * </p>
+     * <p>
+     * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets
+     * you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information
+     * about the CAPTCHA JavaScript integration, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
+     * application integration</a> in the <i>WAF Developer Guide</i>.
+     * </p>
      * 
      * @param getDecryptedAPIKeyRequest
      * @return A Java Future containing the result of the GetDecryptedAPIKey operation returned by the service.
@@ -909,6 +925,13 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     /**
      * <p>
      * Returns your API key in decrypted form. Use this to check the token domains that you have defined for the key.
+     * </p>
+     * <p>
+     * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets
+     * you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information
+     * about the CAPTCHA JavaScript integration, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
+     * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param getDecryptedAPIKeyRequest
@@ -1355,6 +1378,13 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * <p>
      * Retrieves a list of the API keys that you've defined for the specified scope.
      * </p>
+     * <p>
+     * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets
+     * you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information
+     * about the CAPTCHA JavaScript integration, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
+     * application integration</a> in the <i>WAF Developer Guide</i>.
+     * </p>
      * 
      * @param listAPIKeysRequest
      * @return A Java Future containing the result of the ListAPIKeys operation returned by the service.
@@ -1367,6 +1397,13 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
     /**
      * <p>
      * Retrieves a list of the API keys that you've defined for the specified scope.
+     * </p>
+     * <p>
+     * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets
+     * you customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information
+     * about the CAPTCHA JavaScript integration, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
+     * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
      * 
      * @param listAPIKeysRequest
@@ -2620,7 +2657,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
      * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, or an App Runner service.
+     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -2679,7 +2716,7 @@ public interface AWSWAFV2Async extends AWSWAFV2 {
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront
      * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-     * Cognito user pool, or an App Runner service.
+     * Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * 
      * @param updateWebACLRequest

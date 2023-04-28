@@ -44,6 +44,8 @@ public class StartSimulationRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<StructuredPojo> SCHEMAS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaS3Location").build();
+    private static final MarshallingInfo<StructuredPojo> SNAPSHOTS3LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotS3Location").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -69,6 +71,7 @@ public class StartSimulationRequestMarshaller {
             protocolMarshaller.marshall(startSimulationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(startSimulationRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(startSimulationRequest.getSchemaS3Location(), SCHEMAS3LOCATION_BINDING);
+            protocolMarshaller.marshall(startSimulationRequest.getSnapshotS3Location(), SNAPSHOTS3LOCATION_BINDING);
             protocolMarshaller.marshall(startSimulationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

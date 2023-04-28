@@ -22,9 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A collection of app instances that run the same executable app code and have the same launch options and commands.
  * </p>
  * <p>
- * For more information about domains, see <a
- * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the
- * <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+ * For more information about domains, see <a href=
+ * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+ * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/Domain" target="_top">AWS API
@@ -35,9 +35,8 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are
-     * <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the
-     * apps).
+     * The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i>
+     * (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).
      * </p>
      * <p class="title">
      * <b>Lifecycle types</b>
@@ -45,26 +44,21 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     * <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b>
-     * API to stop the apps.
+     * <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The lifecycle types will change when the service is released for general availability (GA).
-     * </p>
-     * </note>
      */
     private String lifecycle;
     /**
@@ -76,9 +70,8 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are
-     * <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the
-     * apps).
+     * The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i>
+     * (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).
      * </p>
      * <p class="title">
      * <b>Lifecycle types</b>
@@ -86,56 +79,46 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     * <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b>
-     * API to stop the apps.
+     * <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The lifecycle types will change when the service is released for general availability (GA).
-     * </p>
-     * </note>
      * 
      * @param lifecycle
-     *        The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain
-     *        are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and
-     *        stop the apps).</p>
+     *        The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are
+     *        <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop
+     *        the apps).</p>
      *        <p class="title">
      *        <b>Lifecycle types</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     *        <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     *        <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the
-     *        <b>StopApp</b> API to stop the apps.
+     *        <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     *        <code>StopApp</code> API to stop the apps.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The lifecycle types will change when the service is released for general availability (GA).
-     *        </p>
      * @see LifecycleManagementStrategy
      */
 
@@ -145,9 +128,8 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are
-     * <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the
-     * apps).
+     * The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i>
+     * (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).
      * </p>
      * <p class="title">
      * <b>Lifecycle types</b>
@@ -155,55 +137,45 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     * <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b>
-     * API to stop the apps.
+     * <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The lifecycle types will change when the service is released for general availability (GA).
-     * </p>
-     * </note>
      * 
-     * @return The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain
-     *         are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and
-     *         stop the apps).</p>
+     * @return The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are
+     *         <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop
+     *         the apps).</p>
      *         <p class="title">
      *         <b>Lifecycle types</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     *         <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     *         <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the
-     *         <b>StopApp</b> API to stop the apps.
+     *         <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     *         <code>StopApp</code> API to stop the apps.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <note>
-     *         <p>
-     *         The lifecycle types will change when the service is released for general availability (GA).
-     *         </p>
      * @see LifecycleManagementStrategy
      */
 
@@ -213,9 +185,8 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are
-     * <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the
-     * apps).
+     * The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i>
+     * (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).
      * </p>
      * <p class="title">
      * <b>Lifecycle types</b>
@@ -223,56 +194,46 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     * <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b>
-     * API to stop the apps.
+     * <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The lifecycle types will change when the service is released for general availability (GA).
-     * </p>
-     * </note>
      * 
      * @param lifecycle
-     *        The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain
-     *        are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and
-     *        stop the apps).</p>
+     *        The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are
+     *        <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop
+     *        the apps).</p>
      *        <p class="title">
      *        <b>Lifecycle types</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     *        <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     *        <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the
-     *        <b>StopApp</b> API to stop the apps.
+     *        <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     *        <code>StopApp</code> API to stop the apps.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The lifecycle types will change when the service is released for general availability (GA).
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleManagementStrategy
      */
@@ -284,9 +245,8 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain are
-     * <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the
-     * apps).
+     * The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are <i>managed</i>
+     * (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop the apps).
      * </p>
      * <p class="title">
      * <b>Lifecycle types</b>
@@ -294,56 +254,46 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     * <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b>
-     * API to stop the apps.
+     * <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * The lifecycle types will change when the service is released for general availability (GA).
-     * </p>
-     * </note>
      * 
      * @param lifecycle
-     *        The type of lifecycle management for apps in the domain. This value indicates whether apps in this domain
-     *        are <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and
-     *        stop the apps).</p>
+     *        The type of lifecycle management for apps in the domain. Indicates whether apps in this domain are
+     *        <i>managed</i> (SimSpace Weaver starts and stops the apps) or <i>unmanaged</i> (you must start and stop
+     *        the apps).</p>
      *        <p class="title">
      *        <b>Lifecycle types</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PerWorker</code> – Managed: SimSpace Weaver starts 1 app on each worker
+     *        <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for each spatial partition
+     *        <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each spatial partition.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ByRequest</code> – Unmanaged: You use the <b>StartApp</b> API to start the apps and use the
-     *        <b>StopApp</b> API to stop the apps.
+     *        <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start the apps and use the
+     *        <code>StopApp</code> API to stop the apps.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <note>
-     *        <p>
-     *        The lifecycle types will change when the service is released for general availability (GA).
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleManagementStrategy
      */

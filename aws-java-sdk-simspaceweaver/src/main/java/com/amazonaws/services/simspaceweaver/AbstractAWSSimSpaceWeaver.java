@@ -28,6 +28,11 @@ public class AbstractAWSSimSpaceWeaver implements AWSSimSpaceWeaver {
     }
 
     @Override
+    public CreateSnapshotResult createSnapshot(CreateSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAppResult deleteApp(DeleteAppRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

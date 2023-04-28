@@ -75,6 +75,22 @@ public class GetContentModerationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getContentModerationResult.setModerationModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("JobId", targetDepth)) {
+                    context.nextToken();
+                    getContentModerationResult.setJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Video", targetDepth)) {
+                    context.nextToken();
+                    getContentModerationResult.setVideo(VideoJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("JobTag", targetDepth)) {
+                    context.nextToken();
+                    getContentModerationResult.setJobTag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("GetRequestMetadata", targetDepth)) {
+                    context.nextToken();
+                    getContentModerationResult.setGetRequestMetadata(GetContentModerationRequestMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

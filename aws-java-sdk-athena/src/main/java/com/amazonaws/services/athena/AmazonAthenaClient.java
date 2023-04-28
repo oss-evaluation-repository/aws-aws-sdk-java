@@ -356,6 +356,130 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Cancels the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param cancelCapacityReservationRequest
+     * @return Result of the CancelCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.CancelCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CancelCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelCapacityReservationResult cancelCapacityReservation(CancelCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final CancelCapacityReservationResult executeCancelCapacityReservation(CancelCapacityReservationRequest cancelCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelCapacityReservationRequest> request = null;
+        Response<CancelCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelCapacityReservationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a capacity reservation with the specified name and number of requested data processing units.
+     * </p>
+     * 
+     * @param createCapacityReservationRequest
+     * @return Result of the CreateCapacityReservation operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final CreateCapacityReservationResult executeCreateCapacityReservation(CreateCapacityReservationRequest createCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCapacityReservationRequest> request = null;
+        Response<CreateCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateCapacityReservationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
      * users of the same Amazon Web Services account.
      * </p>
@@ -1289,6 +1413,130 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<GetCalculationExecutionStatusResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetCalculationExecutionStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the capacity assignment configuration for a capacity reservation, if one exists.
+     * </p>
+     * 
+     * @param getCapacityAssignmentConfigurationRequest
+     * @return Result of the GetCapacityAssignmentConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.GetCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCapacityAssignmentConfigurationResult getCapacityAssignmentConfiguration(GetCapacityAssignmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCapacityAssignmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetCapacityAssignmentConfigurationResult executeGetCapacityAssignmentConfiguration(
+            GetCapacityAssignmentConfigurationRequest getCapacityAssignmentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCapacityAssignmentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCapacityAssignmentConfigurationRequest> request = null;
+        Response<GetCapacityAssignmentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCapacityAssignmentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getCapacityAssignmentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityAssignmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCapacityAssignmentConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCapacityAssignmentConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param getCapacityReservationRequest
+     * @return Result of the GetCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.GetCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCapacityReservation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetCapacityReservationResult getCapacityReservation(GetCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final GetCapacityReservationResult executeGetCapacityReservation(GetCapacityReservationRequest getCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCapacityReservationRequest> request = null;
+        Response<GetCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetCapacityReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2258,6 +2506,68 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Lists the capacity reservations for the current account.
+     * </p>
+     * 
+     * @param listCapacityReservationsRequest
+     * @return Result of the ListCapacityReservations operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListCapacityReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCapacityReservations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCapacityReservationsResult listCapacityReservations(ListCapacityReservationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCapacityReservations(request);
+    }
+
+    @SdkInternalApi
+    final ListCapacityReservationsResult executeListCapacityReservations(ListCapacityReservationsRequest listCapacityReservationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCapacityReservationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCapacityReservationsRequest> request = null;
+        Response<ListCapacityReservationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCapacityReservationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCapacityReservationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCapacityReservations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCapacityReservationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCapacityReservationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the data catalogs in the current Amazon Web Services account.
      * </p>
      * <note>
@@ -2961,7 +3271,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Lists the tags associated with an Athena workgroup or data catalog resource.
+     * Lists the tags associated with an Athena resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -3071,6 +3381,71 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<ListWorkGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWorkGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment
+     * configuration already exists for the capacity reservation, replaces the existing capacity assignment
+     * configuration.
+     * </p>
+     * 
+     * @param putCapacityAssignmentConfigurationRequest
+     * @return Result of the PutCapacityAssignmentConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.PutCapacityAssignmentConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/PutCapacityAssignmentConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutCapacityAssignmentConfigurationResult putCapacityAssignmentConfiguration(PutCapacityAssignmentConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutCapacityAssignmentConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutCapacityAssignmentConfigurationResult executePutCapacityAssignmentConfiguration(
+            PutCapacityAssignmentConfigurationRequest putCapacityAssignmentConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putCapacityAssignmentConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutCapacityAssignmentConfigurationRequest> request = null;
+        Response<PutCapacityAssignmentConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutCapacityAssignmentConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putCapacityAssignmentConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCapacityAssignmentConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutCapacityAssignmentConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutCapacityAssignmentConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3419,11 +3794,10 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
-     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
-     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
-     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
-     * in your account. For best practices, see <a
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. Each tag consists of
+     * a key and an optional value, both of which you define. For example, you can use tags to categorize Athena
+     * workgroups, data catalogs, or capacity reservations by purpose, owner, or environment. Use a consistent set of
+     * tag keys to make it easier to search and filter the resources in your account. For best practices, see <a
      * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
      * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256
      * UTF-8 Unicode characters. Tags can use letters and numbers representable in UTF-8, and the following characters:
@@ -3555,7 +3929,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Removes one or more tags from a data catalog or workgroup resource.
+     * Removes one or more tags from an Athena resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -3605,6 +3979,68 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the number of requested data processing units for the capacity reservation with the specified name.
+     * </p>
+     * 
+     * @param updateCapacityReservationRequest
+     * @return Result of the UpdateCapacityReservation operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @sample AmazonAthena.UpdateCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateCapacityReservationResult updateCapacityReservation(UpdateCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCapacityReservationResult executeUpdateCapacityReservation(UpdateCapacityReservationRequest updateCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCapacityReservationRequest> request = null;
+        Response<UpdateCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCapacityReservationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateCapacityReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateCapacityReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

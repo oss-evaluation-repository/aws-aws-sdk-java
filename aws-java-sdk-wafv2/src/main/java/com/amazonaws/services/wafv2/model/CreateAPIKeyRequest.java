@@ -29,7 +29,7 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -52,6 +52,13 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The client application domains that you want to use this API key for.
      * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      */
     private java.util.List<String> tokenDomains;
 
@@ -59,7 +66,7 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -80,7 +87,8 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -107,7 +115,7 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -127,7 +135,8 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *         application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *         API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *         API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *         instance. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -154,7 +163,7 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -175,7 +184,8 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -204,7 +214,7 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      * application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-     * Amazon Cognito user pool, or an App Runner service.
+     * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -225,7 +235,8 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param scope
      *        Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional
      *        application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL
-     *        API, an Amazon Cognito user pool, or an App Runner service. </p>
+     *        API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+     *        instance. </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -254,8 +265,21 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The client application domains that you want to use this API key for.
      * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      * 
-     * @return The client application domains that you want to use this API key for.
+     * @return The client application domains that you want to use this API key for. </p>
+     *         <p>
+     *         Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     *         </p>
+     *         <p>
+     *         Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *         token domains.
      */
 
     public java.util.List<String> getTokenDomains() {
@@ -266,9 +290,22 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The client application domains that you want to use this API key for.
      * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      * 
      * @param tokenDomains
-     *        The client application domains that you want to use this API key for.
+     *        The client application domains that you want to use this API key for. </p>
+     *        <p>
+     *        Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     *        </p>
+     *        <p>
+     *        Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *        token domains.
      */
 
     public void setTokenDomains(java.util.Collection<String> tokenDomains) {
@@ -285,13 +322,26 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The client application domains that you want to use this API key for.
      * </p>
      * <p>
+     * Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTokenDomains(java.util.Collection)} or {@link #withTokenDomains(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param tokenDomains
-     *        The client application domains that you want to use this API key for.
+     *        The client application domains that you want to use this API key for. </p>
+     *        <p>
+     *        Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     *        </p>
+     *        <p>
+     *        Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *        token domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,9 +359,22 @@ public class CreateAPIKeyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * The client application domains that you want to use this API key for.
      * </p>
+     * <p>
+     * Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     * </p>
+     * <p>
+     * Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token
+     * domains.
+     * </p>
      * 
      * @param tokenDomains
-     *        The client application domains that you want to use this API key for.
+     *        The client application domains that you want to use this API key for. </p>
+     *        <p>
+     *        Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code>
+     *        </p>
+     *        <p>
+     *        Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as
+     *        token domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

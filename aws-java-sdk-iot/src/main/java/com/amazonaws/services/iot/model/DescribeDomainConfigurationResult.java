@@ -72,6 +72,12 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.Date lastStatusChangeDate;
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     */
+    private TlsConfig tlsConfig;
 
     /**
      * <p>
@@ -521,6 +527,46 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @return An object that specifies the TLS configuration for a domain.
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainConfigurationResult withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -549,7 +595,9 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getDomainType() != null)
             sb.append("DomainType: ").append(getDomainType()).append(",");
         if (getLastStatusChangeDate() != null)
-            sb.append("LastStatusChangeDate: ").append(getLastStatusChangeDate());
+            sb.append("LastStatusChangeDate: ").append(getLastStatusChangeDate()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -600,6 +648,10 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getLastStatusChangeDate() != null && other.getLastStatusChangeDate().equals(this.getLastStatusChangeDate()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -617,6 +669,7 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getServiceType() == null) ? 0 : getServiceType().hashCode());
         hashCode = prime * hashCode + ((getDomainType() == null) ? 0 : getDomainType().hashCode());
         hashCode = prime * hashCode + ((getLastStatusChangeDate() == null) ? 0 : getLastStatusChangeDate().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

@@ -40899,6 +40899,12 @@
       }, {
         "name" : "ERROR",
         "value" : "ERROR"
+      }, {
+        "name" : "PAUSED",
+        "value" : "PAUSED"
+      }, {
+        "name" : "PAUSING",
+        "value" : "PAUSING"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.elasticfilesystem.enum.ReplicationStatus",

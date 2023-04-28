@@ -41,8 +41,10 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
     private String description;
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      */
     private String maximumDuration;
@@ -69,8 +71,28 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
      * Storage Service User Guide</i> </a>.
      * </p>
+     * <p>
+     * Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     * </p>
+     * <p>
+     * If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
+     * </p>
      */
     private S3Location schemaS3Location;
+    /**
+     * <p>
+     * The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about
+     * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
+     * Storage Service User Guide</i> </a>.
+     * </p>
+     * <p>
+     * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     * </p>
+     * <p>
+     * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     * </p>
+     */
+    private S3Location snapshotS3Location;
     /**
      * <p>
      * A list of tags for the simulation. For more information about tags, see <a
@@ -174,13 +196,18 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      * 
      * @param maximumDuration
-     *        The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or
-     *        days (d or D). The simulation stops when it reaches this limit.
+     *        The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or
+     *        days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or
+     *        its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to
+     *        <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches
+     *        <code>Started</code>.
      */
 
     public void setMaximumDuration(String maximumDuration) {
@@ -189,12 +216,17 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      * 
-     * @return The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or
-     *         days (d or D). The simulation stops when it reaches this limit.
+     * @return The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or
+     *         days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or
+     *         its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to
+     *         <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches
+     *         <code>Started</code>.
      */
 
     public String getMaximumDuration() {
@@ -203,13 +235,18 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or days (d
-     * or D). The simulation stops when it reaches this limit.
+     * The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or days (d
+     * or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or its equivalent
+     * in the other units. The default value is <code>14D</code>. A value equivalent to <code>0</code> makes the
+     * simulation immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
      * </p>
      * 
      * @param maximumDuration
-     *        The maximum running time of the simulation, specified as a number of months (m or M), hours (h or H), or
-     *        days (d or D). The simulation stops when it reaches this limit.
+     *        The maximum running time of the simulation, specified as a number of minutes (m or M), hours (h or H), or
+     *        days (d or D). The simulation stops when it reaches this limit. The maximum value is <code>14D</code>, or
+     *        its equivalent in the other units. The default value is <code>14D</code>. A value equivalent to
+     *        <code>0</code> makes the simulation immediately transition to <code>Stopping</code> as soon as it reaches
+     *        <code>Started</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,11 +371,22 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
      * Storage Service User Guide</i> </a>.
      * </p>
+     * <p>
+     * Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     * </p>
+     * <p>
+     * If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
+     * </p>
      * 
      * @param schemaS3Location
      *        The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information
      *        about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     *        <i>Amazon Simple Storage Service User Guide</i> </a>.
+     *        <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     *        <p>
+     *        Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
      */
 
     public void setSchemaS3Location(S3Location schemaS3Location) {
@@ -351,10 +399,21 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
      * Storage Service User Guide</i> </a>.
      * </p>
+     * <p>
+     * Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     * </p>
+     * <p>
+     * If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
+     * </p>
      * 
      * @return The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information
      *         about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     *         <i>Amazon Simple Storage Service User Guide</i> </a>.
+     *         <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     *         <p>
+     *         Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     *         </p>
+     *         <p>
+     *         If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
      */
 
     public S3Location getSchemaS3Location() {
@@ -367,16 +426,112 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
      * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
      * Storage Service User Guide</i> </a>.
      * </p>
+     * <p>
+     * Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     * </p>
+     * <p>
+     * If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
+     * </p>
      * 
      * @param schemaS3Location
      *        The location of the simulation schema in Amazon Simple Storage Service (Amazon S3). For more information
      *        about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     *        <i>Amazon Simple Storage Service User Guide</i> </a>.
+     *        <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     *        <p>
+     *        Provide a <code>SchemaS3Location</code> to start your simulation from a schema.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>SchemaS3Location</code> then you can't provide a <code>SnapshotS3Location</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartSimulationRequest withSchemaS3Location(S3Location schemaS3Location) {
         setSchemaS3Location(schemaS3Location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about
+     * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
+     * Storage Service User Guide</i> </a>.
+     * </p>
+     * <p>
+     * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     * </p>
+     * <p>
+     * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     * </p>
+     * 
+     * @param snapshotS3Location
+     *        The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information
+     *        about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     *        <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     *        <p>
+     *        Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     */
+
+    public void setSnapshotS3Location(S3Location snapshotS3Location) {
+        this.snapshotS3Location = snapshotS3Location;
+    }
+
+    /**
+     * <p>
+     * The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about
+     * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
+     * Storage Service User Guide</i> </a>.
+     * </p>
+     * <p>
+     * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     * </p>
+     * <p>
+     * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     * </p>
+     * 
+     * @return The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information
+     *         about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     *         <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     *         <p>
+     *         Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     *         </p>
+     *         <p>
+     *         If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     */
+
+    public S3Location getSnapshotS3Location() {
+        return this.snapshotS3Location;
+    }
+
+    /**
+     * <p>
+     * The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information about
+     * Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"> <i>Amazon Simple
+     * Storage Service User Guide</i> </a>.
+     * </p>
+     * <p>
+     * Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     * </p>
+     * <p>
+     * If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     * </p>
+     * 
+     * @param snapshotS3Location
+     *        The location of the snapshot .zip file in Amazon Simple Storage Service (Amazon S3). For more information
+     *        about Amazon S3, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     *        <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     *        <p>
+     *        Provide a <code>SnapshotS3Location</code> to start your simulation from a snapshot.
+     *        </p>
+     *        <p>
+     *        If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartSimulationRequest withSnapshotS3Location(S3Location snapshotS3Location) {
+        setSnapshotS3Location(snapshotS3Location);
         return this;
     }
 
@@ -484,6 +639,8 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getSchemaS3Location() != null)
             sb.append("SchemaS3Location: ").append(getSchemaS3Location()).append(",");
+        if (getSnapshotS3Location() != null)
+            sb.append("SnapshotS3Location: ").append(getSnapshotS3Location()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -524,6 +681,10 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getSchemaS3Location() != null && other.getSchemaS3Location().equals(this.getSchemaS3Location()) == false)
             return false;
+        if (other.getSnapshotS3Location() == null ^ this.getSnapshotS3Location() == null)
+            return false;
+        if (other.getSnapshotS3Location() != null && other.getSnapshotS3Location().equals(this.getSnapshotS3Location()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -542,6 +703,7 @@ public class StartSimulationRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSchemaS3Location() == null) ? 0 : getSchemaS3Location().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotS3Location() == null) ? 0 : getSnapshotS3Location().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

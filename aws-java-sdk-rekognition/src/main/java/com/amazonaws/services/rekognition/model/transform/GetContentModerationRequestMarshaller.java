@@ -35,6 +35,8 @@ public class GetContentModerationRequestMarshaller {
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<String> AGGREGATEBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AggregateBy").build();
 
     private static final GetContentModerationRequestMarshaller instance = new GetContentModerationRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class GetContentModerationRequestMarshaller {
             protocolMarshaller.marshall(getContentModerationRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getContentModerationRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getContentModerationRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(getContentModerationRequest.getAggregateBy(), AGGREGATEBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

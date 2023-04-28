@@ -67,6 +67,32 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(CancelCapacityReservationRequest request) {
+
+        return cancelCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCapacityReservationResult> cancelCapacityReservationAsync(CancelCapacityReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelCapacityReservationRequest, CancelCapacityReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(CreateCapacityReservationRequest request) {
+
+        return createCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCapacityReservationResult> createCapacityReservationAsync(CreateCapacityReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCapacityReservationRequest, CreateCapacityReservationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataCatalogResult> createDataCatalogAsync(CreateDataCatalogRequest request) {
 
         return createDataCatalogAsync(request, null);
@@ -257,6 +283,34 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     @Override
     public java.util.concurrent.Future<GetCalculationExecutionStatusResult> getCalculationExecutionStatusAsync(GetCalculationExecutionStatusRequest request,
             com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionStatusRequest, GetCalculationExecutionStatusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityAssignmentConfigurationResult> getCapacityAssignmentConfigurationAsync(
+            GetCapacityAssignmentConfigurationRequest request) {
+
+        return getCapacityAssignmentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityAssignmentConfigurationResult> getCapacityAssignmentConfigurationAsync(
+            GetCapacityAssignmentConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityAssignmentConfigurationRequest, GetCapacityAssignmentConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityReservationResult> getCapacityReservationAsync(GetCapacityReservationRequest request) {
+
+        return getCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCapacityReservationResult> getCapacityReservationAsync(GetCapacityReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCapacityReservationRequest, GetCapacityReservationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -457,6 +511,19 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListCapacityReservationsResult> listCapacityReservationsAsync(ListCapacityReservationsRequest request) {
+
+        return listCapacityReservationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCapacityReservationsResult> listCapacityReservationsAsync(ListCapacityReservationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCapacityReservationsRequest, ListCapacityReservationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDataCatalogsResult> listDataCatalogsAsync(ListDataCatalogsRequest request) {
 
         return listDataCatalogsAsync(request, null);
@@ -626,6 +693,21 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     }
 
     @Override
+    public java.util.concurrent.Future<PutCapacityAssignmentConfigurationResult> putCapacityAssignmentConfigurationAsync(
+            PutCapacityAssignmentConfigurationRequest request) {
+
+        return putCapacityAssignmentConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCapacityAssignmentConfigurationResult> putCapacityAssignmentConfigurationAsync(
+            PutCapacityAssignmentConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutCapacityAssignmentConfigurationRequest, PutCapacityAssignmentConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartCalculationExecutionResult> startCalculationExecutionAsync(StartCalculationExecutionRequest request) {
 
         return startCalculationExecutionAsync(request, null);
@@ -725,6 +807,19 @@ public class AbstractAmazonAthenaAsync extends AbstractAmazonAthena implements A
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCapacityReservationResult> updateCapacityReservationAsync(UpdateCapacityReservationRequest request) {
+
+        return updateCapacityReservationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCapacityReservationResult> updateCapacityReservationAsync(UpdateCapacityReservationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCapacityReservationRequest, UpdateCapacityReservationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

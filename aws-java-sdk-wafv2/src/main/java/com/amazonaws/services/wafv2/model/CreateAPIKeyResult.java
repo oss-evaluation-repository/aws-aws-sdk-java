@@ -27,11 +27,6 @@ public class CreateAPIKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      */
     private String aPIKey;
 
@@ -39,18 +34,9 @@ public class CreateAPIKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
      * @param aPIKey
-     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-     *        <p>
-     *        For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *        application integration</a> in the <i>WAF Developer Guide</i>.
+     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      */
 
     public void setAPIKey(String aPIKey) {
@@ -61,17 +47,8 @@ public class CreateAPIKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
-     * @return The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-     *         <p>
-     *         For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *         application integration</a> in the <i>WAF Developer Guide</i>.
+     * @return The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      */
 
     public String getAPIKey() {
@@ -82,18 +59,9 @@ public class CreateAPIKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
      * @param aPIKey
-     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-     *        <p>
-     *        For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *        application integration</a> in the <i>WAF Developer Guide</i>.
+     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

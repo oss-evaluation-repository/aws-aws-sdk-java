@@ -35,6 +35,8 @@ public class UpdateDomainConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainConfigurationStatus").build();
     private static final MarshallingInfo<Boolean> REMOVEAUTHORIZERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("removeAuthorizerConfig").build();
+    private static final MarshallingInfo<StructuredPojo> TLSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsConfig").build();
 
     private static final UpdateDomainConfigurationRequestMarshaller instance = new UpdateDomainConfigurationRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateDomainConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateDomainConfigurationRequest.getAuthorizerConfig(), AUTHORIZERCONFIG_BINDING);
             protocolMarshaller.marshall(updateDomainConfigurationRequest.getDomainConfigurationStatus(), DOMAINCONFIGURATIONSTATUS_BINDING);
             protocolMarshaller.marshall(updateDomainConfigurationRequest.getRemoveAuthorizerConfig(), REMOVEAUTHORIZERCONFIG_BINDING);
+            protocolMarshaller.marshall(updateDomainConfigurationRequest.getTlsConfig(), TLSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

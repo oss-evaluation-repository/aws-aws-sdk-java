@@ -21,6 +21,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Information for a single API key.
  * </p>
+ * <p>
+ * API keys are required for the integration of the CAPTCHA API in your JavaScript client applications. The API lets you
+ * customize the placement and characteristics of the CAPTCHA puzzle for your end users. For more information about the
+ * CAPTCHA JavaScript integration, see <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application
+ * integration</a> in the <i>WAF Developer Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/APIKeySummary" target="_top">AWS API
  *      Documentation</a>
@@ -37,11 +44,6 @@ public class APIKeySummary implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
-     * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
      */
     private String aPIKey;
@@ -132,18 +134,9 @@ public class APIKeySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
      * @param aPIKey
-     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-     *        <p>
-     *        For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *        application integration</a> in the <i>WAF Developer Guide</i>.
+     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      */
 
     public void setAPIKey(String aPIKey) {
@@ -154,17 +147,8 @@ public class APIKeySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
-     * @return The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-     *         <p>
-     *         For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *         application integration</a> in the <i>WAF Developer Guide</i>.
+     * @return The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      */
 
     public String getAPIKey() {
@@ -175,18 +159,9 @@ public class APIKeySummary implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
      * @param aPIKey
-     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
-     *        <p>
-     *        For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *        application integration</a> in the <i>WAF Developer Guide</i>.
+     *        The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -92,6 +92,14 @@ public class DescribeSimulationResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeSimulationResult.setSchemaS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SnapshotS3Location", targetDepth)) {
+                    context.nextToken();
+                    describeSimulationResult.setSnapshotS3Location(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("StartError", targetDepth)) {
+                    context.nextToken();
+                    describeSimulationResult.setStartError(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     describeSimulationResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

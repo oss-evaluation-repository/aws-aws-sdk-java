@@ -60,6 +60,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String configuration;
     /**
      * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * </p>
+     */
+    private String grafanaVersion;
+    /**
+     * <p>
      * Configuration for network access to your workspace.
      * </p>
      * <p>
@@ -495,6 +504,61 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateWorkspaceRequest withConfiguration(String configuration) {
         setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * </p>
+     * 
+     * @param grafanaVersion
+     *        Specifies the version of Grafana to support in the new workspace.</p>
+     *        <p>
+     *        Supported values are <code>8.4</code> and <code>9.4</code>.
+     */
+
+    public void setGrafanaVersion(String grafanaVersion) {
+        this.grafanaVersion = grafanaVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * </p>
+     * 
+     * @return Specifies the version of Grafana to support in the new workspace.</p>
+     *         <p>
+     *         Supported values are <code>8.4</code> and <code>9.4</code>.
+     */
+
+    public String getGrafanaVersion() {
+        return this.grafanaVersion;
+    }
+
+    /**
+     * <p>
+     * Specifies the version of Grafana to support in the new workspace.
+     * </p>
+     * <p>
+     * Supported values are <code>8.4</code> and <code>9.4</code>.
+     * </p>
+     * 
+     * @param grafanaVersion
+     *        Specifies the version of Grafana to support in the new workspace.</p>
+     *        <p>
+     *        Supported values are <code>8.4</code> and <code>9.4</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkspaceRequest withGrafanaVersion(String grafanaVersion) {
+        setGrafanaVersion(grafanaVersion);
         return this;
     }
 
@@ -1464,6 +1528,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
+        if (getGrafanaVersion() != null)
+            sb.append("GrafanaVersion: ").append(getGrafanaVersion()).append(",");
         if (getNetworkAccessControl() != null)
             sb.append("NetworkAccessControl: ").append(getNetworkAccessControl()).append(",");
         if (getOrganizationRoleName() != null)
@@ -1517,6 +1583,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getConfiguration() == null ^ this.getConfiguration() == null)
             return false;
         if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
+        if (other.getGrafanaVersion() == null ^ this.getGrafanaVersion() == null)
+            return false;
+        if (other.getGrafanaVersion() != null && other.getGrafanaVersion().equals(this.getGrafanaVersion()) == false)
             return false;
         if (other.getNetworkAccessControl() == null ^ this.getNetworkAccessControl() == null)
             return false;
@@ -1579,6 +1649,7 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getAuthenticationProviders() == null) ? 0 : getAuthenticationProviders().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGrafanaVersion() == null) ? 0 : getGrafanaVersion().hashCode());
         hashCode = prime * hashCode + ((getNetworkAccessControl() == null) ? 0 : getNetworkAccessControl().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());

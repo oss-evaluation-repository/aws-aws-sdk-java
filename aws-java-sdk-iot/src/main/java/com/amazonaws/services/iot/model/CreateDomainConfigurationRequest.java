@@ -80,6 +80,12 @@ public class CreateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </note>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     */
+    private TlsConfig tlsConfig;
 
     /**
      * <p>
@@ -570,6 +576,46 @@ public class CreateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @return An object that specifies the TLS configuration for a domain.
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * An object that specifies the TLS configuration for a domain.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        An object that specifies the TLS configuration for a domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainConfigurationRequest withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -594,7 +640,9 @@ public class CreateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
         if (getServiceType() != null)
             sb.append("ServiceType: ").append(getServiceType()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -637,6 +685,10 @@ public class CreateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -652,6 +704,7 @@ public class CreateDomainConfigurationRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getAuthorizerConfig() == null) ? 0 : getAuthorizerConfig().hashCode());
         hashCode = prime * hashCode + ((getServiceType() == null) ? 0 : getServiceType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

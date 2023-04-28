@@ -31,7 +31,7 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing
-     * work and manages other executors in a notebook session.
+     * work and manages other executors in a notebook session. The default is 1.
      * </p>
      */
     private Integer coordinatorDpuSize;
@@ -44,7 +44,7 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook
-     * session can request from Athena.
+     * session can request from Athena. The default is 1.
      * </p>
      */
     private Integer defaultExecutorDpuSize;
@@ -61,12 +61,12 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing
-     * work and manages other executors in a notebook session.
+     * work and manages other executors in a notebook session. The default is 1.
      * </p>
      * 
      * @param coordinatorDpuSize
      *        The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates
-     *        processing work and manages other executors in a notebook session.
+     *        processing work and manages other executors in a notebook session. The default is 1.
      */
 
     public void setCoordinatorDpuSize(Integer coordinatorDpuSize) {
@@ -76,11 +76,11 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing
-     * work and manages other executors in a notebook session.
+     * work and manages other executors in a notebook session. The default is 1.
      * </p>
      * 
      * @return The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates
-     *         processing work and manages other executors in a notebook session.
+     *         processing work and manages other executors in a notebook session. The default is 1.
      */
 
     public Integer getCoordinatorDpuSize() {
@@ -90,12 +90,12 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates processing
-     * work and manages other executors in a notebook session.
+     * work and manages other executors in a notebook session. The default is 1.
      * </p>
      * 
      * @param coordinatorDpuSize
      *        The number of DPUs to use for the coordinator. A coordinator is a special executor that orchestrates
-     *        processing work and manages other executors in a notebook session.
+     *        processing work and manages other executors in a notebook session. The default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,12 +147,12 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook
-     * session can request from Athena.
+     * session can request from Athena. The default is 1.
      * </p>
      * 
      * @param defaultExecutorDpuSize
      *        The default number of DPUs to use for executors. An executor is the smallest unit of compute that a
-     *        notebook session can request from Athena.
+     *        notebook session can request from Athena. The default is 1.
      */
 
     public void setDefaultExecutorDpuSize(Integer defaultExecutorDpuSize) {
@@ -162,11 +162,11 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook
-     * session can request from Athena.
+     * session can request from Athena. The default is 1.
      * </p>
      * 
      * @return The default number of DPUs to use for executors. An executor is the smallest unit of compute that a
-     *         notebook session can request from Athena.
+     *         notebook session can request from Athena. The default is 1.
      */
 
     public Integer getDefaultExecutorDpuSize() {
@@ -176,12 +176,12 @@ public class EngineConfiguration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The default number of DPUs to use for executors. An executor is the smallest unit of compute that a notebook
-     * session can request from Athena.
+     * session can request from Athena. The default is 1.
      * </p>
      * 
      * @param defaultExecutorDpuSize
      *        The default number of DPUs to use for executors. An executor is the smallest unit of compute that a
-     *        notebook session can request from Athena.
+     *        notebook session can request from Athena. The default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum OAuth2GrantType {
 
     CLIENT_CREDENTIALS("CLIENT_CREDENTIALS"),
-    AUTHORIZATION_CODE("AUTHORIZATION_CODE");
+    AUTHORIZATION_CODE("AUTHORIZATION_CODE"),
+    JWT_BEARER("JWT_BEARER");
 
     private String value;
 

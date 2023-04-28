@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of metadata about an app.
+ * A collection of metadata about the app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationAppMetadata"
@@ -30,9 +30,9 @@ public class SimulationAppMetadata implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * The domain of the app. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      */
     private String domain;
@@ -63,15 +63,15 @@ public class SimulationAppMetadata implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * The domain of the app. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The domain of the app. For more information about domains, see <a
-     *        href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *        concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     *        The domain of the app. For more information about domains, see <a href=
+     *        "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *        >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -80,14 +80,14 @@ public class SimulationAppMetadata implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * The domain of the app. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * 
-     * @return The domain of the app. For more information about domains, see <a
-     *         href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *         concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * @return The domain of the app. For more information about domains, see <a href=
+     *         "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *         >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      */
 
     public String getDomain() {
@@ -96,15 +96,15 @@ public class SimulationAppMetadata implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in
-     * the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     * The domain of the app. For more information about domains, see <a href=
+     * "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     * >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The domain of the app. For more information about domains, see <a
-     *        href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     *        concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+     *        The domain of the app. For more information about domains, see <a href=
+     *        "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains"
+     *        >Key concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

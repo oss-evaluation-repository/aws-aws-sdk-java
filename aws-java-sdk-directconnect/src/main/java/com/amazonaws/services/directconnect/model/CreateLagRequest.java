@@ -27,7 +27,8 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum
+     * of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      * </p>
      */
     private Integer numberOfConnections;
@@ -91,11 +92,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum
+     * of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     *        The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a
+     *        maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      */
 
     public void setNumberOfConnections(Integer numberOfConnections) {
@@ -104,10 +107,12 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum
+     * of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      * </p>
      * 
-     * @return The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     * @return The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a
+     *         maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      */
 
     public Integer getNumberOfConnections() {
@@ -116,11 +121,13 @@ public class CreateLagRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     * The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum
+     * of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical dedicated connections initially provisioned and bundled by the LAG.
+     *        The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a
+     *        maximum of four connections when the port speed is 1G or 10G, or two when the port speed is 100G.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

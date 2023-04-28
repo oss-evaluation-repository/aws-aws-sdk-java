@@ -60,6 +60,12 @@ public class SalesforceMetadataJsonUnmarshaller implements Unmarshaller<Salesfor
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("oauth2GrantTypesSupported", targetDepth)) {
+                    context.nextToken();
+                    salesforceMetadata.setOauth2GrantTypesSupported(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

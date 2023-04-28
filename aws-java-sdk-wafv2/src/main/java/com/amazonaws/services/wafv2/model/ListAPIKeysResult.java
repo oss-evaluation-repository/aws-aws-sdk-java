@@ -42,11 +42,6 @@ public class ListAPIKeysResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The CAPTCHA application integration URL, for use in your JavaScript implementation.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      */
     private String applicationIntegrationURL;
 
@@ -187,18 +182,9 @@ public class ListAPIKeysResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The CAPTCHA application integration URL, for use in your JavaScript implementation.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
      * @param applicationIntegrationURL
-     *        The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-     *        <p>
-     *        For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *        application integration</a> in the <i>WAF Developer Guide</i>.
+     *        The CAPTCHA application integration URL, for use in your JavaScript implementation.
      */
 
     public void setApplicationIntegrationURL(String applicationIntegrationURL) {
@@ -209,17 +195,8 @@ public class ListAPIKeysResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The CAPTCHA application integration URL, for use in your JavaScript implementation.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
-     * @return The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-     *         <p>
-     *         For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *         application integration</a> in the <i>WAF Developer Guide</i>.
+     * @return The CAPTCHA application integration URL, for use in your JavaScript implementation.
      */
 
     public String getApplicationIntegrationURL() {
@@ -230,18 +207,9 @@ public class ListAPIKeysResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * The CAPTCHA application integration URL, for use in your JavaScript implementation.
      * </p>
-     * <p>
-     * For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     * application integration</a> in the <i>WAF Developer Guide</i>.
-     * </p>
      * 
      * @param applicationIntegrationURL
-     *        The CAPTCHA application integration URL, for use in your JavaScript implementation. </p>
-     *        <p>
-     *        For information about how to use this in your CAPTCHA JavaScript integration, see <a
-     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
-     *        application integration</a> in the <i>WAF Developer Guide</i>.
+     *        The CAPTCHA application integration URL, for use in your JavaScript implementation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

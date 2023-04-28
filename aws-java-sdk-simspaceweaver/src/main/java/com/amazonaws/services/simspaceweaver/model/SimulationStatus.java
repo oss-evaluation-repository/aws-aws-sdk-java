@@ -27,7 +27,8 @@ public enum SimulationStatus {
     STOPPED("STOPPED"),
     FAILED("FAILED"),
     DELETING("DELETING"),
-    DELETED("DELETED");
+    DELETED("DELETED"),
+    SNAPSHOT_IN_PROGRESS("SNAPSHOT_IN_PROGRESS");
 
     private String value;
 
