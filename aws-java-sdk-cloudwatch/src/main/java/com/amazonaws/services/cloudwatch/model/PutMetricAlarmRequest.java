@@ -108,7 +108,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -195,7 +195,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -282,7 +282,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -742,7 +742,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -825,7 +825,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>SSN notification action:</b>
+     *         <b>SNS notification action:</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -918,7 +918,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -1002,7 +1002,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1097,7 +1097,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -1186,7 +1186,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1283,7 +1283,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -1367,7 +1367,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1459,7 +1459,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -1542,7 +1542,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>SSN notification action:</b>
+     *         <b>SNS notification action:</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -1635,7 +1635,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -1719,7 +1719,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1814,7 +1814,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -1903,7 +1903,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -2000,7 +2000,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -2084,7 +2084,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -2176,7 +2176,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -2259,7 +2259,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         </ul>
      *         <p>
-     *         <b>SSN notification action:</b>
+     *         <b>SNS notification action:</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -2352,7 +2352,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -2436,7 +2436,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -2531,7 +2531,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -2620,7 +2620,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -2717,7 +2717,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * <p>
-     * <b>SSN notification action:</b>
+     * <b>SNS notification action:</b>
      * </p>
      * <ul>
      * <li>
@@ -2801,7 +2801,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        </ul>
      *        <p>
-     *        <b>SSN notification action:</b>
+     *        <b>SNS notification action:</b>
      *        </p>
      *        <ul>
      *        <li>

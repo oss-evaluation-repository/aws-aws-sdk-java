@@ -97,6 +97,9 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.opensearch.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DependencyFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.opensearch.model.transform.DependencyFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.opensearch.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -1408,6 +1411,74 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDomainHealthResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDomainHealthResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability
+     * Zone(s), standby nodes, node configurations, and node states.
+     * </p>
+     * 
+     * @param describeDomainNodesRequest
+     *        Container for the parameters to the <code>DescribeDomainNodes</code> operation.
+     * @return Result of the DescribeDomainNodes operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.DescribeDomainNodes
+     */
+    @Override
+    public DescribeDomainNodesResult describeDomainNodes(DescribeDomainNodesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDomainNodes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDomainNodesResult executeDescribeDomainNodes(DescribeDomainNodesRequest describeDomainNodesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDomainNodesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDomainNodesRequest> request = null;
+        Response<DescribeDomainNodesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDomainNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDomainNodesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomainNodes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeDomainNodesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDomainNodesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3291,7 +3362,7 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
      * </p>
      * 
      * @param updateDomainConfigRequest

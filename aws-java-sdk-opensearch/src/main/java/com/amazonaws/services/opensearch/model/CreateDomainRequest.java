@@ -133,7 +133,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.Map<String, String> advancedOptions;
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
@@ -920,10 +920,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
-     * @return Key-value pairs to configure slow log publishing.
+     * @return Key-value pairs to configure log publishing.
      */
 
     public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
@@ -932,11 +932,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Key-value pairs to configure slow log publishing.
+     *        Key-value pairs to configure log publishing.
      */
 
     public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
@@ -945,11 +945,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Key-value pairs to configure slow log publishing.
+     * Key-value pairs to configure log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Key-value pairs to configure slow log publishing.
+     *        Key-value pairs to configure log publishing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

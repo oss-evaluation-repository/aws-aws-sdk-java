@@ -123,6 +123,11 @@ public class AbstractAmazonOpenSearch implements AmazonOpenSearch {
     }
 
     @Override
+    public DescribeDomainNodesResult describeDomainNodes(DescribeDomainNodesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDomainsResult describeDomains(DescribeDomainsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

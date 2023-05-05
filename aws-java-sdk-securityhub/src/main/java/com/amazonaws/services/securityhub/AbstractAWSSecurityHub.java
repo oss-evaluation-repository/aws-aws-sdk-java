@@ -215,6 +215,11 @@ public class AbstractAWSSecurityHub implements AWSSecurityHub {
     }
 
     @Override
+    public GetFindingHistoryResult getFindingHistory(GetFindingHistoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetFindingsResult getFindings(GetFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

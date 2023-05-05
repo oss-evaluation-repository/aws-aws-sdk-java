@@ -42,7 +42,7 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Type.
+     * The type.
      * </p>
      */
     private String type;
@@ -129,11 +129,11 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The type.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The type.
      * @see ColumnDataType
      */
 
@@ -143,10 +143,10 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The type.
      * </p>
      * 
-     * @return Type.
+     * @return The type.
      * @see ColumnDataType
      */
 
@@ -156,11 +156,11 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The type.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColumnDataType
      */
@@ -172,11 +172,11 @@ public class OutputColumn implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Type.
+     * The type.
      * </p>
      * 
      * @param type
-     *        Type.
+     *        The type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColumnDataType
      */

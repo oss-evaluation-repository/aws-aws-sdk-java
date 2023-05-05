@@ -770,6 +770,104 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a new Q topic.
+     * </p>
+     * 
+     * @param createTopicRequest
+     * @return Result of the CreateTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateTopicResult createTopic(CreateTopicRequest createTopicRequest);
+
+    /**
+     * <p>
+     * Creates a topic refresh schedule.
+     * </p>
+     * 
+     * @param createTopicRefreshScheduleRequest
+     * @return Result of the CreateTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTopicRefreshScheduleResult createTopicRefreshSchedule(CreateTopicRefreshScheduleRequest createTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
+     * Creates a new VPC connection.
+     * </p>
+     * 
+     * @param createVPCConnectionRequest
+     * @return Result of the CreateVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateVPCConnectionResult createVPCConnection(CreateVPCConnectionRequest createVPCConnectionRequest);
+
+    /**
+     * <p>
      * Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web
      * Services account and Amazon QuickSight namespace.
      * </p>
@@ -1314,6 +1412,66 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes a topic.
+     * </p>
+     * 
+     * @param deleteTopicRequest
+     * @return Result of the DeleteTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteTopicResult deleteTopic(DeleteTopicRequest deleteTopicRequest);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param deleteTopicRefreshScheduleRequest
+     * @return Result of the DeleteTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTopicRefreshScheduleResult deleteTopicRefreshSchedule(DeleteTopicRefreshScheduleRequest deleteTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
      * Deletes the Amazon QuickSight user that is associated with the identity of the IAM user or role that's making the
      * call. The IAM user isn't deleted as a result of this call.
      * </p>
@@ -1372,6 +1530,38 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteUserByPrincipalIdResult deleteUserByPrincipalId(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest);
+
+    /**
+     * <p>
+     * Deletes a VPC connection.
+     * </p>
+     * 
+     * @param deleteVPCConnectionRequest
+     * @return Result of the DeleteVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteVPCConnectionResult deleteVPCConnection(DeleteVPCConnectionRequest deleteVPCConnectionRequest);
 
     /**
      * <p>
@@ -2366,6 +2556,116 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes a topic.
+     * </p>
+     * 
+     * @param describeTopicRequest
+     * @return Result of the DescribeTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeTopicResult describeTopic(DescribeTopicRequest describeTopicRequest);
+
+    /**
+     * <p>
+     * Describes the permissions of a topic.
+     * </p>
+     * 
+     * @param describeTopicPermissionsRequest
+     * @return Result of the DescribeTopicPermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTopicPermissionsResult describeTopicPermissions(DescribeTopicPermissionsRequest describeTopicPermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the status of a topic refresh.
+     * </p>
+     * 
+     * @param describeTopicRefreshRequest
+     * @return Result of the DescribeTopicRefresh operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopicRefresh
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefresh"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTopicRefreshResult describeTopicRefresh(DescribeTopicRefreshRequest describeTopicRefreshRequest);
+
+    /**
+     * <p>
+     * Deletes a topic refresh schedule.
+     * </p>
+     * 
+     * @param describeTopicRefreshScheduleRequest
+     * @return Result of the DescribeTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeTopicRefreshScheduleResult describeTopicRefreshSchedule(DescribeTopicRefreshScheduleRequest describeTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
      * Returns information about a user, given the user name.
      * </p>
      * 
@@ -2393,6 +2693,36 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     DescribeUserResult describeUser(DescribeUserRequest describeUserRequest);
+
+    /**
+     * <p>
+     * Describes a VPC connection.
+     * </p>
+     * 
+     * @param describeVPCConnectionRequest
+     * @return Result of the DescribeVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeVPCConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVPCConnectionResult describeVPCConnection(DescribeVPCConnectionRequest describeVPCConnectionRequest);
 
     /**
      * <p>
@@ -2978,7 +3308,7 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists IAM policy assignments in the current Amazon QuickSight account.
+     * Lists the IAM policy assignments in the current Amazon QuickSight account.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsRequest
@@ -3006,8 +3336,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM policies assigned to
-     * the specified user and group or groups that the user belongs to.
+     * Lists all of the IAM policy assignments, including the Amazon Resource Names (ARNs), for the IAM policies
+     * assigned to the specified user and group, or groups that the user belongs to.
      * </p>
      * 
      * @param listIAMPolicyAssignmentsForUserRequest
@@ -3327,6 +3657,64 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Lists all of the refresh schedules for a topic.
+     * </p>
+     * 
+     * @param listTopicRefreshSchedulesRequest
+     * @return Result of the ListTopicRefreshSchedules operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListTopicRefreshSchedules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicRefreshSchedules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTopicRefreshSchedulesResult listTopicRefreshSchedules(ListTopicRefreshSchedulesRequest listTopicRefreshSchedulesRequest);
+
+    /**
+     * <p>
+     * Lists all of the topics within an account.
+     * </p>
+     * 
+     * @param listTopicsRequest
+     * @return Result of the ListTopics operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListTopics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopics" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest);
+
+    /**
+     * <p>
      * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
      * </p>
      * 
@@ -3386,6 +3774,36 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     ListUsersResult listUsers(ListUsersRequest listUsersRequest);
+
+    /**
+     * <p>
+     * Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account.
+     * </p>
+     * 
+     * @param listVPCConnectionsRequest
+     * @return Result of the ListVPCConnections operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListVPCConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListVPCConnections" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListVPCConnectionsResult listVPCConnections(ListVPCConnectionsRequest listVPCConnectionsRequest);
 
     /**
      * <p>
@@ -3691,7 +4109,7 @@ public interface AmazonQuickSight {
      * </p>
      * <p>
      * You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging on data set, data
-     * source, dashboard, and template.
+     * source, dashboard, template, and topic.
      * </p>
      * <p>
      * Tagging for Amazon QuickSight works in a similar way to tagging for other Amazon Web Services services, except
@@ -4229,8 +4647,8 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the content and status of IP rules. To use this operation, you need to provide the entire map of rules.
-     * You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.
+     * Updates the content and status of IP rules. To use this operation, you must provide the entire map of rules. You
+     * can use the <code>DescribeIpRestriction</code> operation to get the current rule map.
      * </p>
      * 
      * @param updateIpRestrictionRequest
@@ -4617,6 +5035,104 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Updates a topic.
+     * </p>
+     * 
+     * @param updateTopicRequest
+     * @return Result of the UpdateTopic operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTopic
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopic" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateTopicResult updateTopic(UpdateTopicRequest updateTopicRequest);
+
+    /**
+     * <p>
+     * Updates the permissions of a topic.
+     * </p>
+     * 
+     * @param updateTopicPermissionsRequest
+     * @return Result of the UpdateTopicPermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTopicPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTopicPermissionsResult updateTopicPermissions(UpdateTopicPermissionsRequest updateTopicPermissionsRequest);
+
+    /**
+     * <p>
+     * Updates a topic refresh schedule.
+     * </p>
+     * 
+     * @param updateTopicRefreshScheduleRequest
+     * @return Result of the UpdateTopicRefreshSchedule operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTopicRefreshSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicRefreshSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateTopicRefreshScheduleResult updateTopicRefreshSchedule(UpdateTopicRefreshScheduleRequest updateTopicRefreshScheduleRequest);
+
+    /**
+     * <p>
      * Updates an Amazon QuickSight user.
      * </p>
      * 
@@ -4644,6 +5160,40 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     UpdateUserResult updateUser(UpdateUserRequest updateUserRequest);
+
+    /**
+     * <p>
+     * Updates a VPC connection.
+     * </p>
+     * 
+     * @param updateVPCConnectionRequest
+     * @return Result of the UpdateVPCConnection operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         credentials.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon Amazon QuickSight currently has Standard
+     *         Edition and Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateVPCConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateVPCConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateVPCConnectionResult updateVPCConnection(UpdateVPCConnectionRequest updateVPCConnectionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

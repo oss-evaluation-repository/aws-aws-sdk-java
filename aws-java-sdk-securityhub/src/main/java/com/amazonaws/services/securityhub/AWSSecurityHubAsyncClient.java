@@ -1373,6 +1373,39 @@ public class AWSSecurityHubAsyncClient extends AWSSecurityHubClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetFindingHistoryResult> getFindingHistoryAsync(GetFindingHistoryRequest request) {
+
+        return getFindingHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingHistoryResult> getFindingHistoryAsync(final GetFindingHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFindingHistoryRequest, GetFindingHistoryResult> asyncHandler) {
+        final GetFindingHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFindingHistoryResult>() {
+            @Override
+            public GetFindingHistoryResult call() throws Exception {
+                GetFindingHistoryResult result = null;
+
+                try {
+                    result = executeGetFindingHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetFindingsResult> getFindingsAsync(GetFindingsRequest request) {
 
         return getFindingsAsync(request, null);

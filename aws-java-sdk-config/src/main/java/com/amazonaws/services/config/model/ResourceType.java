@@ -293,7 +293,30 @@ public enum ResourceType {
     AWSNetworkManagerTransitGatewayRegistration("AWS::NetworkManager::TransitGatewayRegistration"),
     AWSCustomerProfilesDomain("AWS::CustomerProfiles::Domain"),
     AWSAutoScalingWarmPool("AWS::AutoScaling::WarmPool"),
-    AWSConnectPhoneNumber("AWS::Connect::PhoneNumber");
+    AWSConnectPhoneNumber("AWS::Connect::PhoneNumber"),
+    AWSAppConfigDeploymentStrategy("AWS::AppConfig::DeploymentStrategy"),
+    AWSAppFlowFlow("AWS::AppFlow::Flow"),
+    AWSAuditManagerAssessment("AWS::AuditManager::Assessment"),
+    AWSCloudWatchMetricStream("AWS::CloudWatch::MetricStream"),
+    AWSDeviceFarmInstanceProfile("AWS::DeviceFarm::InstanceProfile"),
+    AWSDeviceFarmProject("AWS::DeviceFarm::Project"),
+    AWSEC2EC2Fleet("AWS::EC2::EC2Fleet"),
+    AWSEC2SubnetRouteTableAssociation("AWS::EC2::SubnetRouteTableAssociation"),
+    AWSECRPullThroughCacheRule("AWS::ECR::PullThroughCacheRule"),
+    AWSGroundStationConfig("AWS::GroundStation::Config"),
+    AWSImageBuilderImagePipeline("AWS::ImageBuilder::ImagePipeline"),
+    AWSIoTFleetMetric("AWS::IoT::FleetMetric"),
+    AWSIoTWirelessServiceProfile("AWS::IoTWireless::ServiceProfile"),
+    AWSNetworkManagerDevice("AWS::NetworkManager::Device"),
+    AWSNetworkManagerGlobalNetwork("AWS::NetworkManager::GlobalNetwork"),
+    AWSNetworkManagerLink("AWS::NetworkManager::Link"),
+    AWSNetworkManagerSite("AWS::NetworkManager::Site"),
+    AWSPanoramaPackage("AWS::Panorama::Package"),
+    AWSPinpointApp("AWS::Pinpoint::App"),
+    AWSRedshiftScheduledAction("AWS::Redshift::ScheduledAction"),
+    AWSRoute53ResolverFirewallRuleGroupAssociation("AWS::Route53Resolver::FirewallRuleGroupAssociation"),
+    AWSSageMakerAppImageConfig("AWS::SageMaker::AppImageConfig"),
+    AWSSageMakerImage("AWS::SageMaker::Image");
 
     private String value;
 

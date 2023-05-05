@@ -154,6 +154,16 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Float confidence;
+    /**
+     * <p>
+     * <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and
+     * mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other
+     * objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that
+     * do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair,
+     * and others.
+     * </p>
+     */
+    private FaceOccluded faceOccluded;
 
     /**
      * <p>
@@ -852,6 +862,70 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and
+     * mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other
+     * objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that
+     * do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair,
+     * and others.
+     * </p>
+     * 
+     * @param faceOccluded
+     *        <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes,
+     *        nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones,
+     *        hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if
+     *        common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted
+     *        sunglasses, strands of hair, and others.
+     */
+
+    public void setFaceOccluded(FaceOccluded faceOccluded) {
+        this.faceOccluded = faceOccluded;
+    }
+
+    /**
+     * <p>
+     * <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and
+     * mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other
+     * objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that
+     * do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair,
+     * and others.
+     * </p>
+     * 
+     * @return <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes,
+     *         nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones,
+     *         hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if
+     *         common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted
+     *         sunglasses, strands of hair, and others.
+     */
+
+    public FaceOccluded getFaceOccluded() {
+        return this.faceOccluded;
+    }
+
+    /**
+     * <p>
+     * <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes, nose, and
+     * mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones, hands, or other
+     * objects. <code>FaceOccluded</code> should return "false" with a high confidence score if common occurrences that
+     * do not impact face verification are detected, such as eye glasses, lightly tinted sunglasses, strands of hair,
+     * and others.
+     * </p>
+     * 
+     * @param faceOccluded
+     *        <code>FaceOccluded</code> should return "true" with a high confidence score if a detected face’s eyes,
+     *        nose, and mouth are partially captured or if they are covered by masks, dark sunglasses, cell phones,
+     *        hands, or other objects. <code>FaceOccluded</code> should return "false" with a high confidence score if
+     *        common occurrences that do not impact face verification are detected, such as eye glasses, lightly tinted
+     *        sunglasses, strands of hair, and others.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FaceDetail withFaceOccluded(FaceOccluded faceOccluded) {
+        setFaceOccluded(faceOccluded);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -892,7 +966,9 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
         if (getQuality() != null)
             sb.append("Quality: ").append(getQuality()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: ").append(getConfidence());
+            sb.append("Confidence: ").append(getConfidence()).append(",");
+        if (getFaceOccluded() != null)
+            sb.append("FaceOccluded: ").append(getFaceOccluded());
         sb.append("}");
         return sb.toString();
     }
@@ -967,6 +1043,10 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConfidence() != null && other.getConfidence().equals(this.getConfidence()) == false)
             return false;
+        if (other.getFaceOccluded() == null ^ this.getFaceOccluded() == null)
+            return false;
+        if (other.getFaceOccluded() != null && other.getFaceOccluded().equals(this.getFaceOccluded()) == false)
+            return false;
         return true;
     }
 
@@ -990,6 +1070,7 @@ public class FaceDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPose() == null) ? 0 : getPose().hashCode());
         hashCode = prime * hashCode + ((getQuality() == null) ? 0 : getQuality().hashCode());
         hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
+        hashCode = prime * hashCode + ((getFaceOccluded() == null) ? 0 : getFaceOccluded().hashCode());
         return hashCode;
     }
 

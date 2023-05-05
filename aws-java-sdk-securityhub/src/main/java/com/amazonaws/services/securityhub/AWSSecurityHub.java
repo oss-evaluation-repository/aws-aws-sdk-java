@@ -1336,6 +1336,29 @@ public interface AWSSecurityHub {
 
     /**
      * <p>
+     * Returns history for a Security Hub finding in the last 90 days. The history includes changes made to any fields
+     * in the Amazon Web Services Security Finding Format (ASFF).
+     * </p>
+     * 
+     * @param getFindingHistoryRequest
+     * @return Result of the GetFindingHistory operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         The account doesn't have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current Amazon Web Services
+     *         account or throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.GetFindingHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetFindingHistoryResult getFindingHistory(GetFindingHistoryRequest getFindingHistoryRequest);
+
+    /**
+     * <p>
      * Returns a list of findings that match the specified criteria.
      * </p>
      * <p>

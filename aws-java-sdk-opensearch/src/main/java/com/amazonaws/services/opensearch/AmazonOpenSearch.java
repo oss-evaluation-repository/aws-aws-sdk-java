@@ -486,6 +486,32 @@ public interface AmazonOpenSearch {
 
     /**
      * <p>
+     * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability
+     * Zone(s), standby nodes, node configurations, and node states.
+     * </p>
+     * 
+     * @param describeDomainNodesRequest
+     *        Container for the parameters to the <code>DescribeDomainNodes</code> operation.
+     * @return Result of the DescribeDomainNodes operation returned by the service.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @throws InternalException
+     *         Request processing failed because of an unknown error, exception, or internal failure.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws ValidationException
+     *         An exception for accessing or deleting a resource that doesn't exist.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access an unsupported operation.
+     * @throws DependencyFailureException
+     *         An exception for when a failure in one of the dependencies results in the service being unable to fetch
+     *         details about the resource.
+     * @sample AmazonOpenSearch.DescribeDomainNodes
+     */
+    DescribeDomainNodesResult describeDomainNodes(DescribeDomainNodesRequest describeDomainNodesRequest);
+
+    /**
+     * <p>
      * Returns domain configuration information about the specified Amazon OpenSearch Service domains.
      * </p>
      * 
@@ -1108,7 +1134,7 @@ public interface AmazonOpenSearch {
 
     /**
      * <p>
-     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
      * </p>
      * 
      * @param updateDomainConfigRequest

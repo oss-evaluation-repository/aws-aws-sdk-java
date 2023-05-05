@@ -472,6 +472,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         be specifying an identifier that isn't valid.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
      * @sample AmazonECS.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -4150,6 +4152,8 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      *         ECS clusters are Region specific.
      * @throws InvalidParameterException
      *         The specified parameter isn't valid. Review the available parameters for the API request.
+     * @throws NamespaceNotFoundException
+     *         The specified namespace wasn't found.
      * @sample AmazonECS.UpdateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateCluster" target="_top">AWS API
      *      Documentation</a>

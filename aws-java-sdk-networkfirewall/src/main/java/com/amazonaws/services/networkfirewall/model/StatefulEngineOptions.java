@@ -60,6 +60,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      * still match, as would the <code>aws:drop_strict</code> default action.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     * Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish
+     * a new session. Network Firewall will have context about the new session and will apply rules to the subsequent
+     * traffic.
+     * </p>
+     * </li>
      * </ul>
      */
     private String streamExceptionPolicy;
@@ -181,6 +189,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      * still match, as would the <code>aws:drop_strict</code> default action.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     * Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish
+     * a new session. Network Firewall will have context about the new session and will apply rules to the subsequent
+     * traffic.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param streamExceptionPolicy
@@ -202,6 +218,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      *        application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
      *        <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
      *        action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the
+     *        firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can
+     *        immediately establish a new session. Network Firewall will have context about the new session and will
+     *        apply rules to the subsequent traffic.
      *        </p>
      *        </li>
      * @see StreamExceptionPolicy
@@ -233,6 +257,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      * still match, as would the <code>aws:drop_strict</code> default action.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     * Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish
+     * a new session. Network Firewall will have context about the new session and will apply rules to the subsequent
+     * traffic.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Configures how Network Firewall processes traffic when a network connection breaks midstream. Network
@@ -253,6 +285,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      *         the application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
      *         <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
      *         action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the
+     *         firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can
+     *         immediately establish a new session. Network Firewall will have context about the new session and will
+     *         apply rules to the subsequent traffic.
      *         </p>
      *         </li>
      * @see StreamExceptionPolicy
@@ -284,6 +324,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      * still match, as would the <code>aws:drop_strict</code> default action.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     * Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish
+     * a new session. Network Firewall will have context about the new session and will apply rules to the subsequent
+     * traffic.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param streamExceptionPolicy
@@ -305,6 +353,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      *        application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
      *        <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
      *        action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the
+     *        firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can
+     *        immediately establish a new session. Network Firewall will have context about the new session and will
+     *        apply rules to the subsequent traffic.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -338,6 +394,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      * still match, as would the <code>aws:drop_strict</code> default action.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the firewall.
+     * Network Firewall also sends a TCP reject packet back to your client so that the client can immediately establish
+     * a new session. Network Firewall will have context about the new session and will apply rules to the subsequent
+     * traffic.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param streamExceptionPolicy
@@ -359,6 +423,14 @@ public class StatefulEngineOptions implements Serializable, Cloneable, Structure
      *        application layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using a
      *        <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code> default
      *        action.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic going to the
+     *        firewall. Network Firewall also sends a TCP reject packet back to your client so that the client can
+     *        immediately establish a new session. Network Firewall will have context about the new session and will
+     *        apply rules to the subsequent traffic.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

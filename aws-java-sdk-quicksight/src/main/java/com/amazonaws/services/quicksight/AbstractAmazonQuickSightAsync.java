@@ -275,6 +275,45 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(CreateTopicRequest request) {
+
+        return createTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicResult> createTopicAsync(CreateTopicRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRequest, CreateTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicRefreshScheduleResult> createTopicRefreshScheduleAsync(CreateTopicRefreshScheduleRequest request) {
+
+        return createTopicRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTopicRefreshScheduleResult> createTopicRefreshScheduleAsync(CreateTopicRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTopicRefreshScheduleRequest, CreateTopicRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVPCConnectionResult> createVPCConnectionAsync(CreateVPCConnectionRequest request) {
+
+        return createVPCConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVPCConnectionResult> createVPCConnectionAsync(CreateVPCConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVPCConnectionRequest, CreateVPCConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(DeleteAccountCustomizationRequest request) {
 
         return deleteAccountCustomizationAsync(request, null);
@@ -509,6 +548,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(DeleteTopicRequest request) {
+
+        return deleteTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTopicResult> deleteTopicAsync(DeleteTopicRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRequest, DeleteTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTopicRefreshScheduleResult> deleteTopicRefreshScheduleAsync(DeleteTopicRefreshScheduleRequest request) {
+
+        return deleteTopicRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTopicRefreshScheduleResult> deleteTopicRefreshScheduleAsync(DeleteTopicRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTopicRefreshScheduleRequest, DeleteTopicRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
@@ -530,6 +595,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DeleteUserByPrincipalIdResult> deleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserByPrincipalIdRequest, DeleteUserByPrincipalIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVPCConnectionResult> deleteVPCConnectionAsync(DeleteVPCConnectionRequest request) {
+
+        return deleteVPCConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVPCConnectionResult> deleteVPCConnectionAsync(DeleteVPCConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVPCConnectionRequest, DeleteVPCConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -942,6 +1020,58 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTopicResult> describeTopicAsync(DescribeTopicRequest request) {
+
+        return describeTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicResult> describeTopicAsync(DescribeTopicRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicRequest, DescribeTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicPermissionsResult> describeTopicPermissionsAsync(DescribeTopicPermissionsRequest request) {
+
+        return describeTopicPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicPermissionsResult> describeTopicPermissionsAsync(DescribeTopicPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicPermissionsRequest, DescribeTopicPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicRefreshResult> describeTopicRefreshAsync(DescribeTopicRefreshRequest request) {
+
+        return describeTopicRefreshAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicRefreshResult> describeTopicRefreshAsync(DescribeTopicRefreshRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicRefreshRequest, DescribeTopicRefreshResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicRefreshScheduleResult> describeTopicRefreshScheduleAsync(DescribeTopicRefreshScheduleRequest request) {
+
+        return describeTopicRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTopicRefreshScheduleResult> describeTopicRefreshScheduleAsync(DescribeTopicRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTopicRefreshScheduleRequest, DescribeTopicRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUserResult> describeUserAsync(DescribeUserRequest request) {
 
         return describeUserAsync(request, null);
@@ -950,6 +1080,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DescribeUserResult> describeUserAsync(DescribeUserRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeUserRequest, DescribeUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVPCConnectionResult> describeVPCConnectionAsync(DescribeVPCConnectionRequest request) {
+
+        return describeVPCConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVPCConnectionResult> describeVPCConnectionAsync(DescribeVPCConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVPCConnectionRequest, DescribeVPCConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1286,6 +1429,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListTopicRefreshSchedulesResult> listTopicRefreshSchedulesAsync(ListTopicRefreshSchedulesRequest request) {
+
+        return listTopicRefreshSchedulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicRefreshSchedulesResult> listTopicRefreshSchedulesAsync(ListTopicRefreshSchedulesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTopicRefreshSchedulesRequest, ListTopicRefreshSchedulesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(ListTopicsRequest request) {
+
+        return listTopicsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTopicsResult> listTopicsAsync(ListTopicsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTopicsRequest, ListTopicsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserGroupsResult> listUserGroupsAsync(ListUserGroupsRequest request) {
 
         return listUserGroupsAsync(request, null);
@@ -1307,6 +1476,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<ListUsersResult> listUsersAsync(ListUsersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUsersRequest, ListUsersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVPCConnectionsResult> listVPCConnectionsAsync(ListVPCConnectionsRequest request) {
+
+        return listVPCConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVPCConnectionsResult> listVPCConnectionsAsync(ListVPCConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVPCConnectionsRequest, ListVPCConnectionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1769,6 +1951,45 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateTopicResult> updateTopicAsync(UpdateTopicRequest request) {
+
+        return updateTopicAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicResult> updateTopicAsync(UpdateTopicRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicRequest, UpdateTopicResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicPermissionsResult> updateTopicPermissionsAsync(UpdateTopicPermissionsRequest request) {
+
+        return updateTopicPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicPermissionsResult> updateTopicPermissionsAsync(UpdateTopicPermissionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicPermissionsRequest, UpdateTopicPermissionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicRefreshScheduleResult> updateTopicRefreshScheduleAsync(UpdateTopicRefreshScheduleRequest request) {
+
+        return updateTopicRefreshScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTopicRefreshScheduleResult> updateTopicRefreshScheduleAsync(UpdateTopicRefreshScheduleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTopicRefreshScheduleRequest, UpdateTopicRefreshScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request) {
 
         return updateUserAsync(request, null);
@@ -1777,6 +1998,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<UpdateUserResult> updateUserAsync(UpdateUserRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateUserRequest, UpdateUserResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVPCConnectionResult> updateVPCConnectionAsync(UpdateVPCConnectionRequest request) {
+
+        return updateVPCConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVPCConnectionResult> updateVPCConnectionAsync(UpdateVPCConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVPCConnectionRequest, UpdateVPCConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

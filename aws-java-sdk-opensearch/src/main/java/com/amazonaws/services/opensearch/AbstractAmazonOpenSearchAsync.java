@@ -275,6 +275,19 @@ public class AbstractAmazonOpenSearchAsync extends AbstractAmazonOpenSearch impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest request) {
+
+        return describeDomainNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainNodesRequest, DescribeDomainNodesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDomainsResult> describeDomainsAsync(DescribeDomainsRequest request) {
 
         return describeDomainsAsync(request, null);

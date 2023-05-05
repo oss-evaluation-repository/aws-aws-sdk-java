@@ -669,6 +669,37 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
+     * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability
+     * Zone(s), standby nodes, node configurations, and node states.
+     * </p>
+     * 
+     * @param describeDomainNodesRequest
+     *        Container for the parameters to the <code>DescribeDomainNodes</code> operation.
+     * @return A Java Future containing the result of the DescribeDomainNodes operation returned by the service.
+     * @sample AmazonOpenSearchAsync.DescribeDomainNodes
+     */
+    java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest describeDomainNodesRequest);
+
+    /**
+     * <p>
+     * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability
+     * Zone(s), standby nodes, node configurations, and node states.
+     * </p>
+     * 
+     * @param describeDomainNodesRequest
+     *        Container for the parameters to the <code>DescribeDomainNodes</code> operation.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDomainNodes operation returned by the service.
+     * @sample AmazonOpenSearchAsyncHandler.DescribeDomainNodes
+     */
+    java.util.concurrent.Future<DescribeDomainNodesResult> describeDomainNodesAsync(DescribeDomainNodesRequest describeDomainNodesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDomainNodesRequest, DescribeDomainNodesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns domain configuration information about the specified Amazon OpenSearch Service domains.
      * </p>
      * 
@@ -1594,7 +1625,7 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
-     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
      * </p>
      * 
      * @param updateDomainConfigRequest
@@ -1606,7 +1637,7 @@ public interface AmazonOpenSearchAsync extends AmazonOpenSearch {
 
     /**
      * <p>
-     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
      * </p>
      * 
      * @param updateDomainConfigRequest

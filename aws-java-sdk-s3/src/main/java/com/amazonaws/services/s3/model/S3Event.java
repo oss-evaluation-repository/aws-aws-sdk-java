@@ -28,7 +28,6 @@ public enum S3Event {
     ObjectCreatedByPost("s3:ObjectCreated:Post"),
 
     ObjectCreatedByCopy("s3:ObjectCreated:Copy"),
-    ObjectCreatedByClone("s3:ObjectCreated:Clone"),
 
     ObjectCreatedByCompleteMultipartUpload("s3:ObjectCreated:CompleteMultipartUpload"),
 

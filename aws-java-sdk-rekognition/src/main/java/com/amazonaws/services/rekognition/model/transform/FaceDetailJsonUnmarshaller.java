@@ -112,6 +112,10 @@ public class FaceDetailJsonUnmarshaller implements Unmarshaller<FaceDetail, Json
                     context.nextToken();
                     faceDetail.setConfidence(context.getUnmarshaller(Float.class).unmarshall(context));
                 }
+                if (context.testExpression("FaceOccluded", targetDepth)) {
+                    context.nextToken();
+                    faceDetail.setFaceOccluded(FaceOccludedJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

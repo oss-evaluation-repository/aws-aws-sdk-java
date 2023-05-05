@@ -2047,6 +2047,39 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
+     * Returns history for a Security Hub finding in the last 90 days. The history includes changes made to any fields
+     * in the Amazon Web Services Security Finding Format (ASFF).
+     * </p>
+     * 
+     * @param getFindingHistoryRequest
+     * @return A Java Future containing the result of the GetFindingHistory operation returned by the service.
+     * @sample AWSSecurityHubAsync.GetFindingHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFindingHistoryResult> getFindingHistoryAsync(GetFindingHistoryRequest getFindingHistoryRequest);
+
+    /**
+     * <p>
+     * Returns history for a Security Hub finding in the last 90 days. The history includes changes made to any fields
+     * in the Amazon Web Services Security Finding Format (ASFF).
+     * </p>
+     * 
+     * @param getFindingHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFindingHistory operation returned by the service.
+     * @sample AWSSecurityHubAsyncHandler.GetFindingHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFindingHistoryResult> getFindingHistoryAsync(GetFindingHistoryRequest getFindingHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFindingHistoryRequest, GetFindingHistoryResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of findings that match the specified criteria.
      * </p>
      * <p>

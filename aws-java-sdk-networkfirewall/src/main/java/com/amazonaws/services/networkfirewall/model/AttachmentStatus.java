@@ -22,10 +22,10 @@ public enum AttachmentStatus {
 
     CREATING("CREATING"),
     DELETING("DELETING"),
-    SCALING("SCALING"),
-    READY("READY"),
     FAILED("FAILED"),
-    ERROR("ERROR");
+    ERROR("ERROR"),
+    SCALING("SCALING"),
+    READY("READY");
 
     private String value;
 
