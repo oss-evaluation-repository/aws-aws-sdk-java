@@ -709,6 +709,27 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Lists Amazon Inspector coverage details for a specific vulnerability.
+     * </p>
+     * 
+     * @param searchVulnerabilitiesRequest
+     * @return Result of the SearchVulnerabilities operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.SearchVulnerabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SearchVulnerabilitiesResult searchVulnerabilities(SearchVulnerabilitiesRequest searchVulnerabilitiesRequest);
+
+    /**
+     * <p>
      * Adds tags to a resource.
      * </p>
      * 

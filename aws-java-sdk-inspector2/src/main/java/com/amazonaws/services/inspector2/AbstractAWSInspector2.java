@@ -178,6 +178,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public SearchVulnerabilitiesResult searchVulnerabilities(SearchVulnerabilitiesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1073,6 +1073,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<SearchVulnerabilitiesResult> searchVulnerabilitiesAsync(SearchVulnerabilitiesRequest request) {
+
+        return searchVulnerabilitiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchVulnerabilitiesResult> searchVulnerabilitiesAsync(final SearchVulnerabilitiesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchVulnerabilitiesRequest, SearchVulnerabilitiesResult> asyncHandler) {
+        final SearchVulnerabilitiesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchVulnerabilitiesResult>() {
+            @Override
+            public SearchVulnerabilitiesResult call() throws Exception {
+                SearchVulnerabilitiesResult result = null;
+
+                try {
+                    result = executeSearchVulnerabilities(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);

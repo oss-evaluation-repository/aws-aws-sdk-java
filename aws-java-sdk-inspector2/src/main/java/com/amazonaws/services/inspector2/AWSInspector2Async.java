@@ -1013,6 +1013,37 @@ public interface AWSInspector2Async extends AWSInspector2 {
 
     /**
      * <p>
+     * Lists Amazon Inspector coverage details for a specific vulnerability.
+     * </p>
+     * 
+     * @param searchVulnerabilitiesRequest
+     * @return A Java Future containing the result of the SearchVulnerabilities operation returned by the service.
+     * @sample AWSInspector2Async.SearchVulnerabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchVulnerabilitiesResult> searchVulnerabilitiesAsync(SearchVulnerabilitiesRequest searchVulnerabilitiesRequest);
+
+    /**
+     * <p>
+     * Lists Amazon Inspector coverage details for a specific vulnerability.
+     * </p>
+     * 
+     * @param searchVulnerabilitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchVulnerabilities operation returned by the service.
+     * @sample AWSInspector2AsyncHandler.SearchVulnerabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SearchVulnerabilitiesResult> searchVulnerabilitiesAsync(SearchVulnerabilitiesRequest searchVulnerabilitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchVulnerabilitiesRequest, SearchVulnerabilitiesResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds tags to a resource.
      * </p>
      * 

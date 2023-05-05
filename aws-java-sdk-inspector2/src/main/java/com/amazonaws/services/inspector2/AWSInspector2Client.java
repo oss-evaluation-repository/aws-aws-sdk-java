@@ -2103,6 +2103,70 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Lists Amazon Inspector coverage details for a specific vulnerability.
+     * </p>
+     * 
+     * @param searchVulnerabilitiesRequest
+     * @return Result of the SearchVulnerabilities operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.SearchVulnerabilities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchVulnerabilitiesResult searchVulnerabilities(SearchVulnerabilitiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchVulnerabilities(request);
+    }
+
+    @SdkInternalApi
+    final SearchVulnerabilitiesResult executeSearchVulnerabilities(SearchVulnerabilitiesRequest searchVulnerabilitiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchVulnerabilitiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchVulnerabilitiesRequest> request = null;
+        Response<SearchVulnerabilitiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchVulnerabilitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchVulnerabilitiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchVulnerabilities");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchVulnerabilitiesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new SearchVulnerabilitiesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds tags to a resource.
      * </p>
      * 
