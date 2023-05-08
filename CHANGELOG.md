@@ -1,3 +1,20 @@
+# __1.12.465__ __2023-05-08__
+## __AWS Glue__
+  - ### Features
+    - We don't do release notes https://w.amazon.com/bin/view/AWSDocs/common-tasks/release-notes
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - Provide support for 20,000 max results for GetAssetPropertyValueHistory/BatchGetAssetPropertyValueHistory and 15 minute aggregate resolution for GetAssetPropertyAggregates/BatchGetAssetPropertyAggregates
+
+## __AWS Security Token Service__
+  - ### Features
+    - Documentation updates for AWS Security Token Service.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - Add AccessDeniedException 403 Error message code to support 3 Tagging related APIs
+
 # __1.12.464__ __2023-05-05__
 ## __AWS MediaTailor__
   - ### Features

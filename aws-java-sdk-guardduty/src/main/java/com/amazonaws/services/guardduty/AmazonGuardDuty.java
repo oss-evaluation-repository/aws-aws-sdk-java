@@ -1034,6 +1034,8 @@ public interface AmazonGuardDuty {
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.ListTagsForResource
@@ -1132,6 +1134,8 @@ public interface AmazonGuardDuty {
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.TagResource
@@ -1166,6 +1170,8 @@ public interface AmazonGuardDuty {
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.UntagResource

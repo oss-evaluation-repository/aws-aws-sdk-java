@@ -142,7 +142,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
@@ -163,10 +167,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      */
     private Double maxCapacity;
     /**
@@ -184,13 +184,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
      * </p>
      * </li>
      * <li>
@@ -1017,7 +1035,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
@@ -1038,10 +1060,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      * 
      * @param maxCapacity
      *        For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing
@@ -1049,7 +1067,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
      *        <p>
-     *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *        For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you
+     *        should specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     *        </p>
+     *        <p>
+     *        Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
@@ -1069,10 +1091,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     *        specify a <code>Worker type</code> and the <code>Number of workers</code>.
      */
 
     public void setMaxCapacity(Double maxCapacity) {
@@ -1087,7 +1105,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
@@ -1108,17 +1130,17 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      * 
      * @return For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing
      *         units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power
      *         that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
      *         href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
      *         <p>
-     *         Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *         For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you
+     *         should specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     *         </p>
+     *         <p>
+     *         Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *         </p>
      *         <p>
      *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
@@ -1138,10 +1160,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you
-     *         should specify a <code>Worker type</code> and the <code>Number of workers</code>.
      */
 
     public Double getMaxCapacity() {
@@ -1156,7 +1174,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.
      * </p>
      * <p>
-     * Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     * For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you should
+     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     * </p>
+     * <p>
+     * Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
@@ -1177,10 +1199,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.
-     * </p>
      * 
      * @param maxCapacity
      *        For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing
@@ -1188,7 +1206,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p>
      *        <p>
-     *        Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+     *        For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>. Instead, you
+     *        should specify a <code>Worker type</code> and the <code>Number of workers</code>.
+     *        </p>
+     *        <p>
+     *        Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
      *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
@@ -1208,10 +1230,6 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     *        specify a <code>Worker type</code> and the <code>Number of workers</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1235,13 +1253,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
      * </p>
      * </li>
      * <li>
@@ -1266,13 +1302,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *        joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *        joins, and queries, to offers a scalable and cost effective way to run most jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *        most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *        version 3.0 or later jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *        most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *        version 3.0 or later jobs.
      *        </p>
      *        </li>
      *        <li>
@@ -1304,13 +1358,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
      * </p>
      * </li>
      * <li>
@@ -1334,13 +1406,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *         and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *         joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *         and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *         and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *         joins, and queries, to offers a scalable and cost effective way to run most jobs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk),
+     *         and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *         most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *         version 3.0 or later jobs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB
+     *         disk), and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain
+     *         your most demanding transforms, aggregations, joins, and queries. This worker type is available only for
+     *         Glue version 3.0 or later jobs.
      *         </p>
      *         </li>
      *         <li>
@@ -1372,13 +1462,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
      * </p>
      * </li>
      * <li>
@@ -1403,13 +1511,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *        joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *        joins, and queries, to offers a scalable and cost effective way to run most jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *        most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *        version 3.0 or later jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *        most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *        version 3.0 or later jobs.
      *        </p>
      *        </li>
      *        <li>
@@ -1443,13 +1569,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     * provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and
+     * queries, to offers a scalable and cost effective way to run most jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
+     * provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most
+     * demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0
+     * or later jobs.
      * </p>
      * </li>
      * <li>
@@ -1474,13 +1618,31 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *        joins, and queries, to offers a scalable and cost effective way to run most jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk),
-     *        and provides 1 executor per worker. We recommend this worker type for memory-intensive jobs.
+     *        and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms,
+     *        joins, and queries, to offers a scalable and cost effective way to run most jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *        most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *        version 3.0 or later jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk),
+     *        and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your
+     *        most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue
+     *        version 3.0 or later jobs.
      *        </p>
      *        </li>
      *        <li>

@@ -95,6 +95,9 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.guardduty.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.guardduty.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -3300,6 +3303,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.ListTagsForResource
@@ -3610,6 +3615,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.TagResource
@@ -3728,6 +3735,8 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         A bad request exception object.
+     * @throws AccessDeniedException
+     *         An access denied exception object.
      * @throws InternalServerErrorException
      *         An internal server error exception object.
      * @sample AmazonGuardDuty.UntagResource
