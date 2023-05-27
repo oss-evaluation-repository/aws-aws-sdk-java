@@ -32,6 +32,8 @@ public class TraceContent implements Serializable, Cloneable, StructuredPojo {
 
     private String logLevel;
 
+    private String multicastFrameInfo;
+
     /**
      * @param wirelessDeviceFrameInfo
      * @see WirelessDeviceFrameInfo
@@ -113,6 +115,46 @@ public class TraceContent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param multicastFrameInfo
+     * @see MulticastFrameInfo
+     */
+
+    public void setMulticastFrameInfo(String multicastFrameInfo) {
+        this.multicastFrameInfo = multicastFrameInfo;
+    }
+
+    /**
+     * @return
+     * @see MulticastFrameInfo
+     */
+
+    public String getMulticastFrameInfo() {
+        return this.multicastFrameInfo;
+    }
+
+    /**
+     * @param multicastFrameInfo
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MulticastFrameInfo
+     */
+
+    public TraceContent withMulticastFrameInfo(String multicastFrameInfo) {
+        setMulticastFrameInfo(multicastFrameInfo);
+        return this;
+    }
+
+    /**
+     * @param multicastFrameInfo
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MulticastFrameInfo
+     */
+
+    public TraceContent withMulticastFrameInfo(MulticastFrameInfo multicastFrameInfo) {
+        this.multicastFrameInfo = multicastFrameInfo.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -127,7 +169,9 @@ public class TraceContent implements Serializable, Cloneable, StructuredPojo {
         if (getWirelessDeviceFrameInfo() != null)
             sb.append("WirelessDeviceFrameInfo: ").append(getWirelessDeviceFrameInfo()).append(",");
         if (getLogLevel() != null)
-            sb.append("LogLevel: ").append(getLogLevel());
+            sb.append("LogLevel: ").append(getLogLevel()).append(",");
+        if (getMulticastFrameInfo() != null)
+            sb.append("MulticastFrameInfo: ").append(getMulticastFrameInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -150,6 +194,10 @@ public class TraceContent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
             return false;
+        if (other.getMulticastFrameInfo() == null ^ this.getMulticastFrameInfo() == null)
+            return false;
+        if (other.getMulticastFrameInfo() != null && other.getMulticastFrameInfo().equals(this.getMulticastFrameInfo()) == false)
+            return false;
         return true;
     }
 
@@ -160,6 +208,7 @@ public class TraceContent implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getWirelessDeviceFrameInfo() == null) ? 0 : getWirelessDeviceFrameInfo().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
+        hashCode = prime * hashCode + ((getMulticastFrameInfo() == null) ? 0 : getMulticastFrameInfo().hashCode());
         return hashCode;
     }
 
