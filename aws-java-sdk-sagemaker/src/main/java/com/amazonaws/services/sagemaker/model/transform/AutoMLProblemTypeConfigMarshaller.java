@@ -31,6 +31,8 @@ public class AutoMLProblemTypeConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageClassificationJobConfig").build();
     private static final MarshallingInfo<StructuredPojo> TEXTCLASSIFICATIONJOBCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TextClassificationJobConfig").build();
+    private static final MarshallingInfo<StructuredPojo> TABULARJOBCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TabularJobConfig").build();
 
     private static final AutoMLProblemTypeConfigMarshaller instance = new AutoMLProblemTypeConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class AutoMLProblemTypeConfigMarshaller {
         try {
             protocolMarshaller.marshall(autoMLProblemTypeConfig.getImageClassificationJobConfig(), IMAGECLASSIFICATIONJOBCONFIG_BINDING);
             protocolMarshaller.marshall(autoMLProblemTypeConfig.getTextClassificationJobConfig(), TEXTCLASSIFICATIONJOBCONFIG_BINDING);
+            protocolMarshaller.marshall(autoMLProblemTypeConfig.getTabularJobConfig(), TABULARJOBCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

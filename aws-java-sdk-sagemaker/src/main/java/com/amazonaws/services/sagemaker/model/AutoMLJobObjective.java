@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs (for example jobs created by
- * calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code> only.
+ * Specifies a metric to minimize or maximize as the objective of a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobObjective" target="_top">AWS API
@@ -46,17 +45,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>MSE</code>: for regression.
+     * For tabular problem types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Regression: <code>MSE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>F1</code>: for binary classification
+     * Binary classification: <code>F1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: for multiclass classification.
+     * Multiclass classification: <code>Accuracy</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For image or text classification problem types: <code>Accuracy</code>
      * </p>
      * </li>
      * </ul>
@@ -80,17 +91,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>MSE</code>: for regression.
+     * For tabular problem types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Regression: <code>MSE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>F1</code>: for binary classification
+     * Binary classification: <code>F1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: for multiclass classification.
+     * Multiclass classification: <code>Accuracy</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For image or text classification problem types: <code>Accuracy</code>
      * </p>
      * </li>
      * </ul>
@@ -110,17 +133,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MSE</code>: for regression.
+     *        For tabular problem types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Regression: <code>MSE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>F1</code>: for binary classification
+     *        Binary classification: <code>F1</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Accuracy</code>: for multiclass classification.
+     *        Multiclass classification: <code>Accuracy</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For image or text classification problem types: <code>Accuracy</code>
      *        </p>
      *        </li>
      * @see AutoMLMetricEnum
@@ -147,17 +182,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>MSE</code>: for regression.
+     * For tabular problem types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Regression: <code>MSE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>F1</code>: for binary classification
+     * Binary classification: <code>F1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: for multiclass classification.
+     * Multiclass classification: <code>Accuracy</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For image or text classification problem types: <code>Accuracy</code>
      * </p>
      * </li>
      * </ul>
@@ -176,17 +223,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>MSE</code>: for regression.
+     *         For tabular problem types:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Regression: <code>MSE</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>F1</code>: for binary classification
+     *         Binary classification: <code>F1</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Accuracy</code>: for multiclass classification.
+     *         Multiclass classification: <code>Accuracy</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For image or text classification problem types: <code>Accuracy</code>
      *         </p>
      *         </li>
      * @see AutoMLMetricEnum
@@ -213,17 +272,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>MSE</code>: for regression.
+     * For tabular problem types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Regression: <code>MSE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>F1</code>: for binary classification
+     * Binary classification: <code>F1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: for multiclass classification.
+     * Multiclass classification: <code>Accuracy</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For image or text classification problem types: <code>Accuracy</code>
      * </p>
      * </li>
      * </ul>
@@ -243,17 +314,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MSE</code>: for regression.
+     *        For tabular problem types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Regression: <code>MSE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>F1</code>: for binary classification
+     *        Binary classification: <code>F1</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Accuracy</code>: for multiclass classification.
+     *        Multiclass classification: <code>Accuracy</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For image or text classification problem types: <code>Accuracy</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -282,17 +365,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * <code>MSE</code>: for regression.
+     * For tabular problem types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Regression: <code>MSE</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>F1</code>: for binary classification
+     * Binary classification: <code>F1</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Accuracy</code>: for multiclass classification.
+     * Multiclass classification: <code>Accuracy</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * For image or text classification problem types: <code>Accuracy</code>
      * </p>
      * </li>
      * </ul>
@@ -312,17 +407,29 @@ public class AutoMLJobObjective implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>MSE</code>: for regression.
+     *        For tabular problem types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Regression: <code>MSE</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>F1</code>: for binary classification
+     *        Binary classification: <code>F1</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Accuracy</code>: for multiclass classification.
+     *        Multiclass classification: <code>Accuracy</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For image or text classification problem types: <code>Accuracy</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

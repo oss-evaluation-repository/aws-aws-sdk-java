@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Stores the configuration information for the text classification problem of an AutoML job using the V2 API.
+ * Stores the configuration information for the text classification problem of an AutoML job V2.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TextClassificationJobConfig"
@@ -37,13 +37,13 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
     /**
      * <p>
      * The name of the column used to provide the sentences to be classified. It should not be the same as the target
-     * column.
+     * column (Required).
      * </p>
      */
     private String contentColumn;
     /**
      * <p>
-     * The name of the column used to provide the class labels. It should not be same as the content column.
+     * The name of the column used to provide the class labels. It should not be same as the content column (Required).
      * </p>
      */
     private String targetLabelColumn;
@@ -91,12 +91,12 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
     /**
      * <p>
      * The name of the column used to provide the sentences to be classified. It should not be the same as the target
-     * column.
+     * column (Required).
      * </p>
      * 
      * @param contentColumn
      *        The name of the column used to provide the sentences to be classified. It should not be the same as the
-     *        target column.
+     *        target column (Required).
      */
 
     public void setContentColumn(String contentColumn) {
@@ -106,11 +106,11 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
     /**
      * <p>
      * The name of the column used to provide the sentences to be classified. It should not be the same as the target
-     * column.
+     * column (Required).
      * </p>
      * 
      * @return The name of the column used to provide the sentences to be classified. It should not be the same as the
-     *         target column.
+     *         target column (Required).
      */
 
     public String getContentColumn() {
@@ -120,12 +120,12 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
     /**
      * <p>
      * The name of the column used to provide the sentences to be classified. It should not be the same as the target
-     * column.
+     * column (Required).
      * </p>
      * 
      * @param contentColumn
      *        The name of the column used to provide the sentences to be classified. It should not be the same as the
-     *        target column.
+     *        target column (Required).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,12 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the column used to provide the class labels. It should not be same as the content column.
+     * The name of the column used to provide the class labels. It should not be same as the content column (Required).
      * </p>
      * 
      * @param targetLabelColumn
-     *        The name of the column used to provide the class labels. It should not be same as the content column.
+     *        The name of the column used to provide the class labels. It should not be same as the content column
+     *        (Required).
      */
 
     public void setTargetLabelColumn(String targetLabelColumn) {
@@ -149,10 +150,11 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the column used to provide the class labels. It should not be same as the content column.
+     * The name of the column used to provide the class labels. It should not be same as the content column (Required).
      * </p>
      * 
-     * @return The name of the column used to provide the class labels. It should not be same as the content column.
+     * @return The name of the column used to provide the class labels. It should not be same as the content column
+     *         (Required).
      */
 
     public String getTargetLabelColumn() {
@@ -161,11 +163,12 @@ public class TextClassificationJobConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the column used to provide the class labels. It should not be same as the content column.
+     * The name of the column used to provide the class labels. It should not be same as the content column (Required).
      * </p>
      * 
      * @param targetLabelColumn
-     *        The name of the column used to provide the class labels. It should not be same as the content column.
+     *        The name of the column used to provide the class labels. It should not be same as the content column
+     *        (Required).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

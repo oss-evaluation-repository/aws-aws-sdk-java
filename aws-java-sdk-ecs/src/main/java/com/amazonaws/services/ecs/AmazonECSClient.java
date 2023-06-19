@@ -1196,6 +1196,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
      * A task definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until all the associated tasks and
      * services have been terminated.
      * </p>
+     * <p>
+     * When you delete all <code>INACTIVE</code> task definition revisions, the task definition name is not displayed in
+     * the console and not returned in the API. If a task definition revisions are in the
+     * <code>DELETE_IN_PROGRESS</code> state, the task definition name is displayed in the console and returned in the
+     * API. The task definition name is retained by Amazon ECS and the revision is incremented the next time you create
+     * a task definition with that name.
+     * </p>
      * 
      * @param deleteTaskDefinitionsRequest
      * @return Result of the DeleteTaskDefinitions operation returned by the service.

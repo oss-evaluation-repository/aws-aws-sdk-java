@@ -33,7 +33,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * The maximum number of times a training job is allowed to run.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      * </p>
      */
     private Integer maxCandidates;
@@ -47,7 +47,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * >CreateHyperParameterTuningJob</a> action.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
      */
@@ -70,13 +70,13 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * The maximum number of times a training job is allowed to run.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      * </p>
      * 
      * @param maxCandidates
      *        The maximum number of times a training job is allowed to run.</p>
      *        <p>
-     *        For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      */
 
     public void setMaxCandidates(Integer maxCandidates) {
@@ -88,12 +88,12 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * The maximum number of times a training job is allowed to run.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      * </p>
      * 
      * @return The maximum number of times a training job is allowed to run.</p>
      *         <p>
-     *         For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     *         For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      */
 
     public Integer getMaxCandidates() {
@@ -105,13 +105,13 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * The maximum number of times a training job is allowed to run.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      * </p>
      * 
      * @param maxCandidates
      *        The maximum number of times a training job is allowed to run.</p>
      *        <p>
-     *        For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
+     *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported value is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,7 +130,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * >CreateHyperParameterTuningJob</a> action.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
      * 
@@ -142,7 +142,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
      *        >CreateHyperParameterTuningJob</a> action.</p>
      *        <p>
-     *        For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
+     *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
      *        the job candidate.
      */
 
@@ -160,7 +160,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * >CreateHyperParameterTuningJob</a> action.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
      * 
@@ -171,7 +171,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *         href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
      *         >CreateHyperParameterTuningJob</a> action.</p>
      *         <p>
-     *         For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
+     *         For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
      *         the job candidate.
      */
 
@@ -189,7 +189,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      * >CreateHyperParameterTuningJob</a> action.
      * </p>
      * <p>
-     * For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
+     * For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of the job
      * candidate.
      * </p>
      * 
@@ -201,7 +201,7 @@ public class AutoMLJobCompletionCriteria implements Serializable, Cloneable, Str
      *        href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html"
      *        >CreateHyperParameterTuningJob</a> action.</p>
      *        <p>
-     *        For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
+     *        For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls the runtime of
      *        the job candidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

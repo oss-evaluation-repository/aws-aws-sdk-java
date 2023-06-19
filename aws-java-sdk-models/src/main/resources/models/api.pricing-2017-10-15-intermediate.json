@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -57,7 +57,7 @@
     "defaultEndpoint" : "api.pricing.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "api.pricing.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized product attributes such as <code>Location</code>, <code>Storage Class</code>, and <code>Operating System</code>, and provides prices at the SKU level. You can use the Amazon Web Services Price List to build cost control and scenario planning tools, reconcile billing data, forecast future spend for budgeting purposes, and provide cost benefit analysis that compare your internal workloads with Amazon Web Services.</p> <p>Use <code>GetServices</code> without a service code to retrieve the service codes for all AWS services, then <code>GetServices</code> with a service code to retrieve the attribute names for that service. After you have the service code and attribute names, you can use <code>GetAttributeValues</code> to see what values are available for an attribute. With the service code and an attribute name and value, you can use <code>GetProducts</code> to find specific products that you're interested in, such as an <code>AmazonEC2</code> instance, with a <code>Provisioned IOPS</code> <code>volumeType</code>.</p> <p>Service Endpoint</p> <p>Amazon Web Services Price List service API provides the following two endpoints:</p> <ul> <li> <p>https://api.pricing.us-east-1.amazonaws.com</p> </li> <li> <p>https://api.pricing.ap-south-1.amazonaws.com</p> </li> </ul>",
+    "documentation" : "<p>The Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized product attributes such as <code>Location</code>, <code>Storage Class</code>, and <code>Operating System</code>, and provides prices at the SKU level. You can use the Amazon Web Services Price List to do the following:</p> <ul> <li> <p>Build cost control and scenario planning tools</p> </li> <li> <p>Reconcile billing data</p> </li> <li> <p>Forecast future spend for budgeting purposes</p> </li> <li> <p>Provide cost benefit analysis that compare your internal workloads with Amazon Web Services</p> </li> </ul> <p>Use <code>GetServices</code> without a service code to retrieve the service codes for all Amazon Web Services, then <code>GetServices</code> with a service code to retrieve the attribute names for that service. After you have the service code and attribute names, you can use <code>GetAttributeValues</code> to see what values are available for an attribute. With the service code and an attribute name and value, you can use <code>GetProducts</code> to find specific products that you're interested in, such as an <code>AmazonEC2</code> instance, with a <code>Provisioned IOPS</code> <code>volumeType</code>.</p> <p>You can use the following endpoints for the Amazon Web Services Price List API:</p> <ul> <li> <p>https://api.pricing.us-east-1.amazonaws.com</p> </li> <li> <p>https://api.pricing.ap-south-1.amazonaws.com</p> </li> </ul>",
     "endpointPrefix" : "api.pricing",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -99,20 +99,20 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more parameters had an invalid value.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The requested resource can't be found.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ExpiredNextTokenException",
@@ -152,20 +152,20 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more parameters had an invalid value.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The requested resource can't be found.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ExpiredNextTokenException",
@@ -205,10 +205,6 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more parameters had an invalid value.</p>",
         "httpStatusCode" : null
@@ -219,6 +215,10 @@
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>General authentication failure. The request wasn't signed correctly.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -254,20 +254,20 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more parameters had an invalid value.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "NotFoundException",
         "documentation" : "<p>The requested resource can't be found.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "InvalidNextTokenException",
-        "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ExpiredNextTokenException",
@@ -307,28 +307,28 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
-        "exceptionName" : "InternalErrorException",
-        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
-        "httpStatusCode" : null
-      }, {
         "exceptionName" : "InvalidParameterException",
         "documentation" : "<p>One or more parameters had an invalid value.</p>",
-        "httpStatusCode" : null
-      }, {
-        "exceptionName" : "NotFoundException",
-        "documentation" : "<p>The requested resource can't be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidNextTokenException",
         "documentation" : "<p>The pagination token is invalid. Try again without a pagination token.</p>",
         "httpStatusCode" : null
       }, {
-        "exceptionName" : "ExpiredNextTokenException",
-        "documentation" : "<p>The pagination token expired. Try again without a pagination token.</p>",
+        "exceptionName" : "NotFoundException",
+        "documentation" : "<p>The requested resource can't be found.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
         "documentation" : "<p>General authentication failure. The request wasn't signed correctly.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalErrorException",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ExpiredNextTokenException",
+        "documentation" : "<p>The pagination token expired. Try again without a pagination token.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -5012,7 +5012,7 @@
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
             "c2jName" : "member",
-            "c2jShape" : "PriceListJsonItem",
+            "c2jShape" : "SynthesizedJsonPriceListJsonItem",
             "deprecated" : false,
             "documentation" : "",
             "endpointDiscoveryId" : false,
@@ -5376,7 +5376,7 @@
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
               "c2jName" : "member",
-              "c2jShape" : "PriceListJsonItem",
+              "c2jShape" : "SynthesizedJsonPriceListJsonItem",
               "deprecated" : false,
               "documentation" : "",
               "endpointDiscoveryId" : false,
@@ -8313,52 +8313,7 @@
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
   "examples" : {
-    "examples" : {
-      "DescribeServices" : [ {
-        "comments" : {
-          "input" : { },
-          "output" : { }
-        },
-        "description" : "Retrieves the service for the given Service Code.",
-        "id" : "to-retrieve-service-metadata",
-        "input" : {
-          "ServiceCode" : "AmazonEC2",
-          "FormatVersion" : "aws_v1",
-          "MaxResults" : 1
-        },
-        "output" : {
-          "Services" : [ {
-            "ServiceCode" : "AmazonEC2",
-            "AttributeNames" : [ "volumeType", "maxIopsvolume", "instanceCapacity10xlarge", "locationType", "operation" ]
-          } ],
-          "FormatVersion" : "aws_v1",
-          "NextToken" : "abcdefg123"
-        },
-        "title" : "To retrieve a list of services and service codes"
-      } ],
-      "GetAttributeValues" : [ {
-        "comments" : {
-          "input" : { },
-          "output" : { }
-        },
-        "description" : "This operation returns a list of values available for the given attribute.",
-        "id" : "to-retreive-attribute-values",
-        "input" : {
-          "ServiceCode" : "AmazonEC2",
-          "AttributeName" : "volumeType",
-          "MaxResults" : 2
-        },
-        "output" : {
-          "AttributeValues" : [ {
-            "Value" : "Throughput Optimized HDD"
-          }, {
-            "Value" : "Provisioned IOPS"
-          } ],
-          "NextToken" : "GpgauEXAMPLEezucl5LV0w==:7GzYJ0nw0DBTJ2J66EoTIIynE6O1uXwQtTRqioJzQadBnDVgHPzI1en4BUQnPCLpzeBk9RQQAWaFieA4+DapFAGLgk+Z/9/cTw9GldnPOHN98+FdmJP7wKU3QQpQ8MQr5KOeBkIsAqvAQYdL0DkL7tHwPtE5iCEByAmg9gcC/yBU1vAOsf7R3VaNN4M5jMDv3woSWqASSIlBVB6tgW78YL22KhssoItM/jWW+aP6Jqtq4mldxp/ct6DWAl+xLFwHU/CbketimPPXyqHF3/UXDw=="
-        },
-        "title" : "To retrieve a list of attribute values"
-      } ]
-    },
+    "examples" : { },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
