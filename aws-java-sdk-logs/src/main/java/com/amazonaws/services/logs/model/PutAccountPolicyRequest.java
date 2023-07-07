@@ -95,9 +95,9 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private String policyType;
     /**
      * <p>
-     * Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
-     * protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     * <code>GLOBAL</code> is used.
+     * Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection
+     * policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is
+     * used.
      * </p>
      */
     private String scope;
@@ -540,15 +540,15 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
-     * protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     * <code>GLOBAL</code> is used.
+     * Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection
+     * policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is
+     * used.
      * </p>
      * 
      * @param scope
-     *        Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
+     *        Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data
      *        protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     *        <code>GLOBAL</code> is used.
+     *        <code>ALL</code> is used.
      * @see Scope
      */
 
@@ -558,14 +558,14 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
-     * protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     * <code>GLOBAL</code> is used.
+     * Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection
+     * policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is
+     * used.
      * </p>
      * 
-     * @return Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
+     * @return Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data
      *         protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     *         <code>GLOBAL</code> is used.
+     *         <code>ALL</code> is used.
      * @see Scope
      */
 
@@ -575,15 +575,15 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
-     * protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     * <code>GLOBAL</code> is used.
+     * Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection
+     * policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is
+     * used.
      * </p>
      * 
      * @param scope
-     *        Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
+     *        Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data
      *        protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     *        <code>GLOBAL</code> is used.
+     *        <code>ALL</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scope
      */
@@ -595,15 +595,15 @@ public class PutAccountPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
-     * protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     * <code>GLOBAL</code> is used.
+     * Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data protection
+     * policy applies to all log groups in the account. If you omit this parameter, the default of <code>ALL</code> is
+     * used.
      * </p>
      * 
      * @param scope
-     *        Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies that the data
+     *        Currently the only valid value for this parameter is <code>ALL</code>, which specifies that the data
      *        protection policy applies to all log groups in the account. If you omit this parameter, the default of
-     *        <code>GLOBAL</code> is used.
+     *        <code>ALL</code> is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Scope
      */

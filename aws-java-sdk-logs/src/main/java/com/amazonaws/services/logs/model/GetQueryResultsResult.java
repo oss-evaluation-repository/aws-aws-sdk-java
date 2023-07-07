@@ -36,8 +36,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
-     * the query.
+     * and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.
      * </p>
      */
     private QueryStatistics statistics;
@@ -53,6 +52,15 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays
+     * the ARN of the key that's used to encrypt the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.
+     * </p>
+     */
+    private String encryptionKey;
 
     /**
      * <p>
@@ -158,14 +166,13 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
-     * the query.
+     * and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.
      * </p>
      * 
      * @param statistics
      *        Includes the number of log events scanned by the query, the number of log events that matched the query
-     *        criteria, and the total number of bytes in the log events that were scanned. These values reflect the full
-     *        raw results of the query.
+     *        criteria, and the total number of bytes in the scanned log events. These values reflect the full raw
+     *        results of the query.
      */
 
     public void setStatistics(QueryStatistics statistics) {
@@ -175,13 +182,12 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
-     * the query.
+     * and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.
      * </p>
      * 
      * @return Includes the number of log events scanned by the query, the number of log events that matched the query
-     *         criteria, and the total number of bytes in the log events that were scanned. These values reflect the
-     *         full raw results of the query.
+     *         criteria, and the total number of bytes in the scanned log events. These values reflect the full raw
+     *         results of the query.
      */
 
     public QueryStatistics getStatistics() {
@@ -191,14 +197,13 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
-     * the query.
+     * and the total number of bytes in the scanned log events. These values reflect the full raw results of the query.
      * </p>
      * 
      * @param statistics
      *        Includes the number of log events scanned by the query, the number of log events that matched the query
-     *        criteria, and the total number of bytes in the log events that were scanned. These values reflect the full
-     *        raw results of the query.
+     *        criteria, and the total number of bytes in the scanned log events. These values reflect the full raw
+     *        results of the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,6 +316,64 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays
+     * the ARN of the key that's used to encrypt the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.
+     * </p>
+     * 
+     * @param encryptionKey
+     *        If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field
+     *        displays the ARN of the key that's used to encrypt the query results when <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html"
+     *        >StartQuery</a> stores them.
+     */
+
+    public void setEncryptionKey(String encryptionKey) {
+        this.encryptionKey = encryptionKey;
+    }
+
+    /**
+     * <p>
+     * If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays
+     * the ARN of the key that's used to encrypt the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.
+     * </p>
+     * 
+     * @return If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field
+     *         displays the ARN of the key that's used to encrypt the query results when <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html"
+     *         >StartQuery</a> stores them.
+     */
+
+    public String getEncryptionKey() {
+        return this.encryptionKey;
+    }
+
+    /**
+     * <p>
+     * If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field displays
+     * the ARN of the key that's used to encrypt the query results when <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+     * stores them.
+     * </p>
+     * 
+     * @param encryptionKey
+     *        If you associated an KMS key with the CloudWatch Logs Insights query results in this account, this field
+     *        displays the ARN of the key that's used to encrypt the query results when <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html"
+     *        >StartQuery</a> stores them.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetQueryResultsResult withEncryptionKey(String encryptionKey) {
+        setEncryptionKey(encryptionKey);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,7 +390,9 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
         if (getStatistics() != null)
             sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getEncryptionKey() != null)
+            sb.append("EncryptionKey: ").append(getEncryptionKey());
         sb.append("}");
         return sb.toString();
     }
@@ -354,6 +419,10 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getEncryptionKey() == null ^ this.getEncryptionKey() == null)
+            return false;
+        if (other.getEncryptionKey() != null && other.getEncryptionKey().equals(this.getEncryptionKey()) == false)
+            return false;
         return true;
     }
 
@@ -365,6 +434,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getResults() == null) ? 0 : getResults().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionKey() == null) ? 0 : getEncryptionKey().hashCode());
         return hashCode;
     }
 

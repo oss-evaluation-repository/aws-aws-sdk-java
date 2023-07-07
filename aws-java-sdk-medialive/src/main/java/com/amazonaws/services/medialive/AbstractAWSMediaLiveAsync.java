@@ -314,6 +314,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(DescribeAccountConfigurationRequest request) {
+
+        return describeAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountConfigurationResult> describeAccountConfigurationAsync(DescribeAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountConfigurationRequest, DescribeAccountConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest request) {
 
         return describeChannelAsync(request, null);
@@ -439,6 +452,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     @Override
     public java.util.concurrent.Future<DescribeScheduleResult> describeScheduleAsync(DescribeScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeScheduleRequest, DescribeScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(DescribeThumbnailsRequest request) {
+
+        return describeThumbnailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThumbnailsResult> describeThumbnailsAsync(DescribeThumbnailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeThumbnailsRequest, DescribeThumbnailsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -688,6 +714,19 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     @Override
     public java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(TransferInputDeviceRequest request,
             com.amazonaws.handlers.AsyncHandler<TransferInputDeviceRequest, TransferInputDeviceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(UpdateAccountConfigurationRequest request) {
+
+        return updateAccountConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountConfigurationResult> updateAccountConfigurationAsync(UpdateAccountConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountConfigurationRequest, UpdateAccountConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

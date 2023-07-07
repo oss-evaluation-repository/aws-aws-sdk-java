@@ -634,6 +634,30 @@ public interface AWSMediaLive {
     DeleteTagsResult deleteTags(DeleteTagsRequest deleteTagsRequest);
 
     /**
+     * Get account configuration
+     * 
+     * @param describeAccountConfigurationRequest
+     *        Placeholder documentation for DescribeAccountConfigurationRequest
+     * @return Result of the DescribeAccountConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe the account configuration.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe account configuration calls.
+     * @sample AWSMediaLive.DescribeAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountConfigurationResult describeAccountConfiguration(DescribeAccountConfigurationRequest describeAccountConfigurationRequest);
+
+    /**
      * Gets details about a channel
      * 
      * @param describeChannelRequest
@@ -893,6 +917,34 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     DescribeScheduleResult describeSchedule(DescribeScheduleRequest describeScheduleRequest);
+
+    /**
+     * Describe the latest thumbnails data.
+     * 
+     * @param describeThumbnailsRequest
+     *        Placeholder documentation for DescribeThumbnailsRequest
+     * @return Result of the DescribeThumbnails operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error..
+     * @throws ForbiddenException
+     *         You do not have permission to get thumbnails.
+     * @throws BadGatewayException
+     *         Bad Gateway error.
+     * @throws NotFoundException
+     *         There are no thumbnails for this channel.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on describe thumbnails calls to channel service.
+     * @throws ConflictException
+     *         Service do not have permission to customer's KMS key.
+     * @sample AWSMediaLive.DescribeThumbnails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeThumbnails" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeThumbnailsResult describeThumbnails(DescribeThumbnailsRequest describeThumbnailsRequest);
 
     /**
      * Produces list of channels that have been created
@@ -1403,6 +1455,32 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest transferInputDeviceRequest);
+
+    /**
+     * Update account configuration
+     * 
+     * @param updateAccountConfigurationRequest
+     *        List of account configuration parameters to update.
+     * @return Result of the UpdateAccountConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         The update account configuration request failed validation.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to update the account's configuration.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on update account configuration calls.
+     * @sample AWSMediaLive.UpdateAccountConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAccountConfigurationResult updateAccountConfiguration(UpdateAccountConfigurationRequest updateAccountConfigurationRequest);
 
     /**
      * Updates a channel.

@@ -504,6 +504,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplicationConfigResult> createReplicationConfigAsync(CreateReplicationConfigRequest request) {
+
+        return createReplicationConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplicationConfigResult> createReplicationConfigAsync(final CreateReplicationConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateReplicationConfigRequest, CreateReplicationConfigResult> asyncHandler) {
+        final CreateReplicationConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateReplicationConfigResult>() {
+            @Override
+            public CreateReplicationConfigResult call() throws Exception {
+                CreateReplicationConfigResult result = null;
+
+                try {
+                    result = executeCreateReplicationConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationInstanceResult> createReplicationInstanceAsync(CreateReplicationInstanceRequest request) {
 
         return createReplicationInstanceAsync(request, null);
@@ -785,6 +818,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeDeleteFleetAdvisorDatabases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicationConfigResult> deleteReplicationConfigAsync(DeleteReplicationConfigRequest request) {
+
+        return deleteReplicationConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicationConfigResult> deleteReplicationConfigAsync(final DeleteReplicationConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteReplicationConfigRequest, DeleteReplicationConfigResult> asyncHandler) {
+        final DeleteReplicationConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteReplicationConfigResult>() {
+            @Override
+            public DeleteReplicationConfigResult call() throws Exception {
+                DeleteReplicationConfigResult result = null;
+
+                try {
+                    result = executeDeleteReplicationConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1609,6 +1675,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplicationConfigsResult> describeReplicationConfigsAsync(DescribeReplicationConfigsRequest request) {
+
+        return describeReplicationConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationConfigsResult> describeReplicationConfigsAsync(final DescribeReplicationConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReplicationConfigsRequest, DescribeReplicationConfigsResult> asyncHandler) {
+        final DescribeReplicationConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReplicationConfigsResult>() {
+            @Override
+            public DescribeReplicationConfigsResult call() throws Exception {
+                DescribeReplicationConfigsResult result = null;
+
+                try {
+                    result = executeDescribeReplicationConfigs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeReplicationInstanceTaskLogsResult> describeReplicationInstanceTaskLogsAsync(
             DescribeReplicationInstanceTaskLogsRequest request) {
 
@@ -1696,6 +1795,41 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeDescribeReplicationSubnetGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTableStatisticsResult> describeReplicationTableStatisticsAsync(
+            DescribeReplicationTableStatisticsRequest request) {
+
+        return describeReplicationTableStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTableStatisticsResult> describeReplicationTableStatisticsAsync(
+            final DescribeReplicationTableStatisticsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReplicationTableStatisticsRequest, DescribeReplicationTableStatisticsResult> asyncHandler) {
+        final DescribeReplicationTableStatisticsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReplicationTableStatisticsResult>() {
+            @Override
+            public DescribeReplicationTableStatisticsResult call() throws Exception {
+                DescribeReplicationTableStatisticsResult result = null;
+
+                try {
+                    result = executeDescribeReplicationTableStatistics(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1834,6 +1968,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeDescribeReplicationTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationsResult> describeReplicationsAsync(DescribeReplicationsRequest request) {
+
+        return describeReplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationsResult> describeReplicationsAsync(final DescribeReplicationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReplicationsRequest, DescribeReplicationsResult> asyncHandler) {
+        final DescribeReplicationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReplicationsResult>() {
+            @Override
+            public DescribeReplicationsResult call() throws Exception {
+                DescribeReplicationsResult result = null;
+
+                try {
+                    result = executeDescribeReplications(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2048,6 +2215,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyReplicationConfigResult> modifyReplicationConfigAsync(ModifyReplicationConfigRequest request) {
+
+        return modifyReplicationConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyReplicationConfigResult> modifyReplicationConfigAsync(final ModifyReplicationConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyReplicationConfigRequest, ModifyReplicationConfigResult> asyncHandler) {
+        final ModifyReplicationConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyReplicationConfigResult>() {
+            @Override
+            public ModifyReplicationConfigResult call() throws Exception {
+                ModifyReplicationConfigResult result = null;
+
+                try {
+                    result = executeModifyReplicationConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyReplicationInstanceResult> modifyReplicationInstanceAsync(ModifyReplicationInstanceRequest request) {
 
         return modifyReplicationInstanceAsync(request, null);
@@ -2246,6 +2446,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<ReloadReplicationTablesResult> reloadReplicationTablesAsync(ReloadReplicationTablesRequest request) {
+
+        return reloadReplicationTablesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReloadReplicationTablesResult> reloadReplicationTablesAsync(final ReloadReplicationTablesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReloadReplicationTablesRequest, ReloadReplicationTablesResult> asyncHandler) {
+        final ReloadReplicationTablesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReloadReplicationTablesResult>() {
+            @Override
+            public ReloadReplicationTablesResult call() throws Exception {
+                ReloadReplicationTablesResult result = null;
+
+                try {
+                    result = executeReloadReplicationTables(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ReloadTablesResult> reloadTablesAsync(ReloadTablesRequest request) {
 
         return reloadTablesAsync(request, null);
@@ -2378,6 +2611,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request) {
+
+        return startReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(final StartReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler) {
+        final StartReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartReplicationResult>() {
+            @Override
+            public StartReplicationResult call() throws Exception {
+                StartReplicationResult result = null;
+
+                try {
+                    result = executeStartReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartReplicationTaskResult> startReplicationTaskAsync(StartReplicationTaskRequest request) {
 
         return startReplicationTaskAsync(request, null);
@@ -2464,6 +2730,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
 
                 try {
                     result = executeStartReplicationTaskAssessmentRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request) {
+
+        return stopReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(final StopReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler) {
+        final StopReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopReplicationResult>() {
+            @Override
+            public StopReplicationResult call() throws Exception {
+                StopReplicationResult result = null;
+
+                try {
+                    result = executeStopReplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

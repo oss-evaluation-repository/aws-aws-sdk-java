@@ -442,6 +442,21 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean convertTimestampWithZoneToUTC;
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     */
+    private Integer openTransactionWindow;
 
     /**
      * <p>
@@ -3454,6 +3469,97 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     * 
+     * @param openTransactionWindow
+     *        The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+     *        <p>
+     *        You can specify an integer value between 0 (the default) and 240 (the maximum).
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours
+     *        including the value for <code>OpenTransactionWindow</code>.
+     *        </p>
+     */
+
+    public void setOpenTransactionWindow(Integer openTransactionWindow) {
+        this.openTransactionWindow = openTransactionWindow;
+    }
+
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     * 
+     * @return The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+     *         <p>
+     *         You can specify an integer value between 0 (the default) and 240 (the maximum).
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours
+     *         including the value for <code>OpenTransactionWindow</code>.
+     *         </p>
+     */
+
+    public Integer getOpenTransactionWindow() {
+        return this.openTransactionWindow;
+    }
+
+    /**
+     * <p>
+     * The timeframe in minutes to check for open transactions for a CDC-only task.
+     * </p>
+     * <p>
+     * You can specify an integer value between 0 (the default) and 240 (the maximum).
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours including
+     * the value for <code>OpenTransactionWindow</code>.
+     * </p>
+     * </note>
+     * 
+     * @param openTransactionWindow
+     *        The timeframe in minutes to check for open transactions for a CDC-only task.</p>
+     *        <p>
+     *        You can specify an integer value between 0 (the default) and 240 (the maximum).
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window of up to 9.5 hours
+     *        including the value for <code>OpenTransactionWindow</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OracleSettings withOpenTransactionWindow(Integer openTransactionWindow) {
+        setOpenTransactionWindow(openTransactionWindow);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3548,7 +3654,9 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (getTrimSpaceInChar() != null)
             sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar()).append(",");
         if (getConvertTimestampWithZoneToUTC() != null)
-            sb.append("ConvertTimestampWithZoneToUTC: ").append(getConvertTimestampWithZoneToUTC());
+            sb.append("ConvertTimestampWithZoneToUTC: ").append(getConvertTimestampWithZoneToUTC()).append(",");
+        if (getOpenTransactionWindow() != null)
+            sb.append("OpenTransactionWindow: ").append(getOpenTransactionWindow());
         sb.append("}");
         return sb.toString();
     }
@@ -3735,6 +3843,10 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getConvertTimestampWithZoneToUTC() != null
                 && other.getConvertTimestampWithZoneToUTC().equals(this.getConvertTimestampWithZoneToUTC()) == false)
             return false;
+        if (other.getOpenTransactionWindow() == null ^ this.getOpenTransactionWindow() == null)
+            return false;
+        if (other.getOpenTransactionWindow() != null && other.getOpenTransactionWindow().equals(this.getOpenTransactionWindow()) == false)
+            return false;
         return true;
     }
 
@@ -3785,6 +3897,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecretsManagerOracleAsmSecretId() == null) ? 0 : getSecretsManagerOracleAsmSecretId().hashCode());
         hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
         hashCode = prime * hashCode + ((getConvertTimestampWithZoneToUTC() == null) ? 0 : getConvertTimestampWithZoneToUTC().hashCode());
+        hashCode = prime * hashCode + ((getOpenTransactionWindow() == null) ? 0 : getOpenTransactionWindow().hashCode());
         return hashCode;
     }
 

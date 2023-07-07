@@ -139,6 +139,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DescribeAccountConfigurationResult describeAccountConfiguration(DescribeAccountConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -185,6 +190,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public DescribeScheduleResult describeSchedule(DescribeScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThumbnailsResult describeThumbnails(DescribeThumbnailsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -280,6 +290,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccountConfigurationResult updateAccountConfiguration(UpdateAccountConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

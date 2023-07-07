@@ -353,6 +353,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Creates a configuration that you can later provide to configure and start an DMS Serverless replication. You can
+     * also provide options to validate the configuration inputs before you start the replication.
+     * </p>
+     * 
+     * @param createReplicationConfigRequest
+     * @return A Java Future containing the result of the CreateReplicationConfig operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.CreateReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateReplicationConfigResult> createReplicationConfigAsync(CreateReplicationConfigRequest createReplicationConfigRequest);
+
+    /**
+     * <p>
+     * Creates a configuration that you can later provide to configure and start an DMS Serverless replication. You can
+     * also provide options to validate the configuration inputs before you start the replication.
+     * </p>
+     * 
+     * @param createReplicationConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateReplicationConfig operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.CreateReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateReplicationConfigResult> createReplicationConfigAsync(CreateReplicationConfigRequest createReplicationConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateReplicationConfigRequest, CreateReplicationConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
@@ -408,6 +441,14 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region,
      * otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.
      * </p>
+     * <p>
+     * If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup action
+     * returns the following error message: The Replication Subnet Group already exists. In this case, delete the
+     * existing replication subnet group. To do so, use the <a
+     * href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html"
+     * >DeleteReplicationSubnetGroup</a> action. Optionally, choose Subnet groups in the DMS console, then choose your
+     * subnet group. Next, choose Delete from Actions.
+     * </p>
      * 
      * @param createReplicationSubnetGroupRequest
      * @return A Java Future containing the result of the CreateReplicationSubnetGroup operation returned by the
@@ -426,6 +467,14 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region,
      * otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.
+     * </p>
+     * <p>
+     * If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup action
+     * returns the following error message: The Replication Subnet Group already exists. In this case, delete the
+     * existing replication subnet group. To do so, use the <a
+     * href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html"
+     * >DeleteReplicationSubnetGroup</a> action. Optionally, choose Subnet groups in the DMS console, then choose your
+     * subnet group. Next, choose Delete from Actions.
      * </p>
      * 
      * @param createReplicationSubnetGroupRequest
@@ -675,6 +724,41 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(
             DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorDatabasesRequest, DeleteFleetAdvisorDatabasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an DMS Serverless replication configuration. This effectively deprovisions any and all replications that
+     * use this configuration. You can't delete the configuration for an DMS Serverless replication that is ongoing. You
+     * can delete the configuration when the replication is in a non-RUNNING and non-STARTING state.
+     * </p>
+     * 
+     * @param deleteReplicationConfigRequest
+     * @return A Java Future containing the result of the DeleteReplicationConfig operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DeleteReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReplicationConfigResult> deleteReplicationConfigAsync(DeleteReplicationConfigRequest deleteReplicationConfigRequest);
+
+    /**
+     * <p>
+     * Deletes an DMS Serverless replication configuration. This effectively deprovisions any and all replications that
+     * use this configuration. You can't delete the configuration for an DMS Serverless replication that is ongoing. You
+     * can delete the configuration when the replication is in a non-RUNNING and non-STARTING state.
+     * </p>
+     * 
+     * @param deleteReplicationConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteReplicationConfig operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DeleteReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReplicationConfigResult> deleteReplicationConfigAsync(DeleteReplicationConfigRequest deleteReplicationConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteReplicationConfigRequest, DeleteReplicationConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1572,6 +1656,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Returns one or more existing DMS Serverless replication configurations as a list of structures.
+     * </p>
+     * 
+     * @param describeReplicationConfigsRequest
+     * @return A Java Future containing the result of the DescribeReplicationConfigs operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplicationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationConfigsResult> describeReplicationConfigsAsync(
+            DescribeReplicationConfigsRequest describeReplicationConfigsRequest);
+
+    /**
+     * <p>
+     * Returns one or more existing DMS Serverless replication configurations as a list of structures.
+     * </p>
+     * 
+     * @param describeReplicationConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplicationConfigs operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplicationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationConfigsResult> describeReplicationConfigsAsync(
+            DescribeReplicationConfigsRequest describeReplicationConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationConfigsRequest, DescribeReplicationConfigsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the task logs for the specified task.
      * </p>
      * 
@@ -1674,6 +1791,43 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     java.util.concurrent.Future<DescribeReplicationSubnetGroupsResult> describeReplicationSubnetGroupsAsync(
             DescribeReplicationSubnetGroupsRequest describeReplicationSubnetGroupsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationSubnetGroupsRequest, DescribeReplicationSubnetGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns table and schema statistics for one or more provisioned replications that use a given DMS Serverless
+     * replication configuration.
+     * </p>
+     * 
+     * @param describeReplicationTableStatisticsRequest
+     * @return A Java Future containing the result of the DescribeReplicationTableStatistics operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplicationTableStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTableStatisticsResult> describeReplicationTableStatisticsAsync(
+            DescribeReplicationTableStatisticsRequest describeReplicationTableStatisticsRequest);
+
+    /**
+     * <p>
+     * Returns table and schema statistics for one or more provisioned replications that use a given DMS Serverless
+     * replication configuration.
+     * </p>
+     * 
+     * @param describeReplicationTableStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplicationTableStatistics operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplicationTableStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTableStatisticsResult> describeReplicationTableStatisticsAsync(
+            DescribeReplicationTableStatisticsRequest describeReplicationTableStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTableStatisticsRequest, DescribeReplicationTableStatisticsResult> asyncHandler);
 
     /**
      * <p>
@@ -1850,6 +2004,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<DescribeReplicationTasksResult> describeReplicationTasksAsync(DescribeReplicationTasksRequest describeReplicationTasksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationTasksRequest, DescribeReplicationTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides details on replication progress by returning status information for one or more provisioned DMS
+     * Serverless replications.
+     * </p>
+     * 
+     * @param describeReplicationsRequest
+     * @return A Java Future containing the result of the DescribeReplications operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationsResult> describeReplicationsAsync(DescribeReplicationsRequest describeReplicationsRequest);
+
+    /**
+     * <p>
+     * Provides details on replication progress by returning status information for one or more provisioned DMS
+     * Serverless replications.
+     * </p>
+     * 
+     * @param describeReplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplications operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationsResult> describeReplicationsAsync(DescribeReplicationsRequest describeReplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationsRequest, DescribeReplicationsResult> asyncHandler);
 
     /**
      * <p>
@@ -2070,6 +2257,53 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<ModifyEventSubscriptionResult> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, ModifyEventSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies an existing DMS Serverless replication configuration that you can use to start a replication. This
+     * command includes input validation and logic to check the state of any replication that uses this configuration.
+     * You can only modify a replication configuration before any replication that uses it has started. As soon as you
+     * have initially started a replication with a given configuiration, you can't modify that configuration, even if
+     * you stop it.
+     * </p>
+     * <p>
+     * Other run statuses that allow you to run this command include FAILED and CREATED. A provisioning state that
+     * allows you to run this command is FAILED_PROVISION.
+     * </p>
+     * 
+     * @param modifyReplicationConfigRequest
+     * @return A Java Future containing the result of the ModifyReplicationConfig operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.ModifyReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyReplicationConfigResult> modifyReplicationConfigAsync(ModifyReplicationConfigRequest modifyReplicationConfigRequest);
+
+    /**
+     * <p>
+     * Modifies an existing DMS Serverless replication configuration that you can use to start a replication. This
+     * command includes input validation and logic to check the state of any replication that uses this configuration.
+     * You can only modify a replication configuration before any replication that uses it has started. As soon as you
+     * have initially started a replication with a given configuiration, you can't modify that configuration, even if
+     * you stop it.
+     * </p>
+     * <p>
+     * Other run statuses that allow you to run this command include FAILED and CREATED. A provisioning state that
+     * allows you to run this command is FAILED_PROVISION.
+     * </p>
+     * 
+     * @param modifyReplicationConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyReplicationConfig operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.ModifyReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyReplicationConfigResult> modifyReplicationConfigAsync(ModifyReplicationConfigRequest modifyReplicationConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyReplicationConfigRequest, ModifyReplicationConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -2301,6 +2535,45 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Reloads the target database table with the source data for a given DMS Serverless replication configuration.
+     * </p>
+     * <p>
+     * You can only use this operation with a task in the RUNNING state, otherwise the service will throw an
+     * <code>InvalidResourceStateFault</code> exception.
+     * </p>
+     * 
+     * @param reloadReplicationTablesRequest
+     * @return A Java Future containing the result of the ReloadReplicationTables operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.ReloadReplicationTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ReloadReplicationTablesResult> reloadReplicationTablesAsync(ReloadReplicationTablesRequest reloadReplicationTablesRequest);
+
+    /**
+     * <p>
+     * Reloads the target database table with the source data for a given DMS Serverless replication configuration.
+     * </p>
+     * <p>
+     * You can only use this operation with a task in the RUNNING state, otherwise the service will throw an
+     * <code>InvalidResourceStateFault</code> exception.
+     * </p>
+     * 
+     * @param reloadReplicationTablesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReloadReplicationTables operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.ReloadReplicationTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ReloadReplicationTablesResult> reloadReplicationTablesAsync(ReloadReplicationTablesRequest reloadReplicationTablesRequest,
+            com.amazonaws.handlers.AsyncHandler<ReloadReplicationTablesRequest, ReloadReplicationTablesResult> asyncHandler);
+
+    /**
+     * <p>
      * Reloads the target database table with the source data.
      * </p>
      * <p>
@@ -2448,6 +2721,43 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      */
     java.util.concurrent.Future<StartRecommendationsResult> startRecommendationsAsync(StartRecommendationsRequest startRecommendationsRequest,
             com.amazonaws.handlers.AsyncHandler<StartRecommendationsRequest, StartRecommendationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS connects to the source endpoint and collects the
+     * metadata to analyze the replication workload. Using this metadata, DMS then computes and provisions the required
+     * capacity and starts replicating to the target endpoint using the server resources that DMS has provisioned for
+     * the DMS Serverless replication.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @return A Java Future containing the result of the StartReplication operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest startReplicationRequest);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS connects to the source endpoint and collects the
+     * metadata to analyze the replication workload. Using this metadata, DMS then computes and provisions the required
+     * capacity and starts replicating to the target endpoint using the server resources that DMS has provisioned for
+     * the DMS Serverless replication.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartReplication operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest startReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler);
 
     /**
      * <p>
@@ -2617,6 +2927,39 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     java.util.concurrent.Future<StartReplicationTaskAssessmentRunResult> startReplicationTaskAssessmentRunAsync(
             StartReplicationTaskAssessmentRunRequest startReplicationTaskAssessmentRunRequest,
             com.amazonaws.handlers.AsyncHandler<StartReplicationTaskAssessmentRunRequest, StartReplicationTaskAssessmentRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS stops any and all ongoing DMS Serverless replications.
+     * This command doesn't deprovision the stopped replications.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return A Java Future containing the result of the StopReplication operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest stopReplicationRequest);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS stops any and all ongoing DMS Serverless replications.
+     * This command doesn't deprovision the stopped replications.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopReplication operation returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest stopReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler);
 
     /**
      * <p>

@@ -121,6 +121,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateReplicationConfigResult> createReplicationConfigAsync(CreateReplicationConfigRequest request) {
+
+        return createReplicationConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateReplicationConfigResult> createReplicationConfigAsync(CreateReplicationConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateReplicationConfigRequest, CreateReplicationConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationInstanceResult> createReplicationInstanceAsync(CreateReplicationInstanceRequest request) {
 
         return createReplicationInstanceAsync(request, null);
@@ -233,6 +246,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<DeleteFleetAdvisorDatabasesResult> deleteFleetAdvisorDatabasesAsync(DeleteFleetAdvisorDatabasesRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFleetAdvisorDatabasesRequest, DeleteFleetAdvisorDatabasesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicationConfigResult> deleteReplicationConfigAsync(DeleteReplicationConfigRequest request) {
+
+        return deleteReplicationConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicationConfigResult> deleteReplicationConfigAsync(DeleteReplicationConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteReplicationConfigRequest, DeleteReplicationConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -564,6 +590,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplicationConfigsResult> describeReplicationConfigsAsync(DescribeReplicationConfigsRequest request) {
+
+        return describeReplicationConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationConfigsResult> describeReplicationConfigsAsync(DescribeReplicationConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationConfigsRequest, DescribeReplicationConfigsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeReplicationInstanceTaskLogsResult> describeReplicationInstanceTaskLogsAsync(
             DescribeReplicationInstanceTaskLogsRequest request) {
 
@@ -602,6 +641,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     public java.util.concurrent.Future<DescribeReplicationSubnetGroupsResult> describeReplicationSubnetGroupsAsync(
             DescribeReplicationSubnetGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationSubnetGroupsRequest, DescribeReplicationSubnetGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTableStatisticsResult> describeReplicationTableStatisticsAsync(
+            DescribeReplicationTableStatisticsRequest request) {
+
+        return describeReplicationTableStatisticsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTableStatisticsResult> describeReplicationTableStatisticsAsync(
+            DescribeReplicationTableStatisticsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTableStatisticsRequest, DescribeReplicationTableStatisticsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -660,6 +714,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<DescribeReplicationTasksResult> describeReplicationTasksAsync(DescribeReplicationTasksRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationTasksRequest, DescribeReplicationTasksResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationsResult> describeReplicationsAsync(DescribeReplicationsRequest request) {
+
+        return describeReplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationsResult> describeReplicationsAsync(DescribeReplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationsRequest, DescribeReplicationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -743,6 +810,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyReplicationConfigResult> modifyReplicationConfigAsync(ModifyReplicationConfigRequest request) {
+
+        return modifyReplicationConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyReplicationConfigResult> modifyReplicationConfigAsync(ModifyReplicationConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyReplicationConfigRequest, ModifyReplicationConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ModifyReplicationInstanceResult> modifyReplicationInstanceAsync(ModifyReplicationInstanceRequest request) {
 
         return modifyReplicationInstanceAsync(request, null);
@@ -821,6 +901,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<ReloadReplicationTablesResult> reloadReplicationTablesAsync(ReloadReplicationTablesRequest request) {
+
+        return reloadReplicationTablesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReloadReplicationTablesResult> reloadReplicationTablesAsync(ReloadReplicationTablesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReloadReplicationTablesRequest, ReloadReplicationTablesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ReloadTablesResult> reloadTablesAsync(ReloadTablesRequest request) {
 
         return reloadTablesAsync(request, null);
@@ -873,6 +966,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request) {
+
+        return startReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartReplicationTaskResult> startReplicationTaskAsync(StartReplicationTaskRequest request) {
 
         return startReplicationTaskAsync(request, null);
@@ -909,6 +1015,19 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     public java.util.concurrent.Future<StartReplicationTaskAssessmentRunResult> startReplicationTaskAssessmentRunAsync(
             StartReplicationTaskAssessmentRunRequest request,
             com.amazonaws.handlers.AsyncHandler<StartReplicationTaskAssessmentRunRequest, StartReplicationTaskAssessmentRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request) {
+
+        return stopReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

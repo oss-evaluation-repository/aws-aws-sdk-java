@@ -296,6 +296,37 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Creates a configuration that you can later provide to configure and start an DMS Serverless replication. You can
+     * also provide options to validate the configuration inputs before you start the replication.
+     * </p>
+     * 
+     * @param createReplicationConfigRequest
+     * @return Result of the CreateReplicationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
+     *         group and add more AZs.
+     * @throws InvalidSubnetException
+     *         The subnet provided isn't valid.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws ResourceQuotaExceededException
+     *         The quota for this resource quota has been exceeded.
+     * @sample AWSDatabaseMigrationService.CreateReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateReplicationConfigResult createReplicationConfig(CreateReplicationConfigRequest createReplicationConfigRequest);
+
+    /**
+     * <p>
      * Creates the replication instance using the specified parameters.
      * </p>
      * <p>
@@ -327,7 +358,7 @@ public interface AWSDatabaseMigrationService {
      * @throws InvalidResourceStateException
      *         The resource is in a state that prevents it from being used for database migration.
      * @throws InvalidSubnetException
-     *         The subnet provided is invalid.
+     *         The subnet provided isn't valid.
      * @throws KMSKeyNotAccessibleException
      *         DMS cannot access the KMS key.
      * @sample AWSDatabaseMigrationService.CreateReplicationInstance
@@ -344,6 +375,14 @@ public interface AWSDatabaseMigrationService {
      * The VPC needs to have at least one subnet in at least two availability zones in the Amazon Web Services Region,
      * otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code> exception.
      * </p>
+     * <p>
+     * If a replication subnet group exists in your Amazon Web Services account, the CreateReplicationSubnetGroup action
+     * returns the following error message: The Replication Subnet Group already exists. In this case, delete the
+     * existing replication subnet group. To do so, use the <a
+     * href="https://docs.aws.amazon.com/en_us/dms/latest/APIReference/API_DeleteReplicationSubnetGroup.html"
+     * >DeleteReplicationSubnetGroup</a> action. Optionally, choose Subnet groups in the DMS console, then choose your
+     * subnet group. Next, choose Delete from Actions.
+     * </p>
      * 
      * @param createReplicationSubnetGroupRequest
      * @return Result of the CreateReplicationSubnetGroup operation returned by the service.
@@ -359,7 +398,7 @@ public interface AWSDatabaseMigrationService {
      *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
      *         group and add more AZs.
      * @throws InvalidSubnetException
-     *         The subnet provided is invalid.
+     *         The subnet provided isn't valid.
      * @sample AWSDatabaseMigrationService.CreateReplicationSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -500,6 +539,27 @@ public interface AWSDatabaseMigrationService {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteFleetAdvisorDatabasesResult deleteFleetAdvisorDatabases(DeleteFleetAdvisorDatabasesRequest deleteFleetAdvisorDatabasesRequest);
+
+    /**
+     * <p>
+     * Deletes an DMS Serverless replication configuration. This effectively deprovisions any and all replications that
+     * use this configuration. You can't delete the configuration for an DMS Serverless replication that is ongoing. You
+     * can delete the configuration when the replication is in a non-RUNNING and non-STARTING state.
+     * </p>
+     * 
+     * @param deleteReplicationConfigRequest
+     * @return Result of the DeleteReplicationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteReplicationConfigResult deleteReplicationConfig(DeleteReplicationConfigRequest deleteReplicationConfigRequest);
 
     /**
      * <p>
@@ -924,6 +984,21 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns one or more existing DMS Serverless replication configurations as a list of structures.
+     * </p>
+     * 
+     * @param describeReplicationConfigsRequest
+     * @return Result of the DescribeReplicationConfigs operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeReplicationConfigsResult describeReplicationConfigs(DescribeReplicationConfigsRequest describeReplicationConfigsRequest);
+
+    /**
+     * <p>
      * Returns information about the task logs for the specified task.
      * </p>
      * 
@@ -969,6 +1044,25 @@ public interface AWSDatabaseMigrationService {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeReplicationSubnetGroupsResult describeReplicationSubnetGroups(DescribeReplicationSubnetGroupsRequest describeReplicationSubnetGroupsRequest);
+
+    /**
+     * <p>
+     * Returns table and schema statistics for one or more provisioned replications that use a given DMS Serverless
+     * replication configuration.
+     * </p>
+     * 
+     * @param describeReplicationTableStatisticsRequest
+     * @return Result of the DescribeReplicationTableStatistics operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationTableStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTableStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReplicationTableStatisticsResult describeReplicationTableStatistics(
+            DescribeReplicationTableStatisticsRequest describeReplicationTableStatisticsRequest);
 
     /**
      * <p>
@@ -1052,6 +1146,22 @@ public interface AWSDatabaseMigrationService {
      *      API Documentation</a>
      */
     DescribeReplicationTasksResult describeReplicationTasks(DescribeReplicationTasksRequest describeReplicationTasksRequest);
+
+    /**
+     * <p>
+     * Provides details on replication progress by returning status information for one or more provisioned DMS
+     * Serverless replications.
+     * </p>
+     * 
+     * @param describeReplicationsRequest
+     * @return Result of the DescribeReplications operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeReplicationsResult describeReplications(DescribeReplicationsRequest describeReplicationsRequest);
 
     /**
      * <p>
@@ -1194,6 +1304,40 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Modifies an existing DMS Serverless replication configuration that you can use to start a replication. This
+     * command includes input validation and logic to check the state of any replication that uses this configuration.
+     * You can only modify a replication configuration before any replication that uses it has started. As soon as you
+     * have initially started a replication with a given configuiration, you can't modify that configuration, even if
+     * you stop it.
+     * </p>
+     * <p>
+     * Other run statuses that allow you to run this command include FAILED and CREATED. A provisioning state that
+     * allows you to run this command is FAILED_PROVISION.
+     * </p>
+     * 
+     * @param modifyReplicationConfigRequest
+     * @return Result of the ModifyReplicationConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ReplicationSubnetGroupDoesNotCoverEnoughAZsException
+     *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
+     *         group and add more AZs.
+     * @throws InvalidSubnetException
+     *         The subnet provided isn't valid.
+     * @throws KMSKeyNotAccessibleException
+     *         DMS cannot access the KMS key.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ModifyReplicationConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyReplicationConfigResult modifyReplicationConfig(ModifyReplicationConfigRequest modifyReplicationConfigRequest);
+
+    /**
+     * <p>
      * Modifies the replication instance to apply new settings. You can change one or more parameters by specifying
      * these parameters and the new values in the request.
      * </p>
@@ -1243,7 +1387,7 @@ public interface AWSDatabaseMigrationService {
      *         The replication subnet group does not cover enough Availability Zones (AZs). Edit the replication subnet
      *         group and add more AZs.
      * @throws InvalidSubnetException
-     *         The subnet provided is invalid.
+     *         The subnet provided isn't valid.
      * @sample AWSDatabaseMigrationService.ModifyReplicationSubnetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyReplicationSubnetGroup"
      *      target="_top">AWS API Documentation</a>
@@ -1346,6 +1490,27 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Reloads the target database table with the source data for a given DMS Serverless replication configuration.
+     * </p>
+     * <p>
+     * You can only use this operation with a task in the RUNNING state, otherwise the service will throw an
+     * <code>InvalidResourceStateFault</code> exception.
+     * </p>
+     * 
+     * @param reloadReplicationTablesRequest
+     * @return Result of the ReloadReplicationTables operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.ReloadReplicationTables
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ReloadReplicationTables" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ReloadReplicationTablesResult reloadReplicationTables(ReloadReplicationTablesRequest reloadReplicationTablesRequest);
+
+    /**
+     * <p>
      * Reloads the target database table with the source data.
      * </p>
      * <p>
@@ -1423,6 +1588,28 @@ public interface AWSDatabaseMigrationService {
      *      Documentation</a>
      */
     StartRecommendationsResult startRecommendations(StartRecommendationsRequest startRecommendationsRequest);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS connects to the source endpoint and collects the
+     * metadata to analyze the replication workload. Using this metadata, DMS then computes and provisions the required
+     * capacity and starts replicating to the target endpoint using the server resources that DMS has provisioned for
+     * the DMS Serverless replication.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @return Result of the StartReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartReplicationResult startReplication(StartReplicationRequest startReplicationRequest);
 
     /**
      * <p>
@@ -1530,6 +1717,26 @@ public interface AWSDatabaseMigrationService {
      *      target="_top">AWS API Documentation</a>
      */
     StartReplicationTaskAssessmentRunResult startReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest startReplicationTaskAssessmentRunRequest);
+
+    /**
+     * <p>
+     * For a given DMS Serverless replication configuration, DMS stops any and all ongoing DMS Serverless replications.
+     * This command doesn't deprovision the stopped replications.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return Result of the StopReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws AccessDeniedException
+     *         DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @sample AWSDatabaseMigrationService.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopReplicationResult stopReplication(StopReplicationRequest stopReplicationRequest);
 
     /**
      * <p>

@@ -67,9 +67,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      */
     private String replicationInstanceClass;
@@ -84,7 +86,7 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      */
     private String availabilityZone;
@@ -427,9 +429,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -438,9 +442,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        <code>"dms.c4.large"</code>.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right DMS replication instance for your migration</a>.
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the
+     *        right DMS replication instance</a>; and, <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     *        >Selecting the best size for a replication instance</a>.
      */
 
     public void setReplicationInstanceClass(String replicationInstanceClass) {
@@ -453,9 +458,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
@@ -463,9 +470,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *         <code>"dms.c4.large"</code>.</p>
      *         <p>
      *         For more information on the settings and capacities for the available replication instance classes, see
-     *         <a href=
-     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *         > Selecting the right DMS replication instance for your migration</a>.
+     *         <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing
+     *         the right DMS replication instance</a>; and, <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     *         >Selecting the best size for a replication instance</a>.
      */
 
     public String getReplicationInstanceClass() {
@@ -478,9 +486,11 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.
      * </p>
      * <p>
-     * For more information on the settings and capacities for the available replication instance classes, see <a href=
-     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     * > Selecting the right DMS replication instance for your migration</a>.
+     * For more information on the settings and capacities for the available replication instance classes, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the right
+     * DMS replication instance</a>; and, <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     * >Selecting the best size for a replication instance</a>.
      * </p>
      * 
      * @param replicationInstanceClass
@@ -489,9 +499,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      *        <code>"dms.c4.large"</code>.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
-     *        href=
-     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"
-     *        > Selecting the right DMS replication instance for your migration</a>.
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Types.html "> Choosing the
+     *        right DMS replication instance</a>; and, <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_BestPractices.SizingReplicationInstance.html"
+     *        >Selecting the best size for a replication instance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,13 +593,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where the replication instance will be created. The default value is a random,
      *        system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     *        <code>us-east-1d</code>
+     *        <code>us-east-1d</code>.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -599,12 +610,12 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      * 
      * @return The Availability Zone where the replication instance will be created. The default value is a random,
      *         system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     *         <code>us-east-1d</code>
+     *         <code>us-east-1d</code>.
      */
 
     public String getAvailabilityZone() {
@@ -615,13 +626,13 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Availability Zone where the replication instance will be created. The default value is a random,
      * system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     * <code>us-east-1d</code>
+     * <code>us-east-1d</code>.
      * </p>
      * 
      * @param availabilityZone
      *        The Availability Zone where the replication instance will be created. The default value is a random,
      *        system-chosen Availability Zone in the endpoint's Amazon Web Services Region, for example:
-     *        <code>us-east-1d</code>
+     *        <code>us-east-1d</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

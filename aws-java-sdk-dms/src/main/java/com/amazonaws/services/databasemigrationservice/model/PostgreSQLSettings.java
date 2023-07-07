@@ -162,9 +162,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -221,6 +221,18 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean mapBooleanAsBoolean;
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     */
+    private Boolean mapJsonbAsClob;
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     */
+    private String mapLongVarcharAs;
 
     /**
      * <p>
@@ -1054,9 +1066,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1077,9 +1089,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        <p>
      *        For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     *        href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native
-     *        start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     *        <code>CdcStartPosition</code>, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     *        >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     *        information about using <code>CdcStartPosition</code>, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      *        >CreateReplicationTask</a>, <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1106,9 +1118,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1128,9 +1140,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *         </p>
      *         <p>
      *         For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     *         href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native
-     *         start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     *         <code>CdcStartPosition</code>, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     *         >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     *         information about using <code>CdcStartPosition</code>, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      *         >CreateReplicationTask</a>, <a
      *         href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1157,9 +1169,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      * </p>
      * <p>
      * For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     * href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start
-     * point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     * <code>CdcStartPosition</code>, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     * >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     * information about using <code>CdcStartPosition</code>, see <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      * >CreateReplicationTask</a>, <a
      * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1180,9 +1192,9 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
      *        </p>
      *        <p>
      *        For more information about setting the <code>CdcStartPosition</code> request parameter, see <a
-     *        href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native
-     *        start point</a> in the <i>Database Migration Service User Guide</i>. For more information about using
-     *        <code>CdcStartPosition</code>, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native"
+     *        >Determining a CDC native start point</a> in the <i>Database Migration Service User Guide</i>. For more
+     *        information about using <code>CdcStartPosition</code>, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html"
      *        >CreateReplicationTask</a>, <a
      *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html"
@@ -1547,6 +1559,117 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @param mapJsonbAsClob
+     *        When true, DMS migrates JSONB values as CLOB.
+     */
+
+    public void setMapJsonbAsClob(Boolean mapJsonbAsClob) {
+        this.mapJsonbAsClob = mapJsonbAsClob;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @return When true, DMS migrates JSONB values as CLOB.
+     */
+
+    public Boolean getMapJsonbAsClob() {
+        return this.mapJsonbAsClob;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @param mapJsonbAsClob
+     *        When true, DMS migrates JSONB values as CLOB.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostgreSQLSettings withMapJsonbAsClob(Boolean mapJsonbAsClob) {
+        setMapJsonbAsClob(mapJsonbAsClob);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates JSONB values as CLOB.
+     * </p>
+     * 
+     * @return When true, DMS migrates JSONB values as CLOB.
+     */
+
+    public Boolean isMapJsonbAsClob() {
+        return this.mapJsonbAsClob;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @param mapLongVarcharAs
+     *        When true, DMS migrates LONG values as VARCHAR.
+     * @see LongVarcharMappingType
+     */
+
+    public void setMapLongVarcharAs(String mapLongVarcharAs) {
+        this.mapLongVarcharAs = mapLongVarcharAs;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @return When true, DMS migrates LONG values as VARCHAR.
+     * @see LongVarcharMappingType
+     */
+
+    public String getMapLongVarcharAs() {
+        return this.mapLongVarcharAs;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @param mapLongVarcharAs
+     *        When true, DMS migrates LONG values as VARCHAR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LongVarcharMappingType
+     */
+
+    public PostgreSQLSettings withMapLongVarcharAs(String mapLongVarcharAs) {
+        setMapLongVarcharAs(mapLongVarcharAs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When true, DMS migrates LONG values as VARCHAR.
+     * </p>
+     * 
+     * @param mapLongVarcharAs
+     *        When true, DMS migrates LONG values as VARCHAR.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LongVarcharMappingType
+     */
+
+    public PostgreSQLSettings withMapLongVarcharAs(LongVarcharMappingType mapLongVarcharAs) {
+        this.mapLongVarcharAs = mapLongVarcharAs.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1597,7 +1720,11 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         if (getTrimSpaceInChar() != null)
             sb.append("TrimSpaceInChar: ").append(getTrimSpaceInChar()).append(",");
         if (getMapBooleanAsBoolean() != null)
-            sb.append("MapBooleanAsBoolean: ").append(getMapBooleanAsBoolean());
+            sb.append("MapBooleanAsBoolean: ").append(getMapBooleanAsBoolean()).append(",");
+        if (getMapJsonbAsClob() != null)
+            sb.append("MapJsonbAsClob: ").append(getMapJsonbAsClob()).append(",");
+        if (getMapLongVarcharAs() != null)
+            sb.append("MapLongVarcharAs: ").append(getMapLongVarcharAs());
         sb.append("}");
         return sb.toString();
     }
@@ -1692,6 +1819,14 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getMapBooleanAsBoolean() != null && other.getMapBooleanAsBoolean().equals(this.getMapBooleanAsBoolean()) == false)
             return false;
+        if (other.getMapJsonbAsClob() == null ^ this.getMapJsonbAsClob() == null)
+            return false;
+        if (other.getMapJsonbAsClob() != null && other.getMapJsonbAsClob().equals(this.getMapJsonbAsClob()) == false)
+            return false;
+        if (other.getMapLongVarcharAs() == null ^ this.getMapLongVarcharAs() == null)
+            return false;
+        if (other.getMapLongVarcharAs() != null && other.getMapLongVarcharAs().equals(this.getMapLongVarcharAs()) == false)
+            return false;
         return true;
     }
 
@@ -1720,6 +1855,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getSecretsManagerSecretId() == null) ? 0 : getSecretsManagerSecretId().hashCode());
         hashCode = prime * hashCode + ((getTrimSpaceInChar() == null) ? 0 : getTrimSpaceInChar().hashCode());
         hashCode = prime * hashCode + ((getMapBooleanAsBoolean() == null) ? 0 : getMapBooleanAsBoolean().hashCode());
+        hashCode = prime * hashCode + ((getMapJsonbAsClob() == null) ? 0 : getMapJsonbAsClob().hashCode());
+        hashCode = prime * hashCode + ((getMapLongVarcharAs() == null) ? 0 : getMapLongVarcharAs().hashCode());
         return hashCode;
     }
 
