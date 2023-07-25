@@ -361,6 +361,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     }
 
     @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest request) {
+
+        return getSimilarProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSimilarProfilesRequest, GetSimilarProfilesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
 
         return getWorkflowAsync(request, null);
@@ -516,6 +529,19 @@ public class AbstractAmazonCustomerProfilesAsync extends AbstractAmazonCustomerP
     @Override
     public java.util.concurrent.Future<ListProfileObjectsResult> listProfileObjectsAsync(ListProfileObjectsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListProfileObjectsRequest, ListProfileObjectsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request) {
+
+        return listRuleBasedMatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRuleBasedMatchesRequest, ListRuleBasedMatchesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

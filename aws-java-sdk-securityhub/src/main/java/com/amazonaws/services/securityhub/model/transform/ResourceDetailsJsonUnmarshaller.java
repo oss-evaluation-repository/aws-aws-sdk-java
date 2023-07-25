@@ -408,6 +408,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsAthenaWorkGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsAthenaWorkGroup(AwsAthenaWorkGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

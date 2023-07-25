@@ -767,6 +767,31 @@ public interface AmazonCustomerProfiles {
 
     /**
      * <p>
+     * Returns a set of profiles that belong to the same matching group using the <code>matchId</code> or
+     * <code>profileId</code>. You can also specify the type of matching that you want for finding similar profiles
+     * using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+     * </p>
+     * 
+     * @param getSimilarProfilesRequest
+     * @return Result of the GetSimilarProfiles operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.GetSimilarProfiles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSimilarProfilesResult getSimilarProfiles(GetSimilarProfilesRequest getSimilarProfilesRequest);
+
+    /**
+     * <p>
      * Get details of specified workflow.
      * </p>
      * 
@@ -1045,6 +1070,29 @@ public interface AmazonCustomerProfiles {
      *      target="_top">AWS API Documentation</a>
      */
     ListProfileObjectsResult listProfileObjects(ListProfileObjectsRequest listProfileObjectsRequest);
+
+    /**
+     * <p>
+     * Returns a set of <code>MatchIds</code> that belong to the given domain.
+     * </p>
+     * 
+     * @param listRuleBasedMatchesRequest
+     * @return Result of the ListRuleBasedMatches operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         The requested resource does not exist, or access was denied.
+     * @throws ThrottlingException
+     *         You exceeded the maximum number of requests.
+     * @throws InternalServerException
+     *         An internal service error occurred.
+     * @sample AmazonCustomerProfiles.ListRuleBasedMatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListRuleBasedMatches"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRuleBasedMatchesResult listRuleBasedMatches(ListRuleBasedMatchesRequest listRuleBasedMatchesRequest);
 
     /**
      * <p>

@@ -132,6 +132,35 @@ public interface AWSDataSync {
 
     /**
      * <p>
+     * Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can use as a transfer source or
+     * destination.
+     * </p>
+     * <p>
+     * Before you begin, make sure you know <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+     * DataSync accesses Azure Blob Storage</a> and works with <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers"
+     * >access tiers</a> and <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+     * types</a>. You also need a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent"
+     * >DataSync agent</a> that can connect to your container.
+     * </p>
+     * 
+     * @param createLocationAzureBlobRequest
+     * @return Result of the CreateLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.CreateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLocationAzureBlobResult createLocationAzureBlob(CreateLocationAzureBlobRequest createLocationAzureBlobRequest);
+
+    /**
+     * <p>
      * Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer. For more information,
      * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating a location
      * for Amazon EFS</a>.
@@ -249,7 +278,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
+     * Creates an endpoint for an Network File System (NFS) file server that DataSync can use for a data transfer.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -331,10 +360,12 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can access for a transfer. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating an SMB
-     * location</a>.
+     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses an SMB file
+     * server</a>.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -470,6 +501,23 @@ public interface AWSDataSync {
      *      API Documentation</a>
      */
     DescribeDiscoveryJobResult describeDiscoveryJob(DescribeDiscoveryJobRequest describeDiscoveryJobRequest);
+
+    /**
+     * <p>
+     * Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured.
+     * </p>
+     * 
+     * @param describeLocationAzureBlobRequest
+     * @return Result of the DescribeLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.DescribeLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLocationAzureBlobResult describeLocationAzureBlob(DescribeLocationAzureBlobRequest describeLocationAzureBlobRequest);
 
     /**
      * <p>
@@ -714,7 +762,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about a task.
+     * Provides information about an DataSync transfer task.
      * </p>
      * 
      * @param describeTaskRequest
@@ -732,7 +780,7 @@ public interface AWSDataSync {
 
     /**
      * <p>
-     * Returns detailed metadata about a task that is being executed.
+     * Provides information about an DataSync transfer task that's running.
      * </p>
      * 
      * @param describeTaskExecutionRequest
@@ -1092,6 +1140,24 @@ public interface AWSDataSync {
      *      API Documentation</a>
      */
     UpdateDiscoveryJobResult updateDiscoveryJob(UpdateDiscoveryJobRequest updateDiscoveryJobRequest);
+
+    /**
+     * <p>
+     * Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with
+     * DataSync.
+     * </p>
+     * 
+     * @param updateLocationAzureBlobRequest
+     * @return Result of the UpdateLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.UpdateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLocationAzureBlobResult updateLocationAzureBlob(UpdateLocationAzureBlobRequest updateLocationAzureBlobRequest);
 
     /**
      * <p>

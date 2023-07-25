@@ -109,12 +109,18 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
-     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
-     * see <a
+     * Creates the connector, which captures the parameters for an outbound connection for the AS2 or SFTP protocol. The
+     * connector is required for sending files to an externally hosted AS2 or SFTP server. For more details about AS2
+     * connectors, see <a
      * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
      * >Create AS2 connectors</a>.
      * </p>
+     * <note>
+     * <p>
+     * You must specify exactly one configuration object: either for AS2 (<code>As2Config</code>) or SFTP (
+     * <code>SftpConfig</code>).
+     * </p>
+     * </note>
      * 
      * @param createConnectorRequest
      * @return Result of the CreateConnector operation returned by the service.
@@ -309,7 +315,7 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Deletes the agreement that's specified in the provided <code>ConnectorId</code>.
+     * Deletes the connector that's specified in the provided <code>ConnectorId</code>.
      * </p>
      * 
      * @param deleteConnectorRequest
@@ -1124,9 +1130,38 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
-     * paths for where to send the files.
+     * Begins a file transfer between local Amazon Web Services storage and a remote AS2 or SFTP server.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an AS2 connector, you specify the <code>ConnectorId</code> and one or more <code>SendFilePaths</code> to
+     * identify the files you want to transfer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an SFTP connector, the file transfer can be either outbound or inbound. In both cases, you specify the
+     * <code>ConnectorId</code>. Depending on the direction of the transfer, you also specify the following items:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you are transferring file from a partner's SFTP server to a Transfer Family server, you specify one or more
+     * <code>RetreiveFilePaths</code> to identify the files you want to transfer, and a <code>LocalDirectoryPath</code>
+     * to specify the destination folder.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are transferring file to a partner's SFTP server from Amazon Web Services storage, you specify one or more
+     * <code>SendFilePaths</code> to identify the files you want to transfer, and a <code>RemoteDirectoryPath</code> to
+     * specify the destination folder.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param startFileTransferRequest
      * @return Result of the StartFileTransfer operation returned by the service.
@@ -1240,6 +1275,28 @@ public interface AWSTransfer {
      *      Documentation</a>
      */
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Tests whether your SFTP connector is set up successfully. We highly recommend that you call this operation to
+     * test your ability to transfer files between a Transfer Family server and a trading partner's SFTP server.
+     * </p>
+     * 
+     * @param testConnectionRequest
+     * @return Result of the TestConnection operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the Amazon Web ServicesTransfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the Amazon Web ServicesTransfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @sample AWSTransfer.TestConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/TestConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TestConnectionResult testConnection(TestConnectionRequest testConnectionRequest);
 
     /**
      * <p>

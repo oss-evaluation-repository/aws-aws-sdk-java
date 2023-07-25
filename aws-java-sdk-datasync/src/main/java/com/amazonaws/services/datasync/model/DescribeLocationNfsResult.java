@@ -42,7 +42,7 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
     private OnPremConfig onPremConfig;
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS share.
      * </p>
      */
     private NfsMountOptions mountOptions;
@@ -161,11 +161,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS share.
      * </p>
      * 
      * @param mountOptions
-     *        The NFS mount options that DataSync used to mount your NFS share.
+     *        The mount options that DataSync uses to mount your NFS share.
      */
 
     public void setMountOptions(NfsMountOptions mountOptions) {
@@ -174,10 +174,10 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS share.
      * </p>
      * 
-     * @return The NFS mount options that DataSync used to mount your NFS share.
+     * @return The mount options that DataSync uses to mount your NFS share.
      */
 
     public NfsMountOptions getMountOptions() {
@@ -186,11 +186,11 @@ public class DescribeLocationNfsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The NFS mount options that DataSync used to mount your NFS share.
+     * The mount options that DataSync uses to mount your NFS share.
      * </p>
      * 
      * @param mountOptions
-     *        The NFS mount options that DataSync used to mount your NFS share.
+     *        The mount options that DataSync uses to mount your NFS share.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

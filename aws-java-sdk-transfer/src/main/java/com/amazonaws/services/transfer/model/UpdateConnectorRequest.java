@@ -33,13 +33,13 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
     private String connectorId;
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      */
     private String url;
     /**
      * <p>
-     * A structure that contains the parameters for a connector object.
+     * A structure that contains the parameters for an AS2 connector object.
      * </p>
      */
     private As2ConnectorConfig as2Config;
@@ -69,6 +69,12 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String loggingRole;
+    /**
+     * <p>
+     * A structure that contains the parameters for an SFTP connector object.
+     * </p>
+     */
+    private SftpConnectorConfig sftpConfig;
 
     /**
      * <p>
@@ -112,11 +118,11 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      * 
      * @param url
-     *        The URL of the partner's AS2 endpoint.
+     *        The URL of the partner's AS2 or SFTP endpoint.
      */
 
     public void setUrl(String url) {
@@ -125,10 +131,10 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      * 
-     * @return The URL of the partner's AS2 endpoint.
+     * @return The URL of the partner's AS2 or SFTP endpoint.
      */
 
     public String getUrl() {
@@ -137,11 +143,11 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The URL of the partner's AS2 endpoint.
+     * The URL of the partner's AS2 or SFTP endpoint.
      * </p>
      * 
      * @param url
-     *        The URL of the partner's AS2 endpoint.
+     *        The URL of the partner's AS2 or SFTP endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +158,11 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the parameters for a connector object.
+     * A structure that contains the parameters for an AS2 connector object.
      * </p>
      * 
      * @param as2Config
-     *        A structure that contains the parameters for a connector object.
+     *        A structure that contains the parameters for an AS2 connector object.
      */
 
     public void setAs2Config(As2ConnectorConfig as2Config) {
@@ -165,10 +171,10 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the parameters for a connector object.
+     * A structure that contains the parameters for an AS2 connector object.
      * </p>
      * 
-     * @return A structure that contains the parameters for a connector object.
+     * @return A structure that contains the parameters for an AS2 connector object.
      */
 
     public As2ConnectorConfig getAs2Config() {
@@ -177,11 +183,11 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the parameters for a connector object.
+     * A structure that contains the parameters for an AS2 connector object.
      * </p>
      * 
      * @param as2Config
-     *        A structure that contains the parameters for a connector object.
+     *        A structure that contains the parameters for an AS2 connector object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,6 +361,46 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A structure that contains the parameters for an SFTP connector object.
+     * </p>
+     * 
+     * @param sftpConfig
+     *        A structure that contains the parameters for an SFTP connector object.
+     */
+
+    public void setSftpConfig(SftpConnectorConfig sftpConfig) {
+        this.sftpConfig = sftpConfig;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the parameters for an SFTP connector object.
+     * </p>
+     * 
+     * @return A structure that contains the parameters for an SFTP connector object.
+     */
+
+    public SftpConnectorConfig getSftpConfig() {
+        return this.sftpConfig;
+    }
+
+    /**
+     * <p>
+     * A structure that contains the parameters for an SFTP connector object.
+     * </p>
+     * 
+     * @param sftpConfig
+     *        A structure that contains the parameters for an SFTP connector object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateConnectorRequest withSftpConfig(SftpConnectorConfig sftpConfig) {
+        setSftpConfig(sftpConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -375,7 +421,9 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
         if (getAccessRole() != null)
             sb.append("AccessRole: ").append(getAccessRole()).append(",");
         if (getLoggingRole() != null)
-            sb.append("LoggingRole: ").append(getLoggingRole());
+            sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
+        if (getSftpConfig() != null)
+            sb.append("SftpConfig: ").append(getSftpConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -410,6 +458,10 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getLoggingRole() != null && other.getLoggingRole().equals(this.getLoggingRole()) == false)
             return false;
+        if (other.getSftpConfig() == null ^ this.getSftpConfig() == null)
+            return false;
+        if (other.getSftpConfig() != null && other.getSftpConfig().equals(this.getSftpConfig()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +475,7 @@ public class UpdateConnectorRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getAs2Config() == null) ? 0 : getAs2Config().hashCode());
         hashCode = prime * hashCode + ((getAccessRole() == null) ? 0 : getAccessRole().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
+        hashCode = prime * hashCode + ((getSftpConfig() == null) ? 0 : getSftpConfig().hashCode());
         return hashCode;
     }
 

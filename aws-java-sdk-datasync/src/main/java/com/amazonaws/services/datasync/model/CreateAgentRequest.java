@@ -66,7 +66,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
      * subnet where DataSync creates and manages the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     * >network interfaces</a> for your transfer.
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> subnetArns;
@@ -76,7 +76,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      * >network interfaces</a> when <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     * >using a virtual private cloud (VPC) endpoint</a>.
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
@@ -326,13 +326,13 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
      * subnet where DataSync creates and manages the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     * >network interfaces</a> for your transfer.
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * 
      * @return Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
      *         is the subnet where DataSync creates and manages the <a href=
      *         "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     *         >network interfaces</a> for your transfer.
+     *         >network interfaces</a> for your transfer. You can only specify one ARN.
      */
 
     public java.util.List<String> getSubnetArns() {
@@ -344,14 +344,14 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
      * subnet where DataSync creates and manages the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     * >network interfaces</a> for your transfer.
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * 
      * @param subnetArns
      *        Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
      *        is the subnet where DataSync creates and manages the <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     *        >network interfaces</a> for your transfer.
+     *        >network interfaces</a> for your transfer. You can only specify one ARN.
      */
 
     public void setSubnetArns(java.util.Collection<String> subnetArns) {
@@ -368,7 +368,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
      * subnet where DataSync creates and manages the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     * >network interfaces</a> for your transfer.
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -380,7 +380,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
      *        is the subnet where DataSync creates and manages the <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     *        >network interfaces</a> for your transfer.
+     *        >network interfaces</a> for your transfer. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,14 +399,14 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This is the
      * subnet where DataSync creates and manages the <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     * >network interfaces</a> for your transfer.
+     * >network interfaces</a> for your transfer. You can only specify one ARN.
      * </p>
      * 
      * @param subnetArns
      *        Specifies the ARN of the subnet where you want to run your DataSync task when using a VPC endpoint. This
      *        is the subnet where DataSync creates and manages the <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
-     *        >network interfaces</a> for your transfer.
+     *        >network interfaces</a> for your transfer. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,14 +421,14 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      * >network interfaces</a> when <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     * >using a virtual private cloud (VPC) endpoint</a>.
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * 
      * @return Specifies the Amazon Resource Name (ARN) of the security group that protects your task's <a
      *         href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      *         >network interfaces</a> when <a href=
      *         "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     *         >using a virtual private cloud (VPC) endpoint</a>.
+     *         >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -441,7 +441,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      * >network interfaces</a> when <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     * >using a virtual private cloud (VPC) endpoint</a>.
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * 
      * @param securityGroupArns
@@ -449,7 +449,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      *        >network interfaces</a> when <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     *        >using a virtual private cloud (VPC) endpoint</a>.
+     *        >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -467,7 +467,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      * >network interfaces</a> when <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     * >using a virtual private cloud (VPC) endpoint</a>.
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -480,7 +480,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      *        >network interfaces</a> when <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     *        >using a virtual private cloud (VPC) endpoint</a>.
+     *        >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -500,7 +500,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      * >network interfaces</a> when <a href=
      * "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     * >using a virtual private cloud (VPC) endpoint</a>.
+     * >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * </p>
      * 
      * @param securityGroupArns
@@ -508,7 +508,7 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces"
      *        >network interfaces</a> when <a href=
      *        "https://docs.aws.amazon.com/datasync/latest/userguide/choose-service-endpoint.html#choose-service-endpoint-vpc"
-     *        >using a virtual private cloud (VPC) endpoint</a>.
+     *        >using a virtual private cloud (VPC) endpoint</a>. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

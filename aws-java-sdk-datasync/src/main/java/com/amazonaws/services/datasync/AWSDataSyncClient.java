@@ -356,6 +356,79 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
+     * Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can use as a transfer source or
+     * destination.
+     * </p>
+     * <p>
+     * Before you begin, make sure you know <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+     * DataSync accesses Azure Blob Storage</a> and works with <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers"
+     * >access tiers</a> and <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+     * types</a>. You also need a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent"
+     * >DataSync agent</a> that can connect to your container.
+     * </p>
+     * 
+     * @param createLocationAzureBlobRequest
+     * @return Result of the CreateLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.CreateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLocationAzureBlobResult createLocationAzureBlob(CreateLocationAzureBlobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLocationAzureBlob(request);
+    }
+
+    @SdkInternalApi
+    final CreateLocationAzureBlobResult executeCreateLocationAzureBlob(CreateLocationAzureBlobRequest createLocationAzureBlobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLocationAzureBlobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLocationAzureBlobRequest> request = null;
+        Response<CreateLocationAzureBlobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLocationAzureBlobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLocationAzureBlobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationAzureBlob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLocationAzureBlobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLocationAzureBlobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer. For more information,
      * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating a location
      * for Amazon EFS</a>.
@@ -732,7 +805,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
+     * Creates an endpoint for an Network File System (NFS) file server that DataSync can use for a data transfer.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -942,10 +1015,12 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can access for a transfer. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating an SMB
-     * location</a>.
+     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses an SMB file
+     * server</a>.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -1376,6 +1451,67 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
             HttpResponseHandler<AmazonWebServiceResponse<DescribeDiscoveryJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeDiscoveryJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured.
+     * </p>
+     * 
+     * @param describeLocationAzureBlobRequest
+     * @return Result of the DescribeLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.DescribeLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeLocationAzureBlobResult describeLocationAzureBlob(DescribeLocationAzureBlobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLocationAzureBlob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLocationAzureBlobResult executeDescribeLocationAzureBlob(DescribeLocationAzureBlobRequest describeLocationAzureBlobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLocationAzureBlobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLocationAzureBlobRequest> request = null;
+        Response<DescribeLocationAzureBlobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLocationAzureBlobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeLocationAzureBlobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationAzureBlob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLocationAzureBlobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeLocationAzureBlobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -2216,7 +2352,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns metadata about a task.
+     * Provides information about an DataSync transfer task.
      * </p>
      * 
      * @param describeTaskRequest
@@ -2276,7 +2412,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns detailed metadata about a task that is being executed.
+     * Provides information about an DataSync transfer task that's running.
      * </p>
      * 
      * @param describeTaskExecutionRequest
@@ -3408,6 +3544,68 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDiscoveryJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDiscoveryJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with
+     * DataSync.
+     * </p>
+     * 
+     * @param updateLocationAzureBlobRequest
+     * @return Result of the UpdateLocationAzureBlob operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the DataSync service.
+     * @sample AWSDataSync.UpdateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLocationAzureBlobResult updateLocationAzureBlob(UpdateLocationAzureBlobRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLocationAzureBlob(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLocationAzureBlobResult executeUpdateLocationAzureBlob(UpdateLocationAzureBlobRequest updateLocationAzureBlobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLocationAzureBlobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLocationAzureBlobRequest> request = null;
+        Response<UpdateLocationAzureBlobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLocationAzureBlobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLocationAzureBlobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLocationAzureBlob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLocationAzureBlobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLocationAzureBlobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 

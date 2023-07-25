@@ -697,6 +697,12 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String readReplicaSourceDBClusterIdentifier;
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     */
+    private String percentProgress;
 
     /**
      * <p>
@@ -5758,6 +5764,46 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     * 
+     * @param percentProgress
+     *        The progress of the storage optimization operation as a percentage.
+     */
+
+    public void setPercentProgress(String percentProgress) {
+        this.percentProgress = percentProgress;
+    }
+
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     * 
+     * @return The progress of the storage optimization operation as a percentage.
+     */
+
+    public String getPercentProgress() {
+        return this.percentProgress;
+    }
+
+    /**
+     * <p>
+     * The progress of the storage optimization operation as a percentage.
+     * </p>
+     * 
+     * @param percentProgress
+     *        The progress of the storage optimization operation as a percentage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withPercentProgress(String percentProgress) {
+        setPercentProgress(percentProgress);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5930,7 +5976,9 @@ public class DBInstance implements Serializable, Cloneable {
         if (getCertificateDetails() != null)
             sb.append("CertificateDetails: ").append(getCertificateDetails()).append(",");
         if (getReadReplicaSourceDBClusterIdentifier() != null)
-            sb.append("ReadReplicaSourceDBClusterIdentifier: ").append(getReadReplicaSourceDBClusterIdentifier());
+            sb.append("ReadReplicaSourceDBClusterIdentifier: ").append(getReadReplicaSourceDBClusterIdentifier()).append(",");
+        if (getPercentProgress() != null)
+            sb.append("PercentProgress: ").append(getPercentProgress());
         sb.append("}");
         return sb.toString();
     }
@@ -6279,6 +6327,10 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getReadReplicaSourceDBClusterIdentifier() != null
                 && other.getReadReplicaSourceDBClusterIdentifier().equals(this.getReadReplicaSourceDBClusterIdentifier()) == false)
             return false;
+        if (other.getPercentProgress() == null ^ this.getPercentProgress() == null)
+            return false;
+        if (other.getPercentProgress() != null && other.getPercentProgress().equals(this.getPercentProgress()) == false)
+            return false;
         return true;
     }
 
@@ -6369,6 +6421,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMasterUserSecret() == null) ? 0 : getMasterUserSecret().hashCode());
         hashCode = prime * hashCode + ((getCertificateDetails() == null) ? 0 : getCertificateDetails().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaSourceDBClusterIdentifier() == null) ? 0 : getReadReplicaSourceDBClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getPercentProgress() == null) ? 0 : getPercentProgress().hashCode());
         return hashCode;
     }
 

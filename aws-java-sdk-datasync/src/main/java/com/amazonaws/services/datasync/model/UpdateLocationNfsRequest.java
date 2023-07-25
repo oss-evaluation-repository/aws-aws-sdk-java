@@ -27,15 +27,15 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer.
+     * The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that
+     * it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
      * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
@@ -52,10 +52,6 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you are copying data to or from your Snowcone device, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
      * on Snowcone</a> for more information.
-     * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
      * </p>
      */
     private String subdirectory;
@@ -66,11 +62,11 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location to update.
+     *        Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      */
 
     public void setLocationArn(String locationArn) {
@@ -79,10 +75,10 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the NFS location to update.
+     * @return Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      */
 
     public String getLocationArn() {
@@ -91,11 +87,11 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the NFS location to update.
+     * Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the NFS location to update.
+     *        Specifies the Amazon Resource Name (ARN) of the NFS location that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,9 +102,9 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer.
+     * The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that
+     * it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
      * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
@@ -126,16 +122,11 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
      * on Snowcone</a> for more information.
      * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
-     * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the NFS file system that is used to read data from the NFS source location or write
-     *        data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a
-     *        subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
-     *        network.</p>
+     *        Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a
+     *        transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path
+     *        should be such that it can be mounted by other NFS clients in your network.</p>
      *        <p>
      *        To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
      *        NFS client that has access to your server. You can specify any directory that appears in the results, and
@@ -153,10 +144,6 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you are copying data to or from your Snowcone device, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
      *        Server on Snowcone</a> for more information.
-     *        </p>
-     *        <p>
-     *        For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     *        Hat Enterprise Linux documentation.
      */
 
     public void setSubdirectory(String subdirectory) {
@@ -165,9 +152,9 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer.
+     * The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that
+     * it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
      * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
@@ -185,15 +172,10 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
      * on Snowcone</a> for more information.
      * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
-     * </p>
      * 
-     * @return The subdirectory in the NFS file system that is used to read data from the NFS source location or write
-     *         data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a
-     *         subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
-     *         network.</p>
+     * @return Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a
+     *         transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path
+     *         should be such that it can be mounted by other NFS clients in your network.</p>
      *         <p>
      *         To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
      *         NFS client that has access to your server. You can specify any directory that appears in the results, and
@@ -211,10 +193,6 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         If you are copying data to or from your Snowcone device, see <a
      *         href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
      *         Server on Snowcone</a> for more information.
-     *         </p>
-     *         <p>
-     *         For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     *         Hat Enterprise Linux documentation.
      */
 
     public String getSubdirectory() {
@@ -223,9 +201,9 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The subdirectory in the NFS file system that is used to read data from the NFS source location or write data to
-     * the NFS destination. The NFS path should be a path that's exported by the NFS server, or a subdirectory of that
-     * path. The path should be such that it can be mounted by other NFS clients in your network.
+     * Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a transfer.
+     * The NFS path should be exported by the NFS server, or a subdirectory of that path. The path should be such that
+     * it can be mounted by other NFS clients in your network.
      * </p>
      * <p>
      * To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an NFS
@@ -243,16 +221,11 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS Server
      * on Snowcone</a> for more information.
      * </p>
-     * <p>
-     * For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red Hat
-     * Enterprise Linux documentation.
-     * </p>
      * 
      * @param subdirectory
-     *        The subdirectory in the NFS file system that is used to read data from the NFS source location or write
-     *        data to the NFS destination. The NFS path should be a path that's exported by the NFS server, or a
-     *        subdirectory of that path. The path should be such that it can be mounted by other NFS clients in your
-     *        network.</p>
+     *        Specifies the subdirectory in your NFS file system that DataSync uses to read from or write to during a
+     *        transfer. The NFS path should be exported by the NFS server, or a subdirectory of that path. The path
+     *        should be such that it can be mounted by other NFS clients in your network.</p>
      *        <p>
      *        To see all the paths exported by your NFS server, run "<code>showmount -e nfs-server-name</code>" from an
      *        NFS client that has access to your server. You can specify any directory that appears in the results, and
@@ -270,10 +243,6 @@ public class UpdateLocationNfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        If you are copying data to or from your Snowcone device, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/create-nfs-location.html#nfs-on-snowcone">NFS
      *        Server on Snowcone</a> for more information.
-     *        </p>
-     *        <p>
-     *        For information about NFS export configuration, see 18.7. The /etc/exports Configuration File in the Red
-     *        Hat Enterprise Linux documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -153,6 +153,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
     }
 
     @Override
+    public GetSimilarProfilesResult getSimilarProfiles(GetSimilarProfilesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetWorkflowResult getWorkflow(GetWorkflowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -209,6 +214,11 @@ public class AbstractAmazonCustomerProfiles implements AmazonCustomerProfiles {
 
     @Override
     public ListProfileObjectsResult listProfileObjects(ListProfileObjectsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRuleBasedMatchesResult listRuleBasedMatches(ListRuleBasedMatchesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

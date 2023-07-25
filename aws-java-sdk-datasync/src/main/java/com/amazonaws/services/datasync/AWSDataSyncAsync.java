@@ -196,6 +196,61 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
+     * Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can use as a transfer source or
+     * destination.
+     * </p>
+     * <p>
+     * Before you begin, make sure you know <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+     * DataSync accesses Azure Blob Storage</a> and works with <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers"
+     * >access tiers</a> and <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+     * types</a>. You also need a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent"
+     * >DataSync agent</a> that can connect to your container.
+     * </p>
+     * 
+     * @param createLocationAzureBlobRequest
+     * @return A Java Future containing the result of the CreateLocationAzureBlob operation returned by the service.
+     * @sample AWSDataSyncAsync.CreateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationAzureBlobResult> createLocationAzureBlobAsync(CreateLocationAzureBlobRequest createLocationAzureBlobRequest);
+
+    /**
+     * <p>
+     * Creates an endpoint for a Microsoft Azure Blob Storage container that DataSync can use as a transfer source or
+     * destination.
+     * </p>
+     * <p>
+     * Before you begin, make sure you know <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access">how
+     * DataSync accesses Azure Blob Storage</a> and works with <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers"
+     * >access tiers</a> and <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#blob-types">blob
+     * types</a>. You also need a <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-creating-agent"
+     * >DataSync agent</a> that can connect to your container.
+     * </p>
+     * 
+     * @param createLocationAzureBlobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLocationAzureBlob operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.CreateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationAzureBlobResult> createLocationAzureBlobAsync(CreateLocationAzureBlobRequest createLocationAzureBlobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLocationAzureBlobRequest, CreateLocationAzureBlobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer. For more information,
      * see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating a location
      * for Amazon EFS</a>.
@@ -412,7 +467,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
+     * Creates an endpoint for an Network File System (NFS) file server that DataSync can use for a data transfer.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -426,7 +481,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
+     * Creates an endpoint for an Network File System (NFS) file server that DataSync can use for a data transfer.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -569,10 +624,12 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can access for a transfer. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating an SMB
-     * location</a>.
+     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses an SMB file
+     * server</a>.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -586,10 +643,12 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can access for a transfer. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating an SMB
-     * location</a>.
+     * Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.
+     * </p>
+     * <p>
+     * Before you begin, make sure that you understand how DataSync <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">accesses an SMB file
+     * server</a>.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -829,6 +888,39 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      */
     java.util.concurrent.Future<DescribeDiscoveryJobResult> describeDiscoveryJobAsync(DescribeDiscoveryJobRequest describeDiscoveryJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeDiscoveryJobRequest, DescribeDiscoveryJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured.
+     * </p>
+     * 
+     * @param describeLocationAzureBlobRequest
+     * @return A Java Future containing the result of the DescribeLocationAzureBlob operation returned by the service.
+     * @sample AWSDataSyncAsync.DescribeLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationAzureBlobResult> describeLocationAzureBlobAsync(
+            DescribeLocationAzureBlobRequest describeLocationAzureBlobRequest);
+
+    /**
+     * <p>
+     * Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured.
+     * </p>
+     * 
+     * @param describeLocationAzureBlobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLocationAzureBlob operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.DescribeLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationAzureBlobResult> describeLocationAzureBlobAsync(
+            DescribeLocationAzureBlobRequest describeLocationAzureBlobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLocationAzureBlobRequest, DescribeLocationAzureBlobResult> asyncHandler);
 
     /**
      * <p>
@@ -1291,7 +1383,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about a task.
+     * Provides information about an DataSync transfer task.
      * </p>
      * 
      * @param describeTaskRequest
@@ -1305,7 +1397,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata about a task.
+     * Provides information about an DataSync transfer task.
      * </p>
      * 
      * @param describeTaskRequest
@@ -1324,7 +1416,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns detailed metadata about a task that is being executed.
+     * Provides information about an DataSync transfer task that's running.
      * </p>
      * 
      * @param describeTaskExecutionRequest
@@ -1338,7 +1430,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns detailed metadata about a task that is being executed.
+     * Provides information about an DataSync transfer task that's running.
      * </p>
      * 
      * @param describeTaskExecutionRequest
@@ -1996,6 +2088,39 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      */
     java.util.concurrent.Future<UpdateDiscoveryJobResult> updateDiscoveryJobAsync(UpdateDiscoveryJobRequest updateDiscoveryJobRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDiscoveryJobRequest, UpdateDiscoveryJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with
+     * DataSync.
+     * </p>
+     * 
+     * @param updateLocationAzureBlobRequest
+     * @return A Java Future containing the result of the UpdateLocationAzureBlob operation returned by the service.
+     * @sample AWSDataSyncAsync.UpdateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLocationAzureBlobResult> updateLocationAzureBlobAsync(UpdateLocationAzureBlobRequest updateLocationAzureBlobRequest);
+
+    /**
+     * <p>
+     * Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with
+     * DataSync.
+     * </p>
+     * 
+     * @param updateLocationAzureBlobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLocationAzureBlob operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.UpdateLocationAzureBlob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/UpdateLocationAzureBlob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLocationAzureBlobResult> updateLocationAzureBlobAsync(UpdateLocationAzureBlobRequest updateLocationAzureBlobRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLocationAzureBlobRequest, UpdateLocationAzureBlobResult> asyncHandler);
 
     /**
      * <p>

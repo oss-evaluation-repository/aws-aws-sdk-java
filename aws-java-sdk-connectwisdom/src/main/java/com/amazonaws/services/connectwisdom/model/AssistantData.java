@@ -48,6 +48,12 @@ public class AssistantData implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     */
+    private AssistantIntegrationConfiguration integrationConfiguration;
+    /**
+     * <p>
      * The name.
      * </p>
      */
@@ -194,6 +200,46 @@ public class AssistantData implements Serializable, Cloneable, StructuredPojo {
 
     public AssistantData withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the Wisdom assistant integration.
+     */
+
+    public void setIntegrationConfiguration(AssistantIntegrationConfiguration integrationConfiguration) {
+        this.integrationConfiguration = integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     * 
+     * @return The configuration information for the Wisdom assistant integration.
+     */
+
+    public AssistantIntegrationConfiguration getIntegrationConfiguration() {
+        return this.integrationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration information for the Wisdom assistant integration.
+     * </p>
+     * 
+     * @param integrationConfiguration
+     *        The configuration information for the Wisdom assistant integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssistantData withIntegrationConfiguration(AssistantIntegrationConfiguration integrationConfiguration) {
+        setIntegrationConfiguration(integrationConfiguration);
         return this;
     }
 
@@ -481,6 +527,8 @@ public class AssistantData implements Serializable, Cloneable, StructuredPojo {
             sb.append("AssistantId: ").append(getAssistantId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getIntegrationConfiguration() != null)
+            sb.append("IntegrationConfiguration: ").append(getIntegrationConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
@@ -517,6 +565,10 @@ public class AssistantData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getIntegrationConfiguration() == null ^ this.getIntegrationConfiguration() == null)
+            return false;
+        if (other.getIntegrationConfiguration() != null && other.getIntegrationConfiguration().equals(this.getIntegrationConfiguration()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -549,6 +601,7 @@ public class AssistantData implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAssistantArn() == null) ? 0 : getAssistantArn().hashCode());
         hashCode = prime * hashCode + ((getAssistantId() == null) ? 0 : getAssistantId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getIntegrationConfiguration() == null) ? 0 : getIntegrationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

@@ -207,6 +207,8 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsGuardDutyDetector").build();
     private static final MarshallingInfo<StructuredPojo> AWSSTEPFUNCTIONSTATEMACHINE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsStepFunctionStateMachine").build();
+    private static final MarshallingInfo<StructuredPojo> AWSATHENAWORKGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsAthenaWorkGroup").build();
 
     private static final ResourceDetailsMarshaller instance = new ResourceDetailsMarshaller();
 
@@ -313,6 +315,7 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsEventSchemasRegistry(), AWSEVENTSCHEMASREGISTRY_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsGuardDutyDetector(), AWSGUARDDUTYDETECTOR_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsStepFunctionStateMachine(), AWSSTEPFUNCTIONSTATEMACHINE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsAthenaWorkGroup(), AWSATHENAWORKGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

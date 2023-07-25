@@ -30,18 +30,18 @@ public class DescribeTaskExecutionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      * </p>
      */
     private String taskExecutionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task that is being executed.
+     *        Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      */
 
     public void setTaskExecutionArn(String taskExecutionArn) {
@@ -50,10 +50,10 @@ public class DescribeTaskExecutionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task that is being executed.
+     * @return Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      */
 
     public String getTaskExecutionArn() {
@@ -62,11 +62,11 @@ public class DescribeTaskExecutionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task that is being executed.
+     * Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the task that is being executed.
+     *        Specifies the Amazon Resource Name (ARN) of the transfer task that's running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

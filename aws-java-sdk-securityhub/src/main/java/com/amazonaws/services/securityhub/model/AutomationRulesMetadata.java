@@ -67,10 +67,9 @@ public class AutomationRulesMetadata implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This
-     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If the
-     * value of this field is set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-     * that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028; The default value of
-     * this field is <code>false</code>.
+     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule
+     * is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't
+     * evaluate other rules for the finding. By default, a rule isn't terminal.
      * </p>
      */
     private Boolean isTerminal;
@@ -363,18 +362,16 @@ public class AutomationRulesMetadata implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This
-     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If the
-     * value of this field is set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-     * that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028; The default value of
-     * this field is <code>false</code>.
+     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule
+     * is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't
+     * evaluate other rules for the finding. By default, a rule isn't terminal.
      * </p>
      * 
      * @param isTerminal
      *        Specifies whether a rule is the last to be applied with respect to a finding that matches the rule
      *        criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has
-     *        different actions. If the value of this field is set to <code>true</code> for a rule, Security Hub applies
-     *        the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the
-     *        finding.&#x2028; The default value of this field is <code>false</code>.
+     *        different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches
+     *        the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
      */
 
     public void setIsTerminal(Boolean isTerminal) {
@@ -384,17 +381,15 @@ public class AutomationRulesMetadata implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This
-     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If the
-     * value of this field is set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-     * that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028; The default value of
-     * this field is <code>false</code>.
+     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule
+     * is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't
+     * evaluate other rules for the finding. By default, a rule isn't terminal.
      * </p>
      * 
      * @return Specifies whether a rule is the last to be applied with respect to a finding that matches the rule
      *         criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has
-     *         different actions. If the value of this field is set to <code>true</code> for a rule, Security Hub
-     *         applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for
-     *         the finding.&#x2028; The default value of this field is <code>false</code>.
+     *         different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches
+     *         the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
      */
 
     public Boolean getIsTerminal() {
@@ -404,18 +399,16 @@ public class AutomationRulesMetadata implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This
-     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If the
-     * value of this field is set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-     * that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028; The default value of
-     * this field is <code>false</code>.
+     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule
+     * is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't
+     * evaluate other rules for the finding. By default, a rule isn't terminal.
      * </p>
      * 
      * @param isTerminal
      *        Specifies whether a rule is the last to be applied with respect to a finding that matches the rule
      *        criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has
-     *        different actions. If the value of this field is set to <code>true</code> for a rule, Security Hub applies
-     *        the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for the
-     *        finding.&#x2028; The default value of this field is <code>false</code>.
+     *        different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches
+     *        the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,17 +420,15 @@ public class AutomationRulesMetadata implements Serializable, Cloneable, Structu
     /**
      * <p>
      * Specifies whether a rule is the last to be applied with respect to a finding that matches the rule criteria. This
-     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If the
-     * value of this field is set to <code>true</code> for a rule, Security Hub applies the rule action to a finding
-     * that matches the rule criteria and doesn't evaluate other rules for the finding.&#x2028; The default value of
-     * this field is <code>false</code>.
+     * is useful when a finding matches the criteria for multiple rules, and each rule has different actions. If a rule
+     * is terminal, Security Hub applies the rule action to a finding that matches the rule criteria and doesn't
+     * evaluate other rules for the finding. By default, a rule isn't terminal.
      * </p>
      * 
      * @return Specifies whether a rule is the last to be applied with respect to a finding that matches the rule
      *         criteria. This is useful when a finding matches the criteria for multiple rules, and each rule has
-     *         different actions. If the value of this field is set to <code>true</code> for a rule, Security Hub
-     *         applies the rule action to a finding that matches the rule criteria and doesn't evaluate other rules for
-     *         the finding.&#x2028; The default value of this field is <code>false</code>.
+     *         different actions. If a rule is terminal, Security Hub applies the rule action to a finding that matches
+     *         the rule criteria and doesn't evaluate other rules for the finding. By default, a rule isn't terminal.
      */
 
     public Boolean isTerminal() {

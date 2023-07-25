@@ -914,6 +914,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(GetSimilarProfilesRequest request) {
+
+        return getSimilarProfilesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSimilarProfilesResult> getSimilarProfilesAsync(final GetSimilarProfilesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSimilarProfilesRequest, GetSimilarProfilesResult> asyncHandler) {
+        final GetSimilarProfilesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSimilarProfilesResult>() {
+            @Override
+            public GetSimilarProfilesResult call() throws Exception {
+                GetSimilarProfilesResult result = null;
+
+                try {
+                    result = executeGetSimilarProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetWorkflowResult> getWorkflowAsync(GetWorkflowRequest request) {
 
         return getWorkflowAsync(request, null);
@@ -1299,6 +1332,39 @@ public class AmazonCustomerProfilesAsyncClient extends AmazonCustomerProfilesCli
 
                 try {
                     result = executeListProfileObjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(ListRuleBasedMatchesRequest request) {
+
+        return listRuleBasedMatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRuleBasedMatchesResult> listRuleBasedMatchesAsync(final ListRuleBasedMatchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRuleBasedMatchesRequest, ListRuleBasedMatchesResult> asyncHandler) {
+        final ListRuleBasedMatchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRuleBasedMatchesResult>() {
+            @Override
+            public ListRuleBasedMatchesResult call() throws Exception {
+                ListRuleBasedMatchesResult result = null;
+
+                try {
+                    result = executeListRuleBasedMatches(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

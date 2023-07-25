@@ -50,7 +50,8 @@ public enum Runtime {
     Nodejs18X("nodejs18.x"),
     Python310("python3.10"),
     Java17("java17"),
-    Ruby32("ruby3.2");
+    Ruby32("ruby3.2"),
+    Python311("python3.11");
 
     private String value;
 

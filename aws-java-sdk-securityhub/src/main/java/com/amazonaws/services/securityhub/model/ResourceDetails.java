@@ -588,6 +588,13 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsStepFunctionStateMachineDetails awsStepFunctionStateMachine;
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     */
+    private AwsAthenaWorkGroupDetails awsAthenaWorkGroup;
 
     /**
      * <p>
@@ -4302,6 +4309,52 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     * 
+     * @param awsAthenaWorkGroup
+     *        Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams,
+     *        applications, or workloads. It also helps you set limits on data processing and track costs.
+     */
+
+    public void setAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails awsAthenaWorkGroup) {
+        this.awsAthenaWorkGroup = awsAthenaWorkGroup;
+    }
+
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     * 
+     * @return Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams,
+     *         applications, or workloads. It also helps you set limits on data processing and track costs.
+     */
+
+    public AwsAthenaWorkGroupDetails getAwsAthenaWorkGroup() {
+        return this.awsAthenaWorkGroup;
+    }
+
+    /**
+     * <p>
+     * Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams, applications,
+     * or workloads. It also helps you set limits on data processing and track costs.
+     * </p>
+     * 
+     * @param awsAthenaWorkGroup
+     *        Provides information about an Amazon Athena workgroup. A workgroup helps you separate users, teams,
+     *        applications, or workloads. It also helps you set limits on data processing and track costs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsAthenaWorkGroup(AwsAthenaWorkGroupDetails awsAthenaWorkGroup) {
+        setAwsAthenaWorkGroup(awsAthenaWorkGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4490,7 +4543,9 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (getAwsGuardDutyDetector() != null)
             sb.append("AwsGuardDutyDetector: ").append(getAwsGuardDutyDetector()).append(",");
         if (getAwsStepFunctionStateMachine() != null)
-            sb.append("AwsStepFunctionStateMachine: ").append(getAwsStepFunctionStateMachine());
+            sb.append("AwsStepFunctionStateMachine: ").append(getAwsStepFunctionStateMachine()).append(",");
+        if (getAwsAthenaWorkGroup() != null)
+            sb.append("AwsAthenaWorkGroup: ").append(getAwsAthenaWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -4867,6 +4922,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsStepFunctionStateMachine() != null && other.getAwsStepFunctionStateMachine().equals(this.getAwsStepFunctionStateMachine()) == false)
             return false;
+        if (other.getAwsAthenaWorkGroup() == null ^ this.getAwsAthenaWorkGroup() == null)
+            return false;
+        if (other.getAwsAthenaWorkGroup() != null && other.getAwsAthenaWorkGroup().equals(this.getAwsAthenaWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -4964,6 +5023,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsEventSchemasRegistry() == null) ? 0 : getAwsEventSchemasRegistry().hashCode());
         hashCode = prime * hashCode + ((getAwsGuardDutyDetector() == null) ? 0 : getAwsGuardDutyDetector().hashCode());
         hashCode = prime * hashCode + ((getAwsStepFunctionStateMachine() == null) ? 0 : getAwsStepFunctionStateMachine().hashCode());
+        hashCode = prime * hashCode + ((getAwsAthenaWorkGroup() == null) ? 0 : getAwsAthenaWorkGroup().hashCode());
         return hashCode;
     }
 

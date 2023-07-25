@@ -61,7 +61,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * In most cases, you can use this value instead of the session policy to lock your user down to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set
-     * <code>Target</code> to the HomeDirectory parameter value.
+     * <code>Target</code> to the value the user should see for their home directory when they log in.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -332,7 +332,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * In most cases, you can use this value instead of the session policy to lock your user down to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set
-     * <code>Target</code> to the HomeDirectory parameter value.
+     * <code>Target</code> to the value the user should see for their home directory when they log in.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -357,7 +357,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <p>
      *         In most cases, you can use this value instead of the session policy to lock your user down to the
      *         designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
-     *         <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.
+     *         <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when
+     *         they log in.
      *         </p>
      *         <p>
      *         The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -388,7 +389,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * In most cases, you can use this value instead of the session policy to lock your user down to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set
-     * <code>Target</code> to the HomeDirectory parameter value.
+     * <code>Target</code> to the value the user should see for their home directory when they log in.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -414,7 +415,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        In most cases, you can use this value instead of the session policy to lock your user down to the
      *        designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
-     *        <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.
+     *        <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when
+     *        they log in.
      *        </p>
      *        <p>
      *        The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -450,7 +452,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * In most cases, you can use this value instead of the session policy to lock your user down to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set
-     * <code>Target</code> to the HomeDirectory parameter value.
+     * <code>Target</code> to the value the user should see for their home directory when they log in.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -481,7 +483,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        In most cases, you can use this value instead of the session policy to lock your user down to the
      *        designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
-     *        <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.
+     *        <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when
+     *        they log in.
      *        </p>
      *        <p>
      *        The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -519,7 +522,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * In most cases, you can use this value instead of the session policy to lock your user down to the designated home
      * directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to <code>/</code> and set
-     * <code>Target</code> to the HomeDirectory parameter value.
+     * <code>Target</code> to the value the user should see for their home directory when they log in.
      * </p>
      * <p>
      * The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
@@ -545,7 +548,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <p>
      *        In most cases, you can use this value instead of the session policy to lock your user down to the
      *        designated home directory ("<code>chroot</code>"). To do this, you can set <code>Entry</code> to
-     *        <code>/</code> and set <code>Target</code> to the HomeDirectory parameter value.
+     *        <code>/</code> and set <code>Target</code> to the value the user should see for their home directory when
+     *        they log in.
      *        </p>
      *        <p>
      *        The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.

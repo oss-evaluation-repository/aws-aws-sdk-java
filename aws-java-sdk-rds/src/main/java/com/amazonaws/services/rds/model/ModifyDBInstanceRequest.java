@@ -692,7 +692,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String tdeCredentialPassword;
     /**
      * <p>
-     * The CA certificate identifier to use for the DB instance6's server certificate.
+     * The CA certificate identifier to use for the DB instance's server certificate.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom DB instances.
@@ -5757,7 +5757,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The CA certificate identifier to use for the DB instance6's server certificate.
+     * The CA certificate identifier to use for the DB instance's server certificate.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom DB instances.
@@ -5771,7 +5771,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param cACertificateIdentifier
-     *        The CA certificate identifier to use for the DB instance6's server certificate.</p>
+     *        The CA certificate identifier to use for the DB instance's server certificate.</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>
@@ -5789,7 +5789,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The CA certificate identifier to use for the DB instance6's server certificate.
+     * The CA certificate identifier to use for the DB instance's server certificate.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom DB instances.
@@ -5802,7 +5802,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * encrypt a connection to a DB cluster</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * 
-     * @return The CA certificate identifier to use for the DB instance6's server certificate.</p>
+     * @return The CA certificate identifier to use for the DB instance's server certificate.</p>
      *         <p>
      *         This setting doesn't apply to RDS Custom DB instances.
      *         </p>
@@ -5820,7 +5820,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The CA certificate identifier to use for the DB instance6's server certificate.
+     * The CA certificate identifier to use for the DB instance's server certificate.
      * </p>
      * <p>
      * This setting doesn't apply to RDS Custom DB instances.
@@ -5834,7 +5834,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param cACertificateIdentifier
-     *        The CA certificate identifier to use for the DB instance6's server certificate.</p>
+     *        The CA certificate identifier to use for the DB instance's server certificate.</p>
      *        <p>
      *        This setting doesn't apply to RDS Custom DB instances.
      *        </p>

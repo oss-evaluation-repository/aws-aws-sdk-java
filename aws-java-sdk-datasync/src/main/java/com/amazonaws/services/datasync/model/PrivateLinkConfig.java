@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private
- * Cloud).
+ * Specifies how your DataSync agent connects to Amazon Web Services using a virtual private cloud (VPC) service
+ * endpoint. An agent that uses a VPC endpoint isn't accessible over the public internet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/PrivateLinkConfig" target="_top">AWS API
@@ -31,43 +31,39 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public internet.
+     * Specifies the ID of the VPC endpoint that your agent connects to.
      * </p>
      */
     private String vpcEndpointId;
     /**
      * <p>
-     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public internet.
+     * Specifies the VPC endpoint provided by <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a>
+     * that your agent connects to.
      * </p>
      */
     private String privateLinkEndpoint;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
-     * that has access to a VPC endpoint.
+     * Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> subnetArns;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
-     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     * endpoint. You can only specify one ARN.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
 
     /**
      * <p>
-     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public internet.
+     * Specifies the ID of the VPC endpoint that your agent connects to.
      * </p>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
-     *        endpoint will not be accessible over the public internet.
+     *        Specifies the ID of the VPC endpoint that your agent connects to.
      */
 
     public void setVpcEndpointId(String vpcEndpointId) {
@@ -76,12 +72,10 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public internet.
+     * Specifies the ID of the VPC endpoint that your agent connects to.
      * </p>
      * 
-     * @return The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
-     *         endpoint will not be accessible over the public internet.
+     * @return Specifies the ID of the VPC endpoint that your agent connects to.
      */
 
     public String getVpcEndpointId() {
@@ -90,13 +84,11 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public internet.
+     * Specifies the ID of the VPC endpoint that your agent connects to.
      * </p>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
-     *        endpoint will not be accessible over the public internet.
+     *        Specifies the ID of the VPC endpoint that your agent connects to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,15 +99,15 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public internet.
+     * Specifies the VPC endpoint provided by <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a>
+     * that your agent connects to.
      * </p>
      * 
      * @param privateLinkEndpoint
-     *        The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
-     *        that is configured with this endpoint will not be accessible over the public internet.
+     *        Specifies the VPC endpoint provided by <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services
+     *        PrivateLink</a> that your agent connects to.
      */
 
     public void setPrivateLinkEndpoint(String privateLinkEndpoint) {
@@ -124,14 +116,14 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public internet.
+     * Specifies the VPC endpoint provided by <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a>
+     * that your agent connects to.
      * </p>
      * 
-     * @return The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
-     *         that is configured with this endpoint will not be accessible over the public internet.
+     * @return Specifies the VPC endpoint provided by <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services
+     *         PrivateLink</a> that your agent connects to.
      */
 
     public String getPrivateLinkEndpoint() {
@@ -140,15 +132,15 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public internet.
+     * Specifies the VPC endpoint provided by <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services PrivateLink</a>
+     * that your agent connects to.
      * </p>
      * 
      * @param privateLinkEndpoint
-     *        The private endpoint that is configured for an agent that has access to IP addresses in a <a
-     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
-     *        that is configured with this endpoint will not be accessible over the public internet.
+     *        Specifies the VPC endpoint provided by <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">Amazon Web Services
+     *        PrivateLink</a> that your agent connects to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,12 +151,10 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
-     * that has access to a VPC endpoint.
+     * Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
-     *         agent that has access to a VPC endpoint.
+     * @return Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      */
 
     public java.util.List<String> getSubnetArns() {
@@ -173,13 +163,11 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
-     * that has access to a VPC endpoint.
+     * Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
-     *        agent that has access to a VPC endpoint.
+     *        Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      */
 
     public void setSubnetArns(java.util.Collection<String> subnetArns) {
@@ -193,8 +181,7 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
-     * that has access to a VPC endpoint.
+     * Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -203,8 +190,7 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
-     *        agent that has access to a VPC endpoint.
+     *        Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,13 +206,11 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an agent
-     * that has access to a VPC endpoint.
+     * Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * </p>
      * 
      * @param subnetArns
-     *        The Amazon Resource Names (ARNs) of the subnets that are configured for an agent activated in a VPC or an
-     *        agent that has access to a VPC endpoint.
+     *        Specifies the ARN of the subnet where your VPC endpoint is located. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,12 +221,12 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
-     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     * endpoint. You can only specify one ARN.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
-     *         hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * @return Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     *         endpoint. You can only specify one ARN.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -251,13 +235,13 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
-     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     * endpoint. You can only specify one ARN.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
-     *        hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
+     *        Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     *        endpoint. You can only specify one ARN.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -271,8 +255,8 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
-     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     * endpoint. You can only specify one ARN.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -281,8 +265,8 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
-     *        hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
+     *        Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     *        endpoint. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -298,13 +282,13 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that hosts an
-     * agent activated in a VPC or an agent that has access to a VPC endpoint.
+     * Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     * endpoint. You can only specify one ARN.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the EC2 resource that
-     *        hosts an agent activated in a VPC or an agent that has access to a VPC endpoint.
+     *        Specifies the Amazon Resource Names (ARN) of the security group that provides DataSync access to your VPC
+     *        endpoint. You can only specify one ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
