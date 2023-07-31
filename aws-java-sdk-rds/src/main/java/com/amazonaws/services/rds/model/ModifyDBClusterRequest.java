@@ -913,6 +913,16 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      */
     private Boolean allowEngineModeChange;
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean enableLocalWriteForwarding;
 
     /**
      * <p>
@@ -6767,6 +6777,86 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param enableLocalWriteForwarding
+     *        Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *        By default, write operations aren't allowed on reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setEnableLocalWriteForwarding(Boolean enableLocalWriteForwarding) {
+        this.enableLocalWriteForwarding = enableLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *         By default, write operations aren't allowed on reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getEnableLocalWriteForwarding() {
+        return this.enableLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param enableLocalWriteForwarding
+     *        Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *        By default, write operations aren't allowed on reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withEnableLocalWriteForwarding(Boolean enableLocalWriteForwarding) {
+        setEnableLocalWriteForwarding(enableLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *         By default, write operations aren't allowed on reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isEnableLocalWriteForwarding() {
+        return this.enableLocalWriteForwarding;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6859,7 +6949,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEngineMode() != null)
             sb.append("EngineMode: ").append(getEngineMode()).append(",");
         if (getAllowEngineModeChange() != null)
-            sb.append("AllowEngineModeChange: ").append(getAllowEngineModeChange());
+            sb.append("AllowEngineModeChange: ").append(getAllowEngineModeChange()).append(",");
+        if (getEnableLocalWriteForwarding() != null)
+            sb.append("EnableLocalWriteForwarding: ").append(getEnableLocalWriteForwarding());
         sb.append("}");
         return sb.toString();
     }
@@ -7042,6 +7134,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getAllowEngineModeChange() != null && other.getAllowEngineModeChange().equals(this.getAllowEngineModeChange()) == false)
             return false;
+        if (other.getEnableLocalWriteForwarding() == null ^ this.getEnableLocalWriteForwarding() == null)
+            return false;
+        if (other.getEnableLocalWriteForwarding() != null && other.getEnableLocalWriteForwarding().equals(this.getEnableLocalWriteForwarding()) == false)
+            return false;
         return true;
     }
 
@@ -7091,6 +7187,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getMasterUserSecretKmsKeyId() == null) ? 0 : getMasterUserSecretKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getEngineMode() == null) ? 0 : getEngineMode().hashCode());
         hashCode = prime * hashCode + ((getAllowEngineModeChange() == null) ? 0 : getAllowEngineModeChange().hashCode());
+        hashCode = prime * hashCode + ((getEnableLocalWriteForwarding() == null) ? 0 : getEnableLocalWriteForwarding().hashCode());
         return hashCode;
     }
 

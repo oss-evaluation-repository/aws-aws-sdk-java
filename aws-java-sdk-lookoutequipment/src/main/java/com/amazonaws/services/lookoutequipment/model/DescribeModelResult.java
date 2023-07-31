@@ -163,6 +163,62 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String offCondition;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source model version. This field appears if the active model version was
+     * imported.
+     * </p>
+     */
+    private String sourceModelVersionArn;
+    /**
+     * <p>
+     * The date and time when the import job was started. This field appears if the active model version was imported.
+     * </p>
+     */
+    private java.util.Date importJobStartTime;
+    /**
+     * <p>
+     * The date and time when the import job was completed. This field appears if the active model version was imported.
+     * </p>
+     */
+    private java.util.Date importJobEndTime;
+    /**
+     * <p>
+     * The name of the model version used by the inference schedular when running a scheduled inference execution.
+     * </p>
+     */
+    private Long activeModelVersion;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a scheduled
+     * inference execution.
+     * </p>
+     */
+    private String activeModelVersionArn;
+    /**
+     * <p>
+     * The date the active model version was activated.
+     * </p>
+     */
+    private java.util.Date modelVersionActivatedAt;
+    /**
+     * <p>
+     * The model version that was set as the active model version prior to the current active model version.
+     * </p>
+     */
+    private Long previousActiveModelVersion;
+    /**
+     * <p>
+     * The ARN of the model version that was set as the active model version prior to the current active model version.
+     * </p>
+     */
+    private String previousActiveModelVersionArn;
+    /**
+     * <p>
+     * The date and time when the previous active model version was activated.
+     * </p>
+     */
+    private java.util.Date previousModelVersionActivatedAt;
 
     /**
      * <p>
@@ -1156,6 +1212,390 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source model version. This field appears if the active model version was
+     * imported.
+     * </p>
+     * 
+     * @param sourceModelVersionArn
+     *        The Amazon Resource Name (ARN) of the source model version. This field appears if the active model version
+     *        was imported.
+     */
+
+    public void setSourceModelVersionArn(String sourceModelVersionArn) {
+        this.sourceModelVersionArn = sourceModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source model version. This field appears if the active model version was
+     * imported.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the source model version. This field appears if the active model
+     *         version was imported.
+     */
+
+    public String getSourceModelVersionArn() {
+        return this.sourceModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source model version. This field appears if the active model version was
+     * imported.
+     * </p>
+     * 
+     * @param sourceModelVersionArn
+     *        The Amazon Resource Name (ARN) of the source model version. This field appears if the active model version
+     *        was imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withSourceModelVersionArn(String sourceModelVersionArn) {
+        setSourceModelVersionArn(sourceModelVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the import job was started. This field appears if the active model version was imported.
+     * </p>
+     * 
+     * @param importJobStartTime
+     *        The date and time when the import job was started. This field appears if the active model version was
+     *        imported.
+     */
+
+    public void setImportJobStartTime(java.util.Date importJobStartTime) {
+        this.importJobStartTime = importJobStartTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the import job was started. This field appears if the active model version was imported.
+     * </p>
+     * 
+     * @return The date and time when the import job was started. This field appears if the active model version was
+     *         imported.
+     */
+
+    public java.util.Date getImportJobStartTime() {
+        return this.importJobStartTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the import job was started. This field appears if the active model version was imported.
+     * </p>
+     * 
+     * @param importJobStartTime
+     *        The date and time when the import job was started. This field appears if the active model version was
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withImportJobStartTime(java.util.Date importJobStartTime) {
+        setImportJobStartTime(importJobStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the import job was completed. This field appears if the active model version was imported.
+     * </p>
+     * 
+     * @param importJobEndTime
+     *        The date and time when the import job was completed. This field appears if the active model version was
+     *        imported.
+     */
+
+    public void setImportJobEndTime(java.util.Date importJobEndTime) {
+        this.importJobEndTime = importJobEndTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the import job was completed. This field appears if the active model version was imported.
+     * </p>
+     * 
+     * @return The date and time when the import job was completed. This field appears if the active model version was
+     *         imported.
+     */
+
+    public java.util.Date getImportJobEndTime() {
+        return this.importJobEndTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the import job was completed. This field appears if the active model version was imported.
+     * </p>
+     * 
+     * @param importJobEndTime
+     *        The date and time when the import job was completed. This field appears if the active model version was
+     *        imported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withImportJobEndTime(java.util.Date importJobEndTime) {
+        setImportJobEndTime(importJobEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the model version used by the inference schedular when running a scheduled inference execution.
+     * </p>
+     * 
+     * @param activeModelVersion
+     *        The name of the model version used by the inference schedular when running a scheduled inference
+     *        execution.
+     */
+
+    public void setActiveModelVersion(Long activeModelVersion) {
+        this.activeModelVersion = activeModelVersion;
+    }
+
+    /**
+     * <p>
+     * The name of the model version used by the inference schedular when running a scheduled inference execution.
+     * </p>
+     * 
+     * @return The name of the model version used by the inference schedular when running a scheduled inference
+     *         execution.
+     */
+
+    public Long getActiveModelVersion() {
+        return this.activeModelVersion;
+    }
+
+    /**
+     * <p>
+     * The name of the model version used by the inference schedular when running a scheduled inference execution.
+     * </p>
+     * 
+     * @param activeModelVersion
+     *        The name of the model version used by the inference schedular when running a scheduled inference
+     *        execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withActiveModelVersion(Long activeModelVersion) {
+        setActiveModelVersion(activeModelVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a scheduled
+     * inference execution.
+     * </p>
+     * 
+     * @param activeModelVersionArn
+     *        The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a
+     *        scheduled inference execution.
+     */
+
+    public void setActiveModelVersionArn(String activeModelVersionArn) {
+        this.activeModelVersionArn = activeModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a scheduled
+     * inference execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a
+     *         scheduled inference execution.
+     */
+
+    public String getActiveModelVersionArn() {
+        return this.activeModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a scheduled
+     * inference execution.
+     * </p>
+     * 
+     * @param activeModelVersionArn
+     *        The Amazon Resource Name (ARN) of the model version used by the inference scheduler when running a
+     *        scheduled inference execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withActiveModelVersionArn(String activeModelVersionArn) {
+        setActiveModelVersionArn(activeModelVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the active model version was activated.
+     * </p>
+     * 
+     * @param modelVersionActivatedAt
+     *        The date the active model version was activated.
+     */
+
+    public void setModelVersionActivatedAt(java.util.Date modelVersionActivatedAt) {
+        this.modelVersionActivatedAt = modelVersionActivatedAt;
+    }
+
+    /**
+     * <p>
+     * The date the active model version was activated.
+     * </p>
+     * 
+     * @return The date the active model version was activated.
+     */
+
+    public java.util.Date getModelVersionActivatedAt() {
+        return this.modelVersionActivatedAt;
+    }
+
+    /**
+     * <p>
+     * The date the active model version was activated.
+     * </p>
+     * 
+     * @param modelVersionActivatedAt
+     *        The date the active model version was activated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withModelVersionActivatedAt(java.util.Date modelVersionActivatedAt) {
+        setModelVersionActivatedAt(modelVersionActivatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The model version that was set as the active model version prior to the current active model version.
+     * </p>
+     * 
+     * @param previousActiveModelVersion
+     *        The model version that was set as the active model version prior to the current active model version.
+     */
+
+    public void setPreviousActiveModelVersion(Long previousActiveModelVersion) {
+        this.previousActiveModelVersion = previousActiveModelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version that was set as the active model version prior to the current active model version.
+     * </p>
+     * 
+     * @return The model version that was set as the active model version prior to the current active model version.
+     */
+
+    public Long getPreviousActiveModelVersion() {
+        return this.previousActiveModelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version that was set as the active model version prior to the current active model version.
+     * </p>
+     * 
+     * @param previousActiveModelVersion
+     *        The model version that was set as the active model version prior to the current active model version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withPreviousActiveModelVersion(Long previousActiveModelVersion) {
+        setPreviousActiveModelVersion(previousActiveModelVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the model version that was set as the active model version prior to the current active model version.
+     * </p>
+     * 
+     * @param previousActiveModelVersionArn
+     *        The ARN of the model version that was set as the active model version prior to the current active model
+     *        version.
+     */
+
+    public void setPreviousActiveModelVersionArn(String previousActiveModelVersionArn) {
+        this.previousActiveModelVersionArn = previousActiveModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the model version that was set as the active model version prior to the current active model version.
+     * </p>
+     * 
+     * @return The ARN of the model version that was set as the active model version prior to the current active model
+     *         version.
+     */
+
+    public String getPreviousActiveModelVersionArn() {
+        return this.previousActiveModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the model version that was set as the active model version prior to the current active model version.
+     * </p>
+     * 
+     * @param previousActiveModelVersionArn
+     *        The ARN of the model version that was set as the active model version prior to the current active model
+     *        version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withPreviousActiveModelVersionArn(String previousActiveModelVersionArn) {
+        setPreviousActiveModelVersionArn(previousActiveModelVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the previous active model version was activated.
+     * </p>
+     * 
+     * @param previousModelVersionActivatedAt
+     *        The date and time when the previous active model version was activated.
+     */
+
+    public void setPreviousModelVersionActivatedAt(java.util.Date previousModelVersionActivatedAt) {
+        this.previousModelVersionActivatedAt = previousModelVersionActivatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the previous active model version was activated.
+     * </p>
+     * 
+     * @return The date and time when the previous active model version was activated.
+     */
+
+    public java.util.Date getPreviousModelVersionActivatedAt() {
+        return this.previousModelVersionActivatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the previous active model version was activated.
+     * </p>
+     * 
+     * @param previousModelVersionActivatedAt
+     *        The date and time when the previous active model version was activated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeModelResult withPreviousModelVersionActivatedAt(java.util.Date previousModelVersionActivatedAt) {
+        setPreviousModelVersionActivatedAt(previousModelVersionActivatedAt);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1208,7 +1648,25 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getServerSideKmsKeyId() != null)
             sb.append("ServerSideKmsKeyId: ").append(getServerSideKmsKeyId()).append(",");
         if (getOffCondition() != null)
-            sb.append("OffCondition: ").append(getOffCondition());
+            sb.append("OffCondition: ").append(getOffCondition()).append(",");
+        if (getSourceModelVersionArn() != null)
+            sb.append("SourceModelVersionArn: ").append(getSourceModelVersionArn()).append(",");
+        if (getImportJobStartTime() != null)
+            sb.append("ImportJobStartTime: ").append(getImportJobStartTime()).append(",");
+        if (getImportJobEndTime() != null)
+            sb.append("ImportJobEndTime: ").append(getImportJobEndTime()).append(",");
+        if (getActiveModelVersion() != null)
+            sb.append("ActiveModelVersion: ").append(getActiveModelVersion()).append(",");
+        if (getActiveModelVersionArn() != null)
+            sb.append("ActiveModelVersionArn: ").append(getActiveModelVersionArn()).append(",");
+        if (getModelVersionActivatedAt() != null)
+            sb.append("ModelVersionActivatedAt: ").append(getModelVersionActivatedAt()).append(",");
+        if (getPreviousActiveModelVersion() != null)
+            sb.append("PreviousActiveModelVersion: ").append(getPreviousActiveModelVersion()).append(",");
+        if (getPreviousActiveModelVersionArn() != null)
+            sb.append("PreviousActiveModelVersionArn: ").append(getPreviousActiveModelVersionArn()).append(",");
+        if (getPreviousModelVersionActivatedAt() != null)
+            sb.append("PreviousModelVersionActivatedAt: ").append(getPreviousModelVersionActivatedAt());
         sb.append("}");
         return sb.toString();
     }
@@ -1308,6 +1766,44 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getOffCondition() != null && other.getOffCondition().equals(this.getOffCondition()) == false)
             return false;
+        if (other.getSourceModelVersionArn() == null ^ this.getSourceModelVersionArn() == null)
+            return false;
+        if (other.getSourceModelVersionArn() != null && other.getSourceModelVersionArn().equals(this.getSourceModelVersionArn()) == false)
+            return false;
+        if (other.getImportJobStartTime() == null ^ this.getImportJobStartTime() == null)
+            return false;
+        if (other.getImportJobStartTime() != null && other.getImportJobStartTime().equals(this.getImportJobStartTime()) == false)
+            return false;
+        if (other.getImportJobEndTime() == null ^ this.getImportJobEndTime() == null)
+            return false;
+        if (other.getImportJobEndTime() != null && other.getImportJobEndTime().equals(this.getImportJobEndTime()) == false)
+            return false;
+        if (other.getActiveModelVersion() == null ^ this.getActiveModelVersion() == null)
+            return false;
+        if (other.getActiveModelVersion() != null && other.getActiveModelVersion().equals(this.getActiveModelVersion()) == false)
+            return false;
+        if (other.getActiveModelVersionArn() == null ^ this.getActiveModelVersionArn() == null)
+            return false;
+        if (other.getActiveModelVersionArn() != null && other.getActiveModelVersionArn().equals(this.getActiveModelVersionArn()) == false)
+            return false;
+        if (other.getModelVersionActivatedAt() == null ^ this.getModelVersionActivatedAt() == null)
+            return false;
+        if (other.getModelVersionActivatedAt() != null && other.getModelVersionActivatedAt().equals(this.getModelVersionActivatedAt()) == false)
+            return false;
+        if (other.getPreviousActiveModelVersion() == null ^ this.getPreviousActiveModelVersion() == null)
+            return false;
+        if (other.getPreviousActiveModelVersion() != null && other.getPreviousActiveModelVersion().equals(this.getPreviousActiveModelVersion()) == false)
+            return false;
+        if (other.getPreviousActiveModelVersionArn() == null ^ this.getPreviousActiveModelVersionArn() == null)
+            return false;
+        if (other.getPreviousActiveModelVersionArn() != null
+                && other.getPreviousActiveModelVersionArn().equals(this.getPreviousActiveModelVersionArn()) == false)
+            return false;
+        if (other.getPreviousModelVersionActivatedAt() == null ^ this.getPreviousModelVersionActivatedAt() == null)
+            return false;
+        if (other.getPreviousModelVersionActivatedAt() != null
+                && other.getPreviousModelVersionActivatedAt().equals(this.getPreviousModelVersionActivatedAt()) == false)
+            return false;
         return true;
     }
 
@@ -1337,6 +1833,15 @@ public class DescribeModelResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getServerSideKmsKeyId() == null) ? 0 : getServerSideKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getOffCondition() == null) ? 0 : getOffCondition().hashCode());
+        hashCode = prime * hashCode + ((getSourceModelVersionArn() == null) ? 0 : getSourceModelVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getImportJobStartTime() == null) ? 0 : getImportJobStartTime().hashCode());
+        hashCode = prime * hashCode + ((getImportJobEndTime() == null) ? 0 : getImportJobEndTime().hashCode());
+        hashCode = prime * hashCode + ((getActiveModelVersion() == null) ? 0 : getActiveModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getActiveModelVersionArn() == null) ? 0 : getActiveModelVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getModelVersionActivatedAt() == null) ? 0 : getModelVersionActivatedAt().hashCode());
+        hashCode = prime * hashCode + ((getPreviousActiveModelVersion() == null) ? 0 : getPreviousActiveModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getPreviousActiveModelVersionArn() == null) ? 0 : getPreviousActiveModelVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getPreviousModelVersionActivatedAt() == null) ? 0 : getPreviousModelVersionActivatedAt().hashCode());
         return hashCode;
     }
 

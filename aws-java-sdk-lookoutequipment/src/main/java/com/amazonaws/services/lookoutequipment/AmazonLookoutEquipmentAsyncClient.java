@@ -407,6 +407,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(final DeleteResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+        final DeleteResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResourcePolicyResult>() {
+            @Override
+            public DeleteResourcePolicyResult call() throws Exception {
+                DeleteResourcePolicyResult result = null;
+
+                try {
+                    result = executeDeleteResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataIngestionJobResult> describeDataIngestionJobAsync(DescribeDataIngestionJobRequest request) {
 
         return describeDataIngestionJobAsync(request, null);
@@ -589,6 +622,138 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
 
                 try {
                     result = executeDescribeModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest request) {
+
+        return describeModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(final DescribeModelVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeModelVersionRequest, DescribeModelVersionResult> asyncHandler) {
+        final DescribeModelVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeModelVersionResult>() {
+            @Override
+            public DescribeModelVersionResult call() throws Exception {
+                DescribeModelVersionResult result = null;
+
+                try {
+                    result = executeDescribeModelVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request) {
+
+        return describeResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(final DescribeResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler) {
+        final DescribeResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeResourcePolicyResult>() {
+            @Override
+            public DescribeResourcePolicyResult call() throws Exception {
+                DescribeResourcePolicyResult result = null;
+
+                try {
+                    result = executeDescribeResourcePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest request) {
+
+        return importDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(final ImportDatasetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportDatasetRequest, ImportDatasetResult> asyncHandler) {
+        final ImportDatasetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportDatasetResult>() {
+            @Override
+            public ImportDatasetResult call() throws Exception {
+                ImportDatasetResult result = null;
+
+                try {
+                    result = executeImportDataset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest request) {
+
+        return importModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(final ImportModelVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportModelVersionRequest, ImportModelVersionResult> asyncHandler) {
+        final ImportModelVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportModelVersionResult>() {
+            @Override
+            public ImportModelVersionResult call() throws Exception {
+                ImportModelVersionResult result = null;
+
+                try {
+                    result = executeImportModelVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -836,6 +1001,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest request) {
+
+        return listModelVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(final ListModelVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListModelVersionsRequest, ListModelVersionsResult> asyncHandler) {
+        final ListModelVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListModelVersionsResult>() {
+            @Override
+            public ListModelVersionsResult call() throws Exception {
+                ListModelVersionsResult result = null;
+
+                try {
+                    result = executeListModelVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest request) {
 
         return listModelsAsync(request, null);
@@ -919,6 +1117,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(final PutResourcePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
+        final PutResourcePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResourcePolicyResult>() {
+            @Override
+            public PutResourcePolicyResult call() throws Exception {
+                PutResourcePolicyResult result = null;
+
+                try {
+                    result = executePutResourcePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1084,6 +1315,39 @@ public class AmazonLookoutEquipmentAsyncClient extends AmazonLookoutEquipmentCli
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest request) {
+
+        return updateActiveModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(final UpdateActiveModelVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateActiveModelVersionRequest, UpdateActiveModelVersionResult> asyncHandler) {
+        final UpdateActiveModelVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateActiveModelVersionResult>() {
+            @Override
+            public UpdateActiveModelVersionResult call() throws Exception {
+                UpdateActiveModelVersionResult result = null;
+
+                try {
+                    result = executeUpdateActiveModelVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -36,8 +36,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
     /**
      * <p>
      * Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata
-     * describing where the data is and what the data actually looks like. In other words, it contains the location of
-     * the data source, the data schema, and other information. A dataset also contains any tags associated with the
+     * describing where the data is and what the data actually looks like. For example, it contains the location of the
+     * data source, the data schema, and other information. A dataset also contains any tags associated with the
      * ingested data.
      * </p>
      * 
@@ -52,8 +52,8 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
     /**
      * <p>
      * Creates a container for a collection of data being ingested for analysis. The dataset contains the metadata
-     * describing where the data is and what the data actually looks like. In other words, it contains the location of
-     * the data source, the data schema, and other information. A dataset also contains any tags associated with the
+     * describing where the data is and what the data actually looks like. For example, it contains the location of the
+     * data source, the data schema, and other information. A dataset also contains any tags associated with the
      * ingested data.
      * </p>
      * 
@@ -387,6 +387,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Deletes the resource policy attached to the resource.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the resource policy attached to the resource.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.
      * </p>
      * 
@@ -578,6 +609,130 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<DescribeModelResult> describeModelAsync(DescribeModelRequest describeModelRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeModelRequest, DescribeModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about a specific machine learning model version.
+     * </p>
+     * 
+     * @param describeModelVersionRequest
+     * @return A Java Future containing the result of the DescribeModelVersion operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DescribeModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest describeModelVersionRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a specific machine learning model version.
+     * </p>
+     * 
+     * @param describeModelVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeModelVersion operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DescribeModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest describeModelVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelVersionRequest, DescribeModelVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the details of a resource policy attached to a resource.
+     * </p>
+     * 
+     * @param describeResourcePolicyRequest
+     * @return A Java Future containing the result of the DescribeResourcePolicy operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.DescribeResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest describeResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Provides the details of a resource policy attached to a resource.
+     * </p>
+     * 
+     * @param describeResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeResourcePolicy operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.DescribeResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DescribeResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest describeResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Imports a dataset.
+     * </p>
+     * 
+     * @param importDatasetRequest
+     * @return A Java Future containing the result of the ImportDataset operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ImportDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest importDatasetRequest);
+
+    /**
+     * <p>
+     * Imports a dataset.
+     * </p>
+     * 
+     * @param importDatasetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportDataset operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ImportDataset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportDataset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest importDatasetRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportDatasetRequest, ImportDatasetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Imports a model that has been trained successfully.
+     * </p>
+     * 
+     * @param importModelVersionRequest
+     * @return A Java Future containing the result of the ImportModelVersion operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ImportModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest importModelVersionRequest);
+
+    /**
+     * <p>
+     * Imports a model that has been trained successfully.
+     * </p>
+     * 
+     * @param importModelVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportModelVersion operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ImportModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ImportModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest importModelVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportModelVersionRequest, ImportModelVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -800,6 +955,41 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
 
     /**
      * <p>
+     * Generates a list of all model versions for a given model, including the model version, model version ARN, and
+     * status. To list a subset of versions, use the <code>MaxModelVersion</code> and <code>MinModelVersion</code>
+     * fields.
+     * </p>
+     * 
+     * @param listModelVersionsRequest
+     * @return A Java Future containing the result of the ListModelVersions operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.ListModelVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest listModelVersionsRequest);
+
+    /**
+     * <p>
+     * Generates a list of all model versions for a given model, including the model version, model version ARN, and
+     * status. To list a subset of versions, use the <code>MaxModelVersion</code> and <code>MinModelVersion</code>
+     * fields.
+     * </p>
+     * 
+     * @param listModelVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelVersions operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.ListModelVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/ListModelVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest listModelVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelVersionsRequest, ListModelVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Generates a list of all models in the account, including model name and ARN, dataset, and status.
      * </p>
      * 
@@ -892,6 +1082,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a resource control policy for a given resource.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Creates a resource control policy for a given resource.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1053,6 +1274,37 @@ public interface AmazonLookoutEquipmentAsync extends AmazonLookoutEquipment {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sets the active model version for a given machine learning model.
+     * </p>
+     * 
+     * @param updateActiveModelVersionRequest
+     * @return A Java Future containing the result of the UpdateActiveModelVersion operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsync.UpdateActiveModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest updateActiveModelVersionRequest);
+
+    /**
+     * <p>
+     * Sets the active model version for a given machine learning model.
+     * </p>
+     * 
+     * @param updateActiveModelVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateActiveModelVersion operation returned by the service.
+     * @sample AmazonLookoutEquipmentAsyncHandler.UpdateActiveModelVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/UpdateActiveModelVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest updateActiveModelVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateActiveModelVersionRequest, UpdateActiveModelVersionResult> asyncHandler);
 
     /**
      * <p>

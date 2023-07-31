@@ -37,6 +37,8 @@ public class ReactStartCodegenJobDataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("renderTypeDeclarations").build();
     private static final MarshallingInfo<Boolean> INLINESOURCEMAP_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inlineSourceMap").build();
+    private static final MarshallingInfo<StructuredPojo> APICONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiConfiguration").build();
 
     private static final ReactStartCodegenJobDataMarshaller instance = new ReactStartCodegenJobDataMarshaller();
 
@@ -59,6 +61,7 @@ public class ReactStartCodegenJobDataMarshaller {
             protocolMarshaller.marshall(reactStartCodegenJobData.getScript(), SCRIPT_BINDING);
             protocolMarshaller.marshall(reactStartCodegenJobData.getRenderTypeDeclarations(), RENDERTYPEDECLARATIONS_BINDING);
             protocolMarshaller.marshall(reactStartCodegenJobData.getInlineSourceMap(), INLINESOURCEMAP_BINDING);
+            protocolMarshaller.marshall(reactStartCodegenJobData.getApiConfiguration(), APICONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -174,6 +174,39 @@ public class AWSInspector2AsyncClient extends AWSInspector2Client implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetFindingDetailsResult> batchGetFindingDetailsAsync(BatchGetFindingDetailsRequest request) {
+
+        return batchGetFindingDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFindingDetailsResult> batchGetFindingDetailsAsync(final BatchGetFindingDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetFindingDetailsRequest, BatchGetFindingDetailsResult> asyncHandler) {
+        final BatchGetFindingDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetFindingDetailsResult>() {
+            @Override
+            public BatchGetFindingDetailsResult call() throws Exception {
+                BatchGetFindingDetailsResult result = null;
+
+                try {
+                    result = executeBatchGetFindingDetails(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetFreeTrialInfoResult> batchGetFreeTrialInfoAsync(BatchGetFreeTrialInfoRequest request) {
 
         return batchGetFreeTrialInfoAsync(request, null);

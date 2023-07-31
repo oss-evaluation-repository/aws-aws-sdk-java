@@ -52,6 +52,30 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Retrieves multiple analysis templates within a collaboration by their Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param batchGetCollaborationAnalysisTemplateRequest
+     * @return Result of the BatchGetCollaborationAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.BatchGetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/BatchGetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetCollaborationAnalysisTemplateResult batchGetCollaborationAnalysisTemplate(
+            BatchGetCollaborationAnalysisTemplateRequest batchGetCollaborationAnalysisTemplateRequest);
+
+    /**
+     * <p>
      * Retrieves multiple schemas by their identifiers.
      * </p>
      * 
@@ -72,6 +96,33 @@ public interface AWSCleanRooms {
      *      Documentation</a>
      */
     BatchGetSchemaResult batchGetSchema(BatchGetSchemaRequest batchGetSchemaRequest);
+
+    /**
+     * <p>
+     * Creates a new analysis template.
+     * </p>
+     * 
+     * @param createAnalysisTemplateRequest
+     * @return Result of the CreateAnalysisTemplate operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ServiceQuotaExceededException
+     *         Request denied because service quota has been exceeded.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.CreateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/CreateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAnalysisTemplateResult createAnalysisTemplate(CreateAnalysisTemplateRequest createAnalysisTemplateRequest);
 
     /**
      * <p>
@@ -203,6 +254,29 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     CreateMembershipResult createMembership(CreateMembershipRequest createMembershipRequest);
+
+    /**
+     * <p>
+     * Deletes an analysis template.
+     * </p>
+     * 
+     * @param deleteAnalysisTemplateRequest
+     * @return Result of the DeleteAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.DeleteAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/DeleteAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAnalysisTemplateResult deleteAnalysisTemplate(DeleteAnalysisTemplateRequest deleteAnalysisTemplateRequest);
 
     /**
      * <p>
@@ -354,6 +428,29 @@ public interface AWSCleanRooms {
 
     /**
      * <p>
+     * Retrieves an analysis template.
+     * </p>
+     * 
+     * @param getAnalysisTemplateRequest
+     * @return Result of the GetAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetAnalysisTemplateResult getAnalysisTemplate(GetAnalysisTemplateRequest getAnalysisTemplateRequest);
+
+    /**
+     * <p>
      * Returns metadata about a collaboration.
      * </p>
      * 
@@ -372,6 +469,29 @@ public interface AWSCleanRooms {
      *      API Documentation</a>
      */
     GetCollaborationResult getCollaboration(GetCollaborationRequest getCollaborationRequest);
+
+    /**
+     * <p>
+     * Retrieves an analysis template within a collaboration.
+     * </p>
+     * 
+     * @param getCollaborationAnalysisTemplateRequest
+     * @return Result of the GetCollaborationAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.GetCollaborationAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetCollaborationAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCollaborationAnalysisTemplateResult getCollaborationAnalysisTemplate(GetCollaborationAnalysisTemplateRequest getCollaborationAnalysisTemplateRequest);
 
     /**
      * <p>
@@ -533,6 +653,53 @@ public interface AWSCleanRooms {
      *      target="_top">AWS API Documentation</a>
      */
     GetSchemaAnalysisRuleResult getSchemaAnalysisRule(GetSchemaAnalysisRuleRequest getSchemaAnalysisRuleRequest);
+
+    /**
+     * <p>
+     * Lists analysis templates that the caller owns.
+     * </p>
+     * 
+     * @param listAnalysisTemplatesRequest
+     * @return Result of the ListAnalysisTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAnalysisTemplatesResult listAnalysisTemplates(ListAnalysisTemplatesRequest listAnalysisTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists analysis templates within a collaboration.
+     * </p>
+     * 
+     * @param listCollaborationAnalysisTemplatesRequest
+     * @return Result of the ListCollaborationAnalysisTemplates operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.ListCollaborationAnalysisTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListCollaborationAnalysisTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCollaborationAnalysisTemplatesResult listCollaborationAnalysisTemplates(
+            ListCollaborationAnalysisTemplatesRequest listCollaborationAnalysisTemplatesRequest);
 
     /**
      * <p>
@@ -764,6 +931,29 @@ public interface AWSCleanRooms {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the analysis template metadata.
+     * </p>
+     * 
+     * @param updateAnalysisTemplateRequest
+     * @return Result of the UpdateAnalysisTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Request references a resource which does not exist.
+     * @throws InternalServerException
+     *         Unexpected error during processing of request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ThrottlingException
+     *         Request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         Caller does not have sufficient access to perform this action.
+     * @sample AWSCleanRooms.UpdateAnalysisTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/UpdateAnalysisTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAnalysisTemplateResult updateAnalysisTemplate(UpdateAnalysisTemplateRequest updateAnalysisTemplateRequest);
 
     /**
      * <p>

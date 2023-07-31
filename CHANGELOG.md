@@ -1,3 +1,48 @@
+# __1.12.519__ __2023-07-31__
+## __AWS Amplify UI Builder__
+  - ### Features
+    - Amplify Studio releases GraphQL support for codegen job action.
+
+## __AWS Clean Rooms Service__
+  - ### Features
+    - This release introduces custom SQL queries - an expanded set of SQL you can run. This release adds analysis templates, a new resource for storing pre-defined custom SQL queries ahead of time. This release also adds the Custom analysis rule, which lets you approve analysis templates for querying.
+
+## __AWS CodeStar connections__
+  - ### Features
+    - New integration with the Gitlab provider type.
+
+## __Amazon EventBridge Scheduler__
+  - ### Features
+    - This release introduces automatic deletion of schedules in EventBridge Scheduler. If configured, EventBridge Scheduler automatically deletes a schedule after the schedule has completed its last invocation.
+
+## __Amazon Lookout for Equipment__
+  - ### Features
+    - This release includes new import resource, model versioning and resource policy features.
+
+## __Amazon Omics__
+  - ### Features
+    - Add CreationType filter for ListReadSets
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds support for Aurora MySQL local write forwarding, which allows for forwarding of write operations from reader DB instances to the writer DB instance.
+
+## __Amazon Route 53__
+  - ### Features
+    - Amazon Route 53 now supports the Israel (Tel Aviv) Region (il-central-1) for latency records, geoproximity records, and private DNS for Amazon VPCs in that region.
+
+## __Auto Scaling__
+  - ### Features
+    - You can now configure an instance refresh to set its status to 'failed' when it detects that a specified CloudWatch alarm has gone into the ALARM state. You can also choose to roll back the instance refresh automatically when the alarm threshold is met.
+
+## __Elastic Disaster Recovery Service__
+  - ### Features
+    - Add support for in-aws right sizing
+
+## __Inspector2__
+  - ### Features
+    - This release adds 1 new API: BatchGetFindingDetails to retrieve enhanced vulnerability intelligence details for findings.
+
 # __1.12.518__ __2023-07-28__
 ## __AWS CloudFormation__
   - ### Features

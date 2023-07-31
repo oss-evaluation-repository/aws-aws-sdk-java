@@ -225,7 +225,7 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a new form for an Amplify.
+     * Creates a new form for an Amplify app.
      * </p>
      * 
      * @param createFormRequest
@@ -1429,7 +1429,7 @@ public class AWSAmplifyUIBuilderClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Starts a code generation job for for a specified Amplify app and backend environment.
+     * Starts a code generation job for a specified Amplify app and backend environment.
      * </p>
      * 
      * @param startCodegenJobRequest

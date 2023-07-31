@@ -134,6 +134,42 @@ public class DescribeModelResultJsonUnmarshaller implements Unmarshaller<Describ
                     context.nextToken();
                     describeModelResult.setOffCondition(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SourceModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setSourceModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ImportJobStartTime", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setImportJobStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ImportJobEndTime", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setImportJobEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ActiveModelVersion", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setActiveModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setActiveModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModelVersionActivatedAt", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setModelVersionActivatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PreviousActiveModelVersion", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setPreviousActiveModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("PreviousActiveModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setPreviousActiveModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PreviousModelVersionActivatedAt", targetDepth)) {
+                    context.nextToken();
+                    describeModelResult.setPreviousModelVersionActivatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

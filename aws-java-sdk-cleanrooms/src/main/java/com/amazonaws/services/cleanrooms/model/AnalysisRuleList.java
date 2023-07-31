@@ -37,7 +37,7 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> joinColumns;
     /**
      * <p>
-     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
      * </p>
      */
     private java.util.List<String> allowedJoinOperators;
@@ -128,10 +128,10 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
      * </p>
      * 
-     * @return Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     * @return The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
      *         <code>AND</code>.
      * @see JoinOperator
      */
@@ -142,11 +142,11 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
      * </p>
      * 
      * @param allowedJoinOperators
-     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
      *        <code>AND</code>.
      * @see JoinOperator
      */
@@ -162,7 +162,7 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +171,7 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param allowedJoinOperators
-     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
      *        <code>AND</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinOperator
@@ -189,11 +189,11 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
      * </p>
      * 
      * @param allowedJoinOperators
-     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
      *        <code>AND</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinOperator
@@ -206,11 +206,11 @@ public class AnalysisRuleList implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
+     * The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is <code>AND</code>.
      * </p>
      * 
      * @param allowedJoinOperators
-     *        Which logical operators (if any) are to be used in an INNER JOIN match condition. Default is
+     *        The logical operators (if any) that are to be used in an INNER JOIN match condition. Default is
      *        <code>AND</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JoinOperator

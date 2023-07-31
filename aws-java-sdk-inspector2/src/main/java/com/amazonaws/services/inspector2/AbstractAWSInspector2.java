@@ -43,6 +43,11 @@ public class AbstractAWSInspector2 implements AWSInspector2 {
     }
 
     @Override
+    public BatchGetFindingDetailsResult batchGetFindingDetails(BatchGetFindingDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetFreeTrialInfoResult batchGetFreeTrialInfo(BatchGetFreeTrialInfoRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

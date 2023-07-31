@@ -78,7 +78,7 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Creates a new form for an Amplify.
+     * Creates a new form for an Amplify app.
      * </p>
      * 
      * @param createFormRequest
@@ -91,7 +91,7 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Creates a new form for an Amplify.
+     * Creates a new form for an Amplify app.
      * </p>
      * 
      * @param createFormRequest
@@ -698,7 +698,7 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Starts a code generation job for for a specified Amplify app and backend environment.
+     * Starts a code generation job for a specified Amplify app and backend environment.
      * </p>
      * 
      * @param startCodegenJobRequest
@@ -711,7 +711,7 @@ public interface AWSAmplifyUIBuilderAsync extends AWSAmplifyUIBuilder {
 
     /**
      * <p>
-     * Starts a code generation job for for a specified Amplify app and backend environment.
+     * Starts a code generation job for a specified Amplify app and backend environment.
      * </p>
      * 
      * @param startCodegenJobRequest

@@ -67,6 +67,19 @@ public class AbstractAWSInspector2Async extends AbstractAWSInspector2 implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetFindingDetailsResult> batchGetFindingDetailsAsync(BatchGetFindingDetailsRequest request) {
+
+        return batchGetFindingDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFindingDetailsResult> batchGetFindingDetailsAsync(BatchGetFindingDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetFindingDetailsRequest, BatchGetFindingDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetFreeTrialInfoResult> batchGetFreeTrialInfoAsync(BatchGetFreeTrialInfoRequest request) {
 
         return batchGetFreeTrialInfoAsync(request, null);

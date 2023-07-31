@@ -78,6 +78,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDataIngestionJobResult describeDataIngestionJob(DescribeDataIngestionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,26 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public DescribeModelResult describeModel(DescribeModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelVersionResult describeModelVersion(DescribeModelVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportDatasetResult importDataset(ImportDatasetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportModelVersionResult importModelVersion(ImportModelVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,6 +168,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
     }
 
     @Override
+    public ListModelVersionsResult listModelVersions(ListModelVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListModelsResult listModels(ListModelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +184,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -179,6 +214,11 @@ public class AbstractAmazonLookoutEquipment implements AmazonLookoutEquipment {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateActiveModelVersionResult updateActiveModelVersion(UpdateActiveModelVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -76,6 +76,12 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String generatedFrom;
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     */
+    private String creationType;
 
     /**
      * <p>
@@ -417,6 +423,65 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @see CreationType
+     */
+
+    public void setCreationType(String creationType) {
+        this.creationType = creationType;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @return The creation type of the read set.
+     * @see CreationType
+     */
+
+    public String getCreationType() {
+        return this.creationType;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public ReadSetFilter withCreationType(String creationType) {
+        setCreationType(creationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The creation type of the read set.
+     * </p>
+     * 
+     * @param creationType
+     *        The creation type of the read set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CreationType
+     */
+
+    public ReadSetFilter withCreationType(CreationType creationType) {
+        this.creationType = creationType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -443,7 +508,9 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
         if (getSubjectId() != null)
             sb.append("SubjectId: ").append(getSubjectId()).append(",");
         if (getGeneratedFrom() != null)
-            sb.append("GeneratedFrom: ").append(getGeneratedFrom());
+            sb.append("GeneratedFrom: ").append(getGeneratedFrom()).append(",");
+        if (getCreationType() != null)
+            sb.append("CreationType: ").append(getCreationType());
         sb.append("}");
         return sb.toString();
     }
@@ -490,6 +557,10 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGeneratedFrom() != null && other.getGeneratedFrom().equals(this.getGeneratedFrom()) == false)
             return false;
+        if (other.getCreationType() == null ^ this.getCreationType() == null)
+            return false;
+        if (other.getCreationType() != null && other.getCreationType().equals(this.getCreationType()) == false)
+            return false;
         return true;
     }
 
@@ -506,6 +577,7 @@ public class ReadSetFilter implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSampleId() == null) ? 0 : getSampleId().hashCode());
         hashCode = prime * hashCode + ((getSubjectId() == null) ? 0 : getSubjectId().hashCode());
         hashCode = prime * hashCode + ((getGeneratedFrom() == null) ? 0 : getGeneratedFrom().hashCode());
+        hashCode = prime * hashCode + ((getCreationType() == null) ? 0 : getCreationType().hashCode());
         return hashCode;
     }
 

@@ -43,6 +43,8 @@ public class ReadSetFilterMarshaller {
             .marshallLocationName("subjectId").build();
     private static final MarshallingInfo<String> GENERATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("generatedFrom").build();
+    private static final MarshallingInfo<String> CREATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationType").build();
 
     private static final ReadSetFilterMarshaller instance = new ReadSetFilterMarshaller();
 
@@ -68,6 +70,7 @@ public class ReadSetFilterMarshaller {
             protocolMarshaller.marshall(readSetFilter.getSampleId(), SAMPLEID_BINDING);
             protocolMarshaller.marshall(readSetFilter.getSubjectId(), SUBJECTID_BINDING);
             protocolMarshaller.marshall(readSetFilter.getGeneratedFrom(), GENERATEDFROM_BINDING);
+            protocolMarshaller.marshall(readSetFilter.getCreationType(), CREATIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

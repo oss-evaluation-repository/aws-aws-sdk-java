@@ -58,6 +58,12 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
      * </p>
      */
     private Boolean inlineSourceMap;
+    /**
+     * <p>
+     * The API configuration for the code generation job.
+     * </p>
+     */
+    private ApiConfiguration apiConfiguration;
 
     /**
      * <p>
@@ -341,6 +347,46 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The API configuration for the code generation job.
+     * </p>
+     * 
+     * @param apiConfiguration
+     *        The API configuration for the code generation job.
+     */
+
+    public void setApiConfiguration(ApiConfiguration apiConfiguration) {
+        this.apiConfiguration = apiConfiguration;
+    }
+
+    /**
+     * <p>
+     * The API configuration for the code generation job.
+     * </p>
+     * 
+     * @return The API configuration for the code generation job.
+     */
+
+    public ApiConfiguration getApiConfiguration() {
+        return this.apiConfiguration;
+    }
+
+    /**
+     * <p>
+     * The API configuration for the code generation job.
+     * </p>
+     * 
+     * @param apiConfiguration
+     *        The API configuration for the code generation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReactStartCodegenJobData withApiConfiguration(ApiConfiguration apiConfiguration) {
+        setApiConfiguration(apiConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -361,7 +407,9 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
         if (getRenderTypeDeclarations() != null)
             sb.append("RenderTypeDeclarations: ").append(getRenderTypeDeclarations()).append(",");
         if (getInlineSourceMap() != null)
-            sb.append("InlineSourceMap: ").append(getInlineSourceMap());
+            sb.append("InlineSourceMap: ").append(getInlineSourceMap()).append(",");
+        if (getApiConfiguration() != null)
+            sb.append("ApiConfiguration: ").append(getApiConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -396,6 +444,10 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
             return false;
         if (other.getInlineSourceMap() != null && other.getInlineSourceMap().equals(this.getInlineSourceMap()) == false)
             return false;
+        if (other.getApiConfiguration() == null ^ this.getApiConfiguration() == null)
+            return false;
+        if (other.getApiConfiguration() != null && other.getApiConfiguration().equals(this.getApiConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -409,6 +461,7 @@ public class ReactStartCodegenJobData implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getScript() == null) ? 0 : getScript().hashCode());
         hashCode = prime * hashCode + ((getRenderTypeDeclarations() == null) ? 0 : getRenderTypeDeclarations().hashCode());
         hashCode = prime * hashCode + ((getInlineSourceMap() == null) ? 0 : getInlineSourceMap().hashCode());
+        hashCode = prime * hashCode + ((getApiConfiguration() == null) ? 0 : getApiConfiguration().hashCode());
         return hashCode;
     }
 

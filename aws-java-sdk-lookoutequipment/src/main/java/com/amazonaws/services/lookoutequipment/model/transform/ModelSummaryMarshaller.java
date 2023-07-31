@@ -39,6 +39,10 @@ public class ModelSummaryMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Long> ACTIVEMODELVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveModelVersion").build();
+    private static final MarshallingInfo<String> ACTIVEMODELVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveModelVersionArn").build();
 
     private static final ModelSummaryMarshaller instance = new ModelSummaryMarshaller();
 
@@ -62,6 +66,8 @@ public class ModelSummaryMarshaller {
             protocolMarshaller.marshall(modelSummary.getDatasetArn(), DATASETARN_BINDING);
             protocolMarshaller.marshall(modelSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(modelSummary.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(modelSummary.getActiveModelVersion(), ACTIVEMODELVERSION_BINDING);
+            protocolMarshaller.marshall(modelSummary.getActiveModelVersionArn(), ACTIVEMODELVERSIONARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

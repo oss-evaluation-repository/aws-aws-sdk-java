@@ -82,6 +82,17 @@ public class UpgradeTarget implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsBabelfish;
+    /**
+     * <p>
+     * A value that indicates whether the target engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean supportsLocalWriteForwarding;
 
     /**
      * <p>
@@ -555,6 +566,94 @@ public class UpgradeTarget implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A value that indicates whether the target engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        A value that indicates whether the target engine version supports forwarding write operations from reader
+     *        DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *        reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        this.supportsLocalWriteForwarding = supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the target engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return A value that indicates whether the target engine version supports forwarding write operations from reader
+     *         DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *         reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the target engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        A value that indicates whether the target engine version supports forwarding write operations from reader
+     *        DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *        reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpgradeTarget withSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        setSupportsLocalWriteForwarding(supportsLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the target engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return A value that indicates whether the target engine version supports forwarding write operations from reader
+     *         DB instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *         reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -583,7 +682,9 @@ public class UpgradeTarget implements Serializable, Cloneable {
         if (getSupportsGlobalDatabases() != null)
             sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases()).append(",");
         if (getSupportsBabelfish() != null)
-            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish());
+            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish()).append(",");
+        if (getSupportsLocalWriteForwarding() != null)
+            sb.append("SupportsLocalWriteForwarding: ").append(getSupportsLocalWriteForwarding());
         sb.append("}");
         return sb.toString();
     }
@@ -634,6 +735,10 @@ public class UpgradeTarget implements Serializable, Cloneable {
             return false;
         if (other.getSupportsBabelfish() != null && other.getSupportsBabelfish().equals(this.getSupportsBabelfish()) == false)
             return false;
+        if (other.getSupportsLocalWriteForwarding() == null ^ this.getSupportsLocalWriteForwarding() == null)
+            return false;
+        if (other.getSupportsLocalWriteForwarding() != null && other.getSupportsLocalWriteForwarding().equals(this.getSupportsLocalWriteForwarding()) == false)
+            return false;
         return true;
     }
 
@@ -651,6 +756,7 @@ public class UpgradeTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportsParallelQuery() == null) ? 0 : getSupportsParallelQuery().hashCode());
         hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLocalWriteForwarding() == null) ? 0 : getSupportsLocalWriteForwarding().hashCode());
         return hashCode;
     }
 

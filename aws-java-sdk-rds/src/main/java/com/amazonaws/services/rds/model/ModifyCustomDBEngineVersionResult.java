@@ -249,6 +249,17 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedCACertificateIdentifiers;
+    /**
+     * <p>
+     * A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean supportsLocalWriteForwarding;
 
     /**
      * <p>
@@ -2144,6 +2155,94 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     *        instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *        reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        this.supportsLocalWriteForwarding = supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     *         instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *         reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param supportsLocalWriteForwarding
+     *        A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     *        instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *        reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyCustomDBEngineVersionResult withSupportsLocalWriteForwarding(Boolean supportsLocalWriteForwarding) {
+        setSupportsLocalWriteForwarding(supportsLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     * instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB
+     * instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return A value that indicates whether the DB engine version supports forwarding write operations from reader DB
+     *         instances to the writer DB instance in the DB cluster. By default, write operations aren't allowed on
+     *         reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isSupportsLocalWriteForwarding() {
+        return this.supportsLocalWriteForwarding;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2216,7 +2315,9 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (getSupportsCertificateRotationWithoutRestart() != null)
             sb.append("SupportsCertificateRotationWithoutRestart: ").append(getSupportsCertificateRotationWithoutRestart()).append(",");
         if (getSupportedCACertificateIdentifiers() != null)
-            sb.append("SupportedCACertificateIdentifiers: ").append(getSupportedCACertificateIdentifiers());
+            sb.append("SupportedCACertificateIdentifiers: ").append(getSupportedCACertificateIdentifiers()).append(",");
+        if (getSupportsLocalWriteForwarding() != null)
+            sb.append("SupportsLocalWriteForwarding: ").append(getSupportsLocalWriteForwarding());
         sb.append("}");
         return sb.toString();
     }
@@ -2361,6 +2462,10 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (other.getSupportedCACertificateIdentifiers() != null
                 && other.getSupportedCACertificateIdentifiers().equals(this.getSupportedCACertificateIdentifiers()) == false)
             return false;
+        if (other.getSupportsLocalWriteForwarding() == null ^ this.getSupportsLocalWriteForwarding() == null)
+            return false;
+        if (other.getSupportsLocalWriteForwarding() != null && other.getSupportsLocalWriteForwarding().equals(this.getSupportsLocalWriteForwarding()) == false)
+            return false;
         return true;
     }
 
@@ -2401,6 +2506,7 @@ public class ModifyCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode
                 + ((getSupportsCertificateRotationWithoutRestart() == null) ? 0 : getSupportsCertificateRotationWithoutRestart().hashCode());
         hashCode = prime * hashCode + ((getSupportedCACertificateIdentifiers() == null) ? 0 : getSupportedCACertificateIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getSupportsLocalWriteForwarding() == null) ? 0 : getSupportsLocalWriteForwarding().hashCode());
         return hashCode;
     }
 

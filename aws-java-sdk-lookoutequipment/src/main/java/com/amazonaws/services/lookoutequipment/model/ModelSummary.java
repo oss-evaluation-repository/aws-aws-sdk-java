@@ -64,6 +64,19 @@ public class ModelSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * The model version that the inference scheduler uses to run an inference execution.
+     * </p>
+     */
+    private Long activeModelVersion;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is the model
+     * version that the inference scheduler uses to run an inference execution.
+     * </p>
+     */
+    private String activeModelVersionArn;
 
     /**
      * <p>
@@ -325,6 +338,92 @@ public class ModelSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The model version that the inference scheduler uses to run an inference execution.
+     * </p>
+     * 
+     * @param activeModelVersion
+     *        The model version that the inference scheduler uses to run an inference execution.
+     */
+
+    public void setActiveModelVersion(Long activeModelVersion) {
+        this.activeModelVersion = activeModelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version that the inference scheduler uses to run an inference execution.
+     * </p>
+     * 
+     * @return The model version that the inference scheduler uses to run an inference execution.
+     */
+
+    public Long getActiveModelVersion() {
+        return this.activeModelVersion;
+    }
+
+    /**
+     * <p>
+     * The model version that the inference scheduler uses to run an inference execution.
+     * </p>
+     * 
+     * @param activeModelVersion
+     *        The model version that the inference scheduler uses to run an inference execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelSummary withActiveModelVersion(Long activeModelVersion) {
+        setActiveModelVersion(activeModelVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is the model
+     * version that the inference scheduler uses to run an inference execution.
+     * </p>
+     * 
+     * @param activeModelVersionArn
+     *        The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is the
+     *        model version that the inference scheduler uses to run an inference execution.
+     */
+
+    public void setActiveModelVersionArn(String activeModelVersionArn) {
+        this.activeModelVersionArn = activeModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is the model
+     * version that the inference scheduler uses to run an inference execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is
+     *         the model version that the inference scheduler uses to run an inference execution.
+     */
+
+    public String getActiveModelVersionArn() {
+        return this.activeModelVersionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is the model
+     * version that the inference scheduler uses to run an inference execution.
+     * </p>
+     * 
+     * @param activeModelVersionArn
+     *        The Amazon Resource Name (ARN) of the model version that is set as active. The active model version is the
+     *        model version that the inference scheduler uses to run an inference execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelSummary withActiveModelVersionArn(String activeModelVersionArn) {
+        setActiveModelVersionArn(activeModelVersionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,7 +446,11 @@ public class ModelSummary implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getActiveModelVersion() != null)
+            sb.append("ActiveModelVersion: ").append(getActiveModelVersion()).append(",");
+        if (getActiveModelVersionArn() != null)
+            sb.append("ActiveModelVersionArn: ").append(getActiveModelVersionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +489,14 @@ public class ModelSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getActiveModelVersion() == null ^ this.getActiveModelVersion() == null)
+            return false;
+        if (other.getActiveModelVersion() != null && other.getActiveModelVersion().equals(this.getActiveModelVersion()) == false)
+            return false;
+        if (other.getActiveModelVersionArn() == null ^ this.getActiveModelVersionArn() == null)
+            return false;
+        if (other.getActiveModelVersionArn() != null && other.getActiveModelVersionArn().equals(this.getActiveModelVersionArn()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +511,8 @@ public class ModelSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDatasetArn() == null) ? 0 : getDatasetArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getActiveModelVersion() == null) ? 0 : getActiveModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getActiveModelVersionArn() == null) ? 0 : getActiveModelVersionArn().hashCode());
         return hashCode;
     }
 

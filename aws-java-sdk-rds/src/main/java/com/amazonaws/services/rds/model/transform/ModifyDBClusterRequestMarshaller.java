@@ -285,6 +285,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("AllowEngineModeChange", StringUtils.fromBoolean(modifyDBClusterRequest.getAllowEngineModeChange()));
         }
 
+        if (modifyDBClusterRequest.getEnableLocalWriteForwarding() != null) {
+            request.addParameter("EnableLocalWriteForwarding", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableLocalWriteForwarding()));
+        }
+
         return request;
     }
 

@@ -616,6 +616,13 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date iOOptimizedNextAllowedModificationTime;
+    /**
+     * <p>
+     * Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in
+     * the process of enabling it.
+     * </p>
+     */
+    private String localWriteForwardingStatus;
 
     /**
      * <p>
@@ -4918,6 +4925,73 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in
+     * the process of enabling it.
+     * </p>
+     * 
+     * @param localWriteForwardingStatus
+     *        Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or
+     *        is in the process of enabling it.
+     * @see LocalWriteForwardingStatus
+     */
+
+    public void setLocalWriteForwardingStatus(String localWriteForwardingStatus) {
+        this.localWriteForwardingStatus = localWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in
+     * the process of enabling it.
+     * </p>
+     * 
+     * @return Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested,
+     *         or is in the process of enabling it.
+     * @see LocalWriteForwardingStatus
+     */
+
+    public String getLocalWriteForwardingStatus() {
+        return this.localWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in
+     * the process of enabling it.
+     * </p>
+     * 
+     * @param localWriteForwardingStatus
+     *        Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or
+     *        is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocalWriteForwardingStatus
+     */
+
+    public DBCluster withLocalWriteForwardingStatus(String localWriteForwardingStatus) {
+        setLocalWriteForwardingStatus(localWriteForwardingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or is in
+     * the process of enabling it.
+     * </p>
+     * 
+     * @param localWriteForwardingStatus
+     *        Specifies whether an Aurora DB cluster has in-cluster write forwarding enabled, not enabled, requested, or
+     *        is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LocalWriteForwardingStatus
+     */
+
+    public DBCluster withLocalWriteForwardingStatus(LocalWriteForwardingStatus localWriteForwardingStatus) {
+        this.localWriteForwardingStatus = localWriteForwardingStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5072,7 +5146,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getMasterUserSecret() != null)
             sb.append("MasterUserSecret: ").append(getMasterUserSecret()).append(",");
         if (getIOOptimizedNextAllowedModificationTime() != null)
-            sb.append("IOOptimizedNextAllowedModificationTime: ").append(getIOOptimizedNextAllowedModificationTime());
+            sb.append("IOOptimizedNextAllowedModificationTime: ").append(getIOOptimizedNextAllowedModificationTime()).append(",");
+        if (getLocalWriteForwardingStatus() != null)
+            sb.append("LocalWriteForwardingStatus: ").append(getLocalWriteForwardingStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -5383,6 +5459,10 @@ public class DBCluster implements Serializable, Cloneable {
         if (other.getIOOptimizedNextAllowedModificationTime() != null
                 && other.getIOOptimizedNextAllowedModificationTime().equals(this.getIOOptimizedNextAllowedModificationTime()) == false)
             return false;
+        if (other.getLocalWriteForwardingStatus() == null ^ this.getLocalWriteForwardingStatus() == null)
+            return false;
+        if (other.getLocalWriteForwardingStatus() != null && other.getLocalWriteForwardingStatus().equals(this.getLocalWriteForwardingStatus()) == false)
+            return false;
         return true;
     }
 
@@ -5463,6 +5543,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
         hashCode = prime * hashCode + ((getMasterUserSecret() == null) ? 0 : getMasterUserSecret().hashCode());
         hashCode = prime * hashCode + ((getIOOptimizedNextAllowedModificationTime() == null) ? 0 : getIOOptimizedNextAllowedModificationTime().hashCode());
+        hashCode = prime * hashCode + ((getLocalWriteForwardingStatus() == null) ? 0 : getLocalWriteForwardingStatus().hashCode());
         return hashCode;
     }
 

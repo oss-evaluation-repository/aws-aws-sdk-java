@@ -72,8 +72,8 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date updateTime;
     /**
      * <p>
-     * The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`.
-     * Currently, only one analysis rule may be associated with a configured table.
+     * The types of analysis rules associated with this configured table. Currently, only one analysis rule may be
+     * associated with a configured table.
      * </p>
      */
     private java.util.List<String> analysisRuleTypes;
@@ -372,12 +372,12 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`.
-     * Currently, only one analysis rule may be associated with a configured table.
+     * The types of analysis rules associated with this configured table. Currently, only one analysis rule may be
+     * associated with a configured table.
      * </p>
      * 
-     * @return The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and
-     *         `LIST`. Currently, only one analysis rule may be associated with a configured table.
+     * @return The types of analysis rules associated with this configured table. Currently, only one analysis rule may
+     *         be associated with a configured table.
      * @see ConfiguredTableAnalysisRuleType
      */
 
@@ -387,13 +387,13 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`.
-     * Currently, only one analysis rule may be associated with a configured table.
+     * The types of analysis rules associated with this configured table. Currently, only one analysis rule may be
+     * associated with a configured table.
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and
-     *        `LIST`. Currently, only one analysis rule may be associated with a configured table.
+     *        The types of analysis rules associated with this configured table. Currently, only one analysis rule may
+     *        be associated with a configured table.
      * @see ConfiguredTableAnalysisRuleType
      */
 
@@ -408,8 +408,8 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`.
-     * Currently, only one analysis rule may be associated with a configured table.
+     * The types of analysis rules associated with this configured table. Currently, only one analysis rule may be
+     * associated with a configured table.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -418,8 +418,8 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and
-     *        `LIST`. Currently, only one analysis rule may be associated with a configured table.
+     *        The types of analysis rules associated with this configured table. Currently, only one analysis rule may
+     *        be associated with a configured table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */
@@ -436,13 +436,13 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`.
-     * Currently, only one analysis rule may be associated with a configured table.
+     * The types of analysis rules associated with this configured table. Currently, only one analysis rule may be
+     * associated with a configured table.
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and
-     *        `LIST`. Currently, only one analysis rule may be associated with a configured table.
+     *        The types of analysis rules associated with this configured table. Currently, only one analysis rule may
+     *        be associated with a configured table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */
@@ -454,13 +454,13 @@ public class ConfiguredTable implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and `LIST`.
-     * Currently, only one analysis rule may be associated with a configured table.
+     * The types of analysis rules associated with this configured table. Currently, only one analysis rule may be
+     * associated with a configured table.
      * </p>
      * 
      * @param analysisRuleTypes
-     *        The types of analysis rules associated with this configured table. Valid values are `AGGREGATION` and
-     *        `LIST`. Currently, only one analysis rule may be associated with a configured table.
+     *        The types of analysis rules associated with this configured table. Currently, only one analysis rule may
+     *        be associated with a configured table.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfiguredTableAnalysisRuleType
      */

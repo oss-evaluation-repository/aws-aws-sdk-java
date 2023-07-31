@@ -51,7 +51,7 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
     private String modelName;
     /**
      * <p>
-     * Specifies the current status of the inference schedulers to list.
+     * Specifies the current status of the inference schedulers.
      * </p>
      */
     private String status;
@@ -218,11 +218,11 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the current status of the inference schedulers to list.
+     * Specifies the current status of the inference schedulers.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the inference schedulers to list.
+     *        Specifies the current status of the inference schedulers.
      * @see InferenceSchedulerStatus
      */
 
@@ -232,10 +232,10 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the current status of the inference schedulers to list.
+     * Specifies the current status of the inference schedulers.
      * </p>
      * 
-     * @return Specifies the current status of the inference schedulers to list.
+     * @return Specifies the current status of the inference schedulers.
      * @see InferenceSchedulerStatus
      */
 
@@ -245,11 +245,11 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the current status of the inference schedulers to list.
+     * Specifies the current status of the inference schedulers.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the inference schedulers to list.
+     *        Specifies the current status of the inference schedulers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InferenceSchedulerStatus
      */
@@ -261,11 +261,11 @@ public class ListInferenceSchedulersRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies the current status of the inference schedulers to list.
+     * Specifies the current status of the inference schedulers.
      * </p>
      * 
      * @param status
-     *        Specifies the current status of the inference schedulers to list.
+     *        Specifies the current status of the inference schedulers.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InferenceSchedulerStatus
      */

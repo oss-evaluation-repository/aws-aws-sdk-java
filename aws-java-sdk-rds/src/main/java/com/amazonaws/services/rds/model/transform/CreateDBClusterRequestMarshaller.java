@@ -321,6 +321,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(createDBClusterRequest.getMasterUserSecretKmsKeyId()));
         }
 
+        if (createDBClusterRequest.getEnableLocalWriteForwarding() != null) {
+            request.addParameter("EnableLocalWriteForwarding", StringUtils.fromBoolean(createDBClusterRequest.getEnableLocalWriteForwarding()));
+        }
+
         if (createDBClusterRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBClusterRequest.getSourceRegion()));
         }

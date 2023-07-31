@@ -68,6 +68,10 @@ public class ReactStartCodegenJobDataJsonUnmarshaller implements Unmarshaller<Re
                     context.nextToken();
                     reactStartCodegenJobData.setInlineSourceMap(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("apiConfiguration", targetDepth)) {
+                    context.nextToken();
+                    reactStartCodegenJobData.setApiConfiguration(ApiConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

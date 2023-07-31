@@ -104,6 +104,10 @@ public class GetReadSetMetadataResultJsonUnmarshaller implements Unmarshaller<Ge
                     context.nextToken();
                     getReadSetMetadataResult.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("creationType", targetDepth)) {
+                    context.nextToken();
+                    getReadSetMetadataResult.setCreationType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

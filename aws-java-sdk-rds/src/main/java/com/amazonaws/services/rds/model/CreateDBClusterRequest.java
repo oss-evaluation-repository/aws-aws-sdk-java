@@ -1134,6 +1134,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String masterUserSecretKmsKeyId;
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     */
+    private Boolean enableLocalWriteForwarding;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -8476,6 +8486,86 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param enableLocalWriteForwarding
+     *        Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *        By default, write operations aren't allowed on reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     */
+
+    public void setEnableLocalWriteForwarding(Boolean enableLocalWriteForwarding) {
+        this.enableLocalWriteForwarding = enableLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *         By default, write operations aren't allowed on reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean getEnableLocalWriteForwarding() {
+        return this.enableLocalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @param enableLocalWriteForwarding
+     *        Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *        By default, write operations aren't allowed on reader DB instances.</p>
+     *        <p>
+     *        Valid for: Aurora DB clusters only
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withEnableLocalWriteForwarding(Boolean enableLocalWriteForwarding) {
+        setEnableLocalWriteForwarding(enableLocalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By
+     * default, write operations aren't allowed on reader DB instances.
+     * </p>
+     * <p>
+     * Valid for: Aurora DB clusters only
+     * </p>
+     * 
+     * @return Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster.
+     *         By default, write operations aren't allowed on reader DB instances.</p>
+     *         <p>
+     *         Valid for: Aurora DB clusters only
+     */
+
+    public Boolean isEnableLocalWriteForwarding() {
+        return this.enableLocalWriteForwarding;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -8619,6 +8709,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("ManageMasterUserPassword: ").append(getManageMasterUserPassword()).append(",");
         if (getMasterUserSecretKmsKeyId() != null)
             sb.append("MasterUserSecretKmsKeyId: ").append(getMasterUserSecretKmsKeyId()).append(",");
+        if (getEnableLocalWriteForwarding() != null)
+            sb.append("EnableLocalWriteForwarding: ").append(getEnableLocalWriteForwarding()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -8834,6 +8926,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getMasterUserSecretKmsKeyId() != null && other.getMasterUserSecretKmsKeyId().equals(this.getMasterUserSecretKmsKeyId()) == false)
             return false;
+        if (other.getEnableLocalWriteForwarding() == null ^ this.getEnableLocalWriteForwarding() == null)
+            return false;
+        if (other.getEnableLocalWriteForwarding() != null && other.getEnableLocalWriteForwarding().equals(this.getEnableLocalWriteForwarding()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -8895,6 +8991,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
         hashCode = prime * hashCode + ((getManageMasterUserPassword() == null) ? 0 : getManageMasterUserPassword().hashCode());
         hashCode = prime * hashCode + ((getMasterUserSecretKmsKeyId() == null) ? 0 : getMasterUserSecretKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getEnableLocalWriteForwarding() == null) ? 0 : getEnableLocalWriteForwarding().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

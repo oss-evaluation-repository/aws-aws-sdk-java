@@ -2191,15 +2191,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * to DNS queries for the domain or subdomain name by using the resource record sets that
      * <code>CreateTrafficPolicyInstance</code> created.
      * </p>
-     * <note>
-     * <p>
-     * After you submit an <code>CreateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53
-     * creates the resource record sets that are specified in the traffic policy definition. Use
-     * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic policy instance to confirm that the
-     * <code>CreateTrafficPolicyInstance</code> request completed successfully. For more information, see the
-     * <code>State</code> response element.
-     * </p>
-     * </note>
      * 
      * @param createTrafficPolicyInstanceRequest
      *        A complex type that contains information about the resource record sets that you want to create based on a
@@ -4640,9 +4631,9 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
      * </p>
      * <note>
      * <p>
-     * Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic policy instance to confirm that
-     * the <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request completed
-     * successfully. For more information, see the <code>State</code> response element.
+     * After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+     * request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the
+     * traffic policy definition. For more information, see the <code>State</code> response element.
      * </p>
      * </note> <note>
      * <p>
@@ -6554,15 +6545,6 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
     }
 
     /**
-     * <note>
-     * <p>
-     * After you submit a <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Route 53 creates
-     * the resource record sets that are specified in the traffic policy definition. Use
-     * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of updated traffic policy instance confirm that
-     * the <code>UpdateTrafficPolicyInstance</code> request completed successfully. For more information, see the
-     * <code>State</code> response element.
-     * </p>
-     * </note>
      * <p>
      * Updates the resource record sets in a specified hosted zone that were created based on the settings in a
      * specified traffic policy version.

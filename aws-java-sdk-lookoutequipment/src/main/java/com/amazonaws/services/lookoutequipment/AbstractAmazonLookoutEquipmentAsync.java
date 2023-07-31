@@ -158,6 +158,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request) {
+
+        return deleteResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataIngestionJobResult> describeDataIngestionJobAsync(DescribeDataIngestionJobRequest request) {
 
         return describeDataIngestionJobAsync(request, null);
@@ -231,6 +244,58 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<DescribeModelResult> describeModelAsync(DescribeModelRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeModelRequest, DescribeModelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest request) {
+
+        return describeModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelVersionResult> describeModelVersionAsync(DescribeModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelVersionRequest, DescribeModelVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request) {
+
+        return describeResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest request) {
+
+        return importDatasetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportDatasetResult> importDatasetAsync(ImportDatasetRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportDatasetRequest, ImportDatasetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest request) {
+
+        return importModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportModelVersionResult> importModelVersionAsync(ImportModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportModelVersionRequest, ImportModelVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -327,6 +392,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     }
 
     @Override
+    public java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest request) {
+
+        return listModelVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelVersionsResult> listModelVersionsAsync(ListModelVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListModelVersionsRequest, ListModelVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest request) {
 
         return listModelsAsync(request, null);
@@ -361,6 +439,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request) {
+
+        return putResourcePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -426,6 +517,19 @@ public class AbstractAmazonLookoutEquipmentAsync extends AbstractAmazonLookoutEq
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest request) {
+
+        return updateActiveModelVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActiveModelVersionResult> updateActiveModelVersionAsync(UpdateActiveModelVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateActiveModelVersionRequest, UpdateActiveModelVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

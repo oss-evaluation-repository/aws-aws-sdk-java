@@ -72,6 +72,14 @@ public class ModelSummaryJsonUnmarshaller implements Unmarshaller<ModelSummary, 
                     context.nextToken();
                     modelSummary.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("ActiveModelVersion", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setActiveModelVersion(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ActiveModelVersionArn", targetDepth)) {
+                    context.nextToken();
+                    modelSummary.setActiveModelVersionArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

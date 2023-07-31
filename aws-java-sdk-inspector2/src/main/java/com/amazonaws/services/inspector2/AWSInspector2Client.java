@@ -349,6 +349,70 @@ public class AWSInspector2Client extends AmazonWebServiceClient implements AWSIn
 
     /**
      * <p>
+     * Gets vulnerability details for findings.
+     * </p>
+     * 
+     * @param batchGetFindingDetailsRequest
+     * @return Result of the BatchGetFindingDetails operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetFindingDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchGetFindingDetailsResult batchGetFindingDetails(BatchGetFindingDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetFindingDetails(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetFindingDetailsResult executeBatchGetFindingDetails(BatchGetFindingDetailsRequest batchGetFindingDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetFindingDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetFindingDetailsRequest> request = null;
+        Response<BatchGetFindingDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetFindingDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetFindingDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Inspector2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetFindingDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetFindingDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetFindingDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets free trial status for multiple Amazon Web Services accounts.
      * </p>
      * 

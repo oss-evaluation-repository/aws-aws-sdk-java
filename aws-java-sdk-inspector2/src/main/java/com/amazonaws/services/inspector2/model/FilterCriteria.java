@@ -212,7 +212,7 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DateFilter> lastObservedAt;
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      */
     private java.util.List<StringFilter> networkProtocol;
@@ -2390,10 +2390,10 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * 
-     * @return Details on the ingress source addresses used to filter findings.
+     * @return Details on network protocol used to filter findings.
      */
 
     public java.util.List<StringFilter> getNetworkProtocol() {
@@ -2402,11 +2402,11 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * 
      * @param networkProtocol
-     *        Details on the ingress source addresses used to filter findings.
+     *        Details on network protocol used to filter findings.
      */
 
     public void setNetworkProtocol(java.util.Collection<StringFilter> networkProtocol) {
@@ -2420,7 +2420,7 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2429,7 +2429,7 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param networkProtocol
-     *        Details on the ingress source addresses used to filter findings.
+     *        Details on network protocol used to filter findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2445,11 +2445,11 @@ public class FilterCriteria implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details on the ingress source addresses used to filter findings.
+     * Details on network protocol used to filter findings.
      * </p>
      * 
      * @param networkProtocol
-     *        Details on the ingress source addresses used to filter findings.
+     *        Details on network protocol used to filter findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

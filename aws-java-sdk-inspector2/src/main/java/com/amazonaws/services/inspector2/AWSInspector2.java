@@ -114,6 +114,27 @@ public interface AWSInspector2 {
 
     /**
      * <p>
+     * Gets vulnerability details for findings.
+     * </p>
+     * 
+     * @param batchGetFindingDetailsRequest
+     * @return Result of the BatchGetFindingDetails operation returned by the service.
+     * @throws ValidationException
+     *         The request has failed validation due to missing required fields or having invalid inputs.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The limit on the number of requests per second was exceeded.
+     * @throws InternalServerException
+     *         The request has failed due to an internal failure of the Amazon Inspector service.
+     * @sample AWSInspector2.BatchGetFindingDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetFindingDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetFindingDetailsResult batchGetFindingDetails(BatchGetFindingDetailsRequest batchGetFindingDetailsRequest);
+
+    /**
+     * <p>
      * Gets free trial status for multiple Amazon Web Services accounts.
      * </p>
      * 
