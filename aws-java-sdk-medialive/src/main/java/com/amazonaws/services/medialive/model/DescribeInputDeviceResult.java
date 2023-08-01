@@ -55,6 +55,8 @@ public class DescribeInputDeviceResult extends com.amazonaws.AmazonWebServiceRes
     private InputDeviceUhdSettings uhdDeviceSettings;
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
+    /** The Availability Zone associated with this input device. */
+    private String availabilityZone;
 
     /**
      * The unique ARN of the input device.
@@ -619,6 +621,40 @@ public class DescribeInputDeviceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * The Availability Zone associated with this input device.
+     * 
+     * @param availabilityZone
+     *        The Availability Zone associated with this input device.
+     */
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    /**
+     * The Availability Zone associated with this input device.
+     * 
+     * @return The Availability Zone associated with this input device.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * The Availability Zone associated with this input device.
+     * 
+     * @param availabilityZone
+     *        The Availability Zone associated with this input device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeInputDeviceResult withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -655,7 +691,9 @@ public class DescribeInputDeviceResult extends com.amazonaws.AmazonWebServiceRes
         if (getUhdDeviceSettings() != null)
             sb.append("UhdDeviceSettings: ").append(getUhdDeviceSettings()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
         sb.append("}");
         return sb.toString();
     }
@@ -722,6 +760,10 @@ public class DescribeInputDeviceResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
         return true;
     }
 
@@ -743,6 +785,7 @@ public class DescribeInputDeviceResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getUhdDeviceSettings() == null) ? 0 : getUhdDeviceSettings().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         return hashCode;
     }
 

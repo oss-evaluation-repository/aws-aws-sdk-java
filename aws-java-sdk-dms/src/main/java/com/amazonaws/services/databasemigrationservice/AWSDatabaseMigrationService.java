@@ -776,6 +776,19 @@ public interface AWSDatabaseMigrationService {
 
     /**
      * <p>
+     * Returns information about the replication instance versions used in the project.
+     * </p>
+     * 
+     * @param describeEngineVersionsRequest
+     * @return Result of the DescribeEngineVersions operation returned by the service.
+     * @sample AWSDatabaseMigrationService.DescribeEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeEngineVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeEngineVersionsResult describeEngineVersions(DescribeEngineVersionsRequest describeEngineVersionsRequest);
+
+    /**
+     * <p>
      * Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of
      * the event categories and source types in <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and

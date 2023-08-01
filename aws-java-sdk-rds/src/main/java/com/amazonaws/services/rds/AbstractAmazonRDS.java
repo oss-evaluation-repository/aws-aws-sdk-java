@@ -204,6 +204,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     }
 
     @Override
+    public DBClusterAutomatedBackup deleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDBClusterEndpointResult deleteDBClusterEndpoint(DeleteDBClusterEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -301,6 +306,11 @@ public class AbstractAmazonRDS implements AmazonRDS {
     @Override
     public DescribeCertificatesResult describeCertificates() {
         return describeCertificates(new DescribeCertificatesRequest());
+    }
+
+    @Override
+    public DescribeDBClusterAutomatedBackupsResult describeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

@@ -56,6 +56,14 @@ public class HealthEventsConfigJsonUnmarshaller implements Unmarshaller<HealthEv
                     context.nextToken();
                     healthEventsConfig.setPerformanceScoreThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("AvailabilityLocalHealthEventsConfig", targetDepth)) {
+                    context.nextToken();
+                    healthEventsConfig.setAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PerformanceLocalHealthEventsConfig", targetDepth)) {
+                    context.nextToken();
+                    healthEventsConfig.setPerformanceLocalHealthEventsConfig(LocalHealthEventsConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

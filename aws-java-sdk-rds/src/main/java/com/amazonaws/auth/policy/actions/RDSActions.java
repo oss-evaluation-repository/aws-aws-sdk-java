@@ -91,6 +91,8 @@ public enum RDSActions implements Action {
     DeleteCustomDBEngineVersion("rds:DeleteCustomDBEngineVersion"),
     /** Action for the DeleteDBCluster operation. */
     DeleteDBCluster("rds:DeleteDBCluster"),
+    /** Action for the DeleteDBClusterAutomatedBackup operation. */
+    DeleteDBClusterAutomatedBackup("rds:DeleteDBClusterAutomatedBackup"),
     /** Action for the DeleteDBClusterEndpoint operation. */
     DeleteDBClusterEndpoint("rds:DeleteDBClusterEndpoint"),
     /** Action for the DeleteDBClusterParameterGroup operation. */
@@ -127,6 +129,8 @@ public enum RDSActions implements Action {
     DescribeBlueGreenDeployments("rds:DescribeBlueGreenDeployments"),
     /** Action for the DescribeCertificates operation. */
     DescribeCertificates("rds:DescribeCertificates"),
+    /** Action for the DescribeDBClusterAutomatedBackups operation. */
+    DescribeDBClusterAutomatedBackups("rds:DescribeDBClusterAutomatedBackups"),
     /** Action for the DescribeDBClusterBacktracks operation. */
     DescribeDBClusterBacktracks("rds:DescribeDBClusterBacktracks"),
     /** Action for the DescribeDBClusterEndpoints operation. */

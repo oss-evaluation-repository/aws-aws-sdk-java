@@ -31,6 +31,10 @@ public class HealthEventsConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityScoreThreshold").build();
     private static final MarshallingInfo<Double> PERFORMANCESCORETHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformanceScoreThreshold").build();
+    private static final MarshallingInfo<StructuredPojo> AVAILABILITYLOCALHEALTHEVENTSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityLocalHealthEventsConfig").build();
+    private static final MarshallingInfo<StructuredPojo> PERFORMANCELOCALHEALTHEVENTSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerformanceLocalHealthEventsConfig").build();
 
     private static final HealthEventsConfigMarshaller instance = new HealthEventsConfigMarshaller();
 
@@ -50,6 +54,8 @@ public class HealthEventsConfigMarshaller {
         try {
             protocolMarshaller.marshall(healthEventsConfig.getAvailabilityScoreThreshold(), AVAILABILITYSCORETHRESHOLD_BINDING);
             protocolMarshaller.marshall(healthEventsConfig.getPerformanceScoreThreshold(), PERFORMANCESCORETHRESHOLD_BINDING);
+            protocolMarshaller.marshall(healthEventsConfig.getAvailabilityLocalHealthEventsConfig(), AVAILABILITYLOCALHEALTHEVENTSCONFIG_BINDING);
+            protocolMarshaller.marshall(healthEventsConfig.getPerformanceLocalHealthEventsConfig(), PERFORMANCELOCALHEALTHEVENTSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

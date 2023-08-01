@@ -58,7 +58,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     * <code> ARM64</code>.
+     * <code>ARM64</code>.
      * </p>
      * <note>
      * <p>
@@ -234,7 +234,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     * <code> ARM64</code>.
+     * <code>ARM64</code>.
      * </p>
      * <note>
      * <p>
@@ -244,7 +244,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param cpuArchitecture
      *        The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     *        <code> ARM64</code>.</p> <note>
+     *        <code>ARM64</code>.</p> <note>
      *        <p>
      *        This parameter must be set to <code>X86_64</code> for Windows containers.
      *        </p>
@@ -257,7 +257,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     * <code> ARM64</code>.
+     * <code>ARM64</code>.
      * </p>
      * <note>
      * <p>
@@ -266,7 +266,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     *         <code> ARM64</code>.</p> <note>
+     *         <code>ARM64</code>.</p> <note>
      *         <p>
      *         This parameter must be set to <code>X86_64</code> for Windows containers.
      *         </p>
@@ -279,7 +279,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     * <code> ARM64</code>.
+     * <code>ARM64</code>.
      * </p>
      * <note>
      * <p>
@@ -289,7 +289,7 @@ public class RuntimePlatform implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param cpuArchitecture
      *        The vCPU architecture. The default value is <code>X86_64</code>. Valid values are <code>X86_64</code> and
-     *        <code> ARM64</code>.</p> <note>
+     *        <code>ARM64</code>.</p> <note>
      *        <p>
      *        This parameter must be set to <code>X86_64</code> for Windows containers.
      *        </p>

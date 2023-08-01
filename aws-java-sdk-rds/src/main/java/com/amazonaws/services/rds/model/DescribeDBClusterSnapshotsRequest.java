@@ -183,6 +183,12 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Boolean includePublic;
+    /**
+     * <p>
+     * A specific DB cluster resource ID to describe.
+     * </p>
+     */
+    private String dbClusterResourceId;
 
     /**
      * <p>
@@ -1276,6 +1282,46 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * A specific DB cluster resource ID to describe.
+     * </p>
+     * 
+     * @param dbClusterResourceId
+     *        A specific DB cluster resource ID to describe.
+     */
+
+    public void setDbClusterResourceId(String dbClusterResourceId) {
+        this.dbClusterResourceId = dbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * A specific DB cluster resource ID to describe.
+     * </p>
+     * 
+     * @return A specific DB cluster resource ID to describe.
+     */
+
+    public String getDbClusterResourceId() {
+        return this.dbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * A specific DB cluster resource ID to describe.
+     * </p>
+     * 
+     * @param dbClusterResourceId
+     *        A specific DB cluster resource ID to describe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDBClusterSnapshotsRequest withDbClusterResourceId(String dbClusterResourceId) {
+        setDbClusterResourceId(dbClusterResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1302,7 +1348,9 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
         if (getIncludeShared() != null)
             sb.append("IncludeShared: ").append(getIncludeShared()).append(",");
         if (getIncludePublic() != null)
-            sb.append("IncludePublic: ").append(getIncludePublic());
+            sb.append("IncludePublic: ").append(getIncludePublic()).append(",");
+        if (getDbClusterResourceId() != null)
+            sb.append("DbClusterResourceId: ").append(getDbClusterResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1349,6 +1397,10 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getIncludePublic() != null && other.getIncludePublic().equals(this.getIncludePublic()) == false)
             return false;
+        if (other.getDbClusterResourceId() == null ^ this.getDbClusterResourceId() == null)
+            return false;
+        if (other.getDbClusterResourceId() != null && other.getDbClusterResourceId().equals(this.getDbClusterResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -1365,6 +1417,7 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode());
         hashCode = prime * hashCode + ((getIncludeShared() == null) ? 0 : getIncludeShared().hashCode());
         hashCode = prime * hashCode + ((getIncludePublic() == null) ? 0 : getIncludePublic().hashCode());
+        hashCode = prime * hashCode + ((getDbClusterResourceId() == null) ? 0 : getDbClusterResourceId().hashCode());
         return hashCode;
     }
 

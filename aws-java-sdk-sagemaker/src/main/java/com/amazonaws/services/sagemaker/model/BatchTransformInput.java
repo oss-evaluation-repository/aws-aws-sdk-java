@@ -96,7 +96,7 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
     private String startTimeOffset;
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
@@ -586,14 +586,14 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      * 
      * @param endTimeOffset
-     *        If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *        If specified, monitoring jobs subtract this time from the end time. For information about using offsets
      *        for scheduling monitoring jobs, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      *        Model Quality Monitoring Jobs</a>.
@@ -605,13 +605,13 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      * 
-     * @return If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     * @return If specified, monitoring jobs subtract this time from the end time. For information about using offsets
      *         for scheduling monitoring jobs, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      *         Model Quality Monitoring Jobs</a>.
@@ -623,14 +623,14 @@ public class BatchTransformInput implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If specified, monitoring jobs substract this time from the end time. For information about using offsets for
+     * If specified, monitoring jobs subtract this time from the end time. For information about using offsets for
      * scheduling monitoring jobs, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule Model
      * Quality Monitoring Jobs</a>.
      * </p>
      * 
      * @param endTimeOffset
-     *        If specified, monitoring jobs substract this time from the end time. For information about using offsets
+     *        If specified, monitoring jobs subtract this time from the end time. For information about using offsets
      *        for scheduling monitoring jobs, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html">Schedule
      *        Model Quality Monitoring Jobs</a>.

@@ -1908,6 +1908,43 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @return A Java Future containing the result of the DeleteDBClusterAutomatedBackup operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DBClusterAutomatedBackup> deleteDBClusterAutomatedBackupAsync(
+            DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest);
+
+    /**
+     * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDBClusterAutomatedBackup operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DBClusterAutomatedBackup> deleteDBClusterAutomatedBackupAsync(
+            DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDBClusterAutomatedBackupRequest, DBClusterAutomatedBackup> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.
      * </p>
      * <note>
@@ -2747,6 +2784,51 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<DescribeCertificatesResult> describeCertificatesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeCertificatesRequest, DescribeCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @return A Java Future containing the result of the DescribeDBClusterAutomatedBackups operation returned by the
+     *         service.
+     * @sample AmazonRDSAsync.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterAutomatedBackupsResult> describeDBClusterAutomatedBackupsAsync(
+            DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest);
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDBClusterAutomatedBackups operation returned by the
+     *         service.
+     * @sample AmazonRDSAsyncHandler.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDBClusterAutomatedBackupsResult> describeDBClusterAutomatedBackupsAsync(
+            DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDBClusterAutomatedBackupsRequest, DescribeDBClusterAutomatedBackupsResult> asyncHandler);
 
     /**
      * <p>

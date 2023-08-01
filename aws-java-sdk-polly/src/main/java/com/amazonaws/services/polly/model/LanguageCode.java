@@ -57,7 +57,8 @@ public enum LanguageCode {
     ArAE("ar-AE"),
     FiFI("fi-FI"),
     EnIE("en-IE"),
-    NlBE("nl-BE");
+    NlBE("nl-BE"),
+    FrBE("fr-BE");
 
     private String value;
 

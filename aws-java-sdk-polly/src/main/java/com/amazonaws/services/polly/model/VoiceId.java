@@ -110,7 +110,8 @@ public enum VoiceId {
     Tomoko("Tomoko"),
     Niamh("Niamh"),
     Sofie("Sofie"),
-    Lisa("Lisa");
+    Lisa("Lisa"),
+    Isabelle("Isabelle");
 
     private String value;
 

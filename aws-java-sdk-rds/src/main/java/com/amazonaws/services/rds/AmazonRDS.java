@@ -1354,11 +1354,33 @@ public interface AmazonRDS {
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
+     * @throws DBClusterAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB cluster quota.
      * @sample AmazonRDS.DeleteDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster" target="_top">AWS API
      *      Documentation</a>
      */
     DBCluster deleteDBCluster(DeleteDBClusterRequest deleteDBClusterRequest);
+
+    /**
+     * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @return Result of the DeleteDBClusterAutomatedBackup operation returned by the service.
+     * @throws InvalidDBClusterAutomatedBackupStateException
+     *         The automated backup is in an invalid state. For example, this automated backup is associated with an
+     *         active cluster.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
+     * @sample AmazonRDS.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DBClusterAutomatedBackup deleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest);
 
     /**
      * <p>
@@ -1497,7 +1519,7 @@ public interface AmazonRDS {
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
-     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     *         automated backups. The retained automated backups quota is the same as your DB instance quota.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -1815,6 +1837,26 @@ public interface AmazonRDS {
      * @see #describeCertificates(DescribeCertificatesRequest)
      */
     DescribeCertificatesResult describeCertificates();
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @return Result of the DescribeDBClusterAutomatedBackups operation returned by the service.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
+     * @sample AmazonRDS.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDBClusterAutomatedBackupsResult describeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest);
 
     /**
      * <p>
@@ -4022,6 +4064,8 @@ public interface AmazonRDS {
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -4423,7 +4467,7 @@ public interface AmazonRDS {
      *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
-     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     *         automated backups. The retained automated backups quota is the same as your DB instance quota.
      * @throws StorageTypeNotSupportedException
      *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @sample AmazonRDS.StartDBInstanceAutomatedBackupsReplication

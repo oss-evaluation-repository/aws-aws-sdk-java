@@ -1234,6 +1234,39 @@ public class AWSDatabaseMigrationServiceAsyncClient extends AWSDatabaseMigration
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEngineVersionsResult> describeEngineVersionsAsync(DescribeEngineVersionsRequest request) {
+
+        return describeEngineVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEngineVersionsResult> describeEngineVersionsAsync(final DescribeEngineVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeEngineVersionsRequest, DescribeEngineVersionsResult> asyncHandler) {
+        final DescribeEngineVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeEngineVersionsResult>() {
+            @Override
+            public DescribeEngineVersionsResult call() throws Exception {
+                DescribeEngineVersionsResult result = null;
+
+                try {
+                    result = executeDescribeEngineVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeEventCategoriesResult> describeEventCategoriesAsync(DescribeEventCategoriesRequest request) {
 
         return describeEventCategoriesAsync(request, null);

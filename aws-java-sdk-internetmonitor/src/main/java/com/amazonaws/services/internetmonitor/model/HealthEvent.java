@@ -78,7 +78,9 @@ public class HealthEvent implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * The impact on global traffic monitored by this monitor for this health event.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      */
     private Double percentOfTotalTrafficImpacted;
@@ -467,11 +469,16 @@ public class HealthEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The impact on global traffic monitored by this monitor for this health event.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * 
      * @param percentOfTotalTrafficImpacted
-     *        The impact on global traffic monitored by this monitor for this health event.
+     *        The impact on total traffic that a health event has, in increased latency or reduced availability. This is
+     *        the percentage of how much latency has increased or availability has decreased during the event, compared
+     *        to what is typical for traffic from this client location to the Amazon Web Services location using this
+     *        client network.
      */
 
     public void setPercentOfTotalTrafficImpacted(Double percentOfTotalTrafficImpacted) {
@@ -480,10 +487,15 @@ public class HealthEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The impact on global traffic monitored by this monitor for this health event.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * 
-     * @return The impact on global traffic monitored by this monitor for this health event.
+     * @return The impact on total traffic that a health event has, in increased latency or reduced availability. This
+     *         is the percentage of how much latency has increased or availability has decreased during the event,
+     *         compared to what is typical for traffic from this client location to the Amazon Web Services location
+     *         using this client network.
      */
 
     public Double getPercentOfTotalTrafficImpacted() {
@@ -492,11 +504,16 @@ public class HealthEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The impact on global traffic monitored by this monitor for this health event.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * 
      * @param percentOfTotalTrafficImpacted
-     *        The impact on global traffic monitored by this monitor for this health event.
+     *        The impact on total traffic that a health event has, in increased latency or reduced availability. This is
+     *        the percentage of how much latency has increased or availability has decreased during the event, compared
+     *        to what is typical for traffic from this client location to the Amazon Web Services location using this
+     *        client network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

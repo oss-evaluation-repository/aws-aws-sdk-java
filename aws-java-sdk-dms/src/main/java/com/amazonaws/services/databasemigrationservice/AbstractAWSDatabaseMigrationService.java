@@ -184,6 +184,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DescribeEngineVersionsResult describeEngineVersions(DescribeEngineVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

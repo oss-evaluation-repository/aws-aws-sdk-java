@@ -90,6 +90,14 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      */
     private String finalDBSnapshotIdentifier;
+    /**
+     * <p>
+     * A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is
+     * deleted.
+     * </p>
+     */
+    private Boolean deleteAutomatedBackups;
 
     /**
      * <p>
@@ -501,6 +509,74 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is
+     * deleted.
+     * </p>
+     * 
+     * @param deleteAutomatedBackups
+     *        A value that indicates whether to remove automated backups immediately after the DB cluster is deleted.
+     *        This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *        cluster is deleted.
+     */
+
+    public void setDeleteAutomatedBackups(Boolean deleteAutomatedBackups) {
+        this.deleteAutomatedBackups = deleteAutomatedBackups;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is
+     * deleted.
+     * </p>
+     * 
+     * @return A value that indicates whether to remove automated backups immediately after the DB cluster is deleted.
+     *         This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *         cluster is deleted.
+     */
+
+    public Boolean getDeleteAutomatedBackups() {
+        return this.deleteAutomatedBackups;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is
+     * deleted.
+     * </p>
+     * 
+     * @param deleteAutomatedBackups
+     *        A value that indicates whether to remove automated backups immediately after the DB cluster is deleted.
+     *        This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *        cluster is deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteDBClusterRequest withDeleteAutomatedBackups(Boolean deleteAutomatedBackups) {
+        setDeleteAutomatedBackups(deleteAutomatedBackups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to remove automated backups immediately after the DB cluster is deleted. This
+     * parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is
+     * deleted.
+     * </p>
+     * 
+     * @return A value that indicates whether to remove automated backups immediately after the DB cluster is deleted.
+     *         This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB
+     *         cluster is deleted.
+     */
+
+    public Boolean isDeleteAutomatedBackups() {
+        return this.deleteAutomatedBackups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -517,7 +593,9 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getSkipFinalSnapshot() != null)
             sb.append("SkipFinalSnapshot: ").append(getSkipFinalSnapshot()).append(",");
         if (getFinalDBSnapshotIdentifier() != null)
-            sb.append("FinalDBSnapshotIdentifier: ").append(getFinalDBSnapshotIdentifier());
+            sb.append("FinalDBSnapshotIdentifier: ").append(getFinalDBSnapshotIdentifier()).append(",");
+        if (getDeleteAutomatedBackups() != null)
+            sb.append("DeleteAutomatedBackups: ").append(getDeleteAutomatedBackups());
         sb.append("}");
         return sb.toString();
     }
@@ -544,6 +622,10 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getFinalDBSnapshotIdentifier() != null && other.getFinalDBSnapshotIdentifier().equals(this.getFinalDBSnapshotIdentifier()) == false)
             return false;
+        if (other.getDeleteAutomatedBackups() == null ^ this.getDeleteAutomatedBackups() == null)
+            return false;
+        if (other.getDeleteAutomatedBackups() != null && other.getDeleteAutomatedBackups().equals(this.getDeleteAutomatedBackups()) == false)
+            return false;
         return true;
     }
 
@@ -555,6 +637,7 @@ public class DeleteDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getSkipFinalSnapshot() == null) ? 0 : getSkipFinalSnapshot().hashCode());
         hashCode = prime * hashCode + ((getFinalDBSnapshotIdentifier() == null) ? 0 : getFinalDBSnapshotIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getDeleteAutomatedBackups() == null) ? 0 : getDeleteAutomatedBackups().hashCode());
         return hashCode;
     }
 

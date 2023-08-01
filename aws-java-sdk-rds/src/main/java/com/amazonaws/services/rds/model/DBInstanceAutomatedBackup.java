@@ -35,7 +35,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String dBInstanceArn;
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
      * Region.
      * </p>
      */
@@ -48,7 +48,8 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private String region;
     /**
      * <p>
-     * The customer id of the instance that is/was associated with the automated backup.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      */
     private String dBInstanceIdentifier;
@@ -71,17 +72,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - Automated backups for deleted instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * </ul>
@@ -122,7 +123,7 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
     private java.util.Date instanceCreateTime;
     /**
      * <p>
-     * The license model of an automated backup.
+     * The master user name of an automated backup.
      * </p>
      */
     private String masterUsername;
@@ -272,12 +273,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
      * Region.
      * </p>
      * 
      * @param dbiResourceId
-     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web
      *        Services Region.
      */
 
@@ -287,11 +288,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
      * Region.
      * </p>
      * 
-     * @return The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     * @return The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web
      *         Services Region.
      */
 
@@ -301,12 +302,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
      * Region.
      * </p>
      * 
      * @param dbiResourceId
-     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        The resource ID for the source DB instance, which can't be changed and which is unique to an Amazon Web
      *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -358,11 +359,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The customer id of the instance that is/was associated with the automated backup.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        The customer id of the instance that is/was associated with the automated backup.
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        Services Region.
      */
 
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -371,10 +374,12 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The customer id of the instance that is/was associated with the automated backup.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
-     * @return The customer id of the instance that is/was associated with the automated backup.
+     * @return The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *         Services Region.
      */
 
     public String getDBInstanceIdentifier() {
@@ -383,11 +388,13 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The customer id of the instance that is/was associated with the automated backup.
+     * The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web Services
+     * Region.
      * </p>
      * 
      * @param dBInstanceIdentifier
-     *        The customer id of the instance that is/was associated with the automated backup.
+     *        The identifier for the source DB instance, which can't be changed and which is unique to an Amazon Web
+     *        Services Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -483,17 +490,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - Automated backups for deleted instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * </ul>
@@ -503,17 +510,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - automated backups for current instances
+     *        <code>active</code> - Automated backups for current instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances
+     *        <code>retained</code> - Automated backups for deleted instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
+     *        <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
      *        available.
      *        </p>
      *        </li>
@@ -530,17 +537,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - Automated backups for deleted instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * </ul>
@@ -549,17 +556,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>active</code> - automated backups for current instances
+     *         <code>active</code> - Automated backups for current instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>retained</code> - automated backups for deleted instances
+     *         <code>retained</code> - Automated backups for deleted instances.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
+     *         <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
      *         available.
      *         </p>
      *         </li>
@@ -576,17 +583,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>active</code> - automated backups for current instances
+     * <code>active</code> - Automated backups for current instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>retained</code> - automated backups for deleted instances
+     * <code>retained</code> - Automated backups for deleted instances.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>creating</code> - automated backups that are waiting for the first automated snapshot to be available.
+     * <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be available.
      * </p>
      * </li>
      * </ul>
@@ -596,17 +603,17 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>active</code> - automated backups for current instances
+     *        <code>active</code> - Automated backups for current instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>retained</code> - automated backups for deleted instances
+     *        <code>retained</code> - Automated backups for deleted instances.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>creating</code> - automated backups that are waiting for the first automated snapshot to be
+     *        <code>creating</code> - Automated backups that are waiting for the first automated snapshot to be
      *        available.
      *        </p>
      *        </li>
@@ -831,11 +838,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model of an automated backup.
+     * The master user name of an automated backup.
      * </p>
      * 
      * @param masterUsername
-     *        The license model of an automated backup.
+     *        The master user name of an automated backup.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -844,10 +851,10 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model of an automated backup.
+     * The master user name of an automated backup.
      * </p>
      * 
-     * @return The license model of an automated backup.
+     * @return The master user name of an automated backup.
      */
 
     public String getMasterUsername() {
@@ -856,11 +863,11 @@ public class DBInstanceAutomatedBackup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The license model of an automated backup.
+     * The master user name of an automated backup.
      * </p>
      * 
      * @param masterUsername
-     *        The license model of an automated backup.
+     *        The master user name of an automated backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

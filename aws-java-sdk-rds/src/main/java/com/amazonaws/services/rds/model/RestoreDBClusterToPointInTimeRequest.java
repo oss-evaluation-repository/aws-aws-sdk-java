@@ -566,6 +566,12 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private String networkType;
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     */
+    private String sourceDbClusterResourceId;
 
     /**
      * <p>
@@ -4255,6 +4261,46 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     * 
+     * @param sourceDbClusterResourceId
+     *        The resource ID of the source DB cluster from which to restore.
+     */
+
+    public void setSourceDbClusterResourceId(String sourceDbClusterResourceId) {
+        this.sourceDbClusterResourceId = sourceDbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     * 
+     * @return The resource ID of the source DB cluster from which to restore.
+     */
+
+    public String getSourceDbClusterResourceId() {
+        return this.sourceDbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * The resource ID of the source DB cluster from which to restore.
+     * </p>
+     * 
+     * @param sourceDbClusterResourceId
+     *        The resource ID of the source DB cluster from which to restore.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBClusterToPointInTimeRequest withSourceDbClusterResourceId(String sourceDbClusterResourceId) {
+        setSourceDbClusterResourceId(sourceDbClusterResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4319,7 +4365,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         if (getServerlessV2ScalingConfiguration() != null)
             sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration()).append(",");
         if (getNetworkType() != null)
-            sb.append("NetworkType: ").append(getNetworkType());
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getSourceDbClusterResourceId() != null)
+            sb.append("SourceDbClusterResourceId: ").append(getSourceDbClusterResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -4444,6 +4492,10 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
             return false;
         if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
+        if (other.getSourceDbClusterResourceId() == null ^ this.getSourceDbClusterResourceId() == null)
+            return false;
+        if (other.getSourceDbClusterResourceId() != null && other.getSourceDbClusterResourceId().equals(this.getSourceDbClusterResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -4479,6 +4531,7 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getSourceDbClusterResourceId() == null) ? 0 : getSourceDbClusterResourceId().hashCode());
         return hashCode;
     }
 

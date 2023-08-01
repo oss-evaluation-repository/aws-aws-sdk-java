@@ -73,7 +73,9 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
     private String status;
     /**
      * <p>
-     * The impact on total traffic that a health event has.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      */
     private Double percentOfTotalTrafficImpacted;
@@ -85,7 +87,8 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
     private String impactType;
     /**
      * <p>
-     * The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.
+     * The threshold percentage for a health score that determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that affects your application end users.
      * </p>
      */
     private Double healthScoreThreshold;
@@ -461,11 +464,16 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The impact on total traffic that a health event has.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * 
      * @param percentOfTotalTrafficImpacted
-     *        The impact on total traffic that a health event has.
+     *        The impact on total traffic that a health event has, in increased latency or reduced availability. This is
+     *        the percentage of how much latency has increased or availability has decreased during the event, compared
+     *        to what is typical for traffic from this client location to the Amazon Web Services location using this
+     *        client network.
      */
 
     public void setPercentOfTotalTrafficImpacted(Double percentOfTotalTrafficImpacted) {
@@ -474,10 +482,15 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The impact on total traffic that a health event has.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * 
-     * @return The impact on total traffic that a health event has.
+     * @return The impact on total traffic that a health event has, in increased latency or reduced availability. This
+     *         is the percentage of how much latency has increased or availability has decreased during the event,
+     *         compared to what is typical for traffic from this client location to the Amazon Web Services location
+     *         using this client network.
      */
 
     public Double getPercentOfTotalTrafficImpacted() {
@@ -486,11 +499,16 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The impact on total traffic that a health event has.
+     * The impact on total traffic that a health event has, in increased latency or reduced availability. This is the
+     * percentage of how much latency has increased or availability has decreased during the event, compared to what is
+     * typical for traffic from this client location to the Amazon Web Services location using this client network.
      * </p>
      * 
      * @param percentOfTotalTrafficImpacted
-     *        The impact on total traffic that a health event has.
+     *        The impact on total traffic that a health event has, in increased latency or reduced availability. This is
+     *        the percentage of how much latency has increased or availability has decreased during the event, compared
+     *        to what is typical for traffic from this client location to the Amazon Web Services location using this
+     *        client network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,11 +578,14 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.
+     * The threshold percentage for a health score that determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that affects your application end users.
      * </p>
      * 
      * @param healthScoreThreshold
-     *        The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.
+     *        The threshold percentage for a health score that determines, along with other configuration information,
+     *        when Internet Monitor creates a health event when there's an internet issue that affects your application
+     *        end users.
      */
 
     public void setHealthScoreThreshold(Double healthScoreThreshold) {
@@ -573,11 +594,13 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.
+     * The threshold percentage for a health score that determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that affects your application end users.
      * </p>
      * 
-     * @return The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health
-     *         event.
+     * @return The threshold percentage for a health score that determines, along with other configuration information,
+     *         when Internet Monitor creates a health event when there's an internet issue that affects your application
+     *         end users.
      */
 
     public Double getHealthScoreThreshold() {
@@ -586,11 +609,14 @@ public class GetHealthEventResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.
+     * The threshold percentage for a health score that determines, along with other configuration information, when
+     * Internet Monitor creates a health event when there's an internet issue that affects your application end users.
      * </p>
      * 
      * @param healthScoreThreshold
-     *        The threshold percentage for health events when Amazon CloudWatch Internet Monitor creates a health event.
+     *        The threshold percentage for a health score that determines, along with other configuration information,
+     *        when Internet Monitor creates a health event when there's an internet issue that affects your application
+     *        end users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

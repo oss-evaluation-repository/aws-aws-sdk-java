@@ -235,9 +235,8 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
     private String mapLongVarcharAs;
     /**
      * <p>
-     * Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use
-     * this setting to specify replication behavior for endpoints that require additional configuration, such as
-     * Babelfish endpoints.
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
      * </p>
      */
     private String databaseMode;
@@ -1685,15 +1684,13 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use
-     * this setting to specify replication behavior for endpoints that require additional configuration, such as
-     * Babelfish endpoints.
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
      * </p>
      * 
      * @param databaseMode
-     *        Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You
-     *        can use this setting to specify replication behavior for endpoints that require additional configuration,
-     *        such as Babelfish endpoints.
+     *        Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *        require some additional configuration, such as Babelfish endpoints.
      * @see DatabaseMode
      */
 
@@ -1703,14 +1700,12 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use
-     * this setting to specify replication behavior for endpoints that require additional configuration, such as
-     * Babelfish endpoints.
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
      * </p>
      * 
-     * @return Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You
-     *         can use this setting to specify replication behavior for endpoints that require additional configuration,
-     *         such as Babelfish endpoints.
+     * @return Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *         require some additional configuration, such as Babelfish endpoints.
      * @see DatabaseMode
      */
 
@@ -1720,15 +1715,13 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use
-     * this setting to specify replication behavior for endpoints that require additional configuration, such as
-     * Babelfish endpoints.
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
      * </p>
      * 
      * @param databaseMode
-     *        Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You
-     *        can use this setting to specify replication behavior for endpoints that require additional configuration,
-     *        such as Babelfish endpoints.
+     *        Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *        require some additional configuration, such as Babelfish endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatabaseMode
      */
@@ -1740,15 +1733,13 @@ public class PostgreSQLSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You can use
-     * this setting to specify replication behavior for endpoints that require additional configuration, such as
-     * Babelfish endpoints.
+     * Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that require
+     * some additional configuration, such as Babelfish endpoints.
      * </p>
      * 
      * @param databaseMode
-     *        Specifies whether to use default or custom replication behavior for PostgreSQL-compatible endpoints. You
-     *        can use this setting to specify replication behavior for endpoints that require additional configuration,
-     *        such as Babelfish endpoints.
+     *        Specifies the default behavior of the replication's handling of PostgreSQL- compatible endpoints that
+     *        require some additional configuration, such as Babelfish endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DatabaseMode
      */

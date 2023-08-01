@@ -19,10 +19,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type for the configuration. Defines the health event threshold percentages, for performance score and
- * availability score. Amazon CloudWatch Internet Monitor creates a health event when there's an internet issue that
- * affects your application end users where a health score percentage is at or below a set threshold. If you don't set a
- * health event threshold, the default value is 95%.
+ * A complex type with the configuration information that determines the threshold and other conditions for when
+ * Internet Monitor creates a health event for an overall performance or availability issue, across an application's
+ * geographies.
+ * </p>
+ * <p>
+ * Defines the percentages, for overall performance scores and availability scores for an application, that are the
+ * thresholds for when Amazon CloudWatch Internet Monitor creates a health event. You can override the defaults to set a
+ * custom threshold for overall performance or availability scores, or both.
+ * </p>
+ * <p>
+ * You can also set thresholds for local health scores,, where Internet Monitor creates a health event when scores cross
+ * a threshold for one or more city-networks, in addition to creating an event when an overall score crosses a
+ * threshold.
+ * </p>
+ * <p>
+ * If you don't set a health event threshold, the default value is 95%.
+ * </p>
+ * <p>
+ * For local thresholds, you also set a minimum percentage of overall traffic that is impacted by an issue before
+ * Internet Monitor creates an event. In addition, you can disable local thresholds, for performance scores,
+ * availability scores, or both.
+ * </p>
+ * <p>
+ * For more information, see <a href=
+ * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"
+ * > Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/HealthEventsConfig" target="_top">AWS
@@ -43,6 +65,20 @@ public class HealthEventsConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Double performanceScoreThreshold;
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local availability issue.
+     * </p>
+     */
+    private LocalHealthEventsConfig availabilityLocalHealthEventsConfig;
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local performance issue.
+     * </p>
+     */
+    private LocalHealthEventsConfig performanceLocalHealthEventsConfig;
 
     /**
      * <p>
@@ -125,6 +161,98 @@ public class HealthEventsConfig implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local availability issue.
+     * </p>
+     * 
+     * @param availabilityLocalHealthEventsConfig
+     *        The configuration that determines the threshold and other conditions for when Internet Monitor creates a
+     *        health event for a local availability issue.
+     */
+
+    public void setAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfig availabilityLocalHealthEventsConfig) {
+        this.availabilityLocalHealthEventsConfig = availabilityLocalHealthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local availability issue.
+     * </p>
+     * 
+     * @return The configuration that determines the threshold and other conditions for when Internet Monitor creates a
+     *         health event for a local availability issue.
+     */
+
+    public LocalHealthEventsConfig getAvailabilityLocalHealthEventsConfig() {
+        return this.availabilityLocalHealthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local availability issue.
+     * </p>
+     * 
+     * @param availabilityLocalHealthEventsConfig
+     *        The configuration that determines the threshold and other conditions for when Internet Monitor creates a
+     *        health event for a local availability issue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HealthEventsConfig withAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfig availabilityLocalHealthEventsConfig) {
+        setAvailabilityLocalHealthEventsConfig(availabilityLocalHealthEventsConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local performance issue.
+     * </p>
+     * 
+     * @param performanceLocalHealthEventsConfig
+     *        The configuration that determines the threshold and other conditions for when Internet Monitor creates a
+     *        health event for a local performance issue.
+     */
+
+    public void setPerformanceLocalHealthEventsConfig(LocalHealthEventsConfig performanceLocalHealthEventsConfig) {
+        this.performanceLocalHealthEventsConfig = performanceLocalHealthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local performance issue.
+     * </p>
+     * 
+     * @return The configuration that determines the threshold and other conditions for when Internet Monitor creates a
+     *         health event for a local performance issue.
+     */
+
+    public LocalHealthEventsConfig getPerformanceLocalHealthEventsConfig() {
+        return this.performanceLocalHealthEventsConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that determines the threshold and other conditions for when Internet Monitor creates a health
+     * event for a local performance issue.
+     * </p>
+     * 
+     * @param performanceLocalHealthEventsConfig
+     *        The configuration that determines the threshold and other conditions for when Internet Monitor creates a
+     *        health event for a local performance issue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HealthEventsConfig withPerformanceLocalHealthEventsConfig(LocalHealthEventsConfig performanceLocalHealthEventsConfig) {
+        setPerformanceLocalHealthEventsConfig(performanceLocalHealthEventsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -139,7 +267,11 @@ public class HealthEventsConfig implements Serializable, Cloneable, StructuredPo
         if (getAvailabilityScoreThreshold() != null)
             sb.append("AvailabilityScoreThreshold: ").append(getAvailabilityScoreThreshold()).append(",");
         if (getPerformanceScoreThreshold() != null)
-            sb.append("PerformanceScoreThreshold: ").append(getPerformanceScoreThreshold());
+            sb.append("PerformanceScoreThreshold: ").append(getPerformanceScoreThreshold()).append(",");
+        if (getAvailabilityLocalHealthEventsConfig() != null)
+            sb.append("AvailabilityLocalHealthEventsConfig: ").append(getAvailabilityLocalHealthEventsConfig()).append(",");
+        if (getPerformanceLocalHealthEventsConfig() != null)
+            sb.append("PerformanceLocalHealthEventsConfig: ").append(getPerformanceLocalHealthEventsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +294,16 @@ public class HealthEventsConfig implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getPerformanceScoreThreshold() != null && other.getPerformanceScoreThreshold().equals(this.getPerformanceScoreThreshold()) == false)
             return false;
+        if (other.getAvailabilityLocalHealthEventsConfig() == null ^ this.getAvailabilityLocalHealthEventsConfig() == null)
+            return false;
+        if (other.getAvailabilityLocalHealthEventsConfig() != null
+                && other.getAvailabilityLocalHealthEventsConfig().equals(this.getAvailabilityLocalHealthEventsConfig()) == false)
+            return false;
+        if (other.getPerformanceLocalHealthEventsConfig() == null ^ this.getPerformanceLocalHealthEventsConfig() == null)
+            return false;
+        if (other.getPerformanceLocalHealthEventsConfig() != null
+                && other.getPerformanceLocalHealthEventsConfig().equals(this.getPerformanceLocalHealthEventsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -172,6 +314,8 @@ public class HealthEventsConfig implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getAvailabilityScoreThreshold() == null) ? 0 : getAvailabilityScoreThreshold().hashCode());
         hashCode = prime * hashCode + ((getPerformanceScoreThreshold() == null) ? 0 : getPerformanceScoreThreshold().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityLocalHealthEventsConfig() == null) ? 0 : getAvailabilityLocalHealthEventsConfig().hashCode());
+        hashCode = prime * hashCode + ((getPerformanceLocalHealthEventsConfig() == null) ? 0 : getPerformanceLocalHealthEventsConfig().hashCode());
         return hashCode;
     }
 

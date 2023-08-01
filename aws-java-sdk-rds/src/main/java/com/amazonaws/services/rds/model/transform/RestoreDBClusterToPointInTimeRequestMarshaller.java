@@ -227,6 +227,10 @@ public class RestoreDBClusterToPointInTimeRequestMarshaller implements
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getNetworkType()));
         }
 
+        if (restoreDBClusterToPointInTimeRequest.getSourceDbClusterResourceId() != null) {
+            request.addParameter("SourceDbClusterResourceId", StringUtils.fromString(restoreDBClusterToPointInTimeRequest.getSourceDbClusterResourceId()));
+        }
+
         return request;
     }
 

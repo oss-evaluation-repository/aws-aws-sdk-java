@@ -448,6 +448,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             exceptionUnmarshallersMap.put("ProvisionedIopsNotAvailableInAZFault", new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new ProvisionedIopsNotAvailableInAZExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("InvalidDBClusterAutomatedBackupStateFault") == null) {
+            exceptionUnmarshallersMap.put("InvalidDBClusterAutomatedBackupStateFault", new InvalidDBClusterAutomatedBackupStateExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new InvalidDBClusterAutomatedBackupStateExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("ReservedDBInstanceAlreadyExists") == null) {
             exceptionUnmarshallersMap.put("ReservedDBInstanceAlreadyExists", new ReservedDBInstanceAlreadyExistsExceptionUnmarshaller());
         }
@@ -460,6 +464,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             exceptionUnmarshallersMap.put("DBParameterGroupNotFound", new DBParameterGroupNotFoundExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new DBParameterGroupNotFoundExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("DBClusterAutomatedBackupQuotaExceededFault") == null) {
+            exceptionUnmarshallersMap.put("DBClusterAutomatedBackupQuotaExceededFault", new DBClusterAutomatedBackupQuotaExceededExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new DBClusterAutomatedBackupQuotaExceededExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("InvalidDBInstanceAutomatedBackupState") == null) {
             exceptionUnmarshallersMap.put("InvalidDBInstanceAutomatedBackupState", new InvalidDBInstanceAutomatedBackupStateExceptionUnmarshaller());
         }
@@ -560,6 +568,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             exceptionUnmarshallersMap.put("InvalidVPCNetworkStateFault", new InvalidVPCNetworkStateExceptionUnmarshaller());
         }
         exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
+        if (exceptionUnmarshallersMap.get("DBClusterAutomatedBackupNotFoundFault") == null) {
+            exceptionUnmarshallersMap.put("DBClusterAutomatedBackupNotFoundFault", new DBClusterAutomatedBackupNotFoundExceptionUnmarshaller());
+        }
+        exceptionUnmarshallers.add(new DBClusterAutomatedBackupNotFoundExceptionUnmarshaller());
         if (exceptionUnmarshallersMap.get("SNSTopicArnNotFound") == null) {
             exceptionUnmarshallersMap.put("SNSTopicArnNotFound", new SNSTopicArnNotFoundExceptionUnmarshaller());
         }
@@ -3412,6 +3424,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws InvalidDBClusterSnapshotStateException
      *         The supplied value isn't a valid DB cluster snapshot state.
+     * @throws DBClusterAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB cluster quota.
      * @sample AmazonRDS.DeleteDBCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBCluster" target="_top">AWS API
      *      Documentation</a>
@@ -3449,6 +3464,68 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes automated backups using the <code>DbClusterResourceId</code> value of the source DB cluster or the Amazon
+     * Resource Name (ARN) of the automated backups.
+     * </p>
+     * 
+     * @param deleteDBClusterAutomatedBackupRequest
+     * @return Result of the DeleteDBClusterAutomatedBackup operation returned by the service.
+     * @throws InvalidDBClusterAutomatedBackupStateException
+     *         The automated backup is in an invalid state. For example, this automated backup is associated with an
+     *         active cluster.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
+     * @sample AmazonRDS.DeleteDBClusterAutomatedBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBClusterAutomatedBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DBClusterAutomatedBackup deleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBClusterAutomatedBackup(request);
+    }
+
+    @SdkInternalApi
+    final DBClusterAutomatedBackup executeDeleteDBClusterAutomatedBackup(DeleteDBClusterAutomatedBackupRequest deleteDBClusterAutomatedBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDBClusterAutomatedBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDBClusterAutomatedBackupRequest> request = null;
+        Response<DBClusterAutomatedBackup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBClusterAutomatedBackupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterAutomatedBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterAutomatedBackup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBClusterAutomatedBackup> responseHandler = new StaxResponseHandler<DBClusterAutomatedBackup>(
+                    new DBClusterAutomatedBackupStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -3725,7 +3802,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
-     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     *         automated backups. The retained automated backups quota is the same as your DB instance quota.
      * @sample AmazonRDS.DeleteDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -4678,6 +4755,70 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     @Override
     public DescribeCertificatesResult describeCertificates() {
         return describeCertificates(new DescribeCertificatesRequest());
+    }
+
+    /**
+     * <p>
+     * Displays backups for both current and deleted DB clusters. For example, use this operation to find details about
+     * automated backups for previously deleted clusters. Current clusters are returned for both the
+     * <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code> operations.
+     * </p>
+     * <p>
+     * All parameters are optional.
+     * </p>
+     * 
+     * @param describeDBClusterAutomatedBackupsRequest
+     * @return Result of the DescribeDBClusterAutomatedBackups operation returned by the service.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
+     * @sample AmazonRDS.DescribeDBClusterAutomatedBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusterAutomatedBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeDBClusterAutomatedBackupsResult describeDBClusterAutomatedBackups(DescribeDBClusterAutomatedBackupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBClusterAutomatedBackups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBClusterAutomatedBackupsResult executeDescribeDBClusterAutomatedBackups(
+            DescribeDBClusterAutomatedBackupsRequest describeDBClusterAutomatedBackupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBClusterAutomatedBackupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBClusterAutomatedBackupsRequest> request = null;
+        Response<DescribeDBClusterAutomatedBackupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBClusterAutomatedBackupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterAutomatedBackupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterAutomatedBackups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBClusterAutomatedBackupsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterAutomatedBackupsResult>(
+                    new DescribeDBClusterAutomatedBackupsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -10024,6 +10165,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     * @throws DBClusterAutomatedBackupNotFoundException
+     *         No automated backup for this DB cluster was found.
      * @sample AmazonRDS.RestoreDBClusterToPointInTime
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterToPointInTime"
      *      target="_top">AWS API Documentation</a>
@@ -10762,7 +10905,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         An error occurred accessing an Amazon Web Services KMS key.
      * @throws DBInstanceAutomatedBackupQuotaExceededException
      *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
-     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     *         automated backups. The retained automated backups quota is the same as your DB instance quota.
      * @throws StorageTypeNotSupportedException
      *         The specified <code>StorageType</code> can't be associated with the DB instance.
      * @sample AmazonRDS.StartDBInstanceAutomatedBackupsReplication

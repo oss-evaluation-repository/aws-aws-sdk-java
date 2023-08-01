@@ -101,6 +101,10 @@ public class UpdateInputDeviceResultJsonUnmarshaller implements Unmarshaller<Upd
                     updateInputDeviceResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    context.nextToken();
+                    updateInputDeviceResult.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

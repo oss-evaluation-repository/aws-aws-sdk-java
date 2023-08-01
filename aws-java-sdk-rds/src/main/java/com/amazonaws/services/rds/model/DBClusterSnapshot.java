@@ -160,7 +160,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String kmsKeyId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     * Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      * </p>
      */
     private String dBClusterSnapshotArn;
@@ -195,6 +195,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String storageType;
+    /**
+     * <p>
+     * Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     * </p>
+     */
+    private String dbClusterResourceId;
 
     /**
      * <p>
@@ -1086,11 +1092,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     * Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      * </p>
      * 
      * @param dBClusterSnapshotArn
-     *        The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     *        Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      */
 
     public void setDBClusterSnapshotArn(String dBClusterSnapshotArn) {
@@ -1099,10 +1105,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     * Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     * @return Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      */
 
     public String getDBClusterSnapshotArn() {
@@ -1111,11 +1117,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     * Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      * </p>
      * 
      * @param dBClusterSnapshotArn
-     *        The Amazon Resource Name (ARN) for the DB cluster snapshot.
+     *        Specifies the Amazon Resource Name (ARN) for the DB cluster snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1381,6 +1387,46 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     * </p>
+     * 
+     * @param dbClusterResourceId
+     *        Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     */
+
+    public void setDbClusterResourceId(String dbClusterResourceId) {
+        this.dbClusterResourceId = dbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     * </p>
+     * 
+     * @return Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     */
+
+    public String getDbClusterResourceId() {
+        return this.dbClusterResourceId;
+    }
+
+    /**
+     * <p>
+     * Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     * </p>
+     * 
+     * @param dbClusterResourceId
+     *        Specifies the resource ID of the DB cluster that this DB cluster snapshot was created from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withDbClusterResourceId(String dbClusterResourceId) {
+        setDbClusterResourceId(dbClusterResourceId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1439,7 +1485,9 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getDBSystemId() != null)
             sb.append("DBSystemId: ").append(getDBSystemId()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: ").append(getStorageType());
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getDbClusterResourceId() != null)
+            sb.append("DbClusterResourceId: ").append(getDbClusterResourceId());
         sb.append("}");
         return sb.toString();
     }
@@ -1551,6 +1599,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
             return false;
+        if (other.getDbClusterResourceId() == null ^ this.getDbClusterResourceId() == null)
+            return false;
+        if (other.getDbClusterResourceId() != null && other.getDbClusterResourceId().equals(this.getDbClusterResourceId()) == false)
+            return false;
         return true;
     }
 
@@ -1583,6 +1635,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getDbClusterResourceId() == null) ? 0 : getDbClusterResourceId().hashCode());
         return hashCode;
     }
 

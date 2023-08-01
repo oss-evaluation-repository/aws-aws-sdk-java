@@ -48,11 +48,11 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in your compute environment.
      * </p>
      * </note>
      */
@@ -170,12 +170,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      */
     private String allocationStrategy;
@@ -508,22 +517,23 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in your compute environment.
      * </p>
      * </note>
      * 
      * @param maxvCpus
      *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies
-     *        using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     *        might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *        exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     *        among those specified in your compute environment.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance. That is, no more than a single instance from among those specified in your compute
+     *        environment.
      *        </p>
      */
 
@@ -537,21 +547,22 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in your compute environment.
      * </p>
      * </note>
      * 
      * @return The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *         <p>
-     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation
-     *         strategies using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot
-     *         Instances, Batch might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this
-     *         event, Batch never exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a
-     *         single instance from among those specified in your compute environment.
+     *         With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *         <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and
+     *         the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *         to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *         a single instance. That is, no more than a single instance from among those specified in your compute
+     *         environment.
      *         </p>
      */
 
@@ -565,22 +576,23 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies using
-     * On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to
-     * exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from among those
-     * specified in your compute environment.
+     * With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance. That is, no more than a single instance from among those specified in your compute environment.
      * </p>
      * </note>
      * 
      * @param maxvCpus
      *        The maximum number of Amazon EC2 vCPUs that an environment can reach.</p> <note>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> allocation strategies
-     *        using On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch
-     *        might need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *        exceeds <code>maxvCpus</code> by more than a single instance. That is, no more than a single instance from
-     *        among those specified in your compute environment.
+     *        With <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> allocation strategies using On-Demand or Spot Instances, and
+     *        the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code>
+     *        to meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than
+     *        a single instance. That is, no more than a single instance from among those specified in your compute
+     *        environment.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1210,12 +1222,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1255,12 +1276,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     *        <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to
+     *        meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a
+     *        single instance.
      * @see CRUpdateAllocationStrategy
      */
 
@@ -1306,12 +1336,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @return The allocation strategy to use for the compute resource if there's not enough instances of the best
@@ -1350,12 +1389,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *         strategy is only available for Spot Instance compute resources.
      *         </p>
      *         </dd>
+     *         <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *         <dd>
+     *         <p>
+     *         The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *         Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *         allocation strategy is only available for Spot Instance compute resources.
+     *         </p>
+     *         </dd>
      *         </dl>
      *         <p>
-     *         With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *         On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might
-     *         need to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never
-     *         exceeds <code>maxvCpus</code> by more than a single instance.
+     *         With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *         <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     *         <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to
+     *         meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a
+     *         single instance.
      * @see CRUpdateAllocationStrategy
      */
 
@@ -1401,12 +1449,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1446,12 +1503,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     *        <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to
+     *        meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a
+     *        single instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRUpdateAllocationStrategy
      */
@@ -1499,12 +1565,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      * available for Spot Instance compute resources.
      * </p>
      * </dd>
+     * <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     * <dd>
+     * <p>
+     * The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot Instance
+     * pools that are the least likely to be interrupted and have the lowest possible price. This allocation strategy is
+     * only available for Spot Instance compute resources.
+     * </p>
+     * </dd>
      * </dl>
      * <p>
-     * With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using On-Demand
-     * or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed
-     * <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     * <code>maxvCpus</code> by more than a single instance.
+     * With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     * <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     * <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to meet
+     * your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a single
+     * instance.
      * </p>
      * 
      * @param allocationStrategy
@@ -1544,12 +1619,21 @@ public class ComputeResourceUpdate implements Serializable, Cloneable, Structure
      *        strategy is only available for Spot Instance compute resources.
      *        </p>
      *        </dd>
+     *        <dt>SPOT_PRICE_CAPACITY_OPTIMIZED</dt>
+     *        <dd>
+     *        <p>
+     *        The price and capacity optimized allocation strategy looks at both price and capacity to select the Spot
+     *        Instance pools that are the least likely to be interrupted and have the lowest possible price. This
+     *        allocation strategy is only available for Spot Instance compute resources.
+     *        </p>
+     *        </dd>
      *        </dl>
      *        <p>
-     *        With both <code>BEST_FIT_PROGRESSIVE</code> and <code>SPOT_CAPACITY_OPTIMIZED</code> strategies using
-     *        On-Demand or Spot Instances, and the <code>BEST_FIT</code> strategy using Spot Instances, Batch might need
-     *        to exceed <code>maxvCpus</code> to meet your capacity requirements. In this event, Batch never exceeds
-     *        <code>maxvCpus</code> by more than a single instance.
+     *        With both <code>BEST_FIT_PROGRESSIVE</code>, <code>SPOT_CAPACITY_OPTIMIZED</code>, and
+     *        <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code> strategies using On-Demand or Spot Instances, and the
+     *        <code>BEST_FIT</code> strategy using Spot Instances, Batch might need to exceed <code>maxvCpus</code> to
+     *        meet your capacity requirements. In this event, Batch never exceeds <code>maxvCpus</code> by more than a
+     *        single instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CRUpdateAllocationStrategy
      */
