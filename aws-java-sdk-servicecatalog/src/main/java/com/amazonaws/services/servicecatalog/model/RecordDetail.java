@@ -89,7 +89,8 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updatedTime;
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      * </p>
      */
     private String provisionedProductType;
@@ -679,12 +680,13 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
-     *        <code>CFN_STACKSET</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code>,
+     *        <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      */
 
     public void setProvisionedProductType(String provisionedProductType) {
@@ -693,11 +695,12 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      * </p>
      * 
-     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code> and
-     *         <code>CFN_STACKSET</code>.
+     * @return The type of provisioned product. The supported values are <code>CFN_STACK</code>,
+     *         <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      */
 
     public String getProvisionedProductType() {
@@ -706,12 +709,13 @@ public class RecordDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of provisioned product. The supported values are <code>CFN_STACK</code> and <code>CFN_STACKSET</code>.
+     * The type of provisioned product. The supported values are <code>CFN_STACK</code>, <code>CFN_STACKSET</code>,
+     * <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      * </p>
      * 
      * @param provisionedProductType
-     *        The type of provisioned product. The supported values are <code>CFN_STACK</code> and
-     *        <code>CFN_STACKSET</code>.
+     *        The type of provisioned product. The supported values are <code>CFN_STACK</code>,
+     *        <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, and <code>TERRAFORM_CLOUD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

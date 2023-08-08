@@ -1325,8 +1325,8 @@ public interface AWSServiceCatalog {
      * provisioned product.
      * </p>
      * <p>
-     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks are
-     * not supported.
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets, and non-root nested stacks,
+     * are not supported.
      * </p>
      * <p>
      * The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
@@ -1339,14 +1339,18 @@ public interface AWSServiceCatalog {
      * </p>
      * <note>
      * <p>
-     * When you import an existing CloudFormation stack into a portfolio, constraints that are associated with the
-     * product aren't applied during the import process. The constraints are applied after you call
+     * When you import an existing CloudFormation stack into a portfolio, Service Catalog does not apply the product's
+     * associated constraints during the import process. Service Catalog applies the constraints after you call
      * <code>UpdateProvisionedProduct</code> for the provisioned product.
      * </p>
      * </note>
      * <p>
      * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and
      * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
+     * </p>
+     * <p>
+     * You can only import one provisioned product at a time. The product's CloudFormation stack must have the
+     * <code>IMPORT_COMPLETE</code> status before you import another.
      * </p>
      * 
      * @param importAsProvisionedProductRequest
@@ -1951,7 +1955,7 @@ public interface AWSServiceCatalog {
      * <p>
      * The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation is
      * <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for
-     * the portfolio share to be COMPLETED.
+     * the portfolio share to be completed.
      * </p>
      * <p>
      * You must provide the <code>accountId</code> or organization node in the input, but not both.

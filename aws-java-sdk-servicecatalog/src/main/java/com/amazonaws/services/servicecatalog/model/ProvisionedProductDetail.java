@@ -124,7 +124,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -153,7 +153,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -942,7 +942,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -968,7 +968,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -999,7 +999,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1024,7 +1024,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *         <ul>
      *         <li>
      *         <p>
-     *         ProvisionedProduct
+     *         ProvisionProduct
      *         </p>
      *         </li>
      *         <li>
@@ -1055,7 +1055,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1081,7 +1081,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1115,7 +1115,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1141,7 +1141,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1173,7 +1173,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1198,7 +1198,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *         <ul>
      *         <li>
      *         <p>
-     *         ProvisionedProduct
+     *         ProvisionProduct
      *         </p>
      *         </li>
      *         <li>
@@ -1230,7 +1230,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1256,7 +1256,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>

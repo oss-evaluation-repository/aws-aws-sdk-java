@@ -50,23 +50,9 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     * </p>
-     * </li>
-     * </ul>
      */
     private String type;
     /**
@@ -226,42 +212,14 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
-     *        <ul>
-     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     *        </p>
-     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -273,41 +231,13 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return The type of provisioning artifact.</p>
-     *         <ul>
-     *         <li>
      *         <p>
      *         <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     *         </p>
-     *         </li>
      * @see ProvisioningArtifactType
      */
 
@@ -319,42 +249,14 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
-     *        <ul>
-     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */
@@ -368,42 +270,14 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
-     *        <ul>
-     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     *        </p>
-     *        </li>
      * @see ProvisioningArtifactType
      */
 
@@ -415,42 +289,14 @@ public class ProvisioningArtifactDetail implements Serializable, Cloneable, Stru
      * <p>
      * The type of provisioning artifact.
      * </p>
-     * <ul>
-     * <li>
      * <p>
      * <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param type
      *        The type of provisioning artifact.</p>
-     *        <ul>
-     *        <li>
      *        <p>
      *        <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_AMI</code> - Amazon Web Services Marketplace AMI
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon Web Services Resources
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProvisioningArtifactType
      */

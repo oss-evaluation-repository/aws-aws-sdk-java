@@ -1,3 +1,16 @@
+# __1.12.525__ __2023-08-08__
+## __AWS Backup__
+  - ### Features
+    - This release introduces a new logically air-gapped vault (Preview) in AWS Backup that stores immutable backup copies, which are locked by default and isolated with encryption using AWS owned keys. Logically air-gapped vault (Preview) allows secure recovery of application data across accounts.
+
+## __AWS Service Catalog__
+  - ### Features
+    - Introduce support for HashiCorp Terraform Cloud in Service Catalog by addying TERRAFORM_CLOUD product type in CreateProduct and CreateProvisioningArtifact API.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Added support for cluster mode in online migration and test migration API
+
 # __1.12.524__ __2023-08-07__
 ## __Amazon Detective__
   - ### Features

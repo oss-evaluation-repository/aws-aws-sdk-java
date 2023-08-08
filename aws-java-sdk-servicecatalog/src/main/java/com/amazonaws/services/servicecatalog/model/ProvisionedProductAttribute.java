@@ -124,7 +124,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -153,7 +153,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -890,7 +890,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -916,7 +916,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -947,7 +947,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -972,7 +972,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *         <ul>
      *         <li>
      *         <p>
-     *         ProvisionedProduct
+     *         ProvisionProduct
      *         </p>
      *         </li>
      *         <li>
@@ -1003,7 +1003,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1029,7 +1029,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1063,7 +1063,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1089,7 +1089,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>
@@ -1121,7 +1121,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1146,7 +1146,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *         <ul>
      *         <li>
      *         <p>
-     *         ProvisionedProduct
+     *         ProvisionProduct
      *         </p>
      *         </li>
      *         <li>
@@ -1178,7 +1178,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * ProvisionedProduct
+     * ProvisionProduct
      * </p>
      * </li>
      * <li>
@@ -1204,7 +1204,7 @@ public class ProvisionedProductAttribute implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        ProvisionedProduct
+     *        ProvisionProduct
      *        </p>
      *        </li>
      *        <li>

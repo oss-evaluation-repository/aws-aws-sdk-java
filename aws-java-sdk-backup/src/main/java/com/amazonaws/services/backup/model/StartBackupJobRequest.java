@@ -62,6 +62,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * avoid errors.
      * </p>
      * <p>
+     * This parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
+     * <p>
      * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
      * begun or until the start window time has run out. If within the start window time Backup receives an error that
      * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
@@ -75,6 +78,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * A value in minutes during which a successfully started backup must complete, or else Backup will cancel the job.
      * This value is optional. This value begins counting down from when the backup was scheduled. It does not add
      * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
+     * </p>
+     * <p>
+     * Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000 minutes).
      * </p>
      */
     private Long completeWindowMinutes;
@@ -93,6 +99,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * section of the <a
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
+     * </p>
+     * <p>
+     * This parameter has a maximum value of 100 years (36,500 days).
      * </p>
      */
     private Lifecycle lifecycle;
@@ -319,6 +328,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * avoid errors.
      * </p>
      * <p>
+     * This parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
+     * <p>
      * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
      * begun or until the start window time has run out. If within the start window time Backup receives an error that
      * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
@@ -330,6 +342,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
      *        successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at
      *        least 60 minutes to avoid errors.</p>
+     *        <p>
+     *        This parameter has a maximum value of 100 years (52,560,000 minutes).
+     *        </p>
      *        <p>
      *        During the start window, the backup job status remains in <code>CREATED</code> status until it has
      *        successfully begun or until the start window time has run out. If within the start window time Backup
@@ -350,6 +365,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * avoid errors.
      * </p>
      * <p>
+     * This parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
+     * <p>
      * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
      * begun or until the start window time has run out. If within the start window time Backup receives an error that
      * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
@@ -360,6 +378,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * @return A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
      *         successfully. This value is optional, and the default is 8 hours. If this value is included, it must be
      *         at least 60 minutes to avoid errors.</p>
+     *         <p>
+     *         This parameter has a maximum value of 100 years (52,560,000 minutes).
+     *         </p>
      *         <p>
      *         During the start window, the backup job status remains in <code>CREATED</code> status until it has
      *         successfully begun or until the start window time has run out. If within the start window time Backup
@@ -380,6 +401,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * avoid errors.
      * </p>
      * <p>
+     * This parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
+     * <p>
      * During the start window, the backup job status remains in <code>CREATED</code> status until it has successfully
      * begun or until the start window time has run out. If within the start window time Backup receives an error that
      * allows the job to be retried, Backup will automatically retry to begin the job at least every 10 minutes until
@@ -391,6 +415,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
      *        successfully. This value is optional, and the default is 8 hours. If this value is included, it must be at
      *        least 60 minutes to avoid errors.</p>
+     *        <p>
+     *        This parameter has a maximum value of 100 years (52,560,000 minutes).
+     *        </p>
      *        <p>
      *        During the start window, the backup job status remains in <code>CREATED</code> status until it has
      *        successfully begun or until the start window time has run out. If within the start window time Backup
@@ -412,12 +439,18 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * This value is optional. This value begins counting down from when the backup was scheduled. It does not add
      * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
+     * <p>
+     * Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
      * 
      * @param completeWindowMinutes
      *        A value in minutes during which a successfully started backup must complete, or else Backup will cancel
      *        the job. This value is optional. This value begins counting down from when the backup was scheduled. It
      *        does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than
-     *        scheduled.
+     *        scheduled.</p>
+     *        <p>
+     *        Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000
+     *        minutes).
      */
 
     public void setCompleteWindowMinutes(Long completeWindowMinutes) {
@@ -430,11 +463,17 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * This value is optional. This value begins counting down from when the backup was scheduled. It does not add
      * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
+     * <p>
+     * Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
      * 
      * @return A value in minutes during which a successfully started backup must complete, or else Backup will cancel
      *         the job. This value is optional. This value begins counting down from when the backup was scheduled. It
      *         does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than
-     *         scheduled.
+     *         scheduled.</p>
+     *         <p>
+     *         Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000
+     *         minutes).
      */
 
     public Long getCompleteWindowMinutes() {
@@ -447,12 +486,18 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * This value is optional. This value begins counting down from when the backup was scheduled. It does not add
      * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
+     * <p>
+     * Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000 minutes).
+     * </p>
      * 
      * @param completeWindowMinutes
      *        A value in minutes during which a successfully started backup must complete, or else Backup will cancel
      *        the job. This value is optional. This value begins counting down from when the backup was scheduled. It
      *        does not add additional time for <code>StartWindowMinutes</code>, or if the backup started later than
-     *        scheduled.
+     *        scheduled.</p>
+     *        <p>
+     *        Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years (52,560,000
+     *        minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,6 +522,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
+     * <p>
+     * This parameter has a maximum value of 100 years (36,500 days).
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.
@@ -491,6 +539,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        "Lifecycle to cold storage" section of the <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      *        Feature availability by resource</a> table. Backup ignores this expression for other resource types.
+     *        </p>
+     *        <p>
+     *        This parameter has a maximum value of 100 years (36,500 days).
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -513,6 +564,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
+     * <p>
+     * This parameter has a maximum value of 100 years (36,500 days).
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.
      *         Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
@@ -526,6 +580,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *         "Lifecycle to cold storage" section of the <a
      *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      *         Feature availability by resource</a> table. Backup ignores this expression for other resource types.
+     *         </p>
+     *         <p>
+     *         This parameter has a maximum value of 100 years (36,500 days).
      */
 
     public Lifecycle getLifecycle() {
@@ -548,6 +605,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource"> Feature
      * availability by resource</a> table. Backup ignores this expression for other resource types.
      * </p>
+     * <p>
+     * This parameter has a maximum value of 100 years (36,500 days).
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires.
@@ -562,6 +622,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        "Lifecycle to cold storage" section of the <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
      *        Feature availability by resource</a> table. Backup ignores this expression for other resource types.
+     *        </p>
+     *        <p>
+     *        This parameter has a maximum value of 100 years (36,500 days).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

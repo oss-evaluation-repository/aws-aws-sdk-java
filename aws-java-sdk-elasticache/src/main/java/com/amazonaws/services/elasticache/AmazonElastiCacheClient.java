@@ -5646,6 +5646,69 @@ public class AmazonElastiCacheClient extends AmazonWebServiceClient implements A
     }
 
     /**
+     * <p>
+     * Async API to test connection between source and target replication group.
+     * </p>
+     * 
+     * @param testMigrationRequest
+     * @return Result of the TestMigration operation returned by the service.
+     * @throws ReplicationGroupNotFoundException
+     *         The specified replication group does not exist.
+     * @throws InvalidReplicationGroupStateException
+     *         The requested replication group is not in the <code>available</code> state.
+     * @throws ReplicationGroupAlreadyUnderMigrationException
+     *         The targeted replication group is not available.
+     * @throws InvalidParameterValueException
+     *         The value for a parameter is invalid.
+     * @sample AmazonElastiCache.TestMigration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestMigration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ReplicationGroup testMigration(TestMigrationRequest request) {
+        request = beforeClientExecution(request);
+        return executeTestMigration(request);
+    }
+
+    @SdkInternalApi
+    final ReplicationGroup executeTestMigration(TestMigrationRequest testMigrationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(testMigrationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TestMigrationRequest> request = null;
+        Response<ReplicationGroup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TestMigrationRequestMarshaller().marshall(super.beforeMarshalling(testMigrationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ElastiCache");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestMigration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ReplicationGroup> responseHandler = new StaxResponseHandler<ReplicationGroup>(new ReplicationGroupStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Returns additional metadata for a previously executed successful, request, typically used for debugging issues
      * where a service isn't acting as expected. This data isn't considered part of the result data returned by an
      * operation, so it's available through this separate, diagnostic interface.
