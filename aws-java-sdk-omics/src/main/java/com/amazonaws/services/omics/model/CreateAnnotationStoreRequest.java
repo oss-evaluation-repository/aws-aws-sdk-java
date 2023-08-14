@@ -52,6 +52,12 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     */
+    private String versionName;
+    /**
+     * <p>
      * Server-side encryption (SSE) settings for the store.
      * </p>
      */
@@ -259,6 +265,46 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @return The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreRequest withVersionName(String versionName) {
+        setVersionName(versionName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Server-side encryption (SSE) settings for the store.
      * </p>
      * 
@@ -416,6 +462,8 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
             sb.append("Description: ").append(getDescription()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getSseConfig() != null)
             sb.append("SseConfig: ").append(getSseConfig()).append(",");
         if (getStoreFormat() != null)
@@ -452,6 +500,10 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         if (other.getSseConfig() == null ^ this.getSseConfig() == null)
             return false;
         if (other.getSseConfig() != null && other.getSseConfig().equals(this.getSseConfig()) == false)
@@ -476,6 +528,7 @@ public class CreateAnnotationStoreRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getSseConfig() == null) ? 0 : getSseConfig().hashCode());
         hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
         hashCode = prime * hashCode + ((getStoreOptions() == null) ? 0 : getStoreOptions().hashCode());

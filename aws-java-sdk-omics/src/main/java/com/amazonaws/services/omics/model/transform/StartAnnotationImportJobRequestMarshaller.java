@@ -35,6 +35,8 @@ public class StartAnnotationImportJobRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> ITEMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("items").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
     private static final MarshallingInfo<StructuredPojo> FORMATOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("formatOptions").build();
     private static final MarshallingInfo<Boolean> RUNLEFTNORMALIZATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -61,6 +63,7 @@ public class StartAnnotationImportJobRequestMarshaller {
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getDestinationName(), DESTINATIONNAME_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getItems(), ITEMS_BINDING);
+            protocolMarshaller.marshall(startAnnotationImportJobRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getFormatOptions(), FORMATOPTIONS_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getRunLeftNormalization(), RUNLEFTNORMALIZATION_BINDING);
             protocolMarshaller.marshall(startAnnotationImportJobRequest.getAnnotationFields(), ANNOTATIONFIELDS_BINDING);

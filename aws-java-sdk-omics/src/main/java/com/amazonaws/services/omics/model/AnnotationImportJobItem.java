@@ -42,6 +42,12 @@ public class AnnotationImportJobItem implements Serializable, Cloneable, Structu
     private String destinationName;
     /**
      * <p>
+     * The name of the annotation store version.
+     * </p>
+     */
+    private String versionName;
+    /**
+     * <p>
      * The job's service role ARN.
      * </p>
      */
@@ -160,6 +166,46 @@ public class AnnotationImportJobItem implements Serializable, Cloneable, Structu
 
     public AnnotationImportJobItem withDestinationName(String destinationName) {
         setDestinationName(destinationName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the annotation store version.
+     * </p>
+     * 
+     * @param versionName
+     *        The name of the annotation store version.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The name of the annotation store version.
+     * </p>
+     * 
+     * @return The name of the annotation store version.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The name of the annotation store version.
+     * </p>
+     * 
+     * @param versionName
+     *        The name of the annotation store version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnnotationImportJobItem withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -518,6 +564,8 @@ public class AnnotationImportJobItem implements Serializable, Cloneable, Structu
             sb.append("Id: ").append(getId()).append(",");
         if (getDestinationName() != null)
             sb.append("DestinationName: ").append(getDestinationName()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
@@ -553,6 +601,10 @@ public class AnnotationImportJobItem implements Serializable, Cloneable, Structu
         if (other.getDestinationName() == null ^ this.getDestinationName() == null)
             return false;
         if (other.getDestinationName() != null && other.getDestinationName().equals(this.getDestinationName()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
@@ -592,6 +644,7 @@ public class AnnotationImportJobItem implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

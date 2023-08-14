@@ -33,12 +33,12 @@ public class StartFileTransferRequest extends com.amazonaws.AmazonWebServiceRequ
     private String connectorId;
     /**
      * <p>
-     * One or more source paths for the Transfer Family server. Each string represents a source file path for one
-     * outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
+     * One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound
+     * file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
      * </p>
      * <note>
      * <p>
-     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      * </p>
      * </note>
      */
@@ -108,20 +108,20 @@ public class StartFileTransferRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more source paths for the Transfer Family server. Each string represents a source file path for one
-     * outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
+     * One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound
+     * file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
      * </p>
      * <note>
      * <p>
-     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      * </p>
      * </note>
      * 
-     * @return One or more source paths for the Transfer Family server. Each string represents a source file path for
-     *         one outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
+     * @return One or more source paths for the Amazon S3 storage. Each string represents a source file path for one
+     *         outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
      *         <note>
      *         <p>
-     *         Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     *         Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      *         </p>
      */
 
@@ -131,21 +131,21 @@ public class StartFileTransferRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more source paths for the Transfer Family server. Each string represents a source file path for one
-     * outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
+     * One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound
+     * file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
      * </p>
      * <note>
      * <p>
-     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      * </p>
      * </note>
      * 
      * @param sendFilePaths
-     *        One or more source paths for the Transfer Family server. Each string represents a source file path for one
+     *        One or more source paths for the Amazon S3 storage. Each string represents a source file path for one
      *        outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
      *        <note>
      *        <p>
-     *        Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     *        Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      *        </p>
      */
 
@@ -160,12 +160,12 @@ public class StartFileTransferRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more source paths for the Transfer Family server. Each string represents a source file path for one
-     * outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
+     * One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound
+     * file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
      * </p>
      * <note>
      * <p>
-     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      * </p>
      * </note>
      * <p>
@@ -175,11 +175,11 @@ public class StartFileTransferRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param sendFilePaths
-     *        One or more source paths for the Transfer Family server. Each string represents a source file path for one
+     *        One or more source paths for the Amazon S3 storage. Each string represents a source file path for one
      *        outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
      *        <note>
      *        <p>
-     *        Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     *        Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -196,21 +196,21 @@ public class StartFileTransferRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * One or more source paths for the Transfer Family server. Each string represents a source file path for one
-     * outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
+     * One or more source paths for the Amazon S3 storage. Each string represents a source file path for one outbound
+     * file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.
      * </p>
      * <note>
      * <p>
-     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     * Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      * </p>
      * </note>
      * 
      * @param sendFilePaths
-     *        One or more source paths for the Transfer Family server. Each string represents a source file path for one
+     *        One or more source paths for the Amazon S3 storage. Each string represents a source file path for one
      *        outbound file transfer. For example, <code> <i>DOC-EXAMPLE-BUCKET</i>/<i>myfile.txt</i> </code>.</p>
      *        <note>
      *        <p>
-     *        Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code>with one of your actual buckets.
+     *        Replace <code> <i>DOC-EXAMPLE-BUCKET</i> </code> with one of your actual buckets.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

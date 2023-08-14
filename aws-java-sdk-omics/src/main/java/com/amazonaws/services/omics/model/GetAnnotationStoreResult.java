@@ -107,6 +107,12 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private Long storeSizeBytes;
+    /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     */
+    private Integer numVersions;
 
     /**
      * <p>
@@ -735,6 +741,46 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     * 
+     * @param numVersions
+     *        An integer indicating how many versions of an annotation store exist.
+     */
+
+    public void setNumVersions(Integer numVersions) {
+        this.numVersions = numVersions;
+    }
+
+    /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     * 
+     * @return An integer indicating how many versions of an annotation store exist.
+     */
+
+    public Integer getNumVersions() {
+        return this.numVersions;
+    }
+
+    /**
+     * <p>
+     * An integer indicating how many versions of an annotation store exist.
+     * </p>
+     * 
+     * @param numVersions
+     *        An integer indicating how many versions of an annotation store exist.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAnnotationStoreResult withNumVersions(Integer numVersions) {
+        setNumVersions(numVersions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -773,7 +819,9 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getStoreSizeBytes() != null)
-            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes());
+            sb.append("StoreSizeBytes: ").append(getStoreSizeBytes()).append(",");
+        if (getNumVersions() != null)
+            sb.append("NumVersions: ").append(getNumVersions());
         sb.append("}");
         return sb.toString();
     }
@@ -844,6 +892,10 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getStoreSizeBytes() != null && other.getStoreSizeBytes().equals(this.getStoreSizeBytes()) == false)
             return false;
+        if (other.getNumVersions() == null ^ this.getNumVersions() == null)
+            return false;
+        if (other.getNumVersions() != null && other.getNumVersions().equals(this.getNumVersions()) == false)
+            return false;
         return true;
     }
 
@@ -866,6 +918,7 @@ public class GetAnnotationStoreResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getStoreFormat() == null) ? 0 : getStoreFormat().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getStoreSizeBytes() == null) ? 0 : getStoreSizeBytes().hashCode());
+        hashCode = prime * hashCode + ((getNumVersions() == null) ? 0 : getNumVersions().hashCode());
         return hashCode;
     }
 

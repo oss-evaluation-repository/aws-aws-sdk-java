@@ -33,6 +33,8 @@ public class AnnotationImportJobItemMarshaller {
             .marshallLocationName("id").build();
     private static final MarshallingInfo<String> DESTINATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationName").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -66,6 +68,7 @@ public class AnnotationImportJobItemMarshaller {
         try {
             protocolMarshaller.marshall(annotationImportJobItem.getId(), ID_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getDestinationName(), DESTINATIONNAME_BINDING);
+            protocolMarshaller.marshall(annotationImportJobItem.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(annotationImportJobItem.getCreationTime(), CREATIONTIME_BINDING);

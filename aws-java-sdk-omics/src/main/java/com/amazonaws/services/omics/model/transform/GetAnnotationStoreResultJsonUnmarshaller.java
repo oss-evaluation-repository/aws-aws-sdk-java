@@ -105,6 +105,10 @@ public class GetAnnotationStoreResultJsonUnmarshaller implements Unmarshaller<Ge
                     context.nextToken();
                     getAnnotationStoreResult.setStoreSizeBytes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("numVersions", targetDepth)) {
+                    context.nextToken();
+                    getAnnotationStoreResult.setNumVersions(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

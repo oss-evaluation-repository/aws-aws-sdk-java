@@ -56,6 +56,10 @@ public class AnnotationImportJobItemJsonUnmarshaller implements Unmarshaller<Ann
                     context.nextToken();
                     annotationImportJobItem.setDestinationName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("versionName", targetDepth)) {
+                    context.nextToken();
+                    annotationImportJobItem.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     annotationImportJobItem.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

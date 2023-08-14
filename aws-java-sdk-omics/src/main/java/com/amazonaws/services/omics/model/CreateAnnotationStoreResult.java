@@ -61,6 +61,12 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
     private String name;
     /**
      * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     */
+    private String versionName;
+    /**
+     * <p>
      * When the store was created.
      * </p>
      */
@@ -346,6 +352,46 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @return The name given to an annotation store version to distinguish it from other versions.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The name given to an annotation store version to distinguish it from other versions.
+     * </p>
+     * 
+     * @param versionName
+     *        The name given to an annotation store version to distinguish it from other versions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAnnotationStoreResult withVersionName(String versionName) {
+        setVersionName(versionName);
+        return this;
+    }
+
+    /**
+     * <p>
      * When the store was created.
      * </p>
      * 
@@ -408,6 +454,8 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
             sb.append("Status: ").append(getStatus()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
@@ -448,6 +496,10 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -466,6 +518,7 @@ public class CreateAnnotationStoreResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getStoreOptions() == null) ? 0 : getStoreOptions().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }

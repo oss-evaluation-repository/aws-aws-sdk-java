@@ -75,6 +75,33 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Accepts a share for an analytics store.
+     * </p>
+     * 
+     * @param acceptShareRequest
+     * @return Result of the AcceptShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.AcceptShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AcceptShareResult acceptShare(AcceptShareRequest acceptShareRequest);
+
+    /**
+     * <p>
      * Deletes one or more read sets.
      * </p>
      * 
@@ -231,6 +258,33 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Creates a new version of an annotation store.
+     * </p>
+     * 
+     * @param createAnnotationStoreVersionRequest
+     * @return Result of the CreateAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.CreateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAnnotationStoreVersionResult createAnnotationStoreVersion(CreateAnnotationStoreVersionRequest createAnnotationStoreVersionRequest);
+
+    /**
+     * <p>
      * Begins a multipart read set upload.
      * </p>
      * 
@@ -339,6 +393,34 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
+     * and accepted by the principal subscriber.
+     * </p>
+     * 
+     * @param createShareRequest
+     * @return Result of the CreateShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.CreateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateShareResult createShare(CreateShareRequest createShareRequest);
+
+    /**
+     * <p>
      * Creates a variant store.
      * </p>
      * 
@@ -417,6 +499,31 @@ public interface AmazonOmics {
      *      API Documentation</a>
      */
     DeleteAnnotationStoreResult deleteAnnotationStore(DeleteAnnotationStoreRequest deleteAnnotationStoreRequest);
+
+    /**
+     * <p>
+     * Deletes one or multiple versions of an annotation store.
+     * </p>
+     * 
+     * @param deleteAnnotationStoreVersionsRequest
+     * @return Result of the DeleteAnnotationStoreVersions operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.DeleteAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAnnotationStoreVersionsResult deleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest deleteAnnotationStoreVersionsRequest);
 
     /**
      * <p>
@@ -559,6 +666,33 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Deletes a share of an analytics store.
+     * </p>
+     * 
+     * @param deleteShareRequest
+     * @return Result of the DeleteShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.DeleteShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteShareResult deleteShare(DeleteShareRequest deleteShareRequest);
+
+    /**
+     * <p>
      * Deletes a variant store.
      * </p>
      * 
@@ -656,6 +790,29 @@ public interface AmazonOmics {
      *      Documentation</a>
      */
     GetAnnotationStoreResult getAnnotationStore(GetAnnotationStoreRequest getAnnotationStoreRequest);
+
+    /**
+     * <p>
+     * Retrieves the metadata for an annotation store version.
+     * </p>
+     * 
+     * @param getAnnotationStoreVersionRequest
+     * @return Result of the GetAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.GetAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAnnotationStoreVersionResult getAnnotationStoreVersion(GetAnnotationStoreVersionRequest getAnnotationStoreVersionRequest);
 
     /**
      * <p>
@@ -1002,6 +1159,33 @@ public interface AmazonOmics {
 
     /**
      * <p>
+     * Retrieves the metadata for a share.
+     * </p>
+     * 
+     * @param getShareRequest
+     * @return Result of the GetShare operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.GetShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetShareResult getShare(GetShareRequest getShareRequest);
+
+    /**
+     * <p>
      * Gets information about a variant import job.
      * </p>
      * 
@@ -1097,6 +1281,29 @@ public interface AmazonOmics {
      *      API Documentation</a>
      */
     ListAnnotationImportJobsResult listAnnotationImportJobs(ListAnnotationImportJobsRequest listAnnotationImportJobsRequest);
+
+    /**
+     * <p>
+     * Lists the versions of an annotation store.
+     * </p>
+     * 
+     * @param listAnnotationStoreVersionsRequest
+     * @return Result of the ListAnnotationStoreVersions operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.ListAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAnnotationStoreVersionsResult listAnnotationStoreVersions(ListAnnotationStoreVersionsRequest listAnnotationStoreVersionsRequest);
 
     /**
      * <p>
@@ -1461,6 +1668,33 @@ public interface AmazonOmics {
      *      Documentation</a>
      */
     ListSequenceStoresResult listSequenceStores(ListSequenceStoresRequest listSequenceStoresRequest);
+
+    /**
+     * <p>
+     * Lists all shares associated with an account.
+     * </p>
+     * 
+     * @param listSharesRequest
+     * @return Result of the ListShares operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ServiceQuotaExceededException
+     *         The request exceeds a service quota.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ConflictException
+     *         The request cannot be applied to the target resource in its current state.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.ListShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSharesResult listShares(ListSharesRequest listSharesRequest);
 
     /**
      * <p>
@@ -1833,6 +2067,29 @@ public interface AmazonOmics {
      *      API Documentation</a>
      */
     UpdateAnnotationStoreResult updateAnnotationStore(UpdateAnnotationStoreRequest updateAnnotationStoreRequest);
+
+    /**
+     * <p>
+     * Updates the description of an annotation store version.
+     * </p>
+     * 
+     * @param updateAnnotationStoreVersionRequest
+     * @return Result of the UpdateAnnotationStoreVersion operation returned by the service.
+     * @throws InternalServerException
+     *         An unexpected error occurred. Try the request again.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @throws ResourceNotFoundException
+     *         The target resource was not found in the current Region.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AmazonOmics.UpdateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAnnotationStoreVersionResult updateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest updateAnnotationStoreVersionRequest);
 
     /**
      * <p>

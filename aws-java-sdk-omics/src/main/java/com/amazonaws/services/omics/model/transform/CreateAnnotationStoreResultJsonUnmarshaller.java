@@ -72,6 +72,10 @@ public class CreateAnnotationStoreResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     createAnnotationStoreResult.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("versionName", targetDepth)) {
+                    context.nextToken();
+                    createAnnotationStoreResult.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationTime", targetDepth)) {
                     context.nextToken();
                     createAnnotationStoreResult.setCreationTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

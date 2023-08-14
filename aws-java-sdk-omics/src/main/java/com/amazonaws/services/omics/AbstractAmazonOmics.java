@@ -34,6 +34,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public AcceptShareResult acceptShare(AcceptShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchDeleteReadSetResult batchDeleteReadSet(BatchDeleteReadSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public CreateAnnotationStoreVersionResult createAnnotationStoreVersion(CreateAnnotationStoreVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMultipartReadSetUploadResult createMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +94,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public CreateShareResult createShare(CreateShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVariantStoreResult createVariantStore(CreateVariantStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +110,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public DeleteAnnotationStoreResult deleteAnnotationStore(DeleteAnnotationStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAnnotationStoreVersionsResult deleteAnnotationStoreVersions(DeleteAnnotationStoreVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +144,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public DeleteShareResult deleteShare(DeleteShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVariantStoreResult deleteVariantStore(DeleteVariantStoreRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,6 +165,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public GetAnnotationStoreResult getAnnotationStore(GetAnnotationStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAnnotationStoreVersionResult getAnnotationStoreVersion(GetAnnotationStoreVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,6 +239,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public GetShareResult getShare(GetShareRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetVariantImportJobResult getVariantImportJob(GetVariantImportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -225,6 +260,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public ListAnnotationImportJobsResult listAnnotationImportJobs(ListAnnotationImportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAnnotationStoreVersionsResult listAnnotationStoreVersions(ListAnnotationStoreVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -299,6 +339,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
     }
 
     @Override
+    public ListSharesResult listShares(ListSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -365,6 +410,11 @@ public class AbstractAmazonOmics implements AmazonOmics {
 
     @Override
     public UpdateAnnotationStoreResult updateAnnotationStore(UpdateAnnotationStoreRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnnotationStoreVersionResult updateAnnotationStoreVersion(UpdateAnnotationStoreVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

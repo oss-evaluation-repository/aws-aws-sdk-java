@@ -46,6 +46,12 @@ public class StartAnnotationImportJobRequest extends com.amazonaws.AmazonWebServ
     private java.util.List<AnnotationImportItemSource> items;
     /**
      * <p>
+     * The name of the annotation store version.
+     * </p>
+     */
+    private String versionName;
+    /**
+     * <p>
      * Formatting options for the annotation file.
      * </p>
      */
@@ -210,6 +216,46 @@ public class StartAnnotationImportJobRequest extends com.amazonaws.AmazonWebServ
 
     public StartAnnotationImportJobRequest withItems(java.util.Collection<AnnotationImportItemSource> items) {
         setItems(items);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the annotation store version.
+     * </p>
+     * 
+     * @param versionName
+     *        The name of the annotation store version.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * The name of the annotation store version.
+     * </p>
+     * 
+     * @return The name of the annotation store version.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * The name of the annotation store version.
+     * </p>
+     * 
+     * @param versionName
+     *        The name of the annotation store version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAnnotationImportJobRequest withVersionName(String versionName) {
+        setVersionName(versionName);
         return this;
     }
 
@@ -391,6 +437,8 @@ public class StartAnnotationImportJobRequest extends com.amazonaws.AmazonWebServ
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getItems() != null)
             sb.append("Items: ").append(getItems()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getFormatOptions() != null)
             sb.append("FormatOptions: ").append(getFormatOptions()).append(",");
         if (getRunLeftNormalization() != null)
@@ -423,6 +471,10 @@ public class StartAnnotationImportJobRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getItems() != null && other.getItems().equals(this.getItems()) == false)
             return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         if (other.getFormatOptions() == null ^ this.getFormatOptions() == null)
             return false;
         if (other.getFormatOptions() != null && other.getFormatOptions().equals(this.getFormatOptions()) == false)
@@ -446,6 +498,7 @@ public class StartAnnotationImportJobRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDestinationName() == null) ? 0 : getDestinationName().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getFormatOptions() == null) ? 0 : getFormatOptions().hashCode());
         hashCode = prime * hashCode + ((getRunLeftNormalization() == null) ? 0 : getRunLeftNormalization().hashCode());
         hashCode = prime * hashCode + ((getAnnotationFields() == null) ? 0 : getAnnotationFields().hashCode());

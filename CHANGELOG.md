@@ -1,3 +1,16 @@
+# __1.12.529__ __2023-08-14__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - Fix SDK logging of certain fields.
+
+## __AWS Transfer Family__
+  - ### Features
+    - Documentation updates for AWS Transfer Family
+
+## __Amazon Omics__
+  - ### Features
+    - This release provides support for annotation store versioning and cross account sharing for Omics Analytics
+
 # __1.12.528__ __2023-08-11__
 ## __AWS Config__
   - ### Features

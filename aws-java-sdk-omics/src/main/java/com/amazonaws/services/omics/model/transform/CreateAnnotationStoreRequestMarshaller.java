@@ -37,6 +37,8 @@ public class CreateAnnotationStoreRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versionName").build();
     private static final MarshallingInfo<StructuredPojo> SSECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sseConfig").build();
     private static final MarshallingInfo<String> STOREFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class CreateAnnotationStoreRequestMarshaller {
             protocolMarshaller.marshall(createAnnotationStoreRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAnnotationStoreRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getSseConfig(), SSECONFIG_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getStoreFormat(), STOREFORMAT_BINDING);
             protocolMarshaller.marshall(createAnnotationStoreRequest.getStoreOptions(), STOREOPTIONS_BINDING);

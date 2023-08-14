@@ -69,6 +69,37 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
+     * Accepts a share for an analytics store.
+     * </p>
+     * 
+     * @param acceptShareRequest
+     * @return A Java Future containing the result of the AcceptShare operation returned by the service.
+     * @sample AmazonOmicsAsync.AcceptShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptShareResult> acceptShareAsync(AcceptShareRequest acceptShareRequest);
+
+    /**
+     * <p>
+     * Accepts a share for an analytics store.
+     * </p>
+     * 
+     * @param acceptShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptShare operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.AcceptShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AcceptShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptShareResult> acceptShareAsync(AcceptShareRequest acceptShareRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptShareRequest, AcceptShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes one or more read sets.
      * </p>
      * 
@@ -261,6 +292,41 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
+     * Creates a new version of an annotation store.
+     * </p>
+     * 
+     * @param createAnnotationStoreVersionRequest
+     * @return A Java Future containing the result of the CreateAnnotationStoreVersion operation returned by the
+     *         service.
+     * @sample AmazonOmicsAsync.CreateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnnotationStoreVersionResult> createAnnotationStoreVersionAsync(
+            CreateAnnotationStoreVersionRequest createAnnotationStoreVersionRequest);
+
+    /**
+     * <p>
+     * Creates a new version of an annotation store.
+     * </p>
+     * 
+     * @param createAnnotationStoreVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAnnotationStoreVersion operation returned by the
+     *         service.
+     * @sample AmazonOmicsAsyncHandler.CreateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnnotationStoreVersionResult> createAnnotationStoreVersionAsync(
+            CreateAnnotationStoreVersionRequest createAnnotationStoreVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAnnotationStoreVersionRequest, CreateAnnotationStoreVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Begins a multipart read set upload.
      * </p>
      * 
@@ -389,6 +455,39 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
+     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
+     * and accepted by the principal subscriber.
+     * </p>
+     * 
+     * @param createShareRequest
+     * @return A Java Future containing the result of the CreateShare operation returned by the service.
+     * @sample AmazonOmicsAsync.CreateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateShareResult> createShareAsync(CreateShareRequest createShareRequest);
+
+    /**
+     * <p>
+     * Creates a share offer that can be accepted outside the account by a subscriber. The share is created by the owner
+     * and accepted by the principal subscriber.
+     * </p>
+     * 
+     * @param createShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateShare operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.CreateShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateShareResult> createShareAsync(CreateShareRequest createShareRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateShareRequest, CreateShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a variant store.
      * </p>
      * 
@@ -479,6 +578,41 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      */
     java.util.concurrent.Future<DeleteAnnotationStoreResult> deleteAnnotationStoreAsync(DeleteAnnotationStoreRequest deleteAnnotationStoreRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAnnotationStoreRequest, DeleteAnnotationStoreResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one or multiple versions of an annotation store.
+     * </p>
+     * 
+     * @param deleteAnnotationStoreVersionsRequest
+     * @return A Java Future containing the result of the DeleteAnnotationStoreVersions operation returned by the
+     *         service.
+     * @sample AmazonOmicsAsync.DeleteAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnnotationStoreVersionsResult> deleteAnnotationStoreVersionsAsync(
+            DeleteAnnotationStoreVersionsRequest deleteAnnotationStoreVersionsRequest);
+
+    /**
+     * <p>
+     * Deletes one or multiple versions of an annotation store.
+     * </p>
+     * 
+     * @param deleteAnnotationStoreVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnnotationStoreVersions operation returned by the
+     *         service.
+     * @sample AmazonOmicsAsyncHandler.DeleteAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnnotationStoreVersionsResult> deleteAnnotationStoreVersionsAsync(
+            DeleteAnnotationStoreVersionsRequest deleteAnnotationStoreVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnnotationStoreVersionsRequest, DeleteAnnotationStoreVersionsResult> asyncHandler);
 
     /**
      * <p>
@@ -637,6 +771,37 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
+     * Deletes a share of an analytics store.
+     * </p>
+     * 
+     * @param deleteShareRequest
+     * @return A Java Future containing the result of the DeleteShare operation returned by the service.
+     * @sample AmazonOmicsAsync.DeleteShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteShareResult> deleteShareAsync(DeleteShareRequest deleteShareRequest);
+
+    /**
+     * <p>
+     * Deletes a share of an analytics store.
+     * </p>
+     * 
+     * @param deleteShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteShare operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.DeleteShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/DeleteShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteShareResult> deleteShareAsync(DeleteShareRequest deleteShareRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteShareRequest, DeleteShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a variant store.
      * </p>
      * 
@@ -758,6 +923,39 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      */
     java.util.concurrent.Future<GetAnnotationStoreResult> getAnnotationStoreAsync(GetAnnotationStoreRequest getAnnotationStoreRequest,
             com.amazonaws.handlers.AsyncHandler<GetAnnotationStoreRequest, GetAnnotationStoreResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the metadata for an annotation store version.
+     * </p>
+     * 
+     * @param getAnnotationStoreVersionRequest
+     * @return A Java Future containing the result of the GetAnnotationStoreVersion operation returned by the service.
+     * @sample AmazonOmicsAsync.GetAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnnotationStoreVersionResult> getAnnotationStoreVersionAsync(
+            GetAnnotationStoreVersionRequest getAnnotationStoreVersionRequest);
+
+    /**
+     * <p>
+     * Retrieves the metadata for an annotation store version.
+     * </p>
+     * 
+     * @param getAnnotationStoreVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAnnotationStoreVersion operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.GetAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAnnotationStoreVersionResult> getAnnotationStoreVersionAsync(
+            GetAnnotationStoreVersionRequest getAnnotationStoreVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAnnotationStoreVersionRequest, GetAnnotationStoreVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1164,6 +1362,37 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
+     * Retrieves the metadata for a share.
+     * </p>
+     * 
+     * @param getShareRequest
+     * @return A Java Future containing the result of the GetShare operation returned by the service.
+     * @sample AmazonOmicsAsync.GetShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetShareResult> getShareAsync(GetShareRequest getShareRequest);
+
+    /**
+     * <p>
+     * Retrieves the metadata for a share.
+     * </p>
+     * 
+     * @param getShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetShare operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.GetShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/GetShare" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetShareResult> getShareAsync(GetShareRequest getShareRequest,
+            com.amazonaws.handlers.AsyncHandler<GetShareRequest, GetShareResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a variant import job.
      * </p>
      * 
@@ -1285,6 +1514,39 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      */
     java.util.concurrent.Future<ListAnnotationImportJobsResult> listAnnotationImportJobsAsync(ListAnnotationImportJobsRequest listAnnotationImportJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAnnotationImportJobsRequest, ListAnnotationImportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the versions of an annotation store.
+     * </p>
+     * 
+     * @param listAnnotationStoreVersionsRequest
+     * @return A Java Future containing the result of the ListAnnotationStoreVersions operation returned by the service.
+     * @sample AmazonOmicsAsync.ListAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnnotationStoreVersionsResult> listAnnotationStoreVersionsAsync(
+            ListAnnotationStoreVersionsRequest listAnnotationStoreVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the versions of an annotation store.
+     * </p>
+     * 
+     * @param listAnnotationStoreVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAnnotationStoreVersions operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.ListAnnotationStoreVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListAnnotationStoreVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnnotationStoreVersionsResult> listAnnotationStoreVersionsAsync(
+            ListAnnotationStoreVersionsRequest listAnnotationStoreVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAnnotationStoreVersionsRequest, ListAnnotationStoreVersionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1726,6 +1988,37 @@ public interface AmazonOmicsAsync extends AmazonOmics {
 
     /**
      * <p>
+     * Lists all shares associated with an account.
+     * </p>
+     * 
+     * @param listSharesRequest
+     * @return A Java Future containing the result of the ListShares operation returned by the service.
+     * @sample AmazonOmicsAsync.ListShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSharesResult> listSharesAsync(ListSharesRequest listSharesRequest);
+
+    /**
+     * <p>
+     * Lists all shares associated with an account.
+     * </p>
+     * 
+     * @param listSharesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListShares operation returned by the service.
+     * @sample AmazonOmicsAsyncHandler.ListShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListShares" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSharesResult> listSharesAsync(ListSharesRequest listSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSharesRequest, ListSharesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of tags for a resource.
      * </p>
      * 
@@ -2159,6 +2452,41 @@ public interface AmazonOmicsAsync extends AmazonOmics {
      */
     java.util.concurrent.Future<UpdateAnnotationStoreResult> updateAnnotationStoreAsync(UpdateAnnotationStoreRequest updateAnnotationStoreRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAnnotationStoreRequest, UpdateAnnotationStoreResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the description of an annotation store version.
+     * </p>
+     * 
+     * @param updateAnnotationStoreVersionRequest
+     * @return A Java Future containing the result of the UpdateAnnotationStoreVersion operation returned by the
+     *         service.
+     * @sample AmazonOmicsAsync.UpdateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnnotationStoreVersionResult> updateAnnotationStoreVersionAsync(
+            UpdateAnnotationStoreVersionRequest updateAnnotationStoreVersionRequest);
+
+    /**
+     * <p>
+     * Updates the description of an annotation store version.
+     * </p>
+     * 
+     * @param updateAnnotationStoreVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnnotationStoreVersion operation returned by the
+     *         service.
+     * @sample AmazonOmicsAsyncHandler.UpdateAnnotationStoreVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UpdateAnnotationStoreVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnnotationStoreVersionResult> updateAnnotationStoreVersionAsync(
+            UpdateAnnotationStoreVersionRequest updateAnnotationStoreVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnnotationStoreVersionRequest, UpdateAnnotationStoreVersionResult> asyncHandler);
 
     /**
      * <p>
