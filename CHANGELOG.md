@@ -1,3 +1,28 @@
+# __1.12.530__ __2023-08-15__
+## __AWS Glue__
+  - ### Features
+    - AWS Glue Crawlers can now accept SerDe overrides from a custom csv classifier. The two SerDe options are LazySimpleSerDe and OpenCSVSerDe. In case, the user wants crawler to do the selection, "None" can be selected for this purpose.
+
+## __AWS Performance Insights__
+  - ### Features
+    - AWS Performance Insights for Amazon RDS is launching Performance Analysis On Demand, a new feature that allows you to analyze database performance metrics and find out the performance issues. You can now use SDK to create, list, get, delete, and manage tags of performance analysis reports.
+
+## __Amazon Chime SDK Meetings__
+  - ### Features
+    - Updated API documentation to include additional exceptions.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Documentation updates for Elastic Compute Cloud (EC2).
+
+## __Amazon Route 53 Domains__
+  - ### Features
+    - Provide explanation if CheckDomainTransferability return false. Provide requestId if a request is already submitted.  Add sensitive protection for customer information
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker Inference Recommender now provides SupportedResponseMIMETypes from DescribeInferenceRecommendationsJob response
+
 # __1.12.529__ __2023-08-14__
 ## __AWS Elemental MediaPackage__
   - ### Features

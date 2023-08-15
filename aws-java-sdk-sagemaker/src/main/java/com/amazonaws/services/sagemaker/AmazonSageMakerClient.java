@@ -1559,11 +1559,6 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Use this API to deploy models using SageMaker hosting services.
      * </p>
-     * <p>
-     * For an example that calls this method when deploying a model to SageMaker hosting services, see the <a href=
-     * "https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb"
-     * >Create Endpoint example notebook.</a>
-     * </p>
      * <note>
      * <p>
      * You must not delete an <code>EndpointConfig</code> that is in use by an endpoint that is live or while the

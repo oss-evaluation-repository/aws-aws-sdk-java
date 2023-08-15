@@ -191,6 +191,14 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>The service is currently unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -298,6 +306,10 @@
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : "<p>Multiple instances of the same request have been made simultaneously.</p>",
+        "httpStatusCode" : 409
+      }, {
         "exceptionName" : "ForbiddenException",
         "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
         "httpStatusCode" : 403
@@ -358,6 +370,10 @@
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ConflictException",
+        "documentation" : "<p>Multiple instances of the same request have been made simultaneously.</p>",
+        "httpStatusCode" : 409
       }, {
         "exceptionName" : "ForbiddenException",
         "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
@@ -721,6 +737,34 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "BadRequestException",
+        "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ForbiddenException",
+        "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>The user isn't authorized to request a resource.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the resource limit.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource that you want to tag couldn't be found.</p>",
         "httpStatusCode" : 404
@@ -896,6 +940,30 @@
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
       }, {
+        "exceptionName" : "ForbiddenException",
+        "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>The user isn't authorized to request a resource.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the resource limit.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
+      }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource that you want to tag couldn't be found.</p>",
         "httpStatusCode" : 404
@@ -940,6 +1008,30 @@
         "exceptionName" : "BadRequestException",
         "documentation" : "<p>The input parameters don't match the service's restrictions.</p>",
         "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ForbiddenException",
+        "documentation" : "<p>The client is permanently forbidden from making the request.</p>",
+        "httpStatusCode" : 403
+      }, {
+        "exceptionName" : "UnauthorizedException",
+        "documentation" : "<p>The user isn't authorized to request a resource.</p>",
+        "httpStatusCode" : 401
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The request exceeds the resource limit.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ServiceUnavailableException",
+        "documentation" : "<p>The service is currently unavailable.</p>",
+        "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>The resource that you want to tag couldn't be found.</p>",
@@ -1001,6 +1093,14 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>The service is currently unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ServiceFailureException",
+        "documentation" : "<p>The service encountered an unexpected error.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ThrottlingException",
+        "documentation" : "<p>The number of customer requests exceeds the request rate limit.</p>",
+        "httpStatusCode" : 429
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,

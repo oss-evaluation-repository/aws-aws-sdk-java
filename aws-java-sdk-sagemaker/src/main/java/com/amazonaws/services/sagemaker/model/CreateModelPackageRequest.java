@@ -101,6 +101,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      */
     private java.util.List<Tag> tags;
     /**
@@ -646,10 +650,18 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @return A list of key value pairs associated with the model. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *         resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *         <p>
+     *         If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *         specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *         <code>tag</code> argument.
      */
 
     public java.util.List<Tag> getTags() {
@@ -662,11 +674,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -685,6 +705,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
      * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
@@ -693,7 +717,11 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -713,11 +741,19 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>
      * in the <i>Amazon Web Services General Reference Guide</i>.
      * </p>
+     * <p>
+     * If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you specify and
+     * uses the tags associated with the model group. In this case, you cannot supply a <code>tag</code> argument.
+     * </p>
      * 
      * @param tags
      *        A list of key value pairs associated with the model. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
-     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.
+     *        resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>
+     *        <p>
+     *        If you supply <code>ModelPackageGroupName</code>, your model package belongs to the model group you
+     *        specify and uses the tags associated with the model group. In this case, you cannot supply a
+     *        <code>tag</code> argument.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
