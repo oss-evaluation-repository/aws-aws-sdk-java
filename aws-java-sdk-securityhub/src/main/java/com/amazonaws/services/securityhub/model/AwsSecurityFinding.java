@@ -359,6 +359,15 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private Boolean sample;
+    /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     */
+    private GeneratorDetails generatorDetails;
 
     /**
      * <p>
@@ -2828,6 +2837,64 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     * 
+     * @param generatorDetails
+     *        Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to
+     *        findings that relate to Lambda functions. Amazon Inspector identifies policy violations and
+     *        vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon
+     *        CodeGuru. Security Hub receives those findings.
+     */
+
+    public void setGeneratorDetails(GeneratorDetails generatorDetails) {
+        this.generatorDetails = generatorDetails;
+    }
+
+    /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     * 
+     * @return Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to
+     *         findings that relate to Lambda functions. Amazon Inspector identifies policy violations and
+     *         vulnerabilities in Lambda function code based on internal detectors developed in collaboration with
+     *         Amazon CodeGuru. Security Hub receives those findings.
+     */
+
+    public GeneratorDetails getGeneratorDetails() {
+        return this.generatorDetails;
+    }
+
+    /**
+     * <p>
+     * Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to findings
+     * that relate to Lambda functions. Amazon Inspector identifies policy violations and vulnerabilities in Lambda
+     * function code based on internal detectors developed in collaboration with Amazon CodeGuru. Security Hub receives
+     * those findings.
+     * </p>
+     * 
+     * @param generatorDetails
+     *        Provides metadata for the Amazon CodeGuru detector associated with a finding. This field pertains to
+     *        findings that relate to Lambda functions. Amazon Inspector identifies policy violations and
+     *        vulnerabilities in Lambda function code based on internal detectors developed in collaboration with Amazon
+     *        CodeGuru. Security Hub receives those findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withGeneratorDetails(GeneratorDetails generatorDetails) {
+        setGeneratorDetails(generatorDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2920,7 +2987,9 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         if (getFindingProviderFields() != null)
             sb.append("FindingProviderFields: ").append(getFindingProviderFields()).append(",");
         if (getSample() != null)
-            sb.append("Sample: ").append(getSample());
+            sb.append("Sample: ").append(getSample()).append(",");
+        if (getGeneratorDetails() != null)
+            sb.append("GeneratorDetails: ").append(getGeneratorDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -3099,6 +3168,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSample() != null && other.getSample().equals(this.getSample()) == false)
             return false;
+        if (other.getGeneratorDetails() == null ^ this.getGeneratorDetails() == null)
+            return false;
+        if (other.getGeneratorDetails() != null && other.getGeneratorDetails().equals(this.getGeneratorDetails()) == false)
+            return false;
         return true;
     }
 
@@ -3148,6 +3221,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getFindingProviderFields() == null) ? 0 : getFindingProviderFields().hashCode());
         hashCode = prime * hashCode + ((getSample() == null) ? 0 : getSample().hashCode());
+        hashCode = prime * hashCode + ((getGeneratorDetails() == null) ? 0 : getGeneratorDetails().hashCode());
         return hashCode;
     }
 

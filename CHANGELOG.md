@@ -1,3 +1,12 @@
+# __1.12.533__ __2023-08-18__
+## __AWS CodeCommit__
+  - ### Features
+    - Add new ListFileCommitHistory operation to retrieve commits which introduced changes to a specific file.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Added Inspector Lambda code Vulnerability section to ASFF, including GeneratorDetails, EpssScore, ExploitAvailable, and CodeVulnerabilities.
+
 # __1.12.532__ __2023-08-17__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

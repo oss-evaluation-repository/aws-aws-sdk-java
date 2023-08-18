@@ -56,7 +56,8 @@ import com.amazonaws.services.securityhub.model.transform.*;
  * security standards. Security Hub collects security data from Amazon Web Services accounts, services, and integrated
  * third-party products and helps you analyze security trends in your environment to identify the highest priority
  * security issues. For more information about Security Hub, see the <a
- * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">Security HubUser Guide</a>.
+ * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"> <i>Security Hub User
+ * Guide</i> </a>.
  * </p>
  * <p>
  * When you use operations in the Security Hub API, the requests are executed only in the Amazon Web Services Region
@@ -1948,8 +1949,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * Deletes the specified member accounts from Security Hub.
      * </p>
      * <p>
-     * Can be used to delete member accounts that belong to an organization as well as member accounts that were invited
-     * manually.
+     * You can invoke this API only to delete accounts that became members through invitation. You can't invoke this API
+     * to delete accounts that belong to an Organizations organization.
      * </p>
      * 
      * @param deleteMembersRequest
@@ -2555,12 +2556,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disables Security Hub in your account only in the current Region. To disable Security Hub in all Regions, you
-     * must submit one request per Region where you have enabled Security Hub.
+     * Disables Security Hub in your account only in the current Amazon Web Services Region. To disable Security Hub in
+     * all Regions, you must submit one request per Region where you have enabled Security Hub.
      * </p>
      * <p>
-     * When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated
-     * member accounts.
+     * You can't disable Security Hub in an account that is currently the Security Hub administrator.
      * </p>
      * <p>
      * When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings
