@@ -1,3 +1,16 @@
+# __1.12.536__ __2023-08-23__
+## __Amazon API Gateway__
+  - ### Features
+    - This release adds RootResourceId to GetRestApi response.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Marking fields as sensitive on BundleTask and GetPasswordData
+
+## __Amazon Polly__
+  - ### Features
+    - Amazon Polly adds 1 new voice - Zayd (ar-AE)
+
 # __1.12.535__ __2023-08-22__
 ## __AWS Cost Explorer Service__
   - ### Features
