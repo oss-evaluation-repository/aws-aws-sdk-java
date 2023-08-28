@@ -259,10 +259,11 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * This request creates a logical container where backups are stored.
+     * This request creates a logical container to where backups may be copied.
      * </p>
      * <p>
-     * This request includes a name, optionally one or more resource tags, an encryption key, and a request ID.
+     * This request includes a name, the Region, the maximum number of retention days, the minimum number of retention
+     * days, and optionally can include tags and a creator request ID.
      * </p>
      * <note>
      * <p>
@@ -282,10 +283,11 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
-     * This request creates a logical container where backups are stored.
+     * This request creates a logical container to where backups may be copied.
      * </p>
      * <p>
-     * This request includes a name, optionally one or more resource tags, an encryption key, and a request ID.
+     * This request includes a name, the Region, the maximum number of retention days, the minimum number of retention
+     * days, and optionally can include tags and a creator request ID.
      * </p>
      * <note>
      * <p>

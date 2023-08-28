@@ -119,6 +119,13 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean enableContinuousBackup;
+    /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     */
+    private String scheduleExpressionTimezone;
 
     /**
      * <p>
@@ -783,6 +790,52 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     * 
+     * @param scheduleExpressionTimezone
+     *        This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC.
+     *        You can modify this to a specified timezone.
+     */
+
+    public void setScheduleExpressionTimezone(String scheduleExpressionTimezone) {
+        this.scheduleExpressionTimezone = scheduleExpressionTimezone;
+    }
+
+    /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     * 
+     * @return This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC.
+     *         You can modify this to a specified timezone.
+     */
+
+    public String getScheduleExpressionTimezone() {
+        return this.scheduleExpressionTimezone;
+    }
+
+    /**
+     * <p>
+     * This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC. You can
+     * modify this to a specified timezone.
+     * </p>
+     * 
+     * @param scheduleExpressionTimezone
+     *        This is the timezone in which the schedule expression is set. By default, ScheduleExpressions are in UTC.
+     *        You can modify this to a specified timezone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupRule withScheduleExpressionTimezone(String scheduleExpressionTimezone) {
+        setScheduleExpressionTimezone(scheduleExpressionTimezone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -813,7 +866,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         if (getCopyActions() != null)
             sb.append("CopyActions: ").append(getCopyActions()).append(",");
         if (getEnableContinuousBackup() != null)
-            sb.append("EnableContinuousBackup: ").append(getEnableContinuousBackup());
+            sb.append("EnableContinuousBackup: ").append(getEnableContinuousBackup()).append(",");
+        if (getScheduleExpressionTimezone() != null)
+            sb.append("ScheduleExpressionTimezone: ").append(getScheduleExpressionTimezone());
         sb.append("}");
         return sb.toString();
     }
@@ -868,6 +923,10 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnableContinuousBackup() != null && other.getEnableContinuousBackup().equals(this.getEnableContinuousBackup()) == false)
             return false;
+        if (other.getScheduleExpressionTimezone() == null ^ this.getScheduleExpressionTimezone() == null)
+            return false;
+        if (other.getScheduleExpressionTimezone() != null && other.getScheduleExpressionTimezone().equals(this.getScheduleExpressionTimezone()) == false)
+            return false;
         return true;
     }
 
@@ -886,6 +945,7 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
         hashCode = prime * hashCode + ((getCopyActions() == null) ? 0 : getCopyActions().hashCode());
         hashCode = prime * hashCode + ((getEnableContinuousBackup() == null) ? 0 : getEnableContinuousBackup().hashCode());
+        hashCode = prime * hashCode + ((getScheduleExpressionTimezone() == null) ? 0 : getScheduleExpressionTimezone().hashCode());
         return hashCode;
     }
 
