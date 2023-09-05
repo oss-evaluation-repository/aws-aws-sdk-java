@@ -289,6 +289,10 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
             request.addParameter("EnableLocalWriteForwarding", StringUtils.fromBoolean(modifyDBClusterRequest.getEnableLocalWriteForwarding()));
         }
 
+        if (modifyDBClusterRequest.getAwsBackupRecoveryPointArn() != null) {
+            request.addParameter("AwsBackupRecoveryPointArn", StringUtils.fromString(modifyDBClusterRequest.getAwsBackupRecoveryPointArn()));
+        }
+
         return request;
     }
 

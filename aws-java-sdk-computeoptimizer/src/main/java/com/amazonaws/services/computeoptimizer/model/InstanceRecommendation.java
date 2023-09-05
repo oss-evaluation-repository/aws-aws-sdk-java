@@ -360,6 +360,18 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
      * </p>
      */
     private ExternalMetricStatus externalMetricStatus;
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type.
+     * </p>
+     */
+    private GpuInfo currentInstanceGpuInfo;
+    /**
+     * <p>
+     * Describes if an Amazon EC2 instance is idle.
+     * </p>
+     */
+    private String idle;
 
     /**
      * <p>
@@ -3599,6 +3611,105 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type.
+     * </p>
+     * 
+     * @param currentInstanceGpuInfo
+     *        Describes the GPU accelerator settings for the current instance type.
+     */
+
+    public void setCurrentInstanceGpuInfo(GpuInfo currentInstanceGpuInfo) {
+        this.currentInstanceGpuInfo = currentInstanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type.
+     * </p>
+     * 
+     * @return Describes the GPU accelerator settings for the current instance type.
+     */
+
+    public GpuInfo getCurrentInstanceGpuInfo() {
+        return this.currentInstanceGpuInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the GPU accelerator settings for the current instance type.
+     * </p>
+     * 
+     * @param currentInstanceGpuInfo
+     *        Describes the GPU accelerator settings for the current instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRecommendation withCurrentInstanceGpuInfo(GpuInfo currentInstanceGpuInfo) {
+        setCurrentInstanceGpuInfo(currentInstanceGpuInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes if an Amazon EC2 instance is idle.
+     * </p>
+     * 
+     * @param idle
+     *        Describes if an Amazon EC2 instance is idle.
+     * @see InstanceIdle
+     */
+
+    public void setIdle(String idle) {
+        this.idle = idle;
+    }
+
+    /**
+     * <p>
+     * Describes if an Amazon EC2 instance is idle.
+     * </p>
+     * 
+     * @return Describes if an Amazon EC2 instance is idle.
+     * @see InstanceIdle
+     */
+
+    public String getIdle() {
+        return this.idle;
+    }
+
+    /**
+     * <p>
+     * Describes if an Amazon EC2 instance is idle.
+     * </p>
+     * 
+     * @param idle
+     *        Describes if an Amazon EC2 instance is idle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceIdle
+     */
+
+    public InstanceRecommendation withIdle(String idle) {
+        setIdle(idle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes if an Amazon EC2 instance is idle.
+     * </p>
+     * 
+     * @param idle
+     *        Describes if an Amazon EC2 instance is idle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InstanceIdle
+     */
+
+    public InstanceRecommendation withIdle(InstanceIdle idle) {
+        this.idle = idle.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3643,7 +3754,11 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getExternalMetricStatus() != null)
-            sb.append("ExternalMetricStatus: ").append(getExternalMetricStatus());
+            sb.append("ExternalMetricStatus: ").append(getExternalMetricStatus()).append(",");
+        if (getCurrentInstanceGpuInfo() != null)
+            sb.append("CurrentInstanceGpuInfo: ").append(getCurrentInstanceGpuInfo()).append(",");
+        if (getIdle() != null)
+            sb.append("Idle: ").append(getIdle());
         sb.append("}");
         return sb.toString();
     }
@@ -3727,6 +3842,14 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
             return false;
         if (other.getExternalMetricStatus() != null && other.getExternalMetricStatus().equals(this.getExternalMetricStatus()) == false)
             return false;
+        if (other.getCurrentInstanceGpuInfo() == null ^ this.getCurrentInstanceGpuInfo() == null)
+            return false;
+        if (other.getCurrentInstanceGpuInfo() != null && other.getCurrentInstanceGpuInfo().equals(this.getCurrentInstanceGpuInfo()) == false)
+            return false;
+        if (other.getIdle() == null ^ this.getIdle() == null)
+            return false;
+        if (other.getIdle() != null && other.getIdle().equals(this.getIdle()) == false)
+            return false;
         return true;
     }
 
@@ -3752,6 +3875,8 @@ public class InstanceRecommendation implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getExternalMetricStatus() == null) ? 0 : getExternalMetricStatus().hashCode());
+        hashCode = prime * hashCode + ((getCurrentInstanceGpuInfo() == null) ? 0 : getCurrentInstanceGpuInfo().hashCode());
+        hashCode = prime * hashCode + ((getIdle() == null) ? 0 : getIdle().hashCode());
         return hashCode;
     }
 

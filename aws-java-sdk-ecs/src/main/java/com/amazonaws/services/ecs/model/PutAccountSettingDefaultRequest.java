@@ -70,21 +70,17 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <code>0</code> - immediately retire the tasks and patch Fargate
-     * </p>
-     * <p>
-     * There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     * notification.
+     * <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     * <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     * <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.
      * </p>
      * </li>
      * </ul>
@@ -378,21 +374,17 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <code>0</code> - immediately retire the tasks and patch Fargate
-     * </p>
-     * <p>
-     * There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     * notification.
+     * <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     * <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     * <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.
      * </p>
      * </li>
      * </ul>
@@ -407,21 +399,19 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>0</code> - immediately retire the tasks and patch Fargate
-     *        </p>
-     *        <p>
-     *        There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     *        notification.
+     *        <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     *        <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the
+     *        tasks.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     *        <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the
+     *        tasks.
      *        </p>
      *        </li>
      */
@@ -442,21 +432,17 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <code>0</code> - immediately retire the tasks and patch Fargate
-     * </p>
-     * <p>
-     * There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     * notification.
+     * <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     * <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     * <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.
      * </p>
      * </li>
      * </ul>
@@ -470,21 +456,19 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>0</code> - immediately retire the tasks and patch Fargate
-     *         </p>
-     *         <p>
-     *         There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     *         notification.
+     *         <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     *         <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the
+     *         tasks.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     *         <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the
+     *         tasks.
      *         </p>
      *         </li>
      */
@@ -505,21 +489,17 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * <code>0</code> - immediately retire the tasks and patch Fargate
-     * </p>
-     * <p>
-     * There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     * notification.
+     * <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     * <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the tasks.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     * <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the tasks.
      * </p>
      * </li>
      * </ul>
@@ -534,21 +514,19 @@ public class PutAccountSettingDefaultRequest extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>0</code> - immediately retire the tasks and patch Fargate
-     *        </p>
-     *        <p>
-     *        There is no advanced notification. Your tasks are retired immediately, and Fargate is patched without any
-     *        notification.
+     *        <code>0</code> - Amazon Web Services sends the notification, and immediately retires the affected tasks.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>7</code> -wait 7 calendar days to retire the tasks and patch Fargate
+     *        <code>7</code> - Amazon Web Services sends the notification, and waits 7 calendar days to retire the
+     *        tasks.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>14</code> - wait 14 calendar days to retire the tasks and patch Fargate
+     *        <code>14</code> - Amazon Web Services sends the notification, and waits 14 calendar days to retire the
+     *        tasks.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

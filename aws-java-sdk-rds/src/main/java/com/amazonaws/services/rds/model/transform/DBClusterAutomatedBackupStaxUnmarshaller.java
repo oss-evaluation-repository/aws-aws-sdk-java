@@ -164,6 +164,11 @@ public class DBClusterAutomatedBackupStaxUnmarshaller implements Unmarshaller<DB
                     dBClusterAutomatedBackup.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AwsBackupRecoveryPointArn", targetDepth)) {
+                    dBClusterAutomatedBackup.setAwsBackupRecoveryPointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBClusterAutomatedBackup;

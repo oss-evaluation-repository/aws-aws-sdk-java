@@ -62,6 +62,10 @@ public class InstanceRecommendationMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> EXTERNALMETRICSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalMetricStatus").build();
+    private static final MarshallingInfo<StructuredPojo> CURRENTINSTANCEGPUINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentInstanceGpuInfo").build();
+    private static final MarshallingInfo<String> IDLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("idle").build();
 
     private static final InstanceRecommendationMarshaller instance = new InstanceRecommendationMarshaller();
 
@@ -96,6 +100,8 @@ public class InstanceRecommendationMarshaller {
             protocolMarshaller.marshall(instanceRecommendation.getInstanceState(), INSTANCESTATE_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(instanceRecommendation.getExternalMetricStatus(), EXTERNALMETRICSTATUS_BINDING);
+            protocolMarshaller.marshall(instanceRecommendation.getCurrentInstanceGpuInfo(), CURRENTINSTANCEGPUINFO_BINDING);
+            protocolMarshaller.marshall(instanceRecommendation.getIdle(), IDLE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

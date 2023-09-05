@@ -715,7 +715,31 @@ public enum InstanceType {
     Hpc7a12xlarge("hpc7a.12xlarge"),
     Hpc7a24xlarge("hpc7a.24xlarge"),
     Hpc7a48xlarge("hpc7a.48xlarge"),
-    Hpc7a96xlarge("hpc7a.96xlarge");
+    Hpc7a96xlarge("hpc7a.96xlarge"),
+    C7gdMedium("c7gd.medium"),
+    C7gdLarge("c7gd.large"),
+    C7gdXlarge("c7gd.xlarge"),
+    C7gd2xlarge("c7gd.2xlarge"),
+    C7gd4xlarge("c7gd.4xlarge"),
+    C7gd8xlarge("c7gd.8xlarge"),
+    C7gd12xlarge("c7gd.12xlarge"),
+    C7gd16xlarge("c7gd.16xlarge"),
+    M7gdMedium("m7gd.medium"),
+    M7gdLarge("m7gd.large"),
+    M7gdXlarge("m7gd.xlarge"),
+    M7gd2xlarge("m7gd.2xlarge"),
+    M7gd4xlarge("m7gd.4xlarge"),
+    M7gd8xlarge("m7gd.8xlarge"),
+    M7gd12xlarge("m7gd.12xlarge"),
+    M7gd16xlarge("m7gd.16xlarge"),
+    R7gdMedium("r7gd.medium"),
+    R7gdLarge("r7gd.large"),
+    R7gdXlarge("r7gd.xlarge"),
+    R7gd2xlarge("r7gd.2xlarge"),
+    R7gd4xlarge("r7gd.4xlarge"),
+    R7gd8xlarge("r7gd.8xlarge"),
+    R7gd12xlarge("r7gd.12xlarge"),
+    R7gd16xlarge("r7gd.16xlarge");
 
     private String value;
 

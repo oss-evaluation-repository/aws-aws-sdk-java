@@ -97,6 +97,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
@@ -115,6 +120,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -438,6 +448,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
@@ -456,6 +471,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -492,6 +512,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SSM paths</b>
@@ -510,6 +535,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      *        </p>
      *        </li>
      */
@@ -552,6 +582,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
@@ -570,6 +605,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -606,6 +646,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *         Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>SSM paths</b>
@@ -624,6 +669,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      *         </p>
      *         </li>
      */
@@ -666,6 +716,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>SSM paths</b>
@@ -684,6 +739,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      * </p>
      * </li>
      * </ul>
@@ -720,6 +780,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>SSM paths</b>
@@ -738,6 +803,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
