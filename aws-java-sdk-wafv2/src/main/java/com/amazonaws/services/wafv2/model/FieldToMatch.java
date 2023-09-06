@@ -94,9 +94,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -118,9 +118,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -447,9 +447,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -461,8 +461,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        HTTP request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -482,9 +482,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -495,8 +495,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *         HTTP request body, such as data from a form. </p>
      *         <p>
      *         A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *         For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit
-     *         is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *         For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *         KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *         <code>AssociationConfig</code>, for additional processing fees.
      *         </p>
      *         <p>
@@ -516,9 +516,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>Body</code> object configuration.
@@ -530,8 +530,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        HTTP request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -599,9 +599,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -613,8 +613,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -634,9 +634,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -647,8 +647,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *         request body, such as data from a form. </p>
      *         <p>
      *         A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *         For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit
-     *         is 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *         For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *         KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *         <code>AssociationConfig</code>, for additional processing fees.
      *         </p>
      *         <p>
@@ -668,9 +668,9 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * A limited amount of the request body is forwarded to WAF for inspection by the underlying host service. For
-     * regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
-     * <code>AssociationConfig</code>, for additional processing fees.
+     * regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB (16,384
+     * bytes). For CloudFront distributions, you can increase the limit in the web ACL's <code>AssociationConfig</code>,
+     * for additional processing fees.
      * </p>
      * <p>
      * For information about how to handle oversized request bodies, see the <code>JsonBody</code> object configuration.
@@ -682,8 +682,8 @@ public class FieldToMatch implements Serializable, Cloneable, StructuredPojo {
      *        request body, such as data from a form. </p>
      *        <p>
      *        A limited amount of the request body is forwarded to WAF for inspection by the underlying host service.
-     *        For regional resources, the limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
-     *        16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the limit in the web ACL's
+     *        For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16
+     *        KB (16,384 bytes). For CloudFront distributions, you can increase the limit in the web ACL's
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>

@@ -202,7 +202,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1451,7 +1451,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1464,7 +1464,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>
@@ -1483,7 +1483,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1495,7 +1495,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * @return Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *         <p>
      *         Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *         forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *         forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *         </p>
      *         <note>
      *         <p>
@@ -1514,7 +1514,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1527,7 +1527,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>

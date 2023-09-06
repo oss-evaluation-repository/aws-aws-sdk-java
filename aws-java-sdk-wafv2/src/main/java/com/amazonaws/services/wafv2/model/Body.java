@@ -37,7 +37,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -79,7 +79,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -118,8 +118,8 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *        WAF for inspection. </p>
      *        <p>
-     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *        distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -164,7 +164,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -202,8 +202,8 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *         larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *         WAF for inspection. </p>
      *         <p>
-     *         The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *         CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *         The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *         distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *         <code>AssociationConfig</code>, for additional processing fees.
      *         </p>
      *         <p>
@@ -248,7 +248,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -287,8 +287,8 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *        WAF for inspection. </p>
      *        <p>
-     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *        distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>
@@ -335,7 +335,7 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      * the limit, the underlying host service only forwards the contents that are below the limit to WAF for inspection.
      * </p>
      * <p>
-     * The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for CloudFront
+     * The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
      * distributions. For CloudFront distributions, you can increase the limit in the web ACL
      * <code>AssociationConfig</code>, for additional processing fees.
      * </p>
@@ -374,8 +374,8 @@ public class Body implements Serializable, Cloneable, StructuredPojo {
      *        larger than the limit, the underlying host service only forwards the contents that are below the limit to
      *        WAF for inspection. </p>
      *        <p>
-     *        The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384 kilobytes) for
-     *        CloudFront distributions. For CloudFront distributions, you can increase the limit in the web ACL
+     *        The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes) for CloudFront
+     *        distributions. For CloudFront distributions, you can increase the limit in the web ACL
      *        <code>AssociationConfig</code>, for additional processing fees.
      *        </p>
      *        <p>

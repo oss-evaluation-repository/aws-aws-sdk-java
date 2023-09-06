@@ -1,3 +1,24 @@
+# __1.12.545__ __2023-09-06__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - Adds advanced Output Locking options for Epoch Locking: Custom Epoch and Jam Sync Time
+
+## __AWS WAFV2__
+  - ### Features
+    - The targeted protection level of the Bot Control managed rule group now provides optional, machine-learning analysis of traffic statistics to detect some bot-related activity. You can enable or disable the machine learning functionality through the API.
+
+## __Amazon Appflow__
+  - ### Features
+    - Adding OAuth2.0 support for servicenow connector.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds 'outpost' location type to the DescribeInstanceTypeOfferings API, allowing customers that have been allowlisted for outpost to query their offerings in the API.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release enables default UDP connection termination and disabling unhealthy target connection termination for Network Load Balancers.
+
 # __1.12.544__ __2023-09-05__
 ## __AWS Cloud9__
   - ### Features

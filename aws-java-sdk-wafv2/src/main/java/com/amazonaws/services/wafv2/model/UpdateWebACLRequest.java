@@ -155,7 +155,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1132,7 +1132,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1145,7 +1145,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>
@@ -1164,7 +1164,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1176,7 +1176,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @return Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *         <p>
      *         Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *         forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *         forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *         </p>
      *         <note>
      *         <p>
@@ -1195,7 +1195,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Use this to customize the maximum size of the request body that your protected CloudFront distributions forward
-     * to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     * to WAF for inspection. The default is 16 KB (16,384 bytes).
      * </p>
      * <note>
      * <p>
@@ -1208,7 +1208,7 @@ public class UpdateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Specifies custom configurations for the associations between the web ACL and protected resources. </p>
      *        <p>
      *        Use this to customize the maximum size of the request body that your protected CloudFront distributions
-     *        forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+     *        forward to WAF for inspection. The default is 16 KB (16,384 bytes).
      *        </p>
      *        <note>
      *        <p>
