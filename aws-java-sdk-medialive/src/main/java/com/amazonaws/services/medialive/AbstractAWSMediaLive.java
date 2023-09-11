@@ -269,6 +269,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public StartInputDeviceResult startInputDevice(StartInputDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartInputDeviceMaintenanceWindowResult startInputDeviceMaintenanceWindow(StartInputDeviceMaintenanceWindowRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -280,6 +285,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public StopChannelResult stopChannel(StopChannelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopInputDeviceResult stopInputDevice(StopInputDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

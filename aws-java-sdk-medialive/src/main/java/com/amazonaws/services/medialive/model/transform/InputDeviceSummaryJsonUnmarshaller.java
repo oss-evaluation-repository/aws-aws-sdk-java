@@ -106,6 +106,16 @@ public class InputDeviceSummaryJsonUnmarshaller implements Unmarshaller<InputDev
                     context.nextToken();
                     inputDeviceSummary.setAvailabilityZone(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("medialiveInputArns", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceSummary.setMedialiveInputArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("outputType", targetDepth)) {
+                    context.nextToken();
+                    inputDeviceSummary.setOutputType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

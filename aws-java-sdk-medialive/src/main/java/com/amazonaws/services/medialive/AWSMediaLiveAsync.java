@@ -1445,6 +1445,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<StartChannelRequest, StartChannelResult> asyncHandler);
 
     /**
+     * Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is
+     * attached to a MediaLive input; MediaLive starts the device when the channel starts.)
+     * 
+     * @param startInputDeviceRequest
+     *        Placeholder documentation for StartInputDeviceRequest
+     * @return A Java Future containing the result of the StartInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.StartInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(StartInputDeviceRequest startInputDeviceRequest);
+
+    /**
+     * Start an input device that is attached to a MediaConnect flow. (There is no need to start a device that is
+     * attached to a MediaLive input; MediaLive starts the device when the channel starts.)
+     * 
+     * @param startInputDeviceRequest
+     *        Placeholder documentation for StartInputDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StartInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartInputDeviceResult> startInputDeviceAsync(StartInputDeviceRequest startInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<StartInputDeviceRequest, StartInputDeviceResult> asyncHandler);
+
+    /**
      * Start a maintenance window for the specified input device. Starting a maintenance window will give the device up
      * to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming
      * when the software is fully installed. Devices automatically install updates while they are powered on and their
@@ -1546,6 +1577,37 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
      */
     java.util.concurrent.Future<StopChannelResult> stopChannelAsync(StopChannelRequest stopChannelRequest,
             com.amazonaws.handlers.AsyncHandler<StopChannelRequest, StopChannelResult> asyncHandler);
+
+    /**
+     * Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached
+     * to a MediaLive input; MediaLive automatically stops the device when the channel stops.)
+     * 
+     * @param stopInputDeviceRequest
+     *        Placeholder documentation for StopInputDeviceRequest
+     * @return A Java Future containing the result of the StopInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsync.StopInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(StopInputDeviceRequest stopInputDeviceRequest);
+
+    /**
+     * Stop an input device that is attached to a MediaConnect flow. (There is no need to stop a device that is attached
+     * to a MediaLive input; MediaLive automatically stops the device when the channel stops.)
+     * 
+     * @param stopInputDeviceRequest
+     *        Placeholder documentation for StopInputDeviceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopInputDevice operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.StopInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopInputDevice" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopInputDeviceResult> stopInputDeviceAsync(StopInputDeviceRequest stopInputDeviceRequest,
+            com.amazonaws.handlers.AsyncHandler<StopInputDeviceRequest, StopInputDeviceResult> asyncHandler);
 
     /**
      * Stops a running multiplex. If the multiplex isn't running, this action has no effect.

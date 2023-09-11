@@ -13,7 +13,7 @@
 package com.amazonaws.services.medialive.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -57,6 +57,10 @@ public class InputDeviceSummaryMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> AVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
+    private static final MarshallingInfo<List> MEDIALIVEINPUTARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("medialiveInputArns").build();
+    private static final MarshallingInfo<String> OUTPUTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputType").build();
 
     private static final InputDeviceSummaryMarshaller instance = new InputDeviceSummaryMarshaller();
 
@@ -88,6 +92,8 @@ public class InputDeviceSummaryMarshaller {
             protocolMarshaller.marshall(inputDeviceSummary.getUhdDeviceSettings(), UHDDEVICESETTINGS_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(inputDeviceSummary.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
+            protocolMarshaller.marshall(inputDeviceSummary.getMedialiveInputArns(), MEDIALIVEINPUTARNS_BINDING);
+            protocolMarshaller.marshall(inputDeviceSummary.getOutputType(), OUTPUTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

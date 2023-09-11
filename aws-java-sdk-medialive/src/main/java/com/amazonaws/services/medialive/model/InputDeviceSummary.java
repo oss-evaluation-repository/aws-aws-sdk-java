@@ -59,6 +59,16 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
     private java.util.Map<String, String> tags;
     /** The Availability Zone associated with this input device. */
     private String availabilityZone;
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     * MEDIALIVE_INPUT.
+     */
+    private java.util.List<String> medialiveInputArns;
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a
+     * MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     */
+    private String outputType;
 
     /**
      * The unique ARN of the input device.
@@ -657,6 +667,135 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     * MEDIALIVE_INPUT.
+     * 
+     * @return An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     *         MEDIALIVE_INPUT.
+     */
+
+    public java.util.List<String> getMedialiveInputArns() {
+        return medialiveInputArns;
+    }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     * MEDIALIVE_INPUT.
+     * 
+     * @param medialiveInputArns
+     *        An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     *        MEDIALIVE_INPUT.
+     */
+
+    public void setMedialiveInputArns(java.util.Collection<String> medialiveInputArns) {
+        if (medialiveInputArns == null) {
+            this.medialiveInputArns = null;
+            return;
+        }
+
+        this.medialiveInputArns = new java.util.ArrayList<String>(medialiveInputArns);
+    }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     * MEDIALIVE_INPUT.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMedialiveInputArns(java.util.Collection)} or {@link #withMedialiveInputArns(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param medialiveInputArns
+     *        An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     *        MEDIALIVE_INPUT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceSummary withMedialiveInputArns(String... medialiveInputArns) {
+        if (this.medialiveInputArns == null) {
+            setMedialiveInputArns(new java.util.ArrayList<String>(medialiveInputArns.length));
+        }
+        for (String ele : medialiveInputArns) {
+            this.medialiveInputArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     * MEDIALIVE_INPUT.
+     * 
+     * @param medialiveInputArns
+     *        An array of the ARNs for the MediaLive inputs attached to the device. Returned only if the outputType is
+     *        MEDIALIVE_INPUT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceSummary withMedialiveInputArns(java.util.Collection<String> medialiveInputArns) {
+        setMedialiveInputArns(medialiveInputArns);
+        return this;
+    }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a
+     * MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * 
+     * @param outputType
+     *        The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source
+     *        for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * @see InputDeviceOutputType
+     */
+
+    public void setOutputType(String outputType) {
+        this.outputType = outputType;
+    }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a
+     * MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * 
+     * @return The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source
+     *         for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * @see InputDeviceOutputType
+     */
+
+    public String getOutputType() {
+        return this.outputType;
+    }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a
+     * MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * 
+     * @param outputType
+     *        The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source
+     *        for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceOutputType
+     */
+
+    public InputDeviceSummary withOutputType(String outputType) {
+        setOutputType(outputType);
+        return this;
+    }
+
+    /**
+     * The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source for a
+     * MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * 
+     * @param outputType
+     *        The output attachment type of the input device. Specifies MEDIACONNECT_FLOW if this device is the source
+     *        for a MediaConnect flow. Specifies MEDIALIVE_INPUT if this device is the source for a MediaLive input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputDeviceOutputType
+     */
+
+    public InputDeviceSummary withOutputType(InputDeviceOutputType outputType) {
+        this.outputType = outputType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -695,7 +834,11 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getAvailabilityZone() != null)
-            sb.append("AvailabilityZone: ").append(getAvailabilityZone());
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getMedialiveInputArns() != null)
+            sb.append("MedialiveInputArns: ").append(getMedialiveInputArns()).append(",");
+        if (getOutputType() != null)
+            sb.append("OutputType: ").append(getOutputType());
         sb.append("}");
         return sb.toString();
     }
@@ -766,6 +909,14 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
             return false;
+        if (other.getMedialiveInputArns() == null ^ this.getMedialiveInputArns() == null)
+            return false;
+        if (other.getMedialiveInputArns() != null && other.getMedialiveInputArns().equals(this.getMedialiveInputArns()) == false)
+            return false;
+        if (other.getOutputType() == null ^ this.getOutputType() == null)
+            return false;
+        if (other.getOutputType() != null && other.getOutputType().equals(this.getOutputType()) == false)
+            return false;
         return true;
     }
 
@@ -788,6 +939,8 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getUhdDeviceSettings() == null) ? 0 : getUhdDeviceSettings().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getMedialiveInputArns() == null) ? 0 : getMedialiveInputArns().hashCode());
+        hashCode = prime * hashCode + ((getOutputType() == null) ? 0 : getOutputType().hashCode());
         return hashCode;
     }
 
